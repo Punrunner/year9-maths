@@ -20,3 +20,5 @@ pnpm-debug.log*
 
 # netlify
 .netlify/
+
+.vercel

@@ -7,7 +7,7 @@ import rehypeKatex from 'rehype-katex';
 // https://astro.build/config
 export default defineConfig({
   // Change `site` to your live URL once deployed (used for canonical links / sitemap).
-  site: 'https://year9-maths.netlify.app',
+  site: 'https://year9-maths.vercel.app',
 
   integrations: [
     // `compat: true` lets us write React-flavoured code (React.forwardRef, etc.)
