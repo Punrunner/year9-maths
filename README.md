@@ -97,6 +97,12 @@ In Netlify: **Site configuration → Change site name**. Pick something like
 Finally, open `astro.config.mjs` and put that address in the `site:` line, then push
 the change (see below).
 
+> **Prefer Vercel?** It works just as well, and the project already includes a
+> `vercel.json`. Go to [vercel.com/new](https://vercel.com/new), sign in with GitHub,
+> import `year9-maths` and click **Deploy** — the settings fill in automatically. You
+> get a link like `https://year9-maths.vercel.app`, and every `git push` updates it.
+> Put that address in the `site:` line of `astro.config.mjs`.
+
 > **Prefer GitHub Pages?** It also works. In `astro.config.mjs` add
 > `base: '/year9-maths'`, then in your repository go to **Settings → Pages** and set
 > the source to **GitHub Actions**. Netlify is simpler, which is why it is the
