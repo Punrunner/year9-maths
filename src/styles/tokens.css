@@ -1,0 +1,138 @@
+/* ==========================================================================
+   DESIGN TOKENS — the single source of truth for the whole site.
+   Change a value here and it updates everywhere. Nothing else hard-codes
+   a colour, a font size or a spacing value.
+   ========================================================================== */
+
+:root {
+  /* ---------- Brand & UI colour ------------------------------------- */
+  --red:          #E31C25;   /* brand: buttons, links, active states      */
+  --red-dark:     #B3141B;   /* hover / pressed                           */
+  --red-tint:     #FDECEC;   /* soft red wash for highlighted panels      */
+
+  --ink:          #1A1D21;   /* headings                                  */
+  --body:         #33383D;   /* body text                                 */
+  --muted:        #6B7280;   /* secondary text                            */
+
+  --bg:           #FFFFFF;   /* page background                           */
+  --surface:      #FFFFFF;   /* cards                                     */
+  --surface-alt:  #F6F7F8;   /* alternating sections / subtle panels      */
+  --line:         #E6E8EB;   /* borders / dividers                        */
+
+  /* ---------- Semantic feedback colour ------------------------------ */
+  /* NOTE: --error is deliberately a DIFFERENT red from --red, and is
+     always shown with an ✕ icon plus an "Incorrect" text label, so a wrong
+     answer is never mistaken for a call-to-action button.                */
+  --success:      #1E874B;   --success-tint: #E7F4EC;  --success-line: #BFE0CD;
+  --error:        #D0342C;   --error-tint:   #FCECEB;  --error-line:   #F3C6C3;
+  --amber:        #E8A317;   --amber-tint:   #FBF3E1;  --amber-line:   #EFD9A4;
+  --info:         #1F6FB2;   --info-tint:    #E8F1F8;  --info-line:    #BBD5E9;
+
+  /* ---------- Strand accents (used sparingly, for wayfinding) -------- */
+  --strand-na:    #E31C25;   /* Number & Algebra          */
+  --strand-mg:    #6B4FA8;   /* Measurement & Geometry     */
+  --strand-sp:    #1E874B;   /* Statistics & Probability   */
+
+  /* ---------- Typography -------------------------------------------- */
+  --font-heading: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body:    'Inter Variable', 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, monospace;
+
+  /* Type scale — 1.25 (major third), 16px base */
+  --fs-xs:    0.75rem;   /* 12 — chips, captions          */
+  --fs-sm:    0.875rem;  /* 14 — secondary UI             */
+  --fs-base:  1rem;      /* 16 — body                     */
+  --fs-md:    1.125rem;  /* 18 — lead paragraphs          */
+  --fs-lg:    1.25rem;   /* 20 — h4                       */
+  --fs-xl:    1.5625rem; /* 25 — h3                       */
+  --fs-2xl:   1.9375rem; /* 31 — h2                       */
+  --fs-3xl:   2.4375rem; /* 39 — h1                       */
+  --fs-4xl:   3.0625rem; /* 49 — hero                     */
+
+  --lh-tight:  1.2;
+  --lh-snug:   1.35;
+  --lh-normal: 1.6;
+  --lh-loose:  1.75;   /* lesson prose                    */
+
+  --measure:   68ch;   /* reading max-width for prose     */
+
+  /* ---------- Spacing — strict 4 / 8 scale --------------------------- */
+  --s-1:  0.25rem;  /*  4 */
+  --s-2:  0.5rem;   /*  8 */
+  --s-3:  0.75rem;  /* 12 */
+  --s-4:  1rem;     /* 16 */
+  --s-6:  1.5rem;   /* 24 */
+  --s-8:  2rem;     /* 32 */
+  --s-12: 3rem;     /* 48 */
+  --s-16: 4rem;     /* 64 */
+  --s-24: 6rem;     /* 96 */
+
+  /* ---------- Radius ------------------------------------------------- */
+  --r-sm:   6px;
+  --r-md:   10px;
+  --r-lg:   16px;
+  --r-pill: 999px;
+
+  /* ---------- Elevation ---------------------------------------------- */
+  --shadow-card:  0 1px 2px rgb(26 29 33 / 0.04), 0 2px 8px rgb(26 29 33 / 0.06);
+  --shadow-hover: 0 4px 16px rgb(26 29 33 / 0.10);
+  --shadow-pop:   0 8px 32px rgb(26 29 33 / 0.14);
+
+  /* ---------- Motion -------------------------------------------------- */
+  --t-fast: 120ms;
+  --t-base: 200ms;
+  --t-slow: 320ms;
+  --ease:   cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* ---------- Layout -------------------------------------------------- */
+  --container: 1120px;
+  --nav-h:     60px;
+
+  /* ---------- Focus ring (visible everywhere, never removed) ---------- */
+  --focus-ring: 2px solid var(--red);
+  --focus-offset: 2px;
+
+  color-scheme: light;
+}
+
+/* ==========================================================================
+   DARK THEME — a token remap only. No component knows the theme exists.
+   Light is the default; dark applies when the OS asks for it (unless the
+   student has explicitly chosen light) or when they pick it in the toggle.
+   ========================================================================== */
+
+/* Dark mode is opt-in: the site is white by default, exactly as designed, and
+   a student switches with the toggle in the header. Their choice is remembered.
+   (If you would rather follow the operating system automatically, wrap the block
+   below in `@media (prefers-color-scheme: dark) { :root:not([data-theme='light']) }`
+   as well.) */
+
+:root[data-theme='dark'] {
+  --red:          #FF4A52;
+  --red-dark:     #FF7178;
+  --red-tint:     #2A1416;
+
+  --ink:          #F3F4F6;
+  --body:         #D3D7DC;
+  --muted:        #9AA1AC;
+
+  --bg:           #14171A;
+  --surface:      #1B1F23;
+  --surface-alt:  #22272C;
+  --line:         #2F353B;
+
+  --success:      #4ADE80;  --success-tint: #12281C;  --success-line: #1F4D33;
+  --error:        #F87171;  --error-tint:   #2D1617;  --error-line:   #5A2A2A;
+  --amber:        #FBBF24;  --amber-tint:   #2A2213;  --amber-line:   #5A4720;
+  --info:         #60A5FA;  --info-tint:    #14212F;  --info-line:    #26425E;
+
+  --strand-na:    #FF4A52;
+  --strand-mg:    #A78BFA;
+  --strand-sp:    #4ADE80;
+
+  --shadow-card:  0 1px 2px rgb(0 0 0 / 0.3), 0 2px 8px rgb(0 0 0 / 0.35);
+  --shadow-hover: 0 4px 16px rgb(0 0 0 / 0.45);
+  --shadow-pop:   0 8px 32px rgb(0 0 0 / 0.55);
+
+  color-scheme: dark;
+}

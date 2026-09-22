@@ -1,0 +1,153 @@
+{
+  "title": "Place value and standard form quiz",
+  "topic": "place-value",
+  "description": "Ten questions drawn at random from a bank of fourteen, covering powers of 10, standard form, and upper and lower bounds.",
+  "pick": 10,
+  "timeLimitSec": 900,
+  "passMark": 70,
+  "questions": [
+    {
+      "id": "vq1",
+      "type": "numeric",
+      "prompt": "Work out $63\\,000 \\div 10^4$.",
+      "answer": 6.3,
+      "explanation": "$63\\,000 \\div 10\\,000 = 6.3$."
+    },
+    {
+      "id": "vq2",
+      "type": "numeric",
+      "prompt": "Work out $9800 \\times 10^{-3}$.",
+      "answer": 9.8,
+      "explanation": "Multiplying by $10^{-3}$ is dividing by 1000: $9800 \\div 1000 = 9.8$."
+    },
+    {
+      "id": "vq3",
+      "type": "numeric",
+      "prompt": "Work out $0.25 \\div 10^{-2}$.",
+      "answer": 25,
+      "explanation": "Dividing by $10^{-2}$ is multiplying by 100: $0.25 \\times 100 = 25$."
+    },
+    {
+      "id": "vq4",
+      "type": "multi",
+      "prompt": "Select **every** true statement.",
+      "options": [
+        { "id": "a", "text": "$10^4 = 40$" },
+        { "id": "b", "text": "$10^{-3} = 0.0001$" },
+        { "id": "c", "text": "$\\frac{1}{10^5} = 0.00001$" },
+        { "id": "d", "text": "$0.01 = 10^{-2}$" }
+      ],
+      "answers": ["c", "d"],
+      "explanation": "$10^4 = 10\\,000$, not 40. $10^{-3} = 0.001$, not 0.0001. c and d are both correct."
+    },
+    {
+      "id": "vq5",
+      "type": "fill-blank",
+      "prompt": "Write 63 100 in standard form.",
+      "text": "[[a]] $\\times 10^{\\square}$ [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["6.31"], "size": 5 },
+        { "id": "b", "accept": ["4"], "size": 3 }
+      ],
+      "explanation": "$63\\,100 = 6.31 \\times 10\\,000 = 6.31 \\times 10^4$."
+    },
+    {
+      "id": "vq6",
+      "type": "fill-blank",
+      "prompt": "Write 0.000 38 in standard form.",
+      "text": "[[a]] $\\times 10^{\\square}$ [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["3.8"], "size": 5 },
+        { "id": "b", "accept": ["-4", "−4"], "size": 3 }
+      ],
+      "explanation": "$0.000\\,38 = 3.8 \\div 10\\,000 = 3.8 \\times 10^{-4}$."
+    },
+    {
+      "id": "vq7",
+      "type": "numeric",
+      "prompt": "Write $6.32 \\times 10^2$ as an ordinary number.",
+      "answer": 632,
+      "explanation": "Move the digits two places left: 632."
+    },
+    {
+      "id": "vq8",
+      "type": "mcq",
+      "prompt": "Which is **not** in standard form?",
+      "options": [
+        { "id": "a", "text": "$0.5 \\times 10^{3}$" },
+        { "id": "b", "text": "$5 \\times 10^{3}$" },
+        { "id": "c", "text": "$5.5 \\times 10^{-3}$" },
+        { "id": "d", "text": "$9.1 \\times 10^{0}$" }
+      ],
+      "answer": "a",
+      "explanation": "0.5 is less than 1, so $0.5 \\times 10^3$ is not in standard form. It should be $5 \\times 10^2$."
+    },
+    {
+      "id": "vq9",
+      "type": "mcq",
+      "prompt": "Which symbol makes this true? $\\quad 7.2 \\times 10^4 \\;\\square\\; 8.6 \\times 10^3$",
+      "options": [
+        { "id": "a", "text": "$>$" },
+        { "id": "b", "text": "$<$" },
+        { "id": "c", "text": "$=$" }
+      ],
+      "answer": "a",
+      "shuffleOptions": false,
+      "explanation": "$7.2 \\times 10^4 = 72\\,000$ and $8.6 \\times 10^3 = 8600$. Compare the powers first: $10^4 > 10^3$."
+    },
+    {
+      "id": "vq10",
+      "type": "fill-blank",
+      "prompt": "Work out $(3 \\times 10^4) \\times (8 \\times 10^7)$ and give your answer in standard form.",
+      "text": "[[a]] $\\times 10^{\\square}$ [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["2.4"], "size": 5 },
+        { "id": "b", "accept": ["12"], "size": 3 }
+      ],
+      "explanation": "$3 \\times 8 = 24$ and $10^4 \\times 10^7 = 10^{11}$. $24 \\times 10^{11} = 2.4 \\times 10^{12}$."
+    },
+    {
+      "id": "vq11",
+      "type": "fill-blank",
+      "prompt": "A table is $w$ cm wide, 63.8 cm correct to the nearest mm. Complete the inequality.",
+      "text": "[[a]] $\\le w <$ [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["63.75"], "size": 6 },
+        { "id": "b", "accept": ["63.85"], "size": 6 }
+      ],
+      "explanation": "The nearest mm is the nearest 0.1 cm, so go 0.05 cm either way: $63.75 \\le w < 63.85$."
+    },
+    {
+      "id": "vq12",
+      "type": "fill-blank",
+      "prompt": "A rugby pitch is 107 m long, correct to the nearest metre. Complete the inequality for its length $l$.",
+      "text": "[[a]] $\\le l <$ [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["106.5"], "size": 6 },
+        { "id": "b", "accept": ["107.5"], "size": 6 }
+      ],
+      "explanation": "$107 \\pm 0.5$: $106.5 \\le l < 107.5$."
+    },
+    {
+      "id": "vq13",
+      "type": "mcq",
+      "prompt": "A number $n$ is 25, rounded correct to the nearest 5. Which shows its bounds?",
+      "options": [
+        { "id": "a", "text": "$22.5 \\le n < 27.5$" },
+        { "id": "b", "text": "$20 \\le n < 30$" },
+        { "id": "c", "text": "$24.5 \\le n < 25.5$" },
+        { "id": "d", "text": "$22.5 < n \\le 27.5$" }
+      ],
+      "answer": "a",
+      "explanation": "Half of 5 is 2.5, so $22.5 \\le n < 27.5$."
+    },
+    {
+      "id": "vq14",
+      "type": "numeric",
+      "prompt": "A square has sides of 6 cm, correct to the nearest cm. What is the **lower bound** of its area?",
+      "answer": 30.25,
+      "unit": "cm²",
+      "explanation": "Lower bound of the side is 5.5 cm, so the smallest area is $5.5^2 = 30.25\\ \\text{cm}^2$."
+    }
+  ]
+}

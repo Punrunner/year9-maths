@@ -1,0 +1,131 @@
+{
+  "title": "Practice: units of measurement",
+  "intro": "Eight questions, finishing with a timed conversion drill.",
+  "questions": [
+    {
+      "id": "a5-q1",
+      "type": "numeric",
+      "prompt": "Convert $34\\,000$ nanoseconds to microseconds.",
+      "answer": 34,
+      "unit": "μs",
+      "hints": [
+        "A microsecond is bigger than a nanosecond, so the number should get smaller.",
+        "Divide by 1000."
+      ],
+      "explanation": "$34\\,000 \\div 1000 = 34\\ \\mu\\text{s}$. The number got smaller because we moved to a larger unit.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a5-q2",
+      "type": "numeric",
+      "prompt": "Convert $4\\ \\text{GB}$ to megabytes.",
+      "answer": 4000,
+      "unit": "MB",
+      "hints": ["A megabyte is smaller than a gigabyte, so the number gets bigger."],
+      "explanation": "$4 \\times 1000 = 4000\\ \\text{MB}$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a5-q3",
+      "type": "numeric",
+      "prompt": "Convert $70\\ \\text{mg}$ to micrograms.",
+      "answer": 70000,
+      "unit": "μg",
+      "hints": ["Micro is one step smaller than milli, so multiply by 1000."],
+      "explanation": "$70 \\times 1000 = 70\\,000\\ \\mu\\text{g}$."
+    },
+    {
+      "id": "a5-q4",
+      "type": "numeric",
+      "prompt": "Convert $800\\,000\\,000\\ \\text{km}$ to gigametres.",
+      "answer": 800,
+      "unit": "Gm",
+      "hints": [
+        "Kilo to mega is one step up; mega to giga is another.",
+        "Two steps up means dividing by $1\\,000\\,000$."
+      ],
+      "explanation": "$800\\,000\\,000 \\div 1\\,000\\,000 = 800\\ \\text{Gm}$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a5-q5",
+      "type": "order",
+      "prompt": "Put these units in order, **smallest first**.",
+      "items": [
+        { "id": "u1", "text": "nanometre (nm)" },
+        { "id": "u2", "text": "micrometre ($\\mu$m)" },
+        { "id": "u3", "text": "millimetre (mm)" },
+        { "id": "u4", "text": "metre (m)" },
+        { "id": "u5", "text": "kilometre (km)" },
+        { "id": "u6", "text": "megametre (Mm)" }
+      ],
+      "solution": ["u1", "u2", "u3", "u4", "u5", "u6"],
+      "hints": [
+        "Nano, micro and milli are all smaller than a metre.",
+        "Each step is a factor of 1000."
+      ],
+      "explanation": "nano $<$ micro $<$ milli $<$ base $<$ kilo $<$ mega, each a thousand times the last."
+    },
+    {
+      "id": "a5-q6",
+      "type": "match",
+      "prompt": "Match each prefix to its power of ten.",
+      "left": [
+        { "id": "x1", "text": "nano" },
+        { "id": "x2", "text": "milli" },
+        { "id": "x3", "text": "kilo" },
+        { "id": "x4", "text": "giga" }
+      ],
+      "right": [
+        { "id": "y1", "text": "$10^{-9}$" },
+        { "id": "y2", "text": "$10^{-3}$" },
+        { "id": "y3", "text": "$10^{3}$" },
+        { "id": "y4", "text": "$10^{9}$" }
+      ],
+      "solution": { "x1": "y1", "x2": "y2", "x3": "y3", "x4": "y4" },
+      "hints": ["Negative powers are the small ones; positive powers are the large ones."],
+      "explanation": "nano $=10^{-9}$, milli $=10^{-3}$, kilo $=10^{3}$, giga $=10^{9}$. Notice nano and giga are mirror images either side of the base unit."
+    },
+    {
+      "id": "a5-q7",
+      "type": "mcq",
+      "prompt": "Which is the most sensible unit for the thickness of a sheet of paper?",
+      "options": [
+        { "id": "a", "text": "$0.1\\ \\text{mm}$" },
+        { "id": "b", "text": "$0.0001\\ \\text{m}$" },
+        { "id": "c", "text": "$100\\ \\mu\\text{m}$" },
+        { "id": "d", "text": "$0.0000001\\ \\text{km}$" }
+      ],
+      "answer": "a",
+      "hints": [
+        "All four are the same measurement — the question is which is easiest to read.",
+        "A good unit gives a number that is easy to say."
+      ],
+      "explanation": "All four are equal. $0.1\\ \\text{mm}$ is the clearest for everyday use, though $100\\ \\mu\\text{m}$ is a perfectly good scientific alternative. $0.0000001\\ \\text{km}$ is correct but nobody would write it."
+    },
+    {
+      "id": "a5-q8",
+      "type": "drill",
+      "prompt": "Quick-fire: unit conversions. Give numbers only.",
+      "durationSec": 90,
+      "count": 10,
+      "pool": [
+        { "id": "u1", "prompt": "$5\\ \\text{km} = ?\\ \\text{m}$", "accept": ["5000"] },
+        { "id": "u2", "prompt": "$3000\\ \\text{mm} = ?\\ \\text{m}$", "accept": ["3"] },
+        { "id": "u3", "prompt": "$2\\ \\text{GB} = ?\\ \\text{MB}$", "accept": ["2000"] },
+        { "id": "u4", "prompt": "$7000\\ \\mu\\text{s} = ?\\ \\text{ms}$", "accept": ["7"] },
+        { "id": "u5", "prompt": "$4\\ \\text{mg} = ?\\ \\mu\\text{g}$", "accept": ["4000"] },
+        { "id": "u6", "prompt": "$1\\ \\text{TB} = ?\\ \\text{GB}$", "accept": ["1000"] },
+        { "id": "u7", "prompt": "$250\\ \\text{cm} = ?\\ \\text{m}$", "accept": ["2.5"] },
+        { "id": "u8", "prompt": "$6\\ \\text{m}^3 = ?$ litres", "accept": ["6000"] },
+        { "id": "u9", "prompt": "$1500\\ \\text{ml} = ?$ litres", "accept": ["1.5"] },
+        { "id": "u10", "prompt": "$9\\ \\text{Mm} = ?\\ \\text{km}$", "accept": ["9000"] },
+        { "id": "u11", "prompt": "$500\\ \\text{nm} = ?\\ \\mu\\text{m}$", "accept": ["0.5"] },
+        { "id": "u12", "prompt": "$2.5\\ \\text{litres} = ?\\ \\text{cm}^3$", "accept": ["2500"] },
+        { "id": "u13", "prompt": "$800\\ \\text{g} = ?\\ \\text{kg}$", "accept": ["0.8"] },
+        { "id": "u14", "prompt": "$0.004\\ \\text{km} = ?\\ \\text{m}$", "accept": ["4"] }
+      ],
+      "explanation": "Every one is a multiplication or division by a power of 1000 (or 100 for cm). Before answering, decide whether the number should grow or shrink — that alone gets most of them right."
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "title": "Practice: sampling and bias",
+  "intro": "Nine questions about planning a fair survey. Several have more than one sensible answer — read the explanations even when you are right.",
+  "questions": [
+    {
+      "id": "g3-q1",
+      "type": "order",
+      "prompt": "Put the four stages of a statistical investigation in order.",
+      "items": [
+        {
+          "id": "a",
+          "text": "Ask a question"
+        },
+        {
+          "id": "b",
+          "text": "Collect data"
+        },
+        {
+          "id": "c",
+          "text": "Analyse the data"
+        },
+        {
+          "id": "d",
+          "text": "Use the results to answer the question"
+        }
+      ],
+      "solution": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "hints": [
+        "You cannot collect data until you know what you want to find out."
+      ],
+      "explanation": "Ask → collect → analyse → answer. The answer often suggests a follow-up question, which starts the cycle again.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "g3-q2",
+      "type": "match",
+      "prompt": "Frankie wants to know whether teenagers eat a healthy diet. Match each way of collecting data to its type.",
+      "left": [
+        {
+          "id": "a",
+          "text": "Asking ten people in the dinner queue what they are buying"
+        },
+        {
+          "id": "b",
+          "text": "Asking the canteen staff for last month's sales list"
+        },
+        {
+          "id": "c",
+          "text": "Looking up canteen food sales figures on the internet"
+        },
+        {
+          "id": "d",
+          "text": "Using his own data sheet to record what his friends eat each lunchtime"
+        }
+      ],
+      "right": [
+        {
+          "id": "p1",
+          "text": "Primary"
+        },
+        {
+          "id": "s1",
+          "text": "Secondary"
+        },
+        {
+          "id": "s2",
+          "text": "Secondary"
+        },
+        {
+          "id": "p2",
+          "text": "Primary"
+        }
+      ],
+      "solution": {
+        "a": "p1",
+        "b": "s1",
+        "c": "s2",
+        "d": "p2"
+      },
+      "hints": [
+        "Did Frankie collect it himself, or did someone else?"
+      ],
+      "explanation": "a and d are primary — Frankie collects them himself. b and c are secondary — somebody else collected them."
+    },
+    {
+      "id": "g3-q3",
+      "type": "multi",
+      "prompt": "Select **every** variable that is **quantitative**.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Number of books on a shelf"
+        },
+        {
+          "id": "b",
+          "text": "Type of book (fiction, non-fiction, biography)"
+        },
+        {
+          "id": "c",
+          "text": "Cost of a book"
+        },
+        {
+          "id": "d",
+          "text": "Whether a book is hardback or paperback"
+        },
+        {
+          "id": "e",
+          "text": "Mass of a book"
+        }
+      ],
+      "answers": [
+        "a",
+        "c",
+        "e"
+      ],
+      "hints": [
+        "Quantitative means you can measure or count it with a number."
+      ],
+      "explanation": "Number, cost and mass are numerical, so quantitative. Type and cover are descriptions, so qualitative."
+    },
+    {
+      "id": "g3-q4",
+      "type": "mcq",
+      "prompt": "Andreas asks 20 people **outside the swimming pool** whether they like swimming. Why is his sample biased?",
+      "options": [
+        {
+          "id": "a",
+          "text": "People at a swimming pool are more likely than others to like swimming"
+        },
+        {
+          "id": "b",
+          "text": "20 is an even number"
+        },
+        {
+          "id": "c",
+          "text": "He should have asked only children"
+        },
+        {
+          "id": "d",
+          "text": "It is not biased — everyone was asked the same question"
+        }
+      ],
+      "answer": "a",
+      "hints": [
+        "Would people at the shops or the station give the same answers?"
+      ],
+      "explanation": "The location means his sample over-represents swimmers. Asking in several places at different times, with a larger sample, would be fairer."
+    },
+    {
+      "id": "g3-q5",
+      "type": "multi",
+      "prompt": "Beth surveys ten of her friends about healthy eating. Her questions include *\"Do you agree that eating too many sweets is bad for you? Yes/No\"*. Select **every** reason her results might be biased.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ten people is a small sample"
+        },
+        {
+          "id": "b",
+          "text": "Her friends may not represent the whole school"
+        },
+        {
+          "id": "c",
+          "text": "The question is leading — it pushes people towards 'yes'"
+        },
+        {
+          "id": "d",
+          "text": "Yes/No answers give no detail about how much people eat"
+        },
+        {
+          "id": "e",
+          "text": "She used a questionnaire rather than an interview"
+        }
+      ],
+      "answers": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "hints": [
+        "Think about who she asked, how many, and how the question is worded."
+      ],
+      "explanation": "a–d are all genuine problems. Using a questionnaire is not in itself a source of bias; a well-designed questionnaire is a perfectly good method."
+    },
+    {
+      "id": "g3-q6",
+      "type": "truefalse",
+      "prompt": "A larger sample is usually more reliable, but it takes longer and costs more to collect.",
+      "answer": true,
+      "hints": [
+        "Think about both sides: accuracy and effort."
+      ],
+      "explanation": "True. That trade-off is why you have to decide on a sensible sample size, rather than always asking everyone."
+    },
+    {
+      "id": "g3-q7",
+      "type": "mcq",
+      "prompt": "Jamie wants to know what condition people's phones are in after a year. Which question collects **qualitative** data?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Describe the condition of your phone: as new / a few scratches / lots of scratches / cracked screen"
+        },
+        {
+          "id": "b",
+          "text": "How many scratches are on your phone screen?"
+        },
+        {
+          "id": "c",
+          "text": "How many months have you owned your phone?"
+        },
+        {
+          "id": "d",
+          "text": "How much did your phone cost?"
+        }
+      ],
+      "answer": "a",
+      "hints": [
+        "Which answer is a description rather than a number?"
+      ],
+      "explanation": "Option a gives descriptions, so it is qualitative. Its advantage is that it captures the overall condition; its disadvantage is that people may judge 'a few scratches' differently. The others are all quantitative."
+    },
+    {
+      "id": "g3-q8",
+      "type": "mcq",
+      "prompt": "In a pilot survey, one person wrote *\"half\"* for *\"How much exercise do you do?\"*. What is the best improvement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Give tick-box options with units, e.g. 0–1 h, 1–3 h, 3–5 h, 5+ h per week"
+        },
+        {
+          "id": "b",
+          "text": "Remove the question"
+        },
+        {
+          "id": "c",
+          "text": "Only ask people who exercise"
+        },
+        {
+          "id": "d",
+          "text": "Ask the question in capital letters"
+        }
+      ],
+      "answer": "a",
+      "hints": [
+        "The problem is that the question does not say what units or time period to use."
+      ],
+      "explanation": "Clear, non-overlapping options with units and a time period mean every answer can be compared. That is exactly what a pilot survey is for — finding questions like this before the real survey."
+    },
+    {
+      "id": "g3-q9",
+      "type": "fill-blank",
+      "prompt": "Complete the sentences.",
+      "text": "Data you collect yourself is called [[a]] data. Data collected by someone else is [[b]] data. Trying a questionnaire on a few people first is called a [[c]] survey.",
+      "blanks": [
+        {
+          "id": "a",
+          "accept": [
+            "primary"
+          ],
+          "size": 9
+        },
+        {
+          "id": "b",
+          "accept": [
+            "secondary"
+          ],
+          "size": 9
+        },
+        {
+          "id": "c",
+          "accept": [
+            "pilot"
+          ],
+          "size": 7
+        }
+      ],
+      "hints": [
+        "The first one comes first — you collect it yourself."
+      ],
+      "explanation": "Primary, secondary, pilot."
+    }
+  ]
+}

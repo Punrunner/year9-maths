@@ -1,0 +1,45 @@
+{
+  "title": "Decimals and percentages quiz",
+  "topic": "decimals-percentages",
+  "description": "Ten questions drawn at random from a bank of twelve, covering estimation, decimal calculations and percentage change.",
+  "pick": 10,
+  "timeLimitSec": 900,
+  "passMark": 70,
+  "questions": [
+    { "id": "cq1", "type": "numeric", "prompt": "Estimate $5.42 \\div 2.81$.", "answer": 2, "tolerance": 0.5,
+      "explanation": "$5 \\div 3 \\approx 1.7$, or $6 \\div 3 = 2$ — anything near 2 is a good estimate." },
+    { "id": "cq2", "type": "mcq", "prompt": "Without calculating, which is clearly incorrect?",
+      "options": [
+        { "id": "a", "text": "$16.3 \\div 5.5 = 89.65$" }, { "id": "b", "text": "$21.2 \\times 0.43 = 9.116$" },
+        { "id": "c", "text": "$2.4 \\times 3.9 = 9.36$" }, { "id": "d", "text": "$28 \\div 0.76 = 36.84$" }
+      ], "answer": "a",
+      "explanation": "Dividing 16.3 by a number bigger than 1 must give less than 16.3, not 89.65." },
+    { "id": "cq3", "type": "numeric", "prompt": "Work out $0.035 \\div -0.5$.", "answer": -0.07,
+      "explanation": "$\\frac{0.35}{-5} = -0.07$." },
+    { "id": "cq4", "type": "numeric", "prompt": "Work out $17.37 \\div 0.03$.", "answer": 579,
+      "explanation": "$1737 \\div 3 = 579$." },
+    { "id": "cq5", "type": "numeric", "prompt": "Work out $6.45 \\times 0.2$.", "answer": 1.29,
+      "explanation": "$645 \\times 2 = 1290$, with 3 decimal places: 1.290." },
+    { "id": "cq6", "type": "truefalse", "prompt": "$43.5 \\times 0.986 = 45.891$", "answer": false,
+      "explanation": "False. Multiplying by a number less than 1 must give less than 43.5." },
+    { "id": "cq7", "type": "numeric", "prompt": "A car costs 8400 dollars. It is reduced by 12%. What is the new price?", "answer": 7392, "unit": "dollars",
+      "explanation": "$8400 \\times 0.88 = 7392$." },
+    { "id": "cq8", "type": "numeric", "prompt": "Find the simple interest on 500 dollars at 15% per year for 4 years.", "answer": 300, "unit": "dollars",
+      "explanation": "$500 \\times 0.15 \\times 4 = 300$." },
+    { "id": "cq9", "type": "numeric", "prompt": "500 dollars is invested at 15% compound interest for 4 years. What is it worth, to the nearest cent?", "answer": 874.5, "tolerance": 0.01, "unit": "dollars",
+      "explanation": "$500 \\times 1.15^4 = 874.50$ dollars — more than the 800 from simple interest." },
+    { "id": "cq10", "type": "mcq", "prompt": "What could $4000 \\times 1.08^5$ represent?",
+      "options": [
+        { "id": "a", "text": "4000 dollars invested for 5 years at 8% compound interest" },
+        { "id": "b", "text": "4000 dollars losing 8% of its value each year for 5 years" },
+        { "id": "c", "text": "4000 dollars at 5% for 8 years" },
+        { "id": "d", "text": "8% simple interest on 4000 dollars" }
+      ], "answer": "a",
+      "explanation": "A multiplier of 1.08 is an 8% increase, applied 5 times." },
+    { "id": "cq11", "type": "numeric", "prompt": "A coat costs 400 dollars. Its price rises by 20%, then the new price falls by 20%. What is the final price?", "answer": 384, "unit": "dollars",
+      "explanation": "$400 \\times 1.2 \\times 0.8 = 384$ — not back to 400." },
+    { "id": "cq12", "type": "numeric", "prompt": "Water leaks from a tank at 5% of what is left each minute. After how many whole minutes is it first at least half empty?", "answer": 14, "unit": "minutes",
+      "explanation": "$0.95^{13} = 0.513$ and $0.95^{14} = 0.488$, so after 14 minutes less than half remains.",
+      "difficulty": "challenge" }
+  ]
+}

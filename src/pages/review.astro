@@ -1,0 +1,41 @@
+---
+/** Mixed review / exam practice: random questions from across the course. */
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import MixedReview from '../components/exercises/MixedReview.tsx';
+import { getTopicNodes, getCatalog } from '../lib/site';
+import { prepareQuestions } from '../lib/render';
+
+const nodes = await getTopicNodes();
+const catalog = await getCatalog();
+
+// Build one big pool, tagged with the topic each question came from.
+const items = nodes.flatMap((n) => {
+  if (!n.quiz) return [];
+  return prepareQuestions(n.quiz.data.questions, n.quiz.id)
+    // Timed drills and flashcards are practice tools, not exam questions.
+    .filter((q) => q.type !== 'drill' && q.type !== 'flashcards')
+    .map((question) => ({
+      topicId: n.topic.id,
+      topicTitle: n.topic.data.title,
+      question,
+    }));
+});
+---
+
+<Base title="Exam practice" description="Build a mixed practice paper from across the whole Year 9 course.">
+  <div class="container page page-narrow">
+    <Breadcrumbs items={[{ label: 'Exam practice' }]} />
+
+    <header class="page-head">
+      <p class="page-eyebrow">Revision</p>
+      <h1>Exam practice</h1>
+      <p class="page-lead">
+        A mixed paper drawn at random from every topic you have worked through —
+        the best way to check that things have stuck.
+      </p>
+    </header>
+
+    <MixedReview client:load items={items} catalog={catalog} lengths={[5, 10, 15, 20]} />
+  </div>
+</Base>

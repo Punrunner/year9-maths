@@ -1,0 +1,144 @@
+---
+/**
+ * HOME
+ * Hero, at-a-glance progress band, and every strand as a grid of topic cards.
+ */
+import Base from '../layouts/Base.astro';
+import TopicCard from '../components/TopicCard.astro';
+import { HomeProgress } from '../components/Progress.tsx';
+import { getTree, getCatalog, getCounts } from '../lib/site';
+
+const tree = await getTree();
+const catalog = await getCatalog();
+const counts = await getCounts();
+
+const strandNames = Object.fromEntries(tree.map((s) => [s.strand.id, s.strand.data.short]));
+const firstLesson = tree[0]?.topics[0]?.lessons[0];
+const startHref = firstLesson ? `/lessons/${firstLesson.id}/` : (tree[0]?.href ?? '/');
+---
+
+<Base title="Home" wide>
+  <!-- =============================== HERO =============================== -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="hero-eyebrow">The Thai Guy · Mathematics</p>
+        <h1 class="hero-title">Year 9 Maths,<br />worked out properly.</h1>
+        <p class="hero-lead">
+          {counts.topics} topics across the three strands, {counts.lessons} lessons with
+          step-by-step worked solutions, and hundreds of practice questions that mark
+          themselves and explain where you went wrong.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href={startHref}>Start learning</a>
+          <a class="btn btn-secondary" href="/review/">Exam practice</a>
+        </div>
+        <ul class="hero-facts">
+          <li><strong>{counts.topics}</strong> topics</li>
+          <li><strong>{counts.lessons}</strong> lessons</li>
+          <li><strong>{counts.quizzes}</strong> scored quizzes</li>
+        </ul>
+      </div>
+
+      <!--
+        A real maths motif rather than clip art: a coordinate grid carrying a
+        straight line, a right-angled triangle on the axes, and a parabola.
+      -->
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 320 300" role="presentation">
+          <defs>
+            <linearGradient id="tri" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="var(--red)" stop-opacity="0.16" />
+              <stop offset="100%" stop-color="var(--red)" stop-opacity="0.04" />
+            </linearGradient>
+          </defs>
+
+          <g class="hero-grid">
+            {Array.from({ length: 11 }, (_, i) => (
+              <line x1={20 + i * 28} y1="14" x2={20 + i * 28} y2="266" />
+            ))}
+            {Array.from({ length: 10 }, (_, i) => (
+              <line x1="20" y1={14 + i * 28} x2="300" y2={14 + i * 28} />
+            ))}
+          </g>
+
+          <g class="hero-axis">
+            <line x1="20" y1="238" x2="304" y2="238" />
+            <line x1="48" y1="266" x2="48" y2="10" />
+          </g>
+
+          <polygon points="48,238 160,238 160,154" fill="url(#tri)" />
+          <path d="M148 238 L148 226 L160 226" class="hero-right-angle" />
+          <polyline points="48,238 160,238 160,154 48,238" class="hero-tri" />
+
+          <path d="M20 210 L300 42" class="hero-line" />
+          <circle cx="48" cy="193.6" r="5" class="hero-dot" />
+
+          <path d="M76 70 Q160 250 272 70" class="hero-curve" />
+
+          <text x="168" y="148" class="hero-label">c</text>
+          <text x="104" y="256" class="hero-label">b</text>
+          <text x="170" y="200" class="hero-label">a</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PROGRESS ============================= -->
+  <section class="section-alt progress-section">
+    <div class="container">
+      <h2 class="section-title">Where you are</h2>
+      <HomeProgress client:idle catalog={catalog} strandNames={strandNames} />
+    </div>
+  </section>
+
+  <!-- ============================= STRANDS ============================= -->
+  {tree.map((s) => (
+    <section class="section strand-section" style={`--accent: var(${s.strand.data.accent})`}>
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title" id={s.strand.id}>{s.strand.data.title}</h2>
+            <p class="section-sub">{s.strand.data.description}</p>
+          </div>
+          <a class="btn btn-ghost" href={s.href}>
+            All {s.topics.length} topics →
+          </a>
+        </div>
+
+        <div class="topic-grid">
+          {s.topics.map((node) => <TopicCard node={node} />)}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <!-- ============================== HOW =============================== -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">How each lesson works</h2>
+      <ol class="how-list">
+        <li class="how-step card">
+          <span class="how-num">1</span>
+          <h3>Read the overview</h3>
+          <p>What the idea is, why it matters, and the rules and formulas you need.</p>
+        </li>
+        <li class="how-step card">
+          <span class="how-num">2</span>
+          <h3>Work the examples</h3>
+          <p>Try it yourself, then reveal the solution one step at a time — not all at once.</p>
+        </li>
+        <li class="how-step card">
+          <span class="how-num">3</span>
+          <h3>Practise</h3>
+          <p>Fourteen kinds of question, marked instantly, with a hint when you are stuck.</p>
+        </li>
+        <li class="how-step card">
+          <span class="how-num">4</span>
+          <h3>Take the quiz</h3>
+          <p>A scored paper that mixes question types, then a full review of every answer.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+</Base>

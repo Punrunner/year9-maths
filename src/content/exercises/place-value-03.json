@@ -1,0 +1,148 @@
+{
+  "title": "Practice: bounds",
+  "intro": "Ten questions. Always ask first: *what was this rounded to?* Then halve it.",
+  "questions": [
+    {
+      "id": "v3-q1",
+      "type": "multi",
+      "prompt": "A number rounded to the nearest 10 is 240. Which of these could it be?",
+      "options": [
+        { "id": "a", "text": "243" },
+        { "id": "b", "text": "238" },
+        { "id": "c", "text": "245" },
+        { "id": "d", "text": "249" },
+        { "id": "e", "text": "235" },
+        { "id": "f", "text": "245.9" }
+      ],
+      "answers": ["a", "b", "e"],
+      "hints": ["The bounds are $235 \\le n < 245$."],
+      "explanation": "243, 238 and 235 all round to 240. 245, 245.9 and 249 round to 250 — so 245 is the upper bound but not a possible value.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "v3-q2",
+      "type": "table",
+      "prompt": "Complete the bounds for each rounded number.",
+      "columns": ["Number, n", "Rounded to", "Lower bound", "Upper bound"],
+      "rows": [
+        [{ "given": "4500" }, { "given": "nearest 100" }, { "answer": "4450" }, { "answer": "4550" }],
+        [{ "given": "7000" }, { "given": "nearest 1000" }, { "answer": "6500" }, { "answer": "7500" }],
+        [{ "given": "83 200" }, { "given": "nearest 100" }, { "answer": "83150" }, { "answer": "83250" }],
+        [{ "given": "690" }, { "given": "nearest 10" }, { "answer": "685" }, { "answer": "695" }]
+      ],
+      "hints": ["Halve the unit it was rounded to, then subtract and add."],
+      "explanation": "Nearest 100 → ±50, nearest 1000 → ±500, nearest 10 → ±5."
+    },
+    {
+      "id": "v3-q3",
+      "type": "table",
+      "prompt": "Now with decimal places and significant figures.",
+      "columns": ["Number, n", "Rounded to", "Lower bound", "Upper bound"],
+      "rows": [
+        [{ "given": "0.7" }, { "given": "1 d.p." }, { "answer": "0.65" }, { "answer": "0.75" }],
+        [{ "given": "3.78" }, { "given": "2 d.p." }, { "answer": "3.775" }, { "answer": "3.785" }],
+        [{ "given": "3400" }, { "given": "2 s.f." }, { "answer": "3350" }, { "answer": "3450" }],
+        [{ "given": "4000" }, { "given": "1 s.f." }, { "answer": "3500" }, { "answer": "4500" }]
+      ],
+      "hints": [
+        "1 d.p. means nearest 0.1, so go 0.05 either way.",
+        "3400 to 2 s.f.: the second significant figure is in the hundreds column."
+      ],
+      "explanation": "0.1 → ±0.05. 0.01 → ±0.005. 3400 to 2 s.f. is the nearest 100 → ±50. 4000 to 1 s.f. is the nearest 1000 → ±500.",
+      "difficulty": "core"
+    },
+    {
+      "id": "v3-q4",
+      "type": "manipulable",
+      "prompt": "A pencil is 14 cm long, correct to the nearest cm. Drag the marker to the **lower bound** of its length.",
+      "widget": "number-line",
+      "config": { "min": 13, "max": 15, "step": 0.1, "majorStep": 0.5, "label": "Length (cm)" },
+      "target": { "x": 13.5 },
+      "tolerance": 0.05,
+      "hints": ["Half of 1 cm is 0.5 cm."],
+      "explanation": "$14 - 0.5 = 13.5$ cm. The full inequality is $13.5 \\le p < 14.5$."
+    },
+    {
+      "id": "v3-q5",
+      "type": "mcq",
+      "prompt": "Ruth says a number that rounds to 4800 **to the nearest 10** lies in $4750 \\le n < 4850$. What is the correct inequality?",
+      "options": [
+        { "id": "a", "text": "$4795 \\le n < 4805$" },
+        { "id": "b", "text": "$4750 \\le n < 4850$ — Ruth is right" },
+        { "id": "c", "text": "$4790 \\le n < 4810$" },
+        { "id": "d", "text": "$4795 < n \\le 4805$" }
+      ],
+      "answer": "a",
+      "hints": ["Half of 10 is 5."],
+      "explanation": "Ruth used half of 100 by mistake. To the nearest 10 the bounds are $4800 \\pm 5$. The $\\le$ belongs at the lower bound, which is why d is wrong."
+    },
+    {
+      "id": "v3-q6",
+      "type": "fill-blank",
+      "prompt": "The Burj Khalifa is 828 m tall, correct to the nearest metre. Complete the inequality for its height $h$.",
+      "text": "[[a]] $\\le h <$ [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["827.5"], "size": 6 },
+        { "id": "b", "accept": ["828.5"], "size": 6 }
+      ],
+      "hints": ["Half of 1 m is 0.5 m."],
+      "explanation": "$827.5 \\le h < 828.5$."
+    },
+    {
+      "id": "v3-q7",
+      "type": "mcq",
+      "prompt": "A number rounded correct to the nearest 50 is 350. Which inequality shows its bounds?",
+      "options": [
+        { "id": "a", "text": "$325 \\le n < 375$" },
+        { "id": "b", "text": "$345 \\le n < 355$" },
+        { "id": "c", "text": "$349.5 \\le n < 350.5$" },
+        { "id": "d", "text": "$300 \\le n < 400$" }
+      ],
+      "answer": "a",
+      "hints": ["Half of 50 is 25."],
+      "explanation": "$350 \\pm 25$ gives $325 \\le n < 375$."
+    },
+    {
+      "id": "v3-q8",
+      "type": "multi",
+      "prompt": "The bounds for a number are $789.5 \\le n < 790.5$. Which of these **could** be how it was rounded?",
+      "options": [
+        { "id": "a", "text": "To the nearest whole number" },
+        { "id": "b", "text": "To 1 decimal place" },
+        { "id": "c", "text": "To 3 significant figures" },
+        { "id": "d", "text": "To the nearest 10" }
+      ],
+      "answers": ["a", "c"],
+      "hints": ["The gap between the bounds is 1, so it was rounded to the nearest 1."],
+      "explanation": "The width is 1, so it was rounded to the nearest whole number: 790. And 790 to 3 s.f. is the same thing. To 1 d.p. would give a width of 0.1, and to the nearest 10 a width of 10."
+    },
+    {
+      "id": "v3-q9",
+      "type": "numeric",
+      "prompt": "A rectangle measures 9 cm by 4 cm, both correct to the nearest cm. Work out the **upper bound** of its perimeter.",
+      "answer": 28,
+      "unit": "cm",
+      "hints": ["Upper bounds: 9.5 cm and 4.5 cm.", "Perimeter = $2 \\times (\\text{length} + \\text{width})$."],
+      "explanation": "$2 \\times (9.5 + 4.5) = 2 \\times 14 = 28$ cm."
+    },
+    {
+      "id": "v3-q10",
+      "type": "numeric",
+      "prompt": "A rugby pitch is 68 m wide, correct to the nearest metre. What is the **minimum** width it could be?",
+      "answer": 67.5,
+      "unit": "m",
+      "hints": ["The minimum is the lower bound."],
+      "explanation": "$68 - 0.5 = 67.5$ m."
+    },
+    {
+      "id": "v3-q11",
+      "type": "numeric",
+      "prompt": "A number rounded to 2 s.f. is 520. Jenna says it lies in $515 \\le n \\le 524$. Give a number that is **not** in Jenna's interval but does round to 520 to 2 s.f.",
+      "answer": 524.5,
+      "tolerance": 0.499,
+      "hints": ["Jenna has stopped at 524. What about numbers between 524 and 525?"],
+      "explanation": "Any number from just above 524 up to (not including) 525 works — for example 524.5 or 524.9. The correct bounds are $515 \\le n < 525$.",
+      "difficulty": "challenge"
+    }
+  ]
+}

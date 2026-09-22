@@ -1,0 +1,30 @@
+---
+/** The student's own dashboard: completion, XP, streak, quiz scores, badges. */
+import Base from '../layouts/Base.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { StatsPanel } from '../components/Progress.tsx';
+import { getTree, getCatalog } from '../lib/site';
+
+const tree = await getTree();
+const catalog = await getCatalog();
+const topicTitles = Object.fromEntries(
+  tree.flatMap((s) => s.topics.map((t) => [t.topic.id, t.topic.data.title])),
+);
+---
+
+<Base title="My progress" description="Your lessons, quiz scores, XP, streak and badges.">
+  <div class="container page">
+    <Breadcrumbs items={[{ label: 'My progress' }]} />
+
+    <header class="page-head">
+      <p class="page-eyebrow">Dashboard</p>
+      <h1>My progress</h1>
+      <p class="page-lead">
+        Everything here is stored in this browser only — there is no account and
+        nothing is uploaded anywhere.
+      </p>
+    </header>
+
+    <StatsPanel client:load catalog={catalog} topicTitles={topicTitles} />
+  </div>
+</Base>

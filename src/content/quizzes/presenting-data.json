@@ -1,0 +1,67 @@
+{
+  "title": "Presenting data quiz",
+  "topic": "presenting-data",
+  "description": "Ten questions drawn at random from a bank of thirteen, covering frequency polygons, stem-and-leaf diagrams, scatter graphs and choosing graphs.",
+  "pick": 10,
+  "timeLimitSec": 900,
+  "passMark": 70,
+  "questions": [
+    { "id": "pdq1", "type": "mcq", "prompt": "Where do you plot the point for the class $10 \\le t < 15$ with frequency 8 on a frequency polygon?",
+      "options": [
+        { "id": "a", "text": "$(12.5, 8)$" }, { "id": "b", "text": "$(10, 8)$" },
+        { "id": "c", "text": "$(15, 8)$" }, { "id": "d", "text": "$(8, 12.5)$" }
+      ], "answer": "a",
+      "explanation": "At the midpoint of the class, at the height of the frequency." },
+    { "id": "pdq2", "type": "numeric", "prompt": "Apples: frequencies 2, 15, 45, 27, 7, 4. How many apples were weighed?", "answer": 100,
+      "explanation": "$2 + 15 + 45 + 27 + 7 + 4 = 100$." },
+    { "id": "pdq3", "type": "truefalse", "prompt": "The points of a frequency polygon are joined with a smooth curve.", "answer": false,
+      "explanation": "False — they are joined with straight lines." },
+    { "id": "pdq4", "type": "mcq", "prompt": "In a back-to-back stem-and-leaf diagram with key $1 \\mid 7 = 17$ on the right, how do you read the left-hand leaves $5\\;3 \\mid 4$?",
+      "options": [
+        { "id": "a", "text": "43 and 45" }, { "id": "b", "text": "53 and 34" },
+        { "id": "c", "text": "45 and 43 — the order does not matter" }, { "id": "d", "text": "4.5 and 4.3" }
+      ], "answer": "a",
+      "explanation": "The left leaves read outwards from the stem: 43 then 45. (Without a key for the left you cannot be sure of place value — always include one.)" },
+    { "id": "pdq5", "type": "numeric", "prompt": "Ages: 12, 15, 15, 17, 19, 22, 22, 22. What is the median?", "answer": 18,
+      "explanation": "Eight values: the median is halfway between the 4th (17) and 5th (19), which is 18." },
+    { "id": "pdq6", "type": "fill-blank", "prompt": "For the ages 12, 15, 15, 17, 19, 22, 22, 22, find the mode and the range.", "text": "Mode: [[m]] $\\qquad$ Range: [[r]]",
+      "blanks": [{ "id": "m", "accept": ["22"], "size": 4 }, { "id": "r", "accept": ["10"], "size": 4 }],
+      "explanation": "22 appears three times. Range $= 22 - 12 = 10$." },
+    { "id": "pdq7", "type": "mcq", "prompt": "What correlation would you expect between the age of a car and its value?",
+      "options": [
+        { "id": "a", "text": "Negative" }, { "id": "b", "text": "Positive" }, { "id": "c", "text": "None" }
+      ], "answer": "a", "shuffleOptions": false,
+      "explanation": "As cars get older, their value generally goes down." },
+    { "id": "pdq8", "type": "hotspot", "prompt": "Click the **outlier** on this scatter graph of revision hours against test score.",
+      "figure": "scatter-graph",
+      "config": { "points": [[1, 35], [2, 42], [3, 50], [4, 55], [5, 62], [6, 30], [7, 75], [8, 81]], "xLabel": "Hours of revision", "yLabel": "Score (%)", "xRange": [0, 9], "yRange": [20, 90] },
+      "answer": "p5",
+      "explanation": "$(6, 30)$ is far below the upward trend — perhaps that student was ill on the day." },
+    { "id": "pdq9", "type": "truefalse", "prompt": "A line of best fit must pass through the origin.", "answer": false,
+      "explanation": "False. It follows the trend of the points, wherever that is." },
+    { "id": "pdq10", "type": "numeric", "prompt": "In a pie chart for 40 people, how many degrees represent 12 people?", "answer": 108, "unit": "°",
+      "explanation": "$\\frac{12}{40} \\times 360 = 108^\\circ$." },
+    { "id": "pdq11", "type": "mcq", "prompt": "Which graph is best for showing how a baby's mass changes month by month?",
+      "options": [
+        { "id": "a", "text": "Line (time-series) graph" }, { "id": "b", "text": "Pie chart" },
+        { "id": "c", "text": "Stem-and-leaf diagram" }, { "id": "d", "text": "Pictogram" }
+      ], "answer": "a",
+      "explanation": "A trend over time is best shown on a line graph." },
+    { "id": "pdq12", "type": "mcq", "prompt": "A bar chart's $y$-axis starts at 90 instead of 0. What is the effect?",
+      "options": [
+        { "id": "a", "text": "Small differences between bars look much bigger" },
+        { "id": "b", "text": "The differences look smaller" },
+        { "id": "c", "text": "It makes no difference" },
+        { "id": "d", "text": "The data values change" }
+      ], "answer": "a",
+      "explanation": "Cutting off the baseline exaggerates differences; the data itself is unchanged." },
+    { "id": "pdq13", "type": "multi", "prompt": "Select **every** true statement.",
+      "options": [
+        { "id": "a", "text": "Correlation does not prove that one variable causes the other" },
+        { "id": "b", "text": "Strong correlation means the points lie close to a straight line" },
+        { "id": "c", "text": "A scatter graph showing no correlation must have been drawn wrongly" },
+        { "id": "d", "text": "A line of best fit can be used to estimate values within the data range" }
+      ], "answers": ["a", "b", "d"],
+      "explanation": "No correlation is a perfectly valid result — it tells you there is no link." }
+  ]
+}

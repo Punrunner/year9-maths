@@ -1,0 +1,106 @@
+{
+  "title": "Practice: inverse proportion",
+  "intro": "Nine questions. Decide first whether the answer should be bigger or smaller.",
+  "questions": [
+    {
+      "id": "r3-q1",
+      "type": "numeric",
+      "prompt": "It takes 10 builders 6 days to build a wall. How long would 4 builders take?",
+      "answer": 15,
+      "unit": "days",
+      "hints": ["$10 \\times 6 = 60$ builder-days."],
+      "explanation": "$60 \\div 4 = 15$ days.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "r3-q2",
+      "type": "match",
+      "prompt": "Is each pair directly or inversely proportional?",
+      "left": [
+        { "id": "a", "text": "Number of taps and time to fill a tank" },
+        { "id": "b", "text": "English pounds and US dollars" },
+        { "id": "c", "text": "Number of friends and time to clean a house" },
+        { "id": "d", "text": "Laps run and total time at a steady pace" }
+      ],
+      "right": [
+        { "id": "i1", "text": "Inverse" },
+        { "id": "d1", "text": "Direct" },
+        { "id": "i2", "text": "Inverse" },
+        { "id": "d2", "text": "Direct" }
+      ],
+      "solution": { "a": "i1", "b": "d1", "c": "i2", "d": "d2" },
+      "hints": ["If one doubles, does the other double or halve?"],
+      "explanation": "More taps or more friends → less time (inverse). More pounds or more laps → more dollars or time (direct)."
+    },
+    {
+      "id": "r3-q3",
+      "type": "numeric",
+      "prompt": "It takes 8 machines 6 minutes to complete a job. How long will it take 12 machines?",
+      "answer": 4,
+      "unit": "minutes",
+      "explanation": "$8 \\times 6 = 48$ machine-minutes; $48 \\div 12 = 4$ minutes."
+    },
+    {
+      "id": "r3-q4",
+      "type": "numeric",
+      "prompt": "It takes 15 buckets of 4 litres to fill a fish tank. How many 6-litre buckets are needed?",
+      "answer": 10,
+      "explanation": "The tank holds $15 \\times 4 = 60$ litres, and $60 \\div 6 = 10$ buckets."
+    },
+    {
+      "id": "r3-q5",
+      "type": "numeric",
+      "prompt": "Sanjay travels at 50 km/h for 30 minutes. How many minutes would the same journey take at 75 km/h?",
+      "answer": 20,
+      "unit": "minutes",
+      "explanation": "$50 \\times 30 = 1500$; $1500 \\div 75 = 20$ minutes."
+    },
+    {
+      "id": "r3-q6",
+      "type": "table",
+      "prompt": "$m$ is inversely proportional to $b$. When $m = 20$, $b = 36$. Complete the table.",
+      "columns": ["m", "b"],
+      "rows": [
+        [{ "given": "20" }, { "given": "36" }],
+        [{ "given": "5" }, { "answer": "144" }],
+        [{ "answer": "12" }, { "given": "60" }]
+      ],
+      "rowHeader": false,
+      "hints": ["$m \\times b = 720$ every time."],
+      "explanation": "$720 \\div 5 = 144$ and $720 \\div 60 = 12$."
+    },
+    {
+      "id": "r3-q7",
+      "type": "mcq",
+      "prompt": "Which equation shows inverse proportion between $h$ and $k$?",
+      "options": [
+        { "id": "a", "text": "$hk = 8$" },
+        { "id": "b", "text": "$h = 8k$" },
+        { "id": "c", "text": "$h = \\frac{k}{8}$" },
+        { "id": "d", "text": "$h = k - 8$" }
+      ],
+      "answer": "a",
+      "hints": ["In inverse proportion, the product is constant."],
+      "explanation": "$hk = 8$ means $h = \\frac{8}{k}$. Options b and c are direct proportion; d is neither."
+    },
+    {
+      "id": "r3-q8",
+      "type": "numeric",
+      "prompt": "$x$ is inversely proportional to $y$. When $x = 15$, $y = 24$. Find $x$ when $y = 20$.",
+      "answer": 18,
+      "explanation": "$k = 15 \\times 24 = 360$, so $x = 360 \\div 20 = 18$."
+    },
+    {
+      "id": "r3-q9",
+      "type": "steps",
+      "prompt": "Two changes at once.",
+      "scenario": "It takes 10 minutes to fill a 200-litre tank using 4 taps. How long would it take to fill a 500-litre tank using 2 taps?",
+      "steps": [
+        { "kind": "numeric", "prompt": "With 4 taps, how long does 500 litres take? (direct proportion)", "answer": 25, "unit": "minutes" },
+        { "kind": "numeric", "prompt": "With only 2 taps? (inverse proportion)", "answer": 50, "unit": "minutes" }
+      ],
+      "explanation": "$10 \\times 2.5 = 25$ minutes with 4 taps; halving the taps doubles the time: 50 minutes.",
+      "difficulty": "challenge"
+    }
+  ]
+}

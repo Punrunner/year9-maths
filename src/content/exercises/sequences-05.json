@@ -1,0 +1,154 @@
+{
+  "title": "Practice: real-life graphs",
+  "intro": "Nine questions, including three where you click straight on a distance–time graph, and a timed speed drill.",
+  "questions": [
+    {
+      "id": "s5-q1",
+      "type": "hotspot",
+      "prompt": "This is a distance–time graph for a journey. **Click the section where the speed is greatest.**",
+      "figure": "distance-time",
+      "answer": "fastest",
+      "hints": [
+        "Greater speed means a steeper line.",
+        "Which of the three sections climbs most sharply?"
+      ],
+      "explanation": "The first section is the steepest, so it has the greatest speed: 40 km in 1 hour, which is 40 km/h."
+    },
+    {
+      "id": "s5-q2",
+      "type": "hotspot",
+      "prompt": "On the same graph, **click the section where the object is not moving.**",
+      "figure": "distance-time",
+      "answer": "stationary",
+      "hints": [
+        "If the distance is not changing, the object has stopped.",
+        "Look for the flat section."
+      ],
+      "explanation": "The flat middle section is where the distance stays at 40 km, so the object is **stationary**. Careful — a flat line on a *speed*–time graph would mean the opposite: moving steadily."
+    },
+    {
+      "id": "s5-q3",
+      "type": "numeric",
+      "prompt": "A car travels 40 km in the first hour of its journey. What is its speed, in km/h?",
+      "answer": 40,
+      "unit": "km/h",
+      "hints": ["Speed $=$ distance $\\div$ time."],
+      "explanation": "$\\frac{40 \\text{ km}}{1 \\text{ h}} = 40$ km/h. On the graph this is simply the gradient of that section.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "s5-q4",
+      "type": "mcq",
+      "prompt": "On a **speed**–time graph, what does a horizontal (flat) line mean?",
+      "options": [
+        { "id": "a", "text": "The object is moving at a constant speed" },
+        { "id": "b", "text": "The object is stationary" },
+        { "id": "c", "text": "The object is accelerating steadily" },
+        { "id": "d", "text": "The object is going backwards" }
+      ],
+      "answer": "a",
+      "hints": [
+        "Read the vertical axis: it is **speed**, not distance.",
+        "If speed is not changing, what is the object doing?"
+      ],
+      "explanation": "On a speed–time graph the vertical axis is speed, so a flat line means the speed is not changing — a **constant speed**. On a *distance*–time graph the same shape would mean stationary. Always check the axis label first."
+    },
+    {
+      "id": "s5-q5",
+      "type": "steps",
+      "prompt": "Find an average speed for a whole journey.",
+      "scenario": "A cyclist rides 40 km in 1 hour, rests for 1.5 hours, then rides a further 15 km in 2.5 hours.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "What is the total distance travelled, in km?",
+          "answer": 55,
+          "feedback": "$40 + 15 = 55$ km."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "What is the total time taken, in hours? (Do not forget the rest.)",
+          "answer": 5,
+          "feedback": "$1 + 1.5 + 2.5 = 5$ hours — the rest counts.",
+          "hint": "The clock keeps running while the cyclist rests."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Now find the average speed, in km/h.",
+          "answer": 11,
+          "feedback": "$55 \\div 5 = 11$ km/h."
+        }
+      ],
+      "hints": ["Average speed $=$ total distance $\\div$ total time."],
+      "explanation": "$\\frac{55 \\text{ km}}{5 \\text{ h}} = 11$ km/h. Note this is **not** the average of the two riding speeds (40 km/h and 6 km/h) — the rest and the unequal durations both pull it down."
+    },
+    {
+      "id": "s5-q6",
+      "type": "numeric",
+      "prompt": "A car slows from $25$ m/s to $0$ m/s over 12 seconds. Find the size of its deceleration, in $\\text{m/s}^2$. Give your answer to 1 decimal place.",
+      "answer": 2.1,
+      "tolerance": 0.05,
+      "unit": "m/s²",
+      "hints": [
+        "Acceleration $=$ change in speed $\\div$ time.",
+        "The change in speed is $25$ m/s; divide by 12."
+      ],
+      "explanation": "$\\frac{25}{12} = 2.083\\dots \\approx 2.1\\ \\text{m/s}^2$. As an acceleration it would be written $-2.1\\ \\text{m/s}^2$, but the *size* of the deceleration is $2.1$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "s5-q7",
+      "type": "match",
+      "prompt": "Match each pair of axes to what its gradient measures.",
+      "left": [
+        { "id": "g1", "text": "Distance against time" },
+        { "id": "g2", "text": "Speed against time" },
+        { "id": "g3", "text": "Cost against number of items" },
+        { "id": "g4", "text": "Volume against time" }
+      ],
+      "right": [
+        { "id": "h1", "text": "Speed" },
+        { "id": "h2", "text": "Acceleration" },
+        { "id": "h3", "text": "Price per item" },
+        { "id": "h4", "text": "Flow rate" }
+      ],
+      "solution": { "g1": "h1", "g2": "h2", "g3": "h3", "g4": "h4" },
+      "hints": ["The gradient is always \u201cvertical axis per horizontal axis\u201d."],
+      "explanation": "A gradient is always *how much the vertical quantity changes per unit of the horizontal one*. Distance per time is speed; speed per time is acceleration; cost per item is the price; volume per time is a flow rate."
+    },
+    {
+      "id": "s5-q8",
+      "type": "truefalse",
+      "prompt": "**Driving at 60 km/h for 1 hour and then 20 km/h for 3 hours gives an average speed of 40 km/h.**",
+      "answer": false,
+      "hints": [
+        "Work out the total distance and the total time properly.",
+        "$60 \\times 1 = 60$ km, and $20 \\times 3 = 60$ km."
+      ],
+      "explanation": "False. Total distance $= 60 + 60 = 120$ km, total time $= 4$ hours, so the average speed is $\\frac{120}{4} = 30$ km/h. Averaging 60 and 20 ignores the fact that far more time was spent at the slower speed.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "s5-q9",
+      "type": "drill",
+      "prompt": "Quick-fire: speed, distance and time. Give numbers only.",
+      "durationSec": 90,
+      "count": 8,
+      "pool": [
+        { "id": "v1", "prompt": "120 km in 2 hours. Speed in km/h?", "accept": ["60"] },
+        { "id": "v2", "prompt": "150 km in 3 hours. Speed in km/h?", "accept": ["50"] },
+        { "id": "v3", "prompt": "60 km/h for 4 hours. Distance in km?", "accept": ["240"] },
+        { "id": "v4", "prompt": "80 km at 40 km/h. Time in hours?", "accept": ["2"] },
+        { "id": "v5", "prompt": "100 m in 20 s. Speed in m/s?", "accept": ["5"] },
+        { "id": "v6", "prompt": "45 km in 30 minutes. Speed in km/h?", "accept": ["90"] },
+        { "id": "v7", "prompt": "12 m/s for 30 s. Distance in m?", "accept": ["360"] },
+        { "id": "v8", "prompt": "200 km at 50 km/h. Time in hours?", "accept": ["4"] },
+        { "id": "v9", "prompt": "Speed goes 0 to 20 m/s in 5 s. Acceleration in m/s²?", "accept": ["4"] },
+        { "id": "v10", "prompt": "Speed goes 30 to 10 m/s in 4 s. Size of deceleration in m/s²?", "accept": ["5"] },
+        { "id": "v11", "prompt": "90 km in 1.5 hours. Speed in km/h?", "accept": ["60"] },
+        { "id": "v12", "prompt": "25 m/s for 8 s. Distance in m?", "accept": ["200"] }
+      ],
+      "explanation": "Everything here is one of $\\text{speed} = \\frac{d}{t}$, $d = s \\times t$, or $t = \\frac{d}{s}$. Watch the units — 30 minutes is 0.5 hours, which is why 45 km in half an hour is 90 km/h."
+    }
+  ]
+}

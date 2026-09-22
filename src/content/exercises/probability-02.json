@@ -1,0 +1,172 @@
+{
+  "title": "Practice: tree diagrams",
+  "intro": "Nine questions, including a diagram you click on and a set of steps to put in order.",
+  "questions": [
+    {
+      "id": "p2-q1",
+      "type": "hotspot",
+      "prompt": "This tree diagram is for tossing a coin twice. **Click the branch that represents getting a tail on the second toss, after a head on the first.**",
+      "figure": "tree-diagram",
+      "config": {
+        "first": ["H", "T"],
+        "second": ["H", "T"],
+        "p1": "½",
+        "p2": "½"
+      },
+      "answer": "branch-ab",
+      "hints": [
+        "The first toss is the left-hand split; the second toss is the right-hand split.",
+        "Start on the upper first branch (H), then take its lower second branch."
+      ],
+      "explanation": "Following the upper branch (head) and then its lower branch (tail) gives the outcome HT. Multiplying along that path: $\\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$."
+    },
+    {
+      "id": "p2-q2",
+      "type": "order",
+      "prompt": "Put these steps for solving a tree-diagram question into the right order.",
+      "items": [
+        { "id": "s1", "text": "Draw the first split, one branch per outcome of the first event" },
+        { "id": "s2", "text": "Label those branches with their probabilities and check they add to 1" },
+        { "id": "s3", "text": "Draw the second split from the end of every first branch" },
+        { "id": "s4", "text": "Multiply along each path to get the probability of each combined outcome" },
+        { "id": "s5", "text": "Add the outcomes that count as a success" }
+      ],
+      "solution": ["s1", "s2", "s3", "s4", "s5"],
+      "hints": ["Work left to right across the tree, then finish by combining what you need."],
+      "explanation": "Build the tree left to right, labelling as you go, then multiply **along** paths and add **down** the column of outcomes you want."
+    },
+    {
+      "id": "p2-q3",
+      "type": "numeric",
+      "prompt": "A spinner has 3 red sections and 1 blue section, and is spun twice. Find $P(\\text{red, then red})$.",
+      "answer": "9/16",
+      "accept": ["0.5625"],
+      "tolerance": 0.001,
+      "hints": [
+        "$P(\\text{red}) = \\frac{3}{4}$ on each spin, because the spinner does not change.",
+        "Multiply along the RR path."
+      ],
+      "explanation": "$\\frac{3}{4} \\times \\frac{3}{4} = \\frac{9}{16} = 0.5625$."
+    },
+    {
+      "id": "p2-q4",
+      "type": "mcq",
+      "prompt": "A bag has 5 green and 3 white counters. One is taken out and **not** replaced. If it was green, what is the probability the second counter is also green?",
+      "options": [
+        { "id": "a", "text": "$\\frac{4}{7}$" },
+        { "id": "b", "text": "$\\frac{5}{8}$" },
+        { "id": "c", "text": "$\\frac{4}{8}$" },
+        { "id": "d", "text": "$\\frac{5}{7}$" }
+      ],
+      "answer": "a",
+      "hints": [
+        "How many counters are left in the bag altogether?",
+        "How many of those are green, now that one green has gone?"
+      ],
+      "explanation": "One green has been removed, so 4 green remain out of 7 counters: $\\frac{4}{7}$. Both numbers drop, because the counter that left was green."
+    },
+    {
+      "id": "p2-q5",
+      "type": "table",
+      "prompt": "A bag has 5 green (G) and 3 white (W) counters. Two are taken **without replacement**. Complete the second-pick probabilities.",
+      "columns": ["First counter", "P(green second)", "P(white second)"],
+      "rows": [
+        [{ "given": "Green" }, { "answer": "4/7", "accept": ["0.571"], "tolerance": 0.002 }, { "answer": "3/7", "accept": ["0.429"], "tolerance": 0.002 }],
+        [{ "given": "White" }, { "answer": "5/7", "accept": ["0.714"], "tolerance": 0.002 }, { "answer": "2/7", "accept": ["0.286"], "tolerance": 0.002 }]
+      ],
+      "hints": [
+        "After one counter is taken there are always 7 left — that is the denominator every time.",
+        "Only the colour that was removed goes down by one."
+      ],
+      "explanation": "The denominator is 7 in every case. After a green: 4 green, 3 white. After a white: 5 green, 2 white. Notice each row adds to $\\frac{7}{7} = 1$, which is the check worth doing every time.",
+      "difficulty": "core"
+    },
+    {
+      "id": "p2-q6",
+      "type": "numeric",
+      "prompt": "Still with 5 green and 3 white, taken without replacement: find $P(\\text{both green})$. Give your answer as a fraction in its simplest form.",
+      "answer": "5/14",
+      "accept": ["20/56", "0.357"],
+      "tolerance": 0.002,
+      "hints": [
+        "Multiply along the green-then-green path: $\\frac{5}{8} \\times \\frac{4}{7}$.",
+        "$\\frac{20}{56}$ cancels — both numbers divide by 4."
+      ],
+      "explanation": "$\\frac{5}{8} \\times \\frac{4}{7} = \\frac{20}{56} = \\frac{5}{14}$."
+    },
+    {
+      "id": "p2-q7",
+      "type": "steps",
+      "prompt": "The \"at least one\" shortcut, step by step.",
+      "scenario": "The probability that it rains on any given day is $0.3$, and each day is independent of the last. Find the probability that it rains **at least once** over three days.",
+      "steps": [
+        {
+          "kind": "mcq",
+          "prompt": "Which is quicker: adding every path with rain in it, or finding \"no rain at all\" first?",
+          "options": [
+            { "id": "a", "text": "Find \"no rain at all\" and subtract from 1" },
+            { "id": "b", "text": "Add up all seven rainy paths" }
+          ],
+          "answer": "a",
+          "feedback": "Exactly — seven paths versus one.",
+          "hint": "How many of the eight possible paths contain no rain at all?"
+        },
+        {
+          "kind": "numeric",
+          "prompt": "What is the probability of no rain on a single day?",
+          "answer": 0.7,
+          "accept": ["7/10", "70%"],
+          "feedback": "$1 - 0.3 = 0.7$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "What is the probability of no rain on all three days? Give your answer as a decimal.",
+          "answer": 0.343,
+          "tolerance": 0.001,
+          "feedback": "$0.7 \\times 0.7 \\times 0.7 = 0.343$.",
+          "hint": "Multiply $0.7$ by itself three times."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Finally, find the probability of rain on at least one day.",
+          "answer": 0.657,
+          "tolerance": 0.001,
+          "feedback": "$1 - 0.343 = 0.657$."
+        }
+      ],
+      "hints": ["$P(\\text{at least one}) = 1 - P(\\text{none})$."],
+      "explanation": "$P(\\text{no rain at all}) = 0.7^3 = 0.343$, so $P(\\text{at least one rainy day}) = 1 - 0.343 = 0.657$. With three events this saves adding seven separate paths.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "p2-q8",
+      "type": "multi",
+      "prompt": "Select **every** statement that is true about tree diagrams.",
+      "options": [
+        { "id": "a", "text": "You multiply along a path" },
+        { "id": "b", "text": "You add the outcomes you want at the end" },
+        { "id": "c", "text": "Each split's branches must add up to 1" },
+        { "id": "d", "text": "All the final outcome probabilities must add up to 1" },
+        { "id": "e", "text": "Without replacement, the second branches are the same as the first" }
+      ],
+      "answers": ["a", "b", "c", "d"],
+      "hints": ["Four of the five are true. The odd one out is about replacement."],
+      "explanation": "**a**–**d** are all true and are worth memorising. **e** is false — it describes what happens **with** replacement. Without replacement, the denominator drops by one."
+    },
+    {
+      "id": "p2-q9",
+      "type": "numeric",
+      "prompt": "A box has 4 fruit sweets and 6 mint sweets. Two are taken without replacement. Find $P(\\text{one of each})$, as a fraction in its simplest form.",
+      "answer": "8/15",
+      "accept": ["48/90", "0.533"],
+      "tolerance": 0.002,
+      "hints": [
+        "There are two paths that give one of each: fruit-then-mint, and mint-then-fruit.",
+        "$\\frac{4}{10} \\times \\frac{6}{9}$ and $\\frac{6}{10} \\times \\frac{4}{9}$ — then add.",
+        "The two paths give the same answer, so you can double one of them."
+      ],
+      "explanation": "Fruit then mint: $\\frac{4}{10} \\times \\frac{6}{9} = \\frac{24}{90}$. Mint then fruit: $\\frac{6}{10} \\times \\frac{4}{9} = \\frac{24}{90}$. Adding gives $\\frac{48}{90} = \\frac{8}{15}$. The two paths always match here, which is a handy check.",
+      "difficulty": "challenge"
+    }
+  ]
+}

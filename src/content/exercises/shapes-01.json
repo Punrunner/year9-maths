@@ -1,0 +1,120 @@
+{
+  "title": "Practice: inscribed polygons",
+  "intro": "Nine questions. Have compasses and a ruler nearby — trying the constructions on paper makes these much easier.",
+  "questions": [
+    {
+      "id": "s1-q1",
+      "type": "order",
+      "prompt": "Put the steps for constructing an inscribed regular hexagon in order.",
+      "items": [
+        { "id": "a", "text": "Draw a circle and keep the compasses set to its radius" },
+        { "id": "b", "text": "Mark an arc on the circumference and label it A" },
+        { "id": "c", "text": "With the point on A, mark the next arc along and label it B" },
+        { "id": "d", "text": "Repeat to mark C, D, E and F" },
+        { "id": "e", "text": "Join A to B, B to C, … and F back to A" }
+      ],
+      "solution": ["a", "b", "c", "d", "e"],
+      "hints": ["You cannot step round the circle until the compasses are set to the radius."],
+      "explanation": "Setting the compasses to the radius first is the key step, because every side of a regular hexagon is exactly one radius long."
+    },
+    {
+      "id": "s1-q2",
+      "type": "truefalse",
+      "prompt": "Each side of a regular hexagon inscribed in a circle is the same length as the circle's radius.",
+      "answer": true,
+      "hints": ["The hexagon splits into six triangles meeting at the centre. What kind of triangles?"],
+      "explanation": "True. The angle at the centre of each triangle is $360^\\circ \\div 6 = 60^\\circ$, and two of its sides are radii, so all three angles are $60^\\circ$. The triangles are equilateral, so the hexagon side equals the radius."
+    },
+    {
+      "id": "s1-q3",
+      "type": "hotspot",
+      "prompt": "The side of an inscribed regular hexagon is equal to one part of this circle. Click that part.",
+      "figure": "circle-parts",
+      "answer": "radius",
+      "hints": ["It runs from the centre to the circumference."],
+      "explanation": "The **radius**. That is why you keep the compasses set to the radius when you step round the circle to make a hexagon."
+    },
+    {
+      "id": "s1-q4",
+      "type": "table",
+      "prompt": "Complete the angle at the centre for each regular polygon.",
+      "columns": ["Polygon", "Number of sides", "Angle at the centre (°)"],
+      "rows": [
+        [{ "given": "Equilateral triangle" }, { "given": "3" }, { "answer": "120" }],
+        [{ "given": "Square" }, { "given": "4" }, { "answer": "90" }],
+        [{ "given": "Regular hexagon" }, { "given": "6" }, { "answer": "60" }],
+        [{ "given": "Regular octagon" }, { "given": "8" }, { "answer": "45" }],
+        [{ "given": "Regular dodecagon" }, { "answer": "12" }, { "given": "30" }]
+      ],
+      "hints": ["Angle at the centre $= 360^\\circ \\div n$."],
+      "explanation": "$360 \\div 3 = 120$, $360 \\div 4 = 90$, $360 \\div 6 = 60$, $360 \\div 8 = 45$, and $360 \\div 30 = 12$ sides."
+    },
+    {
+      "id": "s1-q5",
+      "type": "manipulable",
+      "prompt": "Use the explorer to find the regular polygon whose angle at the centre is $40^\\circ$.",
+      "widget": "polygon-angles",
+      "config": { "inscribed": true },
+      "target": { "n": 9 },
+      "tolerance": 0,
+      "hints": ["$360 \\div n = 40$. What is $n$?"],
+      "explanation": "$360 \\div 40 = 9$, so it is a regular **nonagon** (9 sides)."
+    },
+    {
+      "id": "s1-q6",
+      "type": "mcq",
+      "prompt": "You have constructed the six points of an inscribed hexagon, A to F. How do you get an inscribed **equilateral triangle**?",
+      "options": [
+        { "id": "a", "text": "Join every other point: A to C, C to E, E to A" },
+        { "id": "b", "text": "Join A, B and C" },
+        { "id": "c", "text": "Draw three radii" },
+        { "id": "d", "text": "Bisect each side of the hexagon" }
+      ],
+      "answer": "a",
+      "hints": ["An equilateral triangle needs its three vertices spaced evenly round the circle."],
+      "explanation": "Joining every other point gives three vertices $120^\\circ$ apart at the centre, which is an equilateral triangle. A, B and C are bunched together on one side."
+    },
+    {
+      "id": "s1-q7",
+      "type": "mcq",
+      "prompt": "Starting from an inscribed square, what do you construct to get a regular **octagon**?",
+      "options": [
+        { "id": "a", "text": "The perpendicular bisectors of two neighbouring sides of the square" },
+        { "id": "b", "text": "A second, larger circle" },
+        { "id": "c", "text": "An angle of $60^\\circ$ at each vertex" },
+        { "id": "d", "text": "The diagonals of the square" }
+      ],
+      "answer": "a",
+      "hints": ["You need four new points exactly halfway between the square's vertices."],
+      "explanation": "The perpendicular bisector of a side of the square passes through the centre and cuts the circle halfway between two vertices. Bisecting AY and AX gives the four new points, making eight equally spaced vertices."
+    },
+    {
+      "id": "s1-q8",
+      "type": "numeric",
+      "prompt": "A square is inscribed in a circle of radius 10 cm. Its diagonals are diameters. Find the area of the square.",
+      "answer": 200,
+      "unit": "cm²",
+      "hints": [
+        "Each diagonal is 20 cm long.",
+        "Split the square into 4 right-angled triangles with legs of 10 cm, or use Pythagoras to find the side."
+      ],
+      "explanation": "The square splits into four triangles each with base and height 10 cm: $4 \\times \\frac{1}{2} \\times 10 \\times 10 = 200\\ \\text{cm}^2$. (Or: side$^2 = 10^2 + 10^2 = 200$.)",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "s1-q9",
+      "type": "multi",
+      "prompt": "Which of these are you allowed to use when a question says **construct**?",
+      "options": [
+        { "id": "a", "text": "Compasses" },
+        { "id": "b", "text": "A ruler, for drawing straight lines" },
+        { "id": "c", "text": "A ruler, for measuring lengths" },
+        { "id": "d", "text": "A protractor" },
+        { "id": "e", "text": "A sharp pencil" }
+      ],
+      "answers": ["a", "b", "e"],
+      "hints": ["Constructions are exact because nothing is measured."],
+      "explanation": "Compasses, a straight edge and a pencil only. Measuring with a ruler or a protractor would introduce the errors that constructions are designed to avoid."
+    }
+  ]
+}

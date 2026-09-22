@@ -1,0 +1,152 @@
+{
+  "title": "Expressions and formulae quiz",
+  "topic": "expressions-formulae",
+  "description": "Twelve questions drawn at random from a bank of sixteen, covering simplifying, algebraic fractions, expanding brackets, substitution and rearranging.",
+  "pick": 12,
+  "timeLimitSec": 1200,
+  "passMark": 70,
+  "questions": [
+    {
+      "id": "xq1",
+      "type": "algebraic",
+      "prompt": "Simplify $3c^2 \\times c^3 \\times 2c^4$.",
+      "answer": "6c^9",
+      "variables": ["c"],
+      "explanation": "$3 \\times 2 = 6$ and $c^{2+3+4} = c^9$, so $6c^9$."
+    },
+    {
+      "id": "xq2",
+      "type": "mcq",
+      "prompt": "Simplify $(3x^2)^4$.",
+      "options": [
+        { "id": "a", "text": "$81x^8$" },
+        { "id": "b", "text": "$12x^8$" },
+        { "id": "c", "text": "$3x^8$" },
+        { "id": "d", "text": "$81x^6$" }
+      ],
+      "answer": "a",
+      "explanation": "$3^4 = 81$ and $(x^2)^4 = x^8$, so $81x^8$."
+    },
+    {
+      "id": "xq3",
+      "type": "algebraic",
+      "prompt": "Simplify $mn + 4xy + 17xy - mn + xy$.",
+      "answer": "22*x*y",
+      "variables": ["m", "n", "x", "y"],
+      "explanation": "The $mn$ terms cancel: $mn - mn = 0$. The $xy$ terms give $4 + 17 + 1 = 22$, so $22xy$."
+    },
+    {
+      "id": "xq4",
+      "type": "algebraic",
+      "prompt": "Simplify $\\dfrac{k^4l^2m^5}{kl^2m^3}$.",
+      "answer": "k^3*m^2",
+      "variables": ["k", "l", "m"],
+      "explanation": "$k^{4-1} = k^3$, $l^{2-2} = l^0 = 1$, $m^{5-3} = m^2$. So $k^3m^2$."
+    },
+    {
+      "id": "xq5",
+      "type": "algebraic",
+      "prompt": "Simplify $\\dfrac{3a}{4} - \\dfrac{a}{6} + \\dfrac{a}{3}$.",
+      "answer": "11a/12",
+      "variables": ["a"],
+      "explanation": "Common denominator 12: $\\frac{9a}{12} - \\frac{2a}{12} + \\frac{4a}{12} = \\frac{11a}{12}$."
+    },
+    {
+      "id": "xq6",
+      "type": "algebraic",
+      "prompt": "Simplify $3 + \\dfrac{2}{x}$ as a single fraction.",
+      "answer": "(3x + 2)/x",
+      "variables": ["x"],
+      "explanation": "$3 = \\frac{3x}{x}$, so $\\frac{3x}{x} + \\frac{2}{x} = \\frac{3x + 2}{x}$."
+    },
+    {
+      "id": "xq7",
+      "type": "algebraic",
+      "prompt": "Simplify $\\dfrac{42p - 63}{28}$.",
+      "answer": "(6p - 9)/4",
+      "variables": ["p"],
+      "explanation": "The HCF of 42, 63 and 28 is 7. $\\frac{7(6p - 9)}{28} = \\frac{6p - 9}{4}$."
+    },
+    {
+      "id": "xq8",
+      "type": "algebraic",
+      "prompt": "Expand and simplify $(x - 6)(x + 7)$.",
+      "answer": "x^2 + x - 42",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "$x^2 + 7x - 6x - 42 = x^2 + x - 42$."
+    },
+    {
+      "id": "xq9",
+      "type": "algebraic",
+      "prompt": "Expand and simplify $(x - 11)^2$.",
+      "answer": "x^2 - 22x + 121",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "$(x - 11)(x - 11) = x^2 - 11x - 11x + 121 = x^2 - 22x + 121$."
+    },
+    {
+      "id": "xq10",
+      "type": "truefalse",
+      "prompt": "$(x + 12)(x - 12) = x^2 - 144$",
+      "answer": true,
+      "explanation": "True. This is the difference of two squares: the middle terms $-12x$ and $+12x$ cancel, leaving $x^2 - 12^2 = x^2 - 144$."
+    },
+    {
+      "id": "xq11",
+      "type": "numeric",
+      "prompt": "Using $A = 100t - 5p^2$, find $A$ when $p = -4$ and $t = 0.3$.",
+      "answer": -50,
+      "explanation": "$A = 100(0.3) - 5(-4)^2 = 30 - 5 \\times 16 = 30 - 80 = -50$."
+    },
+    {
+      "id": "xq12",
+      "type": "numeric",
+      "prompt": "Find the value of $5p^4 + 2p^2 + 20$ when $p = -10$.",
+      "answer": 50220,
+      "explanation": "$(-10)^4 = 10000$ and $(-10)^2 = 100$. So $50000 + 200 + 20 = 50220$."
+    },
+    {
+      "id": "xq13",
+      "type": "algebraic",
+      "prompt": "A rectangle has width $n + 2$ and its length is 5 more than the width. Find an expression for its area, expanded.",
+      "answer": "n^2 + 9n + 14",
+      "variables": ["n"],
+      "requireForm": true,
+      "explanation": "Length $= n + 7$. Area $= (n + 2)(n + 7) = n^2 + 9n + 14$."
+    },
+    {
+      "id": "xq14",
+      "type": "algebraic",
+      "prompt": "Make $b$ the subject of $a = 3b - c$.",
+      "answer": "(a + c)/3",
+      "variables": ["a", "c"],
+      "explanation": "Add $c$: $a + c = 3b$. Divide by 3: $b = \\frac{a + c}{3}$."
+    },
+    {
+      "id": "xq15",
+      "type": "mcq",
+      "prompt": "Which is $r$ when $V = \\pi r^2 h$ is rearranged?",
+      "options": [
+        { "id": "a", "text": "$r = \\sqrt{\\dfrac{V}{\\pi h}}$" },
+        { "id": "b", "text": "$r = \\dfrac{V}{\\pi h^2}$" },
+        { "id": "c", "text": "$r = \\sqrt{V - \\pi h}$" },
+        { "id": "d", "text": "$r = \\dfrac{\\sqrt{V}}{\\pi h}$" }
+      ],
+      "answer": "a",
+      "explanation": "Divide both sides by $\\pi h$ to get $r^2 = \\frac{V}{\\pi h}$, then square root. Option d only square-roots the $V$."
+    },
+    {
+      "id": "xq16",
+      "type": "order",
+      "prompt": "Put these steps in order to make $x$ the subject of $g = \\dfrac{f}{x} + y$.",
+      "items": [
+        { "id": "a", "text": "$g - y = \\dfrac{f}{x}$" },
+        { "id": "b", "text": "$x(g - y) = f$" },
+        { "id": "c", "text": "$x = \\dfrac{f}{g - y}$" }
+      ],
+      "solution": ["a", "b", "c"],
+      "explanation": "Subtract $y$, multiply by $x$ to bring it out of the denominator, then divide by the bracket $(g - y)$."
+    }
+  ]
+}

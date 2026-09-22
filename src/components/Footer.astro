@@ -1,0 +1,27 @@
+---
+/** Site footer: who made it, and a plain-English note about privacy. */
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <p class="footer-name">Year 9 Mathematics</p>
+      <p class="footer-sub">Taught by <strong>The Thai Guy</strong> · Primary to IGCSE</p>
+    </div>
+
+    <nav class="footer-links" aria-label="Footer">
+      <a href="/">Home</a>
+      <a href="/review/">Exam practice</a>
+      <a href="/progress/">My progress</a>
+    </nav>
+
+    <p class="footer-note">
+      Your progress is saved in this browser only. Nothing is uploaded, and there is
+      no account to create. Using a different device or clearing your browser data
+      starts you fresh.
+    </p>
+
+    <p class="footer-legal">&copy; {year} The Thai Guy. All lesson text and questions written for this site.</p>
+  </div>
+</footer>

@@ -1,0 +1,227 @@
+{
+  "title": "Practice: solving quadratics",
+  "intro": "Nine questions. Where there are two solutions, you can type them in either order.",
+  "questions": [
+    {
+      "id": "u4-q1",
+      "type": "fill-blank",
+      "prompt": "Solve $(x - 3)(x + 8) = 0$.",
+      "text": "$x =$ [[a]] or $x =$ [[b]]",
+      "blanks": [
+        {
+          "id": "a",
+          "accept": [
+            "-8",
+            "−8"
+          ],
+          "size": 4,
+          "group": "roots"
+        },
+        {
+          "id": "b",
+          "accept": [
+            "3"
+          ],
+          "size": 4,
+          "group": "roots"
+        }
+      ],
+      "explanation": "Set each bracket to 0: $x = 3$ or $x = -8$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "u4-q2",
+      "type": "steps",
+      "prompt": "Solve step by step.",
+      "scenario": "Solve $x^2 + 5x = 24$.",
+      "steps": [
+        {
+          "kind": "algebraic",
+          "prompt": "Rearrange so the right-hand side is 0. Type the left-hand side.",
+          "answer": "x^2 + 5x - 24",
+          "variables": [
+            "x"
+          ]
+        },
+        {
+          "kind": "mcq",
+          "prompt": "Which factorisation is correct?",
+          "options": [
+            {
+              "id": "a",
+              "text": "$(x + 8)(x - 3)$"
+            },
+            {
+              "id": "b",
+              "text": "$(x - 8)(x + 3)$"
+            },
+            {
+              "id": "c",
+              "text": "$(x + 6)(x - 4)$"
+            }
+          ],
+          "answer": "a"
+        },
+        {
+          "kind": "numeric",
+          "prompt": "What is the **positive** solution?",
+          "answer": 3
+        }
+      ],
+      "explanation": "$x^2 + 5x - 24 = (x + 8)(x - 3) = 0$, so $x = -8$ or $x = 3$."
+    },
+    {
+      "id": "u4-q3",
+      "type": "fill-blank",
+      "prompt": "Solve $x^2 - 7x + 12 = 0$.",
+      "text": "$x =$ [[a]] or $x =$ [[b]]",
+      "blanks": [
+        {
+          "id": "a",
+          "accept": [
+            "3"
+          ],
+          "size": 4,
+          "group": "roots"
+        },
+        {
+          "id": "b",
+          "accept": [
+            "4"
+          ],
+          "size": 4,
+          "group": "roots"
+        }
+      ],
+      "explanation": "$(x - 3)(x - 4) = 0$."
+    },
+    {
+      "id": "u4-q4",
+      "type": "fill-blank",
+      "prompt": "Solve $x^2 = 5x$.",
+      "text": "$x =$ [[a]] or $x =$ [[b]]",
+      "blanks": [
+        {
+          "id": "a",
+          "accept": [
+            "0"
+          ],
+          "size": 4,
+          "group": "roots"
+        },
+        {
+          "id": "b",
+          "accept": [
+            "5"
+          ],
+          "size": 4,
+          "group": "roots"
+        }
+      ],
+      "hints": [
+        "Do not divide by $x$ — rearrange to $x^2 - 5x = 0$."
+      ],
+      "explanation": "$x(x - 5) = 0$, so $x = 0$ or $x = 5$."
+    },
+    {
+      "id": "u4-q5",
+      "type": "numeric",
+      "prompt": "One side of a rectangle is 10 cm longer than the other. Its area is 56 cm². How long is the **shorter** side?",
+      "answer": 4,
+      "unit": "cm",
+      "hints": [
+        "$x(x + 10) = 56 \\Rightarrow x^2 + 10x - 56 = 0$."
+      ],
+      "explanation": "$(x + 14)(x - 4) = 0$. A length cannot be $-14$, so $x = 4$ cm (the rectangle is 4 cm by 14 cm)."
+    },
+    {
+      "id": "u4-q6",
+      "type": "numeric",
+      "prompt": "A right-angled triangle has sides $x$, $x + 7$ and hypotenuse $x + 8$ (cm). Find $x$.",
+      "answer": 5,
+      "unit": "cm",
+      "hints": [
+        "$x^2 + (x + 7)^2 = (x + 8)^2$ simplifies to $x^2 - 2x - 15 = 0$."
+      ],
+      "explanation": "$(x - 5)(x + 3) = 0$. Lengths are positive, so $x = 5$: the sides are 5, 12 and 13 cm.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "u4-q7",
+      "type": "multi",
+      "prompt": "Two consecutive numbers have squares that add up to 85. Select **every** possible pair.",
+      "options": [
+        {
+          "id": "a",
+          "text": "6 and 7"
+        },
+        {
+          "id": "b",
+          "text": "−7 and −6"
+        },
+        {
+          "id": "c",
+          "text": "5 and 6"
+        },
+        {
+          "id": "d",
+          "text": "−6 and −5"
+        }
+      ],
+      "answers": [
+        "a",
+        "b"
+      ],
+      "hints": [
+        "$x^2 + x - 42 = 0$"
+      ],
+      "explanation": "$(x + 7)(x - 6) = 0$ gives $x = 6$ or $-7$: the pairs 6, 7 and $-7$, $-6$. Both have squares summing to 85."
+    },
+    {
+      "id": "u4-q8",
+      "type": "numeric",
+      "prompt": "One solution of $x^2 + 3x = 30$ is between 2 and 6. Use trial and improvement to find it to 1 d.p.",
+      "answer": 4.2,
+      "tolerance": 0.001,
+      "hints": [
+        "$4^2 + 12 = 28$ (too small); $4.1^2 + 12.3 = 29.11$; $4.2^2 + 12.6 = 30.24$."
+      ],
+      "explanation": "$4.1^2 + 3(4.1) = 29.11$ is too small and $4.2^2 + 3(4.2) = 30.24$ is too big. Test the middle: $4.15^2 + 3(4.15) = 29.67$, still too small. So the solution lies between 4.15 and 4.2 and is **4.2** to 1 d.p. (It is 4.18…)"
+    },
+    {
+      "id": "u4-q9",
+      "type": "order",
+      "prompt": "Put the steps for solving a quadratic word problem in order.",
+      "items": [
+        {
+          "id": "a",
+          "text": "Define the unknown with a letter"
+        },
+        {
+          "id": "b",
+          "text": "Form an equation"
+        },
+        {
+          "id": "c",
+          "text": "Rearrange to $= 0$ and factorise"
+        },
+        {
+          "id": "d",
+          "text": "Solve each bracket $= 0$"
+        },
+        {
+          "id": "e",
+          "text": "Interpret: reject any solution that does not make sense"
+        }
+      ],
+      "solution": [
+        "a",
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "explanation": "Define → form → rearrange and factorise → solve → interpret."
+    }
+  ]
+}

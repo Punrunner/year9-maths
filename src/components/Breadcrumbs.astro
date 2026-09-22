@@ -1,0 +1,17 @@
+---
+/** Breadcrumb trail so a student always knows where they are. */
+interface Crumb { label: string; href?: string }
+interface Props { items: Crumb[] }
+const { items } = Astro.props;
+---
+
+<nav class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    {items.map((c, i) => (
+      <li aria-current={i === items.length - 1 && !c.href ? 'page' : undefined}>
+        {c.href ? <a href={c.href}>{c.label}</a> : <span>{c.label}</span>}
+      </li>
+    ))}
+  </ol>
+</nav>

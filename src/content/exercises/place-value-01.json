@@ -1,0 +1,149 @@
+{
+  "title": "Practice: powers of 10",
+  "intro": "Ten questions. Decide first whether the answer should be bigger or smaller than the number you started with.",
+  "questions": [
+    {
+      "id": "v1-q1",
+      "type": "match",
+      "prompt": "Match each power of 10 with its value.",
+      "left": [
+        { "id": "a", "text": "$10^{-2}$" },
+        { "id": "b", "text": "$\\frac{1}{10^3}$" },
+        { "id": "c", "text": "$10^{-5}$" },
+        { "id": "d", "text": "$10^{-4}$" },
+        { "id": "e", "text": "$10^3$" }
+      ],
+      "right": [
+        { "id": "r1", "text": "$\\frac{1}{10^2}$" },
+        { "id": "r2", "text": "$10^{-3}$" },
+        { "id": "r3", "text": "$0.00001$" },
+        { "id": "r4", "text": "$0.0001$" },
+        { "id": "r5", "text": "$1000$" }
+      ],
+      "solution": { "a": "r1", "b": "r2", "c": "r3", "d": "r4", "e": "r5" },
+      "hints": ["The negative power tells you which decimal place the 1 is in."],
+      "explanation": "$10^{-n} = \\frac{1}{10^n}$. So $10^{-5} = 0.00001$ (the 1 is in the fifth decimal place) and $10^{-4} = 0.0001$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "v1-q2",
+      "type": "drill",
+      "prompt": "Quick-fire: multiply and divide by powers of 10.",
+      "durationSec": 75,
+      "count": 10,
+      "pool": [
+        { "id": "d1", "prompt": "$7 \\times 10^3$", "accept": ["7000"] },
+        { "id": "d2", "prompt": "$2.8 \\times 10^4$", "accept": ["28000"] },
+        { "id": "d3", "prompt": "$42 \\div 10^2$", "accept": ["0.42"] },
+        { "id": "d4", "prompt": "$958\\,000 \\div 10^3$", "accept": ["958"] },
+        { "id": "d5", "prompt": "$800 \\times 10^{-3}$", "accept": ["0.8"] },
+        { "id": "d6", "prompt": "$3500 \\times 10^{-2}$", "accept": ["35"] },
+        { "id": "d7", "prompt": "$0.074 \\div 10^{-2}$", "accept": ["7.4"] },
+        { "id": "d8", "prompt": "$0.008 \\div 10^{-5}$", "accept": ["800"] },
+        { "id": "d9", "prompt": "$90\\,000 \\times 10^{-5}$", "accept": ["0.9"] },
+        { "id": "d10", "prompt": "$0.3 \\div 10^{-1}$", "accept": ["3"] },
+        { "id": "d11", "prompt": "$2 \\times 10^{-1}$", "accept": ["0.2"] },
+        { "id": "d12", "prompt": "$0.021 \\div 10^{-4}$", "accept": ["210"] },
+        { "id": "d13", "prompt": "$71 \\times 10^2$", "accept": ["7100"] },
+        { "id": "d14", "prompt": "$86\\,300 \\times 10^{-4}$", "accept": ["8.63"] }
+      ],
+      "explanation": "Multiplying by $10^{-n}$ divides by $10^n$, and dividing by $10^{-n}$ multiplies by $10^n$."
+    },
+    {
+      "id": "v1-q3",
+      "type": "numeric",
+      "prompt": "Work out $0.819 \\div 10^{-5}$.",
+      "answer": 81900,
+      "hints": ["Dividing by $10^{-5}$ is the same as multiplying by $10^5 = 100\\,000$."],
+      "explanation": "$0.819 \\times 100\\,000 = 81\\,900$."
+    },
+    {
+      "id": "v1-q4",
+      "type": "fill-blank",
+      "prompt": "Complete these sentences.",
+      "text": "Multiplying by $10^{-2}$ is the same as dividing by [[a]]. Dividing by $10^{-3}$ is the same as multiplying by [[b]]. Multiplying by $10^{-4}$ is the same as dividing by [[c]].",
+      "blanks": [
+        { "id": "a", "accept": ["100", "10^2"], "size": 7 },
+        { "id": "b", "accept": ["1000", "10^3"], "size": 7 },
+        { "id": "c", "accept": ["10000", "10 000", "10^4"], "size": 7 }
+      ],
+      "hints": ["$10^{-2} = \\frac{1}{100}$, and multiplying by $\\frac{1}{100}$ is dividing by 100."],
+      "explanation": "100, 1000 and 10 000. A negative power of 10 always flips multiplication into division and vice versa."
+    },
+    {
+      "id": "v1-q5",
+      "type": "table",
+      "prompt": "Find the missing number in each calculation.",
+      "columns": ["Calculation", "Missing number"],
+      "rows": [
+        [{ "given": "7.1 × 10^□ = 710 000" }, { "answer": "5" }],
+        [{ "given": "□ ÷ 10³ = 249" }, { "answer": "249000" }],
+        [{ "given": "0.02 ÷ 10^□ = 2" }, { "answer": "-2" }],
+        [{ "given": "44 000 ÷ 10^□ = 4.4" }, { "answer": "4" }],
+        [{ "given": "□ × 10⁻² = 2.3" }, { "answer": "230" }],
+        [{ "given": "□ ÷ 10⁻⁶ = 7000" }, { "answer": "0.007" }]
+      ],
+      "hints": [
+        "Ask: has the number got bigger or smaller, and by how many places?",
+        "0.02 → 2 is ×100. Dividing by $10^{-2}$ multiplies by 100."
+      ],
+      "explanation": "710 000 is 7.1 moved 5 places, so $10^5$. $249 \\times 1000 = 249\\,000$. $0.02 \\div 10^{-2} = 0.02 \\times 100 = 2$. $44\\,000 \\div 10^4 = 4.4$. $230 \\times 10^{-2} = 2.3$. $0.007 \\div 10^{-6} = 0.007 \\times 10^6 = 7000$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "v1-q6",
+      "type": "truefalse",
+      "prompt": "$530 \\times 10^{-3} = 530\\,000$",
+      "answer": false,
+      "hints": ["Does multiplying by a negative power of 10 make the number bigger or smaller?"],
+      "explanation": "False. Multiplying by $10^{-3}$ divides by 1000, so $530 \\times 10^{-3} = 0.53$."
+    },
+    {
+      "id": "v1-q7",
+      "type": "numeric",
+      "prompt": "Work out $8.1 \\times 10^4 - 25.4 \\times 10^2$.",
+      "answer": 78460,
+      "hints": ["BIDMAS: work out each product first.", "$81\\,000 - 2540$"],
+      "explanation": "$8.1 \\times 10^4 = 81\\,000$ and $25.4 \\times 10^2 = 2540$. $81\\,000 - 2540 = 78\\,460$."
+    },
+    {
+      "id": "v1-q8",
+      "type": "numeric",
+      "prompt": "Work out $1700 \\times 10^{-2} + 0.03 \\div 10^{-3}$.",
+      "answer": 47,
+      "hints": ["$1700 \\times 10^{-2} = 17$.", "$0.03 \\div 10^{-3} = 0.03 \\times 1000$."],
+      "explanation": "$17 + 30 = 47$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "v1-q9",
+      "type": "mcq",
+      "prompt": "Which card makes this statement true? $\\quad 7 \\times 10^2 = 7 \\div \\square$",
+      "options": [
+        { "id": "a", "text": "$0.01$" },
+        { "id": "b", "text": "$100$" },
+        { "id": "c", "text": "$10^{-3}$" },
+        { "id": "d", "text": "$0.0001$" }
+      ],
+      "answer": "a",
+      "hints": ["$7 \\times 10^2 = 700$. What do you divide 7 by to get 700?"],
+      "explanation": "$7 \\div 0.01 = 7 \\times 100 = 700$, which matches $7 \\times 10^2$. Dividing by 0.01 is the same as multiplying by 100."
+    },
+    {
+      "id": "v1-q10",
+      "type": "multi",
+      "prompt": "Select **every** calculation that gives an answer **larger** than the starting number.",
+      "options": [
+        { "id": "a", "text": "$56 \\times 10^{3}$" },
+        { "id": "b", "text": "$56 \\times 10^{-3}$" },
+        { "id": "c", "text": "$56 \\div 10^{-3}$" },
+        { "id": "d", "text": "$56 \\div 10^{3}$" },
+        { "id": "e", "text": "$56 \\times 0.01$" },
+        { "id": "f", "text": "$56 \\div 0.01$" }
+      ],
+      "answers": ["a", "c", "f"],
+      "hints": ["Dividing by a number less than 1 makes a number bigger."],
+      "explanation": "a multiplies by 1000. c and f both divide by something less than 1, which multiplies (by 1000 and by 100). The others all make 56 smaller."
+    }
+  ]
+}

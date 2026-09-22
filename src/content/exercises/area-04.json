@@ -1,0 +1,154 @@
+{
+  "title": "Practice: volume",
+  "intro": "Nine questions, including one where you build a cuboid to a target volume.",
+  "questions": [
+    {
+      "id": "a4-q1",
+      "type": "numeric",
+      "prompt": "A prism has a cross-section of area $60\\ \\text{m}^2$ and is $15\\ \\text{m}$ long. Find its volume.",
+      "answer": 900,
+      "unit": "m³",
+      "hints": ["$V = \\text{cross-section area} \\times \\text{length}$."],
+      "explanation": "$60 \\times 15 = 900\\ \\text{m}^3$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a4-q2",
+      "type": "numeric",
+      "prompt": "Find the volume of a cylinder with radius $3\\ \\text{cm}$ and height $10\\ \\text{cm}$. Use $\\pi = 3.14$.",
+      "answer": 282.6,
+      "tolerance": 1.5,
+      "unit": "cm³",
+      "hints": [
+        "Find the circle's area first: $\\pi r^2$.",
+        "$3.14 \\times 9 = 28.26$, then multiply by the height."
+      ],
+      "explanation": "$V = \\pi r^2 h = 3.14 \\times 3^2 \\times 10 = 28.26 \\times 10 = 282.6\\ \\text{cm}^3$ — about the size of a small drinks can."
+    },
+    {
+      "id": "a4-q3",
+      "type": "manipulable",
+      "prompt": "Set the sliders to build a cuboid with volume exactly $60\\ \\text{cm}^3$, using length $5$, width $4$ and height $3$.",
+      "widget": "prism",
+      "config": { "unit": "cm", "start": { "l": 6, "w": 3, "h": 4 } },
+      "target": { "l": 5, "w": 4, "h": 3 },
+      "tolerance": 0.01,
+      "hints": ["$5 \\times 4 \\times 3 = 60$."],
+      "explanation": "$5 \\times 4 \\times 3 = 60\\ \\text{cm}^3$. Other combinations also give 60 — try $10 \\times 3 \\times 2$ afterwards and compare the surface areas. Same volume, very different amount of packaging."
+    },
+    {
+      "id": "a4-q4",
+      "type": "steps",
+      "prompt": "Work backwards from a volume.",
+      "scenario": "A cylinder has volume $1570\\ \\text{cm}^3$ and height $20\\ \\text{cm}$. Use $\\pi = 3.14$.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "First work out $\\pi \\times h$, that is $3.14 \\times 20$.",
+          "answer": 62.8,
+          "tolerance": 0.1,
+          "feedback": "$3.14 \\times 20 = 62.8$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Now divide the volume by that to find $r^2$.",
+          "answer": 25,
+          "tolerance": 0.2,
+          "feedback": "$1570 \\div 62.8 = 25$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Finally find $r$, in cm.",
+          "answer": 5,
+          "tolerance": 0.05,
+          "feedback": "$\\sqrt{25} = 5\\ \\text{cm}$."
+        }
+      ],
+      "hints": ["$V = \\pi r^2 h$, so $r^2 = \\frac{V}{\\pi h}$."],
+      "explanation": "$r^2 = \\frac{1570}{3.14 \\times 20} = \\frac{1570}{62.8} = 25$, so $r = 5\\ \\text{cm}$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a4-q5",
+      "type": "numeric",
+      "prompt": "A tank measures $50\\ \\text{cm} \\times 40\\ \\text{cm} \\times 30\\ \\text{cm}$. How many **litres** does it hold?",
+      "answer": 60,
+      "unit": "litres",
+      "hints": [
+        "Find the volume in $\\text{cm}^3$ first.",
+        "$1000\\ \\text{cm}^3 = 1$ litre."
+      ],
+      "explanation": "$50 \\times 40 \\times 30 = 60\\,000\\ \\text{cm}^3$, and $60\\,000 \\div 1000 = 60$ litres."
+    },
+    {
+      "id": "a4-q6",
+      "type": "match",
+      "prompt": "Match each prism to its volume formula.",
+      "left": [
+        { "id": "v1", "text": "Cuboid" },
+        { "id": "v2", "text": "Cylinder" },
+        { "id": "v3", "text": "Triangular prism" },
+        { "id": "v4", "text": "Any prism" }
+      ],
+      "right": [
+        { "id": "w1", "text": "$l \\times w \\times h$" },
+        { "id": "w2", "text": "$\\pi r^2 h$" },
+        { "id": "w3", "text": "$\\frac{1}{2} b h \\times \\text{length}$" },
+        { "id": "w4", "text": "$A \\times h$, cross-section times length" }
+      ],
+      "solution": { "v1": "w1", "v2": "w2", "v3": "w3", "v4": "w4" },
+      "hints": ["The last one is the general rule; the other three are it applied to particular shapes."],
+      "explanation": "All four are really the same formula. Substitute the right cross-sectional area into $A \\times h$ and you get each of the others."
+    },
+    {
+      "id": "a4-q7",
+      "type": "fill-blank",
+      "prompt": "Complete these volume conversions.",
+      "text": "$1\\ \\text{cm}^3 = $ [[ml]] ml. $1$ litre $= $ [[litre]] $\\text{cm}^3$. $1\\ \\text{m}^3 = $ [[m3]] $\\text{cm}^3$.",
+      "blanks": [
+        { "id": "ml", "accept": ["1"], "size": 4 },
+        { "id": "litre", "accept": ["1000", "1,000"], "size": 8 },
+        { "id": "m3", "accept": ["1000000", "1,000,000"], "size": 10 }
+      ],
+      "hints": [
+        "A metre is 100 cm — but volume has three dimensions.",
+        "$100 \\times 100 \\times 100$."
+      ],
+      "explanation": "$1\\ \\text{cm}^3 = 1$ ml, $1$ litre $= 1000\\ \\text{cm}^3$, and $1\\ \\text{m}^3 = 100^3 = 1\\,000\\,000\\ \\text{cm}^3$. The last one surprises people because all three dimensions scale by 100.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a4-q8",
+      "type": "mcq",
+      "prompt": "A triangular prism has a cross-section with base $8\\ \\text{cm}$ and height $5\\ \\text{cm}$, and it is $12\\ \\text{cm}$ long. What is its volume?",
+      "options": [
+        { "id": "a", "text": "$240\\ \\text{cm}^3$" },
+        { "id": "b", "text": "$480\\ \\text{cm}^3$" },
+        { "id": "c", "text": "$120\\ \\text{cm}^3$" },
+        { "id": "d", "text": "$25\\ \\text{cm}^3$" }
+      ],
+      "answer": "a",
+      "hints": [
+        "Find the area of the triangle first: $\\frac{1}{2} \\times 8 \\times 5$.",
+        "Then multiply by the 12 cm length."
+      ],
+      "explanation": "Cross-section $= \\frac{1}{2} \\times 8 \\times 5 = 20\\ \\text{cm}^2$, so $V = 20 \\times 12 = 240\\ \\text{cm}^3$. Option **b** forgets to halve the triangle."
+    },
+    {
+      "id": "a4-q9",
+      "type": "table",
+      "prompt": "Complete the table for cylinders. Use $\\pi = 3.14$ and round volumes to 1 decimal place.",
+      "columns": ["Radius (cm)", "Height (cm)", "Cross-section area ($\\text{cm}^2$)", "Volume ($\\text{cm}^3$)"],
+      "rows": [
+        [{ "given": "2" }, { "given": "5" }, { "answer": "12.56", "tolerance": 0.1 }, { "answer": "62.8", "tolerance": 0.5 }],
+        [{ "given": "5" }, { "given": "4" }, { "answer": "78.5", "tolerance": 0.4 }, { "answer": "314", "tolerance": 2 }],
+        [{ "given": "10" }, { "given": "2" }, { "answer": "314", "tolerance": 2 }, { "answer": "628", "tolerance": 4 }]
+      ],
+      "hints": [
+        "Cross-section area is $\\pi r^2$.",
+        "Volume is that area times the height."
+      ],
+      "explanation": "Row by row: $3.14 \\times 4 = 12.56$, $\\times 5 = 62.8$. $3.14 \\times 25 = 78.5$, $\\times 4 = 314$. $3.14 \\times 100 = 314$, $\\times 2 = 628$. Notice rows 2 and 3 — doubling the radius while halving the height *doubles* the volume, because the radius is squared."
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "title": "Practice: standard form",
+  "intro": "Eleven questions. Where there are two boxes, type the front number in the first and the power of 10 in the second.",
+  "questions": [
+    {
+      "id": "v2-q1",
+      "type": "fill-blank",
+      "prompt": "Write each number in standard form.",
+      "text": "$6300 = $ [[a1]] $\\times 10^{\\square}$ [[a2]] $\\qquad 170\\,000 = $ [[b1]] $\\times 10^{\\square}$ [[b2]] $\\qquad 416 = $ [[c1]] $\\times 10^{\\square}$ [[c2]]",
+      "blanks": [
+        { "id": "a1", "accept": ["6.3"], "size": 5 },
+        { "id": "a2", "accept": ["3"], "size": 3 },
+        { "id": "b1", "accept": ["1.7"], "size": 5 },
+        { "id": "b2", "accept": ["5"], "size": 3 },
+        { "id": "c1", "accept": ["4.16"], "size": 5 },
+        { "id": "c2", "accept": ["2"], "size": 3 }
+      ],
+      "hints": ["The front number must be between 1 and 10.", "Count how many places the digits have to move to get back."],
+      "explanation": "$6300 = 6.3 \\times 10^3$, $170\\,000 = 1.7 \\times 10^5$, $416 = 4.16 \\times 10^2$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "v2-q2",
+      "type": "fill-blank",
+      "prompt": "Write each small number in standard form.",
+      "text": "$0.0074 = $ [[a1]] $\\times 10^{\\square}$ [[a2]] $\\qquad 0.000\\,13 = $ [[b1]] $\\times 10^{\\square}$ [[b2]] $\\qquad 0.023\\,56 = $ [[c1]] $\\times 10^{\\square}$ [[c2]]",
+      "blanks": [
+        { "id": "a1", "accept": ["7.4"], "size": 5 },
+        { "id": "a2", "accept": ["-3", "−3"], "size": 3 },
+        { "id": "b1", "accept": ["1.3"], "size": 5 },
+        { "id": "b2", "accept": ["-4", "−4"], "size": 3 },
+        { "id": "c1", "accept": ["2.356"], "size": 5 },
+        { "id": "c2", "accept": ["-2", "−2"], "size": 3 }
+      ],
+      "hints": ["For a number less than 1, the power is negative.", "0.0074 → 7.4 means the digits move 3 places."],
+      "explanation": "$0.0074 = 7.4 \\times 10^{-3}$, $0.000\\,13 = 1.3 \\times 10^{-4}$, $0.023\\,56 = 2.356 \\times 10^{-2}$."
+    },
+    {
+      "id": "v2-q3",
+      "type": "multi",
+      "prompt": "Select **every** number that is correctly written in standard form.",
+      "options": [
+        { "id": "a", "text": "$5.4 \\times 10^7$" },
+        { "id": "b", "text": "$54.3 \\times 10^7$" },
+        { "id": "c", "text": "$0.03 \\times 10^8$" },
+        { "id": "d", "text": "$7.1 \\times 10^3 \\times 10^2$" },
+        { "id": "e", "text": "$1 \\times 10^{-6}$" },
+        { "id": "f", "text": "$9.99 \\times 10^{-12}$" }
+      ],
+      "answers": ["a", "e", "f"],
+      "hints": ["The front number must be at least 1 and less than 10, with a single power of 10."],
+      "explanation": "a, e and f are correct (1 is allowed; 10 is not). b's front number is too big, c's is too small, and d has two powers of 10 — it should be $7.1 \\times 10^5$."
+    },
+    {
+      "id": "v2-q4",
+      "type": "table",
+      "prompt": "Write each number in full.",
+      "columns": ["Standard form", "Ordinary number"],
+      "rows": [
+        [{ "given": "3 × 10⁷" }, { "answer": "30000000", "accept": ["30 000 000"] }],
+        [{ "given": "3.81 × 10²" }, { "answer": "381" }],
+        [{ "given": "1.628 × 10⁴" }, { "answer": "16280", "accept": ["16 280"] }],
+        [{ "given": "6 × 10⁻⁵" }, { "answer": "0.00006" }],
+        [{ "given": "4 × 10⁻³" }, { "answer": "0.004" }]
+      ],
+      "hints": ["Positive power: move the digits left (bigger). Negative power: move them right (smaller)."],
+      "explanation": "$3 \\times 10^7 = 30\\,000\\,000$, $3.81 \\times 10^2 = 381$, $1.628 \\times 10^4 = 16\\,280$, $6 \\times 10^{-5} = 0.000\\,06$, $4 \\times 10^{-3} = 0.004$."
+    },
+    {
+      "id": "v2-q5",
+      "type": "mcq",
+      "prompt": "Emil says: *To write $62 \\times 100\\,000$ in standard form, you write $62 \\times 10^5$.* What is the correct answer?",
+      "options": [
+        { "id": "a", "text": "$6.2 \\times 10^6$" },
+        { "id": "b", "text": "$62 \\times 10^5$ — Emil is right" },
+        { "id": "c", "text": "$6.2 \\times 10^4$" },
+        { "id": "d", "text": "$0.62 \\times 10^7$" }
+      ],
+      "answer": "a",
+      "hints": ["62 is not between 1 and 10."],
+      "explanation": "$62 = 6.2 \\times 10$, so $62 \\times 10^5 = 6.2 \\times 10^6$."
+    },
+    {
+      "id": "v2-q6",
+      "type": "order",
+      "prompt": "Put these numbers in order, smallest first.",
+      "items": [
+        { "id": "a", "text": "$4.1 \\times 10^{-3}$" },
+        { "id": "b", "text": "$3.2 \\times 10^{-2}$" },
+        { "id": "c", "text": "$8.6 \\times 10^{3}$" },
+        { "id": "d", "text": "$3.2 \\times 10^{4}$" },
+        { "id": "e", "text": "$7.2 \\times 10^{4}$" }
+      ],
+      "solution": ["a", "b", "c", "d", "e"],
+      "hints": ["Compare the powers first. Only if they are equal do you compare the front numbers."],
+      "explanation": "$10^{-3} < 10^{-2} < 10^3 < 10^4$. The two with $10^4$ are ordered by their front numbers: $3.2 < 7.2$."
+    },
+    {
+      "id": "v2-q7",
+      "type": "fill-blank",
+      "prompt": "A factory makes $270\\,000\\,000$ sweets every week. How many is that in a year (52 weeks)? Give your answer in standard form.",
+      "text": "[[a]] $\\times 10^{\\square}$ [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["1.404"], "size": 6 },
+        { "id": "b", "accept": ["10"], "size": 3 }
+      ],
+      "hints": ["$270\\,000\\,000 \\times 52 = 14\\,040\\,000\\,000$.", "Now write that in standard form."],
+      "explanation": "$2.7 \\times 10^8 \\times 52 = 140.4 \\times 10^8 = 1.404 \\times 10^{10}$ sweets."
+    },
+    {
+      "id": "v2-q8",
+      "type": "fill-blank",
+      "prompt": "The diameter of the Milky Way is about $9.46 \\times 10^{20}$ m. How many **kilometres** is this, in standard form?",
+      "text": "[[a]] $\\times 10^{\\square}$ [[b]] km",
+      "blanks": [
+        { "id": "a", "accept": ["9.46"], "size": 6 },
+        { "id": "b", "accept": ["17"], "size": 3 }
+      ],
+      "hints": ["1 km = 1000 m = $10^3$ m, so divide by $10^3$."],
+      "explanation": "$9.46 \\times 10^{20} \\div 10^3 = 9.46 \\times 10^{17}$ km."
+    },
+    {
+      "id": "v2-q9",
+      "type": "steps",
+      "prompt": "Calculate in standard form one step at a time.",
+      "scenario": "Work out $(8.2 \\times 10^3) \\div (2 \\times 10^{-6})$.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "Divide the front numbers: $8.2 \\div 2$.",
+          "answer": 4.1
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Divide the powers: $10^3 \\div 10^{-6} = 10^{\\square}$. What is the power?",
+          "answer": 9,
+          "feedback": "$3 - (-6) = 9$.",
+          "hint": "Subtract the powers — and subtracting a negative is adding."
+        },
+        {
+          "kind": "mcq",
+          "prompt": "Is $4.1 \\times 10^9$ already in standard form?",
+          "options": [
+            { "id": "y", "text": "Yes — 4.1 is between 1 and 10" },
+            { "id": "n", "text": "No — it needs adjusting" }
+          ],
+          "answer": "y"
+        }
+      ],
+      "explanation": "$\\frac{8.2}{2} \\times 10^{3 - (-6)} = 4.1 \\times 10^9$."
+    },
+    {
+      "id": "v2-q10",
+      "type": "fill-blank",
+      "prompt": "The mass of a red blood cell is about $9 \\times 10^{-14}$ kg. What is this in **grams**, in standard form?",
+      "text": "[[a]] $\\times 10^{\\square}$ [[b]] g",
+      "blanks": [
+        { "id": "a", "accept": ["9"], "size": 4 },
+        { "id": "b", "accept": ["-11", "−11"], "size": 4 }
+      ],
+      "hints": ["1 kg = 1000 g, so multiply by $10^3$."],
+      "explanation": "$9 \\times 10^{-14} \\times 10^3 = 9 \\times 10^{-11}$ g.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "v2-q11",
+      "type": "truefalse",
+      "prompt": "$32\\,000 = 3.2 \\times 10^4$",
+      "answer": true,
+      "hints": ["Move the digits of 3.2 four places to the left."],
+      "explanation": "True. $3.2 \\times 10\\,000 = 32\\,000$."
+    }
+  ]
+}

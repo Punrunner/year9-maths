@@ -1,0 +1,196 @@
+{
+  "title": "Area, perimeter and volume quiz",
+  "topic": "area-perimeter-volume",
+  "description": "Twelve questions drawn at random from a bank of sixteen, covering circles, Pythagoras, surface area, volume and units. Use $\\pi = 3.14$ unless told otherwise.",
+  "pick": 12,
+  "timeLimitSec": 1200,
+  "passMark": 70,
+  "questions": [
+    {
+      "id": "aq1",
+      "type": "numeric",
+      "prompt": "Find the circumference of a circle with radius $7\\ \\text{cm}$. Use $\\pi = 3.14$.",
+      "answer": 43.96,
+      "tolerance": 0.3,
+      "unit": "cm",
+      "explanation": "$C = 2\\pi r = 2 \\times 3.14 \\times 7 = 43.96\\ \\text{cm}$."
+    },
+    {
+      "id": "aq2",
+      "type": "numeric",
+      "prompt": "Find the area of a circle with **diameter** $12\\ \\text{cm}$. Use $\\pi = 3.14$.",
+      "answer": 113.04,
+      "tolerance": 0.6,
+      "unit": "cm²",
+      "marks": 2,
+      "explanation": "Halve the diameter first: $r = 6$. Then $A = 3.14 \\times 36 = 113.04\\ \\text{cm}^2$. Using 12 as the radius would give four times too much."
+    },
+    {
+      "id": "aq3",
+      "type": "hotspot",
+      "prompt": "**Click the diameter** of this circle.",
+      "figure": "circle-parts",
+      "answer": "diameter",
+      "explanation": "The diameter runs right across the circle through the centre, and is twice the radius."
+    },
+    {
+      "id": "aq4",
+      "type": "numeric",
+      "prompt": "A right-angled triangle has shorter sides $5\\ \\text{cm}$ and $12\\ \\text{cm}$. Find the hypotenuse.",
+      "answer": 13,
+      "unit": "cm",
+      "marks": 2,
+      "explanation": "$5^2 + 12^2 = 25 + 144 = 169$, so $c = \\sqrt{169} = 13\\ \\text{cm}$ — a Pythagorean triple."
+    },
+    {
+      "id": "aq5",
+      "type": "numeric",
+      "prompt": "A right-angled triangle has hypotenuse $10\\ \\text{cm}$ and one shorter side $6\\ \\text{cm}$. Find the other shorter side.",
+      "answer": 8,
+      "unit": "cm",
+      "marks": 2,
+      "explanation": "$10^2 - 6^2 = 100 - 36 = 64$, so the side is $\\sqrt{64} = 8\\ \\text{cm}$. The hypotenuse is given, so you subtract."
+    },
+    {
+      "id": "aq6",
+      "type": "hotspot",
+      "prompt": "**Click the hypotenuse** of this triangle.",
+      "figure": "right-triangle",
+      "config": { "a": "6 cm", "b": "8 cm", "c": "10 cm" },
+      "answer": "hypotenuse",
+      "explanation": "The hypotenuse is the side opposite the right angle, and always the longest."
+    },
+    {
+      "id": "aq7",
+      "type": "truefalse",
+      "prompt": "**A triangle with sides $6\\ \\text{cm}$, $7\\ \\text{cm}$ and $10\\ \\text{cm}$ is right-angled.**",
+      "answer": false,
+      "marks": 2,
+      "explanation": "$6^2 + 7^2 = 36 + 49 = 85$, but $10^2 = 100$. They are not equal, so the triangle is not right-angled."
+    },
+    {
+      "id": "aq8",
+      "type": "numeric",
+      "prompt": "Find the total surface area of a cuboid $4\\ \\text{cm} \\times 5\\ \\text{cm} \\times 6\\ \\text{cm}$.",
+      "answer": 148,
+      "unit": "cm²",
+      "marks": 2,
+      "explanation": "$(4\\times5) + (4\\times6) + (5\\times6) = 20 + 24 + 30 = 74$, doubled gives $148\\ \\text{cm}^2$."
+    },
+    {
+      "id": "aq9",
+      "type": "hotspot",
+      "prompt": "**Click the curved surface** of this cylinder.",
+      "figure": "cylinder",
+      "answer": "curved-surface",
+      "explanation": "Unrolled, the curved surface is a rectangle $2\\pi r$ wide by $h$ tall, so its area is $2\\pi r h$."
+    },
+    {
+      "id": "aq10",
+      "type": "numeric",
+      "prompt": "Find the volume of a cylinder with radius $5\\ \\text{cm}$ and height $8\\ \\text{cm}$. Use $\\pi = 3.14$.",
+      "answer": 628,
+      "tolerance": 3,
+      "unit": "cm³",
+      "marks": 2,
+      "explanation": "$V = \\pi r^2 h = 3.14 \\times 25 \\times 8 = 628\\ \\text{cm}^3$."
+    },
+    {
+      "id": "aq11",
+      "type": "manipulable",
+      "prompt": "Set the sliders to build a cuboid measuring $4 \\times 3 \\times 2\\ \\text{cm}$, then read off its volume.",
+      "widget": "prism",
+      "config": { "unit": "cm", "start": { "l": 6, "w": 3, "h": 4 } },
+      "target": { "l": 4, "w": 3, "h": 2 },
+      "tolerance": 0.01,
+      "marks": 2,
+      "explanation": "$4 \\times 3 \\times 2 = 24\\ \\text{cm}^3$, with a surface area of $52\\ \\text{cm}^2$."
+    },
+    {
+      "id": "aq12",
+      "type": "numeric",
+      "prompt": "A tank measures $30\\ \\text{cm} \\times 20\\ \\text{cm} \\times 25\\ \\text{cm}$. How many litres does it hold?",
+      "answer": 15,
+      "unit": "litres",
+      "marks": 2,
+      "explanation": "$30 \\times 20 \\times 25 = 15\\,000\\ \\text{cm}^3 = 15$ litres, since $1000\\ \\text{cm}^3 = 1$ litre."
+    },
+    {
+      "id": "aq13",
+      "type": "numeric",
+      "prompt": "Convert $6\\ \\text{GB}$ to megabytes.",
+      "answer": 6000,
+      "unit": "MB",
+      "explanation": "$6 \\times 1000 = 6000\\ \\text{MB}$ — a megabyte is smaller, so the number grows."
+    },
+    {
+      "id": "aq14",
+      "type": "fill-blank",
+      "prompt": "Complete these conversions.",
+      "text": "$1$ litre $=$ [[l]] $\\text{cm}^3$, and $1\\ \\text{m}^3 =$ [[m]] $\\text{cm}^3$.",
+      "blanks": [
+        { "id": "l", "accept": ["1000", "1,000"], "size": 8 },
+        { "id": "m", "accept": ["1000000", "1,000,000"], "size": 10 }
+      ],
+      "marks": 2,
+      "explanation": "$1$ litre $= 1000\\ \\text{cm}^3$ and $1\\ \\text{m}^3 = 100^3 = 1\\,000\\,000\\ \\text{cm}^3$ — all three dimensions scale by 100."
+    },
+    {
+      "id": "aq15",
+      "type": "match",
+      "prompt": "Match each shape to the right formula.",
+      "left": [
+        { "id": "m1", "text": "Area of a circle" },
+        { "id": "m2", "text": "Circumference of a circle" },
+        { "id": "m3", "text": "Volume of a cylinder" },
+        { "id": "m4", "text": "Curved surface area of a cylinder" }
+      ],
+      "right": [
+        { "id": "n1", "text": "$\\pi r^2$" },
+        { "id": "n2", "text": "$2\\pi r$" },
+        { "id": "n3", "text": "$\\pi r^2 h$" },
+        { "id": "n4", "text": "$2\\pi r h$" }
+      ],
+      "solution": { "m1": "n1", "m2": "n2", "m3": "n3", "m4": "n4" },
+      "marks": 2,
+      "explanation": "Volume is the circle's area times the height; the curved surface is the circumference times the height. Keeping that distinction clear is most of this topic."
+    },
+    {
+      "id": "aq16",
+      "type": "steps",
+      "prompt": "A compound-shape problem, one step at a time.",
+      "scenario": "A shape is a rectangle $10\\ \\text{cm}$ by $6\\ \\text{cm}$ with a semicircle of diameter $6\\ \\text{cm}$ joined to one short end. Use $\\pi = 3.14$.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "What is the area of the rectangle, in $\\text{cm}^2$?",
+          "answer": 60,
+          "feedback": "$10 \\times 6 = 60\\ \\text{cm}^2$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "The semicircle has diameter $6\\ \\text{cm}$. What is its radius, in cm?",
+          "answer": 3,
+          "feedback": "$6 \\div 2 = 3\\ \\text{cm}$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "What is the area of the semicircle, in $\\text{cm}^2$? (Half of $\\pi r^2$.)",
+          "answer": 14.13,
+          "tolerance": 0.15,
+          "feedback": "$\\frac{1}{2} \\times 3.14 \\times 9 = 14.13\\ \\text{cm}^2$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "What is the total area of the shape, in $\\text{cm}^2$?",
+          "answer": 74.13,
+          "tolerance": 0.3,
+          "feedback": "$60 + 14.13 = 74.13\\ \\text{cm}^2$."
+        }
+      ],
+      "marks": 4,
+      "explanation": "Split a compound shape into pieces you recognise, work out each one, then combine. Total area $= 60 + 14.13 = 74.13\\ \\text{cm}^2$.",
+      "difficulty": "challenge"
+    }
+  ]
+}

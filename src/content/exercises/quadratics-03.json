@@ -1,0 +1,105 @@
+{
+  "title": "Practice: factorising",
+  "intro": "Nine questions. Type factorised answers with brackets, e.g. (x+3)(x-6). Your answer must be in factorised form.",
+  "questions": [
+    {
+      "id": "u3-q1",
+      "type": "fill-blank",
+      "prompt": "Complete each factorisation.",
+      "text": "$x^2 + 7x + 6 = (x + 6)(x + \\square)$ : [[a]] $\\qquad x^2 + 8x + 15 = (x + 5)(x + \\square)$ : [[b]] $\\qquad x^2 - 6x + 8 = (x - 2)(x - \\square)$ : [[c]]",
+      "blanks": [
+        { "id": "a", "accept": ["1"], "size": 3 },
+        { "id": "b", "accept": ["3"], "size": 3 },
+        { "id": "c", "accept": ["4"], "size": 3 }
+      ],
+      "hints": ["The two numbers multiply to the constant."],
+      "explanation": "$6 \\times 1 = 6$, $5 \\times 3 = 15$, $2 \\times 4 = 8$ — and each pair adds to the middle coefficient.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "u3-q2",
+      "type": "algebraic",
+      "prompt": "Factorise $x^2 + 7x + 12$.",
+      "answer": "(x + 3)(x + 4)",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "$3 \\times 4 = 12$ and $3 + 4 = 7$."
+    },
+    {
+      "id": "u3-q3",
+      "type": "algebraic",
+      "prompt": "Factorise $x^2 - 3x - 18$.",
+      "answer": "(x + 3)(x - 6)",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "$3 \\times -6 = -18$ and $3 + (-6) = -3$."
+    },
+    {
+      "id": "u3-q4",
+      "type": "algebraic",
+      "prompt": "Factorise $x^2 + 2x - 15$.",
+      "answer": "(x + 5)(x - 3)",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "$5 \\times -3 = -15$ and $5 - 3 = 2$."
+    },
+    {
+      "id": "u3-q5",
+      "type": "algebraic",
+      "prompt": "Factorise $x^2 - 9x + 8$.",
+      "answer": "(x - 8)(x - 1)",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "Both negative: $-8 \\times -1 = 8$ and $-8 - 1 = -9$."
+    },
+    {
+      "id": "u3-q6",
+      "type": "algebraic",
+      "prompt": "Factorise $x^2 - 49$.",
+      "answer": "(x + 7)(x - 7)",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "Difference of two squares: $x^2 - 7^2$."
+    },
+    {
+      "id": "u3-q7",
+      "type": "algebraic",
+      "prompt": "Factorise $81 - 4x^2$.",
+      "answer": "(9 + 2x)(9 - 2x)",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "$9^2 - (2x)^2 = (9 + 2x)(9 - 2x)$."
+    },
+    {
+      "id": "u3-q8",
+      "type": "drill",
+      "prompt": "Quick-fire: find the two numbers that multiply to the first and add to the second. Type them like 3, 4.",
+      "durationSec": 90,
+      "count": 6,
+      "pool": [
+        { "id": "a", "prompt": "product 12, sum 7", "accept": ["3, 4", "4, 3", "3,4", "4,3"] },
+        { "id": "b", "prompt": "product 24, sum 10", "accept": ["4, 6", "6, 4", "4,6", "6,4"] },
+        { "id": "c", "prompt": "product −18, sum −3", "accept": ["3, -6", "-6, 3", "3,-6", "-6,3"] },
+        { "id": "d", "prompt": "product 8, sum −6", "accept": ["-2, -4", "-4, -2", "-2,-4", "-4,-2"] },
+        { "id": "e", "prompt": "product −21, sum 4", "accept": ["7, -3", "-3, 7", "7,-3", "-3,7"] },
+        { "id": "f", "prompt": "product 60, sum 32", "accept": ["2, 30", "30, 2", "2,30", "30,2"] },
+        { "id": "g", "prompt": "product −35, sum −2", "accept": ["5, -7", "-7, 5", "5,-7", "-7,5"] },
+        { "id": "h", "prompt": "product −2, sum −1", "accept": ["1, -2", "-2, 1", "1,-2", "-2,1"] }
+      ],
+      "explanation": "This is the whole skill of factorising $x^2 + bx + c$: the product is $c$ and the sum is $b$."
+    },
+    {
+      "id": "u3-q9",
+      "type": "mcq",
+      "prompt": "Which is the factorisation of $x^2 + 4x - 21$?",
+      "options": [
+        { "id": "a", "text": "$(x + 7)(x - 3)$" },
+        { "id": "b", "text": "$(x - 7)(x + 3)$" },
+        { "id": "c", "text": "$(x + 7)(x + 3)$" },
+        { "id": "d", "text": "$(x - 7)(x - 3)$" }
+      ],
+      "answer": "a",
+      "explanation": "$7 \\times -3 = -21$ and $7 - 3 = 4$. Option b gives $-4x$."
+    }
+  ]
+}

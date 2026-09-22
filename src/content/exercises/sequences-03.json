@@ -1,0 +1,148 @@
+{
+  "title": "Practice: linear functions",
+  "intro": "Ten questions, including two where you drag sliders to match a line and two where you click the right part of a graph.",
+  "questions": [
+    {
+      "id": "s3-q1",
+      "type": "mcq",
+      "prompt": "What is the gradient of the line $y = 5x - 2$?",
+      "options": [
+        { "id": "a", "text": "$5$" },
+        { "id": "b", "text": "$-2$" },
+        { "id": "c", "text": "$5x$" },
+        { "id": "d", "text": "$3$" }
+      ],
+      "answer": "a",
+      "hints": ["Compare with $y = mx + c$. Which number is in the $m$ position?"],
+      "explanation": "In $y = mx + c$ the gradient is $m$, the number multiplying $x$. Here that is **5**. The $-2$ is the $y$-intercept.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "s3-q2",
+      "type": "numeric",
+      "prompt": "At what value of $y$ does the line $y = 3x + 7$ cross the $y$-axis?",
+      "answer": 7,
+      "hints": ["The $y$-axis is where $x = 0$. Substitute $x = 0$."],
+      "explanation": "When $x = 0$, $y = 3(0) + 7 = 7$. In $y = mx + c$ the intercept is always $c$ — you can read it straight off.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "s3-q3",
+      "type": "table",
+      "prompt": "Complete the table of values for $y = 2x - 1$.",
+      "columns": ["$x$", "$-2$", "$-1$", "$0$", "$1$", "$2$", "$3$"],
+      "rows": [
+        [
+          { "given": "$y$" },
+          { "answer": "-5" },
+          { "answer": "-3" },
+          { "answer": "-1" },
+          { "answer": "1" },
+          { "answer": "3" },
+          { "answer": "5" }
+        ]
+      ],
+      "hints": [
+        "Substitute each $x$ value into $2x - 1$.",
+        "For $x = -2$: $2 \\times (-2) = -4$, and then subtract 1."
+      ],
+      "explanation": "$2(-2)-1 = -5$, $2(-1)-1 = -3$, $2(0)-1 = -1$, $2(1)-1 = 1$, $2(2)-1 = 3$, $2(3)-1 = 5$. The $y$ values go up in 2s, which matches a gradient of 2 — a useful check that you have not slipped."
+    },
+    {
+      "id": "s3-q4",
+      "type": "manipulable",
+      "prompt": "Move the sliders so the red line matches $y = 3x - 4$.",
+      "widget": "line-mc",
+      "config": { "start": { "m": 1, "c": 0 } },
+      "target": { "m": 3, "c": -4 },
+      "tolerance": 0.01,
+      "hints": [
+        "$m$ is the number in front of $x$; $c$ is the number on its own.",
+        "Set the gradient to 3 and the intercept to $-4$."
+      ],
+      "explanation": "$y = 3x - 4$ means $m = 3$ and $c = -4$: the line rises 3 for every 1 across, and crosses the $y$-axis at $-4$."
+    },
+    {
+      "id": "s3-q5",
+      "type": "hotspot",
+      "prompt": "On this graph, **click the point where the line crosses the $y$-axis**.",
+      "figure": "line-graph",
+      "config": { "m": 2, "c": -2 },
+      "answer": "y-intercept",
+      "hints": [
+        "The $y$-axis is the vertical one.",
+        "Look for where the red line meets it."
+      ],
+      "explanation": "The line crosses the $y$-axis at $(0, -2)$, so $c = -2$. This is the value you can read off a graph without any calculation at all."
+    },
+    {
+      "id": "s3-q6",
+      "type": "hotspot",
+      "prompt": "On the same graph, **click the dashed step that shows the gradient** — the rise for one unit across.",
+      "figure": "line-graph",
+      "config": { "m": 2, "c": -2 },
+      "answer": "rise",
+      "hints": [
+        "Gradient is rise over run.",
+        "One dashed line shows the 1 across (the run); the other shows how far up the line climbs (the rise)."
+      ],
+      "explanation": "The vertical dashed step is the **rise**. Because the horizontal step is exactly 1, the rise *is* the gradient: here the line climbs 2, so $m = 2$."
+    },
+    {
+      "id": "s3-q7",
+      "type": "algebraic",
+      "prompt": "A line crosses the $y$-axis at $3$ and passes through $(4, 11)$. Write its equation. Start your answer with `y =`.",
+      "answer": "y = 2x + 3",
+      "variables": ["x"],
+      "placeholder": "y = ...",
+      "hints": [
+        "You already know $c$ — it is the $y$-intercept.",
+        "Find the gradient: $m = \\frac{11 - 3}{4 - 0}$."
+      ],
+      "explanation": "$c = 3$, and $m = \\frac{11-3}{4-0} = \\frac{8}{4} = 2$. So the equation is **$y = 2x + 3$**. Check: $2(4) + 3 = 11$ ✓"
+    },
+    {
+      "id": "s3-q8",
+      "type": "truefalse",
+      "prompt": "**The point $(5, 12)$ lies on the line $y = 3x - 4$.**",
+      "answer": false,
+      "hints": ["Substitute $x = 5$ and see what $y$ the equation gives."],
+      "explanation": "$3(5) - 4 = 11$, not 12. The point $(5, 11)$ is on the line; $(5, 12)$ sits one unit above it. Substituting is the only reliable test — a point can look like it is on a line and not be."
+    },
+    {
+      "id": "s3-q9",
+      "type": "multi",
+      "prompt": "Select **every** line below that is parallel to $y = 4x + 1$.",
+      "options": [
+        { "id": "a", "text": "$y = 4x - 7$" },
+        { "id": "b", "text": "$y = 4x$" },
+        { "id": "c", "text": "$y = -4x + 1$" },
+        { "id": "d", "text": "$y = x + 4$" },
+        { "id": "e", "text": "$y = 1 + 4x$" }
+      ],
+      "answers": ["a", "b", "e"],
+      "hints": [
+        "Parallel lines have the same gradient.",
+        "The gradient is the number multiplying $x$ — the intercept is irrelevant.",
+        "Watch out for one written back to front."
+      ],
+      "explanation": "Parallel means the same gradient, $m = 4$. That gives **a**, **b** and **e** — note that $y = 1 + 4x$ is just $y = 4x + 1$ rearranged, so it is the *same line*, which counts as parallel. **c** has gradient $-4$ (it falls), and **d** has gradient 1.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "s3-q10",
+      "type": "manipulable",
+      "prompt": "Move the sliders to make a line that **falls** as you move right and crosses the $y$-axis at $5$. Use a gradient of $-2$.",
+      "widget": "line-mc",
+      "config": { "start": { "m": 1, "c": 0 } },
+      "target": { "m": -2, "c": 5 },
+      "tolerance": 0.01,
+      "hints": [
+        "A falling line needs a negative gradient.",
+        "Set $m = -2$ and $c = 5$."
+      ],
+      "explanation": "$y = -2x + 5$. The negative gradient makes the line fall by 2 for every 1 across, and it still crosses the $y$-axis at $+5$ — the sign of $m$ and the sign of $c$ are completely independent.",
+      "difficulty": "core"
+    }
+  ]
+}

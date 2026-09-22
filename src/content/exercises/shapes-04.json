@@ -1,0 +1,114 @@
+{
+  "title": "Practice: symmetry in 3D",
+  "intro": "Eight questions. Picture each shape being sliced by a flat sheet of glass: is one side a perfect mirror image of the other?",
+  "questions": [
+    {
+      "id": "s4-q1",
+      "type": "numeric",
+      "prompt": "How many planes of symmetry does a cuboid with edges 2 cm, 3 cm and 5 cm have?",
+      "answer": 3,
+      "hints": ["Look for a plane parallel to each pair of opposite faces."],
+      "explanation": "3 — one cutting each of the three dimensions in half. There are no diagonal planes because the faces are not squares.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "s4-q2",
+      "type": "numeric",
+      "prompt": "How many planes of symmetry does a cube have?",
+      "answer": 9,
+      "hints": [
+        "Start with the 3 planes parallel to the faces.",
+        "Then look for planes that slice diagonally through two opposite edges."
+      ],
+      "explanation": "3 planes parallel to the faces, plus 6 diagonal planes (one for each pair of opposite edges), making 9."
+    },
+    {
+      "id": "s4-q3",
+      "type": "table",
+      "prompt": "Complete the table for these prisms.",
+      "columns": ["Prism", "Lines of symmetry in cross-section", "Planes of symmetry"],
+      "rows": [
+        [{ "given": "Equilateral triangular prism" }, { "answer": "3" }, { "answer": "4" }],
+        [{ "given": "Regular pentagonal prism" }, { "answer": "5" }, { "answer": "6" }],
+        [{ "given": "Regular hexagonal prism" }, { "answer": "6" }, { "answer": "7" }],
+        [{ "given": "Regular octagonal prism" }, { "answer": "8" }, { "answer": "9" }]
+      ],
+      "hints": ["A regular $n$-sided polygon has $n$ lines of symmetry.", "Planes = lines + 1."],
+      "explanation": "Each line of symmetry of the cross-section gives one plane along the prism, and there is always one extra plane halfway along parallel to the ends."
+    },
+    {
+      "id": "s4-q4",
+      "type": "multi",
+      "prompt": "Hannah writes four statements about prisms. Select **every** one that is **correct**.",
+      "options": [
+        { "id": "a", "text": "A prism can have no planes of symmetry" },
+        { "id": "b", "text": "A prism can have exactly two planes of symmetry" },
+        { "id": "c", "text": "No prism can have exactly ten planes of symmetry" },
+        { "id": "d", "text": "A prism with a semicircular cross-section has infinitely many planes of symmetry" }
+      ],
+      "answers": ["b"],
+      "hints": [
+        "Every prism can be cut in half halfway along its length.",
+        "How many lines of symmetry does a semicircle have?"
+      ],
+      "explanation": "a is wrong: every prism has the plane halfway along. b is right: an isosceles triangular prism has $1 + 1 = 2$. c is wrong: a regular nonagonal prism has $9 + 1 = 10$. d is wrong: a semicircle has only 1 line of symmetry, so the prism has 2 planes.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "s4-q5",
+      "type": "mcq",
+      "prompt": "How many planes of symmetry does a cylinder have?",
+      "options": [
+        { "id": "a", "text": "Infinitely many" },
+        { "id": "b", "text": "2" },
+        { "id": "c", "text": "3" },
+        { "id": "d", "text": "1" }
+      ],
+      "answer": "a",
+      "hints": ["How many lines of symmetry does a circle have?"],
+      "explanation": "A circle has infinitely many lines of symmetry (any diameter), so a cylinder has infinitely many planes through its axis, plus the one across the middle."
+    },
+    {
+      "id": "s4-q6",
+      "type": "truefalse",
+      "prompt": "A square-based prism that is **not** a cube (for example 2 cm × 2 cm × 7 cm) has 5 planes of symmetry.",
+      "answer": true,
+      "hints": ["A square has 4 lines of symmetry."],
+      "explanation": "True. The square cross-section gives 4 planes along the length, and there is 1 across the middle: $4 + 1 = 5$. It only becomes 9 when the prism is a cube."
+    },
+    {
+      "id": "s4-q7",
+      "type": "fill-blank",
+      "prompt": "Complete the rule.",
+      "text": "A prism whose cross-section has $n$ lines of symmetry has [[a]] planes of symmetry. A regular 12-sided prism therefore has [[b]] planes.",
+      "blanks": [
+        { "id": "a", "accept": ["n + 1", "n+1", "1 + n", "1+n"], "size": 6 },
+        { "id": "b", "accept": ["13"], "size": 4 }
+      ],
+      "hints": ["Count the planes along the prism, then add the one across it."],
+      "explanation": "$n + 1$: one plane for each line of symmetry, plus one across the middle. A regular dodecagon has 12 lines, so the prism has 13."
+    },
+    {
+      "id": "s4-q8",
+      "type": "match",
+      "prompt": "Match each shape to its number of planes of symmetry.",
+      "left": [
+        { "id": "a", "text": "Scalene triangular prism" },
+        { "id": "b", "text": "Isosceles triangular prism" },
+        { "id": "c", "text": "Cuboid (all edges different)" },
+        { "id": "d", "text": "Equilateral triangular prism" },
+        { "id": "e", "text": "Cube" }
+      ],
+      "right": [
+        { "id": "p1", "text": "1" },
+        { "id": "p2", "text": "2" },
+        { "id": "p3", "text": "3" },
+        { "id": "p4", "text": "4" },
+        { "id": "p9", "text": "9" }
+      ],
+      "solution": { "a": "p1", "b": "p2", "c": "p3", "d": "p4", "e": "p9" },
+      "hints": ["Planes = lines of symmetry of the cross-section + 1 — except for the cube."],
+      "explanation": "Scalene: $0 + 1$. Isosceles: $1 + 1$. Cuboid: 3. Equilateral: $3 + 1$. Cube: 9."
+    }
+  ]
+}

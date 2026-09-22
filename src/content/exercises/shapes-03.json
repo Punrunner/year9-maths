@@ -1,0 +1,168 @@
+{
+  "title": "Practice: scales and bearings",
+  "intro": "Eleven questions. Answers you would get from a careful scale drawing are accepted — you do not need to be exact to the kilometre.",
+  "questions": [
+    {
+      "id": "s3-q1",
+      "type": "drill",
+      "prompt": "Quick-fire: write each direction as a three-figure bearing, e.g. 045.",
+      "durationSec": 45,
+      "count": 8,
+      "pool": [
+        { "id": "b1", "prompt": "North", "accept": ["000", "0", "360"] },
+        { "id": "b2", "prompt": "East", "accept": ["090", "90"] },
+        { "id": "b3", "prompt": "South", "accept": ["180"] },
+        { "id": "b4", "prompt": "West", "accept": ["270"] },
+        { "id": "b5", "prompt": "North-East", "accept": ["045", "45"] },
+        { "id": "b6", "prompt": "South-East", "accept": ["135"] },
+        { "id": "b7", "prompt": "South-West", "accept": ["225"] },
+        { "id": "b8", "prompt": "North-West", "accept": ["315"] },
+        { "id": "b9", "prompt": "Back bearing of 070°", "accept": ["250"] },
+        { "id": "b10", "prompt": "Back bearing of 200°", "accept": ["020", "20"] },
+        { "id": "b11", "prompt": "Back bearing of 315°", "accept": ["135"] },
+        { "id": "b12", "prompt": "Back bearing of 090°", "accept": ["270"] }
+      ],
+      "explanation": "Bearings are measured clockwise from North. A back bearing is the original bearing $\\pm 180^\\circ$."
+    },
+    {
+      "id": "s3-q2",
+      "type": "manipulable",
+      "prompt": "Set the pointer to a bearing of $147^\\circ$. Then read off roughly how far East and South a 100 km journey on that bearing goes.",
+      "widget": "bearing",
+      "config": { "distance": 100, "unit": "km", "id": "q2" },
+      "target": { "b": 147 },
+      "tolerance": 1,
+      "hints": ["$147^\\circ$ is between East ($090^\\circ$) and South ($180^\\circ$), a bit closer to South."],
+      "explanation": "At $147^\\circ$ the journey goes about 54 km East and 84 km South — the same as the scale drawing in the lesson."
+    },
+    {
+      "id": "s3-q3",
+      "type": "mcq",
+      "prompt": "Which of these is written correctly as a bearing?",
+      "options": [
+        { "id": "a", "text": "$047^\\circ$" },
+        { "id": "b", "text": "$47^\\circ$" },
+        { "id": "c", "text": "N47E" },
+        { "id": "d", "text": "$-313^\\circ$" }
+      ],
+      "answer": "a",
+      "hints": ["Bearings always use three figures."],
+      "explanation": "Bearings are always written with three figures, so $47^\\circ$ becomes $047^\\circ$. They are never negative — they run from $000^\\circ$ to $359^\\circ$."
+    },
+    {
+      "id": "s3-q4",
+      "type": "numeric",
+      "prompt": "B is on a bearing of $070^\\circ$ from A. What is the bearing of A from B?",
+      "answer": 250,
+      "unit": "°",
+      "hints": ["Turn round to face the other way: add $180^\\circ$."],
+      "explanation": "$070^\\circ + 180^\\circ = 250^\\circ$."
+    },
+    {
+      "id": "s3-q5",
+      "type": "manipulable",
+      "prompt": "Ship A is on a bearing of $280^\\circ$ from ship B. Set the pointer to the bearing of **B from A**.",
+      "widget": "bearing",
+      "config": { "id": "q5" },
+      "target": { "b": 100 },
+      "tolerance": 1,
+      "hints": ["$280^\\circ$ is more than $180^\\circ$, so subtract $180^\\circ$."],
+      "explanation": "$280^\\circ - 180^\\circ = 100^\\circ$. A is roughly West of B, so B is roughly East of A — and $100^\\circ$ is just South of East."
+    },
+    {
+      "id": "s3-q6",
+      "type": "numeric",
+      "prompt": "A map has a scale of $1 : 100\\,000$. Two parks are 3.6 cm apart on the map. How far apart are they in real life, in **metres**?",
+      "answer": 3600,
+      "unit": "m",
+      "hints": ["1 cm on the map is $100\\,000$ cm $= 1000$ m in real life."],
+      "explanation": "$3.6 \\times 100\\,000 = 360\\,000$ cm $= 3600$ m (3.6 km)."
+    },
+    {
+      "id": "s3-q7",
+      "type": "numeric",
+      "prompt": "On a map drawn at 1 cm to 20 km, how long should you draw a journey of 150 km?",
+      "answer": 7.5,
+      "unit": "cm",
+      "hints": ["Real → map: divide by 20."],
+      "explanation": "$150 \\div 20 = 7.5$ cm."
+    },
+    {
+      "id": "s3-q8",
+      "type": "table",
+      "prompt": "A ship sails 100 km on each bearing. Use the bearing explorer or a scale drawing to fill in the distances, to the nearest km.",
+      "columns": ["Bearing", "Distance East (km)", "Distance South (km)"],
+      "rows": [
+        [{ "given": "132°" }, { "answer": "74", "tolerance": 2 }, { "answer": "67", "tolerance": 2 }],
+        [{ "given": "151°" }, { "answer": "48", "tolerance": 2 }, { "answer": "87", "tolerance": 2 }],
+        [{ "given": "165°" }, { "answer": "26", "tolerance": 2 }, { "answer": "97", "tolerance": 2 }]
+      ],
+      "hints": [
+        "As the bearing gets closer to $180^\\circ$, the ship goes further South and less far East.",
+        "Draw each journey as 5 cm at 1 cm to 20 km, then measure."
+      ],
+      "explanation": "$132^\\circ$: 74 km E, 67 km S. $151^\\circ$: 48 km E, 87 km S. $165^\\circ$: 26 km E, 97 km S. Answers within 2 km are fine for a scale drawing."
+    },
+    {
+      "id": "s3-q9",
+      "type": "steps",
+      "prompt": "Work backwards from the finishing point.",
+      "scenario": "After sailing from port P, a ship finishes 10 km East and 20 km South of its starting point.",
+      "steps": [
+        {
+          "kind": "mcq",
+          "prompt": "Roughly which direction did it sail?",
+          "options": [
+            { "id": "a", "text": "South-East, closer to South" },
+            { "id": "b", "text": "South-East, closer to East" },
+            { "id": "c", "text": "North-East" }
+          ],
+          "answer": "a",
+          "feedback": "It went further South (20 km) than East (10 km)."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "From a scale drawing, what is the bearing of the journey, to the nearest degree?",
+          "answer": 153,
+          "tolerance": 2,
+          "unit": "°",
+          "hint": "The line is $27^\\circ$ East of due South. Due South is $180^\\circ$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "How far did it sail, to the nearest km?",
+          "answer": 22,
+          "tolerance": 1,
+          "unit": "km",
+          "hint": "Measure the long side, or use Pythagoras: $\\sqrt{10^2 + 20^2}$.",
+          "feedback": "$\\sqrt{500} \\approx 22.4$ km."
+        }
+      ],
+      "explanation": "The journey is $27^\\circ$ East of South, so its bearing is $180^\\circ - 27^\\circ = 153^\\circ$, and the distance is $\\sqrt{10^2 + 20^2} \\approx 22$ km.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "s3-q10",
+      "type": "multi",
+      "prompt": "A ship sails on a bearing of $236^\\circ$. Select **every** true statement.",
+      "options": [
+        { "id": "a", "text": "It travels West" },
+        { "id": "b", "text": "It travels South" },
+        { "id": "c", "text": "It travels East" },
+        { "id": "d", "text": "It travels North" }
+      ],
+      "answers": ["a", "b"],
+      "hints": ["$180^\\circ$ to $270^\\circ$ is the South-West quarter."],
+      "explanation": "$236^\\circ$ lies between South ($180^\\circ$) and West ($270^\\circ$), so the ship goes both South and West."
+    },
+    {
+      "id": "s3-q11",
+      "type": "numeric",
+      "prompt": "Ship A is 36 km from ship B. How far apart are they on a map with a scale of $1 : 400\\,000$?",
+      "answer": 9,
+      "unit": "cm",
+      "hints": ["1 cm on this map is 4 km."],
+      "explanation": "$400\\,000$ cm $= 4$ km, so 1 cm represents 4 km. $36 \\div 4 = 9$ cm."
+    }
+  ]
+}

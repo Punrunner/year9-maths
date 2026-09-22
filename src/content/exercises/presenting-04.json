@@ -1,0 +1,127 @@
+{
+  "title": "Practice: choosing and misleading graphs",
+  "intro": "Nine questions on picking the right graph and seeing through the wrong ones.",
+  "questions": [
+    {
+      "id": "d4-q1",
+      "type": "match",
+      "prompt": "Match each set of data to the most appropriate graph.",
+      "left": [
+        { "id": "a", "text": "Favourite singers of a class" },
+        { "id": "b", "text": "How David spent his 100 dollars" },
+        { "id": "c", "text": "Times taken to travel to school, grouped" },
+        { "id": "d", "text": "Average temperature each month of the year" },
+        { "id": "e", "text": "Height and mass of 20 people" }
+      ],
+      "right": [
+        { "id": "r1", "text": "Bar chart" },
+        { "id": "r2", "text": "Pie chart" },
+        { "id": "r3", "text": "Histogram" },
+        { "id": "r4", "text": "Line (time-series) graph" },
+        { "id": "r5", "text": "Scatter graph" }
+      ],
+      "solution": { "a": "r1", "b": "r2", "c": "r3", "d": "r4", "e": "r5" },
+      "hints": ["Proportions of a whole → pie. Trend over time → line. Two variables → scatter."],
+      "explanation": "Categories → bar chart. Parts of a whole → pie chart. Grouped continuous → histogram. Change over time → line graph. A relationship → scatter graph.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "d4-q2",
+      "type": "table",
+      "prompt": "Hockey results for 30 matches. Find the pie chart angles.",
+      "columns": ["Result", "Frequency", "Angle (°)"],
+      "rows": [
+        [{ "given": "Win" }, { "given": "10" }, { "answer": "120" }],
+        [{ "given": "Loss" }, { "given": "15" }, { "answer": "180" }],
+        [{ "given": "Draw" }, { "given": "5" }, { "answer": "60" }]
+      ],
+      "hints": ["Each match is $360 \\div 30 = 12^\\circ$."],
+      "explanation": "$10 \\times 12 = 120$, $15 \\times 12 = 180$, $5 \\times 12 = 60$. They add to $360^\\circ$."
+    },
+    {
+      "id": "d4-q3",
+      "type": "manipulable",
+      "prompt": "Make the profits chart **misleading**: start the $y$-axis at 20 so that Year 3 looks 6 times as tall as Year 1.",
+      "widget": "axis-trick",
+      "config": { "values": [22, 26, 32], "labels": ["Year 1", "Year 2", "Year 3"], "unit": "$ millions" },
+      "target": { "lo": 20 },
+      "tolerance": 0,
+      "hints": ["Move the 'starts at' slider."],
+      "explanation": "From 20, the bars are 2, 6 and 12 high, so Year 3 looks 6 times Year 1 — really it is only about 1.45 times."
+    },
+    {
+      "id": "d4-q4",
+      "type": "multi",
+      "prompt": "A company wants its profits to look like they are **growing fast**. Which tricks would do that?",
+      "options": [
+        { "id": "a", "text": "Start the $y$-axis at 20 instead of 0" },
+        { "id": "b", "text": "Draw Year 3 with a dark colour and a thick border" },
+        { "id": "c", "text": "Stretch the $y$-axis up to 100" },
+        { "id": "d", "text": "Use 3D bars viewed from an angle" },
+        { "id": "e", "text": "Show the profits as a pie chart" }
+      ],
+      "answers": ["a", "b", "d"],
+      "hints": ["Two of these would make the growth look *smaller* or hide it."],
+      "explanation": "Cutting the baseline, highlighting Year 3 and 3D effects all exaggerate. Stretching the axis makes growth look smaller, and a pie chart hides the trend altogether."
+    },
+    {
+      "id": "d4-q5",
+      "type": "truefalse",
+      "prompt": "A misleading graph must contain incorrect numbers.",
+      "answer": false,
+      "hints": ["Re-read the lesson: what can be changed without changing the data?"],
+      "explanation": "False. A graph can show completely correct data and still give a false impression through its axes, scale or style."
+    },
+    {
+      "id": "d4-q6",
+      "type": "numeric",
+      "prompt": "In a pie chart of 100 dollars of spending, music gets $72^\\circ$. How many dollars were spent on music?",
+      "answer": 20,
+      "unit": "dollars",
+      "hints": ["Each dollar is $3.6^\\circ$."],
+      "explanation": "$72 \\div 3.6 = 20$ dollars."
+    },
+    {
+      "id": "d4-q7",
+      "type": "table",
+      "prompt": "A café's pictogram uses one cup for 20 soft drinks. Complete the table.",
+      "columns": ["Day", "Cups shown", "Soft drinks sold"],
+      "rows": [
+        [{ "given": "Monday" }, { "given": "3" }, { "answer": "60" }],
+        [{ "given": "Tuesday" }, { "given": "4" }, { "answer": "80" }],
+        [{ "given": "Wednesday" }, { "given": "2½" }, { "answer": "50" }],
+        [{ "given": "Saturday" }, { "given": "5" }, { "answer": "100" }]
+      ],
+      "hints": ["Half a cup is 10 drinks."],
+      "explanation": "Multiply the number of cups by 20: 60, 80, 50 and 100."
+    },
+    {
+      "id": "d4-q8",
+      "type": "mcq",
+      "prompt": "Monthly highs: Dubai goes from 24 °C in January to 41 °C in July; London from 7 °C to 21 °C. Which is a sensible inference?",
+      "options": [
+        { "id": "a", "text": "Both cities are hottest in the middle of the year, and Dubai is always much hotter" },
+        { "id": "b", "text": "London is hotter than Dubai in winter" },
+        { "id": "c", "text": "The temperature in both cities never changes" },
+        { "id": "d", "text": "Dubai will be 45 °C next July" }
+      ],
+      "answer": "a",
+      "hints": ["An inference should follow from the evidence."],
+      "explanation": "Both peak in July/August and Dubai stays well above London all year. Option d predicts beyond the data, which the graph cannot support."
+    },
+    {
+      "id": "d4-q9",
+      "type": "mcq",
+      "prompt": "A histogram of the heights of 1000 adults is symmetrical with a single peak in the middle. What is this shape called?",
+      "options": [
+        { "id": "a", "text": "A normal distribution" },
+        { "id": "b", "text": "A skewed distribution" },
+        { "id": "c", "text": "Negative correlation" },
+        { "id": "d", "text": "A frequency polygon" }
+      ],
+      "answer": "a",
+      "hints": ["It is also called a bell curve."],
+      "explanation": "A symmetrical bell shape is the normal distribution. If the peak were pushed to one side it would be skewed."
+    }
+  ]
+}

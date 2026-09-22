@@ -1,0 +1,103 @@
+{
+  "title": "Practice: combining transformations",
+  "intro": "Eight questions. Follow one point through each step — it is the quickest check.",
+  "questions": [
+    {
+      "id": "t3-q1",
+      "type": "fill-blank",
+      "prompt": "A shape is reflected in $x = 1$ and then in $x = 5$. Give the single equivalent translation vector.",
+      "text": "top [[a]], bottom [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["8"], "size": 3 },
+        { "id": "b", "accept": ["0"], "size": 3 }
+      ],
+      "hints": ["Twice the distance between the lines, from the first to the second."],
+      "explanation": "$2 \\times (5 - 1) = 8$, so $\\begin{pmatrix} 8 \\\\ 0 \\end{pmatrix}$."
+    },
+    {
+      "id": "t3-q2",
+      "type": "steps",
+      "prompt": "Follow a point.",
+      "scenario": "Point $(1, 2)$ is reflected in $x = 4$, then in $x = 6$.",
+      "steps": [
+        { "kind": "numeric", "prompt": "After the first reflection, what is the $x$-coordinate?", "answer": 7 },
+        { "kind": "numeric", "prompt": "After the second reflection, what is the $x$-coordinate?", "answer": 5 },
+        { "kind": "numeric", "prompt": "So the point has moved how far to the right?", "answer": 4 }
+      ],
+      "explanation": "$(1, 2) \\to (7, 2) \\to (5, 2)$: a translation of $\\begin{pmatrix} 4 \\\\ 0 \\end{pmatrix}$, which is $2 \\times (6 - 4)$."
+    },
+    {
+      "id": "t3-q3",
+      "type": "mcq",
+      "prompt": "Reflecting in $x = 5$ and then in $x = 6$ is equivalent to which single transformation?",
+      "options": [
+        { "id": "a", "text": "Translation by $\\begin{pmatrix} 2 \\\\ 0 \\end{pmatrix}$" },
+        { "id": "b", "text": "Translation by $\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix}$" },
+        { "id": "c", "text": "Reflection in $x = 5.5$" },
+        { "id": "d", "text": "Rotation of $180^\\circ$" }
+      ],
+      "answer": "a",
+      "explanation": "The lines are 1 apart, so the translation is twice that: 2 units right."
+    },
+    {
+      "id": "t3-q4",
+      "type": "table",
+      "prompt": "Is the final image congruent to the original?",
+      "columns": ["First", "Then", "Congruent? (yes/no)"],
+      "rows": [
+        [{ "given": "Reflection in y = x" }, { "given": "Rotation 90° clockwise" }, { "answer": "yes", "accept": ["y"] }],
+        [{ "given": "Translation" }, { "given": "Reflection in y = 3" }, { "answer": "yes", "accept": ["y"] }],
+        [{ "given": "Enlargement, scale factor 2" }, { "given": "Translation" }, { "answer": "no", "accept": ["n"] }]
+      ],
+      "hints": ["Only an enlargement changes size."],
+      "explanation": "Reflections, rotations and translations keep size; the enlargement doubles every length."
+    },
+    {
+      "id": "t3-q5",
+      "type": "mcq",
+      "prompt": "A shape is reflected in the $x$-axis and then in the $y$-axis. What single transformation does the same?",
+      "options": [
+        { "id": "a", "text": "Rotation $180^\\circ$ about the origin" },
+        { "id": "b", "text": "Reflection in $y = x$" },
+        { "id": "c", "text": "Rotation $90^\\circ$ clockwise about the origin" },
+        { "id": "d", "text": "A translation" }
+      ],
+      "answer": "a",
+      "hints": ["Follow $(2, 1)$: it goes to $(2, -1)$, then to …"],
+      "explanation": "$(2, 1) \\to (2, -1) \\to (-2, -1)$: that is $(x, y) \\to (-x, -y)$, a $180^\\circ$ rotation about the origin."
+    },
+    {
+      "id": "t3-q6",
+      "type": "fill-blank",
+      "prompt": "Triangle ABC is translated by $\\begin{pmatrix} -5 \\\\ -5 \\end{pmatrix}$, then by $\\begin{pmatrix} 1 \\\\ 7 \\end{pmatrix}$. Give the single translation from ABC to the final image.",
+      "text": "top [[a]], bottom [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["-4", "−4"], "size": 3 },
+        { "id": "b", "accept": ["2"], "size": 3 }
+      ],
+      "hints": ["Add the vectors."],
+      "explanation": "$-5 + 1 = -4$ and $-5 + 7 = 2$: $\\begin{pmatrix} -4 \\\\ 2 \\end{pmatrix}$."
+    },
+    {
+      "id": "t3-q7",
+      "type": "fill-blank",
+      "prompt": "Following on: what translation takes the **final** image back to ABC?",
+      "text": "top [[a]], bottom [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["4"], "size": 3 },
+        { "id": "b", "accept": ["-2", "−2"], "size": 3 }
+      ],
+      "hints": ["Reverse both numbers."],
+      "explanation": "The inverse of $\\begin{pmatrix} -4 \\\\ 2 \\end{pmatrix}$ is $\\begin{pmatrix} 4 \\\\ -2 \\end{pmatrix}$."
+    },
+    {
+      "id": "t3-q8",
+      "type": "truefalse",
+      "prompt": "Rotating a shape then translating it always gives the same result as translating it then rotating it (same rotation and translation).",
+      "answer": false,
+      "hints": ["Try a $90^\\circ$ rotation about the origin and a translation of 3 right, on the point $(1, 0)$."],
+      "explanation": "False. Rotate then translate: $(1, 0) \\to (0, 1) \\to (3, 1)$. Translate then rotate: $(1, 0) \\to (4, 0) \\to (0, 4)$. The order matters.",
+      "difficulty": "challenge"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+---
+/** The scored quiz for one topic. */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Quiz from '../../components/exercises/Quiz.tsx';
+import { getTopicNodes, getCatalog } from '../../lib/site';
+import { renderInline, prepareQuestions } from '../../lib/render';
+
+export async function getStaticPaths() {
+  const nodes = await getTopicNodes();
+  return nodes
+    .filter((n) => n.quiz)
+    .map((node) => ({ params: { topic: node.topic.id }, props: { node } }));
+}
+
+const { node } = Astro.props;
+const { topic, strand, quiz } = node;
+const catalog = await getCatalog();
+
+const questions = prepareQuestions(quiz!.data.questions, quiz!.id);
+const descriptionHtml = quiz!.data.description
+  ? renderInline(quiz!.data.description, quiz!.id)
+  : undefined;
+---
+
+<Base title={quiz!.data.title} description={quiz!.data.description ?? `Scored quiz for ${topic.data.title}.`}>
+  <div class="container page page-narrow" style={`--accent: var(${strand.data.accent})`}>
+    <Breadcrumbs items={[
+      { label: strand.data.short, href: `/strands/${strand.id}/` },
+      { label: topic.data.title, href: node.href },
+      { label: 'Quiz' },
+    ]} />
+
+    <Quiz
+      client:load
+      quizId={`quiz-${topic.id}`}
+      title={quiz!.data.title}
+      descriptionHtml={descriptionHtml}
+      questions={questions}
+      pickCount={quiz!.data.pick}
+      timeLimitSec={quiz!.data.timeLimitSec}
+      passMark={quiz!.data.passMark}
+      catalog={catalog}
+      backHref={node.href}
+      backLabel={`Back to ${topic.data.title}`}
+    />
+  </div>
+</Base>

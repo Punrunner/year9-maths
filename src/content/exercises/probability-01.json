@@ -1,0 +1,150 @@
+{
+  "title": "Practice: combined events",
+  "intro": "Nine questions mixing seven different question types. Fractions, decimals and percentages are all accepted where they are equivalent.",
+  "questions": [
+    {
+      "id": "p1-q1",
+      "type": "numeric",
+      "prompt": "A bag holds only red, blue and yellow beads. $P(\\text{blue}) = 0.35$ and $P(\\text{yellow}) = 0.4$. Find $P(\\text{red})$.",
+      "answer": 0.25,
+      "accept": ["1/4", "25%"],
+      "hints": [
+        "Every bead is one of the three colours, so the three probabilities must total 1.",
+        "Add the two you know first, then subtract from 1."
+      ],
+      "explanation": "$0.35 + 0.4 = 0.75$, so $P(\\text{red}) = 1 - 0.75 = 0.25$ (which is $\\frac{1}{4}$, or 25%).",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "p1-q2",
+      "type": "truefalse",
+      "prompt": "Nadia rolls a dice and then tosses a coin. **These two events are independent.**",
+      "answer": true,
+      "hints": ["Ask whether the result of the dice could possibly change what the coin does."],
+      "explanation": "The dice has no effect whatsoever on the coin, so the events are independent. That is exactly what lets you multiply their probabilities."
+    },
+    {
+      "id": "p1-q3",
+      "type": "truefalse",
+      "prompt": "A bag has 10 sweets. Jemma takes one and eats it, then takes another. **These two events are independent.**",
+      "answer": false,
+      "labels": ["Independent", "Not independent"],
+      "hints": ["How many sweets are in the bag for the second pick?"],
+      "explanation": "Eating the first sweet leaves only 9 in the bag, so the second probability has a different denominator. The events are **dependent** — the phrase *without replacement* is the giveaway."
+    },
+    {
+      "id": "p1-q4",
+      "type": "mcq",
+      "prompt": "A fair coin is tossed twice. What is $P(\\text{two heads})$?",
+      "options": [
+        { "id": "a", "text": "$\\frac{1}{4}$" },
+        { "id": "b", "text": "$\\frac{1}{2}$" },
+        { "id": "c", "text": "$\\frac{1}{3}$" },
+        { "id": "d", "text": "$1$" }
+      ],
+      "answer": "a",
+      "hints": [
+        "The tosses are independent, so multiply.",
+        "$P(\\text{head}) = \\frac{1}{2}$ each time."
+      ],
+      "explanation": "$\\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$. Listing the outcomes agrees: HH, HT, TH, TT — one of the four is two heads."
+    },
+    {
+      "id": "p1-q5",
+      "type": "table",
+      "prompt": "A coin (H or T) is tossed and a three-sided spinner numbered 1, 2, 3 is spun. Complete the sample space diagram.",
+      "columns": ["Coin", "Spinner 1", "Spinner 2", "Spinner 3"],
+      "rows": [
+        [{ "given": "H" }, { "given": "H1" }, { "answer": "H2" }, { "answer": "H3" }],
+        [{ "given": "T" }, { "answer": "T1" }, { "answer": "T2" }, { "answer": "T3" }]
+      ],
+      "hints": [
+        "Each cell pairs the coin result from its row with the spinner number from its column.",
+        "Write the coin letter first, then the number — like the H1 that is already filled in."
+      ],
+      "explanation": "There are $2 \\times 3 = 6$ equally likely outcomes: H1, H2, H3, T1, T2, T3. A complete sample space like this is the safest way to make sure nothing is missed."
+    },
+    {
+      "id": "p1-q6",
+      "type": "numeric",
+      "prompt": "Using that same coin and three-sided spinner, find $P(\\text{a tail and a number greater than 1})$.",
+      "answer": "1/3",
+      "accept": ["2/6", "0.333", "0.33"],
+      "tolerance": 0.005,
+      "hints": [
+        "Which outcomes in the table are a tail *and* a 2 or a 3?",
+        "Count them, then divide by the 6 outcomes altogether."
+      ],
+      "explanation": "T2 and T3 both work, so $P = \\frac{2}{6} = \\frac{1}{3}$. The AND rule gives the same: $\\frac{1}{2} \\times \\frac{2}{3} = \\frac{1}{3}$."
+    },
+    {
+      "id": "p1-q7",
+      "type": "multi",
+      "prompt": "Select **every** pair of events below that is independent.",
+      "options": [
+        { "id": "a", "text": "Spinning a spinner, then rolling a dice" },
+        { "id": "b", "text": "Drawing a card, replacing it, then drawing again" },
+        { "id": "c", "text": "Picking a name from a hat, then picking another without replacing the first" },
+        { "id": "d", "text": "Tossing a coin, then tossing the same coin again" },
+        { "id": "e", "text": "Taking two balls at once from a bag" }
+      ],
+      "answers": ["a", "b", "d"],
+      "hints": [
+        "Look for the words *without replacing*, or anything that changes what is left.",
+        "Taking two things at once is the same as taking them one after the other without replacement."
+      ],
+      "explanation": "**a**, **b** and **d** are independent — nothing about the first event changes the second. In **c** the hat has one fewer name, and in **e** the two balls come from the same reduced set, so both are dependent."
+    },
+    {
+      "id": "p1-q8",
+      "type": "fill-blank",
+      "prompt": "Complete the rules by typing the missing words.",
+      "text": "For independent events, $P(\\text{A and B}) = P(\\text{A}) \\;[[op1]]\\; P(\\text{B})$. For outcomes that cannot both happen, $P(\\text{A or B}) = P(\\text{A}) \\;[[op2]]\\; P(\\text{B})$. All the probabilities of a complete set of outcomes add up to [[total]].",
+      "blanks": [
+        { "id": "op1", "accept": ["multiply", "times", "x", "*", "×"], "size": 8 },
+        { "id": "op2", "accept": ["add", "plus", "+"], "size": 8 },
+        { "id": "total", "accept": ["1", "one", "100%"], "size": 4 }
+      ],
+      "hints": ["AND makes things less likely, so which operation makes a number smaller?"],
+      "explanation": "**AND → multiply**, **OR → add**, and a complete set of outcomes always totals **1**. Multiplying two numbers below 1 gives something smaller, which fits: wanting two things is harder than wanting one."
+    },
+    {
+      "id": "p1-q9",
+      "type": "steps",
+      "prompt": "Work through this one step at a time.",
+      "scenario": "The probability that Arun cycles to school on any day is $0.6$, and whether he cycles on one day has no effect on the next. Find the probability that he cycles on **both** Monday and Tuesday.",
+      "steps": [
+        {
+          "kind": "mcq",
+          "prompt": "Are the two days independent?",
+          "options": [
+            { "id": "y", "text": "Yes — one day does not affect the other" },
+            { "id": "n", "text": "No — the days are linked" }
+          ],
+          "answer": "y",
+          "feedback": "Right, so we are allowed to multiply.",
+          "hint": "Read the question again: what does it say about one day affecting the next?"
+        },
+        {
+          "kind": "numeric",
+          "prompt": "What is the probability he cycles on Monday?",
+          "answer": 0.6,
+          "accept": ["3/5", "60%"],
+          "feedback": "And Tuesday is the same, $0.6$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Multiply the two probabilities. What is $P(\\text{both days})$?",
+          "answer": 0.36,
+          "accept": ["9/25", "36%"],
+          "tolerance": 0.001,
+          "feedback": "$0.6 \\times 0.6 = 0.36$.",
+          "hint": "$0.6 \\times 0.6$ — think $6 \\times 6 = 36$, then place the decimal point."
+        }
+      ],
+      "hints": ["Independent events: multiply."],
+      "explanation": "$P(\\text{cycles both days}) = 0.6 \\times 0.6 = 0.36$, or 36%. Notice the answer is **smaller** than $0.6$ — asking for two things to happen is always harder than asking for one.",
+      "difficulty": "core"
+    }
+  ]
+}

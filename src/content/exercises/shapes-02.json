@@ -1,0 +1,163 @@
+{
+  "title": "Practice: constructions",
+  "intro": "Ten questions on how and why constructions work. Try at least two of them for real with compasses.",
+  "questions": [
+    {
+      "id": "s2-q1",
+      "type": "order",
+      "prompt": "Put the steps for constructing a $60^\\circ$ angle at X in order.",
+      "items": [
+        { "id": "a", "text": "Draw a line and mark the point X on it" },
+        { "id": "b", "text": "With centre X, draw an arc that cuts the line at A" },
+        { "id": "c", "text": "Keeping the same width, draw an arc with centre A that cuts the first arc at Y" },
+        { "id": "d", "text": "Join X to Y" }
+      ],
+      "solution": ["a", "b", "c", "d"],
+      "hints": ["The arc centred on A has to cross an arc that already exists."],
+      "explanation": "Because the compasses never change width, XA = AY = XY. Triangle XAY is equilateral, so angle YXA is $60^\\circ$."
+    },
+    {
+      "id": "s2-q2",
+      "type": "mcq",
+      "prompt": "Why does the $60^\\circ$ construction work?",
+      "options": [
+        { "id": "a", "text": "It makes an equilateral triangle, and every angle of one is $60^\\circ$" },
+        { "id": "b", "text": "It makes a right-angled triangle" },
+        { "id": "c", "text": "A circle has $360^\\circ$ and you divide by 3" },
+        { "id": "d", "text": "The arcs are always $60^\\circ$ long" }
+      ],
+      "answer": "a",
+      "hints": ["What do you know about the three lengths XA, AY and XY?"],
+      "explanation": "All three sides are one compass-width long, so the triangle is equilateral and each angle is $180^\\circ \\div 3 = 60^\\circ$."
+    },
+    {
+      "id": "s2-q3",
+      "type": "match",
+      "prompt": "Match each angle to the quickest way to construct it.",
+      "left": [
+        { "id": "a30", "text": "$30^\\circ$" },
+        { "id": "a45", "text": "$45^\\circ$" },
+        { "id": "a15", "text": "$15^\\circ$" },
+        { "id": "a135", "text": "$135^\\circ$" },
+        { "id": "a22", "text": "$22.5^\\circ$" }
+      ],
+      "right": [
+        { "id": "r1", "text": "Bisect a $60^\\circ$ angle" },
+        { "id": "r2", "text": "Bisect a $90^\\circ$ angle" },
+        { "id": "r3", "text": "Bisect $60^\\circ$, then bisect again" },
+        { "id": "r4", "text": "Construct $90^\\circ$, then add a $45^\\circ$ next to it" },
+        { "id": "r5", "text": "Bisect $90^\\circ$, then bisect again" }
+      ],
+      "solution": { "a30": "r1", "a45": "r2", "a15": "r3", "a135": "r4", "a22": "r5" },
+      "hints": ["Each bisection halves the angle."],
+      "explanation": "$60 \\to 30 \\to 15$ and $90 \\to 45 \\to 22.5$. For $135^\\circ$, put $90^\\circ$ and $45^\\circ$ side by side (or construct $45^\\circ$ and take the angle on the other side of the straight line: $180 - 45 = 135$)."
+    },
+    {
+      "id": "s2-q4",
+      "type": "truefalse",
+      "prompt": "You can construct an angle of $20^\\circ$ by bisecting angles, starting from $60^\\circ$ or $90^\\circ$.",
+      "answer": false,
+      "hints": ["List what you can reach: 60, 30, 15, 7.5 … and 90, 45, 22.5 …"],
+      "explanation": "False. Halving $60^\\circ$ gives $30, 15, 7.5, \\dots$ and halving $90^\\circ$ gives $45, 22.5, \\dots$ None of those is $20^\\circ$, and adding them cannot make exactly 20 either. $20^\\circ$ needs a protractor.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "s2-q5",
+      "type": "order",
+      "prompt": "Put the steps for constructing a perpendicular at the point X on a line in order.",
+      "items": [
+        { "id": "a", "text": "With centre X, draw arcs that cut the line at A and B" },
+        { "id": "b", "text": "Open the compasses wider" },
+        { "id": "c", "text": "Draw arcs from A and from B that cross above and below the line at P and Q" },
+        { "id": "d", "text": "Join P to Q" }
+      ],
+      "solution": ["a", "b", "c", "d"],
+      "hints": ["The arcs from A and B need to be wider than AX, or they will not cross."],
+      "explanation": "P and Q are each the same distance from A as from B, so the line PQ is the perpendicular bisector of AB. It passes through X at $90^\\circ$."
+    },
+    {
+      "id": "s2-q6",
+      "type": "mcq",
+      "prompt": "To construct the perpendicular **from a point X above a line**, what is the first step?",
+      "options": [
+        { "id": "a", "text": "Draw an arc centred at X that cuts the line in two places" },
+        { "id": "b", "text": "Measure the distance from X to the line" },
+        { "id": "c", "text": "Construct a $60^\\circ$ angle at X" },
+        { "id": "d", "text": "Draw a line through X parallel to the first line" }
+      ],
+      "answer": "a",
+      "hints": ["You need two points on the line that are the same distance from X."],
+      "explanation": "The arc gives two points on the line equally far from X. Crossing arcs from those two points, then joining X to the crossing, gives the perpendicular."
+    },
+    {
+      "id": "s2-q7",
+      "type": "steps",
+      "prompt": "Plan a construction one step at a time.",
+      "scenario": "You draw AB = 8 cm, construct a $90^\\circ$ angle at A, and mark C on the new line so that AC = 6 cm. Then you join B to C.",
+      "steps": [
+        {
+          "kind": "mcq",
+          "prompt": "What kind of triangle is ABC?",
+          "options": [
+            { "id": "a", "text": "Right-angled at A" },
+            { "id": "b", "text": "Equilateral" },
+            { "id": "c", "text": "Isosceles" }
+          ],
+          "answer": "a",
+          "feedback": "The constructed angle BAC is $90^\\circ$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "When you measure BC, how long should it be?",
+          "answer": 10,
+          "unit": "cm",
+          "hint": "Use Pythagoras: $BC^2 = 8^2 + 6^2$.",
+          "feedback": "$\\sqrt{64 + 36} = \\sqrt{100} = 10$ cm — a quick check that your right angle is accurate."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "You now bisect angle BAC. What angle does the bisector make with AB?",
+          "answer": 45,
+          "unit": "°"
+        }
+      ],
+      "explanation": "Angle BAC is $90^\\circ$, so BC $= \\sqrt{8^2 + 6^2} = 10$ cm, and bisecting the right angle gives $45^\\circ$. If your BC is not close to 10 cm, your perpendicular was not accurate."
+    },
+    {
+      "id": "s2-q8",
+      "type": "multi",
+      "prompt": "A triangle has a 6 cm base with angles of $45^\\circ$ and $30^\\circ$ at its ends. Which constructions do you need?",
+      "options": [
+        { "id": "a", "text": "Construct $90^\\circ$ at one end, then bisect it" },
+        { "id": "b", "text": "Construct $60^\\circ$ at the other end, then bisect it" },
+        { "id": "c", "text": "Construct $120^\\circ$ at one end" },
+        { "id": "d", "text": "Construct the perpendicular bisector of the base" }
+      ],
+      "answers": ["a", "b"],
+      "hints": ["$45 = 90 \\div 2$ and $30 = 60 \\div 2$."],
+      "explanation": "$45^\\circ$ comes from bisecting a right angle and $30^\\circ$ from bisecting $60^\\circ$. Extend the two arms until they meet to finish the triangle."
+    },
+    {
+      "id": "s2-q9",
+      "type": "numeric",
+      "prompt": "You construct a $45^\\circ$ angle on a straight line. What is the angle on the other side of the arm, on the same straight line?",
+      "answer": 135,
+      "unit": "°",
+      "hints": ["Angles on a straight line add to $180^\\circ$."],
+      "explanation": "$180^\\circ - 45^\\circ = 135^\\circ$. This is the easiest way to construct $135^\\circ$."
+    },
+    {
+      "id": "s2-q10",
+      "type": "flashcards",
+      "prompt": "Flip through the constructions. Picture each one before you turn the card.",
+      "cards": [
+        { "id": "f1", "front": "Construct $60^\\circ$", "back": "Arc from X to A; same width, arc from A; join X to the crossing. (Equilateral triangle.)" },
+        { "id": "f2", "front": "Bisect an angle", "back": "Arc from the vertex cutting both arms; equal arcs from those two points; join the vertex to the crossing." },
+        { "id": "f3", "front": "Perpendicular at a point X on a line", "back": "Arcs from X to A and B; wider arcs from A and B crossing at P and Q; join PQ." },
+        { "id": "f4", "front": "Perpendicular from a point X to a line", "back": "Arc from X cutting the line twice; equal arcs from those points crossing on the far side; join X to the crossing." },
+        { "id": "f5", "front": "Perpendicular bisector of AB", "back": "Equal arcs (more than half AB) from A and from B, above and below; join the two crossings." }
+      ],
+      "explanation": "Every one of these relies on points that are equal distances from two other points."
+    }
+  ]
+}

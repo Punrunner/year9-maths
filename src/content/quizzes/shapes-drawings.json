@@ -1,0 +1,139 @@
+{
+  "title": "Shapes and mathematical drawings quiz",
+  "topic": "shapes-drawings",
+  "description": "Ten questions drawn at random from a bank of thirteen, covering inscribed polygons, constructions, bearings, scales and 3D symmetry.",
+  "pick": 10,
+  "timeLimitSec": 900,
+  "passMark": 70,
+  "questions": [
+    {
+      "id": "sq1",
+      "type": "mcq",
+      "prompt": "When constructing an inscribed regular hexagon, what must the compasses be set to?",
+      "options": [
+        { "id": "a", "text": "The radius of the circle" },
+        { "id": "b", "text": "The diameter of the circle" },
+        { "id": "c", "text": "Any width, as long as it does not change" },
+        { "id": "d", "text": "Half the radius" }
+      ],
+      "answer": "a",
+      "explanation": "A regular hexagon is six equilateral triangles, so each side equals the radius."
+    },
+    {
+      "id": "sq2",
+      "type": "numeric",
+      "prompt": "What is the angle at the centre of a regular octagon inscribed in a circle?",
+      "answer": 45,
+      "unit": "°",
+      "explanation": "$360^\\circ \\div 8 = 45^\\circ$."
+    },
+    {
+      "id": "sq3",
+      "type": "mcq",
+      "prompt": "Which construction gives a $15^\\circ$ angle?",
+      "options": [
+        { "id": "a", "text": "Construct $60^\\circ$, bisect it, then bisect again" },
+        { "id": "b", "text": "Construct $90^\\circ$ and bisect it" },
+        { "id": "c", "text": "Construct $60^\\circ$ and bisect it" },
+        { "id": "d", "text": "Construct $90^\\circ$, bisect it, then bisect again" }
+      ],
+      "answer": "a",
+      "explanation": "$60 \\div 2 = 30$ and $30 \\div 2 = 15$. Option d gives $22.5^\\circ$."
+    },
+    {
+      "id": "sq4",
+      "type": "order",
+      "prompt": "Put the steps for bisecting an angle in order.",
+      "items": [
+        { "id": "a", "text": "With centre at the vertex, draw an arc cutting both arms" },
+        { "id": "b", "text": "From each of those two points, draw equal arcs that cross" },
+        { "id": "c", "text": "Join the vertex to the crossing point" }
+      ],
+      "solution": ["a", "b", "c"],
+      "explanation": "The crossing point is the same distance from both arms, so the line through it splits the angle in half."
+    },
+    {
+      "id": "sq5",
+      "type": "truefalse",
+      "prompt": "In a construction, you may use a protractor to check your angles.",
+      "answer": false,
+      "explanation": "False. A construction uses only compasses and a straight edge — no protractor and no measuring."
+    },
+    {
+      "id": "sq6",
+      "type": "manipulable",
+      "prompt": "Set the pointer to the bearing of **South-West**.",
+      "widget": "bearing",
+      "config": { "id": "sq6" },
+      "target": { "b": 225 },
+      "tolerance": 1,
+      "explanation": "South is $180^\\circ$ and West is $270^\\circ$. South-West is halfway: $225^\\circ$."
+    },
+    {
+      "id": "sq7",
+      "type": "numeric",
+      "prompt": "C is on a bearing of $310^\\circ$ from B. What is the bearing of B from C?",
+      "answer": 130,
+      "unit": "°",
+      "explanation": "$310^\\circ$ is more than $180^\\circ$, so subtract: $310^\\circ - 180^\\circ = 130^\\circ$."
+    },
+    {
+      "id": "sq8",
+      "type": "numeric",
+      "prompt": "A map has a scale of $1 : 50\\,000$. A path is 6 cm long on the map. How long is it in real life, in km?",
+      "answer": 3,
+      "unit": "km",
+      "explanation": "$6 \\times 50\\,000 = 300\\,000$ cm $= 3000$ m $= 3$ km."
+    },
+    {
+      "id": "sq9",
+      "type": "multi",
+      "prompt": "A ship sails on a bearing of $066^\\circ$. Select **every** true statement.",
+      "options": [
+        { "id": "a", "text": "It travels East" },
+        { "id": "b", "text": "It travels North" },
+        { "id": "c", "text": "It travels further East than North" },
+        { "id": "d", "text": "It travels South" }
+      ],
+      "answers": ["a", "b", "c"],
+      "explanation": "$066^\\circ$ is between North ($000^\\circ$) and East ($090^\\circ$), and closer to East, so the ship goes North and East, with more East than North."
+    },
+    {
+      "id": "sq10",
+      "type": "numeric",
+      "prompt": "A ship ends up 20 km East and 10 km South of port. Find the bearing it sailed on, to the nearest degree.",
+      "answer": 117,
+      "tolerance": 2,
+      "unit": "°",
+      "explanation": "The line is $27^\\circ$ South of due East. East is $090^\\circ$, so the bearing is $090^\\circ + 27^\\circ = 117^\\circ$ (a scale drawing gives about $116^\\circ$–$118^\\circ$)."
+    },
+    {
+      "id": "sq11",
+      "type": "numeric",
+      "prompt": "How many planes of symmetry does a regular pentagonal prism have?",
+      "answer": 6,
+      "explanation": "A regular pentagon has 5 lines of symmetry, giving 5 planes, plus 1 across the middle: 6."
+    },
+    {
+      "id": "sq12",
+      "type": "mcq",
+      "prompt": "Which shape has exactly 9 planes of symmetry?",
+      "options": [
+        { "id": "a", "text": "A cube" },
+        { "id": "b", "text": "A cuboid with all edges different" },
+        { "id": "c", "text": "A square-based prism 2 cm × 2 cm × 7 cm" },
+        { "id": "d", "text": "A cylinder" }
+      ],
+      "answer": "a",
+      "explanation": "A cube has 3 + 6 = 9. The cuboid has 3, the square prism has 5 and the cylinder has infinitely many."
+    },
+    {
+      "id": "sq13",
+      "type": "hotspot",
+      "prompt": "The perpendicular bisector of the diameter AB is used to construct an inscribed square. Click the part of the circle that AB is.",
+      "figure": "circle-parts",
+      "answer": "diameter",
+      "explanation": "AB runs from one side of the circle to the other through the centre, so it is a **diameter**. Its perpendicular bisector is a second diameter at right angles, giving the four corners of the square."
+    }
+  ]
+}

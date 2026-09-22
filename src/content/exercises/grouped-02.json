@@ -1,0 +1,145 @@
+{
+  "title": "Practice: modal class and median class",
+  "intro": "Nine questions. For median questions, write the running totals down the side of the table.",
+  "questions": [
+    {
+      "id": "g2-q1",
+      "type": "mcq",
+      "prompt": "Oranges: $120$–$125$ g: 5, $125$–$130$ g: 16, $130$–$135$ g: 13, $135$–$140$ g: 4, $140$–$145$ g: 2. What is the modal class?",
+      "options": [
+        { "id": "a", "text": "$125 \\le m < 130$" },
+        { "id": "b", "text": "$130 \\le m < 135$" },
+        { "id": "c", "text": "$120 \\le m < 125$" },
+        { "id": "d", "text": "16" }
+      ],
+      "answer": "a",
+      "hints": ["Look for the biggest frequency — then give the class, not the number."],
+      "explanation": "The highest frequency is 16, in $125 \\le m < 130$. Answer d gives the frequency itself, which is not a class.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "g2-q2",
+      "type": "table",
+      "prompt": "Complete the running totals for the heights of 30 plants, then use them.",
+      "columns": ["Height (h, cm)", "Frequency", "Running total"],
+      "rows": [
+        [{ "given": "10 ≤ h < 20" }, { "given": "4" }, { "answer": "4" }],
+        [{ "given": "20 ≤ h < 30" }, { "given": "8" }, { "answer": "12" }],
+        [{ "given": "30 ≤ h < 40" }, { "given": "11" }, { "answer": "23" }],
+        [{ "given": "40 ≤ h < 50" }, { "given": "7" }, { "answer": "30" }]
+      ],
+      "hints": ["Each running total is the one above plus this row's frequency."],
+      "explanation": "4, 12, 23, 30. The median is the $\\frac{31}{2} = 15.5$th value. There are 12 values below 30 cm and 23 below 40 cm, so the median lies in $30 \\le h < 40$."
+    },
+    {
+      "id": "g2-q3",
+      "type": "fill-blank",
+      "prompt": "Complete the working for the plant heights.",
+      "text": "The median lies in position $\\frac{30 + 1}{2} =$ [[a]]. There are 12 values smaller than [[b]] cm. The 13th to the 23rd values lie in the class $\\square \\le h < \\square$, so the median class starts at [[c]] and ends at [[d]].",
+      "blanks": [
+        { "id": "a", "accept": ["15.5"], "size": 5 },
+        { "id": "b", "accept": ["30"], "size": 4 },
+        { "id": "c", "accept": ["30"], "size": 4 },
+        { "id": "d", "accept": ["40"], "size": 4 }
+      ],
+      "hints": ["Use the running totals from the last question."],
+      "explanation": "$15.5$th value. 12 values are below 30 cm, and the next 11 (the 13th to 23rd) are in $30 \\le h < 40$, which includes the 15.5th."
+    },
+    {
+      "id": "g2-q4",
+      "type": "steps",
+      "prompt": "Find the median class one step at a time.",
+      "scenario": "Ages in a village of 500 people: $0$–$10$: 92, $10$–$20$: 88, $20$–$30$: 85, $30$–$40$: 68, $40$–$50$: 55, $50$–$60$: 52, $60$–$70$: 42, $70$–$80$: 18.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "In which position is the median?",
+          "answer": 250.5,
+          "hint": "$\\frac{n + 1}{2}$ with $n = 500$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "What is the running total after the first **two** classes?",
+          "answer": 180
+        },
+        {
+          "kind": "numeric",
+          "prompt": "And after the first **three** classes?",
+          "answer": 265
+        },
+        {
+          "kind": "mcq",
+          "prompt": "So which class contains the median?",
+          "options": [
+            { "id": "a", "text": "$20 \\le y < 30$" },
+            { "id": "b", "text": "$10 \\le y < 20$" },
+            { "id": "c", "text": "$30 \\le y < 40$" },
+            { "id": "d", "text": "$0 \\le y < 10$" }
+          ],
+          "answer": "a",
+          "feedback": "The 181st to 265th people are in their twenties, and 250.5 is in that range."
+        }
+      ],
+      "explanation": "Median position 250.5. Running totals 92, 180, 265 — so the median age is in $20 \\le y < 30$, even though the modal class is $0 \\le y < 10$."
+    },
+    {
+      "id": "g2-q5",
+      "type": "mcq",
+      "prompt": "Angelique regroups the village ages into $0$–$20$: 180, $20$–$40$: 153, $40$–$60$: 107, $60$–$80$: 60. What is the new modal class?",
+      "options": [
+        { "id": "a", "text": "$0 \\le y < 20$" },
+        { "id": "b", "text": "$0 \\le y < 10$" },
+        { "id": "c", "text": "$20 \\le y < 40$" },
+        { "id": "d", "text": "It is the same as before" }
+      ],
+      "answer": "a",
+      "hints": ["The modal class must be one of the new groups."],
+      "explanation": "180 is the highest new frequency, so the modal class is $0 \\le y < 20$. The class has changed because the groups have changed — even though the data has not."
+    },
+    {
+      "id": "g2-q6",
+      "type": "truefalse",
+      "prompt": "Long jumps (cm): 152, 152, 155, 161, 163, 164, 165, 166, 168, 169, 170, 172, 175, 181, 182. Grouped in tens, the mode of the raw data (152) lies in the modal class.",
+      "answer": false,
+      "hints": ["Count how many jumps are in each group of ten: 150s, 160s, 170s, 180s."],
+      "explanation": "False. The groups have frequencies 3, 7, 3, 2, so the modal class is $160 \\le l < 170$. The raw mode, 152, is in $150 \\le l < 160$."
+    },
+    {
+      "id": "g2-q7",
+      "type": "multi",
+      "prompt": "Puzzle times (s): $15$–$19$: 5, $19$–$23$: 3, $23$–$27$: 15, $27$–$31$: 12, $31$–$35$: 13, $35$–$39$: 2. Select **every** true statement.",
+      "options": [
+        { "id": "a", "text": "The modal class is $23 \\le t < 27$" },
+        { "id": "b", "text": "The median is the 25.5th value" },
+        { "id": "c", "text": "The median lies in $27 \\le t < 31$" },
+        { "id": "d", "text": "The estimated range is 24 s" },
+        { "id": "e", "text": "The median lies in $23 \\le t < 27$" }
+      ],
+      "answers": ["a", "b", "c", "d"],
+      "hints": ["Running totals: 5, 8, 23, 35, …", "Range: $39 - 15$."],
+      "explanation": "a: 15 is the biggest frequency ✓. b: $\\frac{51}{2} = 25.5$ ✓. c: the running total reaches 23 after the third class and 35 after the fourth, so the 25.5th value is in $27 \\le t < 31$ ✓ (so e is wrong). d: $39 - 15 = 24$ ✓."
+    },
+    {
+      "id": "g2-q8",
+      "type": "numeric",
+      "prompt": "A histogram shows the ages of 40 people in a sports club: $0$–$10$: 4, $10$–$20$: 9, $20$–$30$: 16, $30$–$40$: 11. Estimate the mean age.",
+      "answer": 23.5,
+      "tolerance": 0.01,
+      "unit": "years",
+      "hints": ["Midpoints 5, 15, 25, 35.", "$\\Sigma fx = 20 + 135 + 400 + 385$"],
+      "explanation": "$\\Sigma fx = 940$, $\\Sigma f = 40$, so the mean $\\approx 23.5$ years."
+    },
+    {
+      "id": "g2-q9",
+      "type": "manipulable",
+      "prompt": "This histogram shows 36 exam marks. Increase the frequency of $60 \\le x < 80$ so that it becomes the **only** modal class, using the smallest possible number.",
+      "widget": "histogram",
+      "config": { "boundaries": [0, 20, 40, 60, 80, 100], "freqs": [2, 6, 12, 9, 7], "maxFreq": 20, "label": "Mark, x" },
+      "target": { "f3": 13 },
+      "tolerance": 0,
+      "hints": ["The current modal class has a frequency of 12."],
+      "explanation": "To beat 12 it needs at least 13. (Equal at 12 would give two modal classes.)",
+      "difficulty": "challenge"
+    }
+  ]
+}

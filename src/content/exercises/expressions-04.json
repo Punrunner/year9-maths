@@ -1,0 +1,156 @@
+{
+  "title": "Practice: substitution and constructing expressions",
+  "intro": "Ten questions. For substitution questions, write each step down on paper with brackets round the negatives — it is where nearly every mistake happens.",
+  "questions": [
+    {
+      "id": "e4-q1",
+      "type": "table",
+      "prompt": "$m = -4$, $x = 2$, $y = -5$ and $r = 3$. Find the value of each expression.",
+      "columns": ["Expression", "Value"],
+      "rows": [
+        [{ "given": "10(mx + y)" }, { "answer": "-130" }],
+        [{ "given": "−3x − y + r" }, { "answer": "2" }],
+        [{ "given": "5my − 6r" }, { "answer": "82" }],
+        [{ "given": "5xmr ÷ y" }, { "answer": "24" }],
+        [{ "given": "x⁴(m + r)" }, { "answer": "-16" }]
+      ],
+      "hints": [
+        "Write each one out with brackets: $10((-4)(2) + (-5))$.",
+        "Subtracting a negative is adding: $-(-5) = +5$."
+      ],
+      "explanation": "$10(-8 - 5) = -130$. $-6 + 5 + 3 = 2$. $5(-4)(-5) - 18 = 100 - 18 = 82$. $\\frac{5(2)(-4)(3)}{-5} = \\frac{-120}{-5} = 24$. $2^4(-4 + 3) = 16 \\times -1 = -16$."
+    },
+    {
+      "id": "e4-q2",
+      "type": "numeric",
+      "prompt": "Find the value of $9 + m^2$ when $m = -3$.",
+      "answer": 18,
+      "hints": ["$(-3)^2 = -3 \\times -3$."],
+      "explanation": "$(-3)^2 = 9$, so $9 + 9 = 18$. If you got 0, you worked out $-3^2 = -9$ instead of $(-3)^2 = 9$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "e4-q3",
+      "type": "numeric",
+      "prompt": "Find the value of $10r^2 + 2r - 4$ when $r = 0.2$.",
+      "answer": -3.2,
+      "hints": ["$0.2^2 = 0.04$, so $10r^2 = 0.4$."],
+      "explanation": "$10(0.04) + 2(0.2) - 4 = 0.4 + 0.4 - 4 = -3.2$."
+    },
+    {
+      "id": "e4-q4",
+      "type": "steps",
+      "prompt": "Substitute into this formula one step at a time.",
+      "scenario": "Using $s = ut + \\frac{1}{2}at^2$, find $s$ when $u = 80$, $a = -3$ and $t = 5$.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "Work out $ut$.",
+          "answer": 400,
+          "feedback": "$80 \\times 5 = 400$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Work out $t^2$.",
+          "answer": 25
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Work out $\\frac{1}{2}at^2$.",
+          "answer": -37.5,
+          "feedback": "$\\frac{1}{2} \\times -3 \\times 25 = -37.5$.",
+          "hint": "Half of $-3$ is $-1.5$. Multiply that by 25."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "So what is $s$?",
+          "answer": 362.5,
+          "feedback": "$400 + (-37.5) = 362.5$."
+        }
+      ],
+      "explanation": "$s = 80(5) + \\frac{1}{2}(-3)(5)^2 = 400 - 37.5 = 362.5$. Indices before multiplication: square the 5 before multiplying by $-3$."
+    },
+    {
+      "id": "e4-q5",
+      "type": "multi",
+      "prompt": "When $x = 0.5$ and $y = -6$, which **two** of these expressions have the same value?",
+      "options": [
+        { "id": "a", "text": "$6xy$" },
+        { "id": "b", "text": "$4x + y^2$" },
+        { "id": "c", "text": "$(xy)^2$" },
+        { "id": "d", "text": "$48x^2 - y^2 - y$" }
+      ],
+      "answers": ["a", "d"],
+      "hints": ["Work each one out. $xy = 0.5 \\times -6 = -3$."],
+      "explanation": "a: $6(-3) = -18$. b: $2 + 36 = 38$. c: $(-3)^2 = 9$. d: $48(0.25) - 36 - (-6) = 12 - 36 + 6 = -18$. So **a** and **d** are both $-18$."
+    },
+    {
+      "id": "e4-q6",
+      "type": "algebraic",
+      "prompt": "A rectangle has width $w$. Its length is 7 more than double the width. Write an expression for its area, expanded.",
+      "answer": "2w^2 + 7w",
+      "variables": ["w"],
+      "requireForm": true,
+      "hints": ["Length $= 2w + 7$.", "Area $= w(2w + 7)$. Now expand."],
+      "explanation": "Length $= 2w + 7$, so area $= w(2w + 7) = 2w^2 + 7w$. Check with $w = 3$: the rectangle is $3 \\times 13 = 39$, and $2(9) + 21 = 39$ ✓."
+    },
+    {
+      "id": "e4-q7",
+      "type": "algebraic",
+      "prompt": "I think of a number $n$, add 3, then square it, then multiply by 2. Write an expression for the result.",
+      "answer": "2(n + 3)^2",
+      "variables": ["n"],
+      "hints": ["Build it one instruction at a time: $n \\to n + 3 \\to (n + 3)^2 \\to \\dots$"],
+      "explanation": "$2(n + 3)^2$. The brackets are essential — the whole of $n + 3$ is squared. Expanded, it is $2n^2 + 12n + 18$, which is also accepted."
+    },
+    {
+      "id": "e4-q8",
+      "type": "algebraic",
+      "prompt": "An L-shape is a rectangle $(x + 8)$ by $(x + 4)$ with a rectangle $(x + 5)$ by $(x + 2)$ cut from one corner. Find its area, expanded and simplified.",
+      "answer": "5x + 22",
+      "variables": ["x"],
+      "requireForm": true,
+      "hints": [
+        "Big rectangle: $(x + 8)(x + 4) = x^2 + 12x + 32$.",
+        "Missing piece: $(x + 5)(x + 2) = x^2 + 7x + 10$. Now subtract."
+      ],
+      "explanation": "$x^2 + 12x + 32 - (x^2 + 7x + 10) = 5x + 22$. The $x^2$ terms cancel, which often happens in these questions.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "e4-q9",
+      "type": "mcq",
+      "prompt": "A cylinder has radius 6 cm and height 7 cm ($V = \\pi r^2 h$). A sphere has radius 6 cm ($V = \\frac{4}{3}\\pi r^3$). Which has the **smaller** volume?",
+      "options": [
+        { "id": "a", "text": "The cylinder, with $252\\pi \\approx 792\\ \\text{cm}^3$" },
+        { "id": "b", "text": "The sphere, with $288\\pi \\approx 905\\ \\text{cm}^3$" },
+        { "id": "c", "text": "They are the same" },
+        { "id": "d", "text": "The sphere, with $48\\pi \\approx 151\\ \\text{cm}^3$" }
+      ],
+      "answer": "a",
+      "hints": ["Cylinder: $\\pi \\times 36 \\times 7$. Sphere: $\\frac{4}{3} \\times \\pi \\times 216$."],
+      "explanation": "Cylinder: $36 \\times 7 = 252$, so $252\\pi$. Sphere: $\\frac{4}{3} \\times 216 = 288$, so $288\\pi$. The cylinder is smaller."
+    },
+    {
+      "id": "e4-q10",
+      "type": "truefalse",
+      "prompt": "Amy says the area of a square with side $(x + 6)$ is $x^2 + 36$. Substituting $x = 5$ proves she is **wrong**.",
+      "answer": true,
+      "hints": ["Work out $(5 + 6)^2$ and $5^2 + 36$."],
+      "explanation": "True. $(5 + 6)^2 = 121$ but $5^2 + 36 = 61$. One counter-example is enough to prove two expressions are not equivalent. The correct area is $x^2 + 12x + 36$."
+    },
+    {
+      "id": "e4-q11",
+      "type": "numeric",
+      "prompt": "Heron's formula gives the area of a triangle with sides $a$, $b$, $c$ as $A = \\sqrt{s(s-a)(s-b)(s-c)}$, where $s = \\frac{a + b + c}{2}$. Use it to find the area of a triangle with sides 5, 5 and 6 cm.",
+      "answer": 12,
+      "unit": "cm²",
+      "hints": [
+        "$s = \\frac{5 + 5 + 6}{2} = 8$.",
+        "$A = \\sqrt{8 \\times 3 \\times 3 \\times 2}$"
+      ],
+      "explanation": "$s = 8$, so $A = \\sqrt{8 \\times 3 \\times 3 \\times 2} = \\sqrt{144} = 12\\ \\text{cm}^2$. Check: the triangle splits into two 3-4-5 right triangles, each of area 6.",
+      "difficulty": "challenge"
+    }
+  ]
+}

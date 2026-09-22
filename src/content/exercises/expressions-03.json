@@ -1,0 +1,153 @@
+{
+  "title": "Practice: expanding two brackets",
+  "intro": "Ten questions. When you are asked to expand, type your answer **without** brackets, e.g. x^2 + 5x + 6.",
+  "questions": [
+    {
+      "id": "e3-q1",
+      "type": "table",
+      "prompt": "Complete the grid to expand $(x + 5)(x + 1)$.",
+      "columns": ["×", "x", "+5"],
+      "rows": [
+        [{ "given": "x" }, { "answer": "x^2", "accept": ["x²", "x*x"] }, { "answer": "5x" }],
+        [{ "given": "+1" }, { "answer": "x", "accept": ["1x"] }, { "answer": "5", "accept": ["+5"] }]
+      ],
+      "hints": ["Each cell is its row header multiplied by its column header."],
+      "explanation": "The four pieces are $x^2$, $5x$, $x$ and $5$. Adding them gives $x^2 + 6x + 5$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "e3-q2",
+      "type": "algebraic",
+      "prompt": "Expand and simplify $(x + 3)(x + 8)$.",
+      "answer": "x^2 + 11x + 24",
+      "variables": ["x"],
+      "requireForm": true,
+      "placeholder": "e.g. x^2 + 5x + 6",
+      "hints": ["The $x$ coefficient is $3 + 8$; the constant is $3 \\times 8$."],
+      "explanation": "$x^2 + 8x + 3x + 24 = x^2 + 11x + 24$."
+    },
+    {
+      "id": "e3-q3",
+      "type": "algebraic",
+      "prompt": "Expand and simplify $(x + 8)(x - 7)$.",
+      "answer": "x^2 + x - 56",
+      "variables": ["x"],
+      "requireForm": true,
+      "hints": ["$8 \\times -7 = -56$ and $8 + (-7) = 1$."],
+      "explanation": "$x^2 - 7x + 8x - 56 = x^2 + x - 56$."
+    },
+    {
+      "id": "e3-q4",
+      "type": "algebraic",
+      "prompt": "Expand and simplify $(x - 9)(x - 7)$.",
+      "answer": "x^2 - 16x + 63",
+      "variables": ["x"],
+      "requireForm": true,
+      "hints": ["A negative times a negative is positive."],
+      "explanation": "$x^2 - 7x - 9x + 63 = x^2 - 16x + 63$."
+    },
+    {
+      "id": "e3-q5",
+      "type": "manipulable",
+      "prompt": "Set the sliders so the rectangle has area $x^2 + 10x + 25$.",
+      "widget": "area-model",
+      "config": { "min": 1, "max": 8 },
+      "target": { "a": 5, "b": 5 },
+      "tolerance": 0,
+      "hints": [
+        "You need two numbers that **add** to 10 and **multiply** to 25.",
+        "It is a perfect square."
+      ],
+      "explanation": "$5 + 5 = 10$ and $5 \\times 5 = 25$, so it is $(x + 5)(x + 5) = (x + 5)^2$. The picture becomes a square — that is why it is called a perfect square."
+    },
+    {
+      "id": "e3-q6",
+      "type": "mcq",
+      "prompt": "Fatima wrote $(x + 3)^2 = x^2 + 9$. What has she done wrong?",
+      "options": [
+        { "id": "a", "text": "She has missed out the middle term, $6x$" },
+        { "id": "b", "text": "Nothing — she is right" },
+        { "id": "c", "text": "She should have written $x^2 + 6$" },
+        { "id": "d", "text": "She should have written $2x + 6$" }
+      ],
+      "answer": "a",
+      "hints": ["Write $(x + 3)^2$ as $(x + 3)(x + 3)$ and expand all four terms."],
+      "explanation": "$(x + 3)(x + 3) = x^2 + 3x + 3x + 9 = x^2 + 6x + 9$. Squaring each term separately loses the two middle terms. Test with $x = 1$: $4^2 = 16$, but $1 + 9 = 10$."
+    },
+    {
+      "id": "e3-q7",
+      "type": "match",
+      "prompt": "Match each product to its expansion.",
+      "left": [
+        { "id": "p1", "text": "$(x + 5)^2$" },
+        { "id": "p2", "text": "$(x - 5)^2$" },
+        { "id": "p3", "text": "$(x + 5)(x - 5)$" },
+        { "id": "p4", "text": "$(x + 1)(x + 25)$" }
+      ],
+      "right": [
+        { "id": "e1", "text": "$x^2 + 10x + 25$" },
+        { "id": "e2", "text": "$x^2 - 10x + 25$" },
+        { "id": "e3", "text": "$x^2 - 25$" },
+        { "id": "e4", "text": "$x^2 + 26x + 25$" }
+      ],
+      "solution": { "p1": "e1", "p2": "e2", "p3": "e3", "p4": "e4" },
+      "hints": ["Look at the sum of the two numbers — that gives the middle term."],
+      "explanation": "All four end in 25 (or $-25$), so the middle term decides it. $5 + 5 = 10$, $-5 + -5 = -10$, $5 + -5 = 0$ and $1 + 25 = 26$."
+    },
+    {
+      "id": "e3-q8",
+      "type": "fill-blank",
+      "prompt": "Complete these using the patterns for perfect squares and the difference of two squares.",
+      "text": "$(x + 9)(x - 9) = x^2 - \\square$ : [[a]] $\\qquad (x + 12)^2 = x^2 + \\square x + 144$ : [[b]] $\\qquad x^2 - 36 = (x + \\square)(x - 6)$ : [[c]] $\\qquad x^2 + 20x + 100 = (x + \\square)^2$ : [[d]]",
+      "blanks": [
+        { "id": "a", "accept": ["81"], "size": 4 },
+        { "id": "b", "accept": ["24"], "size": 4 },
+        { "id": "c", "accept": ["6"], "size": 4 },
+        { "id": "d", "accept": ["10"], "size": 4 }
+      ],
+      "hints": ["$(x + a)^2 = x^2 + 2ax + a^2$ and $(x + a)(x - a) = x^2 - a^2$."],
+      "explanation": "$9^2 = 81$. $2 \\times 12 = 24$. $36 = 6^2$ so $(x + 6)(x - 6)$. $100 = 10^2$ and $2 \\times 10 = 20$ ✓, so $(x + 10)^2$."
+    },
+    {
+      "id": "e3-q9",
+      "type": "numeric",
+      "prompt": "Use $(50 - 1)(50 + 1) = 50^2 - 1^2$ to work out $49 \\times 51$ without a calculator.",
+      "answer": 2499,
+      "hints": ["$50^2 = 2500$."],
+      "explanation": "This is the difference of two squares: $49 \\times 51 = 50^2 - 1 = 2500 - 1 = 2499$."
+    },
+    {
+      "id": "e3-q10",
+      "type": "algebraic",
+      "prompt": "A rectangle is $(x + 7)$ long and $(x - 4)$ wide. Write its area in the form $x^2 + ax + b$.",
+      "answer": "x^2 + 3x - 28",
+      "variables": ["x"],
+      "requireForm": true,
+      "hints": ["Area = length × width. Expand the brackets."],
+      "explanation": "$(x + 7)(x - 4) = x^2 - 4x + 7x - 28 = x^2 + 3x - 28$.",
+      "difficulty": "core"
+    },
+    {
+      "id": "e3-q11",
+      "type": "drill",
+      "prompt": "Quick-fire: the middle term. Type just the coefficient of $x$ (e.g. -3) when each product is expanded.",
+      "durationSec": 75,
+      "count": 8,
+      "pool": [
+        { "id": "m1", "prompt": "$(x + 2)(x + 6)$", "accept": ["8"] },
+        { "id": "m2", "prompt": "$(x + 5)(x - 2)$", "accept": ["3"] },
+        { "id": "m3", "prompt": "$(x - 4)(x - 3)$", "accept": ["-7"] },
+        { "id": "m4", "prompt": "$(x + 1)(x - 9)$", "accept": ["-8"] },
+        { "id": "m5", "prompt": "$(x + 7)^2$", "accept": ["14"] },
+        { "id": "m6", "prompt": "$(x - 6)^2$", "accept": ["-12"] },
+        { "id": "m7", "prompt": "$(x + 3)(x - 3)$", "accept": ["0"] },
+        { "id": "m8", "prompt": "$(x - 10)(x + 4)$", "accept": ["-6"] },
+        { "id": "m9", "prompt": "$(x + 11)(x + 1)$", "accept": ["12"] },
+        { "id": "m10", "prompt": "$(x - 2)(x + 8)$", "accept": ["6"] },
+        { "id": "m11", "prompt": "$(x - 1)^2$", "accept": ["-2"] },
+        { "id": "m12", "prompt": "$(x + 4)(x - 12)$", "accept": ["-8"] }
+      ],
+      "explanation": "For $(x + a)(x + b)$ the middle term is $(a + b)x$. For a perfect square $(x + a)^2$ it is $2ax$, and for $(x + a)(x - a)$ it is zero."
+    }
+  ]
+}

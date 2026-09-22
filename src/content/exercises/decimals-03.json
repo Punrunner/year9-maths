@@ -1,0 +1,283 @@
+{
+  "title": "Practice: percentage change and interest",
+  "intro": "Eleven questions. A calculator is fine. Give money to the nearest cent.",
+  "questions": [
+    {
+      "id": "c3-q1",
+      "type": "match",
+      "prompt": "Match each change to its multiplier.",
+      "left": [
+        {
+          "id": "a",
+          "text": "Increase by 15%"
+        },
+        {
+          "id": "b",
+          "text": "Decrease by 12%"
+        },
+        {
+          "id": "c",
+          "text": "Increase by 3%"
+        },
+        {
+          "id": "d",
+          "text": "Decrease by 5%"
+        },
+        {
+          "id": "e",
+          "text": "Increase by 100%"
+        }
+      ],
+      "right": [
+        {
+          "id": "r1",
+          "text": "1.15"
+        },
+        {
+          "id": "r2",
+          "text": "0.88"
+        },
+        {
+          "id": "r3",
+          "text": "1.03"
+        },
+        {
+          "id": "r4",
+          "text": "0.95"
+        },
+        {
+          "id": "r5",
+          "text": "2"
+        }
+      ],
+      "solution": {
+        "a": "r1",
+        "b": "r2",
+        "c": "r3",
+        "d": "r4",
+        "e": "r5"
+      },
+      "explanation": "Add or subtract the percentage from 100%, then write it as a decimal.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "c3-q2",
+      "type": "numeric",
+      "prompt": "A bed costs 540 dollars. 15% sales tax is added. What is the final price?",
+      "answer": 621,
+      "unit": "dollars",
+      "explanation": "$540 \\times 1.15 = 621$."
+    },
+    {
+      "id": "c3-q3",
+      "type": "numeric",
+      "prompt": "Find the simple interest on a loan of 40 000 dollars at 8% per year for 5 years.",
+      "answer": 16000,
+      "unit": "dollars",
+      "explanation": "$I = \\frac{40\\,000 \\times 8 \\times 5}{100} = 16\\,000$."
+    },
+    {
+      "id": "c3-q4",
+      "type": "table",
+      "prompt": "Find the simple interest on each loan.",
+      "columns": [
+        "Loan",
+        "Rate per year",
+        "Years",
+        "Interest (dollars)"
+      ],
+      "rows": [
+        [
+          {
+            "given": "200"
+          },
+          {
+            "given": "15%"
+          },
+          {
+            "given": "4"
+          },
+          {
+            "answer": "120"
+          }
+        ],
+        [
+          {
+            "given": "1000"
+          },
+          {
+            "given": "15%"
+          },
+          {
+            "given": "2"
+          },
+          {
+            "answer": "300"
+          }
+        ],
+        [
+          {
+            "given": "3000"
+          },
+          {
+            "given": "12%"
+          },
+          {
+            "given": "2"
+          },
+          {
+            "answer": "720"
+          }
+        ],
+        [
+          {
+            "given": "4500"
+          },
+          {
+            "given": "9%"
+          },
+          {
+            "given": "3"
+          },
+          {
+            "answer": "1215"
+          }
+        ]
+      ],
+      "hints": [
+        "$I = \\frac{PRT}{100}$"
+      ],
+      "explanation": "$200 \\times 0.15 \\times 4 = 120$, $1000 \\times 0.15 \\times 2 = 300$, $3000 \\times 0.12 \\times 2 = 720$, $4500 \\times 0.09 \\times 3 = 1215$."
+    },
+    {
+      "id": "c3-q5",
+      "type": "numeric",
+      "prompt": "Francesca invests 2000 dollars at 1.8% compound interest. How much **interest** has she earned after 5 years?",
+      "answer": 186.6,
+      "tolerance": 0.01,
+      "unit": "dollars",
+      "hints": [
+        "$2000 \\times 1.018^5$, then subtract 2000."
+      ],
+      "explanation": "$2000 \\times 1.018^5 = 2186.60$, so the interest is $186.60$ dollars."
+    },
+    {
+      "id": "c3-q6",
+      "type": "steps",
+      "prompt": "Work year by year.",
+      "scenario": "Rahul invests 400 dollars at 3% compound interest.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "Value after 1 year:",
+          "answer": 412,
+          "unit": "dollars"
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Value after 2 years:",
+          "answer": 424.36,
+          "unit": "dollars"
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Value after 5 years (use $400 \\times 1.03^5$), to the nearest cent:",
+          "answer": 463.71,
+          "tolerance": 0.005,
+          "unit": "dollars"
+        }
+      ],
+      "explanation": "$400 \\times 1.03 = 412$; $412 \\times 1.03 = 424.36$; $400 \\times 1.03^5 = 463.71$."
+    },
+    {
+      "id": "c3-q7",
+      "type": "numeric",
+      "prompt": "A car bought for 13 000 dollars loses 12% of its value each year. Find its value after 3 years, to the nearest dollar.",
+      "answer": 8859,
+      "tolerance": 0.6,
+      "unit": "dollars",
+      "explanation": "$13\\,000 \\times 0.88^3 = 8859.14 \\approx 8859$ dollars."
+    },
+    {
+      "id": "c3-q8",
+      "type": "mcq",
+      "prompt": "Sale prices are cut by 25%, then by a further 25%. Jamil says everything is now half price. Which is true?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Jamil is wrong: prices are now 56.25% of the original"
+        },
+        {
+          "id": "b",
+          "text": "Jamil is right"
+        },
+        {
+          "id": "c",
+          "text": "Prices are now 25% of the original"
+        },
+        {
+          "id": "d",
+          "text": "Prices are now 62.5% of the original"
+        }
+      ],
+      "answer": "a",
+      "hints": [
+        "$0.75 \\times 0.75$"
+      ],
+      "explanation": "$0.75^2 = 0.5625$: the second cut is taken from a smaller price, so the total reduction is 43.75%, not 50%."
+    },
+    {
+      "id": "c3-q9",
+      "type": "numeric",
+      "prompt": "A ball is dropped from 4 m. Each bounce it rises to 70% of the height it fell from. How high does it rise after 3 bounces, to the nearest cm?",
+      "answer": 137,
+      "tolerance": 0.6,
+      "unit": "cm",
+      "explanation": "$400 \\times 0.7^3 = 137.2$ cm $\\approx 137$ cm."
+    },
+    {
+      "id": "c3-q10",
+      "type": "multi",
+      "prompt": "One million bacteria increase by 10% each hour. Select **every** true statement.",
+      "options": [
+        {
+          "id": "a",
+          "text": "After 3 hours there are 1 331 000 bacteria"
+        },
+        {
+          "id": "b",
+          "text": "After 7 hours the number has more than doubled"
+        },
+        {
+          "id": "c",
+          "text": "After 2 hours the number has increased by 21%"
+        },
+        {
+          "id": "d",
+          "text": "After 10 hours the number has increased by exactly 100%"
+        }
+      ],
+      "answers": [
+        "a",
+        "c"
+      ],
+      "hints": [
+        "$1.1^3$, $1.1^7$, $1.1^2$, $1.1^{10}$"
+      ],
+      "explanation": "$1.1^3 = 1.331$ ✓. $1.1^7 = 1.949$, not quite double ✗. $1.1^2 = 1.21$ ✓. $1.1^{10} = 2.594$, an increase of 159% ✗.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "c3-q11",
+      "type": "numeric",
+      "prompt": "A share increases by 2% one year and 3% the next. What is the overall percentage increase?",
+      "answer": 5.06,
+      "tolerance": 0.001,
+      "unit": "%",
+      "explanation": "$1.02 \\times 1.03 = 1.0506$, an increase of 5.06% — a little more than $2 + 3 = 5$.",
+      "accept": [
+        "5.06%"
+      ]
+    }
+  ]
+}

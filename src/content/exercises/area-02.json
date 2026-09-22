@@ -1,0 +1,158 @@
+{
+  "title": "Practice: Pythagoras' theorem",
+  "intro": "Ten questions, including two where you click on the triangle and one where you drag its corners.",
+  "questions": [
+    {
+      "id": "a2-q1",
+      "type": "hotspot",
+      "prompt": "**Click the hypotenuse** of this right-angled triangle.",
+      "figure": "right-triangle",
+      "config": { "a": "3 cm", "b": "4 cm", "c": "5 cm" },
+      "answer": "hypotenuse",
+      "hints": [
+        "The hypotenuse is opposite the right angle.",
+        "It is also the longest side."
+      ],
+      "explanation": "The hypotenuse is the sloping side opposite the right angle — here, the $5\\ \\text{cm}$ side. Identifying it first tells you whether to add or subtract.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a2-q2",
+      "type": "hotspot",
+      "prompt": "**Click the right angle** in this triangle.",
+      "figure": "right-triangle",
+      "config": { "a": "3 cm", "b": "4 cm", "c": "5 cm" },
+      "answer": "right-angle",
+      "hints": ["Look for the small square symbol in one corner."],
+      "explanation": "The small square marks the $90\\degree$ angle. The two sides forming it are the short sides $a$ and $b$; the side opposite it is the hypotenuse.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a2-q3",
+      "type": "numeric",
+      "prompt": "A right-angled triangle has shorter sides $3\\ \\text{cm}$ and $4\\ \\text{cm}$. Find the hypotenuse.",
+      "answer": 5,
+      "unit": "cm",
+      "hints": ["Both given sides are short ones, so add the squares.", "$3^2 + 4^2 = 9 + 16 = 25$"],
+      "explanation": "$3^2 + 4^2 = 25$, so $c = \\sqrt{25} = 5\\ \\text{cm}$. This is the best-known Pythagorean triple.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a2-q4",
+      "type": "numeric",
+      "prompt": "A right-angled triangle has hypotenuse $12\\ \\text{cm}$ and one shorter side $4\\ \\text{cm}$. Find the other shorter side, to 2 decimal places.",
+      "answer": 11.31,
+      "tolerance": 0.02,
+      "unit": "cm",
+      "hints": [
+        "The hypotenuse is given, so you must **subtract**.",
+        "$12^2 - 4^2 = 144 - 16$"
+      ],
+      "explanation": "$a^2 = 12^2 - 4^2 = 144 - 16 = 128$, so $a = \\sqrt{128} = 11.31\\ \\text{cm}$ (2 d.p.). Check it is sensible: $11.31 < 12$, as a short side must be."
+    },
+    {
+      "id": "a2-q5",
+      "type": "manipulable",
+      "prompt": "Drag the triangle's corners (or use the sliders) to make one with short sides $6\\ \\text{cm}$ and $8\\ \\text{cm}$. Look at what the hypotenuse comes out as.",
+      "widget": "pythagoras",
+      "config": { "min": 1, "max": 10, "step": 1, "unit": "cm", "start": { "a": 3, "b": 4 } },
+      "target": { "a": 6, "b": 8 },
+      "tolerance": 0.01,
+      "hints": ["Set the height to 6 and the base to 8."],
+      "explanation": "$6^2 + 8^2 = 36 + 64 = 100$, so $c = 10\\ \\text{cm}$ exactly. This is the $3, 4, 5$ triangle doubled — any multiple of a Pythagorean triple is also a triple."
+    },
+    {
+      "id": "a2-q6",
+      "type": "mcq",
+      "prompt": "A triangle has hypotenuse $13\\ \\text{cm}$ and one short side $5\\ \\text{cm}$. Which calculation finds the other short side?",
+      "options": [
+        { "id": "a", "text": "$\\sqrt{13^2 - 5^2}$" },
+        { "id": "b", "text": "$\\sqrt{13^2 + 5^2}$" },
+        { "id": "c", "text": "$13^2 - 5^2$" },
+        { "id": "d", "text": "$13 - 5$" }
+      ],
+      "answer": "a",
+      "hints": [
+        "You are finding a *short* side, so subtract.",
+        "And do not forget to square root at the end."
+      ],
+      "explanation": "$\\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12\\ \\text{cm}$. **b** adds (that finds a hypotenuse), **c** stops at $a^2$, and **d** forgets the theorem entirely."
+    },
+    {
+      "id": "a2-q7",
+      "type": "truefalse",
+      "prompt": "**A triangle with sides $8\\ \\text{cm}$, $15\\ \\text{cm}$ and $17\\ \\text{cm}$ is right-angled.**",
+      "answer": true,
+      "hints": [
+        "Test $a^2 + b^2 = c^2$ using the longest side as $c$.",
+        "$8^2 + 15^2 = 64 + 225$, and $17^2 = 289$."
+      ],
+      "explanation": "$64 + 225 = 289$ and $17^2 = 289$. They match, so the triangle is right-angled — $8, 15, 17$ is a Pythagorean triple."
+    },
+    {
+      "id": "a2-q8",
+      "type": "steps",
+      "prompt": "A real problem, one step at a time.",
+      "scenario": "A ladder $5\\ \\text{m}$ long leans against a wall. Its foot is $1.5\\ \\text{m}$ from the base of the wall. How far up the wall does it reach?",
+      "steps": [
+        {
+          "kind": "mcq",
+          "prompt": "Which side of the right-angled triangle is the ladder?",
+          "options": [
+            { "id": "a", "text": "The hypotenuse" },
+            { "id": "b", "text": "A shorter side" }
+          ],
+          "answer": "a",
+          "feedback": "Yes — the right angle is between the wall and the ground, so the ladder is opposite it.",
+          "hint": "Where is the right angle in this picture?"
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Work out $5^2 - 1.5^2$.",
+          "answer": 22.75,
+          "tolerance": 0.01,
+          "feedback": "$25 - 2.25 = 22.75$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Take the square root to find the height, in metres, to 2 decimal places.",
+          "answer": 4.77,
+          "tolerance": 0.02,
+          "feedback": "$\\sqrt{22.75} = 4.77\\ \\text{m}$."
+        }
+      ],
+      "hints": ["Sketch it first: wall, ground, ladder. The ladder is the hypotenuse."],
+      "explanation": "$h = \\sqrt{5^2 - 1.5^2} = \\sqrt{22.75} \\approx 4.77\\ \\text{m}$. Sensible check: the height is less than the ladder's length, as it must be.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a2-q9",
+      "type": "order",
+      "prompt": "Put the steps for finding a missing side into the right order.",
+      "items": [
+        { "id": "p1", "text": "Find the hypotenuse — the side opposite the right angle" },
+        { "id": "p2", "text": "Decide whether to add or subtract the squares" },
+        { "id": "p3", "text": "Square the two sides you know" },
+        { "id": "p4", "text": "Add or subtract them" },
+        { "id": "p5", "text": "Take the square root" },
+        { "id": "p6", "text": "Check the hypotenuse is the longest side" }
+      ],
+      "solution": ["p1", "p2", "p3", "p4", "p5", "p6"],
+      "hints": ["You cannot decide between adding and subtracting until you know which side is the hypotenuse."],
+      "explanation": "Identify, decide, square, combine, root, check. Step 5 is the one most often missed — leaving the answer as $c^2$ instead of $c$."
+    },
+    {
+      "id": "a2-q10",
+      "type": "numeric",
+      "prompt": "A rectangle is $9\\ \\text{cm}$ by $12\\ \\text{cm}$. Find the length of its diagonal.",
+      "answer": 15,
+      "unit": "cm",
+      "hints": [
+        "The diagonal splits the rectangle into two right-angled triangles.",
+        "The two sides of the rectangle are the short sides; the diagonal is the hypotenuse."
+      ],
+      "explanation": "$9^2 + 12^2 = 81 + 144 = 225$, so the diagonal is $\\sqrt{225} = 15\\ \\text{cm}$. ($9, 12, 15$ is the $3,4,5$ triple tripled.)",
+      "difficulty": "challenge"
+    }
+  ]
+}

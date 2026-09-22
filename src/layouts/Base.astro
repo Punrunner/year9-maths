@@ -1,0 +1,87 @@
+---
+/**
+ * BASE LAYOUT
+ * Wraps every page: fonts, styles, navigation, footer, and the small script
+ * that applies the saved light/dark choice before the page paints.
+ */
+// Latin subsets only — the site is in English, so there is no reason to make a
+// student on mobile data download Cyrillic, Greek and Vietnamese glyphs too.
+import '@fontsource-variable/inter/wght.css';
+import '@fontsource/poppins/latin-500.css';
+import '@fontsource/poppins/latin-600.css';
+import '@fontsource/poppins/latin-700.css';
+import 'katex/dist/katex.min.css';
+
+import '../styles/global.css';
+import '../styles/components.css';
+import '../styles/exercises.css';
+
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Adds a wider, full-bleed main element (used by the home page). */
+  wide?: boolean;
+}
+
+const {
+  title,
+  description = 'Interactive Year 9 Mathematics — lessons, worked examples and hundreds of practice questions.',
+  wide = false,
+} = Astro.props;
+
+const fullTitle = title === 'Home'
+  ? 'Year 9 Mathematics · The Thai Guy'
+  : `${title} · Year 9 Maths`;
+---
+
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#E31C25" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#14171A" media="(prefers-color-scheme: dark)" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site ?? 'https://example.com')} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!--
+      This site has its own light/dark switch, so we ask browser extensions
+      such as Dark Reader to leave the colours alone. Without this they
+      re-tint the page and the red brand colour stops meaning anything.
+    -->
+    <meta name="darkreader-lock" />
+
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+
+    <!--
+      Apply the saved theme before the first paint, so there is no white flash
+      for a student who has chosen dark mode.
+    -->
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem('y9maths.theme');
+          if (t === 'dark' || t === 'light') {
+            document.documentElement.setAttribute('data-theme', t);
+          }
+        } catch (e) { /* storage blocked — the OS preference still applies */ }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Nav />
+    <main id="main" class={wide ? 'main main-wide' : 'main'}>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "title": "Integers, Powers & Roots",
+  "description": "Rational and irrational numbers, estimating roots, and the index laws.",
+  "strand": "number-algebra",
+  "order": 1,
+  "difficulty": "core",
+  "objectives": [
+    "Tell a rational number from an irrational one",
+    "Estimate square roots and cube roots without a calculator",
+    "Use the index laws to simplify powers"
+  ],
+  "keywords": [
+    "surd",
+    "irrational",
+    "indices",
+    "index laws",
+    "square root",
+    "cube root",
+    "pi"
+  ]
+}

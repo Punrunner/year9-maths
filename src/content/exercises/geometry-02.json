@@ -1,0 +1,101 @@
+{
+  "title": "Practice: tessellations",
+  "intro": "Eight questions. The key idea every time: do the angles at a point make exactly $360^\\circ$?",
+  "questions": [
+    {
+      "id": "y2-q1",
+      "type": "multi",
+      "prompt": "Which of these regular polygons tessellate on their own?",
+      "options": [
+        { "id": "a", "text": "Equilateral triangle" },
+        { "id": "b", "text": "Square" },
+        { "id": "c", "text": "Regular pentagon" },
+        { "id": "d", "text": "Regular hexagon" },
+        { "id": "e", "text": "Regular octagon" }
+      ],
+      "answers": ["a", "b", "d"],
+      "hints": ["Check whether the interior angle divides exactly into 360."],
+      "explanation": "$60$, $90$ and $120$ divide into 360; $108$ and $135$ do not.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "y2-q2",
+      "type": "mcq",
+      "prompt": "Why is a pattern of circles not a tessellation?",
+      "options": [
+        { "id": "a", "text": "It leaves gaps between the circles" },
+        { "id": "b", "text": "Circles have no angles, so they cannot be measured" },
+        { "id": "c", "text": "The circles overlap" },
+        { "id": "d", "text": "It is a tessellation" }
+      ],
+      "answer": "a",
+      "hints": ["A tessellation has no gaps and no overlaps."],
+      "explanation": "However you arrange circles, curved gaps are left between them."
+    },
+    {
+      "id": "y2-q3",
+      "type": "steps",
+      "prompt": "Test the regular pentagon.",
+      "scenario": "Does a regular pentagon tessellate?",
+      "steps": [
+        { "kind": "numeric", "prompt": "What is its interior angle?", "answer": 108, "unit": "°" },
+        { "kind": "numeric", "prompt": "What do three of these angles add up to?", "answer": 324, "unit": "°" },
+        { "kind": "mcq", "prompt": "So does it tessellate?", "options": [{ "id": "n", "text": "No — three leave a gap and four would overlap" }, { "id": "y", "text": "Yes" }], "answer": "n" }
+      ],
+      "explanation": "$3 \\times 108 = 324 < 360$ and $4 \\times 108 = 432 > 360$, so no whole number of pentagons fills the space."
+    },
+    {
+      "id": "y2-q4",
+      "type": "numeric",
+      "prompt": "Six equal angles of equilateral triangles meet at a point in a tessellation. What is each angle?",
+      "answer": 60,
+      "unit": "°",
+      "hints": ["Angles at a point add to $360^\\circ$."],
+      "explanation": "$360 \\div 6 = 60^\\circ$."
+    },
+    {
+      "id": "y2-q5",
+      "type": "truefalse",
+      "prompt": "Every triangle, of any shape, will tessellate.",
+      "answer": true,
+      "hints": ["Rotate a copy $180^\\circ$ about the midpoint of a side — what shape do the two make?"],
+      "explanation": "True. Two copies make a parallelogram, and parallelograms tessellate. At each point six angles meet — each of the triangle's three angles twice — making $2 \\times 180 = 360^\\circ$."
+    },
+    {
+      "id": "y2-q6",
+      "type": "numeric",
+      "prompt": "Four copies of a quadrilateral with angles $132^\\circ$, $90^\\circ$, $71^\\circ$ and $x$ meet at a point in a tessellation, one of each angle. Find $x$.",
+      "answer": 67,
+      "unit": "°",
+      "hints": ["The four angles of a quadrilateral add to $360^\\circ$ — and so do angles at a point."],
+      "explanation": "$360 - (132 + 90 + 71) = 67^\\circ$."
+    },
+    {
+      "id": "y2-q7",
+      "type": "multi",
+      "prompt": "Which combinations of regular polygons fit exactly round a point?",
+      "options": [
+        { "id": "a", "text": "Two octagons and a square" },
+        { "id": "b", "text": "Two hexagons and two triangles" },
+        { "id": "c", "text": "Three pentagons" },
+        { "id": "d", "text": "A hexagon, two squares and a triangle" }
+      ],
+      "answers": ["a", "b", "d"],
+      "hints": ["Octagon $135$, hexagon $120$, pentagon $108$, square $90$, triangle $60$."],
+      "explanation": "a: $135 + 135 + 90 = 360$ ✓. b: $120 + 120 + 60 + 60 = 360$ ✓. c: $324$ ✗. d: $120 + 90 + 90 + 60 = 360$ ✓.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "y2-q8",
+      "type": "fill-blank",
+      "prompt": "Complete the definition.",
+      "text": "A tessellation is a pattern of shapes that fit together with no [[a]] and no [[b]].",
+      "blanks": [
+        { "id": "a", "accept": ["gaps", "spaces", "gap"], "size": 8 },
+        { "id": "b", "accept": ["overlaps", "overlapping", "overlap"], "size": 10 }
+      ],
+      "hints": ["Think of tiles on a floor."],
+      "explanation": "No gaps and no overlaps."
+    }
+  ]
+}

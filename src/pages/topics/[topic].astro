@@ -1,0 +1,104 @@
+---
+/** One topic: its objectives, the list of lessons, and the link to the quiz. */
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { TopicStatus } from '../../components/Progress.tsx';
+import { getTopicNodes } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const nodes = await getTopicNodes();
+  return nodes.map((node) => ({ params: { topic: node.topic.id }, props: { node } }));
+}
+
+const { node } = Astro.props;
+const { topic, strand, lessons, quiz, quizHref } = node;
+const totalMinutes = lessons.reduce((n, l) => n + l.data.minutes, 0);
+---
+
+<Base title={topic.data.title} description={topic.data.description}>
+  <div class="container page" style={`--accent: var(${strand.data.accent})`}>
+    <Breadcrumbs items={[
+      { label: strand.data.short, href: `/strands/${strand.id}/` },
+      { label: topic.data.title },
+    ]} />
+
+    <header class="page-head topic-head">
+      <p class="page-eyebrow">Topic {topic.data.order} · {strand.data.short}</p>
+      <h1>{topic.data.title}</h1>
+      <p class="page-lead">{topic.data.description}</p>
+      <div class="topic-head-meta">
+        {lessons.length > 0 ? (
+          <>
+            <TopicStatus client:visible lessonIds={lessons.map((l) => l.id)} showBar={false} />
+            <span class="chip chip-neutral">{lessons.length} lessons</span>
+            <span class="chip chip-neutral">about {totalMinutes} min</span>
+          </>
+        ) : (
+          <span class="chip chip-neutral">Coming soon</span>
+        )}
+        {topic.data.extension && <span class="chip chip-amber">Extension topic</span>}
+      </div>
+    </header>
+
+    {topic.data.objectives.length > 0 && (
+      <section class="objectives card">
+        <h2 class="objectives-heading">By the end of this topic you can…</h2>
+        <ul class="objectives-list">
+          {topic.data.objectives.map((o) => <li>{o}</li>)}
+        </ul>
+      </section>
+    )}
+
+    {lessons.length === 0 && (
+      <section class="card empty-topic">
+        <h2>Lessons are on the way</h2>
+        <p>
+          The scope for this topic is set — the {topic.data.objectives.length} objectives
+          above are what it will cover — but the lessons and question banks have not been
+          written yet.
+        </p>
+        <p class="muted">
+          To add them, create Markdown files in <code>src/content/lessons/{topic.id}/</code>
+          with <code>topic: {topic.id}</code> in the frontmatter. The README walks through it.
+        </p>
+        <a class="btn btn-secondary" href="/">Back to all topics</a>
+      </section>
+    )}
+
+    <section class="lesson-list-section" aria-labelledby="lessons-heading" hidden={lessons.length === 0}>
+      <h2 id="lessons-heading" class="section-title">Lessons</h2>
+      <ol class="lesson-list">
+        {lessons.map((l, i) => (
+          <li>
+            <a class="card card-link lesson-row" href={`/lessons/${l.id}/`}>
+              <span class="lesson-row-num" aria-hidden="true">{topic.data.order}.{i + 1}</span>
+              <span class="lesson-row-body">
+                <span class="lesson-row-title">{l.data.title}</span>
+                <span class="lesson-row-summary">{l.data.summary}</span>
+              </span>
+              <span class="lesson-row-meta">
+                <span class="lesson-row-mins">{l.data.minutes} min</span>
+                <span class="lesson-row-arrow" aria-hidden="true">→</span>
+              </span>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    {quiz && quizHref && (
+      <section class="quiz-cta card">
+        <div class="quiz-cta-text">
+          <h2>{quiz.data.title}</h2>
+          <p>
+            {quiz.data.description ?? 'A scored paper mixing several question types, with a full review afterwards.'}
+          </p>
+          <p class="muted">
+            {quiz.data.pick ?? quiz.data.questions.length} questions · pass mark {quiz.data.passMark}%
+          </p>
+        </div>
+        <a class="btn btn-primary" href={quizHref}>Take the quiz</a>
+      </section>
+    )}
+  </div>
+</Base>

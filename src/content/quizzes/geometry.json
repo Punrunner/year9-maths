@@ -1,0 +1,53 @@
+{
+  "title": "Geometry quiz",
+  "topic": "geometry",
+  "description": "Ten questions drawn at random from a bank of fourteen, covering polygon angles, tessellations, parallel-line angles and coordinates on a line segment.",
+  "pick": 10,
+  "timeLimitSec": 900,
+  "passMark": 70,
+  "questions": [
+    { "id": "yq1", "type": "numeric", "prompt": "What is the sum of the interior angles of a nonagon (9 sides)?", "answer": 1260, "unit": "°",
+      "explanation": "$180 \\times (9 - 2) = 1260^\\circ$." },
+    { "id": "yq2", "type": "numeric", "prompt": "What is the interior angle of a regular 20-sided polygon?", "answer": 162, "unit": "°",
+      "explanation": "Exterior $= 360 \\div 20 = 18^\\circ$, so interior $= 180 - 18 = 162^\\circ$." },
+    { "id": "yq3", "type": "numeric", "prompt": "A regular polygon has interior angles of $150^\\circ$. How many sides does it have?", "answer": 12,
+      "explanation": "Exterior $30^\\circ$, and $360 \\div 30 = 12$." },
+    { "id": "yq4", "type": "mcq", "prompt": "What is the sum of the exterior angles of a heptagon?",
+      "options": [
+        { "id": "a", "text": "$360^\\circ$" }, { "id": "b", "text": "$900^\\circ$" },
+        { "id": "c", "text": "$1260^\\circ$" }, { "id": "d", "text": "$180^\\circ$" }
+      ], "answer": "a",
+      "explanation": "The exterior angles of **any** polygon add to $360^\\circ$." },
+    { "id": "yq5", "type": "numeric", "prompt": "A pentagon has angles $130^\\circ$, $140^\\circ$, $125^\\circ$, $107^\\circ$ and $c$. Find $c$.", "answer": 38, "unit": "°",
+      "explanation": "$540 - (130 + 140 + 125 + 107) = 540 - 502 = 38^\\circ$." },
+    { "id": "yq6", "type": "truefalse", "prompt": "A regular octagon tessellates on its own.", "answer": false,
+      "explanation": "False. Its interior angle is $135^\\circ$, and $360 \\div 135$ is not a whole number." },
+    { "id": "yq7", "type": "mcq", "prompt": "Why do regular hexagons tessellate?",
+      "options": [
+        { "id": "a", "text": "Three $120^\\circ$ angles make exactly $360^\\circ$" },
+        { "id": "b", "text": "They have six sides" },
+        { "id": "c", "text": "Their angles add to $720^\\circ$" },
+        { "id": "d", "text": "They are symmetrical" }
+      ], "answer": "a",
+      "explanation": "Three hexagons meet at every point, and $3 \\times 120 = 360^\\circ$." },
+    { "id": "yq8", "type": "hotspot", "prompt": "The shaded angle is $a$. Click the angle **alternate** to it.",
+      "figure": "parallel-lines", "config": { "given": "q-tl", "givenLabel": "a" }, "answer": "p-br",
+      "explanation": "$a$ is between the lines on the left at the bottom crossing, so its alternate angle is between the lines on the right at the top crossing." },
+    { "id": "yq9", "type": "hotspot", "prompt": "The shaded angle is $a$. Click the angle **corresponding** to it.",
+      "figure": "parallel-lines", "config": { "given": "q-bl", "givenLabel": "a" }, "answer": "p-bl",
+      "explanation": "Corresponding angles are in the same position at each crossing." },
+    { "id": "yq10", "type": "numeric", "prompt": "Two parallel lines are crossed by a transversal. One angle is $78^\\circ$. What is its co-interior angle?", "answer": 102, "unit": "°",
+      "explanation": "Co-interior angles add to $180^\\circ$: $180 - 78 = 102^\\circ$." },
+    { "id": "yq11", "type": "numeric", "prompt": "A trapezium has two angles of $102^\\circ$ and $60^\\circ$ at the ends of one of its parallel sides. What is the angle co-interior to the $60^\\circ$ angle?", "answer": 120, "unit": "°",
+      "explanation": "$180 - 60 = 120^\\circ$." },
+    { "id": "yq12", "type": "fill-blank", "prompt": "Find the midpoint of $(-3, 4)$ and $(5, 10)$.", "text": "( [[x]] , [[y]] )",
+      "blanks": [{ "id": "x", "accept": ["1"], "size": 4 }, { "id": "y", "accept": ["7"], "size": 4 }],
+      "explanation": "$\\left(\\frac{-3 + 5}{2}, \\frac{4 + 10}{2}\\right) = (1, 7)$." },
+    { "id": "yq13", "type": "fill-blank", "prompt": "C is $(8, -3)$ and D is $(-12, 21)$. Find the point $\\frac{1}{4}$ of the way along CD from C.", "text": "( [[x]] , [[y]] )",
+      "blanks": [{ "id": "x", "accept": ["3"], "size": 4 }, { "id": "y", "accept": ["3"], "size": 4 }],
+      "explanation": "Across $-20$, up $24$. A quarter: $-5$ and $6$. $(8 - 5, -3 + 6) = (3, 3)$." },
+    { "id": "yq14", "type": "fill-blank", "prompt": "F is $(60, 70)$ and E is $(40, 50)$. Find the point $\\frac{1}{10}$ of the way along FE from F.", "text": "( [[x]] , [[y]] )",
+      "blanks": [{ "id": "x", "accept": ["58"], "size": 4 }, { "id": "y", "accept": ["68"], "size": 4 }],
+      "explanation": "From F to E: $-20$ and $-20$. A tenth is $-2$ each: $(58, 68)$." }
+  ]
+}

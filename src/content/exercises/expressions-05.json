@@ -1,0 +1,176 @@
+{
+  "title": "Practice: changing the subject",
+  "intro": "Ten questions. When you type a rearranged formula you can include the subject (e.g. t = (5m + 1)/6) or just the right-hand side — both are marked.",
+  "questions": [
+    {
+      "id": "e5-q1",
+      "type": "algebraic",
+      "prompt": "Make $x$ the subject of $y = \\dfrac{mx}{c}$.",
+      "answer": "c*y/m",
+      "variables": ["c", "m", "y"],
+      "placeholder": "x = …",
+      "hints": ["The machine is $x \\to \\times m \\to \\div c \\to y$. Run it backwards."],
+      "explanation": "Reverse: $y \\to \\times c \\to \\div m$, so $x = \\frac{cy}{m}$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "e5-q2",
+      "type": "algebraic",
+      "prompt": "Rearrange $m = \\dfrac{6t - 1}{5}$ to make $t$ the subject.",
+      "answer": "(5m + 1)/6",
+      "variables": ["m"],
+      "placeholder": "t = …",
+      "hints": ["Multiply both sides by 5 first.", "Then add 1, then divide by 6."],
+      "explanation": "$5m = 6t - 1 \\Rightarrow 5m + 1 = 6t \\Rightarrow t = \\frac{5m + 1}{6}$."
+    },
+    {
+      "id": "e5-q3",
+      "type": "order",
+      "prompt": "Put these steps in order to make $r$ the subject of $V = \\frac{1}{3}\\pi r^2 h$.",
+      "items": [
+        { "id": "s1", "text": "Multiply both sides by 3: $3V = \\pi r^2 h$" },
+        { "id": "s2", "text": "Divide both sides by $\\pi h$: $\\frac{3V}{\\pi h} = r^2$" },
+        { "id": "s3", "text": "Square root both sides: $r = \\sqrt{\\frac{3V}{\\pi h}}$" }
+      ],
+      "solution": ["s1", "s2", "s3"],
+      "hints": ["Undo the last thing that was done to $r$ first — the $\\frac{1}{3}$ is the outermost operation."],
+      "explanation": "Forwards, $r$ is squared, multiplied by $\\pi h$, then divided by 3. Backwards you undo those in reverse: $\\times 3$, $\\div \\pi h$, then $\\sqrt{\\ }$."
+    },
+    {
+      "id": "e5-q4",
+      "type": "algebraic",
+      "prompt": "Make $x$ the subject of $M = 4(t - x)$.",
+      "answer": "t - M/4",
+      "variables": ["t", "M"],
+      "placeholder": "x = …",
+      "hints": ["Divide both sides by 4.", "Then add $x$ to both sides so it is positive."],
+      "explanation": "$\\frac{M}{4} = t - x \\Rightarrow \\frac{M}{4} + x = t \\Rightarrow x = t - \\frac{M}{4}$. Equivalent forms like $\\frac{4t - M}{4}$ are also correct."
+    },
+    {
+      "id": "e5-q5",
+      "type": "steps",
+      "prompt": "Rearrange one step at a time.",
+      "scenario": "Make $x$ the subject of $g = \\dfrac{f}{x} + y$.",
+      "steps": [
+        {
+          "kind": "mcq",
+          "prompt": "What should you do first?",
+          "options": [
+            { "id": "a", "text": "Subtract $y$ from both sides" },
+            { "id": "b", "text": "Divide both sides by $f$" },
+            { "id": "c", "text": "Multiply only the fraction by $x$" }
+          ],
+          "answer": "a",
+          "feedback": "That leaves $g - y = \\frac{f}{x}$ — the fraction on its own."
+        },
+        {
+          "kind": "mcq",
+          "prompt": "Now $g - y = \\frac{f}{x}$. What next?",
+          "options": [
+            { "id": "a", "text": "Multiply both sides by $x$: $x(g - y) = f$" },
+            { "id": "b", "text": "Square both sides" },
+            { "id": "c", "text": "Add $x$ to both sides" }
+          ],
+          "answer": "a",
+          "feedback": "Multiplying by $x$ lifts it out of the denominator."
+        },
+        {
+          "kind": "algebraic",
+          "prompt": "Divide both sides by $(g - y)$. Type the formula for $x$.",
+          "answer": "f/(g - y)",
+          "variables": ["f", "g", "y"],
+          "hint": "Keep $g - y$ together in brackets when you divide by it.",
+          "feedback": "$x = \\frac{f}{g - y}$."
+        }
+      ],
+      "explanation": "$g - y = \\frac{f}{x} \\Rightarrow x(g - y) = f \\Rightarrow x = \\frac{f}{g - y}$. The long fraction line then acts as the bracket."
+    },
+    {
+      "id": "e5-q6",
+      "type": "algebraic",
+      "prompt": "Make $x$ the subject of $P = \\frac{2}{5}x - e$.",
+      "answer": "5(P + e)/2",
+      "variables": ["P", "e"],
+      "placeholder": "x = …",
+      "hints": ["Add $e$ to both sides.", "Dividing by $\\frac{2}{5}$ is the same as multiplying by $\\frac{5}{2}$."],
+      "explanation": "$P + e = \\frac{2}{5}x \\Rightarrow x = \\frac{5}{2}(P + e) = \\frac{5(P + e)}{2}$."
+    },
+    {
+      "id": "e5-q7",
+      "type": "algebraic",
+      "prompt": "The area of a circle is $A = \\pi r^2$. Make $r$ the subject.",
+      "answer": "sqrt(A/pi)",
+      "variables": ["A"],
+      "placeholder": "r = sqrt(…)",
+      "hints": ["Divide by $\\pi$, then square root.", "Type a square root as sqrt( … ) and $\\pi$ as pi."],
+      "explanation": "$\\frac{A}{\\pi} = r^2$, so $r = \\sqrt{\\frac{A}{\\pi}}$."
+    },
+    {
+      "id": "e5-q8",
+      "type": "steps",
+      "prompt": "Derive a formula, then use it.",
+      "scenario": "A rectangle is $(2x + 4)$ cm long and 7 cm wide. Its area is $A\\ \\text{cm}^2$.",
+      "steps": [
+        {
+          "kind": "algebraic",
+          "prompt": "Write a formula for $A$, expanded.",
+          "answer": "14x + 28",
+          "variables": ["x"],
+          "feedback": "$A = 7(2x + 4) = 14x + 28$."
+        },
+        {
+          "kind": "algebraic",
+          "prompt": "Rearrange to make $x$ the subject. Type the right-hand side using $A$.",
+          "answer": "(A - 28)/14",
+          "variables": ["A"],
+          "hint": "Subtract 28, then divide by 14."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Find $x$ when the area is 63 cm².",
+          "answer": 2.5,
+          "feedback": "$\\frac{63 - 28}{14} = \\frac{35}{14} = 2.5$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "What is the length of the rectangle?",
+          "answer": 9,
+          "unit": "cm",
+          "feedback": "$2(2.5) + 4 = 9$ cm. Check: $9 \\times 7 = 63$ ✓"
+        }
+      ],
+      "explanation": "$A = 14x + 28$, so $x = \\frac{A - 28}{14}$. With $A = 63$, $x = 2.5$ and the length is $2(2.5) + 4 = 9$ cm."
+    },
+    {
+      "id": "e5-q9",
+      "type": "numeric",
+      "prompt": "$V = \\frac{1}{3}\\pi r^2 h$. Find $r$ when $h = 2.1$ cm and $V = 100\\ \\text{cm}^3$. Take $\\pi = 3.142$ and give your answer to 2 decimal places.",
+      "answer": 6.74,
+      "tolerance": 0.01,
+      "unit": "cm",
+      "hints": ["Rearrange first: $r = \\sqrt{\\frac{3V}{\\pi h}}$."],
+      "explanation": "$r = \\sqrt{\\frac{3 \\times 100}{3.142 \\times 2.1}} = \\sqrt{\\frac{300}{6.5982}} = \\sqrt{45.47} = 6.74$ cm.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "e5-q10",
+      "type": "numeric",
+      "prompt": "The swing time of a pendulum is $T = 2\\pi\\sqrt{\\frac{l}{g}}$, which rearranges to $l = \\left(\\frac{T}{2\\pi}\\right)^2 g$. Find $l$ when $T = 1.571$ and $g = 32$. Take $\\pi = 3.142$.",
+      "answer": 2,
+      "tolerance": 0.01,
+      "hints": ["$2\\pi = 6.284$, and $\\frac{1.571}{6.284} = 0.25$."],
+      "explanation": "$\\frac{T}{2\\pi} = \\frac{1.571}{6.284} = 0.25$. Then $l = 0.25^2 \\times 32 = 0.0625 \\times 32 = 2$."
+    },
+    {
+      "id": "e5-q11",
+      "type": "algebraic",
+      "prompt": "Make $x$ the subject of $y = r(x - s) + t$.",
+      "answer": "(y - t)/r + s",
+      "variables": ["y", "t", "r", "s"],
+      "placeholder": "x = …",
+      "hints": ["Subtract $t$, then divide by $r$, then add $s$."],
+      "explanation": "$y - t = r(x - s) \\Rightarrow \\frac{y - t}{r} = x - s \\Rightarrow x = \\frac{y - t}{r} + s$.",
+      "difficulty": "challenge"
+    }
+  ]
+}

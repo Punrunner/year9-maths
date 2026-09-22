@@ -1,0 +1,105 @@
+{
+  "title": "Practice: order of operations with fractions",
+  "intro": "Nine questions, no calculator. Look for the shortcut before you start multiplying.",
+  "questions": [
+    {
+      "id": "f3-q1",
+      "type": "numeric",
+      "prompt": "Work out $5^2 \\times 2.65 + 11$.",
+      "answer": 77.25,
+      "accept": ["77 1/4"],
+      "hints": ["Indices first, then multiplication, then addition.", "$25 \\times 2.65 = \\frac{100}{4} \\times 2.65$"],
+      "explanation": "$25 \\times 2.65 = 66.25$, then $66.25 + 11 = 77.25$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "f3-q2",
+      "type": "numeric",
+      "prompt": "Work out $\\left(\\frac{1}{2} + 5.5\\right)^2 - 2\\frac{1}{2}$.",
+      "answer": 33.5,
+      "accept": ["33 1/2", "67/2"],
+      "hints": ["Brackets first: $\\frac{1}{2} + 5.5 = 6$."],
+      "explanation": "$6^2 - 2\\frac{1}{2} = 36 - 2\\frac{1}{2} = 33\\frac{1}{2}$."
+    },
+    {
+      "id": "f3-q3",
+      "type": "steps",
+      "prompt": "Use the distributive law one step at a time.",
+      "scenario": "Work out $4\\frac{2}{9} \\times 11 + 4\\frac{2}{9} \\times 4$.",
+      "steps": [
+        { "kind": "numeric", "prompt": "Take $4\\frac{2}{9}$ outside a bracket: $4\\frac{2}{9} \\times (11 + 4)$. What is in the bracket?", "answer": 15 },
+        { "kind": "numeric", "prompt": "Write $4\\frac{2}{9}$ as an improper fraction.", "answer": "38/9" },
+        { "kind": "numeric", "prompt": "Work out $\\frac{38}{9} \\times 15$ as a mixed number.", "answer": "63 1/3", "accept": ["190/3"], "hint": "Cancel 15 and 9 by 3 first: $\\frac{38}{3} \\times 5$." }
+      ],
+      "explanation": "$4\\frac{2}{9} \\times 15 = \\frac{38}{9} \\times 15 = \\frac{38 \\times 5}{3} = \\frac{190}{3} = 63\\frac{1}{3}$."
+    },
+    {
+      "id": "f3-q4",
+      "type": "mcq",
+      "prompt": "What is the quickest way to work out $2.63 \\times 7 \\times \\frac{3}{7} \\div 3$?",
+      "options": [
+        { "id": "a", "text": "Notice $7 \\times \\frac{3}{7} \\div 3 = 1$, so the answer is 2.63" },
+        { "id": "b", "text": "Work from left to right: $2.63 \\times 7$ first" },
+        { "id": "c", "text": "Change 2.63 to a mixed number first" },
+        { "id": "d", "text": "It cannot be done without a calculator" }
+      ],
+      "answer": "a",
+      "hints": ["Multiplication and division can be done in any order."],
+      "explanation": "$7 \\times \\frac{3}{7} = 3$ and $3 \\div 3 = 1$, so the whole calculation is $2.63 \\times 1 = 2.63$."
+    },
+    {
+      "id": "f3-q5",
+      "type": "numeric",
+      "prompt": "Work out $1.5 \\times 3.5 \\times 2.5$. Give your answer as a mixed number or a decimal.",
+      "answer": 13.125,
+      "accept": ["13 1/8", "105/8"],
+      "hints": ["$\\frac{3}{2} \\times \\frac{7}{2} \\times \\frac{5}{2}$"],
+      "explanation": "$\\frac{3 \\times 7 \\times 5}{2 \\times 2 \\times 2} = \\frac{105}{8} = 13\\frac{1}{8}$."
+    },
+    {
+      "id": "f3-q6",
+      "type": "numeric",
+      "prompt": "Work out $\\left(2\\frac{3}{11} + 7\\frac{3}{13}\\right) - \\left(\\frac{3}{11} - \\frac{1}{13}\\right)$.",
+      "answer": "9 4/13",
+      "accept": ["121/13"],
+      "hints": ["Remove the brackets, remembering the minus sign flips $-\\frac{1}{13}$ to $+\\frac{1}{13}$.", "Group the elevenths together."],
+      "explanation": "$2\\frac{3}{11} - \\frac{3}{11} = 2$ and $7\\frac{3}{13} + \\frac{1}{13} = 7\\frac{4}{13}$, so $9\\frac{4}{13}$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "f3-q7",
+      "type": "numeric",
+      "prompt": "Work out $1\\frac{4}{5} + 2\\frac{3}{4} \\times 1\\frac{1}{3}$.",
+      "answer": "5 7/15",
+      "accept": ["82/15"],
+      "hints": ["Multiplication before addition.", "$\\frac{11}{4} \\times \\frac{4}{3} = \\frac{11}{3}$"],
+      "explanation": "$\\frac{11}{4} \\times \\frac{4}{3} = \\frac{11}{3}$. Then $\\frac{9}{5} + \\frac{11}{3} = \\frac{27}{15} + \\frac{55}{15} = \\frac{82}{15} = 5\\frac{7}{15}$."
+    },
+    {
+      "id": "f3-q8",
+      "type": "table",
+      "prompt": "A function machine multiplies by $1\\frac{3}{4}$ and then divides by $3\\frac{1}{2}$. Complete the table.",
+      "columns": ["Input", "Output"],
+      "rows": [
+        [{ "given": "4⅔" }, { "answer": "2 1/3", "accept": ["7/3"] }],
+        [{ "answer": "4 2/5", "accept": ["22/5", "4.4"] }, { "given": "2⅕" }],
+        [{ "given": "10" }, { "answer": "5" }]
+      ],
+      "hints": ["$\\times \\frac{7}{4} \\div \\frac{7}{2} = \\times \\frac{7}{4} \\times \\frac{2}{7} = \\times \\frac{1}{2}$"],
+      "explanation": "The whole machine simply halves the input. So $4\\frac{2}{3} \\to 2\\frac{1}{3}$, $4\\frac{2}{5} \\to 2\\frac{1}{5}$ and $10 \\to 5$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "f3-q9",
+      "type": "steps",
+      "prompt": "Solve a real problem step by step.",
+      "scenario": "Sanvi paints a wall $6\\frac{2}{3}$ m by 5.25 m. One can covers 5 m² and costs 4.50 dollars.",
+      "steps": [
+        { "kind": "numeric", "prompt": "What is the area of the wall, in m²?", "answer": 35, "hint": "$\\frac{20}{3} \\times \\frac{21}{4}$", "feedback": "$\\frac{20 \\times 21}{3 \\times 4} = 35$ m²." },
+        { "kind": "numeric", "prompt": "How many cans does she need?", "answer": 7 },
+        { "kind": "numeric", "prompt": "How much will it cost, in dollars?", "answer": 31.5, "accept": ["31.50"] }
+      ],
+      "explanation": "$6\\frac{2}{3} \\times 5\\frac{1}{4} = 35$ m², so $35 \\div 5 = 7$ cans costing $7 \\times 4.50 = 31.50$ dollars."
+    }
+  ]
+}

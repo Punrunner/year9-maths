@@ -1,0 +1,92 @@
+{
+  "title": "Practice: frequency polygons",
+  "intro": "Eight questions on plotting and reading frequency polygons.",
+  "questions": [
+    {
+      "id": "d1-q1",
+      "type": "multi",
+      "prompt": "Emma describes how to draw a frequency polygon. Select **every** correct statement.",
+      "options": [
+        { "id": "a", "text": "Plot each point at the midpoint of its class" },
+        { "id": "b", "text": "Plot each point at the start of its class" },
+        { "id": "c", "text": "The height of each point is the frequency" },
+        { "id": "d", "text": "Join the points with a smooth curve" },
+        { "id": "e", "text": "Join the points with straight lines" }
+      ],
+      "answers": ["a", "c", "e"],
+      "hints": ["Which value represents the whole class?"],
+      "explanation": "Midpoints, at the height of the frequency, joined with straight lines.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "d1-q2",
+      "type": "table",
+      "prompt": "Insect larvae lengths. Complete the points you would plot.",
+      "columns": ["Length (mm)", "Frequency", "Point to plot"],
+      "rows": [
+        [{ "given": "20 ≤ l < 25" }, { "given": "15" }, { "answer": "(22.5, 15)", "accept": ["(22.5,15)", "22.5, 15", "22.5,15"] }],
+        [{ "given": "25 ≤ l < 30" }, { "given": "33" }, { "answer": "(27.5, 33)", "accept": ["(27.5,33)", "27.5, 33", "27.5,33"] }],
+        [{ "given": "30 ≤ l < 35" }, { "given": "58" }, { "answer": "(32.5, 58)", "accept": ["(32.5,58)", "32.5, 58", "32.5,58"] }],
+        [{ "given": "35 ≤ l < 40" }, { "given": "50" }, { "answer": "(37.5, 50)", "accept": ["(37.5,50)", "37.5, 50", "37.5,50"] }]
+      ],
+      "hints": ["(midpoint, frequency)"],
+      "explanation": "Midpoints 22.5, 27.5, 32.5, 37.5 paired with each frequency."
+    },
+    {
+      "id": "d1-q3",
+      "type": "numeric",
+      "prompt": "Larvae: $20$–$25$: 15, $25$–$30$: 33, $30$–$35$: 58, $35$–$40$: 50, $40$–$45$: 4. How many larvae were measured?",
+      "answer": 160,
+      "hints": ["Add the frequencies."],
+      "explanation": "$15 + 33 + 58 + 50 + 4 = 160$."
+    },
+    {
+      "id": "d1-q4",
+      "type": "manipulable",
+      "prompt": "Horses sold at a market: $350$–$400$ kg: 16, $400$–$450$: 130, $450$–$500$: 42, $500$–$550$: 12. Set the polygon to match. (The slider maximum is 140.)",
+      "widget": "histogram",
+      "config": { "boundaries": [350, 400, 450, 500, 550], "freqs": [0, 0, 0, 0], "maxFreq": 140, "label": "Mass, m (kg)", "polygon": true, "bars": false },
+      "target": { "f0": 16, "f1": 130, "f2": 42, "f3": 12 },
+      "tolerance": 0,
+      "hints": ["Set each class's slider to its frequency."],
+      "explanation": "The points are at $(375, 16)$, $(425, 130)$, $(475, 42)$, $(525, 12)$. The peak is in the $400$–$450$ kg class."
+    },
+    {
+      "id": "d1-q5",
+      "type": "numeric",
+      "prompt": "What is the mid-interval value of the class $500 \\le m < 550$?",
+      "answer": 525,
+      "explanation": "$\\frac{500 + 550}{2} = 525$."
+    },
+    {
+      "id": "d1-q6",
+      "type": "mcq",
+      "prompt": "Students' travel times peak at $15$–$20$ minutes; teachers' at $10$–$15$ minutes. Which conclusion is best?",
+      "options": [
+        { "id": "a", "text": "Teachers generally take less time to travel to school" },
+        { "id": "b", "text": "Every teacher is faster than every student" },
+        { "id": "c", "text": "Students live closer to school" },
+        { "id": "d", "text": "The two groups take the same time" }
+      ],
+      "answer": "a",
+      "hints": ["A peak shows where most of the data is, not every value."],
+      "explanation": "The teachers' polygon is shifted to the left, so teachers **generally** take less time. It says nothing certain about every individual or about where people live."
+    },
+    {
+      "id": "d1-q7",
+      "type": "truefalse",
+      "prompt": "You should join the last point of a frequency polygon back to the first to close the shape.",
+      "answer": false,
+      "hints": ["Despite the name, it is not a closed polygon here."],
+      "explanation": "False. Join neighbouring points only, from the first class to the last."
+    },
+    {
+      "id": "d1-q8",
+      "type": "numeric",
+      "prompt": "A frequency polygon of 40 cars' prices has points at $(1750, 4)$, $(2250, 14)$, $(2750, 13)$, $(3250, 4)$ and one more at $3750$. What is the frequency at $3750$?",
+      "answer": 5,
+      "hints": ["The frequencies must add up to 40."],
+      "explanation": "$4 + 14 + 13 + 4 = 35$, so $40 - 35 = 5$."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Expressions & Formulae",
+  "description": "Simplifying, algebraic fractions, expanding brackets, substitution and rearranging formulae.",
+  "strand": "number-algebra",
+  "order": 2,
+  "difficulty": "core",
+  "objectives": [
+    "Simplify expressions using the laws of indices",
+    "Add, subtract, multiply and divide algebraic fractions",
+    "Expand the product of two linear expressions",
+    "Substitute into a formula and change its subject"
+  ],
+  "keywords": [
+    "algebra",
+    "simplify",
+    "expand",
+    "substitute",
+    "rearrange",
+    "subject of a formula"
+  ]
+}

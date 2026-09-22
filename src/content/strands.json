@@ -1,0 +1,26 @@
+[
+  {
+    "id": "number-algebra",
+    "title": "Number & Algebra",
+    "short": "Number & Algebra",
+    "description": "Working with numbers in every form, then letting letters stand in for them: indices, standard form, fractions, equations, sequences, proportion and percentages.",
+    "accent": "--strand-na",
+    "order": 1
+  },
+  {
+    "id": "measurement-geometry",
+    "title": "Measurement & Geometry",
+    "short": "Measurement & Geometry",
+    "description": "Shape, space and size: circles, Pythagoras, surface area and volume, angles in polygons, constructions and transformations.",
+    "accent": "--strand-mg",
+    "order": 2
+  },
+  {
+    "id": "statistics-probability",
+    "title": "Statistics & Probability",
+    "short": "Statistics & Probability",
+    "description": "Collecting and summarising data, choosing the right graph to tell its story, and measuring how likely things are to happen.",
+    "accent": "--strand-sp",
+    "order": 3
+  }
+]

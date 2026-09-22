@@ -1,0 +1,130 @@
+{
+  "title": "Practice: linear equations",
+  "intro": "Ten questions. Where you type a solution, a fraction such as 22/9 is fine.",
+  "questions": [
+    {
+      "id": "q1-q1",
+      "type": "drill",
+      "prompt": "Quick-fire: solve for the letter.",
+      "durationSec": 75,
+      "count": 10,
+      "pool": [
+        { "id": "d1", "prompt": "$x - 3 = 5$", "accept": ["8"] },
+        { "id": "d2", "prompt": "$0 = x + 1$", "accept": ["-1"] },
+        { "id": "d3", "prompt": "$3x = 9$", "accept": ["3"] },
+        { "id": "d4", "prompt": "$21 = 7x$", "accept": ["3"] },
+        { "id": "d5", "prompt": "$\\frac{x}{3} = 2$", "accept": ["6"] },
+        { "id": "d6", "prompt": "$\\frac{x}{9} = -3$", "accept": ["-27"] },
+        { "id": "d7", "prompt": "$3p - 3 = 12$", "accept": ["5"] },
+        { "id": "d8", "prompt": "$47 = 6x - 7$", "accept": ["9"] },
+        { "id": "d9", "prompt": "$\\frac{d}{2} + 3 = 4$", "accept": ["2"] },
+        { "id": "d10", "prompt": "$5 = \\frac{x}{6} - 7$", "accept": ["72"] },
+        { "id": "d11", "prompt": "$3x + 2 = 2x + 6$", "accept": ["4"] },
+        { "id": "d12", "prompt": "$6 - x = x$", "accept": ["3"] }
+      ],
+      "explanation": "Each one takes one or two inverse operations. For $5 = \\frac{x}{6} - 7$: add 7 to get 12, then multiply by 6 to get 72."
+    },
+    {
+      "id": "q1-q2",
+      "type": "order",
+      "prompt": "Put the steps for solving $7 - 3x = 3(2x - 5)$ in order.",
+      "items": [
+        { "id": "a", "text": "$7 - 3x = 6x - 15$" },
+        { "id": "b", "text": "$7 = 9x - 15$" },
+        { "id": "c", "text": "$22 = 9x$" },
+        { "id": "d", "text": "$x = 2\\frac{4}{9}$" }
+      ],
+      "solution": ["a", "b", "c", "d"],
+      "hints": ["Brackets first, then gather the $x$ terms, then the numbers."],
+      "explanation": "Expand, add $3x$, add 15, divide by 9."
+    },
+    {
+      "id": "q1-q3",
+      "type": "numeric",
+      "prompt": "Solve $6x - 13 = 7 - 4x$.",
+      "answer": 2,
+      "hints": ["Add $4x$ to both sides first."],
+      "explanation": "$10x - 13 = 7 \\Rightarrow 10x = 20 \\Rightarrow x = 2$."
+    },
+    {
+      "id": "q1-q4",
+      "type": "steps",
+      "prompt": "Solve step by step.",
+      "scenario": "Solve $2(y - 2) = 5(2 - y)$.",
+      "steps": [
+        { "kind": "algebraic", "prompt": "Expand the left side.", "answer": "2y - 4", "variables": ["y"] },
+        { "kind": "algebraic", "prompt": "Expand the right side.", "answer": "10 - 5y", "variables": ["y"] },
+        { "kind": "numeric", "prompt": "Add $5y$ and 4 to both sides: $7y = \\square$.", "answer": 14 },
+        { "kind": "numeric", "prompt": "So $y = $", "answer": 2 }
+      ],
+      "explanation": "$2y - 4 = 10 - 5y \\Rightarrow 7y = 14 \\Rightarrow y = 2$. Check: $2(0) = 5(0)$ ✓"
+    },
+    {
+      "id": "q1-q5",
+      "type": "numeric",
+      "prompt": "Solve $4 - 2(x + 2) = 3(x - 5)$.",
+      "answer": 3,
+      "hints": ["$4 - 2x - 4 = 3x - 15$ — watch the sign of the 4 inside the bracket."],
+      "explanation": "$-2x = 3x - 15 \\Rightarrow -5x = -15 \\Rightarrow x = 3$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q1-q6",
+      "type": "match",
+      "prompt": "Match each description to its equation.",
+      "left": [
+        { "id": "a", "text": "3 is added to a number and the result is multiplied by 4 to give 32" },
+        { "id": "b", "text": "A number is multiplied by 3, then 7 is added, and the result is doubled to give 80" },
+        { "id": "c", "text": "Three consecutive numbers add up to 72" },
+        { "id": "d", "text": "Three consecutive odd numbers add up to 69" }
+      ],
+      "right": [
+        { "id": "e1", "text": "$4(x + 3) = 32$" },
+        { "id": "e2", "text": "$2(3x + 7) = 80$" },
+        { "id": "e3", "text": "$x + (x + 1) + (x + 2) = 72$" },
+        { "id": "e4", "text": "$x + (x + 2) + (x + 4) = 69$" }
+      ],
+      "solution": { "a": "e1", "b": "e2", "c": "e3", "d": "e4" },
+      "hints": ["Consecutive odd numbers go up in 2s."],
+      "explanation": "Brackets show what is done first. Consecutive odd numbers differ by 2, not 1."
+    },
+    {
+      "id": "q1-q7",
+      "type": "numeric",
+      "prompt": "Three consecutive odd numbers add up to 69. What is the **smallest** of them?",
+      "answer": 21,
+      "hints": ["$x + (x + 2) + (x + 4) = 69$"],
+      "explanation": "$3x + 6 = 69 \\Rightarrow x = 21$. The numbers are 21, 23 and 25."
+    },
+    {
+      "id": "q1-q8",
+      "type": "steps",
+      "prompt": "Construct and solve an equation.",
+      "scenario": "One side of a rectangle is 4 cm longer than the other. The perimeter is 28 cm.",
+      "steps": [
+        { "kind": "algebraic", "prompt": "Let the short side be $x$. Write an expression for the perimeter.", "answer": "4x + 8", "variables": ["x"], "hint": "$x + (x + 4) + x + (x + 4)$" },
+        { "kind": "numeric", "prompt": "Solve $4x + 8 = 28$.", "answer": 5, "unit": "cm" },
+        { "kind": "numeric", "prompt": "How long is the longer side?", "answer": 9, "unit": "cm" }
+      ],
+      "explanation": "$4x + 8 = 28 \\Rightarrow x = 5$. The sides are 5 cm and 9 cm (check: $2 \\times 14 = 28$ ✓)."
+    },
+    {
+      "id": "q1-q9",
+      "type": "numeric",
+      "prompt": "Ram bought 5 cinema tickets. He paid with 20 dollars and got 75 cents change. How much did one ticket cost, in cents?",
+      "answer": 385,
+      "unit": "cents",
+      "hints": ["Work in cents: $5t + 75 = 2000$."],
+      "explanation": "$5t = 1925 \\Rightarrow t = 385$ cents (3 dollars 85)."
+    },
+    {
+      "id": "q1-q10",
+      "type": "numeric",
+      "prompt": "An isosceles triangle has two sides of $y$ cm and a base of 8 cm. Its perimeter is 32 cm. Find $y$.",
+      "answer": 12,
+      "unit": "cm",
+      "hints": ["$2y + 8 = 32$"],
+      "explanation": "$2y = 24 \\Rightarrow y = 12$ cm."
+    }
+  ]
+}

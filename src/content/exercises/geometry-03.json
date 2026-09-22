@@ -1,0 +1,117 @@
+{
+  "title": "Practice: angle geometry problems",
+  "intro": "Ten questions. Several use the parallel-lines diagram: click the angle asked for.",
+  "questions": [
+    {
+      "id": "y3-q1",
+      "type": "hotspot",
+      "prompt": "The shaded angle is $a$. Click the angle that is **corresponding** to $a$.",
+      "figure": "parallel-lines",
+      "config": { "given": "p-tr", "givenLabel": "a" },
+      "answer": "q-tr",
+      "hints": ["Corresponding angles are in the same position at each crossing — an F shape."],
+      "explanation": "$a$ is above the top line, right of the crossing line. The corresponding angle is in the same position at the bottom crossing.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "y3-q2",
+      "type": "hotspot",
+      "prompt": "The shaded angle is $a$. Click the angle that is **alternate** to $a$.",
+      "figure": "parallel-lines",
+      "config": { "given": "p-bl", "givenLabel": "a" },
+      "answer": "q-tr",
+      "hints": ["Alternate angles sit inside the parallel lines on opposite sides of the crossing line — a Z shape."],
+      "explanation": "$a$ is between the lines on the left of the crossing line, so its alternate angle is between the lines on the **right**, at the other crossing."
+    },
+    {
+      "id": "y3-q3",
+      "type": "hotspot",
+      "prompt": "The shaded angle is $b$. Click the angle that is **co-interior** to $b$ (the two add to $180^\\circ$).",
+      "figure": "parallel-lines",
+      "config": { "given": "p-br", "givenLabel": "b" },
+      "answer": "q-tr",
+      "hints": ["Co-interior angles are both between the lines, on the **same** side of the crossing line — a C shape."],
+      "explanation": "$b$ is between the lines on the right, so its co-interior partner is also between the lines on the right, at the bottom crossing."
+    },
+    {
+      "id": "y3-q4",
+      "type": "hotspot",
+      "prompt": "The shaded angle is $c$. Click the angle **vertically opposite** $c$.",
+      "figure": "parallel-lines",
+      "config": { "given": "q-tl", "givenLabel": "c" },
+      "answer": "q-br",
+      "hints": ["Vertically opposite angles share a corner and face each other across it."],
+      "explanation": "Vertically opposite angles are at the same crossing, directly across from each other."
+    },
+    {
+      "id": "y3-q5",
+      "type": "match",
+      "prompt": "Match each angle pair to its rule.",
+      "left": [
+        { "id": "a", "text": "Alternate angles" },
+        { "id": "b", "text": "Corresponding angles" },
+        { "id": "c", "text": "Co-interior angles" },
+        { "id": "d", "text": "Angles on a straight line" }
+      ],
+      "right": [
+        { "id": "r1", "text": "are equal (Z shape)" },
+        { "id": "r2", "text": "are equal (F shape)" },
+        { "id": "r3", "text": "add to 180° (C shape)" },
+        { "id": "r4", "text": "add to 180°" }
+      ],
+      "solution": { "a": "r1", "b": "r2", "c": "r3", "d": "r4" },
+      "hints": ["Two of these pairs are equal and two add to 180°."],
+      "explanation": "Z → equal, F → equal, C → supplementary. Angles on a straight line are also supplementary."
+    },
+    {
+      "id": "y3-q6",
+      "type": "steps",
+      "prompt": "Find the angles with reasons.",
+      "scenario": "ABCD is a trapezium with AD ∥ BC. AB = AD, and angle DBC $= 41^\\circ$.",
+      "steps": [
+        { "kind": "numeric", "prompt": "Angle BDA (alternate to DBC):", "answer": 41, "unit": "°" },
+        { "kind": "numeric", "prompt": "Angle ABD (base angles of the isosceles triangle ABD are equal):", "answer": 41, "unit": "°" },
+        { "kind": "numeric", "prompt": "Angle BAD (angles in a triangle):", "answer": 98, "unit": "°" },
+        { "kind": "mcq", "prompt": "Is ABD right-angled?", "options": [{ "id": "n", "text": "No" }, { "id": "y", "text": "Yes" }], "answer": "n" }
+      ],
+      "explanation": "Alternate angles give $41^\\circ$; the isosceles triangle gives another $41^\\circ$; $180 - 82 = 98^\\circ$, not $90^\\circ$."
+    },
+    {
+      "id": "y3-q7",
+      "type": "numeric",
+      "prompt": "Two parallel lines are crossed by a transversal. One of the co-interior angles is $103^\\circ$. What is the other?",
+      "answer": 77,
+      "unit": "°",
+      "hints": ["Co-interior angles add to $180^\\circ$."],
+      "explanation": "$180 - 103 = 77^\\circ$."
+    },
+    {
+      "id": "y3-q8",
+      "type": "numeric",
+      "prompt": "A parallelogram has neighbouring angles $2y$ and $8y$. What is the size of the **larger** angle?",
+      "answer": 144,
+      "unit": "°",
+      "hints": ["$2y + 8y = 180$"],
+      "explanation": "$10y = 180 \\Rightarrow y = 18$, so the angles are $36^\\circ$ and $144^\\circ$."
+    },
+    {
+      "id": "y3-q9",
+      "type": "numeric",
+      "prompt": "A line crosses two parallel lines. At one crossing the angles on one side are $3a$ and $2a$, and they lie on a straight line. Find $a$.",
+      "answer": 36,
+      "unit": "°",
+      "hints": ["Angles on a straight line: $3a + 2a = 180$."],
+      "explanation": "$5a = 180 \\Rightarrow a = 36$."
+    },
+    {
+      "id": "y3-q10",
+      "type": "numeric",
+      "prompt": "In a triangle drawn between two parallel lines, the two base angles are alternate to angles of $67^\\circ$ and $54^\\circ$ on the top line. What is the third angle of the triangle?",
+      "answer": 59,
+      "unit": "°",
+      "hints": ["The base angles are $67^\\circ$ and $54^\\circ$."],
+      "explanation": "$180 - 67 - 54 = 59^\\circ$.",
+      "difficulty": "challenge"
+    }
+  ]
+}

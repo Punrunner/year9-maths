@@ -1,0 +1,20 @@
+{
+  "title": "Grouped Data & Sampling",
+  "description": "Averages and range from grouped frequency tables, and how to take a fair sample.",
+  "strand": "statistics-probability",
+  "order": 5,
+  "difficulty": "core",
+  "objectives": [
+    "Find the modal class and estimate the mean of grouped data",
+    "Estimate the range from a grouped frequency table",
+    "Choose an appropriate sampling method and spot bias"
+  ],
+  "keywords": [
+    "grouped data",
+    "modal class",
+    "estimated mean",
+    "sampling",
+    "bias",
+    "population"
+  ]
+}

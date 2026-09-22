@@ -1,0 +1,21 @@
+{
+  "title": "Shapes & Mathematical Drawings",
+  "description": "Inscribed polygons, ruler-and-compass constructions, scales, bearings, and symmetry in 3D.",
+  "strand": "measurement-geometry",
+  "order": 3,
+  "difficulty": "core",
+  "objectives": [
+    "Construct a regular polygon inside a circle",
+    "Carry out standard ruler-and-compass constructions",
+    "Use scales and three-figure bearings on a map",
+    "Describe planes of symmetry in a 3D shape"
+  ],
+  "keywords": [
+    "construction",
+    "bisector",
+    "bearing",
+    "scale",
+    "polygon",
+    "symmetry"
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "title": "Practice: factors, HCF and LCM",
+  "intro": "Ten questions. Type fractions like 10/21.",
+  "questions": [
+    {
+      "id": "f1-q1",
+      "type": "fill-blank",
+      "prompt": "List all the factors of each number, in order, separated by commas.",
+      "text": "Factors of 24: [[a]] $\\qquad$ Factors of 25: [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["1, 2, 3, 4, 6, 8, 12, 24", "1,2,3,4,6,8,12,24"], "size": 18 },
+        { "id": "b", "accept": ["1, 5, 25", "1,5,25"], "size": 8 }
+      ],
+      "hints": ["Work in pairs: $1 \\times 24$, $2 \\times 12$, …"],
+      "explanation": "$24 = 1 \\times 24 = 2 \\times 12 = 3 \\times 8 = 4 \\times 6$. $25 = 1 \\times 25 = 5 \\times 5$ — a square number, so it has an odd number of factors.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "f1-q2",
+      "type": "order",
+      "prompt": "Put the steps for finding the HCF of 12 and 30 by prime factors in order.",
+      "items": [
+        { "id": "a", "text": "Draw a factor tree for each number" },
+        { "id": "b", "text": "Write $12 = 2 \\times 2 \\times 3$ and $30 = 2 \\times 3 \\times 5$" },
+        { "id": "c", "text": "Pick out the primes they share: 2 and 3" },
+        { "id": "d", "text": "Multiply them: HCF $= 6$" }
+      ],
+      "solution": ["a", "b", "c", "d"],
+      "hints": ["You need the primes before you can compare them."],
+      "explanation": "Factor trees → prime products → shared primes → multiply. The HCF of 12 and 30 is 6."
+    },
+    {
+      "id": "f1-q3",
+      "type": "table",
+      "prompt": "Find the highest common factor of each set.",
+      "columns": ["Numbers", "HCF"],
+      "rows": [
+        [{ "given": "20 and 30" }, { "answer": "10" }],
+        [{ "given": "36 and 100" }, { "answer": "4" }],
+        [{ "given": "36, 60 and 42" }, { "answer": "6" }],
+        [{ "given": "126 and 180" }, { "answer": "18" }]
+      ],
+      "hints": ["$126 = 2 \\times 3^2 \\times 7$ and $180 = 2^2 \\times 3^2 \\times 5$."],
+      "explanation": "10, 4, 6 and 18. For the last pair the shared primes are $2 \\times 3 \\times 3 = 18$."
+    },
+    {
+      "id": "f1-q4",
+      "type": "numeric",
+      "prompt": "Find the lowest common multiple of 12 and 30.",
+      "answer": 60,
+      "hints": ["Use each prime the most times it appears in either number: $2 \\times 2 \\times 3 \\times 5$."],
+      "explanation": "$12 = 2^2 \\times 3$ and $30 = 2 \\times 3 \\times 5$. LCM $= 2^2 \\times 3 \\times 5 = 60$."
+    },
+    {
+      "id": "f1-q5",
+      "type": "match",
+      "prompt": "Match each fraction to its simplest form.",
+      "left": [
+        { "id": "a", "text": "$\\frac{24}{36}$" },
+        { "id": "b", "text": "$\\frac{28}{60}$" },
+        { "id": "c", "text": "$\\frac{48}{112}$" },
+        { "id": "d", "text": "$\\frac{45}{105}$" }
+      ],
+      "right": [
+        { "id": "r1", "text": "$\\frac{2}{3}$" },
+        { "id": "r2", "text": "$\\frac{7}{15}$" },
+        { "id": "r3", "text": "$\\frac{3}{7}$" },
+        { "id": "r4", "text": "$\\frac{3}{7}$" }
+      ],
+      "solution": { "a": "r1", "b": "r2", "c": "r3", "d": "r4" },
+      "hints": ["Divide top and bottom by the HCF."],
+      "explanation": "HCFs are 12, 4, 16 and 15, giving $\\frac{2}{3}$, $\\frac{7}{15}$, $\\frac{3}{7}$ and $\\frac{3}{7}$."
+    },
+    {
+      "id": "f1-q6",
+      "type": "numeric",
+      "prompt": "Work out $\\dfrac{18}{55} \\times \\dfrac{22}{63}$, cancelling first. Give your answer as a fraction in its simplest form.",
+      "answer": "4/35",
+      "hints": ["18 and 63 share 9. 22 and 55 share 11."],
+      "explanation": "$\\frac{18}{63} \\to \\frac{2}{7}$ and $\\frac{22}{55} \\to \\frac{2}{5}$. So $\\frac{2 \\times 2}{5 \\times 7} = \\frac{4}{35}$."
+    },
+    {
+      "id": "f1-q7",
+      "type": "numeric",
+      "prompt": "Strings of 120 cm, 180 cm and 420 cm are cut into equal lengths with nothing left over. What is the greatest possible length of each piece?",
+      "answer": 60,
+      "unit": "cm",
+      "hints": ["You need the HCF of 120, 180 and 420."],
+      "explanation": "$120 = 2^3 \\times 3 \\times 5$, $180 = 2^2 \\times 3^2 \\times 5$, $420 = 2^2 \\times 3 \\times 5 \\times 7$. Shared: $2^2 \\times 3 \\times 5 = 60$ cm."
+    },
+    {
+      "id": "f1-q8",
+      "type": "fill-blank",
+      "prompt": "Complete each sentence with one of: **prime**, **composite**, **square**, **factor**.",
+      "text": "7 is a [[a]] number because its only factors are 1 and 7. 8 is a [[b]] number because it has more than two factors. 16 is a [[c]] number because it has an odd number of factors.",
+      "blanks": [
+        { "id": "a", "accept": ["prime"], "size": 9 },
+        { "id": "b", "accept": ["composite"], "size": 9 },
+        { "id": "c", "accept": ["square"], "size": 9 }
+      ],
+      "hints": ["Factors of 16: 1, 2, 4, 8, 16 — how many is that?"],
+      "explanation": "Prime (exactly two factors), composite (more than two), square (the middle factor pairs with itself, so the count is odd)."
+    },
+    {
+      "id": "f1-q9",
+      "type": "truefalse",
+      "prompt": "1 is a prime number.",
+      "answer": false,
+      "hints": ["How many factors does a prime have?"],
+      "explanation": "False. A prime has exactly **two** factors. 1 has only one factor (itself), so it is not prime."
+    },
+    {
+      "id": "f1-q10",
+      "type": "mcq",
+      "prompt": "My number is a factor of 20. Which statement is true?",
+      "options": [
+        { "id": "a", "text": "It could be odd or even" },
+        { "id": "b", "text": "It must be even" },
+        { "id": "c", "text": "It must be odd" },
+        { "id": "d", "text": "It must be bigger than 1" }
+      ],
+      "answer": "a",
+      "hints": ["List the factors of 20."],
+      "explanation": "The factors of 20 are 1, 2, 4, 5, 10, 20 — some odd (1, 5), some even."
+    }
+  ]
+}

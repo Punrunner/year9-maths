@@ -1,0 +1,39 @@
+{
+  "title": "Quadratics quiz",
+  "topic": "quadratics",
+  "description": "Ten questions drawn at random from a bank of twelve, covering graphs, expanding, factorising and solving quadratics. This is an extension topic.",
+  "pick": 10,
+  "timeLimitSec": 1200,
+  "passMark": 70,
+  "questions": [
+    { "id": "uq1", "type": "numeric", "prompt": "For $y = x^2 - 3x + 4$, find $y$ when $x = -2$.", "answer": 14,
+      "explanation": "$4 + 6 + 4 = 14$." },
+    { "id": "uq2", "type": "mcq", "prompt": "Where does $y = 2x^2 - 5x - 3$ cross the $y$-axis?",
+      "options": [
+        { "id": "a", "text": "$(0, -3)$" }, { "id": "b", "text": "$(0, 2)$" }, { "id": "c", "text": "$(-3, 0)$" }, { "id": "d", "text": "$(0, -5)$" }
+      ], "answer": "a", "explanation": "At $x = 0$, $y = c = -3$." },
+    { "id": "uq3", "type": "manipulable", "prompt": "Set the sliders to show $y = -x^2 + 4$.", "widget": "parabola", "config": {},
+      "target": { "a": -1, "b": 0, "c": 4 }, "tolerance": 0.01,
+      "explanation": "$a = -1$ gives a ∩; it crosses the $y$-axis at 4 and the $x$-axis at $\\pm 2$." },
+    { "id": "uq4", "type": "algebraic", "prompt": "Expand and simplify $(3x - 2)(4x - 3)$.", "answer": "12x^2 - 17x + 6", "variables": ["x"], "requireForm": true,
+      "explanation": "$12x^2 - 9x - 8x + 6$." },
+    { "id": "uq5", "type": "algebraic", "prompt": "Expand $(2x + 5)^2$.", "answer": "4x^2 + 20x + 25", "variables": ["x"], "requireForm": true,
+      "explanation": "$(2x)^2 + 2(2x)(5) + 5^2$." },
+    { "id": "uq6", "type": "algebraic", "prompt": "Factorise $x^2 + 10x + 24$.", "answer": "(x + 6)(x + 4)", "variables": ["x"], "requireForm": true,
+      "explanation": "$6 \\times 4 = 24$, $6 + 4 = 10$." },
+    { "id": "uq7", "type": "algebraic", "prompt": "Factorise $x^2 - 5x - 24$.", "answer": "(x - 8)(x + 3)", "variables": ["x"], "requireForm": true,
+      "explanation": "$-8 \\times 3 = -24$, $-8 + 3 = -5$." },
+    { "id": "uq8", "type": "algebraic", "prompt": "Factorise $x^2 - 100$.", "answer": "(x + 10)(x - 10)", "variables": ["x"], "requireForm": true,
+      "explanation": "Difference of two squares." },
+    { "id": "uq9", "type": "fill-blank", "prompt": "Solve $x^2 - x - 12 = 0$.", "text": "$x =$ [[a]] or $x =$ [[b]]",
+      "blanks": [{ "id": "a", "accept": ["-3", "−3"], "size": 4, "group": "roots" }, { "id": "b", "accept": ["4"], "size": 4, "group": "roots" }],
+      "explanation": "$(x - 4)(x + 3) = 0$, so $x = 4$ or $x = -3$." },
+    { "id": "uq10", "type": "numeric", "prompt": "A rectangle's length is 3 cm more than its width, and its area is 40 cm². Find the width.", "answer": 5, "unit": "cm",
+      "explanation": "$w^2 + 3w - 40 = 0 \\Rightarrow (w + 8)(w - 5) = 0$. A width is positive: 5 cm." },
+    { "id": "uq11", "type": "truefalse", "prompt": "To solve $x^2 = 7x$ you can divide both sides by $x$ to get $x = 7$, and that is the only solution.", "answer": false,
+      "explanation": "False. Dividing by $x$ loses $x = 0$. $x(x - 7) = 0$ gives $x = 0$ or $x = 7$." },
+    { "id": "uq12", "type": "numeric", "prompt": "One solution of $2m^2 + 5m = 45$ lies between 1 and 5. Find it to 1 d.p. by trial and improvement.", "answer": 3.7, "tolerance": 0.001,
+      "explanation": "$3.7$: $2(13.69) + 18.5 = 45.88$ (just too big); $3.65$: $26.645 + 18.25 = 44.895$ (too small). So between 3.65 and 3.7: 3.7 to 1 d.p. (It is 3.66…)",
+      "difficulty": "challenge" }
+  ]
+}

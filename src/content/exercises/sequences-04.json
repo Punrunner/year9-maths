@@ -1,0 +1,135 @@
+{
+  "title": "Practice: simultaneous equations from graphs",
+  "intro": "Eight questions on reading solutions off a pair of lines.",
+  "questions": [
+    {
+      "id": "s4-q1",
+      "type": "fill-blank",
+      "prompt": "Two lines cross at the point $(4, 7)$. Complete the solution.",
+      "text": "The solution of the two equations is $x = $ [[x]] and $y = $ [[y]].",
+      "blanks": [
+        { "id": "x", "accept": ["4"], "size": 4 },
+        { "id": "y", "accept": ["7"], "size": 4 }
+      ],
+      "hints": ["Coordinates are always written $(x, y)$ — in that order."],
+      "explanation": "The crossing point $(4, 7)$ means $x = 4$ and $y = 7$. That single point is the only pair of values that satisfies both equations at once.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "s4-q2",
+      "type": "steps",
+      "prompt": "Solve a pair of equations graphically, one step at a time.",
+      "scenario": "Solve $y = x + 1$ and $y = 5 - x$.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "For $y = x + 1$, what is $y$ when $x = 4$?",
+          "answer": 5,
+          "feedback": "$4 + 1 = 5$, so $(4, 5)$ is on the first line."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "For $y = 5 - x$, what is $y$ when $x = 4$?",
+          "answer": 1,
+          "feedback": "$5 - 4 = 1$, so $(4, 1)$ is on the second line. At $x = 4$ the lines are 4 apart."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "The lines cross where the two $y$ values are equal. At what value of $x$ does that happen?",
+          "answer": 2,
+          "feedback": "At $x = 2$ both give $y = 3$.",
+          "hint": "Try $x = 2$ in both equations and compare."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "And what is the value of $y$ at the crossing point?",
+          "answer": 3,
+          "feedback": "$2 + 1 = 3$ and $5 - 2 = 3$ — both check out."
+        }
+      ],
+      "hints": ["The lines cross where they give the same $y$ for the same $x$."],
+      "explanation": "The solution is $x = 2$, $y = 3$. Substituting into both originals confirms it: $3 = 2+1$ ✓ and $3 = 5-2$ ✓"
+    },
+    {
+      "id": "s4-q3",
+      "type": "algebraic",
+      "prompt": "Rearrange $2x + y = 8$ so that $y$ is on its own. Start your answer with `y =`.",
+      "answer": "y = 8 - 2x",
+      "variables": ["x"],
+      "placeholder": "y = ...",
+      "hints": ["Subtract $2x$ from both sides."],
+      "explanation": "Subtracting $2x$ from both sides gives **$y = 8 - 2x$**. This is the form you need before building a table of values."
+    },
+    {
+      "id": "s4-q4",
+      "type": "mcq",
+      "prompt": "Why do the lines $y = 2x + 1$ and $y = 2x - 3$ have no solution?",
+      "options": [
+        { "id": "a", "text": "They are parallel — same gradient, different intercepts, so they never meet" },
+        { "id": "b", "text": "They are the same line, so there are infinitely many solutions" },
+        { "id": "c", "text": "One of them is not a straight line" },
+        { "id": "d", "text": "They cross below the $x$-axis, which does not count" }
+      ],
+      "answer": "a",
+      "hints": ["Compare the two gradients, then compare the two intercepts."],
+      "explanation": "Both have gradient 2, so they are equally steep and stay exactly 4 units apart forever. Different intercepts means they are genuinely different lines, so they never cross — **no solution**."
+    },
+    {
+      "id": "s4-q5",
+      "type": "table",
+      "prompt": "Complete both tables, ready to plot $y = 8 - 2x$ and $y = x - 1$.",
+      "columns": ["$x$", "$0$", "$2$", "$4$"],
+      "rows": [
+        [{ "given": "$y = 8 - 2x$" }, { "answer": "8" }, { "answer": "4" }, { "answer": "0" }],
+        [{ "given": "$y = x - 1$" }, { "answer": "-1" }, { "answer": "1" }, { "answer": "3" }]
+      ],
+      "hints": [
+        "Substitute each $x$ into each equation separately.",
+        "For $y = 8 - 2x$ at $x = 2$: $8 - 4$."
+      ],
+      "explanation": "Top row: $8, 4, 0$. Bottom row: $-1, 1, 3$. The first falls and the second rises, so they must cross exactly once — at $(3, 2)$, as it happens."
+    },
+    {
+      "id": "s4-q6",
+      "type": "truefalse",
+      "prompt": "**You should always check a graphical solution by substituting it back into both original equations.**",
+      "answer": true,
+      "hints": ["Think about how precisely you can read a point off a hand-drawn graph."],
+      "explanation": "True. Reading a graph involves estimating, so the check is what turns a likely answer into a certain one — and it costs about ten seconds."
+    },
+    {
+      "id": "s4-q7",
+      "type": "numeric",
+      "prompt": "The lines $y = 3x - 2$ and $y = x + 4$ cross. What is the $x$ value at the crossing point?",
+      "answer": 3,
+      "hints": [
+        "At the crossing point the two expressions for $y$ are equal.",
+        "Try a few whole numbers: does $x = 3$ give the same $y$ in both?"
+      ],
+      "explanation": "At $x = 3$: $3(3) - 2 = 7$ and $3 + 4 = 7$ — both give $y = 7$, so the lines cross at $(3, 7)$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "s4-q8",
+      "type": "match",
+      "prompt": "Match each pair of lines to how many solutions it has.",
+      "left": [
+        { "id": "p1", "text": "$y = 2x + 1$ and $y = 5 - x$" },
+        { "id": "p2", "text": "$y = 3x + 2$ and $y = 3x - 1$" },
+        { "id": "p3", "text": "$y = 4x + 5$ and $y = 5 + 4x$" }
+      ],
+      "right": [
+        { "id": "a1", "text": "Exactly one solution — the lines cross once" },
+        { "id": "a2", "text": "No solution — the lines are parallel" },
+        { "id": "a3", "text": "Infinitely many — they are the same line" }
+      ],
+      "solution": { "p1": "a1", "p2": "a2", "p3": "a3" },
+      "hints": [
+        "Compare gradients first, then intercepts.",
+        "Look carefully at the third pair — is it actually two different lines?"
+      ],
+      "explanation": "Different gradients (2 and $-1$) means they cross once. Same gradient but different intercepts means parallel, so no solution. $y = 4x + 5$ and $y = 5 + 4x$ are the *same equation written two ways*, so every point on the line is a solution.",
+      "difficulty": "challenge"
+    }
+  ]
+}

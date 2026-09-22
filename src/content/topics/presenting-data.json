@@ -1,0 +1,20 @@
+{
+  "title": "Presenting Data & Interpreting Results",
+  "description": "Frequency polygons, back-to-back stem-and-leaf diagrams, scatter graphs and choosing the right chart.",
+  "strand": "statistics-probability",
+  "order": 10,
+  "difficulty": "core",
+  "objectives": [
+    "Draw and read a frequency polygon",
+    "Compare two data sets with a back-to-back stem-and-leaf diagram",
+    "Describe correlation and use a line of best fit",
+    "Choose the most appropriate graph for a set of data"
+  ],
+  "keywords": [
+    "frequency polygon",
+    "stem and leaf",
+    "scatter graph",
+    "correlation",
+    "line of best fit"
+  ]
+}

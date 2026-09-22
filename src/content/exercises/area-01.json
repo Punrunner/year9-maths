@@ -1,0 +1,172 @@
+{
+  "title": "Practice: circles",
+  "intro": "Ten questions. Use $\\pi = 3.14$ unless the question says otherwise — a small tolerance is allowed, so a calculator's $\\pi$ is fine too.",
+  "questions": [
+    {
+      "id": "a1-q1",
+      "type": "hotspot",
+      "prompt": "**Click the radius** of this circle.",
+      "figure": "circle-parts",
+      "answer": "radius",
+      "hints": [
+        "The radius goes from the centre to the edge.",
+        "It is half the length of the line that crosses the whole circle."
+      ],
+      "explanation": "The radius runs from the centre out to the edge. The line all the way across through the centre is the **diameter**, which is twice as long.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a1-q2",
+      "type": "hotspot",
+      "prompt": "**Click the chord** — a straight line joining two points on the edge that does *not* pass through the centre.",
+      "figure": "circle-parts",
+      "answer": "chord",
+      "hints": ["It is a straight line, but it misses the middle."],
+      "explanation": "A chord joins two points on the circumference without going through the centre. The diameter is the special case of a chord that *does* pass through the centre — and it is the longest chord possible."
+    },
+    {
+      "id": "a1-q3",
+      "type": "numeric",
+      "prompt": "Find the circumference of a circle with radius $6\\ \\text{cm}$. Use $\\pi = 3.14$.",
+      "answer": 37.68,
+      "tolerance": 0.2,
+      "unit": "cm",
+      "hints": ["$C = 2\\pi r$.", "$2 \\times 3.14 \\times 6$"],
+      "explanation": "$C = 2\\pi r = 2 \\times 3.14 \\times 6 = 37.68\\ \\text{cm}$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a1-q4",
+      "type": "numeric",
+      "prompt": "Find the area of a circle with radius $4.5\\ \\text{cm}$. Use $\\pi = 3.14$. Give your answer to 2 decimal places.",
+      "answer": 63.585,
+      "tolerance": 0.4,
+      "unit": "cm²",
+      "hints": ["$A = \\pi r^2$.", "Square the radius first: $4.5^2 = 20.25$."],
+      "explanation": "$A = \\pi r^2 = 3.14 \\times 4.5^2 = 3.14 \\times 20.25 = 63.585 \\approx 63.59\\ \\text{cm}^2$."
+    },
+    {
+      "id": "a1-q5",
+      "type": "numeric",
+      "prompt": "Find the area of a circle with **diameter** $10\\ \\text{cm}$. Use $\\pi = 3.14$.",
+      "answer": 78.5,
+      "tolerance": 0.4,
+      "unit": "cm²",
+      "hints": [
+        "The area formula needs the radius, not the diameter.",
+        "Halve 10 first, then use $A = \\pi r^2$."
+      ],
+      "explanation": "$r = 10 \\div 2 = 5$, so $A = 3.14 \\times 5^2 = 3.14 \\times 25 = 78.5\\ \\text{cm}^2$. Using $10$ instead of $5$ would give $314$ — four times too big, which is the classic slip."
+    },
+    {
+      "id": "a1-q6",
+      "type": "steps",
+      "prompt": "Work backwards from an area to find the radius.",
+      "scenario": "A circle has area $50.24\\ \\text{cm}^2$. Use $\\pi = 3.14$.",
+      "steps": [
+        {
+          "kind": "mcq",
+          "prompt": "Which operation do you undo first?",
+          "options": [
+            { "id": "a", "text": "Divide by $\\pi$" },
+            { "id": "b", "text": "Take the square root" }
+          ],
+          "answer": "a",
+          "feedback": "Right — $\\pi$ was the last thing multiplied on, so it comes off first.",
+          "hint": "In $\\pi r^2$, the radius is squared and *then* multiplied by $\\pi$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Divide the area by $\\pi$. What is $r^2$?",
+          "answer": 16,
+          "tolerance": 0.05,
+          "feedback": "$50.24 \\div 3.14 = 16$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Now find $r$, in cm.",
+          "answer": 4,
+          "tolerance": 0.02,
+          "feedback": "$\\sqrt{16} = 4$ cm."
+        }
+      ],
+      "hints": ["Reverse the formula: divide by $\\pi$, then square root."],
+      "explanation": "$r^2 = \\frac{50.24}{3.14} = 16$, so $r = \\sqrt{16} = 4\\ \\text{cm}$. Doing the square root first would give a completely wrong answer — order matters."
+    },
+    {
+      "id": "a1-q7",
+      "type": "numeric",
+      "prompt": "Find the **perimeter** of a semicircle with diameter $8.2\\ \\text{cm}$. Use $\\pi = 3.14$. Give your answer to 2 decimal places.",
+      "answer": 21.074,
+      "tolerance": 0.15,
+      "unit": "cm",
+      "hints": [
+        "Half the circumference gives the curved part.",
+        "A perimeter goes all the way round — do not forget the straight edge."
+      ],
+      "explanation": "Curved part $= \\frac{1}{2} \\times 3.14 \\times 8.2 = 12.874$. Adding the straight diameter: $12.874 + 8.2 = 21.074 \\approx 21.07\\ \\text{cm}$. Leaving out the flat edge is the classic semicircle mistake.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a1-q8",
+      "type": "match",
+      "prompt": "Match each quantity to its formula.",
+      "left": [
+        { "id": "c1", "text": "Circumference from the radius" },
+        { "id": "c2", "text": "Circumference from the diameter" },
+        { "id": "c3", "text": "Area" },
+        { "id": "c4", "text": "Radius from the diameter" }
+      ],
+      "right": [
+        { "id": "f1", "text": "$2\\pi r$" },
+        { "id": "f2", "text": "$\\pi d$" },
+        { "id": "f3", "text": "$\\pi r^2$" },
+        { "id": "f4", "text": "$\\dfrac{d}{2}$" }
+      ],
+      "solution": { "c1": "f1", "c2": "f2", "c3": "f3", "c4": "f4" },
+      "hints": ["Only one of them squares anything — and that one is the area."],
+      "explanation": "$C = 2\\pi r$ and $C = \\pi d$ are the same formula, because $d = 2r$. The area is the only one with a square in it."
+    },
+    {
+      "id": "a1-q9",
+      "type": "multi",
+      "prompt": "A circle has radius $3\\ \\text{cm}$. Select **every** true statement. Use $\\pi = 3.14$.",
+      "options": [
+        { "id": "a", "text": "Its diameter is $6\\ \\text{cm}$" },
+        { "id": "b", "text": "Its circumference is $18.84\\ \\text{cm}$" },
+        { "id": "c", "text": "Its area is $28.26\\ \\text{cm}^2$" },
+        { "id": "d", "text": "Its area is $18.84\\ \\text{cm}^2$" },
+        { "id": "e", "text": "Its circumference is measured in $\\text{cm}^2$" }
+      ],
+      "answers": ["a", "b", "c"],
+      "hints": [
+        "Work out $2\\pi r$ and $\\pi r^2$ separately — they are different numbers.",
+        "Which units belong to a length, and which to an area?"
+      ],
+      "explanation": "$d = 6$ ✓. $C = 2 \\times 3.14 \\times 3 = 18.84\\ \\text{cm}$ ✓. $A = 3.14 \\times 9 = 28.26\\ \\text{cm}^2$ ✓. **d** confuses the area with the circumference, and **e** puts an area unit on a length.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a1-q10",
+      "type": "drill",
+      "prompt": "Quick-fire: circle basics. Use $\\pi = 3.14$ where needed, and give numbers only.",
+      "durationSec": 90,
+      "count": 8,
+      "pool": [
+        { "id": "c1", "prompt": "Radius 5. What is the diameter?", "accept": ["10"] },
+        { "id": "c2", "prompt": "Diameter 14. What is the radius?", "accept": ["7"] },
+        { "id": "c3", "prompt": "Radius 10. Circumference? ($2\\pi r$)", "accept": ["62.8"], "tolerance": 0.3 },
+        { "id": "c4", "prompt": "Radius 2. Area? ($\\pi r^2$)", "accept": ["12.56"], "tolerance": 0.1 },
+        { "id": "c5", "prompt": "Radius 3. Area?", "accept": ["28.26"], "tolerance": 0.2 },
+        { "id": "c6", "prompt": "Diameter 20. What is the radius?", "accept": ["10"] },
+        { "id": "c7", "prompt": "Radius 1. Circumference?", "accept": ["6.28"], "tolerance": 0.05 },
+        { "id": "c8", "prompt": "Radius 4. Area?", "accept": ["50.24"], "tolerance": 0.3 },
+        { "id": "c9", "prompt": "Diameter 9. What is the radius?", "accept": ["4.5"] },
+        { "id": "c10", "prompt": "$r^2 = 36$. What is $r$?", "accept": ["6"] },
+        { "id": "c11", "prompt": "Radius 5. Area?", "accept": ["78.5"], "tolerance": 0.4 },
+        { "id": "c12", "prompt": "Diameter 6. Circumference? ($\\pi d$)", "accept": ["18.84"], "tolerance": 0.1 }
+      ],
+      "explanation": "Speed here comes from knowing which formula needs the radius and which needs the diameter, without stopping to think about it."
+    }
+  ]
+}

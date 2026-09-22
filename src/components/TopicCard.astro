@@ -1,0 +1,44 @@
+---
+/** One topic in a strand grid. Status comes from the student's own browser. */
+import { TopicStatus } from './Progress.tsx';
+import type { TopicNode } from '../lib/site';
+
+interface Props { node: TopicNode }
+const { node } = Astro.props;
+const { topic, lessons, href } = node;
+
+const DIFF: Record<string, string> = {
+  foundation: 'Foundation', core: 'Core', challenge: 'Challenge',
+};
+const diffChip: Record<string, string> = {
+  foundation: 'chip-info', core: 'chip-neutral', challenge: 'chip-red',
+};
+---
+
+<article class="card card-link topic-card" style={`--accent: var(${node.strand.data.accent})`}>
+  <div class="topic-card-top">
+    <span class="topic-num" aria-hidden="true">{topic.data.order}</span>
+    <span class="topic-chips">
+      <span class={`chip ${diffChip[topic.data.difficulty]}`}>{DIFF[topic.data.difficulty]}</span>
+      {topic.data.extension && <span class="chip chip-amber">Extension</span>}
+    </span>
+  </div>
+
+  <h3 class="topic-title">
+    <a href={href}>{topic.data.title}</a>
+  </h3>
+  <p class="topic-desc">{topic.data.description}</p>
+
+  <div class="topic-meta">
+    {lessons.length > 0
+      ? <span>{lessons.length} lesson{lessons.length === 1 ? '' : 's'}</span>
+      : <span>lessons being written</span>}
+    {node.quiz && <span>· quiz</span>}
+  </div>
+
+  <div class="topic-status">
+    {lessons.length > 0
+      ? <TopicStatus client:visible lessonIds={lessons.map((l) => l.id)} />
+      : <span class="chip chip-neutral">Coming soon</span>}
+  </div>
+</article>

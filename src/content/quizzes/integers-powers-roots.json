@@ -1,0 +1,160 @@
+{
+  "title": "Integers, powers and roots quiz",
+  "topic": "integers-powers-roots",
+  "description": "Ten questions drawn at random from a bank of fourteen, covering rational and irrational numbers, estimating roots and the index laws. No calculator.",
+  "pick": 10,
+  "timeLimitSec": 900,
+  "passMark": 70,
+  "questions": [
+    {
+      "id": "iq1",
+      "type": "multi",
+      "prompt": "Select **every** irrational number in the list.",
+      "options": [
+        { "id": "a", "text": "$\\pi$" },
+        { "id": "b", "text": "$\\sqrt{11}$" },
+        { "id": "c", "text": "$\\sqrt[3]{4}$" },
+        { "id": "d", "text": "$\\sqrt[3]{125}$" },
+        { "id": "e", "text": "$0.\\dot{8}$" },
+        { "id": "f", "text": "$6\\frac{5}{11}$" },
+        { "id": "g", "text": "$\\sqrt{4}$" }
+      ],
+      "answers": ["a", "b", "c"],
+      "explanation": "$\\pi$, $\\sqrt{11}$ (11 is not square) and $\\sqrt[3]{4}$ (4 is not a cube) are irrational. $\\sqrt[3]{125} = 5$, $0.\\dot{8} = \\frac{8}{9}$, $6\\frac{5}{11} = \\frac{71}{11}$ and $\\sqrt{4} = 2$ are all rational."
+    },
+    {
+      "id": "iq2",
+      "type": "truefalse",
+      "prompt": "$\\frac{22}{7}$ is exactly equal to $\\pi$.",
+      "answer": false,
+      "explanation": "False. $\\frac{22}{7} = 3.142857\\dots$ is a handy approximation, but $\\pi = 3.141592\\dots$ They differ in the third decimal place. And $\\frac{22}{7}$ is rational while $\\pi$ is irrational, so they can never be equal."
+    },
+    {
+      "id": "iq3",
+      "type": "truefalse",
+      "prompt": "A rational number is always an integer.",
+      "answer": false,
+      "explanation": "False. $\\frac{1}{2}$ is rational but not an integer. It works the other way round: every integer is rational."
+    },
+    {
+      "id": "iq4",
+      "type": "mcq",
+      "prompt": "Which is the best estimate of $\\sqrt{20}$?",
+      "options": [
+        { "id": "a", "text": "$4.5$" },
+        { "id": "b", "text": "$4.1$" },
+        { "id": "c", "text": "$5.1$" },
+        { "id": "d", "text": "$10$" }
+      ],
+      "answer": "a",
+      "explanation": "$16 < 20 < 25$, so $4 < \\sqrt{20} < 5$. 20 is nearly halfway between, so about $4.5$. (In fact $4.47\\dots$) Option d halves 20 instead of square-rooting it."
+    },
+    {
+      "id": "iq5",
+      "type": "numeric",
+      "prompt": "Estimate $\\sqrt[3]{45}$ to 1 decimal place.",
+      "answer": 3.6,
+      "tolerance": 0.11,
+      "explanation": "$3^3 = 27$ and $4^3 = 64$, so the cube root is between 3 and 4. $3.5^3 = 42.9$ and $3.6^3 = 46.7$, so $\\sqrt[3]{45} \\approx 3.6$ (it is $3.56\\dots$)."
+    },
+    {
+      "id": "iq6",
+      "type": "numeric",
+      "prompt": "Estimate the **positive** square root of 80 to 1 decimal place.",
+      "answer": 8.9,
+      "tolerance": 0.11,
+      "explanation": "$64 < 80 < 81$ and 80 is only 1 below 81, so $\\sqrt{80}$ is just under 9: about $8.9$ (in fact $8.94\\dots$)."
+    },
+    {
+      "id": "iq7",
+      "type": "numeric",
+      "prompt": "A square has an area of $30\\ \\text{cm}^2$. Estimate its side length to the nearest millimetre.",
+      "answer": 5.5,
+      "tolerance": 0.05,
+      "unit": "cm",
+      "explanation": "Side $= \\sqrt{30}$. $25 < 30 < 36$, so between 5 and 6. $5.4^2 = 29.16$ and $5.5^2 = 30.25$, and $30.25$ is nearer 30, so the side is about $5.5$ cm."
+    },
+    {
+      "id": "iq8",
+      "type": "fill-blank",
+      "prompt": "Write each number as a power of 5 by typing the missing index.",
+      "text": "$25 = 5^{\\square}$ : [[a]] $\\qquad \\frac{1}{5} = 5^{\\square}$ : [[b]] $\\qquad \\frac{1}{125} = 5^{\\square}$ : [[c]] $\\qquad 625 = 5^{\\square}$ : [[d]]",
+      "blanks": [
+        { "id": "a", "accept": ["2"], "size": 3 },
+        { "id": "b", "accept": ["-1", "−1"], "size": 3 },
+        { "id": "c", "accept": ["-3", "−3"], "size": 3 },
+        { "id": "d", "accept": ["4"], "size": 3 }
+      ],
+      "explanation": "$25 = 5^2$, $\\frac{1}{5} = 5^{-1}$, $\\frac{1}{125} = \\frac{1}{5^3} = 5^{-3}$ and $625 = 5^4$."
+    },
+    {
+      "id": "iq9",
+      "type": "mcq",
+      "prompt": "Simplify $7^{-4} \\times 7^2$.",
+      "options": [
+        { "id": "a", "text": "$7^{-2}$" },
+        { "id": "b", "text": "$7^{-8}$" },
+        { "id": "c", "text": "$7^{-6}$" },
+        { "id": "d", "text": "$49^{-2}$" }
+      ],
+      "answer": "a",
+      "explanation": "Same base, multiplying: add the powers. $-4 + 2 = -2$, so the answer is $7^{-2} = \\frac{1}{49}$. Option b multiplied the powers instead."
+    },
+    {
+      "id": "iq10",
+      "type": "mcq",
+      "prompt": "Simplify $8^3 \\div 8^{-5}$.",
+      "options": [
+        { "id": "a", "text": "$8^{8}$" },
+        { "id": "b", "text": "$8^{-2}$" },
+        { "id": "c", "text": "$8^{-15}$" },
+        { "id": "d", "text": "$1^{8}$" }
+      ],
+      "answer": "a",
+      "explanation": "Dividing: subtract the powers. $3 - (-5) = 3 + 5 = 8$, so $8^8$. Subtracting a negative is the step people slip on."
+    },
+    {
+      "id": "iq11",
+      "type": "algebraic",
+      "prompt": "Simplify $(y^2)^{-4}$.",
+      "answer": "y^-8",
+      "variables": ["y"],
+      "explanation": "Power of a power: multiply. $2 \\times -4 = -8$, so $(y^2)^{-4} = y^{-8} = \\frac{1}{y^8}$."
+    },
+    {
+      "id": "iq12",
+      "type": "numeric",
+      "prompt": "Work out $\\dfrac{9^{11} \\times 9^{-3}}{9^7}$.",
+      "answer": 9,
+      "explanation": "Top: $9^{11 + (-3)} = 9^8$. Then $9^8 \\div 9^7 = 9^1 = 9$."
+    },
+    {
+      "id": "iq13",
+      "type": "match",
+      "prompt": "Match each decimal to the same number written as a power of 10.",
+      "left": [
+        { "id": "a", "text": "$0.1$" },
+        { "id": "b", "text": "$0.01$" },
+        { "id": "c", "text": "$0.001$" },
+        { "id": "d", "text": "$0.0001$" }
+      ],
+      "right": [
+        { "id": "p1", "text": "$10^{-1}$" },
+        { "id": "p2", "text": "$10^{-2}$" },
+        { "id": "p3", "text": "$10^{-3}$" },
+        { "id": "p4", "text": "$10^{-4}$" }
+      ],
+      "solution": { "a": "p1", "b": "p2", "c": "p3", "d": "p4" },
+      "explanation": "$0.001 = \\frac{1}{1000} = \\frac{1}{10^3} = 10^{-3}$. The negative power is the number of the decimal place the 1 sits in."
+    },
+    {
+      "id": "iq14",
+      "type": "numeric",
+      "prompt": "A cube has a volume of $48\\ \\text{cm}^3$. Estimate its side length to the nearest millimetre.",
+      "answer": 3.6,
+      "tolerance": 0.05,
+      "unit": "cm",
+      "explanation": "Side $= \\sqrt[3]{48}$. $3^3 = 27$ and $4^3 = 64$. $3.6^3 = 46.7$ and $3.7^3 = 50.7$, so to the nearest millimetre the side is $3.6$ cm."
+    }
+  ]
+}

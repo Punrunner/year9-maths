@@ -1,0 +1,184 @@
+{
+  "title": "Practice: enlargement",
+  "intro": "Nine questions on scale factors, centres, perimeter and area.",
+  "questions": [
+    {
+      "id": "t1-q1",
+      "type": "manipulable",
+      "prompt": "Enlarge the triangle with scale factor 2 and centre $(2, 2)$.",
+      "widget": "enlargement",
+      "config": {},
+      "target": {
+        "k": 2,
+        "ox": 2,
+        "oy": 2
+      },
+      "tolerance": 0,
+      "hints": [
+        "Set the scale factor, then move the centre."
+      ],
+      "explanation": "The corner at $(2, 2)$ is the centre, so it stays put. The others end up twice as far from it: $(6, 2)$ and $(2, 8)$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "t1-q2",
+      "type": "table",
+      "prompt": "A triangle has perimeter 12 cm and area 6 cm². Complete the table for its images.",
+      "columns": [
+        "Scale factor",
+        "Perimeter (cm)",
+        "Area (cm²)"
+      ],
+      "rows": [
+        [
+          {
+            "given": "2"
+          },
+          {
+            "answer": "24"
+          },
+          {
+            "answer": "24"
+          }
+        ],
+        [
+          {
+            "given": "3"
+          },
+          {
+            "answer": "36"
+          },
+          {
+            "answer": "54"
+          }
+        ],
+        [
+          {
+            "given": "4"
+          },
+          {
+            "answer": "48"
+          },
+          {
+            "answer": "96"
+          }
+        ]
+      ],
+      "hints": [
+        "Perimeter × k; area × k²."
+      ],
+      "explanation": "$6 \\times 4 = 24$, $6 \\times 9 = 54$, $6 \\times 16 = 96$."
+    },
+    {
+      "id": "t1-q3",
+      "type": "mcq",
+      "prompt": "Virenda's trapezium has perimeter 16 cm and area 16 cm². After an enlargement the perimeter is 96 cm. What is the new area?",
+      "options": [
+        {
+          "id": "a",
+          "text": "576 cm²"
+        },
+        {
+          "id": "b",
+          "text": "96 cm²"
+        },
+        {
+          "id": "c",
+          "text": "256 cm²"
+        },
+        {
+          "id": "d",
+          "text": "192 cm²"
+        }
+      ],
+      "answer": "a",
+      "hints": [
+        "$k = 96 \\div 16$."
+      ],
+      "explanation": "$k = 6$, so the area is $16 \\times 36 = 576$ cm². The area does **not** grow by the same factor as the perimeter."
+    },
+    {
+      "id": "t1-q4",
+      "type": "numeric",
+      "prompt": "A pentagon has perimeter 50 cm. Its image has perimeter 300 cm. What is the scale factor?",
+      "answer": 6,
+      "explanation": "$300 \\div 50 = 6$."
+    },
+    {
+      "id": "t1-q5",
+      "type": "numeric",
+      "prompt": "A hexagon of area 21 cm² is enlarged by scale factor $k$. The image has area 525 cm². Find $k$.",
+      "answer": 5,
+      "hints": [
+        "$k^2 = 525 \\div 21$"
+      ],
+      "explanation": "$k^2 = 25$, so $k = 5$."
+    },
+    {
+      "id": "t1-q6",
+      "type": "fill-blank",
+      "prompt": "Polygon B is an enlargement of polygon A with scale factor 3. B's perimeter is 24 cm and A's area is 7 cm².",
+      "text": "A's perimeter: [[p]] cm $\\qquad$ B's area: [[a]] cm²",
+      "blanks": [
+        {
+          "id": "p",
+          "accept": [
+            "8"
+          ],
+          "size": 4
+        },
+        {
+          "id": "a",
+          "accept": [
+            "63"
+          ],
+          "size": 4
+        }
+      ],
+      "hints": [
+        "Divide the perimeter by 3; multiply the area by 9."
+      ],
+      "explanation": "$24 \\div 3 = 8$ cm and $7 \\times 9 = 63$ cm²."
+    },
+    {
+      "id": "t1-q7",
+      "type": "numeric",
+      "prompt": "Point A is 2 right and 3 up from the centre of enlargement. Where is A′ with scale factor 3? Give how many squares **right**.",
+      "answer": 6,
+      "unit": "squares right",
+      "explanation": "$2 \\times 3 = 6$ right (and $3 \\times 3 = 9$ up)."
+    },
+    {
+      "id": "t1-q8",
+      "type": "truefalse",
+      "prompt": "An enlargement with scale factor $\\frac{1}{2}$ makes the shape smaller.",
+      "answer": true,
+      "explanation": "True. A scale factor between 0 and 1 shrinks the shape towards the centre."
+    },
+    {
+      "id": "t1-q9",
+      "type": "mcq",
+      "prompt": "Which of these always gives an image that is **congruent** (same size and shape) to the object?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A rotation"
+        },
+        {
+          "id": "b",
+          "text": "An enlargement with scale factor 2"
+        },
+        {
+          "id": "c",
+          "text": "An enlargement with scale factor $\\frac{1}{2}$"
+        },
+        {
+          "id": "d",
+          "text": "None of these"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Rotations, reflections and translations keep size and shape. Enlargements (other than scale factor 1) give similar images."
+    }
+  ]
+}

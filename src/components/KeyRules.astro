@@ -1,0 +1,28 @@
+---
+/**
+ * The "rules and formulas" panel at the top of a lesson.
+ * Text is rendered to HTML (with KaTeX) at build time.
+ */
+import { renderInline } from '../lib/render';
+
+interface Rule { title: string; body: string; formula?: string }
+interface Props { rules: Rule[] }
+const { rules } = Astro.props;
+---
+
+{rules.length > 0 && (
+  <section class="key-rules" aria-labelledby="key-rules-heading">
+    <h2 id="key-rules-heading" class="key-rules-heading">Key rules and formulas</h2>
+    <ul class="key-rules-list">
+      {rules.map((r) => (
+        <li class="key-rule">
+          <h3 class="key-rule-title">{r.title}</h3>
+          {r.formula && (
+            <p class="key-rule-formula" set:html={renderInline(`$$${r.formula}$$`)} />
+          )}
+          <div class="key-rule-body" set:html={renderInline(r.body)} />
+        </li>
+      ))}
+    </ul>
+  </section>
+)}

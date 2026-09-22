@@ -1,0 +1,35 @@
+---
+/** One strand: every topic in it, as a grid of cards. */
+import Base from '../../layouts/Base.astro';
+import TopicCard from '../../components/TopicCard.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { getTree } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const tree = await getTree();
+  return tree.map((node) => ({ params: { strand: node.strand.id }, props: { node } }));
+}
+
+const { node } = Astro.props;
+const { strand, topics } = node;
+const lessonCount = topics.reduce((n, t) => n + t.lessons.length, 0);
+---
+
+<Base title={strand.data.title} description={strand.data.description}>
+  <div class="container page" style={`--accent: var(${strand.data.accent})`}>
+    <Breadcrumbs items={[{ label: strand.data.short }]} />
+
+    <header class="page-head">
+      <p class="page-eyebrow">Strand</p>
+      <h1>{strand.data.title}</h1>
+      <p class="page-lead">{strand.data.description}</p>
+      <p class="page-meta">
+        {topics.length} topics · {lessonCount} lessons
+      </p>
+    </header>
+
+    <div class="topic-grid">
+      {topics.map((t) => <TopicCard node={t} />)}
+    </div>
+  </div>
+</Base>

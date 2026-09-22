@@ -1,0 +1,88 @@
+{
+  "title": "Practice: graphs of quadratics",
+  "intro": "Eight questions on tables of values and the shape of a parabola.",
+  "questions": [
+    {
+      "id": "u1-q1",
+      "type": "table",
+      "prompt": "Complete the table for $y = x^2 + 2x - 3$.",
+      "columns": ["x", "−3", "−2", "−1", "0", "1", "2"],
+      "rows": [
+        [{ "given": "y" }, { "answer": "0" }, { "answer": "-3" }, { "answer": "-4" }, { "answer": "-3" }, { "answer": "0" }, { "answer": "5" }]
+      ],
+      "hints": ["At $x = -2$: $4 - 4 - 3$."],
+      "explanation": "$9 - 6 - 3 = 0$, $4 - 4 - 3 = -3$, $1 - 2 - 3 = -4$, $-3$, $1 + 2 - 3 = 0$, $4 + 4 - 3 = 5$."
+    },
+    {
+      "id": "u1-q2",
+      "type": "multi",
+      "prompt": "From that table, select **every** true statement about $y = x^2 + 2x - 3$.",
+      "options": [
+        { "id": "a", "text": "It crosses the $x$-axis at $x = -3$ and $x = 1$" },
+        { "id": "b", "text": "Its minimum point is $(-1, -4)$" },
+        { "id": "c", "text": "It crosses the $y$-axis at $(0, -3)$" },
+        { "id": "d", "text": "It is an upside-down (∩) curve" }
+      ],
+      "answers": ["a", "b", "c"],
+      "hints": ["Look for $y = 0$ in the table, and the smallest $y$."],
+      "explanation": "$y = 0$ at $x = -3$ and $1$; the lowest value $-4$ is at $x = -1$; $c = -3$. It is a ∪ because $a = 1 > 0$."
+    },
+    {
+      "id": "u1-q3",
+      "type": "manipulable",
+      "prompt": "Set the sliders to show $y = x^2 - 3x + 4$.",
+      "widget": "parabola",
+      "config": {},
+      "target": { "a": 1, "b": -3, "c": 4 },
+      "tolerance": 0.01,
+      "explanation": "$a = 1$, $b = -3$, $c = 4$: a ∪ crossing the $y$-axis at 4, with its lowest point at $x = 1.5$."
+    },
+    {
+      "id": "u1-q4",
+      "type": "mcq",
+      "prompt": "What shape is the graph of $y = -2x^2 + 5$?",
+      "options": [
+        { "id": "a", "text": "A ∩ shape with a maximum point at $(0, 5)$" },
+        { "id": "b", "text": "A ∪ shape with a minimum point at $(0, 5)$" },
+        { "id": "c", "text": "A straight line" },
+        { "id": "d", "text": "A ∩ shape with a maximum at $(0, -2)$" }
+      ],
+      "answer": "a",
+      "explanation": "$a = -2 < 0$ gives a ∩, and with no $x$ term the turning point is on the $y$-axis at $(0, 5)$."
+    },
+    {
+      "id": "u1-q5",
+      "type": "numeric",
+      "prompt": "Find $y$ when $x = -2$ for $y = 2x^2 - x + 1$.",
+      "answer": 11,
+      "hints": ["$2(-2)^2 = 8$."],
+      "explanation": "$2 \\times 4 - (-2) + 1 = 8 + 2 + 1 = 11$."
+    },
+    {
+      "id": "u1-q6",
+      "type": "fill-blank",
+      "prompt": "For $y = ax^2 + bx + c$:",
+      "text": "If $a$ is [[a]] the curve is ∪-shaped. The curve crosses the $y$-axis at $y =$ [[b]]. The points where it crosses the $x$-axis are called the [[c]].",
+      "blanks": [
+        { "id": "a", "accept": ["positive", ">0", "> 0"], "size": 9 },
+        { "id": "b", "accept": ["c"], "size": 3 },
+        { "id": "c", "accept": ["roots", "solutions", "zeros", "x-intercepts"], "size": 9 }
+      ],
+      "explanation": "Positive $a$ → ∪; $y$-intercept $c$; the crossings are the roots."
+    },
+    {
+      "id": "u1-q7",
+      "type": "numeric",
+      "prompt": "A parabola has $y = 2$ at both $x = 1$ and $x = 2$. What is the equation of its line of symmetry? Give the value of $x$.",
+      "answer": 1.5,
+      "explanation": "The line of symmetry is halfway between equal $y$-values: $x = 1.5$."
+    },
+    {
+      "id": "u1-q8",
+      "type": "truefalse",
+      "prompt": "When plotting a quadratic, you should join the points with straight lines.",
+      "answer": false,
+      "explanation": "False — join them with a smooth curve. The parabola is curved everywhere."
+    }
+  ]
+}

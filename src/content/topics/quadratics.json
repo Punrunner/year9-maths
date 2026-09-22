@@ -1,0 +1,22 @@
+{
+  "title": "Quadratics",
+  "description": "Expanding, factorising and solving quadratics, and the shape of their graphs.",
+  "strand": "number-algebra",
+  "order": 16,
+  "difficulty": "challenge",
+  "extension": true,
+  "objectives": [
+    "Recognise the shape of a quadratic graph",
+    "Expand the product of two brackets",
+    "Factorise a quadratic expression",
+    "Solve a quadratic equation by factorising"
+  ],
+  "keywords": [
+    "quadratic",
+    "parabola",
+    "expand",
+    "factorise",
+    "difference of two squares",
+    "roots"
+  ]
+}

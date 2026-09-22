@@ -1,0 +1,160 @@
+{
+  "title": "Practice: algebraic fractions",
+  "intro": "Type fractions with brackets round the top and bottom, e.g. (14 + b^2)/(7b). Any equivalent answer is marked correct.",
+  "questions": [
+    {
+      "id": "e2-q1",
+      "type": "numeric",
+      "prompt": "Warm-up with numbers: work out $\\frac{5}{7} - \\frac{2}{3} + \\frac{1}{4}$.",
+      "answer": "25/84",
+      "hints": [
+        "The lowest common denominator of 7, 3 and 4 is 84.",
+        "$\\frac{5}{7} = \\frac{60}{84}$, $\\frac{2}{3} = \\frac{56}{84}$, $\\frac{1}{4} = \\frac{21}{84}$"
+      ],
+      "explanation": "$\\frac{60}{84} - \\frac{56}{84} + \\frac{21}{84} = \\frac{25}{84}$. Algebraic fractions use exactly the same method.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "e2-q2",
+      "type": "algebraic",
+      "prompt": "Simplify $\\dfrac{a}{5} + \\dfrac{a}{3}$.",
+      "answer": "8a/15",
+      "variables": ["a"],
+      "placeholder": "e.g. (3a)/10",
+      "hints": ["Common denominator 15: $\\frac{a}{5} = \\frac{3a}{15}$."],
+      "explanation": "$\\frac{3a}{15} + \\frac{5a}{15} = \\frac{8a}{15}$."
+    },
+    {
+      "id": "e2-q3",
+      "type": "algebraic",
+      "prompt": "Simplify $\\dfrac{2x}{3} - \\dfrac{y}{6}$.",
+      "answer": "(4x - y)/6",
+      "variables": ["x", "y"],
+      "hints": ["6 is already a multiple of 3, so use 6 as the common denominator."],
+      "explanation": "$\\frac{2x}{3} = \\frac{4x}{6}$, so the answer is $\\frac{4x - y}{6}$."
+    },
+    {
+      "id": "e2-q4",
+      "type": "algebraic",
+      "prompt": "Simplify $x + \\dfrac{2x}{5}$.",
+      "answer": "7x/5",
+      "variables": ["x"],
+      "hints": ["Write $x$ as $\\frac{5x}{5}$."],
+      "explanation": "$x = \\frac{5x}{5}$, so $\\frac{5x}{5} + \\frac{2x}{5} = \\frac{7x}{5}$."
+    },
+    {
+      "id": "e2-q5",
+      "type": "steps",
+      "prompt": "Add these fractions one step at a time.",
+      "scenario": "Simplify $\\dfrac{x + 3}{4} + \\dfrac{x - 1}{5}$.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "What is the lowest common denominator?",
+          "answer": 20,
+          "feedback": "$4 \\times 5 = 20$."
+        },
+        {
+          "kind": "algebraic",
+          "prompt": "The first fraction becomes $\\frac{5(x+3)}{20}$. Expand $5(x + 3)$.",
+          "answer": "5x + 15",
+          "variables": ["x"],
+          "feedback": "Good."
+        },
+        {
+          "kind": "algebraic",
+          "prompt": "The second becomes $\\frac{4(x-1)}{20}$. Expand $4(x - 1)$.",
+          "answer": "4x - 4",
+          "variables": ["x"]
+        },
+        {
+          "kind": "algebraic",
+          "prompt": "Add the numerators and write the whole answer as a single fraction.",
+          "answer": "(9x + 11)/20",
+          "variables": ["x"],
+          "feedback": "$5x + 15 + 4x - 4 = 9x + 11$.",
+          "hint": "Collect the $x$ terms and the number terms separately."
+        }
+      ],
+      "explanation": "$\\frac{5(x+3) + 4(x-1)}{20} = \\frac{5x + 15 + 4x - 4}{20} = \\frac{9x + 11}{20}$."
+    },
+    {
+      "id": "e2-q6",
+      "type": "algebraic",
+      "prompt": "Avril cycles 10 km at $x$ km/h and then 14 km at $y$ km/h. Write the total time for the journey, in hours, as a single fraction.",
+      "answer": "(10y + 14x)/(x*y)",
+      "variables": ["x", "y"],
+      "hints": [
+        "Time = distance ÷ speed, so each part takes $\\frac{10}{x}$ and $\\frac{14}{y}$ hours.",
+        "Use $xy$ as the common denominator."
+      ],
+      "explanation": "$\\frac{10}{x} + \\frac{14}{y} = \\frac{10y}{xy} + \\frac{14x}{xy} = \\frac{10y + 14x}{xy}$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "e2-q7",
+      "type": "mcq",
+      "prompt": "Which is the correct simplification of $\\dfrac{10x + 5}{5}$?",
+      "options": [
+        { "id": "a", "text": "$2x + 1$" },
+        { "id": "b", "text": "$10x$" },
+        { "id": "c", "text": "$2x + 5$" },
+        { "id": "d", "text": "$10x + 1$" }
+      ],
+      "answer": "a",
+      "hints": ["Every term on top must be divided by 5."],
+      "explanation": "$\\frac{10x + 5}{5} = \\frac{5(2x + 1)}{5} = 2x + 1$. Crossing out the two 5s to get $10x$ is the classic mistake — the 5 is only a term, not a factor of the whole top."
+    },
+    {
+      "id": "e2-q8",
+      "type": "multi",
+      "prompt": "Select **every** expression that is equivalent to $2x + 3$.",
+      "options": [
+        { "id": "a", "text": "$\\dfrac{4x + 12}{2}$" },
+        { "id": "b", "text": "$\\dfrac{2x + 15 + 8x}{5}$" },
+        { "id": "c", "text": "$\\frac{1}{4}(8x + 12)$" },
+        { "id": "d", "text": "$\\dfrac{2x + 9}{3}$" },
+        { "id": "e", "text": "$\\dfrac{x + 1.5}{0.5}$" },
+        { "id": "f", "text": "$\\dfrac{1}{2x + 3}$" }
+      ],
+      "answers": ["b", "c", "e"],
+      "hints": ["Divide every term on top by the denominator and see what you get."],
+      "explanation": "b: $\\frac{10x + 15}{5} = 2x + 3$ ✓. c: $2x + 3$ ✓. e: dividing by 0.5 doubles, giving $2x + 3$ ✓. a gives $2x + 6$, d gives $\\frac{2}{3}x + 3$, and f is the reciprocal."
+    },
+    {
+      "id": "e2-q9",
+      "type": "fill-blank",
+      "prompt": "Complete the working to simplify $\\dfrac{30x + 15}{10}$.",
+      "text": "$\\dfrac{30x + 15}{10} = \\dfrac{\\square(6x + \\square)}{10}$ — the boxes are [[a]] and [[b]] — $= \\dfrac{6x + 3}{\\square}$ where the box is [[c]].",
+      "blanks": [
+        { "id": "a", "accept": ["5"], "size": 3 },
+        { "id": "b", "accept": ["3"], "size": 3 },
+        { "id": "c", "accept": ["2"], "size": 3 }
+      ],
+      "hints": ["What is the HCF of 30 and 15 that goes into $6x$?"],
+      "explanation": "$30x + 15 = 5(6x + 3)$. Then $\\frac{5}{10} = \\frac{1}{2}$, so the answer is $\\frac{6x + 3}{2}$."
+    },
+    {
+      "id": "e2-q10",
+      "type": "algebraic",
+      "prompt": "Simplify $\\dfrac{24x^2 + 20x}{64x}$.",
+      "answer": "(6x + 5)/16",
+      "variables": ["x"],
+      "hints": [
+        "Factorise the top: what is the HCF of $24x^2$ and $20x$?",
+        "$24x^2 + 20x = 4x(6x + 5)$"
+      ],
+      "explanation": "$\\frac{4x(6x + 5)}{64x}$. The $4x$ cancels with $64x$ to leave 16, giving $\\frac{6x + 5}{16}$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "e2-q11",
+      "type": "truefalse",
+      "prompt": "Franco says $\\dfrac{4(25p + 10)}{80}$ simplifies to $\\dfrac{25p + 10}{20}$ and he is **finished**.",
+      "answer": false,
+      "labels": ["Finished", "Not finished"],
+      "hints": ["Is there still a common factor of every term on top and the bottom?"],
+      "explanation": "Not finished. $25p + 10 = 5(5p + 2)$, and 5 also divides 20, so it simplifies further to $\\frac{5p + 2}{4}$."
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Sequences, Functions & Graphs",
+  "description": "Term-to-term and nth term rules, functions, straight-line graphs and reading real-life graphs.",
+  "strand": "number-algebra",
+  "order": 12,
+  "difficulty": "core",
+  "objectives": [
+    "Generate a sequence from a term-to-term or position-to-term rule",
+    "Find the nth term of a linear or quadratic sequence",
+    "Use function machines and inverse operations",
+    "Draw and read the graph of a linear function",
+    "Solve simultaneous equations graphically",
+    "Read speed and rates from a real-life graph"
+  ],
+  "keywords": [
+    "sequence",
+    "nth term",
+    "arithmetic",
+    "quadratic sequence",
+    "function",
+    "gradient",
+    "intercept",
+    "straight line",
+    "distance time",
+    "speed"
+  ]
+}

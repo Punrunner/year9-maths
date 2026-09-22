@@ -1,0 +1,140 @@
+{
+  "title": "Practice: simultaneous equations",
+  "intro": "Ten questions. Always check your pair of answers in the equation you did not substitute into.",
+  "questions": [
+    {
+      "id": "q5-q1",
+      "type": "fill-blank",
+      "prompt": "Solve $6x + y = 13$ and $4x + y = 9$.",
+      "text": "$x =$ [[x]] $\\qquad y =$ [[y]]",
+      "blanks": [
+        { "id": "x", "accept": ["2"], "size": 3 },
+        { "id": "y", "accept": ["1"], "size": 3 }
+      ],
+      "hints": ["Same sign on $y$: subtract."],
+      "explanation": "Subtracting gives $2x = 4$, so $x = 2$, then $12 + y = 13$ gives $y = 1$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q5-q2",
+      "type": "mcq",
+      "prompt": "Which is the solution of $7x + y = 57$ and $3x + y = 29$?",
+      "options": [
+        { "id": "a", "text": "$x = 7,\\ y = 8$" },
+        { "id": "b", "text": "$x = 6,\\ y = 15$" },
+        { "id": "c", "text": "$x = 5,\\ y = 14$" },
+        { "id": "d", "text": "$x = 8,\\ y = 1$" }
+      ],
+      "answer": "a",
+      "hints": ["Check each pair in **both** equations."],
+      "explanation": "$49 + 8 = 57$ ✓ and $21 + 8 = 29$ ✓. The others only fit one equation (or neither)."
+    },
+    {
+      "id": "q5-q3",
+      "type": "match",
+      "prompt": "Match each pair of equations to the best first step.",
+      "left": [
+        { "id": "a", "text": "$3x + 2y = 5$ and $2x + 2y = 4$" },
+        { "id": "b", "text": "$4x - y = 3$ and $6x + y = 7$" },
+        { "id": "c", "text": "$3x - 2y = 10$ and $4x + y = 17$" },
+        { "id": "d", "text": "$3x + 4y = 13$ and $2x + 3y = 9$" }
+      ],
+      "right": [
+        { "id": "r1", "text": "Subtract the equations" },
+        { "id": "r2", "text": "Add the equations" },
+        { "id": "r3", "text": "Multiply the second by 2, then add" },
+        { "id": "r4", "text": "Multiply both equations, then subtract" }
+      ],
+      "solution": { "a": "r1", "b": "r2", "c": "r3", "d": "r4" },
+      "hints": ["Look for a letter whose coefficients already match, or could match with one multiplication."],
+      "explanation": "a: $+2y$ in both → subtract. b: $-y$ and $+y$ → add. c: $\\times 2$ gives $+2y$ against $-2y$ → add. d: nothing matches easily, so make the $x$ coefficients both 6."
+    },
+    {
+      "id": "q5-q4",
+      "type": "steps",
+      "prompt": "Solve by adding.",
+      "scenario": "Solve $3x + 5y = 65$ [1] and $-3x + 2y = 5$ [2].",
+      "steps": [
+        { "kind": "mcq", "prompt": "Which letter can you eliminate straight away?", "options": [{ "id": "x", "text": "$x$ — the coefficients are $+3$ and $-3$" }, { "id": "y", "text": "$y$" }], "answer": "x" },
+        { "kind": "numeric", "prompt": "Add the equations: $7y = \\square$", "answer": 70 },
+        { "kind": "numeric", "prompt": "$y = $", "answer": 10 },
+        { "kind": "numeric", "prompt": "Substitute into [1] to find $x$.", "answer": 5, "hint": "$3x + 50 = 65$" }
+      ],
+      "explanation": "Adding: $7y = 70$, $y = 10$. Then $3x + 50 = 65$, $x = 5$. Check in [2]: $-15 + 20 = 5$ ✓"
+    },
+    {
+      "id": "q5-q5",
+      "type": "fill-blank",
+      "prompt": "Solve $7x + 2y = 29$ and $2x + y = 7$.",
+      "text": "$x =$ [[x]] $\\qquad y =$ [[y]]",
+      "blanks": [
+        { "id": "x", "accept": ["5"], "size": 3 },
+        { "id": "y", "accept": ["-3", "−3"], "size": 3 }
+      ],
+      "hints": ["Multiply the second equation by 2: $4x + 2y = 14$."],
+      "explanation": "Subtract: $3x = 15$, $x = 5$. Then $10 + y = 7$, $y = -3$."
+    },
+    {
+      "id": "q5-q6",
+      "type": "fill-blank",
+      "prompt": "Solve $3x - 2y = 10$ and $4x + y = 17$.",
+      "text": "$x =$ [[x]] $\\qquad y =$ [[y]]",
+      "blanks": [
+        { "id": "x", "accept": ["4"], "size": 3 },
+        { "id": "y", "accept": ["1"], "size": 3 }
+      ],
+      "hints": ["Double the second: $8x + 2y = 34$. Now add."],
+      "explanation": "$11x = 44$, $x = 4$. Then $16 + y = 17$, $y = 1$."
+    },
+    {
+      "id": "q5-q7",
+      "type": "fill-blank",
+      "prompt": "The sum of two numbers is 19 and their difference is 5. Find the numbers.",
+      "text": "Larger: [[a]] $\\qquad$ Smaller: [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["12"], "size": 3 },
+        { "id": "b", "accept": ["7"], "size": 3 }
+      ],
+      "hints": ["$x + y = 19$, $x - y = 5$. Add them."],
+      "explanation": "$2x = 24$, so $x = 12$ and $y = 7$."
+    },
+    {
+      "id": "q5-q8",
+      "type": "steps",
+      "prompt": "Form and solve simultaneous equations.",
+      "scenario": "Five small glasses and three large glasses hold 2450 ml. Two small and three large hold 1700 ml.",
+      "steps": [
+        { "kind": "numeric", "prompt": "Subtracting the equations gives $3s = \\square$", "answer": 750 },
+        { "kind": "numeric", "prompt": "How much does a small glass hold?", "answer": 250, "unit": "ml" },
+        { "kind": "numeric", "prompt": "How much does a large glass hold?", "answer": 400, "unit": "ml", "hint": "$2(250) + 3l = 1700$" }
+      ],
+      "explanation": "$5s + 3l = 2450$ and $2s + 3l = 1700$. Subtracting: $3s = 750$, $s = 250$. Then $3l = 1200$, $l = 400$."
+    },
+    {
+      "id": "q5-q9",
+      "type": "fill-blank",
+      "prompt": "At a farm, sheep and children have 16 heads and 40 feet altogether. How many of each?",
+      "text": "Children: [[c]] $\\qquad$ Sheep: [[s]]",
+      "blanks": [
+        { "id": "c", "accept": ["12"], "size": 3 },
+        { "id": "s", "accept": ["4"], "size": 3 }
+      ],
+      "hints": ["$c + s = 16$ and $2c + 4s = 40$.", "Multiply the first by 2 and subtract."],
+      "explanation": "$2c + 2s = 32$; subtracting from $2c + 4s = 40$ gives $2s = 8$, $s = 4$, so $c = 12$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q5-q10",
+      "type": "fill-blank",
+      "prompt": "Emily buys 23 bottles of water. Still water costs 50 cents and sparkling costs 75 cents. She spends 13.50 dollars. How many of each did she buy?",
+      "text": "Still: [[s]] $\\qquad$ Sparkling: [[p]]",
+      "blanks": [
+        { "id": "s", "accept": ["15"], "size": 3 },
+        { "id": "p", "accept": ["8"], "size": 3 }
+      ],
+      "hints": ["In cents: $s + p = 23$ and $50s + 75p = 1350$."],
+      "explanation": "$50s + 50p = 1150$; subtracting gives $25p = 200$, $p = 8$, so $s = 15$. Check: $750 + 600 = 1350$ ✓",
+      "difficulty": "challenge"
+    }
+  ]
+}

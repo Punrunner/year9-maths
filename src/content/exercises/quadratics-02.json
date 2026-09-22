@@ -1,0 +1,87 @@
+{
+  "title": "Practice: expanding products",
+  "intro": "Eight questions. Type answers without brackets, e.g. 6x^2 + 10x - 24.",
+  "questions": [
+    {
+      "id": "u2-q1",
+      "type": "algebraic",
+      "prompt": "Expand and simplify $(2x + 3)(x + 9)$.",
+      "answer": "2x^2 + 21x + 27",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "$2x^2 + 18x + 3x + 27 = 2x^2 + 21x + 27$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "u2-q2",
+      "type": "algebraic",
+      "prompt": "Expand and simplify $(3x - 4)(2x + 6)$.",
+      "answer": "6x^2 + 10x - 24",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "$6x^2 + 18x - 8x - 24 = 6x^2 + 10x - 24$."
+    },
+    {
+      "id": "u2-q3",
+      "type": "algebraic",
+      "prompt": "Expand and simplify $(5x + 1)(3x - 8)$.",
+      "answer": "15x^2 - 37x - 8",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "$15x^2 - 40x + 3x - 8 = 15x^2 - 37x - 8$."
+    },
+    {
+      "id": "u2-q4",
+      "type": "algebraic",
+      "prompt": "Expand $(2p + q)(r + 3s)$.",
+      "answer": "2*p*r + 6*p*s + q*r + 3*q*s",
+      "variables": ["p", "q", "r", "s"],
+      "explanation": "$2pr + 6ps + qr + 3qs$ — no like terms to collect."
+    },
+    {
+      "id": "u2-q5",
+      "type": "match",
+      "prompt": "Match each product to its expansion.",
+      "left": [
+        { "id": "a", "text": "$(2x + 3)^2$" },
+        { "id": "b", "text": "$(2x - 3)^2$" },
+        { "id": "c", "text": "$(2x + 3)(2x - 3)$" },
+        { "id": "d", "text": "$(3x + 2)^2$" }
+      ],
+      "right": [
+        { "id": "r1", "text": "$4x^2 + 12x + 9$" },
+        { "id": "r2", "text": "$4x^2 - 12x + 9$" },
+        { "id": "r3", "text": "$4x^2 - 9$" },
+        { "id": "r4", "text": "$9x^2 + 12x + 4$" }
+      ],
+      "solution": { "a": "r1", "b": "r2", "c": "r3", "d": "r4" },
+      "explanation": "$(a \\pm b)^2 = a^2 \\pm 2ab + b^2$ and $(a + b)(a - b) = a^2 - b^2$."
+    },
+    {
+      "id": "u2-q6",
+      "type": "algebraic",
+      "prompt": "Expand $(3x + 5)(3x - 5)$.",
+      "answer": "9x^2 - 25",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "Difference of two squares: $(3x)^2 - 5^2 = 9x^2 - 25$."
+    },
+    {
+      "id": "u2-q7",
+      "type": "numeric",
+      "prompt": "Use $(a + b)(a - b) = a^2 - b^2$ to work out $98 \\times 102$.",
+      "answer": 9996,
+      "explanation": "$(100 - 2)(100 + 2) = 10\\,000 - 4 = 9996$."
+    },
+    {
+      "id": "u2-q8",
+      "type": "algebraic",
+      "prompt": "Expand and simplify $(8x - 7)(6x - 11)$.",
+      "answer": "48x^2 - 130x + 77",
+      "variables": ["x"],
+      "requireForm": true,
+      "explanation": "$48x^2 - 88x - 42x + 77 = 48x^2 - 130x + 77$.",
+      "difficulty": "challenge"
+    }
+  ]
+}

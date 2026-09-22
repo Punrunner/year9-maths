@@ -1,0 +1,25 @@
+{
+  "title": "Area, Perimeter & Volume",
+  "description": "Circles, Pythagoras’ theorem, and the surface area and volume of prisms and cylinders.",
+  "strand": "measurement-geometry",
+  "order": 6,
+  "difficulty": "core",
+  "objectives": [
+    "Find the area and circumference of a circle",
+    "Use Pythagoras’ theorem to find a missing side",
+    "Find the surface area of a prism and a cylinder",
+    "Find the volume of any prism, including a cylinder",
+    "Convert between small and large units of measurement"
+  ],
+  "keywords": [
+    "circle",
+    "pi",
+    "pythagoras",
+    "hypotenuse",
+    "prism",
+    "cylinder",
+    "surface area",
+    "volume",
+    "units"
+  ]
+}

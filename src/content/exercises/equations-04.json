@@ -1,0 +1,89 @@
+{
+  "title": "Practice: linear functions",
+  "intro": "Eight questions on gradients and intercepts. Gradients may be fractions — type them like 3/4.",
+  "questions": [
+    {
+      "id": "q4-q1",
+      "type": "table",
+      "prompt": "Write down the gradient and $y$-intercept of each line.",
+      "columns": ["Line", "Gradient, m", "y-intercept, c"],
+      "rows": [
+        [{ "given": "y = 2x + 5" }, { "answer": "2" }, { "answer": "5" }],
+        [{ "given": "y = −3x + 1" }, { "answer": "-3" }, { "answer": "1" }],
+        [{ "given": "y = x − 4" }, { "answer": "1" }, { "answer": "-4" }],
+        [{ "given": "y = 7 − 2x" }, { "answer": "-2" }, { "answer": "7" }]
+      ],
+      "hints": ["The number in front of $x$ is $m$. Watch $y = 7 - 2x$ — it is written the other way round."],
+      "explanation": "$m$ is the coefficient of $x$ and $c$ is the constant. $y = 7 - 2x$ is $y = -2x + 7$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "q4-q2",
+      "type": "numeric",
+      "prompt": "Find the gradient of the line joining $(1, 3)$ and $(5, 11)$.",
+      "answer": 2,
+      "hints": ["$\\frac{11 - 3}{5 - 1}$"],
+      "explanation": "$\\frac{8}{4} = 2$."
+    },
+    {
+      "id": "q4-q3",
+      "type": "numeric",
+      "prompt": "Find the gradient of the line joining $(-1, 6)$ and $(3, -2)$.",
+      "answer": -2,
+      "hints": ["$\\frac{-2 - 6}{3 - (-1)}$"],
+      "explanation": "$\\frac{-8}{4} = -2$. The line goes down from left to right."
+    },
+    {
+      "id": "q4-q4",
+      "type": "manipulable",
+      "prompt": "Set the sliders so the line passes through $(0, 1)$ and $(2, 5)$.",
+      "widget": "line-mc",
+      "config": {},
+      "target": { "m": 2, "c": 1 },
+      "tolerance": 0.01,
+      "hints": ["The intercept is where $x = 0$.", "Rise 4, run 2."],
+      "explanation": "$c = 1$ and $m = \\frac{5 - 1}{2 - 0} = 2$, so $y = 2x + 1$."
+    },
+    {
+      "id": "q4-q5",
+      "type": "hotspot",
+      "prompt": "Click the $y$-intercept of this line.",
+      "figure": "line-graph",
+      "answer": "y-intercept",
+      "hints": ["It is on the vertical axis."],
+      "explanation": "The $y$-intercept is where the line crosses the $y$-axis — the value of $c$ in $y = mx + c$."
+    },
+    {
+      "id": "q4-q6",
+      "type": "multi",
+      "prompt": "Select **every** line with a **negative** gradient.",
+      "options": [
+        { "id": "a", "text": "$y = -4x + 2$" },
+        { "id": "b", "text": "$y = 5 - x$" },
+        { "id": "c", "text": "$y = 3x - 8$" },
+        { "id": "d", "text": "$y = \\frac{1}{2}x$" },
+        { "id": "e", "text": "the line through $(0, 4)$ and $(2, 0)$" }
+      ],
+      "answers": ["a", "b", "e"],
+      "hints": ["For e, work out $\\frac{0 - 4}{2 - 0}$."],
+      "explanation": "a: $-4$. b: $-1$. e: $\\frac{-4}{2} = -2$. c and d have positive gradients."
+    },
+    {
+      "id": "q4-q7",
+      "type": "algebraic",
+      "prompt": "A line has gradient 3 and passes through $(0, -2)$. Write its equation. (Type $y = \\dots$)",
+      "answer": "3x - 2",
+      "variables": ["x"],
+      "hints": ["$(0, -2)$ is on the $y$-axis, so $c = -2$."],
+      "explanation": "$y = 3x - 2$."
+    },
+    {
+      "id": "q4-q8",
+      "type": "truefalse",
+      "prompt": "Using the points $C(0.5, 2)$ and $D(1.5, 4)$ on the line $y = 2x + 1$ gives a different gradient from using $A(0, 1)$ and $B(2, 5)$.",
+      "answer": false,
+      "hints": ["Work out $\\frac{4 - 2}{1.5 - 0.5}$."],
+      "explanation": "False. $\\frac{2}{1} = 2$, the same as $\\frac{4}{2} = 2$. Any two points on a straight line give the same gradient."
+    }
+  ]
+}

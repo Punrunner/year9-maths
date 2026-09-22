@@ -1,0 +1,246 @@
+{
+  "title": "Practice: simplifying and indices",
+  "intro": "Type expressions the way you would write them — 12x^5 for $12x^5$, a/b for a fraction. Any equivalent form is marked correct.",
+  "questions": [
+    {
+      "id": "e1-q1",
+      "type": "algebraic",
+      "prompt": "Simplify $2a^3 \\times 4a^4$.",
+      "answer": "8a^7",
+      "variables": [
+        "a"
+      ],
+      "placeholder": "e.g. 5a^2",
+      "hints": [
+        "Multiply the numbers, then add the powers."
+      ],
+      "explanation": "$2 \\times 4 = 8$ and $a^{3+4} = a^7$, so $8a^7$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "e1-q2",
+      "type": "algebraic",
+      "prompt": "Simplify $\\dfrac{14y^{10}}{7y^5}$.",
+      "answer": "2y^5",
+      "variables": [
+        "y"
+      ],
+      "hints": [
+        "Divide the numbers, then subtract the powers."
+      ],
+      "explanation": "$14 \\div 7 = 2$ and $y^{10-5} = y^5$, so $2y^5$."
+    },
+    {
+      "id": "e1-q3",
+      "type": "mcq",
+      "prompt": "Simplify $(2x^2)^4$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$16x^8$"
+        },
+        {
+          "id": "b",
+          "text": "$2x^8$"
+        },
+        {
+          "id": "c",
+          "text": "$8x^6$"
+        },
+        {
+          "id": "d",
+          "text": "$16x^6$"
+        }
+      ],
+      "answer": "a",
+      "hints": [
+        "The power 4 applies to the 2 **and** to the $x^2$."
+      ],
+      "explanation": "$(2x^2)^4 = 2^4 \\times (x^2)^4 = 16x^8$. Option b forgets to raise the 2 to the power 4; options c and d add the powers instead of multiplying."
+    },
+    {
+      "id": "e1-q4",
+      "type": "match",
+      "prompt": "Match each expression to its simplified form.",
+      "left": [
+        {
+          "id": "l1",
+          "text": "$x^2 \\times x^3$"
+        },
+        {
+          "id": "l2",
+          "text": "$x^8 \\div x^4$"
+        },
+        {
+          "id": "l3",
+          "text": "$(x^3)^2$"
+        },
+        {
+          "id": "l4",
+          "text": "$x^4 \\times x^2 \\times x$"
+        },
+        {
+          "id": "l5",
+          "text": "$x^5 \\div x^8$"
+        }
+      ],
+      "right": [
+        {
+          "id": "r1",
+          "text": "$x^5$"
+        },
+        {
+          "id": "r2",
+          "text": "$x^4$"
+        },
+        {
+          "id": "r3",
+          "text": "$x^6$"
+        },
+        {
+          "id": "r4",
+          "text": "$x^7$"
+        },
+        {
+          "id": "r5",
+          "text": "$x^{-3}$"
+        }
+      ],
+      "solution": {
+        "l1": "r1",
+        "l2": "r2",
+        "l3": "r3",
+        "l4": "r4",
+        "l5": "r5"
+      },
+      "hints": [
+        "A letter with no power written, like $x$, is $x^1$."
+      ],
+      "explanation": "$x^{2+3} = x^5$. $x^{8-4} = x^4$ (not $x^2$ — you subtract powers, you do not divide them). $(x^3)^2 = x^6$. $x^{4+2+1} = x^7$. $x^{5-8} = x^{-3}$."
+    },
+    {
+      "id": "e1-q5",
+      "type": "algebraic",
+      "prompt": "Simplify $\\dfrac{3x^3y^2z^2}{x^2y^3z}$.",
+      "answer": "3*x*z/y",
+      "variables": [
+        "x",
+        "y",
+        "z"
+      ],
+      "placeholder": "e.g. 2ab/c",
+      "hints": [
+        "Deal with each letter on its own: subtract the bottom power from the top power.",
+        "$y^{2-3} = y^{-1}$, which puts one $y$ on the bottom."
+      ],
+      "explanation": "$x^{3-2} = x$, $y^{2-3} = y^{-1}$, $z^{2-1} = z$. So the answer is $\\frac{3xz}{y}$."
+    },
+    {
+      "id": "e1-q6",
+      "type": "multi",
+      "prompt": "Jamil's homework is below. Select **every** line he got **wrong**.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$(3p)^3 = 9p^9$"
+        },
+        {
+          "id": "b",
+          "text": "$8m^8 \\div 2m^2 = 4m^4$"
+        },
+        {
+          "id": "c",
+          "text": "$4t^4 \\times 4t^4 = 16t^8$"
+        },
+        {
+          "id": "d",
+          "text": "$8y^0 = 1$"
+        }
+      ],
+      "answers": [
+        "a",
+        "b",
+        "d"
+      ],
+      "hints": [
+        "Check each line with the index laws.",
+        "In $8y^0$, only the $y$ is raised to the power 0."
+      ],
+      "explanation": "a should be $27p^3$ ($3^3 = 27$, and $p^1$ cubed is $p^3$). b should be $4m^6$ (subtract: $8 - 2 = 6$). c is **correct**: $4 \\times 4 = 16$ and $t^{4+4} = t^8$. d should be $8$, because $y^0 = 1$ so $8y^0 = 8 \\times 1$."
+    },
+    {
+      "id": "e1-q7",
+      "type": "algebraic",
+      "prompt": "Collect like terms: $5xy + 2z - 3xy - 5z$.",
+      "answer": "2*x*y - 3*z",
+      "variables": [
+        "x",
+        "y",
+        "z"
+      ],
+      "hints": [
+        "The $xy$ terms go together and the $z$ terms go together."
+      ],
+      "explanation": "$5xy - 3xy = 2xy$ and $2z - 5z = -3z$, so $2xy - 3z$."
+    },
+    {
+      "id": "e1-q8",
+      "type": "truefalse",
+      "prompt": "$ab^2$ and $a^2b$ are like terms.",
+      "answer": false,
+      "hints": [
+        "Write each one out in full: $a \\times b \\times b$ versus $a \\times a \\times b$."
+      ],
+      "explanation": "False. $ab^2 = a \\times b \\times b$ but $a^2b = a \\times a \\times b$. The letters are the same but the powers are not, so they cannot be combined."
+    },
+    {
+      "id": "e1-q9",
+      "type": "multi",
+      "prompt": "Hannah simplified these. Select **every** answer that is **correct**.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$3ab^2 + 5ba^2 + b^2a = 9ab^2$"
+        },
+        {
+          "id": "b",
+          "text": "$7p^2 - 6p^2 = p^2$"
+        },
+        {
+          "id": "c",
+          "text": "$(3x)^2 - 3x^2 = 0$"
+        },
+        {
+          "id": "d",
+          "text": "$3pq - 8pq + 4pq = -pq$"
+        }
+      ],
+      "answers": [
+        "b",
+        "d"
+      ],
+      "hints": [
+        "In a, is $5ba^2$ a like term with $ab^2$?",
+        "In c, what is $(3x)^2$?"
+      ],
+      "explanation": "a is wrong: $5ba^2 = 5a^2b$ is not like $ab^2$, so the answer is $4ab^2 + 5a^2b$. b is right. c is wrong: $(3x)^2 = 9x^2$, so $9x^2 - 3x^2 = 6x^2$. d is right: $3 - 8 + 4 = -1$."
+    },
+    {
+      "id": "e1-q10",
+      "type": "algebraic",
+      "prompt": "Simplify $\\dfrac{a^2bc^3}{a^5b^2} \\times \\dfrac{ab^3c^2}{bc^4}$.",
+      "answer": "b*c/a^2",
+      "variables": [
+        "a",
+        "b",
+        "c"
+      ],
+      "hints": [
+        "Multiply the tops together and the bottoms together first.",
+        "Top: $a^3b^4c^5$. Bottom: $a^5b^3c^4$."
+      ],
+      "explanation": "Top: $a^{2+1}b^{1+3}c^{3+2} = a^3b^4c^5$. Bottom: $a^5b^{2+1}c^4 = a^5b^3c^4$. Dividing: $a^{-2}b^1c^1 = \\frac{bc}{a^2}$.",
+      "difficulty": "challenge"
+    }
+  ]
+}

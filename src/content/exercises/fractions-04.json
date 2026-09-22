@@ -1,0 +1,125 @@
+{
+  "title": "Practice: recurring decimals",
+  "intro": "Nine questions. When a fraction is asked for, type it like 4/11.",
+  "questions": [
+    {
+      "id": "f4-q1",
+      "type": "match",
+      "prompt": "Match each fraction to its decimal.",
+      "left": [
+        { "id": "a", "text": "$\\frac{2}{9}$" },
+        { "id": "b", "text": "$\\frac{2}{15}$" },
+        { "id": "c", "text": "$\\frac{23}{99}$" },
+        { "id": "d", "text": "$\\frac{3}{8}$" },
+        { "id": "e", "text": "$\\frac{517}{999}$" }
+      ],
+      "right": [
+        { "id": "r1", "text": "$0.\\dot{2}$" },
+        { "id": "r2", "text": "$0.1\\dot{3}$" },
+        { "id": "r3", "text": "$0.\\dot{2}\\dot{3}$" },
+        { "id": "r4", "text": "$0.375$" },
+        { "id": "r5", "text": "$0.\\dot{5}1\\dot{7}$" }
+      ],
+      "solution": { "a": "r1", "b": "r2", "c": "r3", "d": "r4", "e": "r5" },
+      "hints": ["Ninths repeat one digit, ninety-ninths two, nine-hundred-and-ninety-ninths three."],
+      "explanation": "$\\frac{2}{9} = 0.222\\dots$, $\\frac{2}{15} = 0.1333\\dots$, $\\frac{23}{99} = 0.2323\\dots$, $\\frac{3}{8} = 0.375$ exactly, $\\frac{517}{999} = 0.517517\\dots$"
+    },
+    {
+      "id": "f4-q2",
+      "type": "multi",
+      "prompt": "Select **every** fraction that gives a **terminating** decimal.",
+      "options": [
+        { "id": "a", "text": "$\\frac{7}{40}$" },
+        { "id": "b", "text": "$\\frac{5}{24}$" },
+        { "id": "c", "text": "$\\frac{3}{12}$" },
+        { "id": "d", "text": "$\\frac{2}{25}$" },
+        { "id": "e", "text": "$\\frac{1}{7}$" },
+        { "id": "f", "text": "$\\frac{9}{18}$" }
+      ],
+      "answers": ["a", "c", "d", "f"],
+      "hints": ["Simplify first, then look at the prime factors of the denominator."],
+      "explanation": "$40 = 2^3 \\times 5$ ✓. $\\frac{3}{12} = \\frac{1}{4}$ ✓. $25 = 5^2$ ✓. $\\frac{9}{18} = \\frac{1}{2}$ ✓. $\\frac{5}{24}$ has a 3 and $\\frac{1}{7}$ a 7, so they recur."
+    },
+    {
+      "id": "f4-q3",
+      "type": "table",
+      "prompt": "Complete the table.",
+      "columns": ["Fraction", "Simplest form", "Denominator as primes", "Terminating or recurring?"],
+      "rows": [
+        [{ "given": "14/80" }, { "answer": "7/40" }, { "given": "2³ × 5" }, { "answer": "terminating", "accept": ["t", "terminates"] }],
+        [{ "given": "10/48" }, { "answer": "5/24" }, { "given": "2³ × 3" }, { "answer": "recurring", "accept": ["r", "recurs"] }],
+        [{ "given": "8/100" }, { "answer": "2/25" }, { "given": "5 × 5" }, { "answer": "terminating", "accept": ["t", "terminates"] }],
+        [{ "given": "6/33" }, { "answer": "2/11" }, { "given": "11" }, { "answer": "recurring", "accept": ["r", "recurs"] }]
+      ],
+      "hints": ["Only 2s and 5s in the denominator means terminating."],
+      "explanation": "7/40 and 2/25 terminate. 5/24 (a factor of 3) and 2/11 recur."
+    },
+    {
+      "id": "f4-q4",
+      "type": "mcq",
+      "prompt": "How should $0.517517517\\dots$ be written?",
+      "options": [
+        { "id": "a", "text": "$0.\\dot{5}1\\dot{7}$" },
+        { "id": "b", "text": "$0.\\dot{5}\\dot{1}\\dot{7}$" },
+        { "id": "c", "text": "$0.51\\dot{7}$" },
+        { "id": "d", "text": "$0.\\dot{5}17$" }
+      ],
+      "answer": "a",
+      "hints": ["Dots go over the first and last digits of the repeating block."],
+      "explanation": "The block 517 repeats, so the dots go over the 5 and the 7. Option c would mean only the 7 repeats: $0.51777\\dots$"
+    },
+    {
+      "id": "f4-q5",
+      "type": "fill-blank",
+      "prompt": "Use $\\frac{1}{9} = 0.\\dot{1}$ and $\\frac{1}{99} = 0.\\dot{0}\\dot{1}$. Type the repeating digit(s).",
+      "text": "$\\frac{7}{9} = 0.\\dot{\\square}$ : [[a]] $\\qquad \\frac{5}{9} = 0.\\dot{\\square}$ : [[b]] $\\qquad \\frac{41}{99} = 0.\\dot{\\square}\\dot{\\square}$ : [[c]]",
+      "blanks": [
+        { "id": "a", "accept": ["7"], "size": 3 },
+        { "id": "b", "accept": ["5"], "size": 3 },
+        { "id": "c", "accept": ["41"], "size": 4 }
+      ],
+      "hints": ["$\\frac{7}{9} = 7 \\times \\frac{1}{9}$."],
+      "explanation": "$0.\\dot{7}$, $0.\\dot{5}$ and $0.\\dot{4}\\dot{1}$ — the numerator becomes the repeating block."
+    },
+    {
+      "id": "f4-q6",
+      "type": "numeric",
+      "prompt": "Write $0.\\dot{4}$ as a fraction.",
+      "answer": "4/9",
+      "tolerance": 0.0001,
+      "hints": ["One repeating digit goes over 9."],
+      "explanation": "$0.\\dot{4} = 4 \\times 0.\\dot{1} = \\frac{4}{9}$."
+    },
+    {
+      "id": "f4-q7",
+      "type": "numeric",
+      "prompt": "Write $0.\\dot{3}\\dot{6}$ as a fraction in its simplest form.",
+      "answer": "4/11",
+      "tolerance": 0.0001,
+      "hints": ["Two repeating digits go over 99.", "Then simplify $\\frac{36}{99}$."],
+      "explanation": "$0.\\dot{3}\\dot{6} = \\frac{36}{99} = \\frac{4}{11}$ (dividing top and bottom by 9)."
+    },
+    {
+      "id": "f4-q8",
+      "type": "mcq",
+      "prompt": "A calculator shows $\\frac{106}{333}$ as $0.31831831832$. What is the exact decimal?",
+      "options": [
+        { "id": "a", "text": "$0.\\dot{3}1\\dot{8}$" },
+        { "id": "b", "text": "$0.31831831832$ exactly" },
+        { "id": "c", "text": "$0.3\\dot{1}\\dot{8}$" },
+        { "id": "d", "text": "$0.\\dot{3}18\\dot{3}2$" }
+      ],
+      "answer": "a",
+      "hints": ["The last digit on the screen has been rounded."],
+      "explanation": "The block 318 repeats forever; the final 2 is the calculator rounding $\\dots 318\\,31\\dot{8}$ up."
+    },
+    {
+      "id": "f4-q9",
+      "type": "truefalse",
+      "prompt": "$\\frac{3}{12}$ gives a recurring decimal because 12 has a factor of 3.",
+      "answer": false,
+      "hints": ["Simplify the fraction first."],
+      "explanation": "False. $\\frac{3}{12} = \\frac{1}{4} = 0.25$, which terminates. You must simplify before checking the denominator's primes."
+    }
+  ]
+}

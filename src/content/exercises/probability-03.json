@@ -1,0 +1,160 @@
+{
+  "title": "Practice: experimental probability",
+  "intro": "Ten questions, including a spinner you run yourself, a probability scale to drag, a set of flashcards and a timed drill.",
+  "questions": [
+    {
+      "id": "p3-q1",
+      "type": "numeric",
+      "prompt": "A coin is tossed 80 times and lands heads 46 times. Calculate the experimental probability of a head, as a decimal.",
+      "answer": 0.575,
+      "accept": ["46/80", "23/40", "57.5%"],
+      "tolerance": 0.001,
+      "hints": ["Experimental probability is successes divided by trials."],
+      "explanation": "$\\frac{46}{80} = 0.575$. The theoretical value is $0.5$, and 80 tosses is not really enough to call this coin unfair.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "p3-q2",
+      "type": "numeric",
+      "prompt": "The probability a seed germinates is $0.8$. A gardener plants 250 seeds. How many would you expect to germinate?",
+      "answer": 200,
+      "hints": ["Expected frequency $=$ trials $\\times$ probability."],
+      "explanation": "$250 \\times 0.8 = 200$ seeds. It is an estimate — the real number will be somewhere near 200, not exactly 200.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "p3-q3",
+      "type": "manipulable",
+      "prompt": "Drag the marker to show the probability of rolling an **even number** on a fair six-sided dice.",
+      "widget": "number-line",
+      "config": {
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "majorStep": 0.2,
+        "label": "Probability"
+      },
+      "target": { "x": 0.5 },
+      "tolerance": 0.03,
+      "hints": [
+        "Which numbers on a dice are even?",
+        "Three of the six faces are even."
+      ],
+      "explanation": "Three of the six faces (2, 4, 6) are even, so $P(\\text{even}) = \\frac{3}{6} = \\frac{1}{2} = 0.5$ — exactly halfway along the scale."
+    },
+    {
+      "id": "p3-q4",
+      "type": "manipulable",
+      "prompt": "Run the spinner **at least 100 times** using the buttons, and watch the relative frequency for Red as the number of spins grows.",
+      "widget": "spinner",
+      "config": {
+        "sectors": ["Red", "Blue", "Green", "Yellow"],
+        "focus": 0
+      },
+      "target": { "spins": 100 },
+      "tolerance": 400,
+      "hints": ["Press **+100 spins** once, or **+10 spins** ten times."],
+      "explanation": "With four equal sections the theoretical probability is $\\frac{1}{4} = 0.25$. After 10 spins your relative frequency was probably nowhere near it; after 100 or more it should be close. That is the law of large numbers doing its work — and it is why you should never judge fairness on a handful of trials.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "p3-q5",
+      "type": "mcq",
+      "prompt": "A dice is rolled 600 times and gives 145 sixes. Which conclusion is best supported?",
+      "options": [
+        { "id": "a", "text": "The dice appears biased towards six, because 145 is well above the 100 expected in 600 rolls" },
+        { "id": "b", "text": "The dice is definitely fair, because 145 is close to 150" },
+        { "id": "c", "text": "Nothing can be said — you would need to roll it forever" },
+        { "id": "d", "text": "The dice appears biased against six, because $145 < 600$" }
+      ],
+      "answer": "a",
+      "hints": [
+        "First work out how many sixes a fair dice would be expected to give in 600 rolls.",
+        "$600 \\times \\frac{1}{6} = ?$"
+      ],
+      "explanation": "A fair dice would be expected to give $600 \\times \\frac{1}{6} = 100$ sixes. Getting 145 over that many trials is a large, convincing gap. **b** compares against the wrong figure, and **c** overstates the case — 600 trials is plenty to notice bias this size."
+    },
+    {
+      "id": "p3-q6",
+      "type": "match",
+      "prompt": "Match each term to its meaning.",
+      "left": [
+        { "id": "l1", "text": "Theoretical probability" },
+        { "id": "l2", "text": "Experimental probability" },
+        { "id": "l3", "text": "Expected frequency" },
+        { "id": "l4", "text": "Biased" }
+      ],
+      "right": [
+        { "id": "r1", "text": "Worked out by reasoning about equally likely outcomes" },
+        { "id": "r2", "text": "Measured by running trials and counting successes" },
+        { "id": "r3", "text": "Trials $\\times$ probability — how often you predict it will happen" },
+        { "id": "r4", "text": "Not fair: some outcomes are more likely than they should be" }
+      ],
+      "solution": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+      "hints": ["One of them is something you *calculate*; one is something you *measure*."],
+      "explanation": "Theoretical probability is calculated; experimental probability is measured; expected frequency turns a probability into a prediction; and bias means the outcomes are not equally likely after all."
+    },
+    {
+      "id": "p3-q7",
+      "type": "truefalse",
+      "prompt": "**If the experimental probability does not exactly match the theoretical probability, the object must be biased.**",
+      "answer": false,
+      "hints": ["Would you expect exactly 5 heads in 10 coin tosses every single time?"],
+      "explanation": "False — and this is the single most common misconception in the topic. Random variation means results almost never land exactly on the theory, especially with few trials. Bias is only suggested by a *large* gap over *many* trials."
+    },
+    {
+      "id": "p3-q8",
+      "type": "table",
+      "prompt": "A four-sided spinner is spun 200 times. Complete the table of relative frequencies, as decimals.",
+      "columns": ["Colour", "Frequency", "Relative frequency"],
+      "rows": [
+        [{ "given": "Red" }, { "given": "54" }, { "answer": "0.27" }],
+        [{ "given": "Blue" }, { "given": "48" }, { "answer": "0.24" }],
+        [{ "given": "Green" }, { "given": "62" }, { "answer": "0.31" }],
+        [{ "given": "Yellow" }, { "given": "36" }, { "answer": "0.18" }]
+      ],
+      "hints": [
+        "Divide each frequency by the 200 spins.",
+        "$54 \\div 200 = 0.27$."
+      ],
+      "explanation": "Each relative frequency is the count divided by 200. They add to $0.27 + 0.24 + 0.31 + 0.18 = 1$, which is always a good check. All four sit reasonably near $0.25$, so there is no strong evidence of bias here."
+    },
+    {
+      "id": "p3-q9",
+      "type": "flashcards",
+      "prompt": "Flip through the probability formulas until you can recall each one before turning the card.",
+      "cards": [
+        { "id": "c1", "front": "Experimental probability", "back": "$\\dfrac{\\text{number of successes}}{\\text{number of trials}}$" },
+        { "id": "c2", "front": "Theoretical probability", "back": "$\\dfrac{\\text{favourable outcomes}}{\\text{total equally likely outcomes}}$" },
+        { "id": "c3", "front": "Expected frequency", "back": "$\\text{number of trials} \\times P(\\text{event})$" },
+        { "id": "c4", "front": "$P(\\text{A and B})$ for independent events", "back": "$P(\\text{A}) \\times P(\\text{B})$ — multiply along the branches" },
+        { "id": "c5", "front": "$P(\\text{A or B})$ for mutually exclusive outcomes", "back": "$P(\\text{A}) + P(\\text{B})$ — add down the column" },
+        { "id": "c6", "front": "$P(\\text{at least one})$", "back": "$1 - P(\\text{none})$" },
+        { "id": "c7", "front": "$P(\\text{not A})$", "back": "$1 - P(\\text{A})$" }
+      ],
+      "explanation": "These seven cover almost every probability question at this level."
+    },
+    {
+      "id": "p3-q10",
+      "type": "drill",
+      "prompt": "Quick-fire: expected frequency. Each one is trials $\\times$ probability.",
+      "durationSec": 90,
+      "count": 8,
+      "pool": [
+        { "id": "d1", "prompt": "100 trials, $P = 0.3$. Expected frequency?", "accept": ["30"] },
+        { "id": "d2", "prompt": "50 trials, $P = 0.4$. Expected frequency?", "accept": ["20"] },
+        { "id": "d3", "prompt": "80 trials, $P = \\frac{1}{4}$. Expected frequency?", "accept": ["20"] },
+        { "id": "d4", "prompt": "60 trials, $P = \\frac{1}{6}$. Expected frequency?", "accept": ["10"] },
+        { "id": "d5", "prompt": "200 trials, $P = 0.15$. Expected frequency?", "accept": ["30"] },
+        { "id": "d6", "prompt": "120 trials, $P = \\frac{1}{3}$. Expected frequency?", "accept": ["40"] },
+        { "id": "d7", "prompt": "40 trials, $P = 0.25$. Expected frequency?", "accept": ["10"] },
+        { "id": "d8", "prompt": "500 trials, $P = 0.06$. Expected frequency?", "accept": ["30"] },
+        { "id": "d9", "prompt": "90 trials, $P = \\frac{2}{3}$. Expected frequency?", "accept": ["60"] },
+        { "id": "d10", "prompt": "25 trials, $P = 0.8$. Expected frequency?", "accept": ["20"] },
+        { "id": "d11", "prompt": "150 trials, $P = 0.2$. Expected frequency?", "accept": ["30"] },
+        { "id": "d12", "prompt": "72 trials, $P = \\frac{1}{8}$. Expected frequency?", "accept": ["9"] }
+      ],
+      "explanation": "Every one is $\\text{trials} \\times P$. Fractions are often quicker than decimals: $\\frac{1}{6}$ of 60 is 10 at a glance."
+    }
+  ]
+}

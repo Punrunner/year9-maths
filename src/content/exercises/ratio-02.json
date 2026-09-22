@@ -1,0 +1,177 @@
+{
+  "title": "Practice: direct proportion",
+  "intro": "Nine questions. Find the multiplier, then use it.",
+  "questions": [
+    {
+      "id": "r2-q1",
+      "type": "numeric",
+      "prompt": "3 oranges cost 81 cents. How much do 7 oranges cost?",
+      "answer": 189,
+      "unit": "cents",
+      "hints": [
+        "One orange costs $81 \\div 3$."
+      ],
+      "explanation": "One costs 27 cents, so 7 cost $7 \\times 27 = 189$ cents.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "r2-q2",
+      "type": "table",
+      "prompt": "$x$ and $y$ are directly proportional. Complete the table.",
+      "columns": [
+        "x",
+        "y"
+      ],
+      "rows": [
+        [
+          {
+            "given": "5"
+          },
+          {
+            "given": "8"
+          }
+        ],
+        [
+          {
+            "answer": "7.5"
+          },
+          {
+            "given": "12"
+          }
+        ],
+        [
+          {
+            "given": "7"
+          },
+          {
+            "answer": "11.2"
+          }
+        ]
+      ],
+      "rowHeader": false,
+      "hints": [
+        "The multiplier from $x$ to $y$ is $8 \\div 5 = 1.6$."
+      ],
+      "explanation": "$12 \\div 1.6 = 7.5$ and $7 \\times 1.6 = 11.2$."
+    },
+    {
+      "id": "r2-q3",
+      "type": "manipulable",
+      "prompt": "$x$ and $y$ are directly proportional, with $y = 6$ when $x = 2$. Set the graph of $y = mx + c$ to show this relationship.",
+      "widget": "line-mc",
+      "config": {},
+      "target": {
+        "m": 3,
+        "c": 0
+      },
+      "tolerance": 0.01,
+      "hints": [
+        "Direct proportion passes through the origin, so $c = 0$.",
+        "$m = 6 \\div 2$."
+      ],
+      "explanation": "$y = 3x$: gradient 3 and through $(0, 0)$."
+    },
+    {
+      "id": "r2-q4",
+      "type": "numeric",
+      "prompt": "Green paint is yellow and blue in the ratio $5 : 2$. How many litres of blue go with 28 litres of yellow?",
+      "answer": 11.2,
+      "unit": "litres",
+      "hints": [
+        "$28 \\div 5 = 5.6$"
+      ],
+      "explanation": "$2 \\times 5.6 = 11.2$ litres."
+    },
+    {
+      "id": "r2-q5",
+      "type": "steps",
+      "prompt": "Work with an equation.",
+      "scenario": "A 5-litre tin of paint covers 60 square metres. Area covered, $A$, is directly proportional to volume, $V$.",
+      "steps": [
+        {
+          "kind": "algebraic",
+          "prompt": "Write the equation for $A$ in terms of $V$.",
+          "answer": "12V",
+          "variables": [
+            "V"
+          ]
+        },
+        {
+          "kind": "numeric",
+          "prompt": "What area will 8 litres cover?",
+          "answer": 96,
+          "unit": "m²"
+        },
+        {
+          "kind": "numeric",
+          "prompt": "How much paint is needed for 48 m²?",
+          "answer": 4,
+          "unit": "litres"
+        }
+      ],
+      "explanation": "The multiplier is $60 \\div 5 = 12$, so $A = 12V$. $12 \\times 8 = 96$ and $48 \\div 12 = 4$."
+    },
+    {
+      "id": "r2-q6",
+      "type": "numeric",
+      "prompt": "I change 80 British pounds into 6584 rupees. How many pounds would I get for 16 460 rupees?",
+      "answer": 200,
+      "unit": "pounds",
+      "hints": [
+        "The rate is $6584 \\div 80 = 82.3$ rupees per pound."
+      ],
+      "explanation": "$16\\,460 \\div 82.3 = 200$ pounds."
+    },
+    {
+      "id": "r2-q7",
+      "type": "multi",
+      "prompt": "Which of these are directly proportional?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The cost of petrol and the number of litres bought"
+        },
+        {
+          "id": "b",
+          "text": "A taxi fare with a 3 dollar starting charge and the distance travelled"
+        },
+        {
+          "id": "c",
+          "text": "The number of workers and the time to build a wall"
+        },
+        {
+          "id": "d",
+          "text": "The weight of flour and the number of cakes baked"
+        }
+      ],
+      "answers": [
+        "a",
+        "d"
+      ],
+      "hints": [
+        "If one doubles, does the other exactly double?"
+      ],
+      "explanation": "a and d double together. The taxi fare has a fixed charge, so it does not start at 0. More workers means **less** time — that is inverse proportion."
+    },
+    {
+      "id": "r2-q8",
+      "type": "truefalse",
+      "prompt": "The graph of two directly proportional quantities is a straight line through the origin.",
+      "answer": true,
+      "hints": [
+        "When one quantity is 0, what is the other?"
+      ],
+      "explanation": "True — it has the form $y = mx$."
+    },
+    {
+      "id": "r2-q9",
+      "type": "numeric",
+      "prompt": "$x$ and $y$ are directly proportional: $x = 3$ gives $y = 7.5$. Find $x$ when $y = 23$.",
+      "answer": 9.2,
+      "hints": [
+        "$y = 2.5x$"
+      ],
+      "explanation": "$23 \\div 2.5 = 9.2$."
+    }
+  ]
+}

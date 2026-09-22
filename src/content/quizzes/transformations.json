@@ -1,0 +1,54 @@
+{
+  "title": "Transformations quiz",
+  "topic": "transformations",
+  "description": "Ten questions drawn at random from a bank of twelve, covering enlargement, describing transformations and combining them.",
+  "pick": 10,
+  "timeLimitSec": 900,
+  "passMark": 70,
+  "questions": [
+    { "id": "tq1", "type": "numeric", "prompt": "A shape of area 20 cm² is enlarged by scale factor 4. What is the area of the image?", "answer": 320, "unit": "cm²",
+      "explanation": "$20 \\times 4^2 = 320$ cm²." },
+    { "id": "tq2", "type": "numeric", "prompt": "A shape has perimeter 18 cm. What is the perimeter after an enlargement with scale factor 4?", "answer": 72, "unit": "cm",
+      "explanation": "$18 \\times 4 = 72$ cm." },
+    { "id": "tq3", "type": "manipulable", "prompt": "Enlarge the triangle with scale factor 0.5 and centre $(0, 0)$.",
+      "widget": "enlargement", "config": {}, "target": { "k": 0.5, "ox": 0, "oy": 0 }, "tolerance": 0,
+      "explanation": "Every corner moves halfway towards the origin: $(1, 1)$, $(2, 1)$ and $(1, 2.5)$." },
+    { "id": "tq4", "type": "mcq", "prompt": "Side CB = 3 and its image C′B′ = 9. What is the scale factor?",
+      "options": [
+        { "id": "a", "text": "3" }, { "id": "b", "text": "6" }, { "id": "c", "text": "$\\frac{1}{3}$" }, { "id": "d", "text": "9" }
+      ], "answer": "a", "explanation": "$9 \\div 3 = 3$." },
+    { "id": "tq5", "type": "table", "prompt": "Give the mirror line for each pair.", "columns": ["Object", "Image", "Mirror line"],
+      "rows": [
+        [{ "given": "(2, 3)" }, { "given": "(2, −3)" }, { "answer": "y = 0", "accept": ["y=0", "x-axis", "the x-axis"] }],
+        [{ "given": "(−4, 5)" }, { "given": "(−5, 4)" }, { "answer": "y = -x", "accept": ["y=-x", "y = −x"] }]
+      ],
+      "explanation": "$(2, 3) \\to (2, -3)$ flips in the $x$-axis ($y = 0$). $(-4, 5) \\to (-5, 4)$ is $(x, y) \\to (-y, -x)$: $y = -x$." },
+    { "id": "tq6", "type": "mcq", "prompt": "Which is a complete description of a rotation?",
+      "options": [
+        { "id": "a", "text": "$90^\\circ$ anticlockwise about $(5, 1)$" },
+        { "id": "b", "text": "$90^\\circ$ anticlockwise" },
+        { "id": "c", "text": "About $(5, 1)$" },
+        { "id": "d", "text": "A quarter turn" }
+      ], "answer": "a", "explanation": "A rotation needs its centre, angle and direction." },
+    { "id": "tq7", "type": "fill-blank", "prompt": "Triangle A(3, 2), B(1, 1), C(1, 3) is translated to A′(−2, −3), B′(−4, −4), C′(−4, −2). Give the vector.",
+      "text": "top [[a]], bottom [[b]]",
+      "blanks": [{ "id": "a", "accept": ["-5", "−5"], "size": 3 }, { "id": "b", "accept": ["-5", "−5"], "size": 3 }],
+      "explanation": "$3 - 5 = -2$, $2 - 5 = -3$: $\\begin{pmatrix} -5 \\\\ -5 \\end{pmatrix}$." },
+    { "id": "tq8", "type": "numeric", "prompt": "Point $(3, -1)$ is rotated $180^\\circ$ about the origin. What is the $y$-coordinate of the image?", "answer": 1,
+      "explanation": "$(x, y) \\to (-x, -y)$: $(-3, 1)$." },
+    { "id": "tq9", "type": "fill-blank", "prompt": "Reflect in $x = 1$, then in $x = -1$, then in $x = 2$. The result is a single reflection. In which line?",
+      "text": "$x =$ [[a]]",
+      "blanks": [{ "id": "a", "accept": ["4"], "size": 3 }],
+      "explanation": "The first two give a translation of $2 \\times (-1 - 1) = -4$. Follow a point: $(0, 0) \\to (2, 0) \\to (-4, 0) \\to (8, 0)$, and $(4, 0) \\to (-2, 0) \\to (0, 0) \\to (4, 0)$, so $x = 4$ is fixed: reflection in $x = 4$.",
+      "difficulty": "challenge" },
+    { "id": "tq10", "type": "truefalse", "prompt": "Any combination of reflections, rotations and translations gives an image congruent to the object.", "answer": true,
+      "explanation": "True — none of them changes the size or shape." },
+    { "id": "tq11", "type": "mcq", "prompt": "Reflecting in $x = 5$ and then in $x = 6$ is the same as …",
+      "options": [
+        { "id": "a", "text": "a translation of 2 to the right" }, { "id": "b", "text": "a translation of 1 to the right" },
+        { "id": "c", "text": "a rotation of $180^\\circ$" }, { "id": "d", "text": "a reflection in $x = 11$" }
+      ], "answer": "a", "explanation": "Twice the distance between the lines: $2 \\times 1 = 2$." },
+    { "id": "tq12", "type": "numeric", "prompt": "An enlargement makes a shape's area 9 times bigger. What is the scale factor?", "answer": 3,
+      "explanation": "$k^2 = 9$, so $k = 3$." }
+  ]
+}

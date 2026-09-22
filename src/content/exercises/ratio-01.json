@@ -1,0 +1,127 @@
+{
+  "title": "Practice: ratio problems",
+  "intro": "Ten questions. Find the value of one part first every time.",
+  "questions": [
+    {
+      "id": "r1-q1",
+      "type": "drill",
+      "prompt": "Quick-fire: simplify each ratio. Type it like 3:5.",
+      "durationSec": 60,
+      "count": 8,
+      "pool": [
+        { "id": "s1", "prompt": "$10 : 16$", "accept": ["5:8", "5 : 8"] },
+        { "id": "s2", "prompt": "$48 : 72$", "accept": ["2:3", "2 : 3"] },
+        { "id": "s3", "prompt": "$28 : 35$", "accept": ["4:5", "4 : 5"] },
+        { "id": "s4", "prompt": "$60 : 15 : 45$", "accept": ["4:1:3", "4 : 1 : 3"] },
+        { "id": "s5", "prompt": "$24 : 40$", "accept": ["3:5", "3 : 5"] },
+        { "id": "s6", "prompt": "$18 : 6$", "accept": ["3:1", "3 : 1"] },
+        { "id": "s7", "prompt": "$1\\text{ m} : 25\\text{ cm}$", "accept": ["4:1", "4 : 1"] },
+        { "id": "s8", "prompt": "$22\\text{ kg} : 1500\\text{ g}$", "accept": ["44:3", "44 : 3"] },
+        { "id": "s9", "prompt": "$45 : 30$", "accept": ["3:2", "3 : 2"] },
+        { "id": "s10", "prompt": "$12 : 18 : 30$", "accept": ["2:3:5", "2 : 3 : 5"] }
+      ],
+      "explanation": "Divide every part by the highest common factor. Make units the same first: 1 m = 100 cm, 22 kg = 22 000 g."
+    },
+    {
+      "id": "r1-q2",
+      "type": "table",
+      "prompt": "Share each amount in the ratio given.",
+      "columns": ["Amount", "Ratio", "First share", "Second share"],
+      "rows": [
+        [{ "given": "405 cm" }, { "given": "7 : 8" }, { "answer": "189" }, { "answer": "216" }],
+        [{ "given": "0.24 kg (in g)" }, { "given": "3 : 5" }, { "answer": "90" }, { "answer": "150" }],
+        [{ "given": "0.8 m (in cm)" }, { "given": "2 : 3" }, { "answer": "32" }, { "answer": "48" }]
+      ],
+      "hints": ["$405 \\div 15 = 27$ per part."],
+      "explanation": "$27 \\times 7 = 189$, $27 \\times 8 = 216$. 240 g ÷ 8 = 30. 80 cm ÷ 5 = 16.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "r1-q3",
+      "type": "numeric",
+      "prompt": "Divide 1 hour in the ratio $3 : 7$. How many minutes is the **larger** share?",
+      "answer": 42,
+      "unit": "minutes",
+      "hints": ["Work in minutes: 60 ÷ 10."],
+      "explanation": "One part is 6 minutes, so the shares are 18 and 42 minutes."
+    },
+    {
+      "id": "r1-q4",
+      "type": "fill-blank",
+      "prompt": "The angles of a triangle are in the ratio $3 : 5 : 4$. Find them.",
+      "text": "[[a]]° , [[b]]° , [[c]]°",
+      "blanks": [
+        { "id": "a", "accept": ["45"], "size": 4 },
+        { "id": "b", "accept": ["75"], "size": 4 },
+        { "id": "c", "accept": ["60"], "size": 4 }
+      ],
+      "hints": ["$180 \\div 12 = 15$."],
+      "explanation": "$15 \\times 3 = 45$, $15 \\times 5 = 75$, $15 \\times 4 = 60$."
+    },
+    {
+      "id": "r1-q5",
+      "type": "numeric",
+      "prompt": "130 children voted for the zoo. The ratio of zoo to museum votes was $10 : 3$. How many voted for the museum?",
+      "answer": 39,
+      "hints": ["One part is $130 \\div 10$."],
+      "explanation": "One part is 13, so the museum got $3 \\times 13 = 39$."
+    },
+    {
+      "id": "r1-q6",
+      "type": "steps",
+      "prompt": "Use the difference.",
+      "scenario": "Guntur and Eva share money in the ratio $8 : 5$. Guntur gets 21 dollars more than Eva.",
+      "steps": [
+        { "kind": "numeric", "prompt": "How many more parts does Guntur have?", "answer": 3 },
+        { "kind": "numeric", "prompt": "What is one part worth?", "answer": 7, "unit": "dollars" },
+        { "kind": "numeric", "prompt": "How much does Guntur get?", "answer": 56, "unit": "dollars" },
+        { "kind": "numeric", "prompt": "How much does Eva get?", "answer": 35, "unit": "dollars" }
+      ],
+      "explanation": "3 parts = 21, so 1 part = 7. Guntur $8 \\times 7 = 56$, Eva $5 \\times 7 = 35$. Check: $56 - 35 = 21$ ✓"
+    },
+    {
+      "id": "r1-q7",
+      "type": "mcq",
+      "prompt": "Kamil and Sean share in the ratio $3 : 5$; Sean gets 56 dollars more. Jadee divided 56 by 8. What was her mistake?",
+      "options": [
+        { "id": "a", "text": "56 is the difference, which is 2 parts, not the total of 8 parts" },
+        { "id": "b", "text": "She should have divided by 3" },
+        { "id": "c", "text": "She should have multiplied 56 by 8" },
+        { "id": "d", "text": "There was no mistake" }
+      ],
+      "answer": "a",
+      "hints": ["What does the 56 dollars represent?"],
+      "explanation": "The difference is $5 - 3 = 2$ parts, so one part is 28. Kamil gets 84 and Sean 140."
+    },
+    {
+      "id": "r1-q8",
+      "type": "numeric",
+      "prompt": "A recipe mixes flour, margarine and butter in the ratio $4 : 2 : 1$. If 400 g of margarine is used, what is the **total** mass?",
+      "answer": 1400,
+      "unit": "g",
+      "hints": ["2 parts = 400 g."],
+      "explanation": "One part is 200 g. Total $= 7 \\times 200 = 1400$ g."
+    },
+    {
+      "id": "r1-q9",
+      "type": "fill-blank",
+      "prompt": "Two numbers are in the ratio $9 : 4$ and add up to 169. Find them.",
+      "text": "[[a]] and [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["117"], "size": 5 },
+        { "id": "b", "accept": ["52"], "size": 5 }
+      ],
+      "hints": ["$169 \\div 13$"],
+      "explanation": "One part is 13: $9 \\times 13 = 117$ and $4 \\times 13 = 52$."
+    },
+    {
+      "id": "r1-q10",
+      "type": "numeric",
+      "prompt": "Votes for peach, orange and mango were in the ratio $5 : 9 : 4$. 153 students chose orange. How many voted altogether?",
+      "answer": 306,
+      "hints": ["9 parts = 153."],
+      "explanation": "One part is 17, and there are 18 parts: $18 \\times 17 = 306$.",
+      "difficulty": "challenge"
+    }
+  ]
+}

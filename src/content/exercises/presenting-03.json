@@ -1,0 +1,124 @@
+{
+  "title": "Practice: scatter graphs and correlation",
+  "intro": "Nine questions on describing and using correlation.",
+  "questions": [
+    {
+      "id": "d3-q1",
+      "type": "match",
+      "prompt": "Match each pair of variables to the correlation you would expect.",
+      "left": [
+        { "id": "a", "text": "Height and arm length" },
+        { "id": "b", "text": "Height above sea level and boiling point of water" },
+        { "id": "c", "text": "A person's mass and their history test score" },
+        { "id": "d", "text": "Size of car and fuel economy (km per litre)" }
+      ],
+      "right": [
+        { "id": "p", "text": "Positive" },
+        { "id": "n", "text": "Negative" },
+        { "id": "z", "text": "None" },
+        { "id": "n2", "text": "Negative" }
+      ],
+      "solution": { "a": "p", "b": "n", "c": "z", "d": "n2" },
+      "hints": ["Ask: as the first goes up, what happens to the second?"],
+      "explanation": "Taller people have longer arms (positive). Water boils at a lower temperature higher up (negative). Mass has nothing to do with history scores (none). Bigger cars go fewer km per litre (negative).",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "d3-q2",
+      "type": "hotspot",
+      "prompt": "Time taken to write a name backwards against its number of letters. Click the **outlier**.",
+      "figure": "scatter-graph",
+      "config": {
+        "points": [[3, 2.1], [4, 3.5], [5, 5.5], [5, 4.8], [6, 3.3], [6, 6.2], [7, 7.7], [8, 8], [9, 9.5]],
+        "xLabel": "Number of letters", "yLabel": "Time (s)", "xRange": [2, 10], "yRange": [0, 10]
+      },
+      "answer": "p4",
+      "hints": ["Look for the point furthest from the general upward trend."],
+      "explanation": "The point $(6, 3.3)$ — Hannah — sits well below the trend. Her name is a palindrome, which is why it was so quick."
+    },
+    {
+      "id": "d3-q3",
+      "type": "multi",
+      "prompt": "Select **every** true statement about lines of best fit.",
+      "options": [
+        { "id": "a", "text": "It should follow the trend of the points" },
+        { "id": "b", "text": "It must pass through the origin" },
+        { "id": "c", "text": "There should be roughly as many points above it as below" },
+        { "id": "d", "text": "You should draw one even when there is no correlation" },
+        { "id": "e", "text": "It can be used to estimate one variable from the other" }
+      ],
+      "answers": ["a", "c", "e"],
+      "hints": ["A line of best fit only makes sense when there is a trend."],
+      "explanation": "It follows the trend with points balanced either side and lets you estimate. It does not have to go through the origin, and with no correlation you should not draw one."
+    },
+    {
+      "id": "d3-q4",
+      "type": "numeric",
+      "prompt": "A line of best fit for age against yearly earnings passes through $(25, 22\\,000)$ and $(57, 36\\,000)$. Estimate the earnings of a 48-year-old, to the nearest thousand dollars.",
+      "answer": 32000,
+      "tolerance": 600,
+      "unit": "dollars",
+      "hints": ["The gradient is $14\\,000 \\div 32 = 437.5$ dollars per year."],
+      "explanation": "$22\\,000 + 23 \\times 437.5 = 32\\,062.5 \\approx 32\\,000$ dollars."
+    },
+    {
+      "id": "d3-q5",
+      "type": "numeric",
+      "prompt": "Using the same line, estimate the age of someone earning 23 000 dollars a year.",
+      "answer": 27,
+      "tolerance": 1,
+      "unit": "years",
+      "hints": ["$23\\,000$ is $1000$ more than $22\\,000$. How many years is that at $437.5$ per year?"],
+      "explanation": "$1000 \\div 437.5 \\approx 2.3$ years, so about $25 + 2.3 \\approx 27$ years old."
+    },
+    {
+      "id": "d3-q6",
+      "type": "mcq",
+      "prompt": "Height above sea level (m) and boiling point (°C): (1000, 96), (1600, 94), (2200, 92), (3600, 88), (4800, 84), (6400, 78), (7200, 76). Estimate the boiling point at 3000 m.",
+      "options": [
+        { "id": "a", "text": "About 90 °C" },
+        { "id": "b", "text": "About 95 °C" },
+        { "id": "c", "text": "About 85 °C" },
+        { "id": "d", "text": "About 100 °C" }
+      ],
+      "answer": "a",
+      "hints": ["3000 m lies between 2200 m (92 °C) and 3600 m (88 °C)."],
+      "explanation": "Between 92 °C and 88 °C, a little over halfway — about 90 °C. The data shows strong negative correlation."
+    },
+    {
+      "id": "d3-q7",
+      "type": "hotspot",
+      "prompt": "Book pages against mass (g). Which point is the heaviest book? Click it.",
+      "figure": "scatter-graph",
+      "config": {
+        "points": [[180, 360], [65, 150], [100, 200], [122, 255], [112, 240], [94, 185], [143, 300], [68, 170], [137, 265], [165, 345]],
+        "xLabel": "Number of pages", "yLabel": "Mass (g)", "xRange": [50, 200], "yRange": [100, 400]
+      },
+      "answer": "p0",
+      "hints": ["The heaviest book is the highest point."],
+      "explanation": "The highest point is $(180, 360)$ — the book with the most pages is also the heaviest, which fits the strong positive correlation."
+    },
+    {
+      "id": "d3-q8",
+      "type": "truefalse",
+      "prompt": "If two variables show a strong positive correlation, an increase in one must **cause** an increase in the other.",
+      "answer": false,
+      "hints": ["Think of ice-cream sales and sunburn."],
+      "explanation": "False. Correlation shows a link, not a cause. Both could be caused by something else (such as hot weather), or it could be coincidence."
+    },
+    {
+      "id": "d3-q9",
+      "type": "mcq",
+      "prompt": "Habibah plots arm length against hours of TV for five friends and sees a positive correlation. What is the best response?",
+      "options": [
+        { "id": "a", "text": "Five people is too small a sample, and there is no sensible link — it is probably coincidence" },
+        { "id": "b", "text": "Longer arms make people watch more TV" },
+        { "id": "c", "text": "Watching TV makes your arms grow" },
+        { "id": "d", "text": "The graph must have been drawn wrongly" }
+      ],
+      "answer": "a",
+      "hints": ["How much can you conclude from five people?"],
+      "explanation": "A tiny sample can easily show a pattern by chance, and there is no plausible reason for a link. The graph may be correct — the conclusion is what is wrong."
+    }
+  ]
+}

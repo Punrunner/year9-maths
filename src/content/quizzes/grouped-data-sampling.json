@@ -1,0 +1,258 @@
+{
+  "title": "Grouped data and sampling quiz",
+  "topic": "grouped-data-sampling",
+  "description": "Ten questions drawn at random from a bank of thirteen, covering the estimated mean, modal and median classes, the estimated range, and fair sampling. A calculator is allowed.",
+  "pick": 10,
+  "timeLimitSec": 1200,
+  "passMark": 70,
+  "questions": [
+    {
+      "id": "gq1",
+      "type": "numeric",
+      "prompt": "What is the midpoint of the class $135 \\le m < 140$?",
+      "answer": 137.5,
+      "explanation": "$\\frac{135 + 140}{2} = 137.5$."
+    },
+    {
+      "id": "gq2",
+      "type": "numeric",
+      "prompt": "Amounts spent by 25 children: 35 dollars: 2 children, 40 dollars: 4, 45 dollars: 7, 50 dollars: 9, 55 dollars: 3. Calculate the mean amount spent.",
+      "answer": 46.4,
+      "tolerance": 0.01,
+      "unit": "dollars",
+      "explanation": "$\\Sigma fx = 70 + 160 + 315 + 450 + 165 = 1160$ and $\\Sigma f = 25$, so the mean is $1160 \\div 25 = 46.40$ dollars. (These are exact values, not classes, so this mean is exact.)"
+    },
+    {
+      "id": "gq3",
+      "type": "numeric",
+      "prompt": "Heights: $150$–$160$ cm: 6, $160$–$170$ cm: 10, $170$–$180$ cm: 4. Estimate the mean height.",
+      "answer": 164,
+      "tolerance": 0.01,
+      "unit": "cm",
+      "explanation": "Midpoints 155, 165, 175. $\\Sigma fx = 930 + 1650 + 700 = 3280$, and $3280 \\div 20 = 164$ cm."
+    },
+    {
+      "id": "gq4",
+      "type": "mcq",
+      "prompt": "Why is a mean calculated from a grouped frequency table only an estimate?",
+      "options": [
+        {
+          "id": "a",
+          "text": "We use midpoints because the exact values are not known"
+        },
+        {
+          "id": "b",
+          "text": "Because the frequencies might be wrong"
+        },
+        {
+          "id": "c",
+          "text": "Because the mean is always rounded"
+        },
+        {
+          "id": "d",
+          "text": "It is not an estimate — it is exact"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Grouping hides the exact values, so each class is represented by its midpoint."
+    },
+    {
+      "id": "gq5",
+      "type": "numeric",
+      "prompt": "Times: $15 \\le t < 19$ is the first class and $35 \\le t < 39$ is the last. Estimate the range.",
+      "answer": 24,
+      "unit": "s",
+      "explanation": "$39 - 15 = 24$ s."
+    },
+    {
+      "id": "gq6",
+      "type": "mcq",
+      "prompt": "Distances: $0$–$1$ km: 10, $1$–$2$ km: 15, $2$–$3$ km: 7, $3$–$4$ km: 2, $4$–$5$ km: 1. What is the modal class?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1 \\le d < 2$"
+        },
+        {
+          "id": "b",
+          "text": "$0 \\le d < 1$"
+        },
+        {
+          "id": "c",
+          "text": "$2 \\le d < 3$"
+        },
+        {
+          "id": "d",
+          "text": "$15$"
+        }
+      ],
+      "answer": "a",
+      "explanation": "The highest frequency, 15, is in $1 \\le d < 2$."
+    },
+    {
+      "id": "gq7",
+      "type": "mcq",
+      "prompt": "For the same 35 students, which class contains the median distance?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1 \\le d < 2$"
+        },
+        {
+          "id": "b",
+          "text": "$0 \\le d < 1$"
+        },
+        {
+          "id": "c",
+          "text": "$2 \\le d < 3$"
+        },
+        {
+          "id": "d",
+          "text": "$3 \\le d < 4$"
+        }
+      ],
+      "answer": "a",
+      "explanation": "The median is the 18th value. Running totals are 10, 25, … so values 11 to 25 are in $1 \\le d < 2$."
+    },
+    {
+      "id": "gq8",
+      "type": "numeric",
+      "prompt": "There are 60 values in a grouped table. In which position is the median?",
+      "answer": 30.5,
+      "explanation": "$\\frac{60 + 1}{2} = 30.5$ — halfway between the 30th and 31st values."
+    },
+    {
+      "id": "gq9",
+      "type": "truefalse",
+      "prompt": "Regrouping the same data into different classes can change the modal class.",
+      "answer": true,
+      "explanation": "True. The modal class depends on how the classes are chosen, not only on the data."
+    },
+    {
+      "id": "gq10",
+      "type": "multi",
+      "prompt": "Select **every** example of **secondary** data.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Population figures from a government website"
+        },
+        {
+          "id": "b",
+          "text": "Your own stopwatch timings of classmates running 100 m"
+        },
+        {
+          "id": "c",
+          "text": "A newspaper's table of football results"
+        },
+        {
+          "id": "d",
+          "text": "A tally chart you filled in by counting cars"
+        }
+      ],
+      "answers": [
+        "a",
+        "c"
+      ],
+      "explanation": "Secondary data was collected by someone else: the website and the newspaper. The other two you collected yourself, so they are primary."
+    },
+    {
+      "id": "gq11",
+      "type": "mcq",
+      "prompt": "To find out what films people like, Tom asks the first 50 people into a cinema. 38 are men. What is the main problem?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The sample is unintentionally biased towards men's opinions"
+        },
+        {
+          "id": "b",
+          "text": "50 people is far too many"
+        },
+        {
+          "id": "c",
+          "text": "Film preference is quantitative data"
+        },
+        {
+          "id": "d",
+          "text": "There is no problem"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Tom did not mean to, but his sample over-represents men, so the results may not reflect everyone's views."
+    },
+    {
+      "id": "gq12",
+      "type": "match",
+      "prompt": "Match each variable to its type.",
+      "left": [
+        {
+          "id": "a",
+          "text": "Eye colour"
+        },
+        {
+          "id": "b",
+          "text": "Time to run 100 m"
+        },
+        {
+          "id": "c",
+          "text": "Country you live in"
+        },
+        {
+          "id": "d",
+          "text": "Number of siblings"
+        }
+      ],
+      "right": [
+        {
+          "id": "q1",
+          "text": "Qualitative"
+        },
+        {
+          "id": "n1",
+          "text": "Quantitative"
+        },
+        {
+          "id": "q2",
+          "text": "Qualitative"
+        },
+        {
+          "id": "n2",
+          "text": "Quantitative"
+        }
+      ],
+      "solution": {
+        "a": "q1",
+        "b": "n1",
+        "c": "q2",
+        "d": "n2"
+      },
+      "explanation": "Descriptions (eye colour, country) are qualitative. Numbers (a time, a count) are quantitative."
+    },
+    {
+      "id": "gq13",
+      "type": "mcq",
+      "prompt": "Which is the best survey question?",
+      "options": [
+        {
+          "id": "a",
+          "text": "How many hours of TV do you watch on a school night? 0–1 / 1–2 / 2–3 / more than 3"
+        },
+        {
+          "id": "b",
+          "text": "Don't you think you watch too much TV?"
+        },
+        {
+          "id": "c",
+          "text": "Do you watch TV?"
+        },
+        {
+          "id": "d",
+          "text": "How much TV do you watch?"
+        }
+      ],
+      "answer": "a",
+      "explanation": "a is neutral, specific (school nights, hours) and has clear options. b is leading, c gives almost no information, and d is too vague."
+    }
+  ]
+}

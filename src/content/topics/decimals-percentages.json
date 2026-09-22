@@ -1,0 +1,20 @@
+{
+  "title": "Decimals & Percentages",
+  "description": "Estimation, multiplying and dividing decimals, and compound percentage change.",
+  "strand": "number-algebra",
+  "order": 14,
+  "difficulty": "core",
+  "objectives": [
+    "Estimate the answer to a calculation by rounding",
+    "Multiply and divide decimals without a calculator",
+    "Calculate repeated (compound) percentage change"
+  ],
+  "keywords": [
+    "estimate",
+    "decimal",
+    "percentage",
+    "compound interest",
+    "depreciation",
+    "multiplier"
+  ]
+}

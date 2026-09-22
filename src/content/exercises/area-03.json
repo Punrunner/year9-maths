@@ -1,0 +1,150 @@
+{
+  "title": "Practice: surface area",
+  "intro": "Nine questions, including two where you click parts of a cylinder and a guided walk through a cylinder's surface area.",
+  "questions": [
+    {
+      "id": "a3-q1",
+      "type": "multi",
+      "prompt": "Select **every** solid that is a prism.",
+      "options": [
+        { "id": "a", "text": "A cuboid" },
+        { "id": "b", "text": "A cylinder" },
+        { "id": "c", "text": "A cone" },
+        { "id": "d", "text": "A triangular prism" },
+        { "id": "e", "text": "A sphere" }
+      ],
+      "answers": ["a", "b", "d"],
+      "hints": [
+        "A prism has the same cross-section all the way along.",
+        "Imagine slicing each one like a loaf — do all the slices match?"
+      ],
+      "explanation": "Slice a cuboid, cylinder or triangular prism anywhere along its length and every slice is identical, so all three are prisms. A cone's circles shrink towards the point and a sphere's change throughout, so neither is.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a3-q2",
+      "type": "hotspot",
+      "prompt": "**Click the curved surface** of this cylinder — the part that unrolls into a rectangle.",
+      "figure": "cylinder",
+      "answer": "curved-surface",
+      "hints": ["It is the part a label would cover."],
+      "explanation": "The curved surface is the “label”. Unrolled it becomes a rectangle $2\\pi r$ wide and $h$ tall, which is why its area is $2\\pi r h$."
+    },
+    {
+      "id": "a3-q3",
+      "type": "hotspot",
+      "prompt": "**Click the radius** of the cylinder's circular face.",
+      "figure": "cylinder",
+      "answer": "radius",
+      "hints": ["It runs from the centre of the top circle to its edge."],
+      "explanation": "The radius of the circular face is what both parts of the formula need: $\\pi r^2$ for the ends and $2\\pi r h$ for the curved surface."
+    },
+    {
+      "id": "a3-q4",
+      "type": "numeric",
+      "prompt": "Find the total surface area of a cuboid measuring $6\\ \\text{cm}$ by $3\\ \\text{cm}$ by $4\\ \\text{cm}$.",
+      "answer": 108,
+      "unit": "cm²",
+      "hints": [
+        "A cuboid has three pairs of identical faces.",
+        "Work out $6\\times3$, $6\\times4$ and $3\\times4$, add them, then double."
+      ],
+      "explanation": "$18 + 24 + 12 = 54$, and doubling for the matching opposite faces gives $108\\ \\text{cm}^2$."
+    },
+    {
+      "id": "a3-q5",
+      "type": "table",
+      "prompt": "Complete the face-by-face table for a cuboid $5\\ \\text{cm} \\times 2\\ \\text{cm} \\times 3\\ \\text{cm}$.",
+      "columns": ["Pair of faces", "Area of one face ($\\text{cm}^2$)", "Area of both ($\\text{cm}^2$)"],
+      "rows": [
+        [{ "given": "$5 \\times 2$" }, { "answer": "10" }, { "answer": "20" }],
+        [{ "given": "$5 \\times 3$" }, { "answer": "15" }, { "answer": "30" }],
+        [{ "given": "$2 \\times 3$" }, { "answer": "6" }, { "answer": "12" }],
+        [{ "given": "**Total**" }, { "given": "—" }, { "answer": "62" }]
+      ],
+      "hints": [
+        "Multiply the two dimensions for one face, then double it.",
+        "The total is the sum of the three “both” values."
+      ],
+      "explanation": "$20 + 30 + 12 = 62\\ \\text{cm}^2$. Laying it out as a table like this is the surest way not to lose a face."
+    },
+    {
+      "id": "a3-q6",
+      "type": "steps",
+      "prompt": "Find the surface area of a cylinder, step by step.",
+      "scenario": "A cylinder has radius $6\\ \\text{cm}$ and height $10\\ \\text{cm}$. Use $\\pi = 3.14$.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "Find the area of **one** circular end, in $\\text{cm}^2$.",
+          "answer": 113.04,
+          "tolerance": 0.5,
+          "feedback": "$\\pi r^2 = 3.14 \\times 36 = 113.04$.",
+          "hint": "$\\pi r^2$, with $r = 6$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "There are two ends. What is their combined area?",
+          "answer": 226.08,
+          "tolerance": 1,
+          "feedback": "$2 \\times 113.04 = 226.08$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Now the curved surface: $2\\pi r h$. What is its area?",
+          "answer": 376.8,
+          "tolerance": 1.5,
+          "feedback": "$2 \\times 3.14 \\times 6 \\times 10 = 376.8$.",
+          "hint": "Circumference $\\times$ height."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Add the two parts for the total surface area.",
+          "answer": 602.88,
+          "tolerance": 2.5,
+          "feedback": "$226.08 + 376.8 = 602.88\\ \\text{cm}^2$."
+        }
+      ],
+      "hints": ["$\\text{TSA} = 2\\pi r^2 + 2\\pi r h$."],
+      "explanation": "$2\\pi r^2 = 226.08$ and $2\\pi r h = 376.8$, giving $602.88\\ \\text{cm}^2$ in total."
+    },
+    {
+      "id": "a3-q7",
+      "type": "numeric",
+      "prompt": "A triangular prism has a right-angled triangular cross-section with sides $3\\ \\text{cm}$, $4\\ \\text{cm}$ and $5\\ \\text{cm}$, and length $12\\ \\text{cm}$. Find its total surface area.",
+      "answer": 156,
+      "unit": "cm²",
+      "hints": [
+        "Two triangular ends, each $\\frac{1}{2} \\times 3 \\times 4$.",
+        "Three rectangles, each $12$ long and as wide as one triangle side."
+      ],
+      "explanation": "Ends: $2 \\times 6 = 12$. Rectangles: $12 \\times (3 + 4 + 5) = 12 \\times 12 = 144$. Total $= 156\\ \\text{cm}^2$. Notice the shortcut — the perimeter of the cross-section times the length.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a3-q8",
+      "type": "flashcards",
+      "prompt": "Flip through the area and surface-area formulas until each one comes to you before you turn the card.",
+      "cards": [
+        { "id": "f1", "front": "Area of a circle", "back": "$A = \\pi r^2$" },
+        { "id": "f2", "front": "Circumference of a circle", "back": "$C = 2\\pi r = \\pi d$" },
+        { "id": "f3", "front": "Area of a triangle", "back": "$A = \\frac{1}{2} \\times \\text{base} \\times \\text{height}$" },
+        { "id": "f4", "front": "Area of a trapezium", "back": "$A = \\frac{1}{2}(a + b)h$" },
+        { "id": "f5", "front": "Curved surface area of a cylinder", "back": "$2\\pi r h$ — a rectangle, circumference wide by $h$ tall" },
+        { "id": "f6", "front": "Total surface area of a cylinder", "back": "$2\\pi r^2 + 2\\pi r h$" },
+        { "id": "f7", "front": "Total surface area of any prism", "back": "$2 \\times \\text{cross-section} + \\text{perimeter} \\times \\text{length}$" },
+        { "id": "f8", "front": "Units for surface area", "back": "Always squared: $\\text{cm}^2$, $\\text{m}^2$" }
+      ],
+      "explanation": "These eight cover every surface-area question in this topic."
+    },
+    {
+      "id": "a3-q9",
+      "type": "truefalse",
+      "prompt": "**A cylindrical tin with no lid has surface area $2\\pi r^2 + 2\\pi r h$.**",
+      "answer": false,
+      "hints": ["How many circular faces does an open tin actually have?"],
+      "explanation": "False. With no lid there is only **one** circle, so the surface area is $\\pi r^2 + 2\\pi r h$. Always count the faces the object really has rather than reaching for the standard formula.",
+      "difficulty": "challenge"
+    }
+  ]
+}

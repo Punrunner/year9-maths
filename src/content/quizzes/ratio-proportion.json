@@ -1,0 +1,45 @@
+{
+  "title": "Ratio and proportion quiz",
+  "topic": "ratio-proportion",
+  "description": "Ten questions drawn at random from a bank of thirteen, covering ratio problems, direct proportion and inverse proportion.",
+  "pick": 10,
+  "timeLimitSec": 900,
+  "passMark": 70,
+  "questions": [
+    { "id": "rq1", "type": "numeric", "prompt": "Share 228 dollars in the ratio $5 : 1 : 6$. What is the largest share?", "answer": 114, "unit": "dollars",
+      "explanation": "$228 \\div 12 = 19$ per part, so the largest share is $6 \\times 19 = 114$." },
+    { "id": "rq2", "type": "fill-blank", "prompt": "Share 2 hours in the ratio $3 : 7 : 5$ (in minutes).", "text": "[[a]], [[b]], [[c]] minutes",
+      "blanks": [{ "id": "a", "accept": ["24"], "size": 4 }, { "id": "b", "accept": ["56"], "size": 4 }, { "id": "c", "accept": ["40"], "size": 4 }],
+      "explanation": "120 minutes ÷ 15 = 8 per part: 24, 56 and 40." },
+    { "id": "rq3", "type": "numeric", "prompt": "Jamil and Sue share money in the ratio $9 : 2$. Sue gets 42 dollars less than Jamil. How much does Jamil get?", "answer": 54, "unit": "dollars",
+      "explanation": "7 parts = 42, so 1 part = 6. Jamil gets $9 \\times 6 = 54$." },
+    { "id": "rq4", "type": "mcq", "prompt": "The angles of a triangle are in the ratio $2 : 3 : 2$. What type of triangle is it?",
+      "options": [
+        { "id": "a", "text": "Isosceles" }, { "id": "b", "text": "Equilateral" },
+        { "id": "c", "text": "Right-angled" }, { "id": "d", "text": "Scalene" }
+      ], "answer": "a",
+      "explanation": "Two angles are equal (both 2 parts), so it is isosceles. (The angles are about $51.4^\\circ$, $77.1^\\circ$, $51.4^\\circ$.)" },
+    { "id": "rq5", "type": "numeric", "prompt": "80 pens are red, blue and black in the ratio $3 : 8 : 5$. What is the probability a random pen is blue?", "answer": "1/2", "accept": ["0.5", "50%"],
+      "explanation": "Blue is 8 of 16 parts: $\\frac{8}{16} = \\frac{1}{2}$ (40 of the 80 pens)." },
+    { "id": "rq6", "type": "fill-blank", "prompt": "Simplify $22\\text{ kg} : 1500\\text{ g}$.", "text": "[[a]] : [[b]]",
+      "blanks": [{ "id": "a", "accept": ["44"], "size": 4 }, { "id": "b", "accept": ["3"], "size": 4 }],
+      "explanation": "$22\\,000 : 1500 = 44 : 3$." },
+    { "id": "rq7", "type": "numeric", "prompt": "5 pens cost 3.40 dollars. How much do 8 pens cost?", "answer": 5.44, "unit": "dollars",
+      "explanation": "One pen costs $3.40 \\div 5 = 0.68$, so 8 cost $5.44$." },
+    { "id": "rq8", "type": "numeric", "prompt": "I change 80 US dollars into 64 euros. How many euros would I get for 73 dollars?", "answer": 58.4, "unit": "euros",
+      "explanation": "The rate is $64 \\div 80 = 0.8$ euros per dollar: $73 \\times 0.8 = 58.4$." },
+    { "id": "rq9", "type": "algebraic", "prompt": "$x$ and $y$ are directly proportional, and $y = 4.5$ when $x = 3$. Write $y$ in terms of $x$.", "answer": "1.5x", "variables": ["x"],
+      "explanation": "The multiplier is $4.5 \\div 3 = 1.5$, so $y = 1.5x$." },
+    { "id": "rq10", "type": "numeric", "prompt": "6 taps fill a tank in 20 minutes. How long would 4 taps take?", "answer": 30, "unit": "minutes",
+      "explanation": "$6 \\times 20 = 120$ tap-minutes; $120 \\div 4 = 30$ minutes." },
+    { "id": "rq11", "type": "numeric", "prompt": "Food for 80 people lasts 60 days. After 15 days, 20 more people join. How many more days will the food last?", "answer": 36, "unit": "days",
+      "explanation": "After 15 days there is enough for 80 people for 45 days: $80 \\times 45 = 3600$ person-days. Shared by 100 people: 36 days." },
+    { "id": "rq12", "type": "truefalse", "prompt": "If $y$ is inversely proportional to $x$, doubling $x$ halves $y$.", "answer": true,
+      "explanation": "True — the product $xy$ stays constant." },
+    { "id": "rq13", "type": "mcq", "prompt": "Rectangles all have an area of 24 cm². How are their lengths and widths related?",
+      "options": [
+        { "id": "a", "text": "Inversely proportional" }, { "id": "b", "text": "Directly proportional" }, { "id": "c", "text": "Not related" }
+      ], "answer": "a", "shuffleOptions": false,
+      "explanation": "$l \\times w = 24$ is constant, so as the length grows the width shrinks — inverse proportion." }
+  ]
+}

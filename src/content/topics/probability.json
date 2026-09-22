@@ -1,0 +1,24 @@
+{
+  "title": "Probability",
+  "description": "Combined events, sample space diagrams, tree diagrams and experimental probability.",
+  "strand": "statistics-probability",
+  "order": 15,
+  "difficulty": "core",
+  "objectives": [
+    "Use the fact that mutually exclusive probabilities add to 1",
+    "List the outcomes of two events in a sample space diagram",
+    "Use a tree diagram to find the probability of combined events",
+    "Compare experimental probability with theoretical probability",
+    "Calculate an expected frequency"
+  ],
+  "keywords": [
+    "probability",
+    "outcome",
+    "independent",
+    "tree diagram",
+    "sample space",
+    "experimental probability",
+    "expected frequency",
+    "relative frequency"
+  ]
+}

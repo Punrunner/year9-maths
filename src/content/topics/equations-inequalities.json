@@ -1,0 +1,21 @@
+{
+  "title": "Equations & Inequalities",
+  "description": "Building and solving linear equations, inequalities, gradients and simultaneous equations.",
+  "strand": "number-algebra",
+  "order": 8,
+  "difficulty": "core",
+  "objectives": [
+    "Construct and solve a linear equation from a problem",
+    "Solve an equation with the unknown in the denominator",
+    "Solve and represent a linear inequality",
+    "Find the gradient of a line from two points",
+    "Solve a pair of simultaneous equations"
+  ],
+  "keywords": [
+    "equation",
+    "solve",
+    "inequality",
+    "simultaneous",
+    "unknown"
+  ]
+}

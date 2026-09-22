@@ -1,0 +1,191 @@
+{
+  "title": "Practice: estimating roots",
+  "intro": "No calculator. Trap each root between two whole numbers, then judge which side it is closer to. Answers within 0.1 of the true value are accepted.",
+  "questions": [
+    {
+      "id": "i2-q1",
+      "type": "drill",
+      "prompt": "Quick-fire: squares, cubes and their roots. Numbers only.",
+      "durationSec": 60,
+      "count": 10,
+      "pool": [
+        { "id": "s1", "prompt": "$13^2$", "accept": ["169"] },
+        { "id": "s2", "prompt": "$\\sqrt{144}$", "accept": ["12"] },
+        { "id": "s3", "prompt": "$4^3$", "accept": ["64"] },
+        { "id": "s4", "prompt": "$\\sqrt[3]{125}$", "accept": ["5"] },
+        { "id": "s5", "prompt": "$\\sqrt{196}$", "accept": ["14"] },
+        { "id": "s6", "prompt": "$7^3$", "accept": ["343"] },
+        { "id": "s7", "prompt": "$\\sqrt[3]{216}$", "accept": ["6"] },
+        { "id": "s8", "prompt": "$15^2$", "accept": ["225"] },
+        { "id": "s9", "prompt": "$\\sqrt{0.36}$", "accept": ["0.6", ".6"] },
+        { "id": "s10", "prompt": "$\\sqrt[3]{-8}$", "accept": ["-2"] },
+        { "id": "s11", "prompt": "$\\sqrt{121}$", "accept": ["11"] },
+        { "id": "s12", "prompt": "$9^3$", "accept": ["729"] },
+        { "id": "s13", "prompt": "$\\sqrt{0.09}$", "accept": ["0.3", ".3"] },
+        { "id": "s14", "prompt": "$\\sqrt[3]{512}$", "accept": ["8"] },
+        { "id": "s15", "prompt": "$17^2$", "accept": ["289"] },
+        { "id": "s16", "prompt": "$\\sqrt[3]{1000}$", "accept": ["10"] }
+      ],
+      "explanation": "Every estimate in this lesson starts from these facts. If any of them slowed you down, write out the tables of squares to $20^2$ and cubes to $10^3$ and learn them."
+    },
+    {
+      "id": "i2-q2",
+      "type": "mcq",
+      "prompt": "Which of these estimates is **obviously wrong**?",
+      "options": [
+        { "id": "a", "text": "$\\sqrt{50} \\approx 6.9$" },
+        { "id": "b", "text": "$\\sqrt{20} \\approx 5.1$" },
+        { "id": "c", "text": "$\\sqrt{3} \\approx 1.7$" },
+        { "id": "d", "text": "$\\sqrt{95} \\approx 9.7$" }
+      ],
+      "answer": "b",
+      "hints": ["What is $5^2$? Is it more or less than 20?"],
+      "explanation": "$5^2 = 25$, which is already bigger than 20, so $\\sqrt{20}$ must be **less** than 5. (It is about 4.5.) The others are all sensible: $\\sqrt{50}$ is just above 7, so 6.9 is a slight underestimate but close."
+    },
+    {
+      "id": "i2-q3",
+      "type": "multi",
+      "prompt": "Select **every** statement that is true.",
+      "options": [
+        { "id": "a", "text": "$\\sqrt{69} < 9$" },
+        { "id": "b", "text": "$7 < \\sqrt{42}$" },
+        { "id": "c", "text": "$2 < \\sqrt{6} < 3$" },
+        { "id": "d", "text": "$2 < \\sqrt[3]{6} < 3$" },
+        { "id": "e", "text": "$10 < \\sqrt{101} < 11$" },
+        { "id": "f", "text": "$5 < \\sqrt[3]{133} < 6$" }
+      ],
+      "answers": ["a", "c", "e", "f"],
+      "hints": [
+        "Square (or cube) each whole number and compare with the number under the root.",
+        "$\\sqrt[3]{6}$: is 6 between $2^3 = 8$ and $3^3 = 27$?"
+      ],
+      "explanation": "a: $9^2 = 81 > 69$ ✓. b: $7^2 = 49 > 42$, so $\\sqrt{42} < 7$ ✗. c: $4 < 6 < 9$ ✓. d: $6 < 8 = 2^3$, so $\\sqrt[3]{6} < 2$ ✗. e: $100 < 101 < 121$ ✓. f: $125 < 133 < 216$ ✓."
+    },
+    {
+      "id": "i2-q4",
+      "type": "steps",
+      "prompt": "Estimate $\\sqrt{59}$ one step at a time.",
+      "scenario": "Estimate $\\sqrt{59}$ to 1 decimal place without a calculator.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "What is the largest square number **below** 59?",
+          "answer": 49,
+          "feedback": "$7^2 = 49$.",
+          "hint": "Go through $6^2, 7^2, 8^2$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "What is the smallest square number **above** 59?",
+          "answer": 64,
+          "feedback": "$8^2 = 64$, so $7 < \\sqrt{59} < 8$."
+        },
+        {
+          "kind": "mcq",
+          "prompt": "Which is $\\sqrt{59}$ closer to?",
+          "options": [
+            { "id": "7", "text": "7" },
+            { "id": "8", "text": "8" }
+          ],
+          "answer": "8",
+          "feedback": "59 is 5 below 64 but 10 above 49, so it is closer to 8."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Give your estimate of $\\sqrt{59}$ to 1 decimal place.",
+          "answer": 7.7,
+          "tolerance": 0.11,
+          "feedback": "$7.7^2 = 59.29$, very close. In fact $\\sqrt{59} = 7.68\\dots$",
+          "hint": "Try squaring 7.6 and 7.7 to see which lands nearer 59."
+        }
+      ],
+      "explanation": "$49 < 59 < 64$ so $7 < \\sqrt{59} < 8$. 59 is closer to 64, and checking gives $7.7^2 = 59.29$, so $\\sqrt{59} \\approx 7.7$."
+    },
+    {
+      "id": "i2-q5",
+      "type": "table",
+      "prompt": "Complete the table. Give each estimate to 1 decimal place.",
+      "columns": ["Root", "Square/cube number below", "Square/cube number above", "Estimate"],
+      "rows": [
+        [{ "given": "√32" }, { "answer": "25" }, { "answer": "36" }, { "answer": "5.7", "tolerance": 0.11 }],
+        [{ "given": "√75" }, { "answer": "64" }, { "answer": "81" }, { "answer": "8.7", "tolerance": 0.11 }],
+        [{ "given": "∛35" }, { "answer": "27" }, { "answer": "64" }, { "answer": "3.3", "tolerance": 0.11 }],
+        [{ "given": "∛150" }, { "answer": "125" }, { "answer": "216" }, { "answer": "5.3", "tolerance": 0.11 }]
+      ],
+      "hints": [
+        "For a square root use $1, 4, 9, 16, 25, \\dots$; for a cube root use $1, 8, 27, 64, 125, \\dots$",
+        "The estimate must sit between the roots of the two numbers you wrote."
+      ],
+      "explanation": "$\\sqrt{32} = 5.66\\dots$, $\\sqrt{75} = 8.66\\dots$, $\\sqrt[3]{35} = 3.27\\dots$ and $\\sqrt[3]{150} = 5.31\\dots$ Anything within 0.1 of these is a good estimate."
+    },
+    {
+      "id": "i2-q6",
+      "type": "numeric",
+      "prompt": "A square has an area of $17\\ \\text{cm}^2$. Estimate its side length to the nearest millimetre.",
+      "answer": 4.1,
+      "tolerance": 0.05,
+      "unit": "cm",
+      "hints": [
+        "The side length is $\\sqrt{17}$.",
+        "$16 < 17 < 25$, and 17 is very close to 16."
+      ],
+      "explanation": "Side $= \\sqrt{17}$. Since $\\sqrt{16} = 4$ and 17 is only just above 16, the side is just over 4 cm. $4.1^2 = 16.81$ and $4.2^2 = 17.64$, so to the nearest millimetre it is $4.1$ cm (41 mm)."
+    },
+    {
+      "id": "i2-q7",
+      "type": "numeric",
+      "prompt": "A cube has a volume of $70\\ \\text{cm}^3$. Estimate its side length to the nearest millimetre.",
+      "answer": 4.1,
+      "tolerance": 0.05,
+      "unit": "cm",
+      "hints": [
+        "The side length is $\\sqrt[3]{70}$.",
+        "$4^3 = 64$ and $5^3 = 125$."
+      ],
+      "explanation": "Side $= \\sqrt[3]{70}$. $64 < 70 < 125$ so the side is between 4 and 5 cm, much closer to 4. $4.1^3 = 68.9$ and $4.2^3 = 74.1$, so the side is $4.1$ cm to the nearest millimetre.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "i2-q8",
+      "type": "fill-blank",
+      "prompt": "$n$ is a positive integer. List every possible value of $n$, separated by commas.",
+      "text": "If $2 < \\sqrt{n} < 3$ then $n$ = [[a]]. If $\\sqrt[3]{n} < 2$ then $n$ = [[b]].",
+      "blanks": [
+        { "id": "a", "accept": ["5, 6, 7, 8", "5,6,7,8", "5 6 7 8"], "size": 10 },
+        { "id": "b", "accept": ["1, 2, 3, 4, 5, 6, 7", "1,2,3,4,5,6,7", "1 2 3 4 5 6 7"], "size": 14 }
+      ],
+      "hints": [
+        "Square every part: $4 < n < 9$.",
+        "Cube every part of the second: $n < 8$."
+      ],
+      "explanation": "Squaring $2 < \\sqrt{n} < 3$ gives $4 < n < 9$, so $n = 5, 6, 7, 8$. Cubing $\\sqrt[3]{n} < 2$ gives $n < 8$, and $n$ is a positive integer, so $n = 1, 2, 3, 4, 5, 6, 7$."
+    },
+    {
+      "id": "i2-q9",
+      "type": "numeric",
+      "prompt": "Estimate the **negative** square root of $0.45$ to 2 decimal places.",
+      "answer": -0.67,
+      "tolerance": 0.015,
+      "hints": [
+        "$0.6^2 = 0.36$ and $0.7^2 = 0.49$.",
+        "0.45 is much closer to 0.49, so try $0.67^2$."
+      ],
+      "explanation": "$0.36 < 0.45 < 0.49$, so $0.6 < \\sqrt{0.45} < 0.7$. $0.67^2 = 0.4489$ and $0.68^2 = 0.4624$, so $\\sqrt{0.45} \\approx 0.67$ and the negative root is $-0.67$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "i2-q10",
+      "type": "manipulable",
+      "prompt": "Drag the marker to your estimate of $\\sqrt[3]{-15}$.",
+      "widget": "number-line",
+      "config": { "min": -4, "max": 0, "step": 0.1, "majorStep": 1, "label": "Value" },
+      "target": { "x": -2.5 },
+      "tolerance": 0.15,
+      "hints": [
+        "$(-2)^3 = -8$ and $(-3)^3 = -27$.",
+        "15 is 7 away from 8 and 12 away from 27, so a little nearer $-2$."
+      ],
+      "explanation": "$-27 < -15 < -8$, so $-3 < \\sqrt[3]{-15} < -2$. It is slightly closer to $-2$. In fact $\\sqrt[3]{-15} = -2.47\\dots \\approx -2.5$."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Geometry",
+  "description": "Angles in polygons, tessellations, multi-step angle problems and coordinates on a line segment.",
+  "strand": "measurement-geometry",
+  "order": 9,
+  "difficulty": "core",
+  "objectives": [
+    "Find interior and exterior angles of a polygon",
+    "Explain why a shape does or does not tessellate",
+    "Solve angle problems using several rules together",
+    "Find the midpoint and points that divide a line segment"
+  ],
+  "keywords": [
+    "angles",
+    "polygon",
+    "interior angle",
+    "exterior angle",
+    "tessellation",
+    "midpoint"
+  ]
+}

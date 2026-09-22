@@ -1,0 +1,129 @@
+{
+  "title": "Practice: multiplying and dividing decimals",
+  "intro": "Ten questions, no calculator.",
+  "questions": [
+    {
+      "id": "c2-q1",
+      "type": "multi",
+      "prompt": "Which calculations have answers **less than 30**?",
+      "options": [
+        { "id": "a", "text": "$30 \\times 1.8$" },
+        { "id": "b", "text": "$30 \\div 0.8$" },
+        { "id": "c", "text": "$30 \\times 0.5$" },
+        { "id": "d", "text": "$30 \\div 2.7$" },
+        { "id": "e", "text": "$30 \\div 0.1$" },
+        { "id": "f", "text": "$30 \\times \\frac{1}{3}$" }
+      ],
+      "answers": ["c", "d", "f"],
+      "hints": ["Multiplying by less than 1 or dividing by more than 1 makes it smaller."],
+      "explanation": "c and f multiply by less than 1; d divides by more than 1. a multiplies by more than 1; b and e divide by less than 1.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "c2-q2",
+      "type": "drill",
+      "prompt": "Quick-fire: multiply.",
+      "durationSec": 75,
+      "count": 8,
+      "pool": [
+        { "id": "a", "prompt": "$1.5 \\times 0.5$", "accept": ["0.75"] },
+        { "id": "b", "prompt": "$6.2 \\times 0.8$", "accept": ["4.96"] },
+        { "id": "c", "prompt": "$0.8 \\times 0.3$", "accept": ["0.24"] },
+        { "id": "d", "prompt": "$0.84 \\times 0.6$", "accept": ["0.504"] },
+        { "id": "e", "prompt": "$-1.3 \\times 2.4$", "accept": ["-3.12"] },
+        { "id": "f", "prompt": "$0.94 \\times 3.1$", "accept": ["2.914"] },
+        { "id": "g", "prompt": "$0.2 \\times 0.03$", "accept": ["0.006"] },
+        { "id": "h", "prompt": "$1.2 \\times 1.2$", "accept": ["1.44"] },
+        { "id": "i", "prompt": "$0.5 \\times 0.5$", "accept": ["0.25"] },
+        { "id": "j", "prompt": "$-0.7 \\times -0.9$", "accept": ["0.63"] }
+      ],
+      "explanation": "Multiply the whole numbers, then count the decimal places in the question."
+    },
+    {
+      "id": "c2-q3",
+      "type": "numeric",
+      "prompt": "Work out $0.68 \\times 0.045$.",
+      "answer": 0.0306,
+      "hints": ["$68 \\times 45 = 3060$, and there are 5 decimal places."],
+      "explanation": "$0.03060 = 0.0306$."
+    },
+    {
+      "id": "c2-q4",
+      "type": "drill",
+      "prompt": "Quick-fire: divide.",
+      "durationSec": 75,
+      "count": 8,
+      "pool": [
+        { "id": "a", "prompt": "$8 \\div 0.2$", "accept": ["40"] },
+        { "id": "b", "prompt": "$6 \\div 0.3$", "accept": ["20"] },
+        { "id": "c", "prompt": "$12 \\div -0.4$", "accept": ["-30"] },
+        { "id": "d", "prompt": "$12 \\div 0.04$", "accept": ["300"] },
+        { "id": "e", "prompt": "$-9 \\div -0.3$", "accept": ["30"] },
+        { "id": "f", "prompt": "$16 \\div 0.08$", "accept": ["200"] },
+        { "id": "g", "prompt": "$8.5 \\div 0.5$", "accept": ["17"] },
+        { "id": "h", "prompt": "$6.4 \\div 0.04$", "accept": ["160"] },
+        { "id": "i", "prompt": "$0.64 \\div -0.4$", "accept": ["-1.6"] },
+        { "id": "j", "prompt": "$3.4 \\div 0.2$", "accept": ["17"] }
+      ],
+      "explanation": "Multiply both numbers by 10 or 100 until the divisor is a whole number."
+    },
+    {
+      "id": "c2-q5",
+      "type": "steps",
+      "prompt": "Divide one step at a time.",
+      "scenario": "Work out $0.028 \\div 0.04$.",
+      "steps": [
+        { "kind": "numeric", "prompt": "What must you multiply both numbers by to make 0.04 a whole number?", "answer": 100 },
+        { "kind": "numeric", "prompt": "The calculation becomes $2.8 \\div \\square$. What is the box?", "answer": 4 },
+        { "kind": "numeric", "prompt": "What is the answer?", "answer": 0.7 }
+      ],
+      "explanation": "$\\frac{0.028 \\times 100}{0.04 \\times 100} = \\frac{2.8}{4} = 0.7$."
+    },
+    {
+      "id": "c2-q6",
+      "type": "multi",
+      "prompt": "Which answers are **clearly incorrect**?",
+      "options": [
+        { "id": "a", "text": "$47 \\times 0.83 = 39.01$" },
+        { "id": "b", "text": "$59 \\div 2.5 = 23.6$" },
+        { "id": "c", "text": "$3.8 \\times 1.6 = 2.28$" },
+        { "id": "d", "text": "$17 \\div 0.32 = 5.44$" }
+      ],
+      "answers": ["c", "d"],
+      "hints": ["Multiplying by 1.6 should make 3.8 bigger."],
+      "explanation": "c got smaller when multiplied by more than 1; d got smaller when divided by less than 1. a and b behave as expected (and are correct)."
+    },
+    {
+      "id": "c2-q7",
+      "type": "numeric",
+      "prompt": "A ball of string contains 21.6 m. How many 0.16 m lengths can be cut from it?",
+      "answer": 135,
+      "hints": ["$21.6 \\div 0.16 = 2160 \\div 16$"],
+      "explanation": "$2160 \\div 16 = 135$."
+    },
+    {
+      "id": "c2-q8",
+      "type": "numeric",
+      "prompt": "How many 0.3-litre bottles can be filled from an urn containing 45.9 litres?",
+      "answer": 153,
+      "explanation": "$45.9 \\div 0.3 = 459 \\div 3 = 153$."
+    },
+    {
+      "id": "c2-q9",
+      "type": "numeric",
+      "prompt": "A field has area 100.8 m² and length 14.4 m. What is its width?",
+      "answer": 7,
+      "unit": "m",
+      "explanation": "$100.8 \\div 14.4 = 1008 \\div 144 = 7$ m."
+    },
+    {
+      "id": "c2-q10",
+      "type": "numeric",
+      "prompt": "Work out $30 + 2.8 \\div 0.04$.",
+      "answer": 100,
+      "hints": ["Division before addition."],
+      "explanation": "$2.8 \\div 0.04 = 70$, then $30 + 70 = 100$.",
+      "difficulty": "challenge"
+    }
+  ]
+}

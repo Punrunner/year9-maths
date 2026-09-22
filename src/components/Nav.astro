@@ -1,0 +1,98 @@
+---
+/**
+ * PERSISTENT NAVIGATION
+ * Brand, strand links, exam practice, progress, search and the theme toggle.
+ * On phones the links collapse behind a menu button.
+ */
+import { getTree } from '../lib/site';
+import Search from './Search.tsx';
+import { getSearchIndex } from '../lib/site';
+
+const tree = await getTree();
+const index = await getSearchIndex();
+const path = Astro.url.pathname;
+const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
+---
+
+<header class="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true">
+        <!-- A real maths motif: the coordinate axes with a line through them. -->
+        <svg viewBox="0 0 32 32" width="30" height="30">
+          <path d="M5 27h22M5 27V5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" fill="none" />
+          <path d="M8 24L26 8" stroke="var(--red)" stroke-width="2.8" stroke-linecap="round" fill="none" />
+          <circle cx="26" cy="8" r="3" fill="var(--red)" />
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Year 9 Maths</span>
+        <span class="brand-sub">The Thai Guy</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">
+      <span class="sr-only">Menu</span>
+      <span class="nav-burger" aria-hidden="true"></span>
+    </button>
+
+    <nav id="nav-menu" class="nav-menu" aria-label="Main">
+      <ul class="nav-links">
+        {tree.map((s) => (
+          <li>
+            <a href={s.href} class:list={['nav-link', { 'is-active': isActive(s.href) }]}>
+              {s.strand.data.short}
+            </a>
+          </li>
+        ))}
+        <li>
+          <a href="/review/" class:list={['nav-link', { 'is-active': isActive('/review/') }]}>
+            Exam practice
+          </a>
+        </li>
+        <li>
+          <a href="/progress/" class:list={['nav-link', { 'is-active': isActive('/progress/') }]}>
+            My progress
+          </a>
+        </li>
+      </ul>
+
+      <div class="nav-tools">
+        <Search client:idle rows={index} />
+        <button class="theme-toggle" type="button" aria-label="Switch between light and dark">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <circle cx="12" cy="12" r="4.4" fill="currentColor" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+          </svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path d="M20 14.5A8.5 8.5 0 019.5 4a8.5 8.5 0 1010.5 10.5z" fill="currentColor" />
+          </svg>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Mobile menu
+  const toggle = document.querySelector<HTMLButtonElement>('.nav-toggle');
+  const menu = document.getElementById('nav-menu');
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!open));
+    menu?.classList.toggle('is-open', !open);
+  });
+
+  // Light / dark toggle. The choice is remembered; if storage is blocked the
+  // toggle still works for the current page.
+  const themeBtn = document.querySelector<HTMLButtonElement>('.theme-toggle');
+  themeBtn?.addEventListener('click', () => {
+    const root = document.documentElement;
+    const current = root.getAttribute('data-theme')
+      ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    const next = current === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('y9maths.theme', next); } catch { /* ignore */ }
+  });
+</script>

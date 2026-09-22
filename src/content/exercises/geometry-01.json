@@ -1,0 +1,117 @@
+{
+  "title": "Practice: angles in polygons",
+  "intro": "Ten questions. Angles are in degrees — type the number only.",
+  "questions": [
+    {
+      "id": "y1-q1",
+      "type": "table",
+      "prompt": "Complete the table.",
+      "columns": ["Shape", "Sides, n", "n − 2", "Sum of interior angles (°)"],
+      "rows": [
+        [{ "given": "Pentagon" }, { "answer": "5" }, { "answer": "3" }, { "answer": "540" }],
+        [{ "given": "Hexagon" }, { "answer": "6" }, { "answer": "4" }, { "answer": "720" }],
+        [{ "given": "Heptagon" }, { "given": "7" }, { "answer": "5" }, { "answer": "900" }],
+        [{ "given": "Octagon" }, { "answer": "8" }, { "answer": "6" }, { "answer": "1080" }],
+        [{ "given": "Decagon" }, { "given": "10" }, { "answer": "8" }, { "answer": "1440" }]
+      ],
+      "hints": ["Multiply $n - 2$ by 180."],
+      "explanation": "Each extra side adds one more triangle, so the sum goes up by $180^\\circ$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "y1-q2",
+      "type": "numeric",
+      "prompt": "A polygon has an interior angle sum of $2700^\\circ$. How many sides does it have?",
+      "answer": 17,
+      "hints": ["$180(n - 2) = 2700$"],
+      "explanation": "$n - 2 = 15$, so $n = 17$."
+    },
+    {
+      "id": "y1-q3",
+      "type": "numeric",
+      "prompt": "A hexagon has angles $38^\\circ$, $170^\\circ$, $118^\\circ$, $103^\\circ$, $165^\\circ$ and $b$. Find $b$.",
+      "answer": 126,
+      "unit": "°",
+      "hints": ["A hexagon's angles add to $720^\\circ$."],
+      "explanation": "$38 + 170 + 118 + 103 + 165 = 594$, so $b = 720 - 594 = 126^\\circ$."
+    },
+    {
+      "id": "y1-q4",
+      "type": "numeric",
+      "prompt": "A pentagon has angles $141^\\circ$, $109^\\circ$, $110^\\circ$, $d$ and $d$. Find $d$.",
+      "answer": 90,
+      "unit": "°",
+      "hints": ["$141 + 109 + 110 + 2d = 540$"],
+      "explanation": "$360 + 2d = 540 \\Rightarrow d = 90^\\circ$."
+    },
+    {
+      "id": "y1-q5",
+      "type": "manipulable",
+      "prompt": "Find the regular polygon whose interior angle is $144^\\circ$.",
+      "widget": "polygon-angles",
+      "config": {},
+      "target": { "n": 10 },
+      "tolerance": 0,
+      "hints": ["Exterior angle $= 180 - 144 = 36^\\circ$.", "$360 \\div 36 = ?$"],
+      "explanation": "Exterior $36^\\circ$, so $n = 360 \\div 36 = 10$ — a regular decagon."
+    },
+    {
+      "id": "y1-q6",
+      "type": "table",
+      "prompt": "Complete the angles of these regular polygons.",
+      "columns": ["Regular polygon", "Exterior angle (°)", "Interior angle (°)"],
+      "rows": [
+        [{ "given": "Pentagon" }, { "answer": "72" }, { "answer": "108" }],
+        [{ "given": "Hexagon" }, { "answer": "60" }, { "answer": "120" }],
+        [{ "given": "Octagon" }, { "answer": "45" }, { "answer": "135" }],
+        [{ "given": "Nonagon" }, { "answer": "40" }, { "answer": "140" }]
+      ],
+      "hints": ["Exterior $= 360 \\div n$; interior $= 180 -$ exterior."],
+      "explanation": "$360 \\div 5 = 72$, $360 \\div 6 = 60$, $360 \\div 8 = 45$, $360 \\div 9 = 40$."
+    },
+    {
+      "id": "y1-q7",
+      "type": "numeric",
+      "prompt": "A regular polygon has an exterior angle of $18^\\circ$. How many sides does it have?",
+      "answer": 20,
+      "hints": ["$\\frac{360}{n} = 18$"],
+      "explanation": "$n = 360 \\div 18 = 20$."
+    },
+    {
+      "id": "y1-q8",
+      "type": "mcq",
+      "prompt": "Nadia says a 12-sided polygon has an angle sum of $3 \\times 360^\\circ = 1080^\\circ$. What is the correct sum?",
+      "options": [
+        { "id": "a", "text": "$1800^\\circ$" },
+        { "id": "b", "text": "$1080^\\circ$" },
+        { "id": "c", "text": "$2160^\\circ$" },
+        { "id": "d", "text": "$2520^\\circ$" }
+      ],
+      "answer": "a",
+      "hints": ["$180 \\times (12 - 2)$"],
+      "explanation": "$180 \\times 10 = 1800^\\circ$. Tripling the sides does not triple the triangles."
+    },
+    {
+      "id": "y1-q9",
+      "type": "truefalse",
+      "prompt": "$4180^\\circ$ could be the sum of the interior angles of a polygon.",
+      "answer": false,
+      "hints": ["Is 4180 a multiple of 180?"],
+      "explanation": "False. Every interior angle sum is a multiple of 180, and $4180 \\div 180 = 23.2\\dots$"
+    },
+    {
+      "id": "y1-q10",
+      "type": "steps",
+      "prompt": "Use ratio and the angle sum.",
+      "scenario": "The six interior angles of a hexagon are in the ratio $4 : 5 : 6 : 6 : 7 : 8$. Find the largest angle.",
+      "steps": [
+        { "kind": "numeric", "prompt": "What is the total of the angles in a hexagon?", "answer": 720, "unit": "°" },
+        { "kind": "numeric", "prompt": "How many parts are there in the ratio?", "answer": 36 },
+        { "kind": "numeric", "prompt": "How many degrees is one part?", "answer": 20, "unit": "°" },
+        { "kind": "numeric", "prompt": "What is the largest angle?", "answer": 160, "unit": "°" }
+      ],
+      "explanation": "$4 + 5 + 6 + 6 + 7 + 8 = 36$ parts. $720 \\div 36 = 20^\\circ$, so the largest is $8 \\times 20 = 160^\\circ$.",
+      "difficulty": "challenge"
+    }
+  ]
+}

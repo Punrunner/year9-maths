@@ -1,0 +1,105 @@
+{
+  "title": "Practice: estimating",
+  "intro": "Eight questions. Estimates within a sensible range are accepted.",
+  "questions": [
+    {
+      "id": "c1-q1",
+      "type": "drill",
+      "prompt": "Quick-fire: round to 1 significant figure.",
+      "durationSec": 60,
+      "count": 10,
+      "pool": [
+        { "id": "a", "prompt": "11.7", "accept": ["10"] },
+        { "id": "b", "prompt": "2.8", "accept": ["3"] },
+        { "id": "c", "prompt": "0.96", "accept": ["1"] },
+        { "id": "d", "prompt": "32.2", "accept": ["30"] },
+        { "id": "e", "prompt": "5.42", "accept": ["5"] },
+        { "id": "f", "prompt": "0.068", "accept": ["0.07"] },
+        { "id": "g", "prompt": "123.69", "accept": ["100"] },
+        { "id": "h", "prompt": "320", "accept": ["300"] },
+        { "id": "i", "prompt": "0.0452", "accept": ["0.05"] },
+        { "id": "j", "prompt": "7849", "accept": ["8000"] },
+        { "id": "k", "prompt": "1.87", "accept": ["2"] },
+        { "id": "l", "prompt": "0.314", "accept": ["0.3"] }
+      ],
+      "explanation": "Keep the first non-zero digit (rounded) and replace the rest with zeros in the right places."
+    },
+    {
+      "id": "c1-q2",
+      "type": "numeric",
+      "prompt": "Estimate $11.7 \\div 2.8$.",
+      "answer": 4,
+      "tolerance": 1,
+      "hints": ["$12 \\div 3$"],
+      "explanation": "$12 \\div 3 = 4$ (the exact answer is 4.18…).",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "c1-q3",
+      "type": "numeric",
+      "prompt": "Estimate $8.24 \\div -0.96$.",
+      "answer": -8,
+      "tolerance": 1,
+      "hints": ["$-0.96 \\approx -1$"],
+      "explanation": "$8 \\div -1 = -8$."
+    },
+    {
+      "id": "c1-q4",
+      "type": "match",
+      "prompt": "Use estimation to match each calculation with its answer (to 2 d.p.).",
+      "left": [
+        { "id": "a", "text": "$\\dfrac{39 \\times 71}{54}$" },
+        { "id": "b", "text": "$\\dfrac{28 \\times 18}{589}$" },
+        { "id": "c", "text": "$\\dfrac{31 \\times 7.9}{3021}$" },
+        { "id": "d", "text": "$\\dfrac{501 \\times 81.2}{30.9}$" }
+      ],
+      "right": [
+        { "id": "r1", "text": "51.28" },
+        { "id": "r2", "text": "0.86" },
+        { "id": "r3", "text": "0.08" },
+        { "id": "r4", "text": "1316.54" }
+      ],
+      "solution": { "a": "r1", "b": "r2", "c": "r3", "d": "r4" },
+      "hints": ["$\\frac{40 \\times 70}{50} = 56$; $\\frac{30 \\times 20}{600} = 1$"],
+      "explanation": "Estimates: 56, 1, $\\frac{30 \\times 8}{3000} = 0.08$, and $\\frac{500 \\times 80}{30} \\approx 1333$."
+    },
+    {
+      "id": "c1-q5",
+      "type": "multi",
+      "prompt": "Using estimation, select **every** calculation that is definitely **incorrect**.",
+      "options": [
+        { "id": "a", "text": "$24.318 \\div 19.3 = 21.6$" },
+        { "id": "b", "text": "$0.455 \\times 18.4 = 8.372$" },
+        { "id": "c", "text": "$\\dfrac{4.98 + 3.67}{1.8} = 1.015$" },
+        { "id": "d", "text": "$21.2 \\times 0.43 = 9.116$" }
+      ],
+      "answers": ["a", "c"],
+      "hints": ["Estimate each: $20 \\div 20$, $0.5 \\times 20$, $\\frac{5 + 4}{2}$, $20 \\times 0.4$."],
+      "explanation": "a should be about 1. c should be about $9 \\div 2 = 4.5$. b ($\\approx 10$) and d ($\\approx 8$) are close to their estimates, and in fact both are correct."
+    },
+    {
+      "id": "c1-q6",
+      "type": "numeric",
+      "prompt": "Estimate $14.08 \\div 32.2$.",
+      "answer": 0.5,
+      "tolerance": 0.2,
+      "explanation": "$14 \\div 30 \\approx 0.47$, or $15 \\div 30 = 0.5$."
+    },
+    {
+      "id": "c1-q7",
+      "type": "numeric",
+      "prompt": "Estimate $-123.69 \\div 1.9$.",
+      "answer": -60,
+      "tolerance": 15,
+      "explanation": "$-120 \\div 2 = -60$ (or $-100 \\div 2 = -50$). The exact answer is about $-65.1$."
+    },
+    {
+      "id": "c1-q8",
+      "type": "truefalse",
+      "prompt": "$6.72 \\div 320$ is approximately 2.",
+      "answer": false,
+      "hints": ["Dividing by a big number gives a small answer."],
+      "explanation": "False. $7 \\div 300 \\approx 0.02$."
+    }
+  ]
+}

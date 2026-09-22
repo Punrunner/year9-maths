@@ -1,0 +1,20 @@
+{
+  "title": "Transformations",
+  "description": "Enlargement, describing single transformations, and combining them.",
+  "strand": "measurement-geometry",
+  "order": 13,
+  "difficulty": "core",
+  "objectives": [
+    "Enlarge a shape by a positive or fractional scale factor",
+    "Describe a reflection, rotation, translation or enlargement fully",
+    "Work out the single transformation equivalent to two combined"
+  ],
+  "keywords": [
+    "enlargement",
+    "scale factor",
+    "reflection",
+    "rotation",
+    "translation",
+    "centre"
+  ]
+}

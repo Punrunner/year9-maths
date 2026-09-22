@@ -1,0 +1,146 @@
+{
+  "title": "Practice: mean and range from grouped data",
+  "intro": "Nine questions. A calculator is fine here — the skill is setting out the table correctly.",
+  "questions": [
+    {
+      "id": "g1-q1",
+      "type": "drill",
+      "prompt": "Quick-fire: the midpoint of each class.",
+      "durationSec": 60,
+      "count": 8,
+      "pool": [
+        { "id": "m1", "prompt": "$10 \\le h < 20$", "accept": ["15"] },
+        { "id": "m2", "prompt": "$150 \\le h < 155$", "accept": ["152.5"] },
+        { "id": "m3", "prompt": "$2 \\le d < 3$", "accept": ["2.5"] },
+        { "id": "m4", "prompt": "$20 \\le y < 30$", "accept": ["25"] },
+        { "id": "m5", "prompt": "$120 \\le m < 125$", "accept": ["122.5"] },
+        { "id": "m6", "prompt": "$15 \\le t < 19$", "accept": ["17"] },
+        { "id": "m7", "prompt": "$0 \\le x < 5$", "accept": ["2.5"] },
+        { "id": "m8", "prompt": "$60 \\le y < 80$", "accept": ["70"] },
+        { "id": "m9", "prompt": "$35 \\le t < 39$", "accept": ["37"] },
+        { "id": "m10", "prompt": "$1.5 \\le l < 2$", "accept": ["1.75"] }
+      ],
+      "explanation": "Add the two boundaries and halve: $\\frac{150 + 155}{2} = 152.5$."
+    },
+    {
+      "id": "g1-q2",
+      "type": "table",
+      "prompt": "Complete the table for the heights of 30 plants.",
+      "columns": ["Height (h, cm)", "Frequency, f", "Midpoint, x", "f × x"],
+      "rows": [
+        [{ "given": "10 ≤ h < 20" }, { "given": "4" }, { "answer": "15" }, { "answer": "60" }],
+        [{ "given": "20 ≤ h < 30" }, { "given": "8" }, { "answer": "25" }, { "answer": "200" }],
+        [{ "given": "30 ≤ h < 40" }, { "given": "11" }, { "answer": "35" }, { "answer": "385" }],
+        [{ "given": "40 ≤ h < 50" }, { "given": "7" }, { "answer": "45" }, { "answer": "315" }],
+        [{ "given": "Total" }, { "given": "30" }, { "given": "" }, { "answer": "960" }]
+      ],
+      "hints": ["Midpoint first, then multiply by the frequency in the same row."],
+      "explanation": "Midpoints 15, 25, 35, 45. Products 60, 200, 385, 315, which total 960. The estimated mean is $960 \\div 30 = 32$ cm.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "g1-q3",
+      "type": "steps",
+      "prompt": "Estimate the mean one step at a time.",
+      "scenario": "The masses of 40 oranges: $120 \\le m < 125$: 5, $\\;125 \\le m < 130$: 16, $\\;130 \\le m < 135$: 13, $\\;135 \\le m < 140$: 4, $\\;140 \\le m < 145$: 2.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "What is the midpoint of the class $125 \\le m < 130$?",
+          "answer": 127.5
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Work out $\\Sigma fx$. (The products are 612.5, 2040, 1722.5, 550 and 285.)",
+          "answer": 5210,
+          "hint": "Add the five products together."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Estimate the mean mass, in grams.",
+          "answer": 130.25,
+          "tolerance": 0.01,
+          "unit": "g",
+          "feedback": "$5210 \\div 40 = 130.25$ g.",
+          "hint": "Divide $\\Sigma fx$ by the total frequency, 40."
+        }
+      ],
+      "explanation": "$\\Sigma fx = 5210$ and $\\Sigma f = 40$, so the estimated mean is $130.25$ g — sensibly near the two biggest classes."
+    },
+    {
+      "id": "g1-q4",
+      "type": "numeric",
+      "prompt": "Students' distances from school: $0 \\le d < 1$: 10, $\\;1 \\le d < 2$: 15, $\\;2 \\le d < 3$: 7, $\\;3 \\le d < 4$: 2, $\\;4 \\le d < 5$: 1. Estimate the mean distance, to 2 decimal places.",
+      "answer": 1.61,
+      "tolerance": 0.006,
+      "unit": "km",
+      "hints": [
+        "Midpoints: 0.5, 1.5, 2.5, 3.5, 4.5.",
+        "$\\Sigma fx = 5 + 22.5 + 17.5 + 7 + 4.5$. $\\Sigma f = 35$."
+      ],
+      "explanation": "$\\Sigma fx = 56.5$ and $\\Sigma f = 35$, so the mean $\\approx 56.5 \\div 35 = 1.61$ km."
+    },
+    {
+      "id": "g1-q5",
+      "type": "numeric",
+      "prompt": "For the same students, estimate the range of distances.",
+      "answer": 5,
+      "unit": "km",
+      "hints": ["Upper boundary of the last class minus the lower boundary of the first."],
+      "explanation": "$5 - 0 = 5$ km. It is an estimate — the real furthest and nearest students could be closer together than this."
+    },
+    {
+      "id": "g1-q6",
+      "type": "mcq",
+      "prompt": "The masses of 40 oranges all lie between 120 g and 145 g. Sarah thinks the mean is about 115 g and Freddie thinks it is over 140 g. Why are both wrong?",
+      "options": [
+        { "id": "a", "text": "115 g is below every orange, and over 140 g would need nearly every orange in the top class" },
+        { "id": "b", "text": "The mean must be exactly the middle of the range, 132.5 g" },
+        { "id": "c", "text": "You cannot find a mean from grouped data" },
+        { "id": "d", "text": "The mean is always in the modal class" }
+      ],
+      "answer": "a",
+      "hints": ["Where must the mean of a set of numbers always lie?"],
+      "explanation": "A mean always lies between the smallest and largest values. 115 g is smaller than every orange. Only 2 of the 40 oranges are over 140 g, so the mean cannot be that high. (b and d sound plausible but are not rules.)"
+    },
+    {
+      "id": "g1-q7",
+      "type": "multi",
+      "prompt": "Why are the mean and range from a grouped table only **estimates**? Select all that apply.",
+      "options": [
+        { "id": "a", "text": "We do not know the exact values inside each class" },
+        { "id": "b", "text": "Using the midpoint assumes every value is in the middle of its class" },
+        { "id": "c", "text": "The range uses the class boundaries, which may not be real values" },
+        { "id": "d", "text": "Calculators round the answers" }
+      ],
+      "answers": ["a", "b", "c"],
+      "hints": ["Think about what information is lost when data is grouped."],
+      "explanation": "Grouping throws away the exact values, so the midpoint and the boundaries are stand-ins. Calculator rounding has nothing to do with it."
+    },
+    {
+      "id": "g1-q8",
+      "type": "numeric",
+      "prompt": "A village census: ages $0$–$10$: 92, $10$–$20$: 88, $20$–$30$: 85, $30$–$40$: 68, $40$–$50$: 55, $50$–$60$: 52, $60$–$70$: 42, $70$–$80$: 18 (each class includes its lower boundary). Estimate the mean age.",
+      "answer": 31.4,
+      "tolerance": 0.05,
+      "unit": "years",
+      "hints": [
+        "Midpoints are 5, 15, 25, …, 75, and $\\Sigma f = 500$.",
+        "$\\Sigma fx = 460 + 1320 + 2125 + 2380 + 2475 + 2860 + 2730 + 1350$"
+      ],
+      "explanation": "$\\Sigma fx = 15\\,700$ and $\\Sigma f = 500$, so the mean $\\approx 31.4$ years.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "g1-q9",
+      "type": "manipulable",
+      "prompt": "The first three classes of the plant data are shown. The last class, $40 \\le h < 50$, should make the total frequency **30**. Set it correctly.",
+      "widget": "histogram",
+      "config": { "boundaries": [10, 20, 30, 40, 50], "freqs": [4, 8, 11, 0], "maxFreq": 16, "label": "Height, h (cm)" },
+      "target": { "f3": 7 },
+      "tolerance": 0,
+      "hints": ["$4 + 8 + 11 = 23$."],
+      "explanation": "$30 - 23 = 7$. With all four classes in place the estimated mean is 32 cm."
+    }
+  ]
+}

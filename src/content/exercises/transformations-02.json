@@ -1,0 +1,136 @@
+{
+  "title": "Practice: describing transformations",
+  "intro": "Ten questions. Type a column vector as two numbers, top then bottom.",
+  "questions": [
+    {
+      "id": "t2-q1",
+      "type": "match",
+      "prompt": "Match each transformation to the information needed to describe it fully.",
+      "left": [
+        { "id": "a", "text": "Reflection" },
+        { "id": "b", "text": "Rotation" },
+        { "id": "c", "text": "Translation" },
+        { "id": "d", "text": "Enlargement" }
+      ],
+      "right": [
+        { "id": "r1", "text": "The equation of the mirror line" },
+        { "id": "r2", "text": "Centre, angle and direction" },
+        { "id": "r3", "text": "A column vector" },
+        { "id": "r4", "text": "Centre and scale factor" }
+      ],
+      "solution": { "a": "r1", "b": "r2", "c": "r3", "d": "r4" },
+      "explanation": "Missing any one of these loses marks — for example, a rotation without its centre is not fully described.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "t2-q2",
+      "type": "table",
+      "prompt": "Each point is reflected onto its image. Give the equation of the mirror line.",
+      "columns": ["Object", "Image", "Mirror line"],
+      "rows": [
+        [{ "given": "(1, 5)" }, { "given": "(1, 3)" }, { "answer": "y = 4", "accept": ["y=4"] }],
+        [{ "given": "(−3, 2)" }, { "given": "(7, 2)" }, { "answer": "x = 2", "accept": ["x=2"] }],
+        [{ "given": "(−3, −1)" }, { "given": "(−3, 4)" }, { "answer": "y = 1.5", "accept": ["y=1.5", "y = 3/2", "y=3/2"] }],
+        [{ "given": "(6, 2)" }, { "given": "(2, 6)" }, { "answer": "y = x", "accept": ["y=x"] }]
+      ],
+      "hints": ["The mirror line passes through the midpoint and is perpendicular to the line joining the points."],
+      "explanation": "Midpoints: $y = 4$, $x = 2$, $y = 1.5$, and for the last pair the coordinates swap, so $y = x$."
+    },
+    {
+      "id": "t2-q3",
+      "type": "fill-blank",
+      "prompt": "A(1, 2), B(2, 4), C(4, 3), D(5, 1) becomes A′(4, −2), B′(5, 0), C′(7, −1), D′(8, −3). Give the translation vector.",
+      "text": "$\\begin{pmatrix} \\square \\\\ \\square \\end{pmatrix}$ : top [[a]], bottom [[b]]",
+      "blanks": [
+        { "id": "a", "accept": ["3"], "size": 3 },
+        { "id": "b", "accept": ["-4", "−4"], "size": 3 }
+      ],
+      "hints": ["Subtract: $4 - 1$ and $-2 - 2$."],
+      "explanation": "Every point moves 3 right and 4 down: $\\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$."
+    },
+    {
+      "id": "t2-q4",
+      "type": "mcq",
+      "prompt": "Triangle X(2, 3), Y(5, 4), Z(6, 1) becomes X′(−3, −2), Y′(−4, −5), Z′(−1, −6). What is the mirror line?",
+      "options": [
+        { "id": "a", "text": "$y = -x$" },
+        { "id": "b", "text": "$y = x$" },
+        { "id": "c", "text": "the $x$-axis" },
+        { "id": "d", "text": "the $y$-axis" }
+      ],
+      "answer": "a",
+      "hints": ["$(2, 3) \\to (-3, -2)$: the coordinates swap **and** change sign."],
+      "explanation": "Reflection in $y = -x$ maps $(x, y)$ to $(-y, -x)$."
+    },
+    {
+      "id": "t2-q5",
+      "type": "mcq",
+      "prompt": "A(2, 1), B(4, 0), C(6, 2) becomes A′(7, 1), B′(9, 0), C′(11, 2). Describe the transformation.",
+      "options": [
+        { "id": "a", "text": "Translation by $\\begin{pmatrix} 5 \\\\ 0 \\end{pmatrix}$" },
+        { "id": "b", "text": "Reflection in $x = 4.5$" },
+        { "id": "c", "text": "Enlargement, scale factor 2" },
+        { "id": "d", "text": "Rotation of $180^\\circ$" }
+      ],
+      "answer": "a",
+      "hints": ["Has every point moved by the same amount?"],
+      "explanation": "Every $x$ increases by 5 and $y$ stays the same, and the shape is not flipped — a translation."
+    },
+    {
+      "id": "t2-q6",
+      "type": "multi",
+      "prompt": "Select **every** complete description.",
+      "options": [
+        { "id": "a", "text": "Rotation $90^\\circ$ clockwise about $(3, 0)$" },
+        { "id": "b", "text": "Rotation $90^\\circ$ about the origin" },
+        { "id": "c", "text": "Reflection in the line $x = 3$" },
+        { "id": "d", "text": "Enlargement, scale factor 2" },
+        { "id": "e", "text": "Rotation $180^\\circ$ about $(2, 0)$" }
+      ],
+      "answers": ["a", "c", "e"],
+      "hints": ["Does each one say everything needed?"],
+      "explanation": "b has no direction, d has no centre. $180^\\circ$ needs no direction, so e is complete."
+    },
+    {
+      "id": "t2-q7",
+      "type": "fill-blank",
+      "prompt": "A(1, 2), B(4, 1), C(1, 5) becomes A′(−9, −2), B′(0, −5), C′(−9, 7). It is an enlargement. Give its scale factor and centre.",
+      "text": "Scale factor [[k]], centre ( [[x]] , [[y]] )",
+      "blanks": [
+        { "id": "k", "accept": ["3"], "size": 3 },
+        { "id": "x", "accept": ["6"], "size": 3 },
+        { "id": "y", "accept": ["4"], "size": 3 }
+      ],
+      "hints": ["AC = 3 and A′C′ = 9.", "Solve $-9 - a = 3(1 - a)$ for the centre's $x$."],
+      "explanation": "$k = 3$. $-9 - a = 3 - 3a \\Rightarrow a = 6$; $-2 - b = 6 - 3b \\Rightarrow b = 4$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "t2-q8",
+      "type": "numeric",
+      "prompt": "Point $(5, 6)$ is rotated $180^\\circ$ about the origin. What is the $x$-coordinate of its image?",
+      "answer": -5,
+      "explanation": "A $180^\\circ$ rotation about the origin maps $(x, y)$ to $(-x, -y)$: $(-5, -6)$."
+    },
+    {
+      "id": "t2-q9",
+      "type": "order",
+      "prompt": "Put the steps for finding a centre of rotation in order.",
+      "items": [
+        { "id": "a", "text": "Join A to its image A′ and B to its image B′" },
+        { "id": "b", "text": "Construct the perpendicular bisectors of AA′ and BB′" },
+        { "id": "c", "text": "Mark where the bisectors cross: this is the centre C" },
+        { "id": "d", "text": "Measure the angle ACA′ to find the angle of rotation" }
+      ],
+      "solution": ["a", "b", "c", "d"],
+      "explanation": "The centre is the same distance from a point and its image, so it lies on every perpendicular bisector."
+    },
+    {
+      "id": "t2-q10",
+      "type": "truefalse",
+      "prompt": "A rotation of $90^\\circ$ clockwise is the same as a rotation of $270^\\circ$ anticlockwise about the same centre.",
+      "answer": true,
+      "explanation": "True — both end in the same position."
+    }
+  ]
+}

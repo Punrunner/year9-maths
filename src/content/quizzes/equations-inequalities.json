@@ -1,0 +1,263 @@
+{
+  "title": "Equations and inequalities quiz",
+  "topic": "equations-inequalities",
+  "description": "Twelve questions drawn at random from a bank of sixteen, covering linear equations, the unknown in the denominator, inequalities, gradients and simultaneous equations.",
+  "pick": 12,
+  "timeLimitSec": 1200,
+  "passMark": 70,
+  "questions": [
+    {
+      "id": "eq1",
+      "type": "numeric",
+      "prompt": "Solve $3(x + 1) = 4x - 2$.",
+      "answer": 5,
+      "explanation": "$3x + 3 = 4x - 2 \\Rightarrow 5 = x$."
+    },
+    {
+      "id": "eq2",
+      "type": "numeric",
+      "prompt": "Solve $4(2y - 1) - 3 = 3 - 2y$.",
+      "answer": 1,
+      "explanation": "$8y - 7 = 3 - 2y \\Rightarrow 10y = 10 \\Rightarrow y = 1$."
+    },
+    {
+      "id": "eq3",
+      "type": "numeric",
+      "prompt": "Two consecutive even numbers add up to 226. What is the larger one?",
+      "answer": 114,
+      "explanation": "$x + (x + 2) = 226 \\Rightarrow x = 112$, so the numbers are 112 and 114."
+    },
+    {
+      "id": "eq4",
+      "type": "numeric",
+      "prompt": "Peter is three years older than his sister Paula. Their ages add up to 21. How old is Paula?",
+      "answer": 9,
+      "unit": "years",
+      "explanation": "$p + (p + 3) = 21 \\Rightarrow p = 9$. Peter is 12."
+    },
+    {
+      "id": "eq5",
+      "type": "numeric",
+      "prompt": "Solve $\\dfrac{20}{x} = 4$.",
+      "answer": 5,
+      "explanation": "$20 = 4x \\Rightarrow x = 5$."
+    },
+    {
+      "id": "eq6",
+      "type": "numeric",
+      "prompt": "Solve $11 = 6 + \\dfrac{45}{x - 8}$.",
+      "answer": 17,
+      "explanation": "$\\frac{45}{x - 8} = 5 \\Rightarrow x - 8 = 9 \\Rightarrow x = 17$."
+    },
+    {
+      "id": "eq7",
+      "type": "numeric",
+      "prompt": "I subtract 13 from my number, then divide 150 by the result. The answer is 30. What is my number?",
+      "answer": 18,
+      "explanation": "$\\frac{150}{n - 13} = 30 \\Rightarrow n - 13 = 5 \\Rightarrow n = 18$."
+    },
+    {
+      "id": "eq8",
+      "type": "mcq",
+      "prompt": "Solve $4x + 10 < 7x - 11$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x > 7$"
+        },
+        {
+          "id": "b",
+          "text": "$x < 7$"
+        },
+        {
+          "id": "c",
+          "text": "$x > -7$"
+        },
+        {
+          "id": "d",
+          "text": "$x < -7$"
+        }
+      ],
+      "answer": "a",
+      "explanation": "$21 < 3x \\Rightarrow 7 < x$, i.e. $x > 7$."
+    },
+    {
+      "id": "eq9",
+      "type": "mcq",
+      "prompt": "Solve $-x \\le 4$.",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x \\ge -4$"
+        },
+        {
+          "id": "b",
+          "text": "$x \\le -4$"
+        },
+        {
+          "id": "c",
+          "text": "$x \\le 4$"
+        },
+        {
+          "id": "d",
+          "text": "$x \\ge 4$"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Multiply both sides by $-1$ and reverse the sign: $x \\ge -4$."
+    },
+    {
+      "id": "eq10",
+      "type": "manipulable",
+      "prompt": "Show $x \\le 3$ on the number line.",
+      "widget": "number-line",
+      "config": {
+        "min": -2,
+        "max": 8,
+        "step": 1,
+        "majorStep": 1,
+        "label": "Boundary value",
+        "inequality": true
+      },
+      "target": {
+        "x": 3,
+        "dir": -1,
+        "closed": 1
+      },
+      "tolerance": 0,
+      "explanation": "A **closed** circle at 3 (it is included) with the arrow pointing **left**."
+    },
+    {
+      "id": "eq11",
+      "type": "fill-blank",
+      "prompt": "Solve $8(5x - 7) - 9 \\le 55$.",
+      "text": "$x \\le$ [[a]]",
+      "blanks": [
+        {
+          "id": "a",
+          "accept": [
+            "3"
+          ],
+          "size": 3
+        }
+      ],
+      "explanation": "$40x - 65 \\le 55 \\Rightarrow 40x \\le 120 \\Rightarrow x \\le 3$."
+    },
+    {
+      "id": "eq12",
+      "type": "multi",
+      "prompt": "Which integers satisfy $-1 < x \\le 3$?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$-1$"
+        },
+        {
+          "id": "b",
+          "text": "$0$"
+        },
+        {
+          "id": "c",
+          "text": "$1$"
+        },
+        {
+          "id": "d",
+          "text": "$2$"
+        },
+        {
+          "id": "e",
+          "text": "$3$"
+        },
+        {
+          "id": "f",
+          "text": "$4$"
+        }
+      ],
+      "answers": [
+        "b",
+        "c",
+        "d",
+        "e"
+      ],
+      "explanation": "$-1$ is excluded ($<$) and 3 is included ($\\le$): 0, 1, 2, 3."
+    },
+    {
+      "id": "eq13",
+      "type": "numeric",
+      "prompt": "Find the gradient of the line joining $(2, 1)$ and $(6, 13)$.",
+      "answer": 3,
+      "explanation": "$\\frac{13 - 1}{6 - 2} = \\frac{12}{4} = 3$."
+    },
+    {
+      "id": "eq14",
+      "type": "fill-blank",
+      "prompt": "Solve $3x + 2y = 5$ and $2x + 2y = 4$.",
+      "text": "$x =$ [[x]] $\\qquad y =$ [[y]]",
+      "blanks": [
+        {
+          "id": "x",
+          "accept": [
+            "1"
+          ],
+          "size": 3
+        },
+        {
+          "id": "y",
+          "accept": [
+            "1"
+          ],
+          "size": 3
+        }
+      ],
+      "explanation": "Subtract: $x = 1$. Then $2 + 2y = 4$, $y = 1$."
+    },
+    {
+      "id": "eq15",
+      "type": "fill-blank",
+      "prompt": "Solve $3x + 4y = 14$ and $5x - 8y = -6$.",
+      "text": "$x =$ [[x]] $\\qquad y =$ [[y]]",
+      "blanks": [
+        {
+          "id": "x",
+          "accept": [
+            "2"
+          ],
+          "size": 3
+        },
+        {
+          "id": "y",
+          "accept": [
+            "2"
+          ],
+          "size": 3
+        }
+      ],
+      "explanation": "Double the first: $6x + 8y = 28$. Add: $11x = 22$, $x = 2$. Then $6 + 4y = 14$, $y = 2$."
+    },
+    {
+      "id": "eq16",
+      "type": "mcq",
+      "prompt": "For $3x + 5y = 65$ and $-3x + 2y = 5$, what should you do first?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Add the equations"
+        },
+        {
+          "id": "b",
+          "text": "Subtract the equations"
+        },
+        {
+          "id": "c",
+          "text": "Multiply the first by 5"
+        },
+        {
+          "id": "d",
+          "text": "Divide both by 3"
+        }
+      ],
+      "answer": "a",
+      "explanation": "The $x$ coefficients are $+3$ and $-3$ — opposite signs, so adding eliminates $x$."
+    }
+  ]
+}

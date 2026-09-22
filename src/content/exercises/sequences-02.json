@@ -1,0 +1,147 @@
+{
+  "title": "Practice: functions",
+  "intro": "Eight questions on function machines and inverses, including a matching exercise and a guided solver.",
+  "questions": [
+    {
+      "id": "s2-q1",
+      "type": "numeric",
+      "prompt": "A function machine does $\\times 4$ then $-5$. What is the output when the input is 7?",
+      "answer": 23,
+      "hints": ["Do the operations in order: multiply first, then subtract."],
+      "explanation": "$7 \\times 4 = 28$, then $28 - 5 = 23$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "s2-q2",
+      "type": "algebraic",
+      "prompt": "Write the rule for a machine that does $\\times 4$ then $-5$. Use $x$ for the input.",
+      "answer": "4x - 5",
+      "variables": ["x"],
+      "placeholder": "e.g. 4x - 5",
+      "hints": ["Do to $x$ exactly what the machine does to a number."],
+      "explanation": "Multiplying $x$ by 4 gives $4x$; subtracting 5 gives **$4x - 5$**."
+    },
+    {
+      "id": "s2-q3",
+      "type": "match",
+      "prompt": "Match each function machine to its rule.",
+      "left": [
+        { "id": "m1", "text": "$\\times 3$ then $+4$" },
+        { "id": "m2", "text": "$+4$ then $\\times 3$" },
+        { "id": "m3", "text": "$-2$ then $\\div 5$" },
+        { "id": "m4", "text": "$\\div 5$ then $-2$" }
+      ],
+      "right": [
+        { "id": "r1", "text": "$3x + 4$" },
+        { "id": "r2", "text": "$3(x + 4)$" },
+        { "id": "r3", "text": "$\\dfrac{x-2}{5}$" },
+        { "id": "r4", "text": "$\\dfrac{x}{5} - 2$" }
+      ],
+      "solution": { "m1": "r1", "m2": "r2", "m3": "r3", "m4": "r4" },
+      "hints": [
+        "Whatever happens **first** is inside the brackets, or on the top of the fraction.",
+        "Try $x = 6$ in each rule and see which machine gives the same answer."
+      ],
+      "explanation": "The order changes everything. $\\times 3$ first means only $x$ gets tripled ($3x + 4$); $+4$ first means the whole of $x + 4$ gets tripled ($3(x+4)$). The same logic separates the two fraction rules."
+    },
+    {
+      "id": "s2-q4",
+      "type": "numeric",
+      "prompt": "For the function $x \\mapsto 4x - 5$, what input gives an output of 31?",
+      "answer": 9,
+      "hints": [
+        "Run the machine backwards, inverting each step.",
+        "Undo the $-5$ first: $31 + 5 = 36$."
+      ],
+      "explanation": "Working backwards: $31 + 5 = 36$, then $36 \\div 4 = 9$. Check: $4(9) - 5 = 31$ ✓"
+    },
+    {
+      "id": "s2-q5",
+      "type": "table",
+      "prompt": "Complete the table for the function $x \\mapsto 2x + 1$.",
+      "columns": ["Input, $x$", "0", "3", "5", "?"],
+      "rows": [
+        [
+          { "given": "Output" },
+          { "answer": "1" },
+          { "answer": "7" },
+          { "answer": "11" },
+          { "given": "21" }
+        ],
+        [
+          { "given": "Input" },
+          { "given": "0" },
+          { "given": "3" },
+          { "given": "5" },
+          { "answer": "10" }
+        ]
+      ],
+      "hints": [
+        "For the top row, substitute each input into $2x + 1$.",
+        "For the last column you are given the **output** (21) and need the input — work backwards."
+      ],
+      "explanation": "$2(0)+1 = 1$, $2(3)+1 = 7$, $2(5)+1 = 11$. For an output of 21: $21 - 1 = 20$, then $20 \\div 2 = 10$."
+    },
+    {
+      "id": "s2-q6",
+      "type": "algebraic",
+      "prompt": "Find the inverse of the function $x \\mapsto \\dfrac{x + 6}{2}$.",
+      "answer": "2x - 6",
+      "variables": ["x"],
+      "placeholder": "e.g. 2x - 6",
+      "hints": [
+        "The machine does: $+6$, then $\\div 2$.",
+        "Reverse the order **and** invert each operation: $\\times 2$, then $-6$."
+      ],
+      "explanation": "Reversing gives $\\times 2$ then $-6$, so the inverse is **$2x - 6$**. Check with $x = 4$: the original gives $\\frac{10}{2} = 5$, and the inverse gives $2(5) - 6 = 4$ ✓",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "s2-q7",
+      "type": "steps",
+      "prompt": "Work backwards through a two-step machine.",
+      "scenario": "A machine does $-3$ then $\\times 5$. The output is 40.",
+      "steps": [
+        {
+          "kind": "mcq",
+          "prompt": "Which operation do you undo **first**?",
+          "options": [
+            { "id": "a", "text": "The $\\times 5$, because it happened last" },
+            { "id": "b", "text": "The $-3$, because it is written first" }
+          ],
+          "answer": "a",
+          "feedback": "Correct — going backwards, you undo the last operation first.",
+          "hint": "You are running the machine in reverse, so start at the end."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Undo the $\\times 5$. What number do you get from 40?",
+          "answer": 8,
+          "feedback": "$40 \\div 5 = 8$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Now undo the $-3$. What was the original input?",
+          "answer": 11,
+          "feedback": "$8 + 3 = 11$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Check it: put 11 through the machine ($-3$ then $\\times 5$). What comes out?",
+          "answer": 40,
+          "feedback": "$(11 - 3) \\times 5 = 40$ ✓ — always worth doing."
+        }
+      ],
+      "hints": ["Reverse the order, and swap each operation for its opposite."],
+      "explanation": "Backwards: $40 \\div 5 = 8$, then $8 + 3 = 11$. The input was **11**."
+    },
+    {
+      "id": "s2-q8",
+      "type": "truefalse",
+      "prompt": "**$3x + 4$ and $3(x + 4)$ are the same function.**",
+      "answer": false,
+      "hints": ["Try putting $x = 6$ through both."],
+      "explanation": "False. With $x = 6$: $3(6) + 4 = 22$, but $3(6 + 4) = 30$. In $3x + 4$ only $x$ is multiplied by 3; in $3(x+4)$ the whole bracket is."
+    }
+  ]
+}

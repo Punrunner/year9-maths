@@ -1,0 +1,193 @@
+{
+  "title": "Practice: index laws",
+  "intro": "Eleven questions on the index laws. Where a box asks for a power, type just the number — for example -3.",
+  "questions": [
+    {
+      "id": "i3-q1",
+      "type": "flashcards",
+      "prompt": "Flip through the index laws. Say each one out loud before you turn the card over.",
+      "cards": [
+        { "id": "c1", "front": "$a^x \\times a^y$", "back": "$a^{x+y}$ — same base, **add** the powers" },
+        { "id": "c2", "front": "$a^x \\div a^y$", "back": "$a^{x-y}$ — same base, **subtract** the powers" },
+        { "id": "c3", "front": "$(a^x)^y$", "back": "$a^{xy}$ — power of a power, **multiply**" },
+        { "id": "c4", "front": "$a^0$", "back": "$1$, for any non-zero $a$" },
+        { "id": "c5", "front": "$a^{-n}$", "back": "$\\frac{1}{a^n}$ — the reciprocal of $a^n$" },
+        { "id": "c6", "front": "$10^{-3}$", "back": "$\\frac{1}{1000} = 0.001$" },
+        { "id": "c7", "front": "BIDMAS", "back": "Brackets, Indices, Division/Multiplication, Addition/Subtraction" }
+      ],
+      "explanation": "These seven facts cover every question in this lesson. The one people forget is that a negative index means **one over**, not a negative number."
+    },
+    {
+      "id": "i3-q2",
+      "type": "numeric",
+      "prompt": "Write $3^{-2}$ as a fraction.",
+      "answer": "1/9",
+      "accept": ["0.111", "0.1111"],
+      "tolerance": 0.001,
+      "hints": ["$a^{-n} = \\frac{1}{a^n}$", "What is $3^2$?"],
+      "explanation": "$3^{-2} = \\frac{1}{3^2} = \\frac{1}{9}$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "i3-q3",
+      "type": "fill-blank",
+      "prompt": "Write each number as a power of 2 by filling in the missing index.",
+      "text": "$8 = 2^{\\square}$ : [[a]] $\\qquad 2 = 2^{\\square}$ : [[b]] $\\qquad \\frac{1}{2} = 2^{\\square}$ : [[c]] $\\qquad \\frac{1}{16} = 2^{\\square}$ : [[d]] $\\qquad 1 = 2^{\\square}$ : [[e]]",
+      "blanks": [
+        { "id": "a", "accept": ["3"], "size": 3 },
+        { "id": "b", "accept": ["1"], "size": 3 },
+        { "id": "c", "accept": ["-1", "−1"], "size": 3 },
+        { "id": "d", "accept": ["-4", "−4"], "size": 3 },
+        { "id": "e", "accept": ["0"], "size": 3 }
+      ],
+      "hints": ["$16 = 2^4$, so $\\frac{1}{16}$ is the reciprocal of $2^4$."],
+      "explanation": "$8 = 2^3$, $2 = 2^1$, $\\frac{1}{2} = 2^{-1}$, $\\frac{1}{16} = \\frac{1}{2^4} = 2^{-4}$, and $1 = 2^0$."
+    },
+    {
+      "id": "i3-q4",
+      "type": "match",
+      "prompt": "Match each power of 3 to its value.",
+      "left": [
+        { "id": "p1", "text": "$3^3$" },
+        { "id": "p2", "text": "$3^{-2}$" },
+        { "id": "p3", "text": "$3^{-1}$" },
+        { "id": "p4", "text": "$3^0$" },
+        { "id": "p5", "text": "$3^{-4}$" }
+      ],
+      "right": [
+        { "id": "v1", "text": "$27$" },
+        { "id": "v2", "text": "$\\frac{1}{9}$" },
+        { "id": "v3", "text": "$\\frac{1}{3}$" },
+        { "id": "v4", "text": "$1$" },
+        { "id": "v5", "text": "$\\frac{1}{81}$" }
+      ],
+      "solution": { "p1": "v1", "p2": "v2", "p3": "v3", "p4": "v4", "p5": "v5" },
+      "hints": ["$3^4 = 81$."],
+      "explanation": "$3^3 = 27$. The negative powers are reciprocals: $3^{-1} = \\frac{1}{3}$, $3^{-2} = \\frac{1}{9}$, $3^{-4} = \\frac{1}{81}$. And $3^0 = 1$."
+    },
+    {
+      "id": "i3-q5",
+      "type": "numeric",
+      "prompt": "Work out $16 \\times 2^{-3}$.",
+      "answer": 2,
+      "hints": ["$2^{-3} = \\frac{1}{8}$."],
+      "explanation": "$16 \\times 2^{-3} = 16 \\times \\frac{1}{8} = 2$."
+    },
+    {
+      "id": "i3-q6",
+      "type": "multi",
+      "prompt": "Select **every** statement that is true.",
+      "options": [
+        { "id": "a", "text": "$5^0 > 2^0$" },
+        { "id": "b", "text": "$2^{-3} > 2^{-2}$" },
+        { "id": "c", "text": "$6^{-3} < 0$" },
+        { "id": "d", "text": "$(-2)^{-1} < 0.5$" },
+        { "id": "e", "text": "$0 > -3^{2}$" }
+      ],
+      "answers": ["d", "e"],
+      "hints": [
+        "Anything to the power 0 is 1.",
+        "$2^{-3} = \\frac{1}{8}$ and $2^{-2} = \\frac{1}{4}$ — which is bigger?"
+      ],
+      "explanation": "a: both are 1 ✗. b: $\\frac{1}{8} < \\frac{1}{4}$ ✗. c: $6^{-3} = \\frac{1}{216}$, which is positive ✗. d: $(-2)^{-1} = -\\frac{1}{2}$, which is less than 0.5 ✓. e: $-3^2 = -9$ (the power is done before the minus), which is less than 0 ✓.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "i3-q7",
+      "type": "fill-blank",
+      "prompt": "Simplify each expression, leaving your answer in index form. Type only the missing power.",
+      "text": "$5^{-7} \\times 5^5 = 5^{\\square}$ : [[a]] $\\qquad 2^{-1} \\div 2^5 = 2^{\\square}$ : [[b]] $\\qquad (6^3)^{-2} = 6^{\\square}$ : [[c]] $\\qquad 11^{-8} \\times 11^2 \\times 11^3 = 11^{\\square}$ : [[d]]",
+      "blanks": [
+        { "id": "a", "accept": ["-2", "−2"], "size": 3 },
+        { "id": "b", "accept": ["-6", "−6"], "size": 3 },
+        { "id": "c", "accept": ["-6", "−6"], "size": 3 },
+        { "id": "d", "accept": ["-3", "−3"], "size": 3 }
+      ],
+      "hints": [
+        "Multiplying: add. Dividing: subtract. Power of a power: multiply.",
+        "Be careful with signs: $-1 - 5 = -6$."
+      ],
+      "explanation": "$-7 + 5 = -2$. $-1 - 5 = -6$. $3 \\times -2 = -6$. $-8 + 2 + 3 = -3$."
+    },
+    {
+      "id": "i3-q8",
+      "type": "order",
+      "prompt": "Put the steps for simplifying $\\dfrac{(3^6 \\times 3^4)^2}{3^2 \\times 3^3}$ in the correct order.",
+      "items": [
+        { "id": "s1", "text": "Inside the top bracket: $3^6 \\times 3^4 = 3^{10}$" },
+        { "id": "s2", "text": "Apply the power: $(3^{10})^2 = 3^{20}$" },
+        { "id": "s3", "text": "Simplify the bottom: $3^2 \\times 3^3 = 3^5$" },
+        { "id": "s4", "text": "Divide: $3^{20} \\div 3^5 = 3^{15}$" }
+      ],
+      "solution": ["s1", "s2", "s3", "s4"],
+      "hints": ["Brackets before indices, and the dividing line acts like a bracket."],
+      "explanation": "Brackets first, then the power on the bracket, then finish the denominator, and only then divide. Doing the division first would ignore the brackets that the long dividing line creates."
+    },
+    {
+      "id": "i3-q9",
+      "type": "algebraic",
+      "prompt": "Simplify $x^3 \\times x^{-5}$.",
+      "answer": "x^-2",
+      "variables": ["x"],
+      "placeholder": "e.g. x^4",
+      "hints": ["Same base, multiplying: add the powers.", "$3 + (-5) = -2$"],
+      "explanation": "$x^3 \\times x^{-5} = x^{3 + (-5)} = x^{-2}$, which you could also write as $\\frac{1}{x^2}$. Both are accepted."
+    },
+    {
+      "id": "i3-q10",
+      "type": "steps",
+      "prompt": "Simplify this one step at a time.",
+      "scenario": "Simplify $\\dfrac{(2^4 \\times 2^{-1})^5}{2^6 \\times 2^5}$ and give the answer as an ordinary number.",
+      "steps": [
+        {
+          "kind": "numeric",
+          "prompt": "$2^4 \\times 2^{-1} = 2^{\\square}$. What is the power?",
+          "answer": 3,
+          "feedback": "$4 + (-1) = 3$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "$(2^3)^5 = 2^{\\square}$. What is the power?",
+          "answer": 15,
+          "feedback": "Power of a power: $3 \\times 5 = 15$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "The bottom is $2^6 \\times 2^5 = 2^{\\square}$. What is the power?",
+          "answer": 11,
+          "feedback": "$6 + 5 = 11$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "So the answer is $2^{15} \\div 2^{11} = 2^4$. What is that as a number?",
+          "answer": 16,
+          "feedback": "$2^4 = 16$."
+        }
+      ],
+      "explanation": "Top: $(2^{3})^5 = 2^{15}$. Bottom: $2^{11}$. Divide: $2^{15-11} = 2^4 = 16$. Working the brackets and the power first, and the division last, is what keeps this manageable.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "i3-q11",
+      "type": "drill",
+      "prompt": "Quick-fire: negative and zero powers. Give fractions like 1/8.",
+      "durationSec": 60,
+      "count": 8,
+      "pool": [
+        { "id": "d1", "prompt": "$2^{-1}$", "accept": ["1/2", "0.5"] },
+        { "id": "d2", "prompt": "$4^{-1}$", "accept": ["1/4", "0.25"] },
+        { "id": "d3", "prompt": "$5^{-2}$", "accept": ["1/25", "0.04"] },
+        { "id": "d4", "prompt": "$10^{-2}$", "accept": ["1/100", "0.01"] },
+        { "id": "d5", "prompt": "$7^0$", "accept": ["1"] },
+        { "id": "d6", "prompt": "$2^{-3}$", "accept": ["1/8", "0.125"] },
+        { "id": "d7", "prompt": "$3^{-3}$", "accept": ["1/27"] },
+        { "id": "d8", "prompt": "$10^{-3}$", "accept": ["1/1000", "0.001"] },
+        { "id": "d9", "prompt": "$8^{-1}$", "accept": ["1/8", "0.125"] },
+        { "id": "d10", "prompt": "$4^{-2}$", "accept": ["1/16", "0.0625"] },
+        { "id": "d11", "prompt": "$1^{-5}$", "accept": ["1"] },
+        { "id": "d12", "prompt": "$6^{-2}$", "accept": ["1/36"] }
+      ],
+      "explanation": "Every one of these is $a^{-n} = \\frac{1}{a^n}$, and anything to the power 0 is 1."
+    }
+  ]
+}

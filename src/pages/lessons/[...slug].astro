@@ -1,0 +1,189 @@
+---
+/**
+ * ONE LESSON
+ * The predictable loop every lesson follows:
+ *   Overview → Key rules → Worked examples (hidden until revealed)
+ *   → Interactive practice → Mark as complete → Previous / Next
+ */
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import KeyRules from '../../components/KeyRules.astro';
+import WorkedExample from '../../components/WorkedExample.tsx';
+import LessonVisual from '../../components/LessonVisual.tsx';
+import ExerciseSet from '../../components/exercises/ExerciseSet.tsx';
+import { LessonComplete } from '../../components/Progress.tsx';
+import { getTree, getCatalog, getNeighbours } from '../../lib/site';
+import { renderInline, prepareQuestions } from '../../lib/render';
+
+export async function getStaticPaths() {
+  const lessons = await getCollection('lessons');
+  return lessons.map((lesson) => ({ params: { slug: lesson.id }, props: { lesson } }));
+}
+
+const { lesson } = Astro.props;
+const data = lesson.data;
+
+/* ---- where this lesson sits ------------------------------------------- */
+const tree = await getTree();
+const topicNode = tree.flatMap((s) => s.topics).find((t) => t.topic.id === data.topic.id)!;
+const { topic, strand, lessons: siblings, quizHref } = topicNode;
+const catalog = await getCatalog();
+const { prev, next } = await getNeighbours(lesson.id);
+const position = siblings.findIndex((l) => l.id === lesson.id) + 1;
+
+/* ---- the prose body ---------------------------------------------------- */
+const { Content } = await render(lesson);
+
+/* ---- worked examples, rendered to HTML at build time ------------------- */
+const examples = data.workedExamples.map((we) => ({
+  title: we.title,
+  problemHtml: renderInline(we.problem, lesson.id),
+  answerHtml: renderInline(we.answer, lesson.id),
+  steps: we.steps.map((s) => ({
+    explainHtml: renderInline(s.explain, lesson.id),
+    ...(s.maths ? { mathsHtml: renderInline(`$$${s.maths}$$`, lesson.id) } : {}),
+  })),
+}));
+
+/* ---- the practice bank -------------------------------------------------- */
+let practice: { title: string; introHtml?: string; questions: any[]; pick?: number; shuffle: boolean } | null = null;
+if (data.practice) {
+  const banks = await getCollection('exercises');
+  const bank = banks.find((b) => b.id === data.practice);
+  if (!bank) {
+    throw new Error(
+      `Lesson "${lesson.id}" asks for practice set "${data.practice}", but there is no ` +
+      `file src/content/exercises/${data.practice}.json`,
+    );
+  }
+  practice = {
+    title: bank.data.title,
+    ...(bank.data.intro ? { introHtml: renderInline(bank.data.intro, bank.id) } : {}),
+    questions: prepareQuestions(bank.data.questions, bank.id),
+    ...(bank.data.pick ? { pick: bank.data.pick } : {}),
+    shuffle: bank.data.shuffle,
+  };
+}
+
+const visualCaptionHtml = data.visual?.caption ? renderInline(data.visual.caption, lesson.id) : undefined;
+---
+
+<Base title={data.title} description={data.summary}>
+  <div class="lesson-shell" style={`--accent: var(${strand.data.accent})`}>
+    <!-- ===================== SIDEBAR: jump between lessons ============== -->
+    <aside class="lesson-side" aria-label="Lessons in this topic">
+      <div class="lesson-side-inner">
+        <p class="lesson-side-eyebrow">{strand.data.short}</p>
+        <a class="lesson-side-topic" href={topicNode.href}>{topic.data.title}</a>
+        <ol class="lesson-side-list">
+          {siblings.map((l, i) => (
+            <li>
+              <a
+                href={`/lessons/${l.id}/`}
+                class:list={['lesson-side-link', { 'is-current': l.id === lesson.id }]}
+                aria-current={l.id === lesson.id ? 'page' : undefined}
+              >
+                <span class="lesson-side-num">{i + 1}</span>
+                <span>{l.data.title}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+        {quizHref && (
+          <a class="lesson-side-quiz" href={quizHref}>Topic quiz →</a>
+        )}
+      </div>
+    </aside>
+
+    <!-- =========================== THE LESSON =========================== -->
+    <article class="lesson">
+      <Breadcrumbs items={[
+        { label: strand.data.short, href: `/strands/${strand.id}/` },
+        { label: topic.data.title, href: topicNode.href },
+        { label: data.title },
+      ]} />
+
+      <header class="lesson-head">
+        <p class="lesson-eyebrow">
+          Lesson {topic.data.order}.{position} · {data.minutes} min
+        </p>
+        <h1>{data.title}</h1>
+        <p class="lesson-summary">{data.summary}</p>
+      </header>
+
+      <section class="lesson-objectives" aria-labelledby="obj-heading">
+        <h2 id="obj-heading">In this lesson you will learn to…</h2>
+        <ul>
+          {data.objectives.map((o) => <li>{o}</li>)}
+        </ul>
+      </section>
+
+      <div class="prose">
+        <Content />
+      </div>
+
+      <KeyRules rules={data.keyRules} />
+
+      {data.visual && (
+        <LessonVisual
+          client:visible
+          widget={data.visual.widget}
+          title={data.visual.title}
+          captionHtml={visualCaptionHtml}
+          config={data.visual.config}
+        />
+      )}
+
+      {examples.length > 0 && (
+        <section class="we-section" aria-labelledby="we-heading">
+          <h2 id="we-heading" class="section-title">Worked examples</h2>
+          {examples.map((we, i) => (
+            <WorkedExample client:visible index={i + 1} {...we} />
+          ))}
+        </section>
+      )}
+
+      {practice && (
+        <ExerciseSet
+          client:visible
+          questions={practice.questions}
+          title={practice.title}
+          introHtml={practice.introHtml}
+          pickCount={practice.pick}
+          shuffleBank={practice.shuffle}
+        />
+      )}
+
+      <LessonComplete
+        client:visible
+        lessonId={lesson.id}
+        topicLessonIds={siblings.map((l) => l.id)}
+        topicTitle={topic.data.title}
+        catalog={catalog}
+        nextHref={next ? `/lessons/${next.lesson.id}/` : undefined}
+      />
+
+      <nav class="lesson-nav" aria-label="Lesson navigation">
+        {prev ? (
+          <a class="lesson-nav-link is-prev" href={`/lessons/${prev.lesson.id}/`}>
+            <span class="lesson-nav-dir">← Previous</span>
+            <span class="lesson-nav-title">{prev.lesson.data.title}</span>
+          </a>
+        ) : <span class="lesson-nav-spacer" />}
+
+        {next ? (
+          <a class="lesson-nav-link is-next" href={`/lessons/${next.lesson.id}/`}>
+            <span class="lesson-nav-dir">Next →</span>
+            <span class="lesson-nav-title">{next.lesson.data.title}</span>
+          </a>
+        ) : quizHref ? (
+          <a class="lesson-nav-link is-next" href={quizHref}>
+            <span class="lesson-nav-dir">Finish with →</span>
+            <span class="lesson-nav-title">the topic quiz</span>
+          </a>
+        ) : <span class="lesson-nav-spacer" />}
+      </nav>
+    </article>
+  </div>
+</Base>
