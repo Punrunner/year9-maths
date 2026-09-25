@@ -9,7 +9,7 @@
    typing "5√2" is the same as typing "5sqrt(2)".
    ========================================================================== */
 
-import { useEffect, useState } from 'preact/hooks';
+import { useEffect, useRef, useState } from 'preact/hooks';
 
 /** Inputs the keys work on. */
 const TARGET = '.xp-line, .xp-working';
@@ -66,10 +66,22 @@ export default function MathKeys() {
     };
   }, []);
 
+  // The bar sits at the bottom of the screen: if it would hide the box being
+  // typed in, scroll the box up so it sits just above the bar.
+  const bar = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (!field || !bar.current) return;
+    const gap = 16;
+    const barTop = bar.current.getBoundingClientRect().top;
+    const box = field.getBoundingClientRect();
+    // Instant: the site's smooth scrolling gets cut short by typing.
+    if (box.bottom > barTop - gap) window.scrollBy({ top: box.bottom - barTop + gap, behavior: 'instant' });
+  }, [field]);
+
   if (!field) return null;
 
   return (
-    <div class="math-keys no-print" role="toolbar" aria-label="Maths symbols">
+    <div ref={bar} class="math-keys no-print" role="toolbar" aria-label="Maths symbols">
       {KEYS.map(([label, before, after, name]) => (
         <button
           key={label}
