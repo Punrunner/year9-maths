@@ -660,3 +660,15 @@
 .footer-note, .footer-legal { font-size: var(--fs-xs); color: var(--muted); max-width: 60ch; }
 
 .not-found { text-align: center; padding-block: var(--s-24); }
+
+/* ---------- Set tests (Exam practice page) ----------------------------- */
+.test-list { margin-bottom: var(--s-8); }
+.test-list h2 { font-size: var(--fs-lg); margin: 0 0 var(--s-3); }
+.test-list ul { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--s-3); }
+.test-card {
+  display: grid; gap: var(--s-1); padding: var(--s-4) var(--s-6);
+  color: var(--body); text-decoration: none;
+}
+.test-card-title { font-family: var(--font-heading); font-weight: 600; color: var(--ink); }
+.test-card-meta { font-size: var(--fs-sm); color: var(--muted); }
+.test-card-sections { font-size: var(--fs-xs); color: var(--muted); }

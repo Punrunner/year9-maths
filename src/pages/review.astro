@@ -1,5 +1,6 @@
 ---
-/** Exam practice: a Cambridge-style written paper built from across the course. */
+/** Exam practice: a Cambridge-style written paper built from across the course,
+ *  plus the list of set tests from src/content/tests/. */
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
@@ -17,6 +18,22 @@ const questions = nodes.flatMap((n) => {
   if (!bank) return [];
   return bank.data.questions.map((q) => prepareExamQuestion(q, n.topic.id, n.topic.data.title));
 });
+
+// Set tests, newest file name first.
+const tests = (await getCollection('tests'))
+  .sort((a, b) => b.id.localeCompare(a.id))
+  .map((t) => ({
+    href: `/test/${t.id}/`,
+    title: t.data.title,
+    candidate: t.data.candidate,
+    date: t.data.date,
+    minutes: t.data.minutes,
+    calculator: t.data.calculator,
+    marks: t.data.questions
+      .flatMap((q) => q.parts.flatMap((p) => ('parts' in p ? p.parts : [p])))
+      .reduce((n, l) => n + l.marks, 0),
+    sections: [...new Set(t.data.questions.map((q) => q.section).filter(Boolean))],
+  }));
 ---
 
 <Base title="Exam practice" description="Build a Cambridge-style practice paper, with a full mark scheme, from across the whole Year 9 course.">
@@ -31,6 +48,27 @@ const questions = nodes.flatMap((n) => {
         worked through — then mark it yourself against a real mark scheme.
       </p>
     </header>
+
+    {tests.length > 0 && (
+      <section class="test-list no-print" aria-labelledby="tests-heading">
+        <h2 id="tests-heading">Tests</h2>
+        <ul>
+          {tests.map((t) => (
+            <li>
+              <a class="test-card card card-link" href={t.href}>
+                <span class="test-card-title">{t.title}</span>
+                <span class="test-card-meta">
+                  {[t.candidate, t.date, `${t.marks} marks`, `${t.minutes} min`,
+                    t.calculator === 'calculator' ? 'Calculator' : 'Non-calculator']
+                    .filter(Boolean).join(' · ')}
+                </span>
+                {t.sections.length > 0 && <span class="test-card-sections">{t.sections.join(', ')}</span>}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
 
     <ExamPaper client:load questions={questions} catalog={catalog} />
   </div>
