@@ -17,6 +17,7 @@
 import { useState, useMemo, useEffect, useRef } from 'preact/hooks';
 import type { JSX } from 'preact';
 import { M, IconTick, IconCross } from './kit';
+import MathKeys from './MathKeys';
 import { examLeaves, type ExamCheck, type PreparedExamLeaf, type PreparedExamQuestion } from '../../lib/types';
 import { checkTyped, checkAlgebraic, checkSurd, textMatches } from '../../lib/answer';
 import { shuffle, newSeed } from '../../lib/shuffle';
@@ -507,7 +508,7 @@ export default function ExamPaper({ questions, catalog, fixed }: {
               <h3>Instructions</h3>
               <ul>
                 <li>Answer <strong>all</strong> questions.</li>
-                <li>Write your answer to each part on the answer line.</li>
+                <li>Write your answer to each part on the answer line. Use the maths keys that appear at the bottom of the screen for √, powers and other symbols.</li>
                 <li>Show all your working. You can earn marks for correct method even if your final answer is wrong.</li>
                 {paperType === 'calculator' ? (
                   <li>You should use a calculator where appropriate.</li>
@@ -530,6 +531,8 @@ export default function ExamPaper({ questions, catalog, fixed }: {
         </div>
 
         <div class="exam-print-scheme">{scheme}</div>
+
+        <MathKeys />
 
         <div class="exam-finish no-print">
           <p>

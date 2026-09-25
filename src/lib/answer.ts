@@ -25,6 +25,8 @@ export function normaliseText(raw: string): string {
     .replace(/[×⋅]/g, '*')        // ×  ⋅   →  *
     .replace(/÷/g, '/')                // ÷      →  /
     .replace(/π/g, 'pi')               // π      →  pi
+    .replace(/≤/g, '<=')               // ≤      →  <=
+    .replace(/≥/g, '>=')               // ≥      →  >=
     .replace(/√/g, 'sqrt')             // √      →  sqrt
     .replace(/²/g, '^2')               // ²
     .replace(/³/g, '^3')               // ³
@@ -144,9 +146,7 @@ function loadMath(): Promise<MathJs> {
 
 /** Make a student's expression parseable: 3x → 3x is fine, but ² and √ are not. */
 function normaliseExpression(raw: string, answerHasEquals: boolean): string {
-  let s = normaliseText(raw)
-    .replace(/≤/g, '<=')
-    .replace(/≥/g, '>=');
+  let s = normaliseText(raw);
 
   // "y = 3x + 1" when we only wanted "3x + 1".
   if (!answerHasEquals && s.includes('=')) {

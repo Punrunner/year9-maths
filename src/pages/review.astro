@@ -19,9 +19,9 @@ const questions = nodes.flatMap((n) => {
   return bank.data.questions.map((q) => prepareExamQuestion(q, n.topic.id, n.topic.data.title));
 });
 
-// Set tests, newest file name first.
+// Set tests, by their `order`; tests without one go last, by file name.
 const tests = (await getCollection('tests'))
-  .sort((a, b) => b.id.localeCompare(a.id))
+  .sort((a, b) => (a.data.order ?? Infinity) - (b.data.order ?? Infinity) || a.id.localeCompare(b.id))
   .map((t) => ({
     href: `/test/${t.id}/`,
     title: t.data.title,

@@ -6,7 +6,7 @@
  * been accepted (or should not have been) — it takes seconds and stops the
  * same marking bug coming back.
  */
-import { checkTyped, checkAlgebraic, checkSurd, toNumber } from '../src/lib/answer.ts';
+import { checkTyped, checkAlgebraic, checkSurd, textMatches, toNumber } from '../src/lib/answer.ts';
 
 let pass = 0;
 let fail = 0;
@@ -102,10 +102,20 @@ const surdCases = [
   ['-3 + √12', '-3 + 2sqrt3', false, true],
   ['2 + √(5/2)', '(4 + sqrt10)/2', false, true],
   ['(-3+√41)/4', '(-3 + sqrt41)/4', true, true],
+  // What the √ key types: √( … ) with brackets.
+  ['5√(2)', '5sqrt2', true, true],
+  ['(-3+√(41))/4', '(-3 + sqrt41)/4', true, true],
+  ['√(12)', '2sqrt3', true, false],
 ];
 for (const [input, answer, simplest, expected] of surdCases) {
   check(`"${input}" vs "${answer}"${simplest ? ' (simplest)' : ''}`, await checkSurd(input, answer, simplest), expected);
 }
+
+console.log('\nSymbols from the maths keys');
+check('"x ≤ -3" matches "x<=-3"', textMatches('x ≤ -3', 'x<=-3'), true);
+check('"k ≥ 9" matches "k>=9"', textMatches('k ≥ 9', 'k>=9'), true);
+check('"16y²" matches "16y^2"', textMatches('16y²', '16y^2'), true);
+check('"4x² - 4x + 1" algebra', await checkAlgebraic('4x² - 4x + 1', '4x^2 - 4x + 1', ['x'], true), true);
 
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail ? 1 : 0);

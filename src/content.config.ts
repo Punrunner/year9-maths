@@ -540,6 +540,8 @@ const tests = defineCollection({
     candidate: z.string().optional(),
     /** Shown on the cover, e.g. "29 September 2026". */
     date: z.string().optional(),
+    /** Position in the list of tests on the Exam practice page (1 = first). */
+    order: z.number().int().optional(),
     minutes: z.number().int().positive(),
     calculator: z.enum(['calculator', 'non-calculator']),
     /** Questions appear in exactly this order. */

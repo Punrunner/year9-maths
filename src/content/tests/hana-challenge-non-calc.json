@@ -1,0 +1,544 @@
+{
+  "title": "Algebra & Surds Challenge (Non-calculator)",
+  "candidate": "Hana",
+  "order": 3,
+  "minutes": 90,
+  "calculator": "non-calculator",
+  "questions": [
+    {
+      "id": "q1",
+      "section": "Simultaneous equations",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Solve the simultaneous equations. Show all your working.$$\\frac{x}{2} + \\frac{y}{3} = 4$$$$\\frac{x}{4} - \\frac{y}{6} = 0$$",
+          "marks": 4,
+          "answer": "$x = 4$, $y = 6$",
+          "partial": [
+            "M1 for clearing the fractions in one equation, e.g. $3x + 2y = 24$ or $3x - 2y = 0$",
+            "M1 for correctly eliminating one variable",
+            "A1 for $x = 4$",
+            "A1 for $y = 6$"
+          ],
+          "answerLines": [
+            "$x =$",
+            "$y =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": 4
+            },
+            {
+              "kind": "numeric",
+              "answer": 6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "section": "Simultaneous equations",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "stem": "A theatre sells adult tickets for $a$ dollars each and child tickets for $c$ dollars each. On Monday, 40 adult and 25 child tickets were sold for a total of \\$1020. On Tuesday, 35 adult and 50 child tickets were sold for a total of \\$1230.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Show that $8a + 5c = 204$.",
+          "marks": 2,
+          "answer": "$40a + 25c = 1020$, then divide by 5",
+          "partial": [
+            "M1 for $40a + 25c = 1020$",
+            "A1 for dividing by 5 to reach the given equation"
+          ]
+        },
+        {
+          "label": "b",
+          "prompt": "Find the cost of an adult ticket and the cost of a child ticket.",
+          "marks": 3,
+          "answer": "Adult \\$18, child \\$12",
+          "partial": [
+            "M1 for $35a + 50c = 1230$ (or $7a + 10c = 246$) used with $8a + 5c = 204$ to eliminate one variable",
+            "A1 for $a = 18$",
+            "A1 for $c = 12$"
+          ],
+          "answerLines": [
+            "Adult \\$",
+            "Child \\$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": 18
+            },
+            {
+              "kind": "numeric",
+              "answer": 12
+            }
+          ]
+        },
+        {
+          "label": "c",
+          "prompt": "On Wednesday, 30 adult tickets and some child tickets were sold for a total of \\$780. How many child tickets were sold?",
+          "marks": 2,
+          "answer": "20",
+          "partial": [
+            "M1 for $780 - 30 \\times 18$ or $(780 - 540) \\div 12$ (FT their values)"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "section": "Simultaneous equations",
+      "calculator": "non-calculator",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "By substituting one equation into the other, find the coordinates of the two points where these graphs meet.$$y = x + 1$$$$y = x^2 - 5$$",
+          "marks": 5,
+          "answer": "$(3, 4)$ and $(-2, -1)$",
+          "partial": [
+            "M1 for $x^2 - 5 = x + 1$",
+            "M1 for $x^2 - x - 6 = 0$",
+            "M1 for $(x - 3)(x + 2)$",
+            "A1 for $x = 3$ and $x = -2$",
+            "A1 for both correct points"
+          ],
+          "answerLines": [
+            "",
+            "and"
+          ],
+          "checks": [
+            {
+              "kind": "text",
+              "accept": [
+                "(3,4)",
+                "3,4"
+              ]
+            },
+            {
+              "kind": "text",
+              "accept": [
+                "(-2,-1)",
+                "-2,-1"
+              ]
+            }
+          ],
+          "anyOrder": true
+        }
+      ]
+    },
+    {
+      "id": "q4",
+      "section": "Quadratics",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Solve $6x^2 - x - 12 = 0$.",
+          "marks": 3,
+          "answer": "$-\\frac{4}{3}$ and $\\frac{3}{2}$",
+          "partial": [
+            "M2 for $(3x + 4)(2x - 3)$",
+            "or M1 for a pair of brackets that expands to give two of the three terms correctly"
+          ],
+          "answerLines": [
+            "$x =$",
+            "or $x =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": "-4/3"
+            },
+            {
+              "kind": "numeric",
+              "answer": "3/2",
+              "accept": [
+                "1.5"
+              ]
+            }
+          ],
+          "anyOrder": true
+        },
+        {
+          "label": "b",
+          "prompt": "Solve $(x + 2)(x - 3) = 14$.",
+          "marks": 3,
+          "answer": "$5$ and $-4$",
+          "partial": [
+            "M1 for $x^2 - x - 6 = 14$",
+            "M1 for $x^2 - x - 20 = 0$ and $(x - 5)(x + 4)$"
+          ],
+          "answerLines": [
+            "$x =$",
+            "or $x =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": 5
+            },
+            {
+              "kind": "numeric",
+              "answer": -4
+            }
+          ],
+          "anyOrder": true
+        },
+        {
+          "label": "c",
+          "prompt": "Solve $\\dfrac{6}{x} + x = 5$.",
+          "marks": 3,
+          "answer": "$2$ and $3$",
+          "partial": [
+            "M1 for $6 + x^2 = 5x$",
+            "M1 for $x^2 - 5x + 6 = 0$ and $(x - 2)(x - 3)$"
+          ],
+          "answerLines": [
+            "$x =$",
+            "or $x =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": 2
+            },
+            {
+              "kind": "numeric",
+              "answer": 3
+            }
+          ],
+          "anyOrder": true
+        }
+      ]
+    },
+    {
+      "id": "q5",
+      "section": "Completing the square",
+      "calculator": "non-calculator",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write $3x^2 - 5x + 2$ in the form $a(x + b)^2 + c$.",
+          "marks": 3,
+          "answer": "$3\\left(x - \\frac{5}{6}\\right)^2 - \\frac{1}{12}$",
+          "partial": [
+            "B1 for $a = 3$",
+            "B1 for $b = -\\frac{5}{6}$",
+            "B1 for $c = -\\frac{1}{12}$"
+          ],
+          "qualifier": "oe",
+          "answerLines": [
+            "$a =$",
+            "$b =$",
+            "$c =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": 3
+            },
+            {
+              "kind": "numeric",
+              "answer": "-5/6"
+            },
+            {
+              "kind": "numeric",
+              "answer": "-1/12"
+            }
+          ]
+        },
+        {
+          "label": "b",
+          "prompt": "$x^2 + 6x + k$ can be written as $(x + p)^2 + 7$. Find the values of $p$ and $k$.",
+          "marks": 2,
+          "answer": "$p = 3$, $k = 16$",
+          "partial": [
+            "B1 for $p = 3$",
+            "B1 for $k = 16$"
+          ],
+          "answerLines": [
+            "$p =$",
+            "$k =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": 3
+            },
+            {
+              "kind": "numeric",
+              "answer": 16
+            }
+          ]
+        },
+        {
+          "label": "c",
+          "prompt": "$x^2 + bx + 11$ can be written as $(x - 4)^2 + q$. Find the values of $b$ and $q$.",
+          "marks": 2,
+          "answer": "$b = -8$, $q = -5$",
+          "partial": [
+            "B1 for $b = -8$",
+            "B1 for $q = -5$"
+          ],
+          "answerLines": [
+            "$b =$",
+            "$q =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": -8
+            },
+            {
+              "kind": "numeric",
+              "answer": -5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q6",
+      "section": "Completing the square",
+      "calculator": "non-calculator",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "By completing the square, solve $3x^2 - 12x + 5 = 0$. Leave your answers in surd form.",
+          "marks": 4,
+          "answer": "$\\dfrac{6 + \\sqrt{21}}{3}$ and $\\dfrac{6 - \\sqrt{21}}{3}$",
+          "partial": [
+            "M1 for $x^2 - 4x + \\frac{5}{3} = 0$ or $3(x^2 - 4x) + 5$",
+            "M1 for $(x - 2)^2 - 4$ seen",
+            "M1 for $(x - 2)^2 = \\frac{7}{3}$ oe",
+            "A1 for both answers, e.g. $2 \\pm \\sqrt{\\frac{7}{3}}$"
+          ],
+          "qualifier": "oe",
+          "answerLines": [
+            "$x =$",
+            "or $x =$"
+          ],
+          "checks": [
+            {
+              "kind": "surd",
+              "answer": "(6 + sqrt21)/3",
+              "simplest": false
+            },
+            {
+              "kind": "surd",
+              "answer": "(6 - sqrt21)/3",
+              "simplest": false
+            }
+          ],
+          "anyOrder": true
+        }
+      ]
+    },
+    {
+      "id": "q7",
+      "section": "The discriminant",
+      "calculator": "non-calculator",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Show that the discriminant of $x^2 + (k + 2)x + 2k = 0$ can be written as $(k - 2)^2$. Hence explain why the equation has real roots for every value of $k$.",
+          "marks": 3,
+          "answer": "$(k + 2)^2 - 4 \\times 1 \\times 2k = k^2 - 4k + 4 = (k - 2)^2$; a square is never negative, so $b^2 - 4ac \\ge 0$",
+          "partial": [
+            "M1 for $(k + 2)^2 - 8k$",
+            "A1 for $k^2 - 4k + 4 = (k - 2)^2$",
+            "B1 for explaining that $(k - 2)^2 \\ge 0$ so the roots are real"
+          ]
+        },
+        {
+          "label": "b",
+          "prompt": "Write down the value of $k$ for which $x^2 + (k + 2)x + 2k = 0$ has one repeated root.",
+          "marks": 1,
+          "answer": "2",
+          "check": {
+            "kind": "numeric",
+            "answer": 2
+          },
+          "answerPrefix": "$k =$"
+        },
+        {
+          "label": "c",
+          "prompt": "The equation $2x^2 + 3x + c = 0$ has two different real roots. Find the largest possible integer value of $c$.",
+          "marks": 3,
+          "answer": "1",
+          "partial": [
+            "M1 for $3^2 - 4 \\times 2 \\times c > 0$",
+            "A1 for $c < \\frac{9}{8}$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 1
+          },
+          "answerPrefix": "$c =$"
+        },
+        {
+          "label": "d",
+          "prompt": "The equation $kx^2 + 4x + 1 = 0$ has one repeated root. Find the value of $k$.",
+          "marks": 2,
+          "answer": "4",
+          "partial": [
+            "M1 for $4^2 - 4 \\times k \\times 1 = 0$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 4
+          },
+          "answerPrefix": "$k =$"
+        }
+      ]
+    },
+    {
+      "id": "q8",
+      "section": "Surds",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Simplify $\\sqrt{12} + \\sqrt{75} - \\sqrt{27}$.",
+          "marks": 2,
+          "answer": "$4\\sqrt{3}$",
+          "partial": [
+            "M1 for two of $2\\sqrt{3}$, $5\\sqrt{3}$, $3\\sqrt{3}$ seen"
+          ],
+          "check": {
+            "kind": "surd",
+            "answer": "4sqrt3",
+            "simplest": true
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Expand and simplify $(2\\sqrt{3} - \\sqrt{2})^2$.",
+          "marks": 2,
+          "answer": "$14 - 4\\sqrt{6}$",
+          "partial": [
+            "M1 for $12 - 2\\sqrt{6} - 2\\sqrt{6} + 2$ oe"
+          ],
+          "check": {
+            "kind": "surd",
+            "answer": "14 - 4sqrt6",
+            "simplest": true
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Expand and simplify $(\\sqrt{5} + \\sqrt{3})(\\sqrt{5} - \\sqrt{3})$.",
+          "marks": 2,
+          "answer": "2",
+          "partial": [
+            "M1 for $5 - \\sqrt{15} + \\sqrt{15} - 3$ or $5 - 3$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 2
+          }
+        },
+        {
+          "label": "d",
+          "prompt": "A square has area $(11 + 6\\sqrt{2})$ cm$^2$. Show that the length of one side is $(3 + \\sqrt{2})$ cm.",
+          "marks": 2,
+          "answer": "$(3 + \\sqrt{2})^2 = 9 + 6\\sqrt{2} + 2 = 11 + 6\\sqrt{2}$",
+          "partial": [
+            "M1 for $(3 + \\sqrt{2})^2 = 9 + 3\\sqrt{2} + 3\\sqrt{2} + 2$",
+            "A1 for reaching $11 + 6\\sqrt{2}$ with no errors"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "q9",
+      "section": "Rationalising",
+      "calculator": "non-calculator",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Solve $x\\sqrt{2} = 3 + x$. Give your answer in the form $a + b\\sqrt{2}$.",
+          "marks": 3,
+          "answer": "$3 + 3\\sqrt{2}$",
+          "partial": [
+            "M1 for $x(\\sqrt{2} - 1) = 3$",
+            "M1 for $x = \\dfrac{3}{\\sqrt{2} - 1}$ multiplied by $\\dfrac{\\sqrt{2} + 1}{\\sqrt{2} + 1}$"
+          ],
+          "check": {
+            "kind": "surd",
+            "answer": "3 + 3sqrt2",
+            "simplest": true
+          },
+          "answerPrefix": "$x =$"
+        },
+        {
+          "label": "b",
+          "prompt": "Write $\\dfrac{\\sqrt{3} + 1}{\\sqrt{3} - 1}$ in the form $a + b\\sqrt{3}$.",
+          "marks": 3,
+          "answer": "$2 + \\sqrt{3}$",
+          "partial": [
+            "M1 for multiplying by $\\dfrac{\\sqrt{3} + 1}{\\sqrt{3} + 1}$",
+            "M1 for $\\dfrac{4 + 2\\sqrt{3}}{2}$"
+          ],
+          "answerLines": [
+            "$a =$",
+            "$b =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": 2
+            },
+            {
+              "kind": "numeric",
+              "answer": 1
+            }
+          ]
+        },
+        {
+          "label": "c",
+          "prompt": "Simplify $\\dfrac{1}{\\sqrt{5} - 2} + \\dfrac{1}{\\sqrt{5} + 2}$.",
+          "marks": 3,
+          "answer": "$2\\sqrt{5}$",
+          "partial": [
+            "M1 for $\\sqrt{5} + 2$ or $\\sqrt{5} - 2$ from rationalising either fraction",
+            "M1 for common denominator $5 - 4 = 1$"
+          ],
+          "check": {
+            "kind": "surd",
+            "answer": "2sqrt5",
+            "simplest": true
+          }
+        },
+        {
+          "label": "d",
+          "prompt": "$x = 2 + \\sqrt{3}$. Show that $x + \\dfrac{1}{x}$ is an integer.",
+          "marks": 2,
+          "answer": "$\\dfrac{1}{2 + \\sqrt{3}} = 2 - \\sqrt{3}$, so $x + \\dfrac{1}{x} = 4$",
+          "partial": [
+            "M1 for $\\dfrac{1}{x} = 2 - \\sqrt{3}$",
+            "A1 for $= 4$"
+          ]
+        }
+      ]
+    }
+  ]
+}

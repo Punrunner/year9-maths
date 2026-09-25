@@ -777,3 +777,22 @@
   .exam-scheme-table th, .exam-scheme-table td { border-color: #000; }
   .exam-scheme-table tr { break-inside: avoid; }
 }
+
+/* ---------- maths keys (symbol bar while typing an answer) ---------- */
+.math-keys {
+  position: fixed; left: 50%; bottom: var(--s-3); transform: translateX(-50%); z-index: 20;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: var(--s-1);
+  width: max-content; max-width: calc(100vw - 2 * var(--s-4));
+  padding: var(--s-2); background: var(--surface);
+  border: 1px solid var(--line); border-radius: var(--r-md); box-shadow: var(--shadow-pop);
+}
+.math-key {
+  min-width: 44px; min-height: 40px; padding: 0 var(--s-2);
+  font: inherit; font-size: var(--fs-md); color: var(--ink);
+  background: var(--surface-alt); border: 1px solid var(--line); border-radius: var(--r-sm);
+  cursor: pointer;
+}
+.math-key:hover { border-color: var(--red); color: var(--red); }
+.math-key:active { transform: translateY(1px); }
+/* Leave room so the last answer box is never hidden behind the keys. */
+.exam-finish { margin-bottom: var(--s-24); }

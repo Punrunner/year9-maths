@@ -1,8 +1,7 @@
 {
-  "title": "Algebra & Surds Test",
+  "title": "Algebra & Surds Test B",
   "candidate": "Hana",
-  "date": "29 September 2026",
-  "order": 1,
+  "order": 2,
   "minutes": 80,
   "calculator": "non-calculator",
   "questions": [
@@ -14,11 +13,11 @@
       "parts": [
         {
           "label": "a",
-          "prompt": "Solve the simultaneous equations. Show all your working.$$3x + 2y = 18$$$$5x - 2y = 14$$",
+          "prompt": "Solve the simultaneous equations. Show all your working.$$4x + 3y = 25$$$$2x - 3y = -1$$",
           "marks": 3,
           "answer": "$x = 4$, $y = 3$",
           "partial": [
-            "M1 for correctly eliminating one variable, e.g. $8x = 32$",
+            "M1 for correctly eliminating one variable, e.g. $6x = 24$",
             "A1 for $x = 4$",
             "A1 for $y = 3$"
           ],
@@ -47,12 +46,12 @@
       "parts": [
         {
           "label": "a",
-          "prompt": "Solve the simultaneous equations. Show all your working.$$2x + 5y = 1$$$$3x - 4y = 13$$",
+          "prompt": "Solve the simultaneous equations. Show all your working.$$3x + 4y = 5$$$$5x - 3y = 18$$",
           "marks": 4,
           "answer": "$x = 3$, $y = -1$",
           "partial": [
-            "M1 for multiplying one or both equations so that the coefficients of $x$ (or $y$) are equal, e.g. $6x + 15y = 3$ and $6x - 8y = 26$",
-            "M1 for correctly subtracting (or adding) to eliminate a variable, e.g. $23y = -23$",
+            "M1 for multiplying one or both equations so that the coefficients of $x$ (or $y$) are equal, e.g. $9x + 12y = 15$ and $20x - 12y = 72$",
+            "M1 for correctly adding (or subtracting) to eliminate a variable, e.g. $29x = 87$",
             "A1 for $x = 3$",
             "A1 for $y = -1$"
           ],
@@ -78,42 +77,46 @@
       "section": "Simultaneous equations",
       "calculator": "non-calculator",
       "difficulty": "core",
-      "stem": "At a café, 3 coffees and 2 cakes cost \\$19. 1 coffee and 4 cakes cost \\$18.",
+      "stem": "2 pens and 5 notebooks cost \\$15.50. 4 pens and 3 notebooks cost \\$13.50.",
       "parts": [
         {
           "label": "a",
-          "prompt": "Write down two equations, using $c$ for the cost of a coffee and $k$ for the cost of a cake, in dollars.",
+          "prompt": "Write down two equations, using $p$ for the cost of a pen and $n$ for the cost of a notebook, in dollars.",
           "marks": 2,
-          "answer": "$3c + 2k = 19$ and $c + 4k = 18$",
+          "answer": "$2p + 5n = 15.5$ and $4p + 3n = 13.5$",
           "partial": [
             "B1 for each correct equation"
           ]
         },
         {
           "label": "b",
-          "prompt": "Solve your equations to find the cost of one coffee and the cost of one cake.",
+          "prompt": "Solve your equations to find the cost of one pen and the cost of one notebook.",
           "marks": 3,
-          "answer": "Coffee \\$4, cake \\$3.50",
+          "answer": "Pen \\$1.50, notebook \\$2.50",
           "partial": [
             "M1 for a correct method to eliminate one variable (FT their equations)",
-            "A1 for $c = 4$",
-            "A1 for $k = 3.5$"
+            "A1 for $p = 1.5$",
+            "A1 for $n = 2.5$"
           ],
           "answerLines": [
-            "Coffee \\$",
-            "Cake \\$"
+            "Pen \\$",
+            "Notebook \\$"
           ],
           "checks": [
             {
               "kind": "numeric",
-              "answer": 4
+              "answer": 1.5,
+              "accept": [
+                "1.50",
+                "3/2"
+              ]
             },
             {
               "kind": "numeric",
-              "answer": 3.5,
+              "answer": 2.5,
               "accept": [
-                "3.50",
-                "7/2"
+                "2.50",
+                "5/2"
               ]
             }
           ]
@@ -128,15 +131,15 @@
       "parts": [
         {
           "label": "a",
-          "prompt": "Factorise $x^2 - x - 20$.",
+          "prompt": "Factorise $x^2 + 2x - 35$.",
           "marks": 2,
-          "answer": "$(x - 5)(x + 4)$",
+          "answer": "$(x + 7)(x - 5)$",
           "partial": [
-            "M1 for $(x + a)(x + b)$ where $ab = -20$ or $a + b = -1$"
+            "M1 for $(x + a)(x + b)$ where $ab = -35$ or $a + b = 2$"
           ],
           "check": {
             "kind": "algebraic",
-            "answer": "(x - 5)(x + 4)",
+            "answer": "(x + 7)(x - 5)",
             "variables": [
               "x"
             ],
@@ -145,9 +148,9 @@
         },
         {
           "label": "b",
-          "prompt": "Hence solve $x^2 - x - 20 = 0$.",
+          "prompt": "Hence solve $x^2 + 2x - 35 = 0$.",
           "marks": 1,
-          "answer": "$5$ and $-4$",
+          "answer": "$-7$ and $5$",
           "qualifier": "FT their (a)",
           "answerLines": [
             "$x =$",
@@ -156,23 +159,23 @@
           "checks": [
             {
               "kind": "numeric",
-              "answer": 5
+              "answer": -7
             },
             {
               "kind": "numeric",
-              "answer": -4
+              "answer": 5
             }
           ],
           "anyOrder": true
         },
         {
           "label": "c",
-          "prompt": "Solve $2x^2 + 7x + 3 = 0$ by factorising.",
+          "prompt": "Solve $3x^2 - 10x - 8 = 0$ by factorising.",
           "marks": 3,
-          "answer": "$-\\frac{1}{2}$ and $-3$",
+          "answer": "$-\\frac{2}{3}$ and $4$",
           "partial": [
-            "M2 for $(2x + 1)(x + 3)$",
-            "or M1 for $(2x + a)(x + b)$ where $ab = 3$ or $a + 2b = 7$"
+            "M2 for $(3x + 2)(x - 4)$",
+            "or M1 for $(3x + a)(x + b)$ where $ab = -8$ or $a + 3b = -10$"
           ],
           "answerLines": [
             "$x =$",
@@ -181,14 +184,11 @@
           "checks": [
             {
               "kind": "numeric",
-              "answer": "-1/2",
-              "accept": [
-                "-0.5"
-              ]
+              "answer": "-2/3"
             },
             {
               "kind": "numeric",
-              "answer": -3
+              "answer": 4
             }
           ],
           "anyOrder": true
@@ -203,12 +203,12 @@
       "parts": [
         {
           "label": "a",
-          "prompt": "Write $x^2 + 10x + 7$ in the form $(x + p)^2 + q$.",
+          "prompt": "Write $x^2 + 8x + 3$ in the form $(x + p)^2 + q$.",
           "marks": 2,
-          "answer": "$(x + 5)^2 - 18$",
+          "answer": "$(x + 4)^2 - 13$",
           "partial": [
-            "B1 for $p = 5$",
-            "B1 for $q = -18$"
+            "B1 for $p = 4$",
+            "B1 for $q = -13$"
           ],
           "answerLines": [
             "$p =$",
@@ -217,22 +217,22 @@
           "checks": [
             {
               "kind": "numeric",
-              "answer": 5
+              "answer": 4
             },
             {
               "kind": "numeric",
-              "answer": -18
+              "answer": -13
             }
           ]
         },
         {
           "label": "b",
-          "prompt": "Write $x^2 - 7x + 2$ in the form $(x + p)^2 + q$.",
+          "prompt": "Write $x^2 - 5x + 1$ in the form $(x + p)^2 + q$.",
           "marks": 2,
-          "answer": "$\\left(x - \\frac{7}{2}\\right)^2 - \\frac{41}{4}$",
+          "answer": "$\\left(x - \\frac{5}{2}\\right)^2 - \\frac{21}{4}$",
           "partial": [
-            "B1 for $p = -\\frac{7}{2}$",
-            "B1 for $q = -\\frac{41}{4}$"
+            "B1 for $p = -\\frac{5}{2}$",
+            "B1 for $q = -\\frac{21}{4}$"
           ],
           "qualifier": "oe",
           "answerLines": [
@@ -242,18 +242,18 @@
           "checks": [
             {
               "kind": "numeric",
-              "answer": "-7/2",
+              "answer": "-5/2",
               "accept": [
-                "-3.5",
-                "-3 1/2"
+                "-2.5",
+                "-2 1/2"
               ]
             },
             {
               "kind": "numeric",
-              "answer": "-41/4",
+              "answer": "-21/4",
               "accept": [
-                "-10.25",
-                "-10 1/4"
+                "-5.25",
+                "-5 1/4"
               ]
             }
           ]
@@ -268,13 +268,13 @@
       "parts": [
         {
           "label": "a",
-          "prompt": "Write $4x^2 + 24x - 5$ in the form $a(x + b)^2 + c$.",
+          "prompt": "Write $3x^2 + 18x + 4$ in the form $a(x + b)^2 + c$.",
           "marks": 3,
-          "answer": "$4(x + 3)^2 - 41$",
+          "answer": "$3(x + 3)^2 - 23$",
           "partial": [
-            "B1 for $a = 4$",
+            "B1 for $a = 3$",
             "B1 for $b = 3$",
-            "B1 for $c = -41$"
+            "B1 for $c = -23$"
           ],
           "answerLines": [
             "$a =$",
@@ -284,7 +284,7 @@
           "checks": [
             {
               "kind": "numeric",
-              "answer": 4
+              "answer": 3
             },
             {
               "kind": "numeric",
@@ -292,19 +292,19 @@
             },
             {
               "kind": "numeric",
-              "answer": -41
+              "answer": -23
             }
           ]
         },
         {
           "label": "b",
-          "prompt": "Write $2x^2 - 6x + 1$ in the form $a(x + b)^2 + c$.",
+          "prompt": "Write $2x^2 + 10x - 1$ in the form $a(x + b)^2 + c$.",
           "marks": 3,
-          "answer": "$2\\left(x - \\frac{3}{2}\\right)^2 - \\frac{7}{2}$",
+          "answer": "$2\\left(x + \\frac{5}{2}\\right)^2 - \\frac{27}{2}$",
           "partial": [
             "B1 for $a = 2$",
-            "B1 for $b = -\\frac{3}{2}$",
-            "B1 for $c = -\\frac{7}{2}$"
+            "B1 for $b = \\frac{5}{2}$",
+            "B1 for $c = -\\frac{27}{2}$"
           ],
           "qualifier": "oe",
           "answerLines": [
@@ -319,18 +319,18 @@
             },
             {
               "kind": "numeric",
-              "answer": "-3/2",
+              "answer": "5/2",
               "accept": [
-                "-1.5",
-                "-1 1/2"
+                "2.5",
+                "2 1/2"
               ]
             },
             {
               "kind": "numeric",
-              "answer": "-7/2",
+              "answer": "-27/2",
               "accept": [
-                "-3.5",
-                "-3 1/2"
+                "-13.5",
+                "-13 1/2"
               ]
             }
           ]
@@ -345,13 +345,13 @@
       "parts": [
         {
           "label": "a",
-          "prompt": "By completing the square, solve $x^2 + 6x - 3 = 0$. Give your answers in the form $a \\pm b\\sqrt{3}$.",
+          "prompt": "By completing the square, solve $x^2 - 4x - 8 = 0$. Give your answers in the form $a \\pm b\\sqrt{3}$.",
           "marks": 3,
-          "answer": "$-3 + 2\\sqrt{3}$ and $-3 - 2\\sqrt{3}$",
+          "answer": "$2 + 2\\sqrt{3}$ and $2 - 2\\sqrt{3}$",
           "partial": [
-            "M1 for $(x + 3)^2 - 9 - 3$ oe",
-            "M1 for $(x + 3)^2 = 12$ or $x + 3 = \\pm\\sqrt{12}$",
-            "A1 for both answers — accept $-3 \\pm \\sqrt{12}$ for M2 only"
+            "M1 for $(x - 2)^2 - 4 - 8$ oe",
+            "M1 for $(x - 2)^2 = 12$ or $x - 2 = \\pm\\sqrt{12}$",
+            "A1 for both answers — accept $2 \\pm \\sqrt{12}$ for M2 only"
           ],
           "answerLines": [
             "$x =$",
@@ -360,12 +360,12 @@
           "checks": [
             {
               "kind": "surd",
-              "answer": "-3 + 2sqrt3",
+              "answer": "2 + 2sqrt3",
               "simplest": true
             },
             {
               "kind": "surd",
-              "answer": "-3 - 2sqrt3",
+              "answer": "2 - 2sqrt3",
               "simplest": true
             }
           ],
@@ -373,14 +373,14 @@
         },
         {
           "label": "b",
-          "prompt": "By completing the square, solve $2x^2 - 8x + 3 = 0$. Leave your answers in surd form.",
+          "prompt": "By completing the square, solve $2x^2 + 4x - 3 = 0$. Leave your answers in surd form.",
           "marks": 4,
-          "answer": "$\\dfrac{4 + \\sqrt{10}}{2}$ and $\\dfrac{4 - \\sqrt{10}}{2}$",
+          "answer": "$\\dfrac{-2 + \\sqrt{10}}{2}$ and $\\dfrac{-2 - \\sqrt{10}}{2}$",
           "partial": [
-            "M1 for $x^2 - 4x + \\frac{3}{2} = 0$ or $2(x^2 - 4x) + 3$",
-            "M1 for $(x - 2)^2 - 4$ seen",
-            "M1 for $(x - 2)^2 = \\frac{5}{2}$ oe",
-            "A1 for both answers, e.g. $2 \\pm \\sqrt{\\frac{5}{2}}$"
+            "M1 for $x^2 + 2x - \\frac{3}{2} = 0$ or $2(x^2 + 2x) - 3$",
+            "M1 for $(x + 1)^2 - 1$ seen",
+            "M1 for $(x + 1)^2 = \\frac{5}{2}$ oe",
+            "A1 for both answers, e.g. $-1 \\pm \\sqrt{\\frac{5}{2}}$"
           ],
           "qualifier": "oe",
           "answerLines": [
@@ -390,12 +390,12 @@
           "checks": [
             {
               "kind": "surd",
-              "answer": "(4 + sqrt10)/2",
+              "answer": "(-2 + sqrt10)/2",
               "simplest": false
             },
             {
               "kind": "surd",
-              "answer": "(4 - sqrt10)/2",
+              "answer": "(-2 - sqrt10)/2",
               "simplest": false
             }
           ],
@@ -411,20 +411,20 @@
       "parts": [
         {
           "label": "a",
-          "prompt": "Find the value of the discriminant of $2x^2 - 5x + 4 = 0$.",
+          "prompt": "Find the value of the discriminant of $3x^2 - 4x + 2 = 0$.",
           "marks": 2,
-          "answer": "$-7$",
+          "answer": "$-8$",
           "partial": [
-            "M1 for $(-5)^2 - 4 \\times 2 \\times 4$"
+            "M1 for $(-4)^2 - 4 \\times 3 \\times 2$"
           ],
           "check": {
             "kind": "numeric",
-            "answer": -7
+            "answer": -8
           }
         },
         {
           "label": "b",
-          "prompt": "Hence write down the number of real roots of $2x^2 - 5x + 4 = 0$.",
+          "prompt": "Hence write down the number of real roots of $3x^2 - 4x + 2 = 0$.",
           "marks": 1,
           "answer": "0 (no real roots)",
           "check": {
@@ -443,22 +443,22 @@
         },
         {
           "label": "c",
-          "prompt": "Without solving the equation, show that $4x^2 - 12x + 9 = 0$ has one repeated root.",
+          "prompt": "Without solving the equation, show that $9x^2 + 6x + 1 = 0$ has one repeated root.",
           "marks": 2,
-          "answer": "$b^2 - 4ac = (-12)^2 - 4 \\times 4 \\times 9 = 144 - 144 = 0$, so one repeated root",
+          "answer": "$b^2 - 4ac = 6^2 - 4 \\times 9 \\times 1 = 36 - 36 = 0$, so one repeated root",
           "partial": [
-            "M1 for $(-12)^2 - 4 \\times 4 \\times 9$",
+            "M1 for $6^2 - 4 \\times 9 \\times 1$",
             "A1 for $= 0$ with the conclusion"
           ]
         },
         {
           "label": "d",
-          "prompt": "Use the quadratic formula to solve $2x^2 + 3x - 4 = 0$. Give your answers in the form $\\dfrac{a \\pm \\sqrt{b}}{c}$.",
+          "prompt": "Use the quadratic formula to solve $x^2 + 5x + 2 = 0$. Give your answers in the form $\\dfrac{a \\pm \\sqrt{b}}{c}$.",
           "marks": 3,
-          "answer": "$\\dfrac{-3 + \\sqrt{41}}{4}$ and $\\dfrac{-3 - \\sqrt{41}}{4}$",
+          "answer": "$\\dfrac{-5 + \\sqrt{17}}{2}$ and $\\dfrac{-5 - \\sqrt{17}}{2}$",
           "partial": [
-            "M1 for $\\dfrac{-3 \\pm \\sqrt{3^2 - 4 \\times 2 \\times (-4)}}{2 \\times 2}$",
-            "B1 for 41 seen as the discriminant"
+            "M1 for $\\dfrac{-5 \\pm \\sqrt{5^2 - 4 \\times 1 \\times 2}}{2 \\times 1}$",
+            "B1 for 17 seen as the discriminant"
           ],
           "answerLines": [
             "$x =$",
@@ -467,12 +467,12 @@
           "checks": [
             {
               "kind": "surd",
-              "answer": "(-3 + sqrt41)/4",
+              "answer": "(-5 + sqrt17)/2",
               "simplest": true
             },
             {
               "kind": "surd",
-              "answer": "(-3 - sqrt41)/4",
+              "answer": "(-5 - sqrt17)/2",
               "simplest": true
             }
           ],
@@ -488,12 +488,12 @@
       "parts": [
         {
           "label": "a",
-          "prompt": "The equation $x^2 + kx + 9 = 0$ has one repeated root. Find the two possible values of $k$.",
+          "prompt": "The equation $x^2 - kx + 16 = 0$ has one repeated root. Find the two possible values of $k$.",
           "marks": 3,
-          "answer": "$6$ and $-6$",
+          "answer": "$8$ and $-8$",
           "partial": [
-            "M1 for $k^2 - 4 \\times 1 \\times 9 = 0$",
-            "M1 for $k^2 = 36$",
+            "M1 for $(-k)^2 - 4 \\times 1 \\times 16 = 0$",
+            "M1 for $k^2 = 64$",
             "or B1 for one correct value only"
           ],
           "answerLines": [
@@ -503,29 +503,29 @@
           "checks": [
             {
               "kind": "numeric",
-              "answer": 6
+              "answer": 8
             },
             {
               "kind": "numeric",
-              "answer": -6
+              "answer": -8
             }
           ],
           "anyOrder": true
         },
         {
           "label": "b",
-          "prompt": "The equation $x^2 + 4x + k = 0$ has two different real roots. Find the range of values of $k$.",
+          "prompt": "The equation $x^2 + 6x + k = 0$ has no real roots. Find the range of values of $k$.",
           "marks": 2,
-          "answer": "$k < 4$",
+          "answer": "$k > 9$",
           "partial": [
-            "M1 for $4^2 - 4 \\times 1 \\times k > 0$",
-            "or B1 for $k = 4$ or $k \\le 4$"
+            "M1 for $6^2 - 4 \\times 1 \\times k < 0$",
+            "or B1 for $k = 9$ or $k \\ge 9$"
           ],
           "check": {
             "kind": "text",
             "accept": [
-              "k<4",
-              "4>k"
+              "k>9",
+              "9<k"
             ]
           }
         }
@@ -539,20 +539,34 @@
       "parts": [
         {
           "label": "a",
-          "prompt": "Simplify $\\sqrt{50}$.",
+          "prompt": "Simplify $\\sqrt{45}$.",
           "marks": 1,
-          "answer": "$5\\sqrt{2}$",
+          "answer": "$3\\sqrt{5}$",
           "check": {
             "kind": "surd",
-            "answer": "5sqrt2",
+            "answer": "3sqrt5",
             "simplest": true
           }
         },
         {
           "label": "b",
-          "prompt": "Simplify $\\sqrt{72}$.",
+          "prompt": "Simplify $\\sqrt{98}$.",
           "marks": 1,
+          "answer": "$7\\sqrt{2}$",
+          "check": {
+            "kind": "surd",
+            "answer": "7sqrt2",
+            "simplest": true
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Write $\\sqrt{200} - \\sqrt{32}$ in the form $k\\sqrt{2}$.",
+          "marks": 2,
           "answer": "$6\\sqrt{2}$",
+          "partial": [
+            "M1 for $10\\sqrt{2}$ or $4\\sqrt{2}$ seen"
+          ],
           "check": {
             "kind": "surd",
             "answer": "6sqrt2",
@@ -560,30 +574,16 @@
           }
         },
         {
-          "label": "c",
-          "prompt": "Write $\\sqrt{243} - \\sqrt{48}$ in the form $k\\sqrt{3}$.",
-          "marks": 2,
-          "answer": "$5\\sqrt{3}$",
-          "partial": [
-            "M1 for $9\\sqrt{3}$ or $4\\sqrt{3}$ seen"
-          ],
-          "check": {
-            "kind": "surd",
-            "answer": "5sqrt3",
-            "simplest": true
-          }
-        },
-        {
           "label": "d",
-          "prompt": "Simplify $2\\sqrt{3} \\times 5\\sqrt{6}$, giving your answer in the form $k\\sqrt{2}$.",
+          "prompt": "Simplify $3\\sqrt{2} \\times 4\\sqrt{10}$, giving your answer in the form $k\\sqrt{5}$.",
           "marks": 2,
-          "answer": "$30\\sqrt{2}$",
+          "answer": "$24\\sqrt{5}$",
           "partial": [
-            "M1 for $10\\sqrt{18}$ or $\\sqrt{18} = 3\\sqrt{2}$ seen"
+            "M1 for $12\\sqrt{20}$ or $\\sqrt{20} = 2\\sqrt{5}$ seen"
           ],
           "check": {
             "kind": "surd",
-            "answer": "30sqrt2",
+            "answer": "24sqrt5",
             "simplest": true
           }
         }
@@ -597,38 +597,38 @@
       "parts": [
         {
           "label": "a",
-          "prompt": "Expand and simplify $(4 + \\sqrt{3})(2 - \\sqrt{3})$.",
+          "prompt": "Expand and simplify $(5 + \\sqrt{2})(3 - \\sqrt{2})$.",
           "marks": 2,
-          "answer": "$5 - 2\\sqrt{3}$",
+          "answer": "$13 - 2\\sqrt{2}$",
           "partial": [
-            "M1 for three of $8$, $-4\\sqrt{3}$, $+2\\sqrt{3}$, $-3$ correct"
+            "M1 for three of $15$, $-5\\sqrt{2}$, $+3\\sqrt{2}$, $-2$ correct"
           ],
           "check": {
             "kind": "surd",
-            "answer": "5 - 2sqrt3",
+            "answer": "13 - 2sqrt2",
             "simplest": true
           }
         },
         {
           "label": "b",
-          "prompt": "Expand and simplify $(6 + \\sqrt{5})(6 - \\sqrt{5})$.",
+          "prompt": "Expand and simplify $(7 - \\sqrt{3})(7 + \\sqrt{3})$.",
           "marks": 2,
-          "answer": "31",
+          "answer": "46",
           "partial": [
-            "M1 for $36 - 6\\sqrt{5} + 6\\sqrt{5} - 5$ or $36 - 5$"
+            "M1 for $49 + 7\\sqrt{3} - 7\\sqrt{3} - 3$ or $49 - 3$"
           ],
           "check": {
             "kind": "numeric",
-            "answer": 31
+            "answer": 46
           }
         },
         {
           "label": "c",
-          "prompt": "Expand $(6 - \\sqrt{2})^2$, giving your answer in the form $a + b\\sqrt{2}$.",
+          "prompt": "Expand $(3 + \\sqrt{5})^2$, giving your answer in the form $a + b\\sqrt{5}$.",
           "marks": 2,
-          "answer": "$38 - 12\\sqrt{2}$",
+          "answer": "$14 + 6\\sqrt{5}$",
           "partial": [
-            "M1 for $36 - 6\\sqrt{2} - 6\\sqrt{2} + 2$ oe"
+            "M1 for $9 + 3\\sqrt{5} + 3\\sqrt{5} + 5$ oe"
           ],
           "answerLines": [
             "$a =$",
@@ -637,11 +637,11 @@
           "checks": [
             {
               "kind": "numeric",
-              "answer": 38
+              "answer": 14
             },
             {
               "kind": "numeric",
-              "answer": -12
+              "answer": 6
             }
           ]
         }
@@ -655,45 +655,45 @@
       "parts": [
         {
           "label": "a",
-          "prompt": "Rationalise the denominator and simplify $\\dfrac{12}{\\sqrt{3}}$.",
+          "prompt": "Rationalise the denominator and simplify $\\dfrac{10}{\\sqrt{5}}$.",
           "marks": 2,
-          "answer": "$4\\sqrt{3}$",
+          "answer": "$2\\sqrt{5}$",
           "partial": [
-            "M1 for $\\dfrac{12\\sqrt{3}}{3}$"
+            "M1 for $\\dfrac{10\\sqrt{5}}{5}$"
           ],
           "check": {
             "kind": "surd",
-            "answer": "4sqrt3",
+            "answer": "2sqrt5",
             "simplest": true
           }
         },
         {
           "label": "b",
-          "prompt": "Rationalise the denominator and simplify $\\dfrac{4}{3 - \\sqrt{5}}$.",
+          "prompt": "Rationalise the denominator and simplify $\\dfrac{6}{2 + \\sqrt{3}}$.",
           "marks": 3,
-          "answer": "$3 + \\sqrt{5}$",
+          "answer": "$12 - 6\\sqrt{3}$",
           "partial": [
-            "M1 for multiplying by $\\dfrac{3 + \\sqrt{5}}{3 + \\sqrt{5}}$",
-            "B1 for denominator $9 - 5 = 4$"
+            "M1 for multiplying by $\\dfrac{2 - \\sqrt{3}}{2 - \\sqrt{3}}$",
+            "B1 for denominator $4 - 3 = 1$"
           ],
           "check": {
             "kind": "surd",
-            "answer": "3 + sqrt5",
+            "answer": "12 - 6sqrt3",
             "simplest": true
           }
         },
         {
           "label": "c",
-          "prompt": "Write $\\dfrac{1 + \\sqrt{2}}{3 - \\sqrt{2}}$ in the form $\\dfrac{a + b\\sqrt{2}}{c}$, where $a$, $b$ and $c$ are integers.",
+          "prompt": "Write $\\dfrac{2 + \\sqrt{3}}{4 - \\sqrt{3}}$ in the form $\\dfrac{a + b\\sqrt{3}}{c}$, where $a$, $b$ and $c$ are integers.",
           "marks": 3,
-          "answer": "$\\dfrac{5 + 4\\sqrt{2}}{7}$",
+          "answer": "$\\dfrac{11 + 6\\sqrt{3}}{13}$",
           "partial": [
-            "M1 for multiplying by $\\dfrac{3 + \\sqrt{2}}{3 + \\sqrt{2}}$",
-            "M1 for numerator $3 + \\sqrt{2} + 3\\sqrt{2} + 2$ or denominator 7"
+            "M1 for multiplying by $\\dfrac{4 + \\sqrt{3}}{4 + \\sqrt{3}}$",
+            "M1 for numerator $8 + 2\\sqrt{3} + 4\\sqrt{3} + 3$ or denominator 13"
           ],
           "check": {
             "kind": "surd",
-            "answer": "(5 + 4sqrt2)/7",
+            "answer": "(11 + 6sqrt3)/13",
             "simplest": true
           }
         }
