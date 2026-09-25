@@ -1,0 +1,234 @@
+{
+  "topic": "area-perimeter-volume",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Calculate the area of a circle with radius 7.5 cm.",
+          "marks": 2,
+          "answer": "177",
+          "partial": [
+            "M1 for $\\pi \\times 7.5^2$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 176.7,
+            "tolerance": 0.35
+          },
+          "answerSuffix": "cm$^2$",
+          "qualifier": "176.7 to 177"
+        },
+        {
+          "label": "b",
+          "prompt": "Calculate the circumference of a circle with diameter 12 cm.",
+          "marks": 2,
+          "answer": "37.7",
+          "partial": [
+            "M1 for $\\pi \\times 12$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 37.7,
+            "tolerance": 0.05
+          },
+          "answerSuffix": "cm"
+        },
+        {
+          "label": "c",
+          "prompt": "A semicircle has diameter 10 cm. Calculate its perimeter.",
+          "marks": 3,
+          "answer": "25.7",
+          "partial": [
+            "M1 for $\\pi \\times 10 \\div 2$ oe",
+            "M1 for adding 10"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 25.7,
+            "tolerance": 0.05
+          },
+          "answerSuffix": "cm"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "A right-angled triangle has shorter sides 9 cm and 12 cm. Calculate the length of the hypotenuse.",
+          "marks": 2,
+          "answer": "15",
+          "partial": [
+            "M1 for $9^2 + 12^2$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 15
+          },
+          "answerSuffix": "cm"
+        },
+        {
+          "label": "b",
+          "prompt": "A right-angled triangle has hypotenuse 13 cm and one shorter side 5 cm. Calculate the length of the other side.",
+          "marks": 2,
+          "answer": "12",
+          "partial": [
+            "M1 for $13^2 - 5^2$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 12
+          },
+          "answerSuffix": "cm"
+        },
+        {
+          "label": "c",
+          "prompt": "A ladder 6 m long leans against a vertical wall. The foot of the ladder is 1.8 m from the wall on horizontal ground. How far up the wall does the ladder reach?",
+          "marks": 3,
+          "answer": "5.72",
+          "partial": [
+            "M1 for $6^2 - 1.8^2$",
+            "M1 for $\\sqrt{32.76}$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 5.72,
+            "tolerance": 0.005
+          },
+          "answerSuffix": "m"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "parts": [
+            {
+              "label": "i",
+              "prompt": "Calculate its volume.",
+              "marks": 1,
+              "answer": "120",
+              "check": {
+                "kind": "numeric",
+                "answer": 120
+              },
+              "answerSuffix": "cm$^3$"
+            },
+            {
+              "label": "ii",
+              "prompt": "Calculate its total surface area.",
+              "marks": 2,
+              "answer": "158",
+              "partial": [
+                "M1 for three different face areas 40, 24 and 15 seen"
+              ],
+              "check": {
+                "kind": "numeric",
+                "answer": 158
+              },
+              "answerSuffix": "cm$^2$"
+            }
+          ],
+          "prompt": "A cuboid measures 8 cm by 5 cm by 3 cm."
+        },
+        {
+          "label": "b",
+          "parts": [
+            {
+              "label": "i",
+              "prompt": "Calculate its volume.",
+              "marks": 2,
+              "answer": "503",
+              "partial": [
+                "M1 for $\\pi \\times 4^2 \\times 10$"
+              ],
+              "check": {
+                "kind": "numeric",
+                "answer": 502.7,
+                "tolerance": 0.35
+              },
+              "answerSuffix": "cm$^3$",
+              "qualifier": "502 to 503"
+            },
+            {
+              "label": "ii",
+              "prompt": "Calculate its total surface area.",
+              "marks": 3,
+              "answer": "352",
+              "partial": [
+                "M1 for $2 \\times \\pi \\times 4^2$",
+                "M1 for $2 \\times \\pi \\times 4 \\times 10$"
+              ],
+              "check": {
+                "kind": "numeric",
+                "answer": 351.9,
+                "tolerance": 0.35
+              },
+              "answerSuffix": "cm$^2$",
+              "qualifier": "351 to 352"
+            }
+          ],
+          "prompt": "A cylinder has radius 4 cm and height 10 cm."
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "non-calculator",
+      "difficulty": "foundation",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Change 3.5 m$^2$ into cm$^2$.",
+          "marks": 1,
+          "answer": "35 000",
+          "check": {
+            "kind": "numeric",
+            "answer": 35000
+          },
+          "answerSuffix": "cm$^2$"
+        },
+        {
+          "label": "b",
+          "prompt": "Change 2400 cm$^3$ into litres.",
+          "marks": 1,
+          "answer": "2.4",
+          "check": {
+            "kind": "numeric",
+            "answer": 2.4
+          },
+          "answerSuffix": "litres"
+        },
+        {
+          "label": "c",
+          "prompt": "A trapezium has parallel sides of length 6 cm and 10 cm. The perpendicular distance between them is 4 cm. Find the area of the trapezium.",
+          "marks": 2,
+          "answer": "32",
+          "partial": [
+            "M1 for $\\frac{1}{2}(6 + 10) \\times 4$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 32
+          },
+          "answerSuffix": "cm$^2$"
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

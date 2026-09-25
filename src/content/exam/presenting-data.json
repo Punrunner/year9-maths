@@ -1,0 +1,190 @@
+{
+  "topic": "presenting-data",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "stem": "The stem-and-leaf diagram shows the test marks of 15 students.$$\\begin{array}{r|l} 3 & 2 \\;\\; 5 \\;\\; 8 \\\\ 4 & 1 \\;\\; 1 \\;\\; 4 \\;\\; 7 \\;\\; 9 \\\\ 5 & 0 \\;\\; 3 \\;\\; 6 \\;\\; 6 \\;\\; 6 \\\\ 6 & 2 \\;\\; 4 \\end{array}$$Key: $3 \\mid 2$ represents 32 marks",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write down the mode.",
+          "marks": 1,
+          "answer": "56",
+          "check": {
+            "kind": "numeric",
+            "answer": 56
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Find the median.",
+          "marks": 1,
+          "answer": "49",
+          "check": {
+            "kind": "numeric",
+            "answer": 49
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Find the range.",
+          "marks": 1,
+          "answer": "32",
+          "check": {
+            "kind": "numeric",
+            "answer": 32
+          }
+        },
+        {
+          "label": "d",
+          "prompt": "One of these students is chosen at random. Find the probability that their mark was more than 50.",
+          "marks": 1,
+          "answer": "$\\frac{6}{15}$",
+          "check": {
+            "kind": "numeric",
+            "answer": "6/15",
+            "accept": [
+              "2/5",
+              "0.4"
+            ]
+          },
+          "qualifier": "oe"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "stem": "The table shows the number of hours six students spent revising and their test scores.$$\\begin{array}{l|cccccc} \\text{Hours} & 1 & 2 & 3 & 4 & 5 & 6 \\\\ \\hline \\text{Score} & 42 & 50 & 55 & 63 & 70 & 74 \\end{array}$$",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "What type of correlation does the data show?",
+          "marks": 1,
+          "answer": "Positive",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "positive",
+              "positive correlation"
+            ]
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Estimate the score of a student who revised for 3.5 hours.",
+          "marks": 1,
+          "answer": "59",
+          "check": {
+            "kind": "numeric",
+            "answer": 59,
+            "tolerance": 2
+          },
+          "qualifier": "57 to 61"
+        },
+        {
+          "label": "c",
+          "prompt": "A teacher uses the data to estimate the score of a student who revised for 20 hours. Explain why this estimate may not be reliable.",
+          "marks": 1,
+          "answer": "20 hours is far outside the range of the data (extrapolation)",
+          "partial": [
+            "B1 for a correct reason"
+          ]
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "non-calculator",
+      "difficulty": "foundation",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Which type of chart is best for showing how a family's monthly budget is split between different items?",
+          "marks": 1,
+          "answer": "Pie chart",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "pie chart",
+              "pie",
+              "pie graph"
+            ]
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Which type of graph is best for showing how the temperature changes during one day?",
+          "marks": 1,
+          "answer": "Line graph",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "line graph",
+              "line",
+              "line chart",
+              "time series",
+              "time series graph"
+            ]
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "The vertical axis of a bar chart starts at 50 instead of 0. Explain why this could be misleading.",
+          "marks": 1,
+          "answer": "It makes the differences between the bars look much bigger than they are",
+          "partial": [
+            "B1 for a correct explanation"
+          ]
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "stem": "The table shows the times, $t$ minutes, that 30 students took to travel to school.$$\\begin{array}{c|c} \\text{Time } (t \\text{ minutes}) & \\text{Frequency} \\\\ \\hline 0 < t \\le 10 & 4 \\\\ 10 < t \\le 20 & 9 \\\\ 20 < t \\le 30 & 12 \\\\ 30 < t \\le 40 & 5 \\end{array}$$",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write down the midpoints of the four class intervals, which are used to draw a frequency polygon.",
+          "marks": 2,
+          "answer": "5, 15, 25, 35",
+          "partial": [
+            "B1 for three correct"
+          ]
+        },
+        {
+          "label": "b",
+          "prompt": "Write down the coordinates of the highest point of the frequency polygon.",
+          "marks": 1,
+          "answer": "$(25, 12)$",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "(25,12)",
+              "25,12"
+            ]
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "How many students took more than 20 minutes?",
+          "marks": 1,
+          "answer": "17",
+          "check": {
+            "kind": "numeric",
+            "answer": 17
+          }
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

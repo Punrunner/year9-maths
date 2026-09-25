@@ -2,7 +2,7 @@
    EXERCISE REGISTRY
    --------------------------------------------------------------------------
    Maps each question `type` to the component that renders it and the rules
-   that mark it. Adding a fifteenth question type means adding it here, to
+   that mark it. Adding a sixteenth question type means adding it here, to
    the Zod schema, and to src/lib/types.ts — nothing else changes.
    ========================================================================== */
 
@@ -15,6 +15,7 @@ import { matchModule, orderModule } from './DragWidgets';
 import { tableModule, stepsModule } from './StructuredWidgets';
 import { hotspotModule, manipulableModule } from './MediaWidgets';
 import { flashcardsModule, drillModule } from './FluencyWidgets';
+import { sortModule } from './SortWidget';
 
 export const WIDGETS: Record<QuestionType, WidgetModule<any, any>> = {
   'mcq': mcqModule,
@@ -31,4 +32,5 @@ export const WIDGETS: Record<QuestionType, WidgetModule<any, any>> = {
   'manipulable': manipulableModule,
   'flashcards': flashcardsModule,
   'drill': drillModule,
+  'sort': sortModule,
 };

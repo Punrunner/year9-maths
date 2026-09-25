@@ -1,0 +1,229 @@
+{
+  "topic": "sequences-functions-graphs",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "either",
+      "difficulty": "foundation",
+      "stem": "Here are the first four terms of a sequence.$$5 \\qquad 9 \\qquad 13 \\qquad 17$$",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write down the next term.",
+          "marks": 1,
+          "answer": "21",
+          "check": {
+            "kind": "numeric",
+            "answer": 21
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Find an expression for the $n$th term of the sequence.",
+          "marks": 2,
+          "answer": "$4n + 1$",
+          "partial": [
+            "B1 for $4n + k$, $k \\ne 1$, or $kn + 1$, $k \\ne 0$"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "4n + 1",
+            "variables": [
+              "n"
+            ]
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Find the 50th term.",
+          "marks": 1,
+          "answer": "201",
+          "check": {
+            "kind": "numeric",
+            "answer": 201
+          }
+        },
+        {
+          "label": "d",
+          "prompt": "Is 101 a term of this sequence? Give a reason for your answer.",
+          "marks": 1,
+          "answer": "Yes, because $4n + 1 = 101$ gives $n = 25$, a whole number",
+          "partial": [
+            "B1 for yes with a correct reason"
+          ]
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "either",
+      "difficulty": "core",
+      "stem": "$\\mathrm{f}(x) = 3x - 5$",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Find $\\mathrm{f}(4)$.",
+          "marks": 1,
+          "answer": "7",
+          "check": {
+            "kind": "numeric",
+            "answer": 7
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Find $x$ when $\\mathrm{f}(x) = 16$.",
+          "marks": 2,
+          "answer": "7",
+          "partial": [
+            "M1 for $3x - 5 = 16$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 7
+          },
+          "answerPrefix": "$x =$"
+        },
+        {
+          "label": "c",
+          "prompt": "Find the gradient of the line joining the points $(1, 4)$ and $(4, 13)$.",
+          "marks": 2,
+          "answer": "3",
+          "partial": [
+            "M1 for $\\dfrac{13 - 4}{4 - 1}$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 3
+          }
+        },
+        {
+          "label": "d",
+          "prompt": "The line $y = 2x - 3$ crosses the $y$-axis at $P$. Write down the coordinates of $P$.",
+          "marks": 1,
+          "answer": "$(0, -3)$",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "(0,-3)",
+              "0,-3"
+            ]
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "either",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write down the gradient and the $y$-intercept of the line $y = 5 - 2x$.",
+          "marks": 2,
+          "answer": "Gradient −2, $y$-intercept 5",
+          "partial": [
+            "B1 for each"
+          ],
+          "answerLines": [
+            "Gradient =",
+            "$y$-intercept ="
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": -2
+            },
+            {
+              "kind": "numeric",
+              "answer": 5
+            }
+          ]
+        },
+        {
+          "label": "b",
+          "prompt": "Find the equation of the line with gradient 3 that passes through the point $(2, 1)$.",
+          "marks": 2,
+          "answer": "$y = 3x - 5$",
+          "partial": [
+            "M1 for $1 = 3 \\times 2 + c$ oe",
+            "or B1 for $y = 3x + c$, $c \\ne -5$"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "3x - 5",
+            "variables": [
+              "x"
+            ]
+          },
+          "answerPrefix": "$y =$"
+        },
+        {
+          "label": "c",
+          "prompt": "Line $L$ is parallel to $y = 4x + 1$ and passes through $(0, -2)$. Write down the equation of line $L$.",
+          "marks": 1,
+          "answer": "$y = 4x - 2$",
+          "check": {
+            "kind": "algebraic",
+            "answer": "4x - 2",
+            "variables": [
+              "x"
+            ]
+          },
+          "answerPrefix": "$y =$"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "either",
+      "difficulty": "challenge",
+      "stem": "Taxi company A charges a fixed fee of \\$3 plus \\$1.50 per kilometre.\n\nTaxi company B charges \\$2.50 per kilometre and no fixed fee.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write down a formula for the cost, $C$ dollars, of a journey of $d$ km with company A.",
+          "marks": 1,
+          "answer": "$C = 3 + 1.5d$",
+          "check": {
+            "kind": "algebraic",
+            "answer": "3 + 1.5d",
+            "variables": [
+              "d"
+            ]
+          },
+          "answerPrefix": "$C =$",
+          "qualifier": "oe"
+        },
+        {
+          "label": "b",
+          "prompt": "For what length of journey do both companies charge the same amount?",
+          "marks": 2,
+          "answer": "3",
+          "partial": [
+            "M1 for $3 + 1.5d = 2.5d$ oe, or a trial showing equal costs"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 3
+          },
+          "answerSuffix": "km"
+        },
+        {
+          "label": "c",
+          "prompt": "Which company is cheaper for a 10 km journey? Show your working.",
+          "marks": 2,
+          "answer": "Company A (\\$18 compared with \\$25)",
+          "partial": [
+            "M1 for 18 or 25 seen",
+            "A1 for company A with both costs"
+          ]
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

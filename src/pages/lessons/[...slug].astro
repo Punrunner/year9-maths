@@ -5,16 +5,18 @@
  *   Overview → Key rules → Worked examples (hidden until revealed)
  *   → Interactive practice → Mark as complete → Previous / Next
  */
-import { getCollection, render } from 'astro:content';
+import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import KeyRules from '../../components/KeyRules.astro';
 import WorkedExample from '../../components/WorkedExample.tsx';
 import LessonVisual from '../../components/LessonVisual.tsx';
+import InlineQuestion from '../../components/InlineQuestion.tsx';
 import ExerciseSet from '../../components/exercises/ExerciseSet.tsx';
 import { LessonComplete } from '../../components/Progress.tsx';
 import { getTree, getCatalog, getNeighbours } from '../../lib/site';
-import { renderInline, prepareQuestions } from '../../lib/render';
+import { renderInline, prepareQuestions, prepareQuestion } from '../../lib/render';
+import { renderLessonBody } from '../../lib/lessonBody';
 
 export async function getStaticPaths() {
   const lessons = await getCollection('lessons');
@@ -32,8 +34,15 @@ const catalog = await getCatalog();
 const { prev, next } = await getNeighbours(lesson.id);
 const position = siblings.findIndex((l) => l.id === lesson.id) + 1;
 
-/* ---- the prose body ---------------------------------------------------- */
-const { Content } = await render(lesson);
+/* ---- the prose body, with activities placed between the paragraphs ----- */
+const activityDefs = data.activities;
+const bodyParts = await renderLessonBody(lesson.body ?? '', Object.keys(activityDefs), lesson.id);
+const inline = Object.fromEntries(Object.entries(activityDefs).map(([id, a]) => [id, {
+  label: a.label,
+  ...(a.question ? { question: prepareQuestion({ ...a.question, id: `${lesson.id}:${id}` }, lesson.id) } : {}),
+  ...(a.visual ? { visual: { ...a.visual, captionHtml: a.visual.caption ? renderInline(a.visual.caption, lesson.id) : undefined } } : {}),
+  ...(a.reveal ? { reveal: { promptHtml: renderInline(a.reveal.prompt, lesson.id), answerHtml: renderInline(a.reveal.answer, lesson.id) } } : {}),
+}]));
 
 /* ---- worked examples, rendered to HTML at build time ------------------- */
 const examples = data.workedExamples.map((we) => ({
@@ -119,9 +128,25 @@ const visualCaptionHtml = data.visual?.caption ? renderInline(data.visual.captio
         </ul>
       </section>
 
-      <div class="prose">
-        <Content />
-      </div>
+      {bodyParts.map((part) => {
+        if (part.kind === 'html') return <div class="prose" set:html={part.html} />;
+        const a = inline[part.id]!;
+        if (a.question) return <InlineQuestion client:visible label={a.label} question={a.question} />;
+        if (a.visual) return (
+          <LessonVisual client:visible tag={a.label} widget={a.visual.widget} title={a.visual.title}
+            captionHtml={a.visual.captionHtml} config={a.visual.config} />
+        );
+        return (
+          <aside class="inline-activity inline-reveal" aria-label={a.label}>
+            <span class="inline-activity-tag">{a.label}</span>
+            <div class="inline-reveal-prompt" set:html={a.reveal!.promptHtml} />
+            <details>
+              <summary>Show the answer</summary>
+              <div class="inline-reveal-answer" set:html={a.reveal!.answerHtml} />
+            </details>
+          </aside>
+        );
+      })}
 
       <KeyRules rules={data.keyRules} />
 

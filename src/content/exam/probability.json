@@ -1,0 +1,223 @@
+{
+  "topic": "probability",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "non-calculator",
+      "difficulty": "foundation",
+      "stem": "A bag contains 5 red, 3 blue and 2 green counters. One counter is taken at random.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Find the probability that it is blue.",
+          "marks": 1,
+          "answer": "$\\frac{3}{10}$",
+          "check": {
+            "kind": "numeric",
+            "answer": "3/10",
+            "accept": [
+              "0.3"
+            ]
+          },
+          "qualifier": "oe"
+        },
+        {
+          "label": "b",
+          "prompt": "Find the probability that it is **not** red.",
+          "marks": 1,
+          "answer": "$\\frac{5}{10}$",
+          "check": {
+            "kind": "numeric",
+            "answer": "5/10",
+            "accept": [
+              "1/2",
+              "0.5"
+            ]
+          },
+          "qualifier": "oe"
+        },
+        {
+          "label": "c",
+          "prompt": "Find the probability that it is yellow.",
+          "marks": 1,
+          "answer": "0",
+          "check": {
+            "kind": "numeric",
+            "answer": 0
+          }
+        },
+        {
+          "label": "d",
+          "parts": [
+            {
+              "label": "i",
+              "prompt": "How many possible outcomes are there?",
+              "marks": 1,
+              "answer": "12",
+              "check": {
+                "kind": "numeric",
+                "answer": 12
+              }
+            },
+            {
+              "label": "ii",
+              "prompt": "Find the probability of getting a head and an even number.",
+              "marks": 1,
+              "answer": "$\\frac{3}{12}$",
+              "check": {
+                "kind": "numeric",
+                "answer": "3/12",
+                "accept": [
+                  "1/4",
+                  "0.25"
+                ]
+              },
+              "qualifier": "oe"
+            }
+          ],
+          "prompt": "A fair coin is thrown and a fair six-sided dice is rolled."
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "either",
+      "difficulty": "core",
+      "stem": "The probability that it rains on Monday is 0.3.\n\nIf it rains on Monday, the probability that it rains on Tuesday is 0.6.\n\nIf it does not rain on Monday, the probability that it rains on Tuesday is 0.2.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Find the probability that it rains on both days.",
+          "marks": 2,
+          "answer": "0.18",
+          "partial": [
+            "M1 for $0.3 \\times 0.6$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 0.18
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Find the probability that it rains on exactly one of the two days.",
+          "marks": 3,
+          "answer": "0.26",
+          "partial": [
+            "M1 for $0.3 \\times 0.4$ or $0.7 \\times 0.2$",
+            "M1 for the sum of both products"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 0.26
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Find the probability that it does not rain on either day.",
+          "marks": 2,
+          "answer": "0.56",
+          "partial": [
+            "M1 for $0.7 \\times 0.8$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 0.56
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "stem": "A four-sided spinner is spun 200 times. The results are shown in the table.$$\\begin{array}{l|cccc} \\text{Number} & 1 & 2 & 3 & 4 \\\\ \\hline \\text{Frequency} & 46 & 58 & 44 & 52 \\end{array}$$",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Find the relative frequency of the spinner landing on 2.",
+          "marks": 1,
+          "answer": "0.29",
+          "check": {
+            "kind": "numeric",
+            "answer": 0.29,
+            "accept": [
+              "58/200",
+              "29/100"
+            ]
+          },
+          "qualifier": "oe"
+        },
+        {
+          "label": "b",
+          "prompt": "The spinner is spun 1000 times. Estimate the number of times it lands on 4.",
+          "marks": 2,
+          "answer": "260",
+          "partial": [
+            "M1 for $\\dfrac{52}{200} \\times 1000$ oe"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 260
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Do the results suggest the spinner is biased? Give a reason for your answer.",
+          "marks": 1,
+          "answer": "No — each frequency is close to the expected 50",
+          "partial": [
+            "B1 for no with a correct reason"
+          ]
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "non-calculator",
+      "difficulty": "challenge",
+      "stem": "A box contains 4 black beads and 6 white beads. Two beads are taken at random, **without replacement**.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Find the probability that both beads are black.",
+          "marks": 2,
+          "answer": "$\\frac{12}{90}$",
+          "partial": [
+            "M1 for $\\dfrac{4}{10} \\times \\dfrac{3}{9}$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": "12/90",
+            "accept": [
+              "2/15"
+            ]
+          },
+          "qualifier": "oe"
+        },
+        {
+          "label": "b",
+          "prompt": "Find the probability that one bead of each colour is taken.",
+          "marks": 3,
+          "answer": "$\\frac{48}{90}$",
+          "partial": [
+            "M1 for $\\dfrac{4}{10} \\times \\dfrac{6}{9}$ or $\\dfrac{6}{10} \\times \\dfrac{4}{9}$",
+            "M1 for adding both products"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": "48/90",
+            "accept": [
+              "8/15"
+            ]
+          },
+          "qualifier": "oe"
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

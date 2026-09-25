@@ -1,0 +1,287 @@
+{
+  "topic": "quadratics",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "either",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Expand and simplify $(x + 5)(x - 3)$.",
+          "marks": 2,
+          "answer": "$x^2 + 2x - 15$",
+          "partial": [
+            "M1 for 3 of the 4 terms $x^2 - 3x + 5x - 15$ correct"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "x^2 + 2x - 15",
+            "variables": [
+              "x"
+            ],
+            "requireForm": true
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Expand and simplify $(2x - 1)^2$.",
+          "marks": 2,
+          "answer": "$4x^2 - 4x + 1$",
+          "partial": [
+            "M1 for 3 of the 4 terms $4x^2 - 2x - 2x + 1$ correct"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "4x^2 - 4x + 1",
+            "variables": [
+              "x"
+            ],
+            "requireForm": true
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Factorise $x^2 - 7x + 12$.",
+          "marks": 2,
+          "answer": "$(x - 3)(x - 4)$",
+          "partial": [
+            "M1 for $(x + a)(x + b)$ where $ab = 12$ or $a + b = -7$"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "(x - 3)(x - 4)",
+            "variables": [
+              "x"
+            ],
+            "requireForm": true
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Solve $x^2 + 2x - 24 = 0$ by factorising.",
+          "marks": 3,
+          "answer": "$-6$ and $4$",
+          "partial": [
+            "M2 for $(x + 6)(x - 4)$",
+            "or M1 for $(x + a)(x + b)$ where $ab = -24$ or $a + b = 2$"
+          ],
+          "answerLines": [
+            "$x =$",
+            "or $x =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": -6
+            },
+            {
+              "kind": "numeric",
+              "answer": 4
+            }
+          ],
+          "anyOrder": true
+        },
+        {
+          "label": "b",
+          "prompt": "Solve $x^2 - 9x = 0$.",
+          "marks": 2,
+          "answer": "$0$ and $9$",
+          "partial": [
+            "M1 for $x(x - 9)$"
+          ],
+          "answerLines": [
+            "$x =$",
+            "or $x =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": 0
+            },
+            {
+              "kind": "numeric",
+              "answer": 9
+            }
+          ],
+          "anyOrder": true
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "either",
+      "difficulty": "challenge",
+      "stem": "A rectangle has length $(x + 5)$ cm and width $(x - 2)$ cm. Its area is 30 cm$^2$.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Show that $x^2 + 3x - 40 = 0$.",
+          "marks": 2,
+          "answer": "$(x + 5)(x - 2) = 30 \\Rightarrow x^2 + 3x - 10 = 30 \\Rightarrow x^2 + 3x - 40 = 0$",
+          "partial": [
+            "M1 for $(x + 5)(x - 2) = 30$",
+            "A1 for correct expansion leading to the given equation with no errors"
+          ]
+        },
+        {
+          "label": "b",
+          "prompt": "Solve $x^2 + 3x - 40 = 0$ to find the value of $x$. Explain why there is only one possible value.",
+          "marks": 3,
+          "answer": "$x = 5$ (because $x = -8$ would give negative lengths)",
+          "partial": [
+            "M1 for $(x + 8)(x - 5)$",
+            "A1 for $x = 5$",
+            "B1 for rejecting $x = -8$ with a reason"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 5
+          },
+          "answerPrefix": "$x =$"
+        },
+        {
+          "label": "c",
+          "prompt": "Work out the perimeter of the rectangle.",
+          "marks": 1,
+          "answer": "26",
+          "check": {
+            "kind": "numeric",
+            "answer": 26
+          },
+          "answerSuffix": "cm",
+          "qualifier": "FT their (b)"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "either",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Solve $2x^2 + 5x - 3 = 0$.",
+          "marks": 3,
+          "answer": "$\\frac{1}{2}$ and $-3$",
+          "partial": [
+            "M2 for $(2x - 1)(x + 3)$",
+            "or M1 for $(2x + a)(x + b)$ where $ab = -3$ or $2b + a = 5$"
+          ],
+          "answerLines": [
+            "$x =$",
+            "or $x =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": "1/2",
+              "accept": [
+                "0.5"
+              ]
+            },
+            {
+              "kind": "numeric",
+              "answer": -3
+            }
+          ],
+          "anyOrder": true
+        },
+        {
+          "label": "b",
+          "prompt": "Factorise $x^2 - 100$.",
+          "marks": 1,
+          "answer": "$(x + 10)(x - 10)$",
+          "check": {
+            "kind": "algebraic",
+            "answer": "(x + 10)(x - 10)",
+            "variables": [
+              "x"
+            ],
+            "requireForm": true
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q5",
+      "calculator": "either",
+      "difficulty": "core",
+      "stem": "The equation of a curve is $y = x^2 - 2x - 3$.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Find the value of $y$ when $x = -2$.",
+          "marks": 1,
+          "answer": "5",
+          "check": {
+            "kind": "numeric",
+            "answer": 5
+          },
+          "answerPrefix": "$y =$"
+        },
+        {
+          "label": "b",
+          "prompt": "Write down the coordinates of the point where the curve crosses the $y$-axis.",
+          "marks": 1,
+          "answer": "$(0, -3)$",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "(0,-3)",
+              "0,-3"
+            ]
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Find the $x$-coordinates of the points where the curve crosses the $x$-axis.",
+          "marks": 2,
+          "answer": "$-1$ and $3$",
+          "partial": [
+            "M1 for $(x - 3)(x + 1)$"
+          ],
+          "answerLines": [
+            "$x =$",
+            "and $x =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": -1
+            },
+            {
+              "kind": "numeric",
+              "answer": 3
+            }
+          ],
+          "anyOrder": true
+        },
+        {
+          "label": "d",
+          "prompt": "Write down the equation of the line of symmetry of the curve.",
+          "marks": 1,
+          "answer": "$x = 1$",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "x=1"
+            ]
+          }
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

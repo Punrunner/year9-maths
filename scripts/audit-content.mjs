@@ -13,7 +13,7 @@ const C = join(ROOT, 'src', 'content');
 
 const ALL_TYPES = [
   'mcq', 'multi', 'truefalse', 'numeric', 'fill-blank', 'algebraic', 'match',
-  'order', 'table', 'steps', 'hotspot', 'manipulable', 'flashcards', 'drill',
+  'order', 'table', 'steps', 'hotspot', 'manipulable', 'flashcards', 'drill', 'sort',
 ];
 
 const readJson = (p) => JSON.parse(readFileSync(p, 'utf8'));
@@ -85,7 +85,7 @@ for (const t of ALL_TYPES) {
 const unused = ALL_TYPES.filter((t) => counts[t] === 0);
 console.log(unused.length
   ? `\n  ${unused.length} of 14 types not yet used: ${unused.join(', ')}`
-  : '\n  All 14 question types are in use.');
+  : '\n  All 15 question types are in use.');
 
 /* ---------------------------------------------------- per topic */
 

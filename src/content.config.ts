@@ -44,7 +44,7 @@ const option = z.object({
 });
 
 /* --------------------------------------------------------------------------
-   The 14 question types
+   The 15 question types
    -------------------------------------------------------------------------- */
 
 /** 1. Multiple choice — exactly one correct option. */
@@ -267,10 +267,22 @@ const drill = z.object({
   })).min(4),
 });
 
-/** The full union — a question must be exactly one of these 14 shapes. */
+/** 15. Sort into groups — drag each card into the group it belongs to.
+ *  Write each group with the cards that belong in it; they are mixed up on screen. */
+const sort = z.object({
+  ...baseQuestion,
+  type: z.literal('sort'),
+  groups: z.array(z.object({
+    id: z.string(),
+    text: z.string(),
+    items: z.array(option).min(1),
+  })).min(2),
+});
+
+/** The full union — a question must be exactly one of these 15 shapes. */
 export const questionSchema = z.discriminatedUnion('type', [
   mcq, multi, truefalse, numeric, fillBlank, algebraic, match,
-  order, table, steps, hotspot, manipulable, flashcards, drill,
+  order, table, steps, hotspot, manipulable, flashcards, drill, sort,
 ]);
 
 /* --------------------------------------------------------------------------
@@ -311,6 +323,39 @@ const topics = defineCollection({
   }),
 });
 
+/** An interactive diagram — used as the lesson's main visual or inline. */
+const visualBlock = z.object({
+  widget: z.string(),
+  title: z.string(),
+  caption: z.string().optional(),
+  config: z.record(z.string(), z.any()).default({}),
+});
+
+/**
+ * An activity placed INSIDE the lesson text with a line like
+ *   [[activity: my-id]]
+ * Give exactly one of `question`, `visual` or `reveal`.
+ */
+const activity = z.object({
+  /** The small tag above it, e.g. "Predict first", "Quick check", "Try it". */
+  label: z.string().default('Quick check'),
+  /** Any of the 15 question types. Its `id` is filled in for you. */
+  question: questionSchema.optional(),
+  /** An interactive to play with (no marking). */
+  visual: visualBlock.optional(),
+  /** A "think about it" prompt with an answer hidden behind a button. */
+  reveal: z.object({ prompt: z.string(), answer: z.string() }).optional(),
+}).refine((a) => [a.question, a.visual, a.reveal].filter(Boolean).length === 1, {
+  message: 'An activity needs exactly one of: question, visual or reveal.',
+});
+
+/** Give each activity question an id (its key) if the author left it out. */
+const activities = z.preprocess((raw) => {
+  if (!raw || typeof raw !== 'object') return raw;
+  return Object.fromEntries(Object.entries(raw as Record<string, any>).map(([k, v]) =>
+    [k, v?.question && !v.question.id ? { ...v, question: { ...v.question, id: k } } : v]));
+}, z.record(z.string(), activity)).default({});
+
 /** One Markdown file per lesson in src/content/lessons/. */
 const lessons = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/lessons' }),
@@ -343,13 +388,10 @@ const lessons = defineCollection({
       })).min(1),
       answer: z.string(),
     })).default([]),
-    /** Interactive visual shown inside the lesson, e.g. "line-mc". */
-    visual: z.object({
-      widget: z.string(),
-      title: z.string(),
-      caption: z.string().optional(),
-      config: z.record(z.string(), z.any()).default({}),
-    }).optional(),
+    /** Interactive visual shown after the key rules, e.g. "line-mc". */
+    visual: visualBlock.optional(),
+    /** Activities placed in the text with [[activity: id]]. */
+    activities,
     /** id of the matching file in src/content/exercises/. */
     practice: z.string().optional(),
     /** Estimated minutes, shown on the lesson card. */
@@ -387,4 +429,122 @@ const quizzes = defineCollection({
   }),
 });
 
-export const collections = { strands, topics, lessons, exercises, quizzes };
+/* --------------------------------------------------------------------------
+   Exam questions (Cambridge / IGCSE style)
+   --------------------------------------------------------------------------
+   Structured, multi-part questions with a mark scheme written the way
+   Cambridge writes one: an answer, a number of marks, and partial marks
+   ("M1 for …", "B1 for …") for a student who does not get all the way.
+   -------------------------------------------------------------------------- */
+
+/** How the site can check the final answer typed on the answer line.
+ *  Leave it out for answers that cannot be typed (a sketch, a reason, a
+ *  construction) — the student then marks that part against the scheme. */
+const examCheck = z.discriminatedUnion('kind', [
+  z.object({
+    kind: z.literal('numeric'),
+    answer: z.union([z.number(), z.string()]),
+    tolerance: z.number().nonnegative().default(0),
+    accept: z.array(z.string()).default([]),
+  }),
+  z.object({
+    kind: z.literal('algebraic'),
+    answer: z.string(),
+    variables: z.array(z.string()).default(['x']),
+    /** Require the same form, e.g. for "factorise". */
+    requireForm: z.boolean().default(false),
+  }),
+  z.object({
+    kind: z.literal('text'),
+    /** Every string that counts as correct. Case and spaces are ignored. */
+    accept: z.array(z.string()).min(1),
+  }),
+  z.object({
+    kind: z.literal('surd'),
+    /** The exact value, e.g. "5sqrt2" or "(5 + 4sqrt2)/7". Any exact form
+     *  with the same value is accepted; decimals never are. */
+    answer: z.string(),
+    /** Also require fully simplified surds and a rational denominator. */
+    simplest: z.boolean().default(false),
+  }),
+]);
+
+/** One answer line, e.g. "(a) Expand … [2]". */
+const examLeaf = z.object({
+  /** "a", "b", "i", "ii" … */
+  label: z.string(),
+  /** The question text for this part. Supports $maths$. */
+  prompt: z.string(),
+  marks: z.number().int().positive(),
+  /** Text before the answer line, e.g. "$x =$". */
+  answerPrefix: z.string().optional(),
+  /** Text after the answer line, e.g. "cm$^2$". */
+  answerSuffix: z.string().optional(),
+  /** Several answer lines, e.g. ["$x =$", "$y =$"] for a pair of values.
+   *  Each needs its own entry in `checks` (in the same order). */
+  answerLines: z.array(z.string()).optional(),
+  /** Auto-check for a single answer line. */
+  check: examCheck.optional(),
+  /** Auto-checks for `answerLines`, one each. */
+  checks: z.array(examCheck).optional(),
+  /** The answer lines can be filled in any order (e.g. the two roots of a
+   *  quadratic). Leave false when each line is named, like "$x =$", "$y =$". */
+  anyOrder: z.boolean().default(false),
+  /** Mark scheme — the final answer, as it appears in the "Answer" column. */
+  answer: z.string(),
+  /** Mark scheme — the "Partial marks" column, e.g. "M1 for $3x = 12$". */
+  partial: z.array(z.string()).default([]),
+  /** Mark scheme — shorthand after the answer: "oe", "cao", "FT", "isw" … */
+  qualifier: z.string().optional(),
+});
+
+/** A part that holds sub-parts (i), (ii) … — its own text is the lead-in. */
+const examGroup = z.object({
+  label: z.string(),
+  prompt: z.string().optional(),
+  parts: z.array(examLeaf).min(1),
+});
+
+const examQuestion = z.object({
+  id: z.string(),
+  /** 'calculator' questions only appear on calculator papers; 'non-calculator'
+   *  questions can appear on either; 'either' is the same as non-calculator. */
+  calculator: z.enum(['calculator', 'non-calculator', 'either']).default('either'),
+  difficulty,
+  /** On a test: the section this question belongs to, used for the
+   *  marks-by-section table (e.g. "Surds"). */
+  section: z.string().optional(),
+  /** The shared text / data at the top of the question. Supports $maths$. */
+  stem: z.string().optional(),
+  parts: z.array(z.union([examGroup, examLeaf])).min(1),
+  needsReview: z.boolean().default(false),
+});
+
+/** One JSON file per topic in src/content/exam/. */
+const exam = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/exam' }),
+  schema: z.object({
+    topic: reference('topics'),
+    questions: z.array(examQuestion).min(1),
+  }),
+});
+
+/** A fixed test paper for a student, one JSON file per test in
+ *  src/content/tests/. It is served at /test/<file name>/ and is not linked
+ *  from the menus — share the link. */
+const tests = defineCollection({
+  loader: glob({ pattern: '**/*.json', base: './src/content/tests' }),
+  schema: z.object({
+    title: z.string(),
+    /** Shown on the cover, e.g. "Candidate: Hana". */
+    candidate: z.string().optional(),
+    /** Shown on the cover, e.g. "29 September 2026". */
+    date: z.string().optional(),
+    minutes: z.number().int().positive(),
+    calculator: z.enum(['calculator', 'non-calculator']),
+    /** Questions appear in exactly this order. */
+    questions: z.array(examQuestion).min(1),
+  }),
+});
+
+export const collections = { strands, topics, lessons, exercises, quizzes, exam, tests };

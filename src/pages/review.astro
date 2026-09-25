@@ -1,41 +1,37 @@
 ---
-/** Mixed review / exam practice: random questions from across the course. */
+/** Exam practice: a Cambridge-style written paper built from across the course. */
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
-import MixedReview from '../components/exercises/MixedReview.tsx';
+import ExamPaper from '../components/exercises/ExamPaper.tsx';
 import { getTopicNodes, getCatalog } from '../lib/site';
-import { prepareQuestions } from '../lib/render';
+import { prepareExamQuestion } from '../lib/exam';
 
 const nodes = await getTopicNodes();
 const catalog = await getCatalog();
+const banks = await getCollection('exam');
 
-// Build one big pool, tagged with the topic each question came from.
-const items = nodes.flatMap((n) => {
-  if (!n.quiz) return [];
-  return prepareQuestions(n.quiz.data.questions, n.quiz.id)
-    // Timed drills and flashcards are practice tools, not exam questions.
-    .filter((q) => q.type !== 'drill' && q.type !== 'flashcards')
-    .map((question) => ({
-      topicId: n.topic.id,
-      topicTitle: n.topic.data.title,
-      question,
-    }));
+// One pool of structured questions, in course order, tagged with their topic.
+const questions = nodes.flatMap((n) => {
+  const bank = banks.find((b) => b.data.topic.id === n.topic.id);
+  if (!bank) return [];
+  return bank.data.questions.map((q) => prepareExamQuestion(q, n.topic.id, n.topic.data.title));
 });
 ---
 
-<Base title="Exam practice" description="Build a mixed practice paper from across the whole Year 9 course.">
+<Base title="Exam practice" description="Build a Cambridge-style practice paper, with a full mark scheme, from across the whole Year 9 course.">
   <div class="container page page-narrow">
     <Breadcrumbs items={[{ label: 'Exam practice' }]} />
 
-    <header class="page-head">
+    <header class="page-head no-print">
       <p class="page-eyebrow">Revision</p>
       <h1>Exam practice</h1>
       <p class="page-lead">
-        A mixed paper drawn at random from every topic you have worked through —
-        the best way to check that things have stuck.
+        A written paper in the Cambridge style, drawn from every topic you have
+        worked through — then mark it yourself against a real mark scheme.
       </p>
     </header>
 
-    <MixedReview client:load items={items} catalog={catalog} lengths={[5, 10, 15, 20]} />
+    <ExamPaper client:load questions={questions} catalog={catalog} />
   </div>
 </Base>

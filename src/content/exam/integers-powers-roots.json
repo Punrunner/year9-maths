@@ -1,0 +1,220 @@
+{
+  "topic": "integers-powers-roots",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "either",
+      "difficulty": "foundation",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write down the value of $\\sqrt[3]{64}$.",
+          "marks": 1,
+          "answer": "4",
+          "check": {
+            "kind": "numeric",
+            "answer": 4
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Between which two consecutive whole numbers does $\\sqrt{90}$ lie?",
+          "marks": 1,
+          "answer": "9 and 10",
+          "answerLines": [
+            "",
+            "and"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": 9
+            },
+            {
+              "kind": "numeric",
+              "answer": 10
+            }
+          ]
+        },
+        {
+          "label": "c",
+          "prompt": "Here is a list of numbers.$$\\sqrt{16} \\qquad \\sqrt{20} \\qquad \\tfrac{2}{3} \\qquad \\pi \\qquad 0.\\dot{3}$$Write down the **two** irrational numbers.",
+          "marks": 2,
+          "answer": "$\\sqrt{20}$ and $\\pi$",
+          "partial": [
+            "B1 for each correct number, with no more than one extra"
+          ]
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Simplify $5^7 \\times 5^3$, giving your answer as a power of 5.",
+          "marks": 1,
+          "answer": "$5^{10}$",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "5^10",
+              "5^(10)"
+            ]
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Simplify $x^{12} \\div x^4$.",
+          "marks": 1,
+          "answer": "$x^8$",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "x^8",
+              "x^(8)"
+            ]
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Simplify $(2y^3)^4$.",
+          "marks": 2,
+          "answer": "$16y^{12}$",
+          "partial": [
+            "B1 for $16y^k$ or $ky^{12}$, $k \\neq 0$"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "16y^12",
+              "16y^(12)"
+            ]
+          }
+        },
+        {
+          "label": "d",
+          "prompt": "$3^n \\times 3^2 = 3^{-5}$. Find the value of $n$.",
+          "marks": 1,
+          "answer": "$-7$",
+          "check": {
+            "kind": "numeric",
+            "answer": -7
+          },
+          "answerPrefix": "$n =$"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Find the value of $8^0 + 2^{-3}$.",
+          "marks": 2,
+          "answer": "$\\frac{9}{8}$ or $1\\frac{1}{8}$",
+          "partial": [
+            "B1 for $8^0 = 1$ or $2^{-3} = \\frac{1}{8}$ soi"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": "9/8",
+            "accept": [
+              "1.125",
+              "1 1/8"
+            ]
+          },
+          "qualifier": "oe"
+        },
+        {
+          "label": "b",
+          "prompt": "Without using a calculator, estimate $\\sqrt{55}$ correct to 1 decimal place. Show your working.",
+          "marks": 2,
+          "answer": "7.4",
+          "partial": [
+            "M1 for $7^2 = 49$ and $8^2 = 64$ seen, or for a trial such as $7.4^2 = 54.76$ and $7.5^2 = 56.25$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 7.4
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Is $\\sqrt{55} \\times \\sqrt{55}$ rational or irrational? Give a reason for your answer.",
+          "marks": 1,
+          "answer": "Rational, because $\\sqrt{55} \\times \\sqrt{55} = 55$, which is an integer",
+          "partial": [
+            "B1 for rational with correct reason"
+          ]
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "non-calculator",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write $2^5 \\times 4^3$ as a single power of 2.",
+          "marks": 2,
+          "answer": "$2^{11}$",
+          "partial": [
+            "M1 for $4^3 = 2^6$ or $(2^2)^3$ seen"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "2^11",
+              "2^(11)"
+            ]
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Solve $9^x = 27$.",
+          "marks": 2,
+          "answer": "$\\frac{3}{2}$",
+          "partial": [
+            "M1 for $3^{2x} = 3^3$ oe"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": "3/2",
+            "accept": [
+              "1.5",
+              "1 1/2"
+            ]
+          },
+          "answerPrefix": "$x =$",
+          "qualifier": "oe"
+        },
+        {
+          "label": "c",
+          "prompt": "Simplify $\\dfrac{a^5 \\times a^{-2}}{a^{-4}}$.",
+          "marks": 2,
+          "answer": "$a^7$",
+          "partial": [
+            "M1 for $a^3$ seen as the numerator, or $a^{5 - 2 + 4}$"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "a^7",
+              "a^(7)"
+            ]
+          }
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

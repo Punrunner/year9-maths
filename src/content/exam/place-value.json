@@ -1,0 +1,247 @@
+{
+  "topic": "place-value",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "non-calculator",
+      "difficulty": "foundation",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Work out $0.34 \\times 1000$.",
+          "marks": 1,
+          "answer": "340",
+          "check": {
+            "kind": "numeric",
+            "answer": 340
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Work out $56 \\div 0.01$.",
+          "marks": 1,
+          "answer": "5600",
+          "check": {
+            "kind": "numeric",
+            "answer": 5600
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Write 4 070 000 in standard form.",
+          "marks": 1,
+          "answer": "$4.07 \\times 10^6$",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "4.07*10^6",
+              "4.07x10^6",
+              "4.07*10^(6)",
+              "4.07x10^(6)"
+            ]
+          }
+        },
+        {
+          "label": "d",
+          "prompt": "Write $3.8 \\times 10^{-4}$ as an ordinary number.",
+          "marks": 1,
+          "answer": "0.00038",
+          "check": {
+            "kind": "numeric",
+            "answer": 0.00038
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "stem": "Work out the following. Give each answer in standard form.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "$(3 \\times 10^5) \\times (4 \\times 10^{-2})$",
+          "marks": 2,
+          "answer": "$1.2 \\times 10^4$",
+          "partial": [
+            "M1 for $12 \\times 10^3$ oe"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "1.2*10^4",
+              "1.2x10^4",
+              "1.2*10^(4)",
+              "1.2x10^(4)"
+            ]
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "$(8 \\times 10^9) \\div (2 \\times 10^3)$",
+          "marks": 2,
+          "answer": "$4 \\times 10^6$",
+          "partial": [
+            "M1 for $8 \\div 2$ and $10^{9-3}$ oe, or 4 000 000"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "4*10^6",
+              "4x10^6",
+              "4*10^(6)",
+              "4x10^(6)"
+            ]
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "$(6.2 \\times 10^4) + (3 \\times 10^3)$",
+          "marks": 2,
+          "answer": "$6.5 \\times 10^4$",
+          "partial": [
+            "M1 for $62\\,000 + 3000$ oe, or 65 000"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "6.5*10^4",
+              "6.5x10^4",
+              "6.5*10^(4)",
+              "6.5x10^(4)"
+            ]
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "either",
+      "difficulty": "core",
+      "stem": "The length of a rope is 24 m, correct to the nearest metre.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write down the lower bound of the length.",
+          "marks": 1,
+          "answer": "23.5",
+          "check": {
+            "kind": "numeric",
+            "answer": 23.5
+          },
+          "answerSuffix": "m"
+        },
+        {
+          "label": "b",
+          "prompt": "Write down the upper bound of the length.",
+          "marks": 1,
+          "answer": "24.5",
+          "check": {
+            "kind": "numeric",
+            "answer": 24.5
+          },
+          "answerSuffix": "m"
+        },
+        {
+          "label": "c",
+          "prompt": "A second rope is 15 m long, correct to the nearest metre. Work out the upper bound for the total length of the two ropes.",
+          "marks": 2,
+          "answer": "40",
+          "partial": [
+            "B1 for 15.5 seen"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 40
+          },
+          "answerSuffix": "m"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "calculator",
+      "difficulty": "challenge",
+      "stem": "The mass of the Earth is $5.97 \\times 10^{24}$ kg.\n\nThe mass of the Moon is $7.35 \\times 10^{22}$ kg.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "How many times heavier is the Earth than the Moon? Give your answer correct to 3 significant figures.",
+          "marks": 2,
+          "answer": "81.2",
+          "partial": [
+            "M1 for $\\frac{5.97 \\times 10^{24}}{7.35 \\times 10^{22}}$",
+            "or B1 for 81.22… or 81"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 81.2
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Work out the total mass of the Earth and the Moon. Give your answer in standard form, correct to 3 significant figures.",
+          "marks": 2,
+          "answer": "$6.04 \\times 10^{24}$",
+          "partial": [
+            "B1 for $6.0435 \\times 10^{24}$ or $6.04 \\times 10^{k}$"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "6.04*10^24",
+              "6.04x10^24",
+              "6.04*10^(24)",
+              "6.04x10^(24)"
+            ]
+          },
+          "answerSuffix": "kg"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q5",
+      "calculator": "calculator",
+      "difficulty": "challenge",
+      "stem": "A rectangle measures 8.4 cm by 5.2 cm. Both measurements are correct to 1 decimal place.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Calculate the lower bound for the area of the rectangle.",
+          "marks": 3,
+          "answer": "43.0025",
+          "partial": [
+            "B1 for 8.35 or 5.15 seen",
+            "M1 for (their lower bound) × (their lower bound)"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 43.0025,
+            "tolerance": 0.005
+          },
+          "answerSuffix": "cm$^2$"
+        },
+        {
+          "label": "b",
+          "prompt": "Calculate the upper bound for the perimeter of the rectangle.",
+          "marks": 2,
+          "answer": "27.4",
+          "partial": [
+            "M1 for $2 \\times (8.45 + 5.25)$ oe"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 27.4
+          },
+          "answerSuffix": "cm"
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+{
+  "topic": "fractions-decimals",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "non-calculator",
+      "difficulty": "foundation",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write 84 as a product of its prime factors.",
+          "marks": 2,
+          "answer": "$2^2 \\times 3 \\times 7$",
+          "partial": [
+            "M1 for a correct factor tree or division ladder, or 2, 2, 3, 7 listed"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "2^2*3*7",
+              "2*2*3*7",
+              "2^2x3x7",
+              "2x2x3x7",
+              "3*7*2^2",
+              "2^2*7*3"
+            ]
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Find the highest common factor (HCF) of 84 and 120.",
+          "marks": 1,
+          "answer": "12",
+          "check": {
+            "kind": "numeric",
+            "answer": 12
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Find the lowest common multiple (LCM) of 84 and 120.",
+          "marks": 2,
+          "answer": "840",
+          "partial": [
+            "M1 for $120 = 2^3 \\times 3 \\times 5$, or for listing multiples of both numbers"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 840
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "stem": "Do not use a calculator in this question. Show all your working and give each answer as a fraction in its simplest form.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "$2\\frac{1}{3} \\times \\frac{9}{14}$",
+          "marks": 2,
+          "answer": "$\\frac{3}{2}$ or $1\\frac{1}{2}$",
+          "partial": [
+            "M1 for $\\frac{7}{3}$ seen"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": "3/2",
+            "accept": [
+              "1 1/2"
+            ]
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "$3\\frac{3}{4} \\div 1\\frac{1}{2}$",
+          "marks": 3,
+          "answer": "$\\frac{5}{2}$ or $2\\frac{1}{2}$",
+          "partial": [
+            "B1 for $\\frac{15}{4}$ and $\\frac{3}{2}$",
+            "M1 for $\\frac{15}{4} \\times \\frac{2}{3}$ (their fractions)"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": "5/2",
+            "accept": [
+              "2 1/2"
+            ]
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "$\\frac{5}{6} - \\frac{3}{8}$",
+          "marks": 2,
+          "answer": "$\\frac{11}{24}$",
+          "partial": [
+            "M1 for $\\frac{20}{24} - \\frac{9}{24}$ oe"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": "11/24"
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Work out $18 - 3 \\times (7 - 2)^2 \\div 5$.",
+          "marks": 2,
+          "answer": "3",
+          "partial": [
+            "M1 for 25 or 75 or 15 seen"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 3
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Insert **one** pair of brackets to make this statement correct.$$6 + 4 \\times 3 - 1 = 20$$",
+          "marks": 1,
+          "answer": "$(6 + 4) \\times (3 - 1) = 20$",
+          "partial": [
+            "B1 — both pairs needed; accept $(6 + 4) \\times (3 - 1)$ only"
+          ]
+        },
+        {
+          "label": "c",
+          "prompt": "Work out $\\dfrac{-12 + 4 \\times (-3)}{(-2)^3}$.",
+          "marks": 2,
+          "answer": "3",
+          "partial": [
+            "M1 for −24 or −8 seen"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 3
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "non-calculator",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write $\\frac{5}{11}$ as a recurring decimal.",
+          "marks": 1,
+          "answer": "$0.\\dot{4}\\dot{5}$",
+          "partial": [
+            "Accept 0.4545… with clear indication of recurrence"
+          ]
+        },
+        {
+          "label": "b",
+          "prompt": "Show that $0.\\dot{7} = \\frac{7}{9}$.",
+          "marks": 2,
+          "answer": "$10x = 7.777\\ldots$, $9x = 7$, $x = \\frac{7}{9}$",
+          "partial": [
+            "M1 for $10x = 7.7\\ldots$ and $x = 0.7\\ldots$ written",
+            "A1 for subtraction to reach $9x = 7$ and the fraction"
+          ]
+        },
+        {
+          "label": "c",
+          "prompt": "Write $0.1\\dot{2}$ as a fraction in its simplest form.",
+          "marks": 3,
+          "answer": "$\\frac{11}{90}$",
+          "partial": [
+            "M1 for $100x = 12.2\\ldots$ and $10x = 1.2\\ldots$ oe",
+            "M1 for $90x = 11$ oe"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": "11/90"
+          }
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

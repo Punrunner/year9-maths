@@ -1,0 +1,240 @@
+{
+  "topic": "equations-inequalities",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "non-calculator",
+      "difficulty": "foundation",
+      "stem": "Solve these equations.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "$5x - 7 = 18$",
+          "marks": 2,
+          "answer": "5",
+          "partial": [
+            "M1 for $5x = 25$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 5
+          },
+          "answerPrefix": "$x =$"
+        },
+        {
+          "label": "b",
+          "prompt": "$3(2x + 1) = 4x + 11$",
+          "marks": 3,
+          "answer": "4",
+          "partial": [
+            "M1 for $6x + 3$",
+            "M1 for $2x = 8$ (FT their expansion)"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 4
+          },
+          "answerPrefix": "$x =$"
+        },
+        {
+          "label": "c",
+          "prompt": "$\\dfrac{x}{4} + 3 = 7$",
+          "marks": 2,
+          "answer": "16",
+          "partial": [
+            "M1 for $\\dfrac{x}{4} = 4$ or $x + 12 = 28$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 16
+          },
+          "answerPrefix": "$x =$"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "stem": "Solve these equations.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "$\\dfrac{12}{x} = 3$",
+          "marks": 1,
+          "answer": "4",
+          "check": {
+            "kind": "numeric",
+            "answer": 4
+          },
+          "answerPrefix": "$x =$"
+        },
+        {
+          "label": "b",
+          "prompt": "$\\dfrac{5}{x - 2} = 2$",
+          "marks": 2,
+          "answer": "$\\frac{9}{2}$ or 4.5",
+          "partial": [
+            "M1 for $5 = 2(x - 2)$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 4.5,
+            "accept": [
+              "9/2",
+              "4 1/2"
+            ]
+          },
+          "answerPrefix": "$x =$"
+        },
+        {
+          "label": "c",
+          "prompt": "$\\dfrac{3}{x} + 1 = \\dfrac{5}{2}$",
+          "marks": 2,
+          "answer": "2",
+          "partial": [
+            "M1 for $\\dfrac{3}{x} = \\dfrac{3}{2}$ oe"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 2
+          },
+          "answerPrefix": "$x =$"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Solve $4x - 3 < 13$.",
+          "marks": 2,
+          "answer": "$x < 4$",
+          "partial": [
+            "M1 for $4x < 16$",
+            "or B1 for 4 with an incorrect sign"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "x<4",
+              "4>x"
+            ]
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Solve $5 - 2x \\ge 11$.",
+          "marks": 2,
+          "answer": "$x \\le -3$",
+          "partial": [
+            "M1 for $-2x \\ge 6$ or $2x \\le -6$",
+            "or B1 for −3 with an incorrect sign"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "x<=-3",
+              "x≤-3",
+              "-3>=x",
+              "-3≥x"
+            ]
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "List all the integers $n$ that satisfy $-3 < 2n + 1 \\le 7$.",
+          "marks": 3,
+          "answer": "−1, 0, 1, 2, 3",
+          "partial": [
+            "M1 for $-4 < 2n \\le 6$",
+            "M1 for $-2 < n \\le 3$",
+            "or B2 for four correct integers and no extras"
+          ]
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Solve the simultaneous equations. Show all your working.$$3x + 2y = 16$$$$x - 2y = 0$$",
+          "marks": 3,
+          "answer": "$x = 4$, $y = 2$",
+          "partial": [
+            "M1 for correctly eliminating one variable",
+            "A1 for $x = 4$",
+            "A1 for $y = 2$"
+          ],
+          "answerLines": [
+            "$x =$",
+            "$y =$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": 4
+            },
+            {
+              "kind": "numeric",
+              "answer": 2
+            }
+          ]
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q5",
+      "calculator": "either",
+      "difficulty": "challenge",
+      "stem": "At a cinema, 2 adult tickets and 3 child tickets cost \\$47.\n\n3 adult tickets and 2 child tickets cost \\$53.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write down two equations, using $a$ for the cost of an adult ticket and $c$ for the cost of a child ticket.",
+          "marks": 2,
+          "answer": "$2a + 3c = 47$ and $3a + 2c = 53$",
+          "partial": [
+            "B1 for each correct equation"
+          ]
+        },
+        {
+          "label": "b",
+          "prompt": "Solve your equations to find the cost of each ticket.",
+          "marks": 3,
+          "answer": "Adult \\$13, child \\$7",
+          "partial": [
+            "M1 for a correct method to eliminate one variable",
+            "A1 for $a = 13$",
+            "A1 for $c = 7$"
+          ],
+          "answerLines": [
+            "Adult \\$",
+            "Child \\$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": 13
+            },
+            {
+              "kind": "numeric",
+              "answer": 7
+            }
+          ]
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

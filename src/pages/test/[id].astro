@@ -1,0 +1,36 @@
+---
+/** A fixed test paper for one student, from src/content/tests/<id>.json.
+ *  Not linked from the menus — share the link. */
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ExamPaper from '../../components/exercises/ExamPaper.tsx';
+import { getCatalog } from '../../lib/site';
+import { prepareExamQuestion } from '../../lib/exam';
+
+export async function getStaticPaths() {
+  const tests = await getCollection('tests');
+  return tests.map((test) => ({ params: { id: test.id }, props: { test } }));
+}
+
+const { test } = Astro.props as { test: CollectionEntry<'tests'> };
+const catalog = await getCatalog();
+const questions = test.data.questions.map((q) => prepareExamQuestion(q, `test-${test.id}`, test.data.title));
+---
+
+<Base title={test.data.title} description="A test paper with a full mark scheme.">
+  <div class="container page page-narrow">
+    <ExamPaper
+      client:load
+      questions={questions}
+      catalog={catalog}
+      fixed={{
+        id: test.id,
+        title: test.data.title,
+        minutes: test.data.minutes,
+        paperType: test.data.calculator,
+        candidate: test.data.candidate,
+        date: test.data.date,
+      }}
+    />
+  </div>
+</Base>

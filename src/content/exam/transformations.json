@@ -1,0 +1,153 @@
+{
+  "topic": "transformations",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "stem": "Triangle $P$ has vertices $(1, 1)$, $(3, 1)$ and $(1, 4)$.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Triangle $P$ is translated by the vector $\\begin{pmatrix} 4 \\\\ -2 \\end{pmatrix}$. Write down the image of the vertex $(3, 1)$.",
+          "marks": 1,
+          "answer": "$(7, -1)$",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "(7,-1)",
+              "7,-1"
+            ]
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Triangle $P$ is reflected in the $y$-axis. Write down the image of the vertex $(3, 1)$.",
+          "marks": 1,
+          "answer": "$(-3, 1)$",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "(-3,1)",
+              "-3,1"
+            ]
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Triangle $P$ is rotated $90°$ clockwise about the origin. Write down the image of the vertex $(1, 4)$.",
+          "marks": 2,
+          "answer": "$(4, -1)$",
+          "partial": [
+            "SC1 for $(-4, 1)$ (anticlockwise rotation)"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "(4,-1)",
+              "4,-1"
+            ]
+          }
+        },
+        {
+          "label": "d",
+          "prompt": "Triangle $P$ is enlarged by scale factor 2, centre the origin. Write down the image of the vertex $(1, 4)$.",
+          "marks": 1,
+          "answer": "$(2, 8)$",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "(2,8)",
+              "2,8"
+            ]
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "parts": [
+            {
+              "label": "i",
+              "prompt": "Find the perimeter of shape $B$.",
+              "marks": 1,
+              "answer": "36",
+              "check": {
+                "kind": "numeric",
+                "answer": 36
+              },
+              "answerSuffix": "cm"
+            },
+            {
+              "label": "ii",
+              "prompt": "Find the area of shape $B$.",
+              "marks": 2,
+              "answer": "54",
+              "partial": [
+                "M1 for $3^2$ or $\\times 9$ seen"
+              ],
+              "check": {
+                "kind": "numeric",
+                "answer": 54
+              },
+              "answerSuffix": "cm$^2$"
+            }
+          ],
+          "prompt": "Shape $A$ has area 6 cm$^2$ and perimeter 12 cm. It is enlarged by scale factor 3 to give shape $B$."
+        },
+        {
+          "label": "b",
+          "prompt": "The point $(5, 3)$ is enlarged by scale factor 2, centre $(1, 1)$. Find the coordinates of its image.",
+          "marks": 2,
+          "answer": "$(9, 5)$",
+          "partial": [
+            "M1 for vector $\\begin{pmatrix} 4 \\\\ 2 \\end{pmatrix}$ from the centre doubled, or one correct coordinate"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "(9,5)",
+              "9,5"
+            ]
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "non-calculator",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "A single transformation maps the point $(2, 5)$ to $(5, 2)$ and the point $(-1, 3)$ to $(3, -1)$. Describe fully this transformation.",
+          "marks": 2,
+          "answer": "Reflection in the line $y = x$",
+          "partial": [
+            "B1 for reflection",
+            "B1 for $y = x$"
+          ]
+        },
+        {
+          "label": "b",
+          "prompt": "Shape $T$ is reflected in the $x$-axis and then the image is reflected in the $y$-axis. Describe fully the **single** transformation that maps $T$ to its final image.",
+          "marks": 3,
+          "answer": "Rotation, $180°$, about the origin",
+          "partial": [
+            "B1 for rotation",
+            "B1 for 180°",
+            "B1 for centre $(0, 0)$"
+          ]
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

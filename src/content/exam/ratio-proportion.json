@@ -1,0 +1,208 @@
+{
+  "topic": "ratio-proportion",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "non-calculator",
+      "difficulty": "foundation",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write the ratio 45 : 60 in its simplest form.",
+          "marks": 1,
+          "answer": "3 : 4",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "3:4"
+            ]
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Share \\$84 in the ratio 3 : 4.",
+          "marks": 2,
+          "answer": "\\$36 and \\$48",
+          "partial": [
+            "M1 for $84 \\div 7$ (= 12)"
+          ],
+          "answerLines": [
+            "\\$",
+            "and \\$"
+          ],
+          "checks": [
+            {
+              "kind": "numeric",
+              "answer": 36
+            },
+            {
+              "kind": "numeric",
+              "answer": 48
+            }
+          ]
+        },
+        {
+          "label": "c",
+          "prompt": "In a school club, the ratio of boys to girls is 5 : 3. There are 24 more boys than girls. How many students are in the club?",
+          "marks": 2,
+          "answer": "96",
+          "partial": [
+            "M1 for $24 \\div 2$ (= 12)"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 96
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "either",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "5 pens cost \\$3.40. Find the cost of 8 pens.",
+          "marks": 2,
+          "answer": "5.44",
+          "partial": [
+            "M1 for $3.40 \\div 5$ (= 0.68)"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 5.44
+          },
+          "answerPrefix": "\\$"
+        },
+        {
+          "label": "b",
+          "prompt": "A recipe for 6 people uses 250 g of flour. How much flour is needed for 15 people?",
+          "marks": 2,
+          "answer": "625",
+          "partial": [
+            "M1 for $250 \\div 6 \\times 15$ oe, or $250 \\times 2.5$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 625
+          },
+          "answerSuffix": "g"
+        },
+        {
+          "label": "c",
+          "prompt": "$y$ is directly proportional to $x$. When $x = 4$, $y = 12$. Find $y$ when $x = 10$.",
+          "marks": 2,
+          "answer": "30",
+          "partial": [
+            "M1 for $y = kx$ with $k = 3$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 30
+          },
+          "answerPrefix": "$y =$"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "either",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "6 workers take 10 days to build a wall. How many days would 4 workers take, working at the same rate?",
+          "marks": 2,
+          "answer": "15",
+          "partial": [
+            "M1 for $6 \\times 10$ (= 60)"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 15
+          },
+          "answerSuffix": "days"
+        },
+        {
+          "label": "b",
+          "prompt": "$y$ is inversely proportional to $x$. When $x = 3$, $y = 8$. Find $y$ when $x = 12$.",
+          "marks": 2,
+          "answer": "2",
+          "partial": [
+            "M1 for $y = \\dfrac{k}{x}$ with $k = 24$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 2
+          },
+          "answerPrefix": "$y =$"
+        },
+        {
+          "label": "c",
+          "prompt": "A journey takes 2.5 hours at an average speed of 60 km/h. How long does the same journey take at 75 km/h?",
+          "marks": 2,
+          "answer": "2",
+          "partial": [
+            "M1 for $60 \\times 2.5$ (= 150)"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 2
+          },
+          "answerSuffix": "hours"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "calculator",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Pack $A$ contains 400 g of rice and costs \\$2.60. Pack $B$ contains 750 g of rice and costs \\$4.65. Which pack is better value? Show your working.",
+          "marks": 3,
+          "answer": "Pack $B$ (\\$0.62 per 100 g compared with \\$0.65 per 100 g)",
+          "partial": [
+            "M1 for a comparable unit value for one pack, e.g. 0.65 per 100 g or 153.8 g per dollar",
+            "M1 for comparable values for both packs",
+            "A1 for pack $B$ with correct values"
+          ]
+        },
+        {
+          "label": "b",
+          "parts": [
+            {
+              "label": "i",
+              "prompt": "Change £250 into dollars.",
+              "marks": 1,
+              "answer": "475",
+              "check": {
+                "kind": "numeric",
+                "answer": 475
+              },
+              "answerPrefix": "\\$"
+            },
+            {
+              "label": "ii",
+              "prompt": "Change \\$380 into pounds.",
+              "marks": 1,
+              "answer": "200",
+              "check": {
+                "kind": "numeric",
+                "answer": 200
+              },
+              "answerPrefix": "£"
+            }
+          ],
+          "prompt": "The exchange rate is £1 = \\$1.90."
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

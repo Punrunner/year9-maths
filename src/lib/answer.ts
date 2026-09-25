@@ -166,11 +166,16 @@ const RESERVED = new Set(['sqrt', 'cbrt', 'pi', 'abs', 'exp', 'log', 'sin', 'cos
 function splitVariables(s: string, variables: string[]): string {
   const vars = new Set(variables.filter((v) => v.length === 1));
   if (!vars.size) return s;
-  return s.replace(/[A-Za-z]{2,}/g, (word) =>
-    !RESERVED.has(word) && [...word].every((ch) => vars.has(ch))
-      ? [...word].join(' ')
-      : word,
-  );
+  return s
+    .replace(/[A-Za-z]{2,}/g, (word) =>
+      !RESERVED.has(word) && [...word].every((ch) => vars.has(ch))
+        ? [...word].join(' ')
+        : word,
+    )
+    // "3x(2x + 3)": math.js would read x(…) as a function call, so make the
+    // multiplication explicit when a variable touches a bracket.
+    .replace(/(^|[^A-Za-z])([A-Za-z])\s*\(/g, (m, pre: string, ch: string) =>
+      vars.has(ch) ? `${pre}${ch}*(` : m);
 }
 
 /** Deterministic sample points — no singularities at 0, 1 or −1. */
@@ -246,4 +251,52 @@ export async function checkAlgebraic(
 
   const brackets = (s: string) => (s.match(/\(/g) ?? []).length;
   return brackets(normaliseText(input)) === brackets(normaliseText(answer));
+}
+
+/* --------------------------------------------------------------------------
+   Surds
+   -------------------------------------------------------------------------- */
+
+/** Turn "5√2", "5 sqrt 2", "√(12)" into something math.js can evaluate. */
+function prepareSurd(raw: string): string {
+  return normaliseText(raw)
+    .replace(/sqrt\s*(\d+)/g, 'sqrt($1)')
+    .replace(/(\d|\))\s*sqrt/g, '$1*sqrt')
+    .replace(/\)\s*\(/g, ')*(');
+}
+
+/** 12 → false (4 divides it), 10 → true. */
+function squareFree(n: number): boolean {
+  for (let k = 2; k * k <= n; k++) if (n % (k * k) === 0) return false;
+  return true;
+}
+
+/**
+ * An exact answer with surds, e.g. "5√2", "(5 + 4√2)/7", "-3 + 2√3".
+ * Right when it has the same value as the answer and is written exactly
+ * (no decimals). With `simplest`, every surd must also be fully simplified
+ * (√12 is not, 2√3 is) and no surd may be left in a denominator.
+ */
+export async function checkSurd(input: string, answer: string, simplest = false): Promise<boolean> {
+  const typed = prepareSurd(input);
+  if (!typed || /\d\.\d/.test(typed)) return false;
+
+  const math = await loadMath();
+  let a: number, b: number;
+  try {
+    a = math.evaluate(typed);
+    b = math.evaluate(prepareSurd(answer));
+  } catch {
+    return false;
+  }
+  if (typeof a !== 'number' || typeof b !== 'number' || !Number.isFinite(a)) return false;
+  const scale = Math.max(1, Math.abs(a), Math.abs(b));
+  if (Math.abs(a - b) > 1e-9 * scale) return false;
+
+  if (simplest) {
+    for (const m of typed.matchAll(/sqrt\((\d+)\)/g)) if (!squareFree(Number(m[1]))) return false;
+    // A surd after a division sign means the denominator is not rationalised.
+    if (/\/[^+\-]*sqrt|\/\s*\([^)]*sqrt/.test(typed)) return false;
+  }
+  return true;
 }

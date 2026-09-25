@@ -1,0 +1,180 @@
+{
+  "topic": "shapes-drawings",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "stem": "The scale of a map is 1 : 25 000.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "The distance between two villages on the map is 6.4 cm. Find the actual distance between the villages in kilometres.",
+          "marks": 2,
+          "answer": "1.6",
+          "partial": [
+            "M1 for 160 000 seen"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 1.6
+          },
+          "answerSuffix": "km"
+        },
+        {
+          "label": "b",
+          "prompt": "The actual distance between two towers is 3.5 km. How far apart are they on the map?",
+          "marks": 2,
+          "answer": "14",
+          "partial": [
+            "M1 for 350 000 seen, or $350\\,000 \\div 25\\,000$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 14
+          },
+          "answerSuffix": "cm"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "The bearing of $B$ from $A$ is $070°$. Find the bearing of $A$ from $B$.",
+          "marks": 2,
+          "answer": "250",
+          "partial": [
+            "M1 for $70 + 180$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 250
+          },
+          "answerSuffix": "°"
+        },
+        {
+          "label": "b",
+          "prompt": "The bearing of $Q$ from $P$ is $305°$. Find the bearing of $P$ from $Q$.",
+          "marks": 1,
+          "answer": "125",
+          "check": {
+            "kind": "numeric",
+            "answer": 125,
+            "accept": [
+              "125"
+            ]
+          },
+          "answerSuffix": "°"
+        },
+        {
+          "label": "c",
+          "prompt": "A ship sails 8 km on a bearing of $090°$ and then 6 km on a bearing of $180°$. How far is the ship from its starting point?",
+          "marks": 2,
+          "answer": "10",
+          "partial": [
+            "M1 for $8^2 + 6^2$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 10
+          },
+          "answerSuffix": "km"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "non-calculator",
+      "difficulty": "foundation",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "How many planes of symmetry does a cube have?",
+          "marks": 1,
+          "answer": "9",
+          "check": {
+            "kind": "numeric",
+            "answer": 9
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "How many planes of symmetry does a cuboid with length, width and height all different have?",
+          "marks": 1,
+          "answer": "3",
+          "check": {
+            "kind": "numeric",
+            "answer": 3
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "How many planes of symmetry does a square-based pyramid (with its top vertex directly above the centre of the base) have?",
+          "marks": 1,
+          "answer": "4",
+          "check": {
+            "kind": "numeric",
+            "answer": 4
+          }
+        },
+        {
+          "label": "d",
+          "prompt": "Write down the order of rotational symmetry of a regular hexagon.",
+          "marks": 1,
+          "answer": "6",
+          "check": {
+            "kind": "numeric",
+            "answer": 6
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "non-calculator",
+      "difficulty": "core",
+      "stem": "A regular hexagon is drawn inside a circle of radius 5 cm, with all six vertices on the circle.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Find the angle at the centre of the circle between the radii to two neighbouring vertices.",
+          "marks": 1,
+          "answer": "60",
+          "check": {
+            "kind": "numeric",
+            "answer": 60
+          },
+          "answerSuffix": "°"
+        },
+        {
+          "label": "b",
+          "prompt": "Write down the length of one side of the hexagon. Give a reason for your answer.",
+          "marks": 2,
+          "answer": "5 cm, because the hexagon splits into six equilateral triangles",
+          "partial": [
+            "B1 for 5",
+            "B1 for a correct reason"
+          ]
+        },
+        {
+          "label": "c",
+          "prompt": "Describe how to construct the perpendicular bisector of a line segment $AB$ using only a ruler and compasses.",
+          "marks": 2,
+          "answer": "Arcs of equal radius (more than half of $AB$) from $A$ and $B$, meeting above and below $AB$; join the two crossing points",
+          "partial": [
+            "B1 for equal arcs from both ends",
+            "B1 for joining the intersections"
+          ]
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

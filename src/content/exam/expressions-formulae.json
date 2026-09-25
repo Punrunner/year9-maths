@@ -1,0 +1,246 @@
+{
+  "topic": "expressions-formulae",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "either",
+      "difficulty": "foundation",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Simplify $5a + 3b - 2a + b$.",
+          "marks": 2,
+          "answer": "$3a + 4b$",
+          "partial": [
+            "B1 for $3a$ or $4b$ in a two-term expression"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "3a + 4b",
+            "variables": [
+              "a",
+              "b"
+            ],
+            "requireForm": true
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Expand $4(2x - 5)$.",
+          "marks": 1,
+          "answer": "$8x - 20$",
+          "check": {
+            "kind": "algebraic",
+            "answer": "8x - 20",
+            "variables": [
+              "x"
+            ],
+            "requireForm": true
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Expand and simplify $3(x + 4) - 2(x - 1)$.",
+          "marks": 2,
+          "answer": "$x + 14$",
+          "partial": [
+            "M1 for 3 of the 4 terms $3x + 12 - 2x + 2$ correct"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "x + 14",
+            "variables": [
+              "x"
+            ],
+            "requireForm": true
+          }
+        },
+        {
+          "label": "d",
+          "prompt": "Factorise completely $6x^2 + 9x$.",
+          "marks": 2,
+          "answer": "$3x(2x + 3)$",
+          "partial": [
+            "B1 for $x(6x + 9)$ or $3(2x^2 + 3x)$"
+          ],
+          "check": {
+            "kind": "text",
+            "accept": [
+              "3x(2x+3)",
+              "3x(3+2x)",
+              "(2x+3)3x",
+              "3x*(2x+3)"
+            ]
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "either",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Find the value of $3p^2 - 2q$ when $p = -4$ and $q = 5$.",
+          "marks": 2,
+          "answer": "38",
+          "partial": [
+            "M1 for $3 \\times 16$ or $3 \\times (-4)^2$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 38
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "$v = u + at$\n\nFind $v$ when $u = 12$, $a = -3$ and $t = 7$.",
+          "marks": 1,
+          "answer": "−9",
+          "check": {
+            "kind": "numeric",
+            "answer": -9
+          },
+          "answerPrefix": "$v =$"
+        },
+        {
+          "label": "c",
+          "prompt": "Make $t$ the subject of the formula $v = u + at$.",
+          "marks": 2,
+          "answer": "$t = \\dfrac{v - u}{a}$",
+          "partial": [
+            "M1 for $v - u = at$"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "(v - u)/a",
+            "variables": [
+              "v",
+              "u",
+              "a"
+            ]
+          },
+          "answerPrefix": "$t =$",
+          "qualifier": "oe"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "either",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Make $x$ the subject of $y = \\dfrac{3x - 2}{5}$.",
+          "marks": 2,
+          "answer": "$x = \\dfrac{5y + 2}{3}$",
+          "partial": [
+            "M1 for $5y = 3x - 2$"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "(5y + 2)/3",
+            "variables": [
+              "y"
+            ]
+          },
+          "answerPrefix": "$x =$",
+          "qualifier": "oe"
+        },
+        {
+          "label": "b",
+          "prompt": "Make $r$ the subject of $A = \\pi r^2$.",
+          "marks": 2,
+          "answer": "$r = \\sqrt{\\dfrac{A}{\\pi}}$",
+          "partial": [
+            "M1 for $r^2 = \\dfrac{A}{\\pi}$"
+          ],
+          "answerPrefix": "$r =$",
+          "qualifier": "oe"
+        },
+        {
+          "label": "c",
+          "prompt": "Write $\\dfrac{x}{3} + \\dfrac{x}{4}$ as a single fraction.",
+          "marks": 2,
+          "answer": "$\\dfrac{7x}{12}$",
+          "partial": [
+            "M1 for $\\dfrac{4x}{12} + \\dfrac{3x}{12}$"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "7x/12",
+            "variables": [
+              "x"
+            ]
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "either",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Simplify $(3x^2y)^3$.",
+          "marks": 2,
+          "answer": "$27x^6y^3$",
+          "partial": [
+            "B1 for two of 27, $x^6$, $y^3$ in a single term"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "27x^6y^3",
+            "variables": [
+              "x",
+              "y"
+            ],
+            "requireForm": true
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Simplify $\\dfrac{12a^5b^2}{4a^2b}$.",
+          "marks": 2,
+          "answer": "$3a^3b$",
+          "partial": [
+            "B1 for two of 3, $a^3$, $b$ in a single term"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "3a^3b",
+            "variables": [
+              "a",
+              "b"
+            ],
+            "requireForm": true
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Write $\\dfrac{x + 1}{3} + \\dfrac{x - 2}{2}$ as a single fraction in its simplest form.",
+          "marks": 3,
+          "answer": "$\\dfrac{5x - 4}{6}$",
+          "partial": [
+            "M1 for denominator 6",
+            "M1 for $2(x + 1) + 3(x - 2)$ oe"
+          ],
+          "check": {
+            "kind": "algebraic",
+            "answer": "(5x - 4)/6",
+            "variables": [
+              "x"
+            ]
+          }
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

@@ -14,7 +14,7 @@ export type Difficulty = 'foundation' | 'core' | 'challenge';
 export type QuestionType =
   | 'mcq' | 'multi' | 'truefalse' | 'numeric' | 'fill-blank' | 'algebraic'
   | 'match' | 'order' | 'table' | 'steps' | 'hotspot' | 'manipulable'
-  | 'flashcards' | 'drill';
+  | 'flashcards' | 'drill' | 'sort';
 
 /** Human-readable label for each type — used on question chips. */
 export const TYPE_LABEL: Record<QuestionType, string> = {
@@ -32,6 +32,7 @@ export const TYPE_LABEL: Record<QuestionType, string> = {
   'manipulable': 'Explore and match',
   'flashcards': 'Flashcards',
   'drill': 'Quick-fire drill',
+  'sort': 'Sort into groups',
 };
 
 export interface PreparedOption {
@@ -108,6 +109,14 @@ export interface QOrder extends Base {
   solution: string[];
 }
 
+export interface QSort extends Base {
+  type: 'sort';
+  groups: PreparedOption[];
+  items: PreparedOption[];
+  /** itemId → groupId */
+  solution: Record<string, string>;
+}
+
 export type PreparedCell =
   | { kind: 'given'; html: string }
   | { kind: 'input'; answer: string; accept: string[]; tolerance: number };
@@ -174,7 +183,7 @@ export interface QDrill extends Base {
 export type PreparedQuestion =
   | QMcq | QMulti | QTrueFalse | QNumeric | QFillBlank | QAlgebraic
   | QMatch | QOrder | QTable | QSteps | QHotspot | QManipulable
-  | QFlashcards | QDrill;
+  | QFlashcards | QDrill | QSort;
 
 /* --------------------------------------------------------------------------
    Grading
@@ -191,3 +200,59 @@ export interface Verdict {
 
 /** A question type that carries no right answer, so it is never graded. */
 export const UNGRADED: ReadonlySet<QuestionType> = new Set(['flashcards']);
+
+/* --------------------------------------------------------------------------
+   Exam papers (Cambridge / IGCSE style)
+   -------------------------------------------------------------------------- */
+
+export type ExamCheck =
+  | { kind: 'numeric'; answer: number | string; tolerance: number; accept: string[] }
+  | { kind: 'algebraic'; answer: string; variables: string[]; requireForm: boolean }
+  | { kind: 'text'; accept: string[] }
+  | { kind: 'surd'; answer: string; simplest: boolean };
+
+export interface ExamAnswerLine {
+  prefixHtml: string;
+  suffixHtml: string;
+  check?: ExamCheck;
+}
+
+/** One marked part — one row of the mark scheme. */
+export interface PreparedExamLeaf {
+  /** Unique across the paper, e.g. "quadratics/q3/b/ii". */
+  key: string;
+  /** This part's own label, e.g. "(ii)". */
+  label: string;
+  /** Full label for the mark scheme, e.g. "(b)(ii)". */
+  fullLabel: string;
+  promptHtml: string;
+  marks: number;
+  lines: ExamAnswerLine[];
+  /** Answer lines may be filled in any order. */
+  anyOrder: boolean;
+  answerHtml: string;
+  qualifier?: string;
+  partialHtml: string[];
+}
+
+export type PreparedExamPart =
+  | { kind: 'leaf'; leaf: PreparedExamLeaf }
+  | { kind: 'group'; label: string; promptHtml: string; leaves: PreparedExamLeaf[] };
+
+export interface PreparedExamQuestion {
+  /** Unique across the course, e.g. "quadratics/q3". */
+  id: string;
+  topicId: string;
+  topicTitle: string;
+  calculator: 'calculator' | 'non-calculator' | 'either';
+  difficulty: Difficulty;
+  stemHtml: string;
+  parts: PreparedExamPart[];
+  /** Total marks for the whole question. */
+  marks: number;
+  needsReview: boolean;
+}
+
+/** Every marked part of an exam question, in order. */
+export const examLeaves = (q: PreparedExamQuestion): PreparedExamLeaf[] =>
+  q.parts.flatMap((p) => (p.kind === 'leaf' ? [p.leaf] : p.leaves));

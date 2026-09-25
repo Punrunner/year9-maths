@@ -1,0 +1,158 @@
+{
+  "topic": "grouped-data-sampling",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "either",
+      "difficulty": "core",
+      "stem": "The table shows the masses, $m$ kg, of 40 parcels.$$\\begin{array}{c|c} \\text{Mass } (m \\text{ kg}) & \\text{Frequency} \\\\ \\hline 0 < m \\le 2 & 4 \\\\ 2 < m \\le 4 & 15 \\\\ 4 < m \\le 6 & 12 \\\\ 6 < m \\le 8 & 9 \\end{array}$$",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write down the modal class.",
+          "marks": 1,
+          "answer": "$2 < m \\le 4$",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "2<m<=4",
+              "2<m≤4",
+              "2-4",
+              "2 to 4"
+            ]
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Write down the class that contains the median.",
+          "marks": 1,
+          "answer": "$4 < m \\le 6$",
+          "check": {
+            "kind": "text",
+            "accept": [
+              "4<m<=6",
+              "4<m≤6",
+              "4-6",
+              "4 to 6"
+            ]
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Calculate an estimate of the mean mass.",
+          "marks": 4,
+          "answer": "4.3",
+          "partial": [
+            "M1 for midpoints 1, 3, 5, 7 soi",
+            "M1 for $\\sum fx$ with $x$ in the correct interval including both boundaries",
+            "M1 (dep on second M1) for $\\div 40$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 4.3
+          },
+          "answerSuffix": "kg"
+        },
+        {
+          "label": "d",
+          "prompt": "Explain why your answer to part (c) is only an estimate.",
+          "marks": 1,
+          "answer": "The exact masses are not known — the midpoint is used for each class",
+          "partial": [
+            "B1"
+          ]
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "either",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Zara wants to find out the favourite sport of students at her school. She asks 10 friends from her football team. Give two reasons why her sample may be biased.",
+          "marks": 2,
+          "answer": "e.g. the sample is too small; football players are likely to choose football; friends are not a random sample",
+          "partial": [
+            "B1 for each different correct reason"
+          ]
+        },
+        {
+          "label": "b",
+          "prompt": "A school has 300 students in Year 7, 250 in Year 8 and 450 in Year 9. A stratified sample of 60 students is taken. How many Year 9 students should be in the sample?",
+          "marks": 2,
+          "answer": "27",
+          "partial": [
+            "M1 for $\\dfrac{450}{1000} \\times 60$ oe"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 27
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "non-calculator",
+      "difficulty": "foundation",
+      "stem": "Here are eight numbers.$$7 \\quad 3 \\quad 9 \\quad 4 \\quad 7 \\quad 12 \\quad 7 \\quad 5$$",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Calculate the mean.",
+          "marks": 2,
+          "answer": "6.75",
+          "partial": [
+            "M1 for $54 \\div 8$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 6.75,
+            "accept": [
+              "27/4",
+              "6 3/4"
+            ]
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Find the median.",
+          "marks": 1,
+          "answer": "7",
+          "check": {
+            "kind": "numeric",
+            "answer": 7
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "Find the range.",
+          "marks": 1,
+          "answer": "9",
+          "check": {
+            "kind": "numeric",
+            "answer": 9
+          }
+        },
+        {
+          "label": "d",
+          "prompt": "Another number is added to the list. The mean of the nine numbers is 7. Find the number that was added.",
+          "marks": 2,
+          "answer": "9",
+          "partial": [
+            "M1 for $9 \\times 7$ (= 63)"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 9
+          }
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}

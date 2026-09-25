@@ -18,7 +18,7 @@ add lessons and questions. You never need to touch the design or the code.
 4. [How the folders are organised](#4-how-the-folders-are-organised)
 5. [Adding a topic](#5-adding-a-topic)
 6. [Adding a lesson](#6-adding-a-lesson)
-7. [Writing questions — all 14 types](#7-writing-questions--all-14-types)
+7. [Writing questions — all 15 types](#7-writing-questions--all-15-types)
 8. [Hints and explanations](#8-hints-and-explanations)
 9. [Writing maths](#9-writing-maths)
 10. [Adding a quiz](#10-adding-a-quiz)
@@ -254,6 +254,47 @@ Tables work too:
 | $2:3$ | 5 | $\pounds 12$ |
 ```
 
+### Putting activities inside the lesson text
+
+You can drop an activity anywhere in the Markdown — straight after the paragraph it
+belongs to — with a line like this:
+
+```markdown
+[[activity: first-sort]]
+```
+
+Then describe it under `activities:` in the frontmatter. Each one has a `label` (the small
+red tag above it) and **one** of `question`, `visual` or `reveal`:
+
+```yaml
+activities:
+  pi-predict:
+    label: 'Predict'                 # anything you like: Quick check, Your turn, Challenge…
+    question:                        # any of the 15 question types (see section 7)
+      type: truefalse
+      prompt: 'Is $\frac{22}{7}$ exactly equal to $\pi$?'
+      answer: false
+      explanation: 'They differ in the third decimal place.'
+  root-two:
+    label: 'Try it'
+    visual:                          # any interactive diagram (see section 11)
+      widget: number-line
+      title: 'Where does √2 live?'
+      caption: 'Drag the marker to where you think it sits.'
+      config: { min: 0, max: 3, step: 0.01, start: { x: 0.5 } }
+  negative-root:
+    label: 'Think about it'
+    reveal:                          # a question with the answer behind a button
+      prompt: 'Why does your calculator give an error for $\sqrt{-4}$?'
+      answer: 'Any number squared is positive or zero.'
+```
+
+You do not need to give inline questions an `id` — the activity name is used. Mix them
+up: a lesson that opens with a *Predict* or *Before we start* question, and puts a
+*Quick check* after each new idea, is far more engaging than one long read followed by
+practice at the end. The three Integers, Powers & Roots lessons are worked examples of
+this — each is built a different way.
+
 ### The frontmatter fields
 
 | Field | Required? | What it does |
@@ -280,7 +321,7 @@ Tables work too:
 
 ---
 
-## 7. Writing questions — all 14 types
+## 7. Writing questions — all 15 types
 
 Practice sets live in `src/content/exercises/`. One file per lesson, and the file name
 is what you put in the lesson's `practice:` field.
@@ -680,6 +721,27 @@ More `config` options:
   is different from the start**, or the question is marked right before the student
   touches anything.
 
+### 15. Sort into groups
+
+Cards start mixed up; the student drags (or taps) each into its group. Write each
+group with the cards that belong in it — the site shuffles them. Partial credit is
+automatic.
+
+```json
+{
+  "id": "q15",
+  "type": "sort",
+  "prompt": "Sort these numbers.",
+  "groups": [
+    { "id": "rat", "text": "Rational",   "items": [{ "id": "a", "text": "$0.3$" }, { "id": "b", "text": "$-7$" }] },
+    { "id": "irr", "text": "Irrational", "items": [{ "id": "c", "text": "$\\pi$" }, { "id": "d", "text": "$\\sqrt{2}$" }] }
+  ],
+  "explanation": "0.3 and −7 can be written as fractions; π and √2 cannot."
+}
+```
+
+Use two or three groups (four at most on phones). Every card `id` must be different.
+
 ### 13. Flashcards
 
 Not marked — a revision tool. Students flip, sort into "got it" and "review again",
@@ -811,8 +873,70 @@ question with the right answer and your explanation.
 **Do not use `flashcards` or `drill` in a quiz** — they run their own loop and do not
 fit a marked paper. Every other type is fine.
 
-Quiz questions are also the pool for the **Exam practice** page, which builds mixed
-papers from across the topics a student has finished.
+The **Exam practice** page does not use quiz questions. It builds a Cambridge-style
+written paper from the exam questions described next.
+
+### Exam questions (Cambridge / IGCSE style)
+
+Each topic has a file in `src/content/exam/`, named after the topic. A question has an
+optional `stem` (the shared text or data at the top) and `parts` (a), (b)… A part can
+hold sub-parts (i), (ii)… Every part carries its marks and its row of the mark scheme:
+
+```json
+{
+  "topic": "quadratics",
+  "questions": [
+    {
+      "id": "q3",
+      "calculator": "either",
+      "difficulty": "challenge",
+      "stem": "A rectangle has length $(x + 5)$ cm and width $(x - 2)$ cm. Its area is 30 cm$^2$.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Show that $x^2 + 3x - 40 = 0$.",
+          "marks": 2,
+          "answer": "$(x + 5)(x - 2) = 30 \\Rightarrow x^2 + 3x - 40 = 0$",
+          "partial": ["M1 for $(x + 5)(x - 2) = 30$", "A1 for correct expansion to the given equation"]
+        },
+        {
+          "label": "b",
+          "prompt": "Solve $x^2 + 3x - 40 = 0$ to find $x$.",
+          "marks": 2,
+          "answerPrefix": "$x =$",
+          "check": { "kind": "numeric", "answer": 5 },
+          "answer": "5",
+          "partial": ["M1 for $(x + 8)(x - 5)$"]
+        }
+      ],
+      "needsReview": false
+    }
+  ]
+}
+```
+
+| Field | What it does |
+| --- | --- |
+| `calculator` | `"calculator"` questions only appear on calculator papers. `"non-calculator"` and `"either"` appear on both |
+| `marks` | Shown as `[2]` beside the answer line |
+| `answer` | The **Answer** column of the mark scheme |
+| `qualifier` | Shorthand after the answer: `"oe"`, `"cao"`, `"FT their (a)"`, `"isw"` |
+| `partial` | The **Partial marks** column. Start each one with the mark code, e.g. `"M1 for …"`, `"B1 for …"`, `"SC1 for …"` |
+| `check` | Lets the site mark the final answer: `numeric` (with `tolerance`, `accept`), `algebraic` (with `variables`, `requireForm`) or `text` (a list of `accept` strings) |
+| `answerPrefix` / `answerSuffix` | Text either side of the answer line, e.g. `"$x =$"`, `"cm$^2$"` |
+| `answerLines` + `checks` | Several answer lines, e.g. `["$x =$", "$y =$"]`, with one check each |
+| `anyOrder` | The answer lines can be filled in either order (the two roots of a quadratic) |
+
+Leave out `check` when the answer cannot be typed: a reason, a sketch, a "show that".
+The student then marks that part themselves against the scheme. When a final answer is
+wrong, the student reads the partial marks and awards any method marks their working
+earned, just as an examiner would.
+
+**Which check?** Use `text` for answers whose *form* matters: standard form, "simplify",
+"factorise completely", coordinates. The `algebraic` check accepts anything equivalent,
+so on its own it would pass `x(6x + 9)` for "factorise $6x^2 + 9x$ completely".
+
+`npm run keys` puts every `check` through the real marker, so run it after you edit.
 
 ---
 
@@ -858,7 +982,7 @@ Questions total    798
   mcq           13  █████████████
   numeric       50  ██████████████████████████████
   ...
-  All 14 question types are in use.
+  All 15 question types are in use.
 
   ✓ Every reference resolves and all question ids are unique.
 ```

@@ -6,7 +6,7 @@
  * been accepted (or should not have been) — it takes seconds and stops the
  * same marking bug coming back.
  */
-import { checkTyped, checkAlgebraic, toNumber } from '../src/lib/answer.ts';
+import { checkTyped, checkAlgebraic, checkSurd, toNumber } from '../src/lib/answer.ts';
 
 let pass = 0;
 let fail = 0;
@@ -82,6 +82,30 @@ console.log('\nrequireForm (factorised answers)');
 check('factorised accepted', await checkAlgebraic('(x+3)(x-2)', '(x+3)(x-2)', ['x'], true), true);
 check('expanded rejected when form required',
   await checkAlgebraic('x^2 + x - 6', '(x+3)(x-2)', ['x'], true), false);
+// A variable next to a bracket is multiplication, not a function call.
+check('"3x(2x+3)" is 6x^2 + 9x', await checkAlgebraic('3x(2x+3)', '6x^2 + 9x', ['x'], false), true);
+
+console.log('\nSurds');
+const surdCases = [
+  // [typed, answer, simplest, expected]
+  ['5√2', '5sqrt2', true, true],
+  ['5 sqrt(2)', '5sqrt2', true, true],
+  ['√2 × 5', '5sqrt2', true, true],
+  ['√50', '5sqrt2', true, false],          // right value, not simplified
+  ['√50', '5sqrt2', false, true],
+  ['7.07', '5sqrt2', false, false],        // decimals are never exact
+  ['-2√3 + 5', '5 - 2sqrt3', true, true],
+  ['8 - 3√3', '5 - 2sqrt3', true, false],  // √3 × √3 taken as √3
+  ['5/7 + 4√2/7', '(5 + 4sqrt2)/7', true, true],
+  ['(1+√2)/(3-√2)', '(5 + 4sqrt2)/7', true, false], // denominator not rationalised
+  ['12/√3', '4sqrt3', true, false],
+  ['-3 + √12', '-3 + 2sqrt3', false, true],
+  ['2 + √(5/2)', '(4 + sqrt10)/2', false, true],
+  ['(-3+√41)/4', '(-3 + sqrt41)/4', true, true],
+];
+for (const [input, answer, simplest, expected] of surdCases) {
+  check(`"${input}" vs "${answer}"${simplest ? ' (simplest)' : ''}`, await checkSurd(input, answer, simplest), expected);
+}
 
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail ? 1 : 0);

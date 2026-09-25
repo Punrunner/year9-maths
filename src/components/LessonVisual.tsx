@@ -13,9 +13,11 @@ export interface LessonVisualProps {
   title?: string;
   captionHtml?: string;
   config?: Record<string, unknown>;
+  /** The small tag above the title. */
+  tag?: string;
 }
 
-export default function LessonVisual({ widget, title, captionHtml, config = {} }: LessonVisualProps) {
+export default function LessonVisual({ widget, title, captionHtml, config = {}, tag = 'Try it' }: LessonVisualProps) {
   const Visual = VISUALS[widget];
   const initial = () => ({ ...(VISUAL_DEFAULTS[widget] ?? {}), ...((config as any).start ?? {}) });
   const [value, setValue] = useState<Record<string, number>>(initial);
@@ -32,7 +34,7 @@ export default function LessonVisual({ widget, title, captionHtml, config = {} }
   return (
     <figure class="lesson-visual card">
       <figcaption class="lesson-visual-head">
-        <span class="lesson-visual-tag">Try it</span>
+        <span class="lesson-visual-tag">{tag}</span>
         <h4>{title ?? VISUAL_TITLES[widget] ?? 'Interactive'}</h4>
       </figcaption>
 

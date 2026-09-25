@@ -1,0 +1,189 @@
+{
+  "topic": "decimals-percentages",
+  "questions": [
+    {
+      "id": "q1",
+      "calculator": "non-calculator",
+      "difficulty": "foundation",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Work out $3.6 \\times 0.4$.",
+          "marks": 1,
+          "answer": "1.44",
+          "check": {
+            "kind": "numeric",
+            "answer": 1.44
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "Work out $7.2 \\div 0.03$.",
+          "marks": 2,
+          "answer": "240",
+          "partial": [
+            "M1 for $720 \\div 3$ oe"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 240
+          }
+        },
+        {
+          "label": "c",
+          "prompt": "By rounding each number to 1 significant figure, estimate the value of $$\\frac{48.7 \\times 3.1}{0.52}$$ Show your working.",
+          "marks": 2,
+          "answer": "300",
+          "partial": [
+            "M1 for $\\frac{50 \\times 3}{0.5}$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 300
+          }
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q2",
+      "calculator": "calculator",
+      "difficulty": "core",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Increase \\$240 by 15%.",
+          "marks": 2,
+          "answer": "276",
+          "partial": [
+            "M1 for $240 \\times 1.15$ oe, or 36 seen"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 276
+          },
+          "answerPrefix": "\\$"
+        },
+        {
+          "label": "b",
+          "prompt": "The price of a phone is reduced from \\$480 to \\$408. Find the percentage reduction.",
+          "marks": 2,
+          "answer": "15",
+          "partial": [
+            "M1 for $\\frac{72}{480}$ oe, or $\\frac{408}{480} \\times 100$ (= 85)"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 15
+          },
+          "answerSuffix": "%"
+        },
+        {
+          "label": "c",
+          "prompt": "After a 20% increase, the price of a jacket is \\$96. Find the price before the increase.",
+          "marks": 2,
+          "answer": "80",
+          "partial": [
+            "M1 for $96 \\div 1.2$ oe"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 80
+          },
+          "answerPrefix": "\\$"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q3",
+      "calculator": "calculator",
+      "difficulty": "core",
+      "stem": "Maria invests \\$2500 at a rate of 3% per year **compound** interest.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Calculate the value of her investment at the end of 4 years. Give your answer correct to the nearest cent.",
+          "marks": 3,
+          "answer": "2813.77",
+          "partial": [
+            "M2 for $2500 \\times 1.03^4$ oe",
+            "or M1 for $2500 \\times 1.03^k$, $k > 1$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 2813.77,
+            "tolerance": 0.01
+          },
+          "answerPrefix": "\\$"
+        },
+        {
+          "label": "b",
+          "prompt": "Work out the total interest she has earned.",
+          "marks": 1,
+          "answer": "313.77",
+          "check": {
+            "kind": "numeric",
+            "answer": 313.77,
+            "tolerance": 0.01
+          },
+          "answerPrefix": "\\$",
+          "qualifier": "FT their (a) − 2500"
+        },
+        {
+          "label": "c",
+          "prompt": "A car worth \\$18 000 loses 12% of its value each year. Find its value after 3 years.",
+          "marks": 2,
+          "answer": "12 266.50",
+          "partial": [
+            "M1 for $18\\,000 \\times 0.88^3$ oe"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 12266.5,
+            "tolerance": 0.01
+          },
+          "answerPrefix": "\\$"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q4",
+      "calculator": "non-calculator",
+      "difficulty": "challenge",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Write down the single multiplier for a decrease of 7%.",
+          "marks": 1,
+          "answer": "0.93",
+          "check": {
+            "kind": "numeric",
+            "answer": 0.93
+          }
+        },
+        {
+          "label": "b",
+          "prompt": "The population of a town increases by 10% one year and then decreases by 10% the next year. Find the overall percentage change and say whether it is an increase or a decrease.",
+          "marks": 2,
+          "answer": "1% decrease",
+          "partial": [
+            "M1 for $1.1 \\times 0.9$ oe, or 0.99 seen"
+          ]
+        },
+        {
+          "label": "c",
+          "prompt": "Work out $0.3^2 \\times 0.02$.",
+          "marks": 1,
+          "answer": "0.0018",
+          "check": {
+            "kind": "numeric",
+            "answer": 0.0018
+          }
+        }
+      ],
+      "needsReview": true
+    }
+  ]
+}
