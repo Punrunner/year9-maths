@@ -1,0 +1,152 @@
+{
+  "title": "Practice: calculating with negative numbers",
+  "intro": "Decide the sign first, then the size.",
+  "questions": [
+    {
+      "id": "i4-q1",
+      "type": "multi",
+      "prompt": "Select **every** true statement.",
+      "options": [
+        { "id": "a", "text": "$-5 < -2$" },
+        { "id": "b", "text": "$-10 > -1$" },
+        { "id": "c", "text": "$0 > -3$" },
+        { "id": "d", "text": "$-7 < 4$" }
+      ],
+      "answers": ["a", "c", "d"],
+      "hints": ["Further left on the number line means smaller."],
+      "explanation": "$-10$ is further left than $-1$, so $-10 < -1$. The other three are true.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "i4-q2",
+      "type": "numeric",
+      "prompt": "Work out $-6 + 11$.",
+      "answer": 5,
+      "hints": ["Start at $-6$ and move 11 right."],
+      "explanation": "6 steps get you to 0, and 5 more to $5$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "i4-q3",
+      "type": "numeric",
+      "prompt": "Work out $3 - 12$.",
+      "answer": -9,
+      "hints": ["Start at 3 and move 12 left."],
+      "explanation": "3 steps to 0, then 9 more: $-9$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "i4-q4",
+      "type": "numeric",
+      "prompt": "Work out $-8 - (-5)$.",
+      "answer": -3,
+      "hints": ["Two minus signs make a plus: $-8 + 5$."],
+      "explanation": "$-8 - (-5) = -8 + 5 = -3$."
+    },
+    {
+      "id": "i4-q5",
+      "type": "numeric",
+      "prompt": "Work out $4 + (-13)$.",
+      "answer": -9,
+      "hints": ["$+$ and $-$ make $-$: $4 - 13$."],
+      "explanation": "$4 + (-13) = 4 - 13 = -9$."
+    },
+    {
+      "id": "i4-q6",
+      "type": "numeric",
+      "prompt": "Work out $-7 \\times -6$.",
+      "answer": 42,
+      "hints": ["Same signs → positive."],
+      "explanation": "$7 \\times 6 = 42$, and two negatives give a positive: $42$."
+    },
+    {
+      "id": "i4-q7",
+      "type": "numeric",
+      "prompt": "Work out $-54 \\div 9$.",
+      "answer": -6,
+      "hints": ["Different signs → negative."],
+      "explanation": "$54 \\div 9 = 6$; different signs, so $-6$."
+    },
+    {
+      "id": "i4-q8",
+      "type": "table",
+      "prompt": "Complete the multiplication grid.",
+      "columns": ["$\\times$", "$-3$", "$2$", "$-5$"],
+      "rows": [
+        [{ "given": "$4$" }, { "answer": "-12", "accept": ["−12"] }, { "answer": "8" }, { "answer": "-20", "accept": ["−20"] }],
+        [{ "given": "$-2$" }, { "answer": "6" }, { "answer": "-4", "accept": ["−4"] }, { "answer": "10" }]
+      ],
+      "explanation": "Same signs give positive, different signs give negative: $4 \\times -3 = -12$, $-2 \\times -3 = 6$, $-2 \\times -5 = 10$."
+    },
+    {
+      "id": "i4-q9",
+      "type": "numeric",
+      "prompt": "Work out $-3 \\times 4 - (-10)$.",
+      "answer": -2,
+      "hints": ["Multiply first.", "$-12 - (-10) = -12 + 10$."],
+      "explanation": "$-3 \\times 4 = -12$, then $-12 - (-10) = -12 + 10 = -2$."
+    },
+    {
+      "id": "i4-q10",
+      "type": "numeric",
+      "prompt": "Work out $(-4)^2 - 3 \\times 5$.",
+      "answer": 1,
+      "hints": ["$(-4)^2 = -4 \\times -4$."],
+      "explanation": "$(-4)^2 = 16$ and $3 \\times 5 = 15$, so $16 - 15 = 1$."
+    },
+    {
+      "id": "i4-q11",
+      "type": "numeric",
+      "prompt": "The temperature in Moscow is $-12\\degree$C. In Bangkok it is $33\\degree$C. What is the difference in temperature?",
+      "answer": 45,
+      "unit": "°C",
+      "hints": ["Difference = higher − lower.", "$33 - (-12)$"],
+      "explanation": "$33 - (-12) = 33 + 12 = 45\\degree$C.",
+      "difficulty": "core"
+    },
+    {
+      "id": "i4-q12",
+      "type": "numeric",
+      "prompt": "A diver is at $-18$ m. She rises 7 m, then dives down 12 m. What is her new position?",
+      "answer": -23,
+      "unit": "m",
+      "hints": ["Rising is $+$, diving is $-$."],
+      "explanation": "$-18 + 7 - 12 = -11 - 12 = -23$ m.",
+      "difficulty": "core"
+    },
+    {
+      "id": "i4-q13",
+      "type": "manipulable",
+      "prompt": "Set up a calculation that **subtracts a negative number** and gives the answer $4$.",
+      "widget": "integer-hops",
+      "config": { "start": { "a": 0, "op": 0, "b": 0, "r": 0 } },
+      "target": { "op": 1, "r": 4 },
+      "explanation": "Any $a - (-b)$ with $a + b = 4$ works, e.g. $1 - (-3) = 4$ or $-2 - (-6) = 4$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "i4-q14",
+      "type": "drill",
+      "prompt": "Quick-fire: integers. Type the answer.",
+      "durationSec": 90,
+      "count": 10,
+      "pool": [
+        { "id": "d1", "prompt": "$-5 + 8$", "accept": ["3"] },
+        { "id": "d2", "prompt": "$2 - 9$", "accept": ["-7", "−7"] },
+        { "id": "d3", "prompt": "$-4 - 6$", "accept": ["-10", "−10"] },
+        { "id": "d4", "prompt": "$-3 - (-9)$", "accept": ["6"] },
+        { "id": "d5", "prompt": "$7 + (-11)$", "accept": ["-4", "−4"] },
+        { "id": "d6", "prompt": "$-6 \\times 4$", "accept": ["-24", "−24"] },
+        { "id": "d7", "prompt": "$-9 \\times -3$", "accept": ["27"] },
+        { "id": "d8", "prompt": "$-40 \\div 8$", "accept": ["-5", "−5"] },
+        { "id": "d9", "prompt": "$-72 \\div -9$", "accept": ["8"] },
+        { "id": "d10", "prompt": "$(-5)^2$", "accept": ["25"] },
+        { "id": "d11", "prompt": "$-10 + (-10)$", "accept": ["-20", "−20"] },
+        { "id": "d12", "prompt": "$0 - 15$", "accept": ["-15", "−15"] },
+        { "id": "d13", "prompt": "$12 \\div -3$", "accept": ["-4", "−4"] },
+        { "id": "d14", "prompt": "$-1 \\times -1 \\times -1$", "accept": ["-1", "−1"] }
+      ],
+      "explanation": "Two signs together: same → $+$, different → $-$. For $\\times$ and $\\div$: same signs → positive, different → negative."
+    }
+  ]
+}

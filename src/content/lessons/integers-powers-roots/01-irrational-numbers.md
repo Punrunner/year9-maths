@@ -1,7 +1,7 @@
 ---
 title: Rational and Irrational Numbers
 topic: integers-powers-roots
-order: 1
+order: 2
 minutes: 20
 difficulty: core
 summary: 'Sorting numbers into natural, whole, integer, rational and irrational — and knowing why each one belongs where it does.'

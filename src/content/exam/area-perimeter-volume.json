@@ -229,6 +229,126 @@
         }
       ],
       "needsReview": true
+    },
+    {
+      "id": "q5",
+      "calculator": "non-calculator",
+      "difficulty": "foundation",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Change 4.7 km into metres.",
+          "marks": 1,
+          "answer": "4700",
+          "check": {
+            "kind": "numeric",
+            "answer": 4700
+          },
+          "answerSuffix": "m"
+        },
+        {
+          "label": "b",
+          "prompt": "Change 380 g into kilograms.",
+          "marks": 1,
+          "answer": "0.38",
+          "check": {
+            "kind": "numeric",
+            "answer": 0.38
+          },
+          "answerSuffix": "kg"
+        },
+        {
+          "label": "c",
+          "prompt": "Write 3 m 8 cm in metres.",
+          "marks": 1,
+          "answer": "3.08",
+          "check": {
+            "kind": "numeric",
+            "answer": 3.08
+          },
+          "answerSuffix": "m"
+        },
+        {
+          "label": "d",
+          "prompt": "Change 5 litres into cm$^3$.",
+          "marks": 1,
+          "answer": "5000",
+          "check": {
+            "kind": "numeric",
+            "answer": 5000
+          },
+          "answerSuffix": "cm$^3$"
+        }
+      ],
+      "needsReview": true
+    },
+    {
+      "id": "q6",
+      "calculator": "calculator",
+      "difficulty": "core",
+      "stem": "A cylindrical water tank has radius 45 cm and height 1.2 m.",
+      "parts": [
+        {
+          "label": "a",
+          "prompt": "Calculate the volume of the tank in m$^3$.",
+          "marks": 3,
+          "answer": "0.763",
+          "qualifier": "awrt",
+          "partial": [
+            "B1 for 0.45 or 120 seen",
+            "M1 for $\\pi \\times 0.45^2 \\times 1.2$ oe, or $\\pi \\times 45^2 \\times 120$ (= 763 407…) seen"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 0.7634,
+            "tolerance": 0.001,
+            "accept": [
+              "0.763"
+            ]
+          },
+          "answerSuffix": "m$^3$"
+        },
+        {
+          "label": "b",
+          "prompt": "Write your answer to part (a) in litres.",
+          "marks": 1,
+          "answer": "763",
+          "qualifier": "FT their (a) × 1000",
+          "check": {
+            "kind": "numeric",
+            "answer": 763.4,
+            "tolerance": 1
+          },
+          "answerSuffix": "litres"
+        },
+        {
+          "label": "c",
+          "prompt": "The empty tank is filled with water at a rate of 12 litres per minute. How many minutes does it take to fill the tank?",
+          "marks": 2,
+          "answer": "63.6",
+          "qualifier": "FT their (b)",
+          "partial": [
+            "M1 for their (b) $\\div 12$"
+          ],
+          "check": {
+            "kind": "numeric",
+            "answer": 63.6,
+            "tolerance": 0.15
+          },
+          "answerSuffix": "minutes"
+        },
+        {
+          "label": "d",
+          "prompt": "A second tank is mathematically similar to the first. Each of its lengths is twice as long. How many times larger is its volume?",
+          "marks": 1,
+          "answer": "8",
+          "check": {
+            "kind": "numeric",
+            "answer": 8
+          }
+        }
+      ],
+      "needsReview": true
     }
   ]
 }

@@ -1,7 +1,7 @@
 ---
 title: Percentage Change and Compound Interest
 topic: decimals-percentages
-order: 3
+order: 6
 minutes: 30
 difficulty: core
 summary: 'Using multipliers for percentage increases and decreases, simple versus compound interest, and repeated percentage change.'

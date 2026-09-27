@@ -1,0 +1,162 @@
+{
+  "title": "Practice: equivalent fractions, adding and subtracting",
+  "intro": "Type fractions like 3/4 and mixed numbers like 1 3/4.",
+  "questions": [
+    {
+      "id": "f5-q1",
+      "type": "match",
+      "prompt": "Match each fraction to its simplest form.",
+      "left": [
+        { "id": "l1", "text": "$\\frac{12}{16}$" },
+        { "id": "l2", "text": "$\\frac{15}{25}$" },
+        { "id": "l3", "text": "$\\frac{14}{42}$" },
+        { "id": "l4", "text": "$\\frac{30}{36}$" }
+      ],
+      "right": [
+        { "id": "r1", "text": "$\\frac{3}{4}$" },
+        { "id": "r2", "text": "$\\frac{3}{5}$" },
+        { "id": "r3", "text": "$\\frac{1}{3}$" },
+        { "id": "r4", "text": "$\\frac{5}{6}$" }
+      ],
+      "solution": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+      "hints": ["Divide the top and bottom by their HCF."],
+      "explanation": "HCFs: 4, 5, 14 and 6. $\\frac{12 \\div 4}{16 \\div 4} = \\frac{3}{4}$, $\\frac{15 \\div 5}{25 \\div 5} = \\frac{3}{5}$, $\\frac{14 \\div 14}{42 \\div 14} = \\frac{1}{3}$, $\\frac{30 \\div 6}{36 \\div 6} = \\frac{5}{6}$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "f5-q2",
+      "type": "numeric",
+      "prompt": "Write $3\\frac{2}{7}$ as an improper fraction.",
+      "answer": "23/7",
+      "hints": ["$3 \\times 7 + 2$"],
+      "explanation": "$3 \\times 7 + 2 = 23$, so $\\frac{23}{7}$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "f5-q3",
+      "type": "fill-blank",
+      "prompt": "Write $\\frac{29}{6}$ as a mixed number.",
+      "text": "$\\frac{29}{6} =$ [[w]] and [[n]] sixths",
+      "blanks": [
+        { "id": "w", "accept": ["4"], "size": 3 },
+        { "id": "n", "accept": ["5"], "size": 3 }
+      ],
+      "hints": ["How many times does 6 go into 29, and what is left over?"],
+      "explanation": "$29 \\div 6 = 4$ remainder $5$, so $\\frac{29}{6} = 4\\frac{5}{6}$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "f5-q4",
+      "type": "truefalse",
+      "prompt": "$\\frac{5}{8}$ is bigger than $\\frac{3}{5}$.",
+      "answer": true,
+      "hints": ["Use denominator 40."],
+      "explanation": "$\\frac{5}{8} = \\frac{25}{40}$ and $\\frac{3}{5} = \\frac{24}{40}$, so $\\frac{5}{8}$ is bigger — only just."
+    },
+    {
+      "id": "f5-q5",
+      "type": "numeric",
+      "prompt": "Work out $\\frac{2}{7} + \\frac{3}{7}$.",
+      "answer": "5/7",
+      "hints": ["Same denominator already — just add the tops."],
+      "explanation": "$\\frac{2 + 3}{7} = \\frac{5}{7}$. The denominator stays 7.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "f5-q6",
+      "type": "numeric",
+      "prompt": "Work out $\\frac{1}{3} + \\frac{2}{5}$.",
+      "answer": "11/15",
+      "hints": ["The LCM of 3 and 5 is 15."],
+      "explanation": "$\\frac{5}{15} + \\frac{6}{15} = \\frac{11}{15}$."
+    },
+    {
+      "id": "f5-q7",
+      "type": "numeric",
+      "prompt": "Work out $\\frac{7}{8} - \\frac{1}{6}$.",
+      "answer": "17/24",
+      "hints": ["The LCM of 8 and 6 is 24."],
+      "explanation": "$\\frac{21}{24} - \\frac{4}{24} = \\frac{17}{24}$."
+    },
+    {
+      "id": "f5-q8",
+      "type": "numeric",
+      "prompt": "Work out $\\frac{3}{4} + \\frac{5}{6}$. Give your answer as a mixed number.",
+      "answer": "1 7/12",
+      "hints": ["The LCM of 4 and 6 is 12.", "$\\frac{9}{12} + \\frac{10}{12}$"],
+      "explanation": "$\\frac{9}{12} + \\frac{10}{12} = \\frac{19}{12} = 1\\frac{7}{12}$."
+    },
+    {
+      "id": "f5-q9",
+      "type": "numeric",
+      "prompt": "Work out $\\frac{9}{10} - \\frac{2}{5}$. Simplify your answer.",
+      "answer": "1/2",
+      "hints": ["$\\frac{2}{5} = \\frac{4}{10}$"],
+      "explanation": "$\\frac{9}{10} - \\frac{4}{10} = \\frac{5}{10} = \\frac{1}{2}$."
+    },
+    {
+      "id": "f5-q10",
+      "type": "numeric",
+      "prompt": "Work out $1\\frac{1}{2} + 2\\frac{3}{5}$.",
+      "answer": "4 1/10",
+      "hints": ["Make both improper: $\\frac{3}{2} + \\frac{13}{5}$.", "Common denominator 10."],
+      "explanation": "$\\frac{15}{10} + \\frac{26}{10} = \\frac{41}{10} = 4\\frac{1}{10}$."
+    },
+    {
+      "id": "f5-q11",
+      "type": "numeric",
+      "prompt": "Work out $3\\frac{1}{4} - 1\\frac{5}{6}$.",
+      "answer": "1 5/12",
+      "hints": ["$\\frac{13}{4} - \\frac{11}{6}$", "Common denominator 12."],
+      "explanation": "$\\frac{39}{12} - \\frac{22}{12} = \\frac{17}{12} = 1\\frac{5}{12}$.",
+      "difficulty": "core"
+    },
+    {
+      "id": "f5-q12",
+      "type": "mcq",
+      "prompt": "Nam spends $\\frac{1}{3}$ of his money on food and $\\frac{1}{4}$ on transport. What fraction is left?",
+      "options": [
+        { "id": "a", "text": "$\\frac{5}{12}$" },
+        { "id": "b", "text": "$\\frac{7}{12}$" },
+        { "id": "c", "text": "$\\frac{2}{7}$" },
+        { "id": "d", "text": "$\\frac{1}{12}$" }
+      ],
+      "answer": "a",
+      "hints": ["First find how much he spends altogether.", "The whole is $\\frac{12}{12}$."],
+      "explanation": "Spent: $\\frac{4}{12} + \\frac{3}{12} = \\frac{7}{12}$. Left: $\\frac{12}{12} - \\frac{7}{12} = \\frac{5}{12}$. $\\frac{7}{12}$ is how much he *spent*.",
+      "difficulty": "core"
+    },
+    {
+      "id": "f5-q13",
+      "type": "manipulable",
+      "prompt": "Use the fraction bars to show $\\frac{1}{2} + \\frac{1}{3}$ **split into a common denominator**.",
+      "widget": "fraction-bars",
+      "config": { "start": { "n1": 1, "d1": 4, "n2": 1, "d2": 4, "op": 1, "common": 0 } },
+      "target": { "n1": 1, "d1": 2, "n2": 1, "d2": 3, "op": 0, "common": 1 },
+      "explanation": "With halves and thirds split into sixths: $\\frac{3}{6} + \\frac{2}{6} = \\frac{5}{6}$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "f5-q14",
+      "type": "drill",
+      "prompt": "Quick-fire: add and subtract. Type answers like 3/4.",
+      "durationSec": 120,
+      "count": 8,
+      "pool": [
+        { "id": "d1", "prompt": "$\\frac{1}{2} + \\frac{1}{4}$", "accept": ["3/4"] },
+        { "id": "d2", "prompt": "$\\frac{1}{3} + \\frac{1}{6}$", "accept": ["1/2", "3/6"] },
+        { "id": "d3", "prompt": "$\\frac{3}{4} - \\frac{1}{2}$", "accept": ["1/4"] },
+        { "id": "d4", "prompt": "$\\frac{2}{5} + \\frac{1}{10}$", "accept": ["1/2", "5/10"] },
+        { "id": "d5", "prompt": "$\\frac{5}{6} - \\frac{1}{3}$", "accept": ["1/2", "3/6"] },
+        { "id": "d6", "prompt": "$\\frac{1}{2} + \\frac{1}{3}$", "accept": ["5/6"] },
+        { "id": "d7", "prompt": "$\\frac{1}{2} - \\frac{1}{5}$", "accept": ["3/10"] },
+        { "id": "d8", "prompt": "$\\frac{2}{3} - \\frac{1}{4}$", "accept": ["5/12"] },
+        { "id": "d9", "prompt": "$\\frac{3}{8} + \\frac{1}{4}$", "accept": ["5/8"] },
+        { "id": "d10", "prompt": "$1 - \\frac{3}{7}$", "accept": ["4/7"] },
+        { "id": "d11", "prompt": "$\\frac{1}{4} + \\frac{1}{6}$", "accept": ["5/12"] },
+        { "id": "d12", "prompt": "$\\frac{7}{10} - \\frac{1}{2}$", "accept": ["1/5", "2/10"] }
+      ],
+      "explanation": "Common denominator first, then add or subtract the tops."
+    }
+  ]
+}

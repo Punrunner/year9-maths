@@ -1,7 +1,7 @@
 ---
 title: Multiplying and Dividing Fractions
 topic: fractions-decimals
-order: 2
+order: 3
 minutes: 25
 difficulty: core
 summary: 'Multiplying and dividing fractions and mixed numbers, cancelling first, and dividing by multiplying by the reciprocal.'

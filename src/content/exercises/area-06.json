@@ -1,0 +1,169 @@
+{
+  "title": "Practice: converting metric units",
+  "intro": "Length, mass and capacity. Before each one, decide: should the number get bigger or smaller?",
+  "questions": [
+    {
+      "id": "a6-q1",
+      "type": "table",
+      "prompt": "Complete the conversion facts.",
+      "columns": ["Quantity", "How many?", "Fact"],
+      "rows": [
+        [{ "given": "Length" }, { "answer": "10" }, { "given": "mm = 1 cm" }],
+        [{ "given": "Length" }, { "answer": "100" }, { "given": "cm = 1 m" }],
+        [{ "given": "Length" }, { "answer": "1000" }, { "given": "m = 1 km" }],
+        [{ "given": "Mass" }, { "answer": "1000" }, { "given": "g = 1 kg" }],
+        [{ "given": "Mass" }, { "answer": "1000" }, { "given": "kg = 1 t" }],
+        [{ "given": "Capacity" }, { "answer": "1000" }, { "given": "mL = 1 L" }]
+      ],
+      "explanation": "Only one is not 1000 or 10: there are **100** cm in a metre. Everything else in the everyday metric system is a step of 1000, apart from 10 mm in a centimetre.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a6-q2",
+      "type": "numeric",
+      "prompt": "Convert $6.3\\ \\text{m}$ to centimetres.",
+      "answer": 630,
+      "unit": "cm",
+      "hints": ["Centimetres are smaller, so multiply.", "$\\times 100$ moves the decimal point 2 places right."],
+      "explanation": "$6.3 \\times 100 = 630\\ \\text{cm}$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a6-q3",
+      "type": "numeric",
+      "prompt": "Convert $72\\ \\text{mm}$ to centimetres.",
+      "answer": 7.2,
+      "unit": "cm",
+      "hints": ["Centimetres are bigger than millimetres, so divide.", "There are 10 mm in 1 cm."],
+      "explanation": "$72 \\div 10 = 7.2\\ \\text{cm}$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a6-q4",
+      "type": "numeric",
+      "prompt": "Convert $3500\\ \\text{g}$ to kilograms.",
+      "answer": 3.5,
+      "unit": "kg",
+      "hints": ["Kilograms are bigger, so divide by 1000."],
+      "explanation": "$3500 \\div 1000 = 3.5\\ \\text{kg}$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "a6-q5",
+      "type": "numeric",
+      "prompt": "Convert $0.75\\ \\text{L}$ to millilitres.",
+      "answer": 750,
+      "unit": "mL",
+      "hints": ["Millilitres are smaller, so multiply by 1000."],
+      "explanation": "$0.75 \\times 1000 = 750\\ \\text{mL}$."
+    },
+    {
+      "id": "a6-q6",
+      "type": "numeric",
+      "prompt": "Convert $48\\ \\text{g}$ to kilograms.",
+      "answer": 0.048,
+      "unit": "kg",
+      "hints": ["Divide by 1000 — move the point 3 places left.", "$48 = 048.$, so the point moves past the 0 you imagine in front."],
+      "explanation": "$48 \\div 1000 = 0.048\\ \\text{kg}$. Writing $0.48$ is the common slip — that would be 480 g."
+    },
+    {
+      "id": "a6-q7",
+      "type": "numeric",
+      "prompt": "Convert $1.8\\ \\text{km}$ to centimetres.",
+      "answer": 180000,
+      "unit": "cm",
+      "hints": ["Two steps: km → m, then m → cm.", "$\\times 1000$ then $\\times 100$."],
+      "explanation": "$1.8 \\times 1000 = 1800\\ \\text{m}$, then $1800 \\times 100 = 180\\,000\\ \\text{cm}$.",
+      "difficulty": "core"
+    },
+    {
+      "id": "a6-q8",
+      "type": "fill-blank",
+      "prompt": "Write each mixed measurement in a single unit.",
+      "text": "$4\\ \\text{m}\\ 25\\ \\text{cm} =$ [[a]] m     $2\\ \\text{kg}\\ 70\\ \\text{g} =$ [[b]] kg     $1\\ \\text{L}\\ 5\\ \\text{mL} =$ [[c]] mL",
+      "blanks": [
+        { "id": "a", "accept": ["4.25"], "size": 6 },
+        { "id": "b", "accept": ["2.07", "2.070"], "size": 6 },
+        { "id": "c", "accept": ["1005"], "size": 6 }
+      ],
+      "hints": ["$70\\ \\text{g} = 70 \\div 1000\\ \\text{kg}$.", "$1\\ \\text{L} = 1000\\ \\text{mL}$."],
+      "explanation": "$4 + 0.25 = 4.25$ m; $2 + 0.070 = 2.07$ kg (not 2.7!); $1000 + 5 = 1005$ mL."
+    },
+    {
+      "id": "a6-q9",
+      "type": "order",
+      "prompt": "Put these masses in order, **lightest first**.",
+      "items": [
+        { "id": "m1", "text": "$0.3\\ \\text{kg}$" },
+        { "id": "m2", "text": "$350\\ \\text{g}$" },
+        { "id": "m3", "text": "$0.035\\ \\text{kg}$" },
+        { "id": "m4", "text": "$3200\\ \\text{mg}$" }
+      ],
+      "solution": ["m4", "m3", "m1", "m2"],
+      "hints": ["Change them all to grams."],
+      "explanation": "In grams: $3200\\ \\text{mg} = 3.2$, $0.035\\ \\text{kg} = 35$, $0.3\\ \\text{kg} = 300$, $350$. So $3200\\ \\text{mg} < 0.035\\ \\text{kg} < 0.3\\ \\text{kg} < 350\\ \\text{g}$."
+    },
+    {
+      "id": "a6-q10",
+      "type": "mcq",
+      "prompt": "Which conversion is **wrong**?",
+      "options": [
+        { "id": "a", "text": "$5.2\\ \\text{cm} = 52\\ \\text{mm}$" },
+        { "id": "b", "text": "$0.4\\ \\text{t} = 400\\ \\text{kg}$" },
+        { "id": "c", "text": "$250\\ \\text{mL} = 2.5\\ \\text{L}$" },
+        { "id": "d", "text": "$3\\ \\text{km} = 3000\\ \\text{m}$" }
+      ],
+      "answer": "c",
+      "hints": ["How many mL in a litre?"],
+      "explanation": "$250 \\div 1000 = 0.25\\ \\text{L}$, not $2.5$. Dividing by 100 instead of 1000 is the mistake — mL to L is a step of **1000**."
+    },
+    {
+      "id": "a6-q11",
+      "type": "steps",
+      "prompt": "A worded problem, one step at a time.",
+      "scenario": "A jug holds $1.5\\ \\text{L}$ of juice. Six glasses of $180\\ \\text{mL}$ are poured from it. How much juice is left, in mL?",
+      "steps": [
+        { "kind": "numeric", "prompt": "Write $1.5\\ \\text{L}$ in millilitres.", "answer": 1500, "unit": "mL", "hint": "$\\times 1000$.", "feedback": "$1.5 \\times 1000 = 1500\\ \\text{mL}$." },
+        { "kind": "numeric", "prompt": "How much is poured out altogether?", "answer": 1080, "unit": "mL", "feedback": "$6 \\times 180 = 1080\\ \\text{mL}$." },
+        { "kind": "numeric", "prompt": "How much is left?", "answer": 420, "unit": "mL", "feedback": "$1500 - 1080 = 420\\ \\text{mL}$." }
+      ],
+      "explanation": "Change to one unit first ($1500$ mL), then $1500 - 6 \\times 180 = 420\\ \\text{mL}$."
+    },
+    {
+      "id": "a6-q12",
+      "type": "numeric",
+      "prompt": "A truck weighs $4.2$ tonnes empty. It carries 30 boxes of $65\\ \\text{kg}$ each. What is the total mass, in tonnes?",
+      "answer": 6.15,
+      "unit": "t",
+      "hints": ["Find the mass of the boxes in kg, then change it to tonnes.", "$30 \\times 65 = 1950\\ \\text{kg}$."],
+      "explanation": "Boxes: $30 \\times 65 = 1950\\ \\text{kg} = 1.95\\ \\text{t}$. Total: $4.2 + 1.95 = 6.15\\ \\text{t}$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a6-q13",
+      "type": "drill",
+      "prompt": "Quick-fire: everyday conversions. Numbers only.",
+      "durationSec": 90,
+      "count": 10,
+      "pool": [
+        { "id": "d1", "prompt": "$3\\ \\text{m} = ?\\ \\text{cm}$", "accept": ["300"] },
+        { "id": "d2", "prompt": "$45\\ \\text{mm} = ?\\ \\text{cm}$", "accept": ["4.5"] },
+        { "id": "d3", "prompt": "$2.5\\ \\text{km} = ?\\ \\text{m}$", "accept": ["2500"] },
+        { "id": "d4", "prompt": "$800\\ \\text{m} = ?\\ \\text{km}$", "accept": ["0.8"] },
+        { "id": "d5", "prompt": "$1.2\\ \\text{kg} = ?\\ \\text{g}$", "accept": ["1200"] },
+        { "id": "d6", "prompt": "$500\\ \\text{g} = ?\\ \\text{kg}$", "accept": ["0.5"] },
+        { "id": "d7", "prompt": "$3\\ \\text{t} = ?\\ \\text{kg}$", "accept": ["3000"] },
+        { "id": "d8", "prompt": "$2\\ \\text{L} = ?\\ \\text{mL}$", "accept": ["2000"] },
+        { "id": "d9", "prompt": "$750\\ \\text{mL} = ?\\ \\text{L}$", "accept": ["0.75"] },
+        { "id": "d10", "prompt": "$6\\ \\text{cm} = ?\\ \\text{mm}$", "accept": ["60"] },
+        { "id": "d11", "prompt": "$150\\ \\text{cm} = ?\\ \\text{m}$", "accept": ["1.5"] },
+        { "id": "d12", "prompt": "$0.05\\ \\text{m} = ?\\ \\text{cm}$", "accept": ["5"] },
+        { "id": "d13", "prompt": "$2500\\ \\text{kg} = ?\\ \\text{t}$", "accept": ["2.5"] },
+        { "id": "d14", "prompt": "$4\\ \\text{kL} = ?\\ \\text{L}$", "accept": ["4000"] },
+        { "id": "d15", "prompt": "$1\\ \\text{m} = ?\\ \\text{mm}$", "accept": ["1000"] },
+        { "id": "d16", "prompt": "$90\\ \\text{g} = ?\\ \\text{kg}$", "accept": ["0.09"] }
+      ],
+      "explanation": "Smaller unit: multiply. Bigger unit: divide. Then count the zeros to see how far the decimal point moves."
+    }
+  ]
+}

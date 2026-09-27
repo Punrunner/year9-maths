@@ -1,7 +1,7 @@
 ---
 title: Index Laws and Negative Indices
 topic: integers-powers-roots
-order: 3
+order: 4
 minutes: 30
 difficulty: core
 summary: 'The four index laws, what a negative index really means, and using the order of operations with powers.'

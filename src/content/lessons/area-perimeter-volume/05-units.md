@@ -1,7 +1,7 @@
 ---
 title: Small and Large Units of Measurement
 topic: area-perimeter-volume
-order: 5
+order: 7
 minutes: 18
 difficulty: core
 summary: 'Milli, micro and nano going down; kilo, mega, giga and tera going up — and how to convert between them.'

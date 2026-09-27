@@ -13,6 +13,8 @@ import { Spinner } from './ProbabilityVisuals';
 import { AreaModel } from './AlgebraVisuals';
 import { Bearing } from './MapVisuals';
 import { Histogram, AxisTrick } from './StatsVisuals';
+import { UnitLadder, UnitGrid } from './UnitVisuals';
+import { IntegerHops, FractionBars, PercentGrid, PercentBar } from './NumberVisuals';
 
 export const VISUALS: Record<string, FunctionComponent<VisualProps>> = {
   'line-mc': LineMC,
@@ -27,6 +29,12 @@ export const VISUALS: Record<string, FunctionComponent<VisualProps>> = {
   'bearing': Bearing,
   'histogram': Histogram,
   'axis-trick': AxisTrick,
+  'unit-ladder': UnitLadder,
+  'unit-grid': UnitGrid,
+  'integer-hops': IntegerHops,
+  'fraction-bars': FractionBars,
+  'percent-grid': PercentGrid,
+  'percent-bar': PercentBar,
 };
 
 /** The values each visual starts on, before the student touches anything. */
@@ -43,6 +51,12 @@ export const VISUAL_DEFAULTS: Record<string, Record<string, number>> = {
   'bearing': { b: 45 },
   'histogram': {},
   'axis-trick': { lo: 0 },
+  'unit-ladder': { q: 0, from: 2, to: 1, n: 3.5 },
+  'unit-grid': { d: 2, p: 0, k: 2 },
+  'integer-hops': { a: 2, op: 0, b: -5, r: -3 },
+  'fraction-bars': { n1: 1, d1: 3, n2: 1, d2: 4, op: 0, common: 0 },
+  'percent-grid': { p: 25 },
+  'percent-bar': { p: 25 },
 };
 
 /** Human-readable name, used in the lesson's visual heading fallback. */
@@ -59,4 +73,10 @@ export const VISUAL_TITLES: Record<string, string> = {
   'bearing': 'Bearing explorer',
   'histogram': 'Grouped data explorer',
   'axis-trick': 'Misleading axis explorer',
+  'unit-ladder': 'Unit conversion staircase',
+  'unit-grid': 'Squares and cubes of units',
+  'integer-hops': 'Integer number line',
+  'fraction-bars': 'Fraction bars',
+  'percent-grid': 'Hundred square',
+  'percent-bar': 'Percentage bar',
 };

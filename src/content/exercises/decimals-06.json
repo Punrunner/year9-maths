@@ -1,0 +1,158 @@
+{
+  "title": "Practice: percentages of amounts",
+  "intro": "Build from 10% without a calculator; multiply by a decimal with one.",
+  "questions": [
+    {
+      "id": "d6-q1",
+      "type": "table",
+      "prompt": "Complete the table for an amount of 360.",
+      "columns": ["Percentage", "$50\\%$", "$10\\%$", "$5\\%$", "$1\\%$"],
+      "rows": [
+        [{ "given": "of 360" }, { "answer": "180" }, { "answer": "36" }, { "answer": "18" }, { "answer": "3.6" }]
+      ],
+      "explanation": "Halve for $50\\%$, $\\div 10$ for $10\\%$, halve that for $5\\%$, $\\div 100$ for $1\\%$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "d6-q2",
+      "type": "numeric",
+      "prompt": "Find $30\\%$ of 70 without a calculator.",
+      "answer": 21,
+      "hints": ["$10\\%$ of 70 is 7."],
+      "explanation": "$10\\% = 7$, so $30\\% = 3 \\times 7 = 21$.",
+      "difficulty": "foundation"
+    },
+    {
+      "id": "d6-q3",
+      "type": "numeric",
+      "prompt": "Find $15\\%$ of 460 without a calculator.",
+      "answer": 69,
+      "hints": ["$15\\% = 10\\% + 5\\%$."],
+      "explanation": "$10\\% = 46$, $5\\% = 23$, so $15\\% = 69$."
+    },
+    {
+      "id": "d6-q4",
+      "type": "numeric",
+      "prompt": "Find $4\\%$ of 250 without a calculator.",
+      "answer": 10,
+      "hints": ["$1\\%$ of 250 is 2.5."],
+      "explanation": "$1\\% = 2.5$, so $4\\% = 4 \\times 2.5 = 10$."
+    },
+    {
+      "id": "d6-q5",
+      "type": "numeric",
+      "prompt": "Use a calculator to find $23\\%$ of 850.",
+      "answer": 195.5,
+      "hints": ["$23\\% = 0.23$"],
+      "explanation": "$0.23 \\times 850 = 195.5$."
+    },
+    {
+      "id": "d6-q6",
+      "type": "numeric",
+      "prompt": "Write 18 as a percentage of 45.",
+      "answer": 40,
+      "unit": "%",
+      "hints": ["$\\frac{18}{45} \\times 100$"],
+      "explanation": "$\\frac{18}{45} = \\frac{2}{5} = 40\\%$."
+    },
+    {
+      "id": "d6-q7",
+      "type": "numeric",
+      "prompt": "Write 350 g as a percentage of 2 kg.",
+      "answer": 17.5,
+      "unit": "%",
+      "hints": ["Same units first: 2 kg = 2000 g."],
+      "explanation": "$\\frac{350}{2000} \\times 100 = 17.5\\%$. Using 350 out of 2 would give nonsense.",
+      "difficulty": "core"
+    },
+    {
+      "id": "d6-q8",
+      "type": "numeric",
+      "prompt": "A bike costs 6400 baht. Its price is **increased** by $15\\%$. Find the new price.",
+      "answer": 7360,
+      "unit": "baht",
+      "hints": ["Find $15\\%$ of 6400, then add it.", "Or multiply by $1.15$."],
+      "explanation": "$15\\%$ of $6400 = 960$, and $6400 + 960 = 7360$ baht. Check: $1.15 \\times 6400 = 7360$."
+    },
+    {
+      "id": "d6-q9",
+      "type": "numeric",
+      "prompt": "A laptop costs 24 000 baht. In a sale it is **reduced** by $35\\%$. Find the sale price.",
+      "answer": 15600,
+      "unit": "baht",
+      "hints": ["Find $35\\%$, then subtract it.", "Or multiply by $0.65$."],
+      "explanation": "$35\\%$ of $24\\,000 = 8400$, and $24\\,000 - 8400 = 15\\,600$ baht. Check: $0.65 \\times 24\\,000 = 15\\,600$."
+    },
+    {
+      "id": "d6-q10",
+      "type": "mcq",
+      "prompt": "Which calculation increases an amount $A$ by $8\\%$?",
+      "options": [
+        { "id": "a", "text": "$1.08 \\times A$" },
+        { "id": "b", "text": "$1.8 \\times A$" },
+        { "id": "c", "text": "$0.08 \\times A$" },
+        { "id": "d", "text": "$A + 8$" }
+      ],
+      "answer": "a",
+      "hints": ["After the increase you have $108\\%$ of the amount."],
+      "explanation": "$100\\% + 8\\% = 108\\% = 1.08$. $\\times 1.8$ would be an $80\\%$ increase; $\\times 0.08$ only finds the $8\\%$."
+    },
+    {
+      "id": "d6-q11",
+      "type": "steps",
+      "prompt": "Percentage change, one step at a time.",
+      "scenario": "A shop bought a phone case for 150 baht and sold it for 195 baht. Find the percentage profit.",
+      "steps": [
+        { "kind": "numeric", "prompt": "How much profit did the shop make?", "answer": 45, "unit": "baht", "feedback": "$195 - 150 = 45$ baht." },
+        { "kind": "mcq", "prompt": "What do you divide the profit by?", "options": [ { "id": "a", "text": "150, the original price" }, { "id": "b", "text": "195, the new price" } ], "answer": "a", "feedback": "Always compare with the **original** amount." },
+        { "kind": "numeric", "prompt": "Find the percentage profit.", "answer": 30, "unit": "%", "feedback": "$\\frac{45}{150} \\times 100 = 30\\%$." }
+      ],
+      "explanation": "$\\frac{195 - 150}{150} \\times 100 = \\frac{45}{150} \\times 100 = 30\\%$.",
+      "difficulty": "core"
+    },
+    {
+      "id": "d6-q12",
+      "type": "numeric",
+      "prompt": "A car was worth 800 000 baht. A year later it is worth 680 000 baht. Find the percentage decrease.",
+      "answer": 15,
+      "unit": "%",
+      "hints": ["Change $= 120\\,000$.", "Divide by the original, 800 000."],
+      "explanation": "$\\frac{120\\,000}{800\\,000} \\times 100 = 15\\%$.",
+      "difficulty": "core"
+    },
+    {
+      "id": "d6-q13",
+      "type": "manipulable",
+      "prompt": "A meal costs 600 baht. Set the bar to show the price **after a $10\\%$ service charge is added**.",
+      "widget": "percent-bar",
+      "config": { "total": 600, "unit": "baht", "max": 150, "step": 5, "start": { "p": 50 } },
+      "target": { "p": 110 },
+      "explanation": "Adding $10\\%$ leaves you with $110\\%$ of the price: $1.1 \\times 600 = 660$ baht.",
+      "difficulty": "core"
+    },
+    {
+      "id": "d6-q14",
+      "type": "drill",
+      "prompt": "Quick-fire: percentages without a calculator.",
+      "durationSec": 120,
+      "count": 10,
+      "pool": [
+        { "id": "p1", "prompt": "$10\\%$ of 90", "accept": ["9"] },
+        { "id": "p2", "prompt": "$50\\%$ of 36", "accept": ["18"] },
+        { "id": "p3", "prompt": "$25\\%$ of 80", "accept": ["20"] },
+        { "id": "p4", "prompt": "$5\\%$ of 60", "accept": ["3"] },
+        { "id": "p5", "prompt": "$1\\%$ of 700", "accept": ["7"] },
+        { "id": "p6", "prompt": "$20\\%$ of 45", "accept": ["9"] },
+        { "id": "p7", "prompt": "$75\\%$ of 40", "accept": ["30"] },
+        { "id": "p8", "prompt": "$15\\%$ of 200", "accept": ["30"] },
+        { "id": "p9", "prompt": "$30\\%$ of 50", "accept": ["15"] },
+        { "id": "p10", "prompt": "$2\\%$ of 350", "accept": ["7"] },
+        { "id": "p11", "prompt": "12 out of 50 as a %", "accept": ["24", "24%"] },
+        { "id": "p12", "prompt": "9 out of 20 as a %", "accept": ["45", "45%"] },
+        { "id": "p13", "prompt": "Increase 40 by $50\\%$", "accept": ["60"] },
+        { "id": "p14", "prompt": "Decrease 80 by $25\\%$", "accept": ["60"] }
+      ],
+      "explanation": "Build from $10\\%$, $5\\%$ and $1\\%$; for 'out of', make the bottom 100."
+    }
+  ]
+}

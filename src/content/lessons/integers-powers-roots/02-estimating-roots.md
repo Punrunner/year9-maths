@@ -1,7 +1,7 @@
 ---
 title: Estimating Square Roots and Cube Roots
 topic: integers-powers-roots
-order: 2
+order: 3
 minutes: 25
 difficulty: core
 summary: 'Trapping a root between two whole numbers, then judging which one it is closer to — no calculator needed.'
