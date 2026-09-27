@@ -1,9 +1,9 @@
 {
   "title": "Decimals and percentages quiz",
   "topic": "decimals-percentages",
-  "description": "Ten questions drawn at random from a bank of twelve, covering estimation, decimal calculations and percentage change.",
-  "pick": 10,
-  "timeLimitSec": 900,
+  "description": "Twelve questions drawn at random from a bank of eighteen, covering estimation, decimal calculations, percentage change, reverse percentages and percentage error.",
+  "pick": 12,
+  "timeLimitSec": 1200,
   "passMark": 70,
   "questions": [
     { "id": "cq1", "type": "numeric", "prompt": "Estimate $5.42 \\div 2.81$.", "answer": 2, "tolerance": 0.5,
@@ -40,6 +40,72 @@
       "explanation": "$400 \\times 1.2 \\times 0.8 = 384$ — not back to 400." },
     { "id": "cq12", "type": "numeric", "prompt": "Water leaks from a tank at 5% of what is left each minute. After how many whole minutes is it first at least half empty?", "answer": 14, "unit": "minutes",
       "explanation": "$0.95^{13} = 0.513$ and $0.95^{14} = 0.488$, so after 14 minutes less than half remains.",
-      "difficulty": "challenge" }
+      "difficulty": "challenge" },
+    {
+      "id": "cq13",
+      "type": "numeric",
+      "prompt": "After a $15\\%$ increase, a rent is 13 800 baht. What was it before?",
+      "answer": 12000,
+      "unit": "baht",
+      "explanation": "$13\\,800 \\div 1.15 = 12\\,000$ baht."
+    },
+    {
+      "id": "cq14",
+      "type": "numeric",
+      "prompt": "In a sale, everything is reduced by $22\\%$. A coat costs 2730 baht in the sale. Find its original price.",
+      "answer": 3500,
+      "unit": "baht",
+      "explanation": "$2730 \\div 0.78 = 3500$ baht."
+    },
+    {
+      "id": "cq15",
+      "type": "numeric",
+      "prompt": "A price including $7\\%$ VAT is 1605 baht. How much of this is VAT?",
+      "answer": 105,
+      "unit": "baht",
+      "marks": 2,
+      "explanation": "$1605 \\div 1.07 = 1500$, so VAT $= 105$ baht."
+    },
+    {
+      "id": "cq16",
+      "type": "numeric",
+      "prompt": "A population decreased by $10\\%$ each year for 3 years and is now $29\\,160$. What was it 3 years ago?",
+      "answer": 40000,
+      "marks": 2,
+      "explanation": "$29\\,160 \\div 0.9^3 = 29\\,160 \\div 0.729 = 40\\,000$."
+    },
+    {
+      "id": "cq17",
+      "type": "numeric",
+      "prompt": "A length of $2.5$ m is measured as $2.42$ m. Find the percentage error.",
+      "answer": 3.2,
+      "unit": "%",
+      "explanation": "$\\frac{0.08}{2.5} \\times 100 = 3.2\\%$."
+    },
+    {
+      "id": "cq18",
+      "type": "mcq",
+      "prompt": "A price rises by $25\\%$, then falls by $20\\%$. Overall, the price …",
+      "options": [
+        {
+          "id": "a",
+          "text": "is unchanged"
+        },
+        {
+          "id": "b",
+          "text": "rises by $5\\%$"
+        },
+        {
+          "id": "c",
+          "text": "falls by $5\\%$"
+        },
+        {
+          "id": "d",
+          "text": "rises by $45\\%$"
+        }
+      ],
+      "answer": "a",
+      "explanation": "$1.25 \\times 0.8 = 1$, so the price ends where it started."
+    }
   ]
 }

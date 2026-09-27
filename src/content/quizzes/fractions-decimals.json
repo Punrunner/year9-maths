@@ -1,9 +1,9 @@
 {
   "title": "Fractions and decimals quiz",
   "topic": "fractions-decimals",
-  "description": "Ten questions drawn at random from a bank of fourteen, covering factors, fraction calculations, order of operations and recurring decimals. No calculator.",
-  "pick": 10,
-  "timeLimitSec": 1200,
+  "description": "Twelve questions drawn at random from a bank of eighteen, covering factors, fraction calculations, order of operations and recurring decimals, including the algebraic method. No calculator.",
+  "pick": 12,
+  "timeLimitSec": 1500,
   "passMark": 70,
   "questions": [
     { "id": "fq1", "type": "numeric", "prompt": "Find the HCF of 84 and 112.", "answer": 28,
@@ -51,6 +51,50 @@
         { "id": "c", "text": "$0.13$" },
         { "id": "d", "text": "$0.\\dot{2}$" }
       ], "answer": "a",
-      "explanation": "$2 \\div 15 = 0.1333\\dots$ — only the 3 repeats." }
+      "explanation": "$2 \\div 15 = 0.1333\\dots$ — only the 3 repeats." },
+    {
+      "id": "fq15",
+      "type": "numeric",
+      "prompt": "Write $0.\\dot{5}\\dot{4}$ as a fraction in its simplest form.",
+      "answer": "6/11",
+      "explanation": "$99x = 54$, so $x = \\frac{54}{99} = \\frac{6}{11}$."
+    },
+    {
+      "id": "fq16",
+      "type": "numeric",
+      "prompt": "Write $0.3\\dot{8}$ as a fraction in its simplest form.",
+      "answer": "7/18",
+      "marks": 2,
+      "explanation": "$100x - 10x = 38.8\\ldots - 3.8\\ldots = 35$, so $x = \\frac{35}{90} = \\frac{7}{18}$."
+    },
+    {
+      "id": "fq17",
+      "type": "numeric",
+      "prompt": "Write $0.1\\dot{3}\\dot{5}$ as a fraction in its simplest form.",
+      "answer": "67/495",
+      "marks": 3,
+      "explanation": "$1000x - 10x = 135.35\\ldots - 1.35\\ldots = 134$, so $x = \\frac{134}{990} = \\frac{67}{495}$."
+    },
+    {
+      "id": "fq18",
+      "type": "mcq",
+      "prompt": "To prove $0.2\\dot{1}\\dot{8} = \\frac{12}{55}$, which pair of equations should you subtract?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$1000x = 218.1818\\ldots$ and $10x = 2.1818\\ldots$"
+        },
+        {
+          "id": "b",
+          "text": "$100x = 21.8181\\ldots$ and $x = 0.21818\\ldots$"
+        },
+        {
+          "id": "c",
+          "text": "$1000x = 218.1818\\ldots$ and $x = 0.21818\\ldots$"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Only $1000x$ and $10x$ have the same tail ($.1818\\ldots$). $990x = 216$, so $x = \\frac{216}{990} = \\frac{12}{55}$."
+    }
   ]
 }

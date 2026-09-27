@@ -1,152 +1,136 @@
 {
-  "title": "Practice: calculating with negative numbers",
-  "intro": "Decide the sign first, then the size.",
+  "title": "Practice: fractional indices",
+  "intro": "No calculator. Denominator = root, numerator = power, minus sign = flip.",
   "questions": [
     {
       "id": "i4-q1",
-      "type": "multi",
-      "prompt": "Select **every** true statement.",
-      "options": [
-        { "id": "a", "text": "$-5 < -2$" },
-        { "id": "b", "text": "$-10 > -1$" },
-        { "id": "c", "text": "$0 > -3$" },
-        { "id": "d", "text": "$-7 < 4$" }
+      "type": "match",
+      "prompt": "Match each expression to its value.",
+      "left": [
+        { "id": "l1", "text": "$36^{\\frac{1}{2}}$" },
+        { "id": "l2", "text": "$1000^{\\frac{1}{3}}$" },
+        { "id": "l3", "text": "$16^{\\frac{1}{4}}$" },
+        { "id": "l4", "text": "$25^{-\\frac{1}{2}}$" }
       ],
-      "answers": ["a", "c", "d"],
-      "hints": ["Further left on the number line means smaller."],
-      "explanation": "$-10$ is further left than $-1$, so $-10 < -1$. The other three are true.",
-      "difficulty": "foundation"
+      "right": [
+        { "id": "r1", "text": "$6$" },
+        { "id": "r2", "text": "$10$" },
+        { "id": "r3", "text": "$2$" },
+        { "id": "r4", "text": "$\\frac{1}{5}$" }
+      ],
+      "solution": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+      "explanation": "$\\sqrt{36} = 6$, $\\sqrt[3]{1000} = 10$, $\\sqrt[4]{16} = 2$, and $25^{-\\frac{1}{2}} = \\frac{1}{\\sqrt{25}} = \\frac{1}{5}$."
     },
     {
       "id": "i4-q2",
       "type": "numeric",
-      "prompt": "Work out $-6 + 11$.",
-      "answer": 5,
-      "hints": ["Start at $-6$ and move 11 right."],
-      "explanation": "6 steps get you to 0, and 5 more to $5$.",
-      "difficulty": "foundation"
+      "prompt": "Evaluate $8^{\\frac{2}{3}}$.",
+      "answer": 4,
+      "hints": ["$\\sqrt[3]{8} = 2$"],
+      "explanation": "$(\\sqrt[3]{8})^2 = 2^2 = 4$."
     },
     {
       "id": "i4-q3",
       "type": "numeric",
-      "prompt": "Work out $3 - 12$.",
-      "answer": -9,
-      "hints": ["Start at 3 and move 12 left."],
-      "explanation": "3 steps to 0, then 9 more: $-9$.",
-      "difficulty": "foundation"
+      "prompt": "Evaluate $81^{\\frac{3}{4}}$.",
+      "answer": 27,
+      "hints": ["$\\sqrt[4]{81} = 3$"],
+      "explanation": "$(\\sqrt[4]{81})^3 = 3^3 = 27$."
     },
     {
       "id": "i4-q4",
       "type": "numeric",
-      "prompt": "Work out $-8 - (-5)$.",
-      "answer": -3,
-      "hints": ["Two minus signs make a plus: $-8 + 5$."],
-      "explanation": "$-8 - (-5) = -8 + 5 = -3$."
+      "prompt": "Evaluate $100^{\\frac{5}{2}}$.",
+      "answer": 100000,
+      "explanation": "$(\\sqrt{100})^5 = 10^5 = 100\\,000$."
     },
     {
       "id": "i4-q5",
       "type": "numeric",
-      "prompt": "Work out $4 + (-13)$.",
-      "answer": -9,
-      "hints": ["$+$ and $-$ make $-$: $4 - 13$."],
-      "explanation": "$4 + (-13) = 4 - 13 = -9$."
+      "prompt": "Evaluate $27^{-\\frac{2}{3}}$. Give your answer as a fraction.",
+      "answer": "1/9",
+      "hints": ["$27^{\\frac{2}{3}} = 3^2 = 9$, then flip."],
+      "explanation": "$27^{-\\frac{2}{3}} = \\frac{1}{(\\sqrt[3]{27})^2} = \\frac{1}{9}$."
     },
     {
       "id": "i4-q6",
       "type": "numeric",
-      "prompt": "Work out $-7 \\times -6$.",
-      "answer": 42,
-      "hints": ["Same signs → positive."],
-      "explanation": "$7 \\times 6 = 42$, and two negatives give a positive: $42$."
+      "prompt": "Evaluate $\\left(\\frac{4}{9}\\right)^{-\\frac{3}{2}}$. Give your answer as a fraction.",
+      "answer": "27/8",
+      "hints": ["Flip: $\\left(\\frac{9}{4}\\right)^{\\frac{3}{2}}$.", "$\\sqrt{\\frac{9}{4}} = \\frac{3}{2}$, then cube."],
+      "explanation": "$\\left(\\frac{9}{4}\\right)^{\\frac{3}{2}} = \\left(\\frac{3}{2}\\right)^3 = \\frac{27}{8}$.",
+      "difficulty": "challenge"
     },
     {
       "id": "i4-q7",
       "type": "numeric",
-      "prompt": "Work out $-54 \\div 9$.",
-      "answer": -6,
-      "hints": ["Different signs → negative."],
-      "explanation": "$54 \\div 9 = 6$; different signs, so $-6$."
+      "prompt": "Evaluate $0.04^{-\\frac{1}{2}}$.",
+      "answer": 5,
+      "hints": ["$0.04 = \\frac{4}{100} = \\frac{1}{25}$."],
+      "explanation": "$0.04^{-\\frac{1}{2}} = \\left(\\frac{1}{25}\\right)^{-\\frac{1}{2}} = 25^{\\frac{1}{2}} = 5$.",
+      "difficulty": "challenge"
     },
     {
       "id": "i4-q8",
-      "type": "table",
-      "prompt": "Complete the multiplication grid.",
-      "columns": ["$\\times$", "$-3$", "$2$", "$-5$"],
-      "rows": [
-        [{ "given": "$4$" }, { "answer": "-12", "accept": ["−12"] }, { "answer": "8" }, { "answer": "-20", "accept": ["−20"] }],
-        [{ "given": "$-2$" }, { "answer": "6" }, { "answer": "-4", "accept": ["−4"] }, { "answer": "10" }]
+      "type": "multi",
+      "prompt": "Select **every** expression equal to $4$.",
+      "options": [
+        { "id": "a", "text": "$16^{\\frac{1}{2}}$" },
+        { "id": "b", "text": "$64^{\\frac{1}{3}}$" },
+        { "id": "c", "text": "$8^{\\frac{2}{3}}$" },
+        { "id": "d", "text": "$32^{\\frac{2}{5}}$" },
+        { "id": "e", "text": "$2^{-2}$" },
+        { "id": "f", "text": "$\\left(\\frac{1}{16}\\right)^{-\\frac{1}{2}}$" }
       ],
-      "explanation": "Same signs give positive, different signs give negative: $4 \\times -3 = -12$, $-2 \\times -3 = 6$, $-2 \\times -5 = 10$."
+      "answers": ["a", "b", "c", "d", "f"],
+      "explanation": "All equal 4 except $2^{-2} = \\frac{1}{4}$. $32^{\\frac{2}{5}} = 2^2 = 4$ and $\\left(\\frac{1}{16}\\right)^{-\\frac{1}{2}} = 16^{\\frac{1}{2}} = 4$."
     },
     {
       "id": "i4-q9",
       "type": "numeric",
-      "prompt": "Work out $-3 \\times 4 - (-10)$.",
-      "answer": -2,
-      "hints": ["Multiply first.", "$-12 - (-10) = -12 + 10$."],
-      "explanation": "$-3 \\times 4 = -12$, then $-12 - (-10) = -12 + 10 = -2$."
+      "prompt": "Solve $2^x = \\frac{1}{64}$.",
+      "answer": -6,
+      "hints": ["$64 = 2^6$, and one over means a negative index."],
+      "explanation": "$\\frac{1}{64} = 2^{-6}$, so $x = -6$."
     },
     {
       "id": "i4-q10",
       "type": "numeric",
-      "prompt": "Work out $(-4)^2 - 3 \\times 5$.",
-      "answer": 1,
-      "hints": ["$(-4)^2 = -4 \\times -4$."],
-      "explanation": "$(-4)^2 = 16$ and $3 \\times 5 = 15$, so $16 - 15 = 1$."
+      "prompt": "Solve $8^x = 16$.",
+      "answer": "4/3",
+      "tolerance": 0.005,
+      "hints": ["Write both as powers of 2: $2^{3x} = 2^4$."],
+      "explanation": "$2^{3x} = 2^4$, so $3x = 4$ and $x = \\frac{4}{3}$.",
+      "difficulty": "challenge"
     },
     {
       "id": "i4-q11",
       "type": "numeric",
-      "prompt": "The temperature in Moscow is $-12\\degree$C. In Bangkok it is $33\\degree$C. What is the difference in temperature?",
-      "answer": 45,
-      "unit": "°C",
-      "hints": ["Difference = higher − lower.", "$33 - (-12)$"],
-      "explanation": "$33 - (-12) = 33 + 12 = 45\\degree$C.",
-      "difficulty": "core"
+      "prompt": "Solve $x^{\\frac{3}{2}} = 64$.",
+      "answer": 16,
+      "hints": ["Raise both sides to the power $\\frac{2}{3}$."],
+      "explanation": "$x = 64^{\\frac{2}{3}} = (\\sqrt[3]{64})^2 = 4^2 = 16$. Check: $16^{\\frac{3}{2}} = 4^3 = 64$ ✓."
     },
     {
       "id": "i4-q12",
-      "type": "numeric",
-      "prompt": "A diver is at $-18$ m. She rises 7 m, then dives down 12 m. What is her new position?",
-      "answer": -23,
-      "unit": "m",
-      "hints": ["Rising is $+$, diving is $-$."],
-      "explanation": "$-18 + 7 - 12 = -11 - 12 = -23$ m.",
-      "difficulty": "core"
-    },
-    {
-      "id": "i4-q13",
-      "type": "manipulable",
-      "prompt": "Set up a calculation that **subtracts a negative number** and gives the answer $4$.",
-      "widget": "integer-hops",
-      "config": { "start": { "a": 0, "op": 0, "b": 0, "r": 0 } },
-      "target": { "op": 1, "r": 4 },
-      "explanation": "Any $a - (-b)$ with $a + b = 4$ works, e.g. $1 - (-3) = 4$ or $-2 - (-6) = 4$.",
+      "type": "algebraic",
+      "prompt": "Simplify $(27y^6)^{\\frac{2}{3}}$.",
+      "answer": "9y^4",
+      "variables": ["y"],
+      "placeholder": "e.g. 9y^4",
+      "hints": ["$27^{\\frac{2}{3}} = 9$ and $6 \\times \\frac{2}{3} = 4$."],
+      "explanation": "$27^{\\frac{2}{3}} \\times y^{6 \\times \\frac{2}{3}} = 9y^4$.",
       "difficulty": "challenge"
     },
     {
-      "id": "i4-q14",
-      "type": "drill",
-      "prompt": "Quick-fire: integers. Type the answer.",
-      "durationSec": 90,
-      "count": 10,
-      "pool": [
-        { "id": "d1", "prompt": "$-5 + 8$", "accept": ["3"] },
-        { "id": "d2", "prompt": "$2 - 9$", "accept": ["-7", "−7"] },
-        { "id": "d3", "prompt": "$-4 - 6$", "accept": ["-10", "−10"] },
-        { "id": "d4", "prompt": "$-3 - (-9)$", "accept": ["6"] },
-        { "id": "d5", "prompt": "$7 + (-11)$", "accept": ["-4", "−4"] },
-        { "id": "d6", "prompt": "$-6 \\times 4$", "accept": ["-24", "−24"] },
-        { "id": "d7", "prompt": "$-9 \\times -3$", "accept": ["27"] },
-        { "id": "d8", "prompt": "$-40 \\div 8$", "accept": ["-5", "−5"] },
-        { "id": "d9", "prompt": "$-72 \\div -9$", "accept": ["8"] },
-        { "id": "d10", "prompt": "$(-5)^2$", "accept": ["25"] },
-        { "id": "d11", "prompt": "$-10 + (-10)$", "accept": ["-20", "−20"] },
-        { "id": "d12", "prompt": "$0 - 15$", "accept": ["-15", "−15"] },
-        { "id": "d13", "prompt": "$12 \\div -3$", "accept": ["-4", "−4"] },
-        { "id": "d14", "prompt": "$-1 \\times -1 \\times -1$", "accept": ["-1", "−1"] }
-      ],
-      "explanation": "Two signs together: same → $+$, different → $-$. For $\\times$ and $\\div$: same signs → positive, different → negative."
+      "id": "i4-q13",
+      "type": "numeric",
+      "prompt": "Find $n$ if $\\sqrt{2} \\times 4^n = 2^{\\frac{9}{2}}$.",
+      "answer": 2,
+      "marks": 2,
+      "hints": ["$\\sqrt{2} = 2^{\\frac{1}{2}}$ and $4^n = 2^{2n}$."],
+      "explanation": "$2^{\\frac{1}{2} + 2n} = 2^{\\frac{9}{2}}$, so $\\frac{1}{2} + 2n = \\frac{9}{2}$, giving $2n = 4$ and $n = 2$.",
+      "difficulty": "challenge"
     }
   ]
 }

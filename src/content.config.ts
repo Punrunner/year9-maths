@@ -232,12 +232,8 @@ const manipulable = z.object({
     'bearing',        // turn a pointer to a three-figure bearing
     'histogram',      // grouped frequencies as bars / a frequency polygon
     'axis-trick',     // a bar chart whose axis can be cut or stretched
-    'unit-ladder',    // the metric staircase: pick units and see × or ÷
     'unit-grid',      // 1 big unit cut into small ones; or scale by k
-    'integer-hops',   // add / subtract integers as hops on a number line
-    'fraction-bars',  // two fractions as bars, with a common denominator
-    'percent-grid',   // a hundred square: fraction, decimal, percentage
-    'percent-bar',    // a double number line: amount against percentage
+    'percent-bar',    // amount against percentage; reverse mode for reverse %
   ]),
   config: z.record(z.string(), z.any()).default({}),
   /** What the student has to achieve, e.g. { m: 2, c: -3 }. */

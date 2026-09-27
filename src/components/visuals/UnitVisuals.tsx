@@ -1,15 +1,11 @@
 /* ==========================================================================
    INTERACTIVE VISUALS — units of measurement
-     unit-ladder  the metric "staircase": pick two units and an amount, and
-                  see which way to go, what to multiply or divide by, and how
-                  far the decimal point moves
      unit-grid    one big unit cut into small ones along a line, across a
                   square and through a cube — why 1 cm² = 100 mm² and
                   1 cm³ = 1000 mm³. In `mode: scale` it enlarges a shape by a
                   scale factor k instead (lengths ×k, area ×k², volume ×k³).
    ========================================================================== */
 
-import { useEffect, useState } from 'preact/hooks';
 import { Slider, Readout, Stage, type VisualProps } from './kit';
 
 /* --------------------------------------------------------------------------
@@ -26,158 +22,6 @@ function fmt(x: number): string {
   const [int = '0', dec] = s.split('.');
   const grouped = int.length > 4 ? int.replace(/\B(?=(\d{3})+(?!\d))/g, ' ') : int;
   return `${neg ? '−' : ''}${grouped}${dec ? `.${dec}` : ''}`;
-}
-
-/* ==========================================================================
-   unit-ladder
-   ========================================================================== */
-
-/** Units listed smallest first; `steps[i]` is how many of unit i make unit i+1. */
-const LADDERS: Record<string, { name: string; units: string[]; steps: number[] }> = {
-  length:   { name: 'Length',   units: ['mm', 'cm', 'm', 'km'], steps: [10, 100, 1000] },
-  mass:     { name: 'Mass',     units: ['mg', 'g', 'kg', 't'],  steps: [1000, 1000, 1000] },
-  capacity: { name: 'Capacity', units: ['mL', 'L', 'kL'],       steps: [1000, 1000] },
-};
-
-export function UnitLadder({ config, value, onChange, target, readOnly }: VisualProps) {
-  const keys: string[] = config.quantities ?? ['length', 'mass', 'capacity'];
-  const q = Math.min(Math.max(0, value.q ?? 0), keys.length - 1);
-  const ladder = LADDERS[keys[q]!] ?? LADDERS.length!;
-  const { units, steps } = ladder;
-  const last = units.length - 1;
-  const from = Math.min(value.from ?? 2, last);
-  const to = Math.min(value.to ?? 1, last);
-  const n = value.n ?? 3.5;
-  const set = (patch: Record<string, number>) => { if (!readOnly) onChange({ ...value, ...patch }); };
-
-  // The box keeps its own text so "3." or "0.0" can be typed on the way to 3.5 or 0.05.
-  const [text, setText] = useState(String(n));
-  useEffect(() => {
-    if (parseFloat(text.replace(/[\s,]/g, '')) !== n) setText(String(n));
-  }, [n]);
-
-  // Multiply every step factor between the two units.
-  const lo = Math.min(from, to), hi = Math.max(from, to);
-  const factor = steps.slice(lo, hi).reduce((a, b) => a * b, 1);
-  const goingDown = to < from;              // to a smaller unit
-  const result = from === to ? n : goingDown ? n * factor : n / factor;
-  const places = Math.round(Math.log10(factor));
-
-  // Staircase: biggest unit on the top step, top-left. Row j = last - unitIndex.
-  const dx = 96, dy = 50, x0 = 12, y0 = 36;
-  const tread = (i: number) => {
-    const j = last - i;
-    return { x: x0 + j * dx, y: y0 + j * dy };
-  };
-  const W = x0 + units.length * dx + 12, H = y0 + last * dy + 40;
-  const outline = units.map((_, i) => {
-    const t = tread(i);
-    return `${t.x},${t.y} ${t.x + dx},${t.y}` + (i > 0 ? ` ${t.x + dx},${t.y + dy}` : '');
-  }).reverse().join(' ');
-  const base = y0 + last * dy + 22;
-
-  const verb = from === to ? 'Same unit — nothing to do'
-    : goingDown ? `Down the stairs to a smaller unit, so the number gets bigger: × ${fmt(factor)}`
-    : `Up the stairs to a bigger unit, so the number gets smaller: ÷ ${fmt(factor)}`;
-
-  return (
-    <div class="visual">
-      <Stage viewBox={`0 0 ${W} ${H}`}
-        label={`A staircase of ${ladder.name.toLowerCase()} units from ${units[last]} at the top down to ${units[0]}. Converting ${fmt(n)} ${units[from]} to ${units[to]} gives ${fmt(result)} ${units[to]}.`}>
-        <polygon class="fig-fill" points={`${x0},${base} ${outline} ${x0 + units.length * dx},${base}`} />
-        <polyline class="fig-edge" points={outline} />
-
-        {units.map((u, i) => {
-          const t = tread(i);
-          const on = i >= lo && i <= hi && from !== to;
-          return (
-            <g key={u}>
-              {on && <line x1={t.x + 4} y1={t.y} x2={t.x + dx - 4} y2={t.y} class="fig-line" />}
-              <text x={t.x + dx / 2} y={t.y - 10} text-anchor="middle" class="fig-label"
-                style={{ fontWeight: i === from || i === to ? 700 : 400, fontSize: '15px' }}>{u}</text>
-              {i === from && <circle cx={t.x + 12} cy={t.y - 15} r="6" class="fig-vertex" />}
-              {i === to && from !== to && <circle cx={t.x + dx - 12} cy={t.y - 15} r="6" class="fig-vertex fig-vertex-muted" />}
-            </g>
-          );
-        })}
-
-        {/* The factor on each riser, between unit i (below) and unit i + 1 (above). */}
-        {steps.map((f, i) => {
-          const t = tread(i + 1);
-          const inPath = i >= lo && i < hi;
-          const label = inPath ? `${goingDown ? '×' : '÷'} ${fmt(f)}` : `× ${fmt(f)}`;
-          return (
-            <text key={i} x={t.x + dx - 8} y={t.y + dy / 2 + 6} text-anchor="end" class="fig-label"
-              style={{ fill: inPath ? 'var(--red)' : 'var(--muted)', fontWeight: inPath ? 700 : 400, fontSize: '14px' }}>
-              {label}
-            </text>
-          );
-        })}
-      </Stage>
-
-      <div class="controls">
-        {keys.length > 1 && (
-          <div class="slider">
-            <span class="slider-name">Measuring</span>
-            <div class="seg">
-              {keys.map((k, i) => (
-                <button key={k} type="button" disabled={readOnly}
-                  class={`seg-btn seg-btn-sm ${q === i ? 'is-on' : ''}`}
-                  onClick={() => set({ q: i, from: Math.min(from, LADDERS[k]!.units.length - 1), to: Math.min(to, LADDERS[k]!.units.length - 1) })}>
-                  {LADDERS[k]?.name ?? k}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-        <label class="slider">
-          <span class="slider-name">Amount</span>
-          <input class="entry" type="text" inputMode="decimal" value={text} disabled={readOnly}
-            aria-label={`Amount in ${units[from]}`}
-            onInput={(e) => {
-              const raw = (e.target as HTMLInputElement).value;
-              setText(raw);
-              const v = parseFloat(raw.replace(/[\s,]/g, ''));
-              if (Number.isFinite(v)) set({ n: v });
-            }} />
-        </label>
-        <div class="slider">
-          <span class="slider-name">From</span>
-          <div class="seg">
-            {units.map((u, i) => (
-              <button key={u} type="button" disabled={readOnly}
-                class={`seg-btn seg-btn-sm ${from === i ? 'is-on' : ''}`} onClick={() => set({ from: i })}>{u}</button>
-            ))}
-          </div>
-        </div>
-        <div class="slider">
-          <span class="slider-name">To</span>
-          <div class="seg">
-            {units.map((u, i) => (
-              <button key={u} type="button" disabled={readOnly}
-                class={`seg-btn seg-btn-sm ${to === i ? 'is-on' : ''}`} onClick={() => set({ to: i })}>{u}</button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <Readout rows={[
-        { label: 'Direction', value: verb },
-        ...(from !== to ? [{
-          label: 'Decimal point',
-          value: `moves ${places} place${places === 1 ? '' : 's'} to the ${goingDown ? 'right' : 'left'}`,
-        }] : []),
-        {
-          label: 'Answer',
-          value: `${fmt(n)} ${units[from]} = ${fmt(result)} ${units[to]}`,
-          strong: true,
-        },
-        ...(target && target.from !== undefined
-          ? [{ label: 'Set the stairs to', value: `${units[target.from] ?? '?'} → ${units[target.to ?? 0] ?? '?'}` }]
-          : []),
-      ]} />
-    </div>
-  );
 }
 
 /* ==========================================================================

@@ -1,162 +1,107 @@
 {
-  "title": "Practice: equivalent fractions, adding and subtracting",
-  "intro": "Type fractions like 3/4 and mixed numbers like 1 3/4.",
+  "title": "Practice: recurring decimals to fractions",
+  "intro": "Give fractions in their simplest form, e.g. 4/11 or 2 1/22.",
   "questions": [
     {
       "id": "f5-q1",
-      "type": "match",
-      "prompt": "Match each fraction to its simplest form.",
-      "left": [
-        { "id": "l1", "text": "$\\frac{12}{16}$" },
-        { "id": "l2", "text": "$\\frac{15}{25}$" },
-        { "id": "l3", "text": "$\\frac{14}{42}$" },
-        { "id": "l4", "text": "$\\frac{30}{36}$" }
-      ],
-      "right": [
-        { "id": "r1", "text": "$\\frac{3}{4}$" },
-        { "id": "r2", "text": "$\\frac{3}{5}$" },
-        { "id": "r3", "text": "$\\frac{1}{3}$" },
-        { "id": "r4", "text": "$\\frac{5}{6}$" }
-      ],
-      "solution": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
-      "hints": ["Divide the top and bottom by their HCF."],
-      "explanation": "HCFs: 4, 5, 14 and 6. $\\frac{12 \\div 4}{16 \\div 4} = \\frac{3}{4}$, $\\frac{15 \\div 5}{25 \\div 5} = \\frac{3}{5}$, $\\frac{14 \\div 14}{42 \\div 14} = \\frac{1}{3}$, $\\frac{30 \\div 6}{36 \\div 6} = \\frac{5}{6}$.",
-      "difficulty": "foundation"
+      "type": "numeric",
+      "prompt": "Write $0.\\dot{7}$ as a fraction.",
+      "answer": "7/9",
+      "explanation": "$10x - x = 7$, so $x = \\frac{7}{9}$."
     },
     {
       "id": "f5-q2",
       "type": "numeric",
-      "prompt": "Write $3\\frac{2}{7}$ as an improper fraction.",
-      "answer": "23/7",
-      "hints": ["$3 \\times 7 + 2$"],
-      "explanation": "$3 \\times 7 + 2 = 23$, so $\\frac{23}{7}$.",
-      "difficulty": "foundation"
+      "prompt": "Write $0.\\dot{1}\\dot{8}$ as a fraction in its simplest form.",
+      "answer": "2/11",
+      "hints": ["$100x - x = 18$"],
+      "explanation": "$99x = 18$, so $x = \\frac{18}{99} = \\frac{2}{11}$."
     },
     {
       "id": "f5-q3",
-      "type": "fill-blank",
-      "prompt": "Write $\\frac{29}{6}$ as a mixed number.",
-      "text": "$\\frac{29}{6} =$ [[w]] and [[n]] sixths",
-      "blanks": [
-        { "id": "w", "accept": ["4"], "size": 3 },
-        { "id": "n", "accept": ["5"], "size": 3 }
-      ],
-      "hints": ["How many times does 6 go into 29, and what is left over?"],
-      "explanation": "$29 \\div 6 = 4$ remainder $5$, so $\\frac{29}{6} = 4\\frac{5}{6}$.",
-      "difficulty": "foundation"
+      "type": "numeric",
+      "prompt": "Write $0.\\dot{2}1\\dot{6}$ as a fraction in its simplest form.",
+      "answer": "8/37",
+      "hints": ["Three-digit block: $1000x - x = 216$.", "HCF of 216 and 999 is 27."],
+      "explanation": "$999x = 216$, so $x = \\frac{216}{999} = \\frac{8}{37}$."
     },
     {
       "id": "f5-q4",
-      "type": "truefalse",
-      "prompt": "$\\frac{5}{8}$ is bigger than $\\frac{3}{5}$.",
-      "answer": true,
-      "hints": ["Use denominator 40."],
-      "explanation": "$\\frac{5}{8} = \\frac{25}{40}$ and $\\frac{3}{5} = \\frac{24}{40}$, so $\\frac{5}{8}$ is bigger — only just."
+      "type": "numeric",
+      "prompt": "Write $0.8\\dot{3}$ as a fraction in its simplest form.",
+      "answer": "5/6",
+      "hints": ["$10x = 8.333\\ldots$ and $100x = 83.333\\ldots$"],
+      "explanation": "$100x - 10x = 75$, so $90x = 75$ and $x = \\frac{75}{90} = \\frac{5}{6}$."
     },
     {
       "id": "f5-q5",
       "type": "numeric",
-      "prompt": "Work out $\\frac{2}{7} + \\frac{3}{7}$.",
-      "answer": "5/7",
-      "hints": ["Same denominator already — just add the tops."],
-      "explanation": "$\\frac{2 + 3}{7} = \\frac{5}{7}$. The denominator stays 7.",
-      "difficulty": "foundation"
+      "prompt": "Write $0.4\\dot{1}\\dot{2}$ as a fraction in its simplest form.",
+      "answer": "68/165",
+      "marks": 3,
+      "hints": ["$10x = 4.1212\\ldots$ and $1000x = 412.1212\\ldots$", "$990x = 408$"],
+      "explanation": "$1000x - 10x = 412.1212\\ldots - 4.1212\\ldots = 408$. So $x = \\frac{408}{990} = \\frac{68}{165}$.",
+      "difficulty": "challenge"
     },
     {
       "id": "f5-q6",
       "type": "numeric",
-      "prompt": "Work out $\\frac{1}{3} + \\frac{2}{5}$.",
-      "answer": "11/15",
-      "hints": ["The LCM of 3 and 5 is 15."],
-      "explanation": "$\\frac{5}{15} + \\frac{6}{15} = \\frac{11}{15}$."
+      "prompt": "Write $1.\\dot{3}\\dot{6}$ as a mixed number.",
+      "answer": "1 4/11",
+      "hints": ["Convert $0.\\dot{3}\\dot{6}$, then add 1."],
+      "explanation": "$0.\\dot{3}\\dot{6} = \\frac{36}{99} = \\frac{4}{11}$, so $1\\frac{4}{11}$."
     },
     {
       "id": "f5-q7",
       "type": "numeric",
-      "prompt": "Work out $\\frac{7}{8} - \\frac{1}{6}$.",
-      "answer": "17/24",
-      "hints": ["The LCM of 8 and 6 is 24."],
-      "explanation": "$\\frac{21}{24} - \\frac{4}{24} = \\frac{17}{24}$."
+      "prompt": "Write $3.2\\dot{7}$ as an improper fraction in its simplest form.",
+      "answer": "59/18",
+      "marks": 3,
+      "hints": ["Let $x = 3.2777\\ldots$: $10x = 32.777\\ldots$, $100x = 327.777\\ldots$"],
+      "explanation": "$100x - 10x = 295$, so $90x = 295$ and $x = \\frac{295}{90} = \\frac{59}{18}$.",
+      "difficulty": "challenge"
     },
     {
       "id": "f5-q8",
-      "type": "numeric",
-      "prompt": "Work out $\\frac{3}{4} + \\frac{5}{6}$. Give your answer as a mixed number.",
-      "answer": "1 7/12",
-      "hints": ["The LCM of 4 and 6 is 12.", "$\\frac{9}{12} + \\frac{10}{12}$"],
-      "explanation": "$\\frac{9}{12} + \\frac{10}{12} = \\frac{19}{12} = 1\\frac{7}{12}$."
+      "type": "mcq",
+      "prompt": "To convert $x = 0.0\\dot{3}\\dot{7}$ to a fraction, which two equations should you subtract?",
+      "options": [
+        { "id": "a", "text": "$1000x$ and $10x$" },
+        { "id": "b", "text": "$100x$ and $x$" },
+        { "id": "c", "text": "$100x$ and $10x$" },
+        { "id": "d", "text": "$1000x$ and $x$" }
+      ],
+      "answer": "a",
+      "explanation": "$10x = 0.3737\\ldots$ and $1000x = 37.3737\\ldots$ have the same tail. $990x = 37$, so $x = \\frac{37}{990}$."
     },
     {
       "id": "f5-q9",
       "type": "numeric",
-      "prompt": "Work out $\\frac{9}{10} - \\frac{2}{5}$. Simplify your answer.",
-      "answer": "1/2",
-      "hints": ["$\\frac{2}{5} = \\frac{4}{10}$"],
-      "explanation": "$\\frac{9}{10} - \\frac{4}{10} = \\frac{5}{10} = \\frac{1}{2}$."
+      "prompt": "Work out $0.\\dot{4} + 0.\\dot{2}\\dot{7}$. Give your answer as a fraction in its simplest form.",
+      "answer": "71/99",
+      "marks": 3,
+      "hints": ["$0.\\dot{4} = \\frac{4}{9} = \\frac{44}{99}$ and $0.\\dot{2}\\dot{7} = \\frac{27}{99}$."],
+      "explanation": "$\\frac{44}{99} + \\frac{27}{99} = \\frac{71}{99}$.",
+      "difficulty": "challenge"
     },
     {
       "id": "f5-q10",
-      "type": "numeric",
-      "prompt": "Work out $1\\frac{1}{2} + 2\\frac{3}{5}$.",
-      "answer": "4 1/10",
-      "hints": ["Make both improper: $\\frac{3}{2} + \\frac{13}{5}$.", "Common denominator 10."],
-      "explanation": "$\\frac{15}{10} + \\frac{26}{10} = \\frac{41}{10} = 4\\frac{1}{10}$."
+      "type": "fill-blank",
+      "prompt": "Complete the proof that $0.2\\dot{5} = \\frac{23}{90}$.",
+      "text": "Let $x = 0.2555\\ldots$. Then $10x =$ [[a]] and $100x =$ [[b]]. Subtracting, $90x =$ [[c]], so $x = \\frac{23}{90}$.",
+      "blanks": [
+        { "id": "a", "accept": ["2.555...", "2.555", "2.5555...", "2.5 recurring", "2.5555"], "size": 9 },
+        { "id": "b", "accept": ["25.555...", "25.555", "25.5555...", "25.5555", "25.5 recurring"], "size": 9 },
+        { "id": "c", "accept": ["23"], "size": 5 }
+      ],
+      "explanation": "$10x = 2.555\\ldots$, $100x = 25.555\\ldots$; $100x - 10x = 23$, so $90x = 23$ and $x = \\frac{23}{90}$."
     },
     {
       "id": "f5-q11",
-      "type": "numeric",
-      "prompt": "Work out $3\\frac{1}{4} - 1\\frac{5}{6}$.",
-      "answer": "1 5/12",
-      "hints": ["$\\frac{13}{4} - \\frac{11}{6}$", "Common denominator 12."],
-      "explanation": "$\\frac{39}{12} - \\frac{22}{12} = \\frac{17}{12} = 1\\frac{5}{12}$.",
-      "difficulty": "core"
-    },
-    {
-      "id": "f5-q12",
-      "type": "mcq",
-      "prompt": "Nam spends $\\frac{1}{3}$ of his money on food and $\\frac{1}{4}$ on transport. What fraction is left?",
-      "options": [
-        { "id": "a", "text": "$\\frac{5}{12}$" },
-        { "id": "b", "text": "$\\frac{7}{12}$" },
-        { "id": "c", "text": "$\\frac{2}{7}$" },
-        { "id": "d", "text": "$\\frac{1}{12}$" }
-      ],
-      "answer": "a",
-      "hints": ["First find how much he spends altogether.", "The whole is $\\frac{12}{12}$."],
-      "explanation": "Spent: $\\frac{4}{12} + \\frac{3}{12} = \\frac{7}{12}$. Left: $\\frac{12}{12} - \\frac{7}{12} = \\frac{5}{12}$. $\\frac{7}{12}$ is how much he *spent*.",
-      "difficulty": "core"
-    },
-    {
-      "id": "f5-q13",
-      "type": "manipulable",
-      "prompt": "Use the fraction bars to show $\\frac{1}{2} + \\frac{1}{3}$ **split into a common denominator**.",
-      "widget": "fraction-bars",
-      "config": { "start": { "n1": 1, "d1": 4, "n2": 1, "d2": 4, "op": 1, "common": 0 } },
-      "target": { "n1": 1, "d1": 2, "n2": 1, "d2": 3, "op": 0, "common": 1 },
-      "explanation": "With halves and thirds split into sixths: $\\frac{3}{6} + \\frac{2}{6} = \\frac{5}{6}$.",
-      "difficulty": "foundation"
-    },
-    {
-      "id": "f5-q14",
-      "type": "drill",
-      "prompt": "Quick-fire: add and subtract. Type answers like 3/4.",
-      "durationSec": 120,
-      "count": 8,
-      "pool": [
-        { "id": "d1", "prompt": "$\\frac{1}{2} + \\frac{1}{4}$", "accept": ["3/4"] },
-        { "id": "d2", "prompt": "$\\frac{1}{3} + \\frac{1}{6}$", "accept": ["1/2", "3/6"] },
-        { "id": "d3", "prompt": "$\\frac{3}{4} - \\frac{1}{2}$", "accept": ["1/4"] },
-        { "id": "d4", "prompt": "$\\frac{2}{5} + \\frac{1}{10}$", "accept": ["1/2", "5/10"] },
-        { "id": "d5", "prompt": "$\\frac{5}{6} - \\frac{1}{3}$", "accept": ["1/2", "3/6"] },
-        { "id": "d6", "prompt": "$\\frac{1}{2} + \\frac{1}{3}$", "accept": ["5/6"] },
-        { "id": "d7", "prompt": "$\\frac{1}{2} - \\frac{1}{5}$", "accept": ["3/10"] },
-        { "id": "d8", "prompt": "$\\frac{2}{3} - \\frac{1}{4}$", "accept": ["5/12"] },
-        { "id": "d9", "prompt": "$\\frac{3}{8} + \\frac{1}{4}$", "accept": ["5/8"] },
-        { "id": "d10", "prompt": "$1 - \\frac{3}{7}$", "accept": ["4/7"] },
-        { "id": "d11", "prompt": "$\\frac{1}{4} + \\frac{1}{6}$", "accept": ["5/12"] },
-        { "id": "d12", "prompt": "$\\frac{7}{10} - \\frac{1}{2}$", "accept": ["1/5", "2/10"] }
-      ],
-      "explanation": "Common denominator first, then add or subtract the tops."
+      "type": "truefalse",
+      "prompt": "$0.\\dot{1}\\dot{2} = 0.1\\dot{2}$",
+      "answer": false,
+      "explanation": "$0.\\dot{1}\\dot{2} = 0.121212\\ldots = \\frac{12}{99} = \\frac{4}{33}$, but $0.1\\dot{2} = 0.12222\\ldots = \\frac{11}{90}$. The dots matter."
     }
   ]
 }

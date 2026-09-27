@@ -1,9 +1,9 @@
 {
   "title": "Place value and standard form quiz",
   "topic": "place-value",
-  "description": "Ten questions drawn at random from a bank of fourteen, covering powers of 10, standard form, and upper and lower bounds.",
-  "pick": 10,
-  "timeLimitSec": 900,
+  "description": "Twelve questions drawn at random from a bank of eighteen, covering powers of 10, standard form, upper and lower bounds, and bounds in calculations.",
+  "pick": 12,
+  "timeLimitSec": 1200,
   "passMark": 70,
   "questions": [
     {
@@ -148,6 +148,54 @@
       "answer": 30.25,
       "unit": "cm²",
       "explanation": "Lower bound of the side is 5.5 cm, so the smallest area is $5.5^2 = 30.25\\ \\text{cm}^2$."
+    },
+    {
+      "id": "vq15",
+      "type": "numeric",
+      "prompt": "$a = 8.6$ and $b = 2.3$, both to 1 d.p. Find the lower bound of $a - b$.",
+      "answer": 6.2,
+      "explanation": "$\\text{LB}_a - \\text{UB}_b = 8.55 - 2.35 = 6.2$."
+    },
+    {
+      "id": "vq16",
+      "type": "numeric",
+      "prompt": "$x = 45$ and $y = 1.5$, both correct to 2 significant figures. Find the upper bound of $\\frac{x}{y}$.",
+      "answer": 31.4,
+      "tolerance": 0.05,
+      "explanation": "$\\frac{45.5}{1.45} = 31.37\\ldots \\approx 31.4$."
+    },
+    {
+      "id": "vq17",
+      "type": "numeric",
+      "prompt": "A rectangle has length $12.4$ cm and width $7.8$ cm, both to 1 d.p. Find the lower bound of its perimeter.",
+      "answer": 40.2,
+      "unit": "cm",
+      "explanation": "Use both lower bounds: $2(12.35 + 7.75) = 2 \\times 20.1 = 40.2$ cm."
+    },
+    {
+      "id": "vq18",
+      "type": "mcq",
+      "prompt": "Distance $= 200$ m (nearest 10 m), time $= 25$ s (nearest s). Which calculation gives the **lower bound** of the speed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$\\frac{195}{25.5}$"
+        },
+        {
+          "id": "b",
+          "text": "$\\frac{195}{24.5}$"
+        },
+        {
+          "id": "c",
+          "text": "$\\frac{205}{25.5}$"
+        },
+        {
+          "id": "d",
+          "text": "$\\frac{205}{24.5}$"
+        }
+      ],
+      "answer": "a",
+      "explanation": "Smallest distance, largest time: $\\frac{195}{25.5} = 7.65$ m/s."
     }
   ]
 }

@@ -1,7 +1,7 @@
 ---
 title: Estimating Calculations
 topic: decimals-percentages
-order: 4
+order: 1
 minutes: 20
 difficulty: core
 summary: 'Rounding every number to one significant figure to get a quick estimate — and using it to catch wrong answers.'

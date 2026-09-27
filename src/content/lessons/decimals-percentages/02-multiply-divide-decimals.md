@@ -1,7 +1,7 @@
 ---
 title: Multiplying and Dividing Decimals
 topic: decimals-percentages
-order: 5
+order: 2
 minutes: 25
 difficulty: core
 summary: 'Knowing whether an answer will be bigger or smaller, multiplying decimals without a calculator, and dividing by making the divisor a whole number.'

@@ -1,7 +1,7 @@
 ---
 title: Order of Operations and Laws of Arithmetic
 topic: fractions-decimals
-order: 4
+order: 3
 minutes: 25
 difficulty: core
 summary: 'BIDMAS with fractions and decimals, and using the distributive law and clever cancelling to make calculations easy.'

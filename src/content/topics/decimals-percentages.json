@@ -1,13 +1,15 @@
 {
   "title": "Decimals & Percentages",
-  "description": "Estimation, multiplying and dividing decimals, and compound percentage change.",
+  "description": "Estimation, multiplying and dividing decimals, compound percentage change, reverse percentages and percentage error.",
   "strand": "number-algebra",
   "order": 14,
   "difficulty": "core",
   "objectives": [
     "Estimate the answer to a calculation by rounding",
     "Multiply and divide decimals without a calculator",
-    "Calculate repeated (compound) percentage change"
+    "Calculate repeated (compound) percentage change",
+    "Find an original amount using reverse percentages",
+    "Calculate a percentage error"
   ],
   "keywords": [
     "estimate",
@@ -15,6 +17,10 @@
     "percentage",
     "compound interest",
     "depreciation",
-    "multiplier"
+    "multiplier",
+    "reverse percentage",
+    "original price",
+    "percentage error",
+    "VAT"
   ]
 }

@@ -1,0 +1,148 @@
+{
+  "title": "Practice: compound units",
+  "intro": "Write times as decimals of an hour, and convert the top and bottom units separately.",
+  "questions": [
+    {
+      "id": "a8-q1",
+      "type": "match",
+      "prompt": "Match each unit to what it measures.",
+      "left": [
+        { "id": "l1", "text": "$\\text{m/s}$" },
+        { "id": "l2", "text": "$\\text{kg/m}^3$" },
+        { "id": "l3", "text": "$\\text{N/m}^2$" },
+        { "id": "l4", "text": "$\\text{L/min}$" }
+      ],
+      "right": [
+        { "id": "r1", "text": "Speed" },
+        { "id": "r2", "text": "Density" },
+        { "id": "r3", "text": "Pressure" },
+        { "id": "r4", "text": "Rate of flow" }
+      ],
+      "solution": { "l1": "r1", "l2": "r2", "l3": "r3", "l4": "r4" },
+      "explanation": "Read the unit as a division: distance ÷ time, mass ÷ volume, force ÷ area, volume ÷ time."
+    },
+    {
+      "id": "a8-q2",
+      "type": "numeric",
+      "prompt": "A car travels $174$ km in $2$ hours $24$ minutes. Find its average speed in km/h.",
+      "answer": 72.5,
+      "unit": "km/h",
+      "hints": ["$24$ min $= 0.4$ h."],
+      "explanation": "$2$ h $24$ min $= 2.4$ h, and $174 \\div 2.4 = 72.5$ km/h."
+    },
+    {
+      "id": "a8-q3",
+      "type": "numeric",
+      "prompt": "A plane flies at $840$ km/h for $2$ hours $45$ minutes. How far does it travel?",
+      "answer": 2310,
+      "unit": "km",
+      "hints": ["$45$ min $= 0.75$ h.", "Distance = speed × time."],
+      "explanation": "$840 \\times 2.75 = 2310$ km."
+    },
+    {
+      "id": "a8-q4",
+      "type": "numeric",
+      "prompt": "How many **minutes** does it take to walk $3.5$ km at $5$ km/h?",
+      "answer": 42,
+      "unit": "min",
+      "hints": ["Time = distance ÷ speed, in hours.", "Then × 60."],
+      "explanation": "$3.5 \\div 5 = 0.7$ h $= 0.7 \\times 60 = 42$ min."
+    },
+    {
+      "id": "a8-q5",
+      "type": "numeric",
+      "prompt": "Convert $72$ km/h to m/s.",
+      "answer": 20,
+      "unit": "m/s",
+      "hints": ["$72\\,000$ m in $3600$ s."],
+      "explanation": "$72\\,000 \\div 3600 = 20$ m/s (or $72 \\div 3.6$)."
+    },
+    {
+      "id": "a8-q6",
+      "type": "numeric",
+      "prompt": "Convert $15$ m/s to km/h.",
+      "answer": 54,
+      "unit": "km/h",
+      "hints": ["In an hour: $15 \\times 3600$ m."],
+      "explanation": "$15 \\times 3600 = 54\\,000$ m $= 54$ km, so $54$ km/h (or $15 \\times 3.6$)."
+    },
+    {
+      "id": "a8-q7",
+      "type": "numeric",
+      "prompt": "A block of wood measures $20$ cm by $10$ cm by $5$ cm and has mass $650$ g. Find its density in $\\text{g/cm}^3$.",
+      "answer": 0.65,
+      "unit": "g/cm³",
+      "hints": ["Volume $= 20 \\times 10 \\times 5$."],
+      "explanation": "$V = 1000\\ \\text{cm}^3$, so density $= 650 \\div 1000 = 0.65\\ \\text{g/cm}^3$. It floats — less dense than water."
+    },
+    {
+      "id": "a8-q8",
+      "type": "numeric",
+      "prompt": "Steel has density $7800\\ \\text{kg/m}^3$. Find the mass, in kg, of a steel rod of volume $1500\\ \\text{cm}^3$.",
+      "answer": 11.7,
+      "unit": "kg",
+      "marks": 3,
+      "hints": ["Change the volume to $\\text{m}^3$: divide by $1\\,000\\,000$.", "Or change the density to $\\text{g/cm}^3$: $7.8$."],
+      "explanation": "$7800\\ \\text{kg/m}^3 = 7.8\\ \\text{g/cm}^3$. Mass $= 7.8 \\times 1500 = 11\\,700$ g $= 11.7$ kg.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a8-q9",
+      "type": "numeric",
+      "prompt": "A force of $450$ N acts on an area of $1500\\ \\text{cm}^2$. Find the pressure in $\\text{N/m}^2$.",
+      "answer": 3000,
+      "unit": "N/m²",
+      "hints": ["$1500\\ \\text{cm}^2 = 0.15\\ \\text{m}^2$."],
+      "explanation": "$1500 \\div 10\\,000 = 0.15\\ \\text{m}^2$, and $450 \\div 0.15 = 3000\\ \\text{N/m}^2$."
+    },
+    {
+      "id": "a8-q10",
+      "type": "steps",
+      "prompt": "Average speed for a journey in stages.",
+      "scenario": "Tan drives $45$ km at $60$ km/h, stops for $20$ minutes, then drives $105$ km at $90$ km/h.",
+      "steps": [
+        { "kind": "numeric", "prompt": "Time for the first stage, in minutes.", "answer": 45, "unit": "min", "feedback": "$45 \\div 60 = 0.75$ h $= 45$ min." },
+        { "kind": "numeric", "prompt": "Time for the second stage, in minutes.", "answer": 70, "unit": "min", "feedback": "$105 \\div 90 = 1.1\\dot{6}$ h $= 70$ min." },
+        { "kind": "numeric", "prompt": "Total time for the whole journey, in hours.", "answer": 2.25, "unit": "h", "feedback": "$45 + 20 + 70 = 135$ min $= 2.25$ h." },
+        { "kind": "numeric", "prompt": "Average speed for the whole journey.", "answer": 66.7, "tolerance": 0.05, "unit": "km/h", "feedback": "$150 \\div 2.25 = 66.7$ km/h (3 s.f.)." }
+      ],
+      "explanation": "Total distance $150$ km; total time $2.25$ h including the stop. $150 \\div 2.25 = 66.7$ km/h.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a8-q11",
+      "type": "numeric",
+      "prompt": "A tap fills a $0.24\\ \\text{m}^3$ tank at $8$ litres per minute. How long does it take, in minutes?",
+      "answer": 30,
+      "unit": "min",
+      "hints": ["$0.24\\ \\text{m}^3 = 240$ litres."],
+      "explanation": "$0.24 \\times 1000 = 240$ L, and $240 \\div 8 = 30$ min."
+    },
+    {
+      "id": "a8-q12",
+      "type": "mcq",
+      "prompt": "Which is fastest?",
+      "options": [
+        { "id": "a", "text": "$25$ m/s" },
+        { "id": "b", "text": "$95$ km/h" },
+        { "id": "c", "text": "$1.5$ km/min" },
+        { "id": "d", "text": "$1400$ m/min" }
+      ],
+      "answer": "b",
+      "hints": ["Change them all to m/s."],
+      "explanation": "In m/s: $25$; $95 \\div 3.6 = 26.4$; $1.5$ km/min $= 1500 \\div 60 = 25$; $1400 \\div 60 = 23.3$. So $95$ km/h is fastest — only just."
+    },
+    {
+      "id": "a8-q13",
+      "type": "numeric",
+      "prompt": "Two metals are melted together: $300\\ \\text{cm}^3$ of copper (density $8.9\\ \\text{g/cm}^3$) and $200\\ \\text{cm}^3$ of zinc (density $7.1\\ \\text{g/cm}^3$). Find the density of the mixture.",
+      "answer": 8.18,
+      "tolerance": 0.005,
+      "unit": "g/cm³",
+      "marks": 4,
+      "hints": ["Find the mass of each metal.", "Density = total mass ÷ total volume."],
+      "explanation": "Copper: $300 \\times 8.9 = 2670$ g. Zinc: $200 \\times 7.1 = 1420$ g. Total $4090$ g in $500\\ \\text{cm}^3$: $4090 \\div 500 = 8.18\\ \\text{g/cm}^3$. Averaging the densities (8.0) is wrong — there is more copper.",
+      "difficulty": "challenge"
+    }
+  ]
+}

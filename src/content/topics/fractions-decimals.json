@@ -1,6 +1,6 @@
 {
   "title": "Fractions & Decimals",
-  "description": "Factors, multiplying and dividing fractions, order of operations, and recurring decimals.",
+  "description": "Factors, multiplying and dividing fractions, order of operations, and recurring decimals — including the algebraic method.",
   "strand": "number-algebra",
   "order": 7,
   "difficulty": "core",
@@ -8,7 +8,8 @@
     "Find the HCF and LCM using prime factors",
     "Multiply and divide fractions and mixed numbers",
     "Apply the order of operations to fraction calculations",
-    "Convert a recurring decimal to a fraction"
+    "Convert a recurring decimal to a fraction",
+    "Prove a recurring decimal equals a fraction using algebra"
   ],
   "keywords": [
     "hcf",
@@ -16,6 +17,8 @@
     "prime factors",
     "fractions",
     "recurring decimal",
-    "bidmas"
+    "bidmas",
+    "recurring",
+    "proof"
   ]
 }

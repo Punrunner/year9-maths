@@ -1,0 +1,75 @@
+{
+  "title": "Practice: bounds in calculations",
+  "intro": "Ask what makes the answer as big — or as small — as possible.",
+  "questions": [
+    {
+      "id": "p4-q1",
+      "type": "numeric",
+      "prompt": "$a = 7.2$ and $b = 3.6$, both to 1 d.p. Find the upper bound of $a + b$.",
+      "answer": 10.9,
+      "explanation": "$7.25 + 3.65 = 10.9$."
+    },
+    {
+      "id": "p4-q2",
+      "type": "numeric",
+      "prompt": "$a = 7.2$ and $b = 3.6$, both to 1 d.p. Find the upper bound of $a - b$.",
+      "answer": 3.7,
+      "hints": ["Upper of $a$ minus **lower** of $b$."],
+      "explanation": "$7.25 - 3.55 = 3.7$."
+    },
+    {
+      "id": "p4-q3",
+      "type": "numeric",
+      "prompt": "A square has side $6$ cm, to the nearest cm. Find the lower bound of its area.",
+      "answer": 30.25,
+      "unit": "cm²",
+      "explanation": "$5.5^2 = 30.25\\ \\text{cm}^2$."
+    },
+    {
+      "id": "p4-q4",
+      "type": "numeric",
+      "prompt": "A cyclist travels $36$ km (to the nearest km) in $1.5$ hours (to the nearest 0.1 h). Find the upper bound of her average speed, to 3 s.f.",
+      "answer": 25.2,
+      "tolerance": 0.05,
+      "unit": "km/h",
+      "hints": ["Largest distance ÷ smallest time."],
+      "explanation": "$\\frac{36.5}{1.45} = 25.17\\ldots$, so $25.2$ km/h (3 s.f.)."
+    },
+    {
+      "id": "p4-q5",
+      "type": "numeric",
+      "prompt": "A metal block has mass $850$ g (to the nearest 10 g) and volume $110\\ \\text{cm}^3$ (to the nearest $\\text{cm}^3$). Find the lower bound of its density, to 3 s.f.",
+      "answer": 7.65,
+      "tolerance": 0.005,
+      "unit": "g/cm³",
+      "hints": ["Smallest mass ÷ largest volume."],
+      "explanation": "$\\frac{845}{110.5} = 7.647\\ldots$, so $7.65\\ \\text{g/cm}^3$ (3 s.f.)."
+    },
+    {
+      "id": "p4-q6",
+      "type": "mcq",
+      "prompt": "$p = 12$ and $q = 4$, both to the nearest whole number. Which gives the **lower bound** of $\\frac{p}{q}$?",
+      "options": [
+        { "id": "a", "text": "$\\frac{11.5}{4.5}$" },
+        { "id": "b", "text": "$\\frac{11.5}{3.5}$" },
+        { "id": "c", "text": "$\\frac{12.5}{4.5}$" },
+        { "id": "d", "text": "$\\frac{12.5}{3.5}$" }
+      ],
+      "answer": "a",
+      "explanation": "Smallest numerator, largest denominator: $\\frac{11.5}{4.5} = 2.56$."
+    },
+    {
+      "id": "p4-q7",
+      "type": "steps",
+      "prompt": "A field in two parts.",
+      "scenario": "A rectangular field is $120$ m by $85$ m, both to the nearest 5 m. A square of side $20$ m, to the nearest metre, is fenced off for a garden.",
+      "steps": [
+        { "kind": "numeric", "prompt": "Upper bound of the area of the whole field.", "answer": 10718.75, "unit": "m²", "hint": "To the nearest 5 m, so ± 2.5 m.", "feedback": "$122.5 \\times 87.5 = 10\\,718.75\\ \\text{m}^2$." },
+        { "kind": "numeric", "prompt": "Lower bound of the area of the garden.", "answer": 380.25, "unit": "m²", "feedback": "$19.5^2 = 380.25\\ \\text{m}^2$." },
+        { "kind": "numeric", "prompt": "Upper bound of the area left for grazing.", "answer": 10338.5, "unit": "m²", "feedback": "$10\\,718.75 - 380.25 = 10\\,338.5\\ \\text{m}^2$." }
+      ],
+      "explanation": "Upper bound of the grazing area = UB(field) − LB(garden) $= 10\\,718.75 - 380.25 = 10\\,338.5\\ \\text{m}^2$.",
+      "difficulty": "challenge"
+    }
+  ]
+}

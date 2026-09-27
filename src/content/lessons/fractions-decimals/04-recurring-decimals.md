@@ -1,7 +1,7 @@
 ---
 title: Recurring Decimals
 topic: fractions-decimals
-order: 5
+order: 4
 minutes: 25
 difficulty: core
 summary: 'Writing fractions as recurring decimals, predicting which fractions terminate, and turning simple recurring decimals back into fractions.'

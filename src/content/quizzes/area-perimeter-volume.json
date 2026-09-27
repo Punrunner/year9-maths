@@ -1,9 +1,9 @@
 {
   "title": "Area, perimeter and volume quiz",
   "topic": "area-perimeter-volume",
-  "description": "Twelve questions drawn at random from a bank of sixteen, covering circles, Pythagoras, surface area, volume and units. Use $\\pi = 3.14$ unless told otherwise.",
-  "pick": 12,
-  "timeLimitSec": 1200,
+  "description": "Fifteen questions drawn at random from a bank of twenty-two, covering circles, Pythagoras, surface area, volume, area and volume units, similar solids and compound units. Use $\\pi = 3.14$ unless told otherwise.",
+  "pick": 15,
+  "timeLimitSec": 1500,
   "passMark": 70,
   "questions": [
     {
@@ -191,6 +191,57 @@
       "marks": 4,
       "explanation": "Split a compound shape into pieces you recognise, work out each one, then combine. Total area $= 60 + 14.13 = 74.13\\ \\text{cm}^2$.",
       "difficulty": "challenge"
+    },
+    {
+      "id": "aq17",
+      "type": "numeric",
+      "prompt": "Convert $0.052\\ \\text{m}^3$ to $\\text{cm}^3$.",
+      "answer": 52000,
+      "unit": "cm³",
+      "explanation": "$1\\ \\text{m}^3 = 1\\,000\\,000\\ \\text{cm}^3$, so $0.052 \\times 1\\,000\\,000 = 52\\,000\\ \\text{cm}^3$."
+    },
+    {
+      "id": "aq18",
+      "type": "numeric",
+      "prompt": "Two similar vases have heights $15$ cm and $25$ cm. The smaller holds $540$ mL. How much does the larger hold?",
+      "answer": 2500,
+      "unit": "mL",
+      "marks": 2,
+      "explanation": "$k = \\frac{25}{15} = \\frac{5}{3}$, $k^3 = \\frac{125}{27}$. $540 \\times \\frac{125}{27} = 2500$ mL."
+    },
+    {
+      "id": "aq19",
+      "type": "numeric",
+      "prompt": "Two similar solids have volumes $16\\ \\text{cm}^3$ and $54\\ \\text{cm}^3$. The smaller has surface area $32\\ \\text{cm}^2$. Find the surface area of the larger.",
+      "answer": 72,
+      "unit": "cm²",
+      "marks": 3,
+      "explanation": "$k^3 = \\frac{54}{16} = \\frac{27}{8}$, so $k = \\frac{3}{2}$ and $k^2 = \\frac{9}{4}$. $32 \\times \\frac{9}{4} = 72\\ \\text{cm}^2$."
+    },
+    {
+      "id": "aq20",
+      "type": "numeric",
+      "prompt": "Convert $54$ km/h to m/s.",
+      "answer": 15,
+      "unit": "m/s",
+      "explanation": "$54\\,000 \\div 3600 = 15$ m/s."
+    },
+    {
+      "id": "aq21",
+      "type": "numeric",
+      "prompt": "A train travels $210$ km in $2$ hours $20$ minutes. Find its average speed in km/h.",
+      "answer": 90,
+      "unit": "km/h",
+      "explanation": "$2$ h $20$ min $= 2\\frac{1}{3}$ h. $210 \\div \\frac{7}{3} = 90$ km/h."
+    },
+    {
+      "id": "aq22",
+      "type": "numeric",
+      "prompt": "Lead has density $11.3\\ \\text{g/cm}^3$. Find the mass, in kg, of a lead cuboid $10$ cm by $4$ cm by $2.5$ cm.",
+      "answer": 1.13,
+      "unit": "kg",
+      "marks": 2,
+      "explanation": "$V = 100\\ \\text{cm}^3$, so mass $= 11.3 \\times 100 = 1130$ g $= 1.13$ kg."
     }
   ]
 }

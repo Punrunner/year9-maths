@@ -1,82 +1,15 @@
 {
-  "title": "Practice: area and volume units",
-  "intro": "Square the length conversion for area; cube it for volume. And always put every length in the same unit first.",
+  "title": "Practice: area and volume units, and similar solids",
+  "intro": "Convert every length first. For similar solids, always go back to the length scale factor.",
   "questions": [
     {
       "id": "a7-q1",
-      "type": "table",
-      "prompt": "Complete the table. Each row starts from the same length fact.",
-      "columns": ["Length", "Area", "Volume"],
-      "rows": [
-        [{ "given": "$1$ cm $= 10$ mm" }, { "answer": "100", "accept": ["100mm2", "100 mm2"] }, { "answer": "1000" }],
-        [{ "given": "$1$ m $= 100$ cm" }, { "answer": "10000", "accept": ["10 000", "10,000"] }, { "answer": "1000000", "accept": ["1 000 000", "1,000,000"] }]
-      ],
-      "explanation": "Area uses the length factor squared: $10^2 = 100$, $100^2 = 10\\,000$. Volume uses it cubed: $10^3 = 1000$, $100^3 = 1\\,000\\,000$.",
-      "difficulty": "foundation"
-    },
-    {
-      "id": "a7-q2",
-      "type": "numeric",
-      "prompt": "Convert $6\\ \\text{cm}^2$ to $\\text{mm}^2$.",
-      "answer": 600,
-      "unit": "mm²",
-      "hints": ["$1\\ \\text{cm}^2 = 10 \\times 10\\ \\text{mm}^2$."],
-      "explanation": "$6 \\times 100 = 600\\ \\text{mm}^2$.",
-      "difficulty": "foundation"
-    },
-    {
-      "id": "a7-q3",
-      "type": "numeric",
-      "prompt": "Convert $3.2\\ \\text{m}^2$ to $\\text{cm}^2$.",
-      "answer": 32000,
-      "unit": "cm²",
-      "hints": ["$1\\ \\text{m}^2 = 100 \\times 100 = 10\\,000\\ \\text{cm}^2$."],
-      "explanation": "$3.2 \\times 10\\,000 = 32\\,000\\ \\text{cm}^2$. Multiplying by 100 (giving 320) is the classic slip."
-    },
-    {
-      "id": "a7-q4",
-      "type": "numeric",
-      "prompt": "Convert $45\\,000\\ \\text{cm}^2$ to $\\text{m}^2$.",
-      "answer": 4.5,
-      "unit": "m²",
-      "hints": ["Square metres are bigger, so divide.", "Divide by $10\\,000$."],
-      "explanation": "$45\\,000 \\div 10\\,000 = 4.5\\ \\text{m}^2$."
-    },
-    {
-      "id": "a7-q5",
-      "type": "numeric",
-      "prompt": "A farm has an area of $35\\,000\\ \\text{m}^2$. How many hectares is that?",
-      "answer": 3.5,
-      "unit": "ha",
-      "hints": ["$1\\ \\text{ha} = 10\\,000\\ \\text{m}^2$."],
-      "explanation": "$35\\,000 \\div 10\\,000 = 3.5$ ha."
-    },
-    {
-      "id": "a7-q6",
-      "type": "numeric",
-      "prompt": "Convert $2.5\\ \\text{cm}^3$ to $\\text{mm}^3$.",
-      "answer": 2500,
-      "unit": "mm³",
-      "hints": ["$1\\ \\text{cm}^3 = 10 \\times 10 \\times 10\\ \\text{mm}^3$."],
-      "explanation": "$2.5 \\times 1000 = 2500\\ \\text{mm}^3$."
-    },
-    {
-      "id": "a7-q7",
-      "type": "numeric",
-      "prompt": "Convert $0.4\\ \\text{m}^3$ to $\\text{cm}^3$.",
-      "answer": 400000,
-      "unit": "cm³",
-      "hints": ["$1\\ \\text{m}^3 = 1\\,000\\,000\\ \\text{cm}^3$."],
-      "explanation": "$0.4 \\times 1\\,000\\,000 = 400\\,000\\ \\text{cm}^3$."
-    },
-    {
-      "id": "a7-q8",
       "type": "sort",
-      "prompt": "Sort each conversion by the number you multiply or divide by.",
+      "prompt": "Sort each conversion by the factor you multiply or divide by.",
       "groups": [
         { "id": "g100", "text": "100", "items": [
           { "id": "a", "text": "$\\text{cm}^2 \\leftrightarrow \\text{mm}^2$" },
-          { "id": "b", "text": "$\\text{m} \\leftrightarrow \\text{cm}$" }
+          { "id": "b", "text": "$\\text{km}^2 \\leftrightarrow \\text{ha}$" }
         ] },
         { "id": "g1000", "text": "1000", "items": [
           { "id": "c", "text": "$\\text{cm}^3 \\leftrightarrow \\text{mm}^3$" },
@@ -86,94 +19,133 @@
         { "id": "g10000", "text": "10 000", "items": [
           { "id": "f", "text": "$\\text{m}^2 \\leftrightarrow \\text{cm}^2$" },
           { "id": "g", "text": "$\\text{ha} \\leftrightarrow \\text{m}^2$" }
+        ] },
+        { "id": "g1e6", "text": "1 000 000", "items": [
+          { "id": "h", "text": "$\\text{m}^3 \\leftrightarrow \\text{cm}^3$" },
+          { "id": "i", "text": "$\\text{km}^2 \\leftrightarrow \\text{m}^2$" }
         ] }
       ],
-      "explanation": "$10^2 = 100$ for cm² ↔ mm²; plain length m ↔ cm is 100 too. $10^3 = 1000$ for cm³ ↔ mm³, and $1\\ \\text{L} = 1000\\ \\text{cm}^3$, $1\\ \\text{m}^3 = 1000\\ \\text{L}$. $100^2 = 10\\,000$ for m² ↔ cm², and a hectare is $10\\,000\\ \\text{m}^2$."
+      "explanation": "$10^2 = 100$; $1\\ \\text{km}^2 = 100$ ha. $10^3 = 1000$, and $1\\ \\text{L} = 1000\\ \\text{cm}^3$, $1\\ \\text{m}^3 = 1000$ L. $100^2 = 10\\,000$, and $1$ ha $= 10\\,000\\ \\text{m}^2$. $100^3 = 1000^2 = 1\\,000\\,000$."
+    },
+    {
+      "id": "a7-q2",
+      "type": "numeric",
+      "prompt": "Convert $0.0375\\ \\text{m}^2$ to $\\text{mm}^2$.",
+      "answer": 37500,
+      "unit": "mm²",
+      "hints": ["$1\\ \\text{m} = 1000\\ \\text{mm}$, so $1\\ \\text{m}^2 = 1000^2\\ \\text{mm}^2$."],
+      "explanation": "$1\\ \\text{m}^2 = 1\\,000\\,000\\ \\text{mm}^2$, so $0.0375 \\times 1\\,000\\,000 = 37\\,500\\ \\text{mm}^2$."
+    },
+    {
+      "id": "a7-q3",
+      "type": "numeric",
+      "prompt": "A field is $0.36\\ \\text{km}^2$. How many hectares is that?",
+      "answer": 36,
+      "unit": "ha",
+      "hints": ["$1\\ \\text{km}^2 = 1\\,000\\,000\\ \\text{m}^2$ and $1$ ha $= 10\\,000\\ \\text{m}^2$."],
+      "explanation": "$0.36\\ \\text{km}^2 = 360\\,000\\ \\text{m}^2 = 36$ ha."
+    },
+    {
+      "id": "a7-q4",
+      "type": "numeric",
+      "prompt": "A swimming pool is $25\\ \\text{m}$ long and $12\\ \\text{m}$ wide. The water is $1.2\\ \\text{m}$ deep at one end and $2\\ \\text{m}$ deep at the other, sloping evenly. How many litres of water does it hold?",
+      "answer": 480000,
+      "unit": "L",
+      "marks": 3,
+      "hints": ["The side of the pool is a trapezium: area $= \\frac{1}{2}(1.2 + 2) \\times 25$.", "Volume = side area × width. Then $1\\ \\text{m}^3 = 1000$ L."],
+      "explanation": "Side area $= \\frac{1}{2}(1.2 + 2) \\times 25 = 40\\ \\text{m}^2$. Volume $= 40 \\times 12 = 480\\ \\text{m}^3 = 480\\,000$ litres.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a7-q5",
+      "type": "steps",
+      "prompt": "Mixed units in a cylinder.",
+      "scenario": "A cylindrical water tank has diameter $1.4\\ \\text{m}$ and height $95\\ \\text{cm}$. Water flows in at $12$ litres per minute. Use $\\pi = 3.142$.",
+      "steps": [
+        { "kind": "numeric", "prompt": "Find the volume of the tank in $\\text{m}^3$, to 3 significant figures.", "answer": 1.46, "tolerance": 0.006, "unit": "m³", "hint": "$r = 0.7$ m, $h = 0.95$ m.", "feedback": "$3.142 \\times 0.7^2 \\times 0.95 = 1.4626\\ldots \\approx 1.46\\ \\text{m}^3$." },
+        { "kind": "numeric", "prompt": "Write this in litres, to the nearest litre.", "answer": 1463, "tolerance": 1, "unit": "L", "feedback": "$1.4626 \\times 1000 \\approx 1463$ L." },
+        { "kind": "numeric", "prompt": "How long does it take to fill the empty tank? Give your answer in hours and minutes — type the total number of minutes, to the nearest minute.", "answer": 122, "tolerance": 1, "unit": "min", "feedback": "$1463 \\div 12 = 121.9$, so about 122 minutes = 2 hours 2 minutes." }
+      ],
+      "explanation": "$V = 3.142 \\times 0.7^2 \\times 0.95 \\approx 1.463\\ \\text{m}^3 = 1463$ L; $1463 \\div 12 \\approx 122$ min $= 2$ h $2$ min.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a7-q6",
+      "type": "table",
+      "prompt": "Two solids are similar with length scale factor $k$. Complete the table.",
+      "columns": ["Length factor $k$", "Area factor", "Volume factor"],
+      "rows": [
+        [{ "given": "$3$" }, { "answer": "9" }, { "answer": "27" }],
+        [{ "answer": "5" }, { "given": "$25$" }, { "answer": "125" }],
+        [{ "answer": "4" }, { "answer": "16" }, { "given": "$64$" }],
+        [{ "given": "$\\frac{1}{2}$" }, { "answer": "1/4", "accept": ["0.25"] }, { "answer": "1/8", "accept": ["0.125"] }]
+      ],
+      "explanation": "Area factor $= k^2$, volume factor $= k^3$. Going backwards: $\\sqrt{25} = 5$, $\\sqrt[3]{64} = 4$."
+    },
+    {
+      "id": "a7-q7",
+      "type": "numeric",
+      "prompt": "Two similar cones have heights $8$ cm and $12$ cm. The smaller has volume $96\\ \\text{cm}^3$. Find the volume of the larger.",
+      "answer": 324,
+      "unit": "cm³",
+      "hints": ["$k = \\frac{12}{8} = \\frac{3}{2}$", "$k^3 = \\frac{27}{8}$"],
+      "explanation": "$k = \\frac{3}{2}$, so $k^3 = \\frac{27}{8}$. $96 \\times \\frac{27}{8} = 324\\ \\text{cm}^3$."
+    },
+    {
+      "id": "a7-q8",
+      "type": "numeric",
+      "prompt": "Two similar containers have capacities $1.6$ litres and $5.4$ litres. The smaller has a base area of $80\\ \\text{cm}^2$. Find the base area of the larger.",
+      "answer": 180,
+      "unit": "cm²",
+      "marks": 3,
+      "hints": ["$k^3 = \\frac{5.4}{1.6} = \\frac{27}{8}$", "$k = \\frac{3}{2}$, so $k^2 = \\frac{9}{4}$."],
+      "explanation": "$k^3 = \\frac{27}{8} \\Rightarrow k = \\frac{3}{2} \\Rightarrow k^2 = \\frac{9}{4}$. $80 \\times \\frac{9}{4} = 180\\ \\text{cm}^2$.",
+      "difficulty": "challenge"
     },
     {
       "id": "a7-q9",
       "type": "numeric",
-      "prompt": "A fish tank is $60\\ \\text{cm}$ long, $30\\ \\text{cm}$ wide and $40\\ \\text{cm}$ tall. How many **litres** of water does it hold when full?",
-      "answer": 72,
-      "unit": "L",
-      "hints": ["Find the volume in cm³ first.", "$1000\\ \\text{cm}^3 = 1\\ \\text{L}$."],
-      "explanation": "$60 \\times 30 \\times 40 = 72\\,000\\ \\text{cm}^3$, and $72\\,000 \\div 1000 = 72$ L."
+      "prompt": "Two similar solid statues are made of the same bronze. Their heights are $15$ cm and $45$ cm. The small one has mass $0.6$ kg. Find the mass of the large one.",
+      "answer": 16.2,
+      "unit": "kg",
+      "hints": ["Mass behaves like volume."],
+      "explanation": "$k = 3$, $k^3 = 27$, so $0.6 \\times 27 = 16.2$ kg."
     },
     {
       "id": "a7-q10",
       "type": "numeric",
-      "prompt": "A rectangle is $1.5\\ \\text{m}$ long and $40\\ \\text{cm}$ wide. Find its area in $\\text{cm}^2$.",
-      "answer": 6000,
-      "unit": "cm²",
-      "hints": ["Change $1.5$ m to centimetres first."],
-      "explanation": "$1.5\\ \\text{m} = 150\\ \\text{cm}$, so $A = 150 \\times 40 = 6000\\ \\text{cm}^2$. Using $1.5 \\times 40 = 60$ mixes units and is wrong."
-    },
-    {
-      "id": "a7-q11",
-      "type": "steps",
-      "prompt": "Mixed units in a cylinder.",
-      "scenario": "A cylindrical water tank has radius $80\\ \\text{cm}$ and height $1.5\\ \\text{m}$. Use $\\pi = 3.14$.",
-      "steps": [
-        { "kind": "numeric", "prompt": "Write the radius in metres.", "answer": 0.8, "unit": "m", "feedback": "$80 \\div 100 = 0.8$ m." },
-        { "kind": "numeric", "prompt": "Find the volume in $\\text{m}^3$ ($V = \\pi r^2 h$).", "answer": 3.0144, "tolerance": 0.001, "unit": "m³", "hint": "$3.14 \\times 0.8^2 \\times 1.5$", "feedback": "$3.14 \\times 0.64 \\times 1.5 = 3.0144\\ \\text{m}^3$." },
-        { "kind": "numeric", "prompt": "How many litres does the tank hold?", "answer": 3014.4, "tolerance": 0.5, "unit": "L", "hint": "$1\\ \\text{m}^3 = 1000$ L.", "feedback": "$3.0144 \\times 1000 = 3014.4$ L." }
-      ],
-      "explanation": "Same units first ($r = 0.8$ m), then $V = 3.14 \\times 0.8^2 \\times 1.5 = 3.0144\\ \\text{m}^3 = 3014.4$ L.",
-      "difficulty": "core"
-    },
-    {
-      "id": "a7-q12",
-      "type": "steps",
-      "prompt": "Rainfall on a roof.",
-      "scenario": "A flat roof is $12\\ \\text{m}$ by $8\\ \\text{m}$. In one storm, $15\\ \\text{mm}$ of rain falls on it. All of it drains into a tank.",
-      "steps": [
-        { "kind": "numeric", "prompt": "Find the area of the roof.", "answer": 96, "unit": "m²", "feedback": "$12 \\times 8 = 96\\ \\text{m}^2$." },
-        { "kind": "numeric", "prompt": "Write $15$ mm in metres.", "answer": 0.015, "unit": "m", "hint": "$\\div 1000$.", "feedback": "$15 \\div 1000 = 0.015$ m." },
-        { "kind": "numeric", "prompt": "Find the volume of rain in $\\text{m}^3$.", "answer": 1.44, "unit": "m³", "feedback": "$96 \\times 0.015 = 1.44\\ \\text{m}^3$." },
-        { "kind": "numeric", "prompt": "How many litres go into the tank?", "answer": 1440, "unit": "L", "feedback": "$1.44 \\times 1000 = 1440$ L." }
-      ],
-      "explanation": "Area $96\\ \\text{m}^2$ × depth $0.015$ m $= 1.44\\ \\text{m}^3 = 1440$ litres.",
+      "prompt": "Two similar cylinders have surface areas $72\\ \\text{cm}^2$ and $200\\ \\text{cm}^2$. The larger has volume $250\\ \\text{cm}^3$. Find the volume of the smaller.",
+      "answer": 54,
+      "unit": "cm³",
+      "marks": 3,
+      "hints": ["$k^2 = \\frac{72}{200} = \\frac{9}{25}$ (large → small).", "$k = \\frac{3}{5}$"],
+      "explanation": "Large → small: $k^2 = \\frac{9}{25}$, so $k = \\frac{3}{5}$ and $k^3 = \\frac{27}{125}$. $250 \\times \\frac{27}{125} = 54\\ \\text{cm}^3$.",
       "difficulty": "challenge"
     },
     {
-      "id": "a7-q13",
+      "id": "a7-q11",
+      "type": "mcq",
+      "prompt": "A model car is made to a scale of $1 : 40$. The real car's windscreen has area $1.2\\ \\text{m}^2$. What is the area of the model's windscreen?",
+      "options": [
+        { "id": "a", "text": "$7.5\\ \\text{cm}^2$" },
+        { "id": "b", "text": "$300\\ \\text{cm}^2$" },
+        { "id": "c", "text": "$30\\ \\text{cm}^2$" },
+        { "id": "d", "text": "$0.75\\ \\text{cm}^2$" }
+      ],
+      "answer": "a",
+      "hints": ["Area factor $= \\frac{1}{40^2} = \\frac{1}{1600}$.", "Convert $1.2\\ \\text{m}^2$ to $\\text{cm}^2$ first."],
+      "explanation": "$1.2\\ \\text{m}^2 = 12\\,000\\ \\text{cm}^2$, and $12\\,000 \\div 1600 = 7.5\\ \\text{cm}^2$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "a7-q12",
       "type": "manipulable",
-      "prompt": "Set the scale factor so the new box has **27 times** the volume of the original.",
+      "prompt": "Two similar boxes have volumes in the ratio $1 : 64$. Set the length scale factor $k$.",
       "widget": "unit-grid",
       "config": { "mode": "scale", "max": 5, "start": { "d": 3, "k": 1 } },
-      "target": { "k": 3 },
-      "explanation": "Volume scales by $k^3$, and $3^3 = 27$, so $k = 3$.",
+      "target": { "k": 4 },
+      "explanation": "$\\sqrt[3]{64} = 4$, so $k = 4$.",
       "difficulty": "core"
-    },
-    {
-      "id": "a7-q14",
-      "type": "multi",
-      "prompt": "A square has side $4\\ \\text{cm}$. Every side is doubled. Select **every** true statement.",
-      "options": [
-        { "id": "a", "text": "The perimeter doubles" },
-        { "id": "b", "text": "The area doubles" },
-        { "id": "c", "text": "The area is multiplied by 4" },
-        { "id": "d", "text": "The new area is $64\\ \\text{cm}^2$" }
-      ],
-      "answers": ["a", "c", "d"],
-      "hints": ["Perimeter is a length. Area uses $k^2$."],
-      "explanation": "Perimeter: $16 \\to 32$ cm (×2). Area: $16 \\to 64\\ \\text{cm}^2$ (×$2^2$ = ×4)."
-    },
-    {
-      "id": "a7-q15",
-      "type": "flashcards",
-      "prompt": "Flip through these until you can recall each one.",
-      "cards": [
-        { "id": "c1", "front": "$1\\ \\text{cm}^2 = ?\\ \\text{mm}^2$", "back": "$100$" },
-        { "id": "c2", "front": "$1\\ \\text{m}^2 = ?\\ \\text{cm}^2$", "back": "$10\\,000$" },
-        { "id": "c3", "front": "$1$ hectare $= ?\\ \\text{m}^2$", "back": "$10\\,000$" },
-        { "id": "c4", "front": "$1\\ \\text{cm}^3 = ?\\ \\text{mm}^3$", "back": "$1000$" },
-        { "id": "c5", "front": "$1\\ \\text{m}^3 = ?\\ \\text{cm}^3$", "back": "$1\\,000\\,000$" },
-        { "id": "c6", "front": "$1\\ \\text{cm}^3 = ?$", "back": "$1\\ \\text{mL}$" },
-        { "id": "c7", "front": "$1\\ \\text{L} = ?\\ \\text{cm}^3$", "back": "$1000$" },
-        { "id": "c8", "front": "$1\\ \\text{m}^3 = ?$ litres", "back": "$1000$" }
-      ],
-      "explanation": "Every area fact is a length fact squared; every volume fact is a length fact cubed."
     }
   ]
 }

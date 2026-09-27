@@ -233,51 +233,50 @@
     {
       "id": "q5",
       "calculator": "non-calculator",
-      "difficulty": "foundation",
+      "difficulty": "challenge",
       "parts": [
         {
           "label": "a",
-          "prompt": "Change 4.7 km into metres.",
-          "marks": 1,
-          "answer": "4700",
+          "prompt": "Change 72 km/h into m/s.",
+          "marks": 2,
+          "answer": "20",
+          "partial": [
+            "M1 for $72 \\times 1000 \\div 3600$ oe"
+          ],
           "check": {
             "kind": "numeric",
-            "answer": 4700
+            "answer": 20
           },
-          "answerSuffix": "m"
+          "answerSuffix": "m/s"
         },
         {
           "label": "b",
-          "prompt": "Change 380 g into kilograms.",
-          "marks": 1,
-          "answer": "0.38",
+          "prompt": "Two bottles are mathematically similar. Their heights are 12 cm and 18 cm. The smaller bottle holds 400 mL. Find how much the larger bottle holds.",
+          "marks": 3,
+          "answer": "1350",
+          "partial": [
+            "M1 for scale factor $\\frac{18}{12}$ or $\\frac{3}{2}$ oe",
+            "M1 for $400 \\times \\left(\\frac{3}{2}\\right)^3$ oe"
+          ],
           "check": {
             "kind": "numeric",
-            "answer": 0.38
+            "answer": 1350
           },
-          "answerSuffix": "kg"
+          "answerSuffix": "mL"
         },
         {
           "label": "c",
-          "prompt": "Write 3 m 8 cm in metres.",
-          "marks": 1,
-          "answer": "3.08",
+          "prompt": "A solid has mass 1.35 kg and volume 500 cm$^3$. Find its density in g/cm$^3$.",
+          "marks": 2,
+          "answer": "2.7",
+          "partial": [
+            "M1 for $1350 \\div 500$ or B1 for 1350 seen"
+          ],
           "check": {
             "kind": "numeric",
-            "answer": 3.08
+            "answer": 2.7
           },
-          "answerSuffix": "m"
-        },
-        {
-          "label": "d",
-          "prompt": "Change 5 litres into cm$^3$.",
-          "marks": 1,
-          "answer": "5000",
-          "check": {
-            "kind": "numeric",
-            "answer": 5000
-          },
-          "answerSuffix": "cm$^3$"
+          "answerSuffix": "g/cm$^3$"
         }
       ],
       "needsReview": true

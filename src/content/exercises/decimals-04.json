@@ -1,139 +1,128 @@
 {
-  "title": "Practice: decimal place value, ordering and rounding",
-  "intro": "Line up the points, and estimate before you trust an answer.",
+  "title": "Practice: reverse percentages and percentage error",
+  "intro": "original = new ÷ multiplier. Never take the percentage off the new amount.",
   "questions": [
     {
       "id": "d4-q1",
-      "type": "mcq",
-      "prompt": "What is the value of the digit **7** in $3.172$?",
-      "options": [
-        { "id": "a", "text": "7 hundredths ($0.07$)" },
-        { "id": "b", "text": "7 tenths ($0.7$)" },
-        { "id": "c", "text": "7 thousandths ($0.007$)" },
-        { "id": "d", "text": "7 ones" }
-      ],
-      "answer": "a",
-      "hints": ["Tenths, hundredths, thousandths — counting from the point."],
-      "explanation": "The 7 is the second digit after the point: hundredths. $3.172 = 3 + 0.1 + 0.07 + 0.002$.",
-      "difficulty": "foundation"
+      "type": "numeric",
+      "prompt": "After a $25\\%$ increase, a price is 450 baht. Find the original price.",
+      "answer": 360,
+      "unit": "baht",
+      "hints": ["Divide by $1.25$."],
+      "explanation": "$450 \\div 1.25 = 360$ baht."
     },
     {
       "id": "d4-q2",
-      "type": "multi",
-      "prompt": "Select **every** true statement.",
-      "options": [
-        { "id": "a", "text": "$0.6 > 0.59$" },
-        { "id": "b", "text": "$0.08 > 0.1$" },
-        { "id": "c", "text": "$2.5 = 2.50$" },
-        { "id": "d", "text": "$0.303 < 0.33$" }
-      ],
-      "answers": ["a", "c", "d"],
-      "hints": ["Give each pair the same number of decimal places."],
-      "explanation": "$0.60 > 0.59$ ✓; $0.08 < 0.10$, so the second is false; zeros on the end change nothing ✓; $0.303 < 0.330$ ✓.",
-      "difficulty": "foundation"
+      "type": "numeric",
+      "prompt": "After a $40\\%$ discount, a bag costs 1260 baht. What was the original price?",
+      "answer": 2100,
+      "unit": "baht",
+      "hints": ["The sale price is $60\\%$ of the original."],
+      "explanation": "$1260 \\div 0.6 = 2100$ baht."
     },
     {
       "id": "d4-q3",
-      "type": "order",
-      "prompt": "Put these in order, **largest first**.",
-      "items": [
-        { "id": "a", "text": "$1.09$" },
-        { "id": "b", "text": "$1.9$" },
-        { "id": "c", "text": "$1.109$" },
-        { "id": "d", "text": "$1.019$" }
+      "type": "mcq",
+      "prompt": "A town's population rose by $8\\%$ to $37\\,800$. Which calculation gives the population before the rise?",
+      "options": [
+        { "id": "a", "text": "$37\\,800 \\div 1.08$" },
+        { "id": "b", "text": "$37\\,800 \\times 0.92$" },
+        { "id": "c", "text": "$37\\,800 \\div 0.92$" },
+        { "id": "d", "text": "$37\\,800 - 8$" }
       ],
-      "solution": ["b", "c", "a", "d"],
-      "hints": ["Write them all with 3 decimal places."],
-      "explanation": "$1.900 > 1.109 > 1.090 > 1.019$."
+      "answer": "a",
+      "explanation": "The new population is $108\\%$ of the old, so divide by $1.08$: $35\\,000$. $\\times 0.92$ takes $8\\%$ of the wrong amount off."
     },
     {
       "id": "d4-q4",
-      "type": "manipulable",
-      "prompt": "Drag the marker to $0.07$.",
-      "widget": "number-line",
-      "config": { "min": 0, "max": 0.2, "step": 0.01, "majorStep": 0.05, "label": "Marker at", "start": { "x": 0.15 } },
-      "target": { "x": 0.07 },
-      "tolerance": 0.001,
-      "explanation": "$0.07$ is 7 hundredths — a little under halfway to $0.1$ (which is $0.10$).",
-      "difficulty": "foundation"
+      "type": "numeric",
+      "prompt": "A restaurant bill of 1177 baht includes a $10\\%$ service charge. How much was the bill before the service charge?",
+      "answer": 1070,
+      "unit": "baht",
+      "hints": ["Divide by $1.1$."],
+      "explanation": "$1177 \\div 1.1 = 1070$ baht."
     },
     {
       "id": "d4-q5",
       "type": "numeric",
-      "prompt": "Round $6.748$ to 1 decimal place.",
-      "answer": 6.7,
-      "hints": ["Cut after the first decimal place: $6.7|48$. Look at the next digit."],
-      "explanation": "The next digit is 4, so the 7 stays: $6.7$."
+      "prompt": "A laptop's price includes $7\\%$ VAT and is 32 100 baht. How much VAT is included?",
+      "answer": 2100,
+      "unit": "baht",
+      "marks": 2,
+      "hints": ["First find the price before VAT: $32\\,100 \\div 1.07$."],
+      "explanation": "$32\\,100 \\div 1.07 = 30\\,000$, so the VAT is $32\\,100 - 30\\,000 = 2100$ baht. ($7\\%$ of 32 100 = 2247 is wrong.)"
     },
     {
       "id": "d4-q6",
       "type": "numeric",
-      "prompt": "Round $0.3856$ to 2 decimal places.",
-      "answer": 0.39,
-      "hints": ["$0.38|56$ — the next digit is 5."],
-      "explanation": "The next digit is 5, so round the 8 up: $0.39$."
+      "prompt": "A shop makes a $35\\%$ profit by selling a watch for 5400 baht. How much did the shop pay for it?",
+      "answer": 4000,
+      "unit": "baht",
+      "explanation": "$5400 \\div 1.35 = 4000$ baht."
     },
     {
       "id": "d4-q7",
-      "type": "fill-blank",
-      "prompt": "Round $9.9962$ to …",
-      "text": "1 d.p.: [[a]]     2 d.p.: [[b]]     3 d.p.: [[c]]",
-      "blanks": [
-        { "id": "a", "accept": ["10.0"], "size": 6 },
-        { "id": "b", "accept": ["10.00"], "size": 6 },
-        { "id": "c", "accept": ["9.996"], "size": 6 }
-      ],
-      "hints": ["When a 9 rounds up it becomes 10 and carries — keep the zeros to show the decimal places."],
-      "explanation": "$9.9|962 \\to 10.0$; $9.99|62 \\to 10.00$; $9.996|2 \\to 9.996$. The zeros in $10.0$ and $10.00$ show how accurate the answer is.",
+      "type": "numeric",
+      "prompt": "An investment earns $5\\%$ compound interest per year. After 4 years it is worth $\\$9724.05$. Find the amount invested, to the nearest dollar.",
+      "answer": 8000,
+      "tolerance": 1,
+      "unit": "$",
+      "marks": 3,
+      "hints": ["Divide by $1.05^4$."],
+      "explanation": "$9724.05 \\div 1.05^4 = 9724.05 \\div 1.21550625 = 8000.00$, so $\\$8000$.",
       "difficulty": "challenge"
     },
     {
       "id": "d4-q8",
       "type": "numeric",
-      "prompt": "Work out $5.8 + 3.47$.",
-      "answer": 9.27,
-      "hints": ["Write $5.8$ as $5.80$ and line up the points."],
-      "explanation": "$5.80 + 3.47 = 9.27$. Estimate: $6 + 3 = 9$ ✓."
+      "prompt": "A car loses $15\\%$ of its value each year. After 2 years it is worth 433 500 baht. What was it worth when new?",
+      "answer": 600000,
+      "unit": "baht",
+      "marks": 3,
+      "hints": ["Two years of $\\times 0.85$.", "Divide by $0.85^2 = 0.7225$."],
+      "explanation": "$433\\,500 \\div 0.85^2 = 433\\,500 \\div 0.7225 = 600\\,000$ baht.",
+      "difficulty": "challenge"
     },
     {
       "id": "d4-q9",
-      "type": "numeric",
-      "prompt": "Work out $20 - 7.35$.",
-      "answer": 12.65,
-      "hints": ["Write 20 as $20.00$."],
-      "explanation": "$20.00 - 7.35 = 12.65$. Check: $12.65 + 7.35 = 20$ ✓."
+      "type": "steps",
+      "prompt": "Two changes in a row.",
+      "scenario": "A price is increased by $20\\%$ and then the new price is reduced by $10\\%$. The final price is 2376 baht.",
+      "steps": [
+        { "kind": "numeric", "prompt": "What single multiplier has the same effect as both changes?", "answer": 1.08, "feedback": "$1.2 \\times 0.9 = 1.08$." },
+        { "kind": "numeric", "prompt": "Find the original price.", "answer": 2200, "unit": "baht", "feedback": "$2376 \\div 1.08 = 2200$ baht." },
+        { "kind": "mcq", "prompt": "Overall, the price changed by …", "options": [ { "id": "a", "text": "an $8\\%$ increase" }, { "id": "b", "text": "a $10\\%$ increase" }, { "id": "c", "text": "a $2\\%$ increase" } ], "answer": "a", "feedback": "The overall multiplier $1.08$ is an $8\\%$ increase — not $20 - 10 = 10\\%$." }
+      ],
+      "explanation": "Combined multiplier $1.2 \\times 0.9 = 1.08$; original $= 2376 \\div 1.08 = 2200$ baht.",
+      "difficulty": "challenge"
     },
     {
       "id": "d4-q10",
       "type": "numeric",
-      "prompt": "Pim buys a drink for 18.50 baht and a snack for 27.75 baht. She pays with a 100-baht note. How much change does she get?",
-      "answer": 53.75,
-      "unit": "baht",
-      "hints": ["Add the two prices, then subtract from 100."],
-      "explanation": "$18.50 + 27.75 = 46.25$, and $100 - 46.25 = 53.75$ baht.",
-      "difficulty": "core"
+      "prompt": "Pim estimates there are 450 sweets in a jar. There are really 400. Find her percentage error.",
+      "answer": 12.5,
+      "unit": "%",
+      "explanation": "$\\frac{450 - 400}{400} \\times 100 = 12.5\\%$."
     },
     {
       "id": "d4-q11",
-      "type": "drill",
-      "prompt": "Quick-fire: decimals.",
-      "durationSec": 90,
-      "count": 10,
-      "pool": [
-        { "id": "p1", "prompt": "$0.4 + 0.3$", "accept": ["0.7"] },
-        { "id": "p2", "prompt": "$0.6 + 0.5$", "accept": ["1.1"] },
-        { "id": "p3", "prompt": "$1 - 0.3$", "accept": ["0.7"] },
-        { "id": "p4", "prompt": "$2.5 + 1.75$", "accept": ["4.25"] },
-        { "id": "p5", "prompt": "$3 - 0.25$", "accept": ["2.75"] },
-        { "id": "p6", "prompt": "$0.09 + 0.01$", "accept": ["0.1", "0.10"] },
-        { "id": "p7", "prompt": "$4.2 - 1.8$", "accept": ["2.4"] },
-        { "id": "p8", "prompt": "$7.36$ to 1 d.p.", "accept": ["7.4"] },
-        { "id": "p9", "prompt": "$0.842$ to 2 d.p.", "accept": ["0.84"] },
-        { "id": "p10", "prompt": "$12.05$ to 1 d.p.", "accept": ["12.1"] },
-        { "id": "p11", "prompt": "$10 - 0.01$", "accept": ["9.99"] },
-        { "id": "p12", "prompt": "$0.35 + 0.65$", "accept": ["1", "1.0", "1.00"] }
-      ],
-      "explanation": "Line up the points; for rounding, look at the next digit."
+      "type": "numeric",
+      "prompt": "Using $\\pi \\approx 3$ instead of the true value $\\pi = 3.14159\\ldots$, what is the percentage error? Give your answer to 3 significant figures.",
+      "answer": 4.51,
+      "tolerance": 0.005,
+      "unit": "%",
+      "hints": ["Error $= 0.14159\\ldots$", "Divide by $\\pi$, not by 3."],
+      "explanation": "$\\frac{\\pi - 3}{\\pi} \\times 100 = 4.51\\%$."
+    },
+    {
+      "id": "d4-q12",
+      "type": "manipulable",
+      "prompt": "A price after a $25\\%$ reduction is 600 baht. Slide to the percentage that shows the **original** price.",
+      "widget": "percent-bar",
+      "config": { "known": 600, "knownPercent": 75, "unit": "baht", "max": 150, "step": 5, "start": { "p": 75 } },
+      "target": { "p": 100 },
+      "explanation": "The original is always $100\\%$: $600 \\div 75 \\times 100 = 800$ baht.",
+      "difficulty": "core"
     }
   ]
 }
