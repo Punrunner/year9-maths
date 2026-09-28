@@ -10,14 +10,15 @@ import { useState } from 'preact/hooks';
 import { M, IconTick } from './exercises/kit';
 
 export interface WorkedExampleProps {
-  title: string;
+  /** The title as finished HTML (maths typeset at build time). */
+  titleHtml: string;
   problemHtml: string;
   steps: Array<{ explainHtml: string; mathsHtml?: string }>;
   answerHtml: string;
   index?: number;
 }
 
-export default function WorkedExample({ title, problemHtml, steps, answerHtml, index }: WorkedExampleProps) {
+export default function WorkedExample({ titleHtml, problemHtml, steps, answerHtml, index }: WorkedExampleProps) {
   const [shown, setShown] = useState(0);
   const allShown = shown >= steps.length;
 
@@ -25,7 +26,7 @@ export default function WorkedExample({ title, problemHtml, steps, answerHtml, i
     <article class="we card">
       <header class="we-head">
         <span class="we-tag">Worked example{index ? ` ${index}` : ''}</span>
-        <h4 class="we-title">{title}</h4>
+        <h4 class="we-title" dangerouslySetInnerHTML={{ __html: titleHtml }} />
       </header>
 
       <M html={problemHtml} as="div" class="we-problem" />

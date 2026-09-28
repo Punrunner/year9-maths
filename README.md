@@ -972,6 +972,7 @@ npm run audit    # what is in the site, and whether anything is broken
 npm run keys     # marks every answer key with the real marker — catches typos
 npm test         # checks the answer-marking rules still work
 npm run build    # the full check — run this before pushing
+npm run check-maths   # after a build: finds maths showing as raw code, like $\frac{1}{2}$
 ```
 
 `npm run audit` prints a summary like this:

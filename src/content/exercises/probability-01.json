@@ -99,7 +99,7 @@
       "id": "p1-q8",
       "type": "fill-blank",
       "prompt": "Complete the rules by typing the missing words.",
-      "text": "For independent events, $P(\\text{A and B}) = P(\\text{A}) \\;[[op1]]\\; P(\\text{B})$. For outcomes that cannot both happen, $P(\\text{A or B}) = P(\\text{A}) \\;[[op2]]\\; P(\\text{B})$. All the probabilities of a complete set of outcomes add up to [[total]].",
+      "text": "For independent events, $P(\\text{A and B}) = P(\\text{A})$ [[op1]] $P(\\text{B})$. For outcomes that cannot both happen, $P(\\text{A or B}) = P(\\text{A})$ [[op2]] $P(\\text{B})$. All the probabilities of a complete set of outcomes add up to [[total]].",
       "blanks": [
         { "id": "op1", "accept": ["multiply", "times", "x", "*", "×"], "size": 8 },
         { "id": "op2", "accept": ["add", "plus", "+"], "size": 8 },

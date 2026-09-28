@@ -4,7 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Quiz from '../../components/exercises/Quiz.tsx';
 import { getTopicNodes, getCatalog } from '../../lib/site';
-import { renderInline, prepareQuestions } from '../../lib/render';
+import { renderInline, renderPlain, prepareQuestions } from '../../lib/render';
 
 export async function getStaticPaths() {
   const nodes = await getTopicNodes();
@@ -23,7 +23,7 @@ const descriptionHtml = quiz!.data.description
   : undefined;
 ---
 
-<Base title={quiz!.data.title} description={quiz!.data.description ?? `Scored quiz for ${topic.data.title}.`}>
+<Base title={quiz!.data.title} description={renderPlain(quiz!.data.description) || `Scored quiz for ${topic.data.title}.`}>
   <div class="container page page-narrow" style={`--accent: var(${strand.data.accent})`}>
     <Breadcrumbs items={[
       { label: strand.data.short, href: `/strands/${strand.id}/` },

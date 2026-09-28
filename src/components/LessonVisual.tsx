@@ -11,13 +11,15 @@ import { VISUALS, VISUAL_DEFAULTS, VISUAL_TITLES } from './visuals/registry';
 export interface LessonVisualProps {
   widget: string;
   title?: string;
+  /** The title as finished HTML (maths typeset); used instead of `title`. */
+  titleHtml?: string;
   captionHtml?: string;
   config?: Record<string, unknown>;
   /** The small tag above the title. */
   tag?: string;
 }
 
-export default function LessonVisual({ widget, title, captionHtml, config = {}, tag = 'Try it' }: LessonVisualProps) {
+export default function LessonVisual({ widget, title, titleHtml, captionHtml, config = {}, tag = 'Try it' }: LessonVisualProps) {
   const Visual = VISUALS[widget];
   const initial = () => ({ ...(VISUAL_DEFAULTS[widget] ?? {}), ...((config as any).start ?? {}) });
   const [value, setValue] = useState<Record<string, number>>(initial);
@@ -35,7 +37,9 @@ export default function LessonVisual({ widget, title, captionHtml, config = {}, 
     <figure class="lesson-visual card">
       <figcaption class="lesson-visual-head">
         <span class="lesson-visual-tag">{tag}</span>
-        <h4>{title ?? VISUAL_TITLES[widget] ?? 'Interactive'}</h4>
+        {titleHtml
+          ? <h4 dangerouslySetInnerHTML={{ __html: titleHtml }} />
+          : <h4>{title ?? VISUAL_TITLES[widget] ?? 'Interactive'}</h4>}
       </figcaption>
 
       <Visual config={config as Record<string, any>} value={value} onChange={setValue} />

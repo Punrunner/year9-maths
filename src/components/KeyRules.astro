@@ -16,7 +16,7 @@ const { rules } = Astro.props;
     <ul class="key-rules-list">
       {rules.map((r) => (
         <li class="key-rule">
-          <h3 class="key-rule-title">{r.title}</h3>
+          <h3 class="key-rule-title" set:html={renderInline(r.title)} />
           {r.formula && (
             <p class="key-rule-formula" set:html={renderInline(`$$${r.formula}$$`)} />
           )}

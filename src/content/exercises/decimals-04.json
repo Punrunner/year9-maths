@@ -63,13 +63,13 @@
     {
       "id": "d4-q7",
       "type": "numeric",
-      "prompt": "An investment earns $5\\%$ compound interest per year. After 4 years it is worth $\\$9724.05$. Find the amount invested, to the nearest dollar.",
+      "prompt": "An investment earns $5\\%$ compound interest per year. After 4 years it is worth \\$9724.05. Find the amount invested, to the nearest dollar.",
       "answer": 8000,
       "tolerance": 1,
       "unit": "$",
       "marks": 3,
       "hints": ["Divide by $1.05^4$."],
-      "explanation": "$9724.05 \\div 1.05^4 = 9724.05 \\div 1.21550625 = 8000.00$, so $\\$8000$.",
+      "explanation": "$9724.05 \\div 1.05^4 = 9724.05 \\div 1.21550625 = 8000.00$, so \\$8000.",
       "difficulty": "challenge"
     },
     {

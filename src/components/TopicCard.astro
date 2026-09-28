@@ -2,6 +2,7 @@
 /** One topic in a strand grid. Status comes from the student's own browser. */
 import { TopicStatus } from './Progress.tsx';
 import type { TopicNode } from '../lib/site';
+import { renderInline } from '../lib/render';
 
 interface Props { node: TopicNode }
 const { node } = Astro.props;
@@ -27,7 +28,7 @@ const diffChip: Record<string, string> = {
   <h3 class="topic-title">
     <a href={href}>{topic.data.title}</a>
   </h3>
-  <p class="topic-desc">{topic.data.description}</p>
+  <p class="topic-desc" set:html={renderInline(topic.data.description, topic.id)} />
 
   <div class="topic-meta">
     {lessons.length > 0

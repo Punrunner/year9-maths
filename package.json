@@ -12,7 +12,8 @@
     "astro": "astro",
     "test": "node --experimental-strip-types scripts/test-answers.mjs",
     "audit": "node scripts/audit-content.mjs",
-    "keys": "node --experimental-strip-types --no-warnings scripts/check-keys.mjs"
+    "keys": "node --experimental-strip-types --no-warnings scripts/check-keys.mjs",
+    "check-maths": "node scripts/check-raw-maths.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

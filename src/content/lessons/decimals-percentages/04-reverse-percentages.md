@@ -61,12 +61,12 @@ activities:
     label: 'Your turn'
     question:
       type: numeric
-      prompt: 'Money is invested at $4\%$ compound interest per year. After 3 years it is worth $\$6749.18$. How much was invested? Give your answer to the nearest dollar.'
+      prompt: 'Money is invested at $4\%$ compound interest per year. After 3 years it is worth \$6749.18. How much was invested? Give your answer to the nearest dollar.'
       answer: 6000
       tolerance: 1
       unit: '$'
       hints: ['After 3 years: original $\times 1.04^3$.', 'Divide by $1.04^3$.']
-      explanation: '$6749.18 \div 1.04^3 = 6749.18 \div 1.124864 = 6000.00$, so $\$6000$.'
+      explanation: '$6749.18 \div 1.04^3 = 6749.18 \div 1.124864 = 6000.00$, so \$6000.'
   error-trap:
     label: 'Spot the mistake'
     question:

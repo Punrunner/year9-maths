@@ -4,6 +4,7 @@ import Base from '../../layouts/Base.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import { TopicStatus } from '../../components/Progress.tsx';
 import { getTopicNodes } from '../../lib/site';
+import { renderInline, renderPlain } from '../../lib/render';
 
 export async function getStaticPaths() {
   const nodes = await getTopicNodes();
@@ -15,7 +16,7 @@ const { topic, strand, lessons, quiz, quizHref } = node;
 const totalMinutes = lessons.reduce((n, l) => n + l.data.minutes, 0);
 ---
 
-<Base title={topic.data.title} description={topic.data.description}>
+<Base title={topic.data.title} description={renderPlain(topic.data.description)}>
   <div class="container page" style={`--accent: var(${strand.data.accent})`}>
     <Breadcrumbs items={[
       { label: strand.data.short, href: `/strands/${strand.id}/` },
@@ -25,7 +26,7 @@ const totalMinutes = lessons.reduce((n, l) => n + l.data.minutes, 0);
     <header class="page-head topic-head">
       <p class="page-eyebrow">Topic {topic.data.order} · {strand.data.short}</p>
       <h1>{topic.data.title}</h1>
-      <p class="page-lead">{topic.data.description}</p>
+      <p class="page-lead" set:html={renderInline(topic.data.description, topic.id)} />
       <div class="topic-head-meta">
         {lessons.length > 0 ? (
           <>
@@ -44,7 +45,7 @@ const totalMinutes = lessons.reduce((n, l) => n + l.data.minutes, 0);
       <section class="objectives card">
         <h2 class="objectives-heading">By the end of this topic you can…</h2>
         <ul class="objectives-list">
-          {topic.data.objectives.map((o) => <li>{o}</li>)}
+          {topic.data.objectives.map((o) => <li set:html={renderInline(o, topic.id)} />)}
         </ul>
       </section>
     )}
@@ -74,7 +75,7 @@ const totalMinutes = lessons.reduce((n, l) => n + l.data.minutes, 0);
               <span class="lesson-row-num" aria-hidden="true">{topic.data.order}.{i + 1}</span>
               <span class="lesson-row-body">
                 <span class="lesson-row-title">{l.data.title}</span>
-                <span class="lesson-row-summary">{l.data.summary}</span>
+                <span class="lesson-row-summary" set:html={renderInline(l.data.summary, l.id)} />
               </span>
               <span class="lesson-row-meta">
                 <span class="lesson-row-mins">{l.data.minutes} min</span>
@@ -90,9 +91,7 @@ const totalMinutes = lessons.reduce((n, l) => n + l.data.minutes, 0);
       <section class="quiz-cta card">
         <div class="quiz-cta-text">
           <h2>{quiz.data.title}</h2>
-          <p>
-            {quiz.data.description ?? 'A scored paper mixing several question types, with a full review afterwards.'}
-          </p>
+          <p set:html={renderInline(quiz.data.description ?? 'A scored paper mixing several question types, with a full review afterwards.', quiz.id)} />
           <p class="muted">
             {quiz.data.pick ?? quiz.data.questions.length} questions · pass mark {quiz.data.passMark}%
           </p>
