@@ -3,6 +3,7 @@
      line-mc      sliders for gradient m and intercept c
      parabola     sliders for a, b and c in y = ax^2 + bx + c
      number-line  drag a marker along a number line
+     line-curve   a line meeting a parabola or circle, with the discriminant
    ========================================================================== */
 
 import { useRef } from 'preact/hooks';
@@ -249,6 +250,121 @@ export function NumberLine({ config, value, onChange, target, readOnly, revealTa
       <Readout rows={ineq
         ? [{ label: 'Inequality shown', value: `${v} ${sym} ${formatNumber(x)}`, strong: true }]
         : [{ label, value: formatNumber(x), strong: true }]} />
+    </div>
+  );
+}
+
+/* ==========================================================================
+   A line meeting a curve — non-linear simultaneous equations
+     config.curve: 'parabola' (default, with a, b, c) or 'circle' (with r)
+     value: m, k for the line y = mx + k; n is kept up to date with the number
+     of intersection points, so a question can target { n: 1 } (a tangent).
+   ========================================================================== */
+
+/** "2x² + x − 6 = 0" from the coefficients A, B, C. */
+function quadText(A: number, B: number, C: number): string {
+  const f = (n: number) => formatNumber(n, 3);
+  const parts: string[] = [];
+  const term = (coef: number, body: string) => {
+    if (Math.abs(coef) < 1e-9) return;
+    const mag = Math.abs(coef);
+    const shown = body && Math.abs(mag - 1) < 1e-9 ? body : `${f(mag)}${body}`;
+    parts.push(parts.length === 0 ? (coef < 0 ? `−${shown}` : shown) : `${coef < 0 ? '−' : '+'} ${shown}`);
+  };
+  term(A, 'x²'); term(B, 'x'); term(C, '');
+  return `${parts.join(' ') || '0'} = 0`;
+}
+
+export function LineCurve({ config, value, onChange, target, readOnly }: VisualProps) {
+  const circle = config.curve === 'circle';
+  const r: number = config.r ?? 5;
+  const qa: number = config.a ?? 1, qb: number = config.b ?? 0, qc: number = config.c ?? -4;
+  const p = circle ? plotter(-9, 9, -6.5, 6.5) : plotter(-6, 6, -8, 10);
+  const m = value.m ?? 1, k = value.k ?? 2;
+
+  // Substitute y = mx + k into the curve to get A x² + B x + C = 0.
+  const [A, B, C] = circle
+    ? [1 + m * m, 2 * m * k, k * k - r * r]
+    : [qa, qb - m, qc - k];
+  const rawD = B * B - 4 * A * C;
+  const D = Math.abs(rawD) < 1e-9 ? 0 : rawD;
+  const n = D > 0 ? 2 : D === 0 ? 1 : 0;
+  const xs = n === 0 ? [] : n === 1 ? [-B / (2 * A)]
+    : [(-B - Math.sqrt(D)) / (2 * A), (-B + Math.sqrt(D)) / (2 * A)];
+  const pts = xs.map((x) => ({ x, y: m * x + k }));
+
+  const set = (patch: Record<string, number>) => {
+    if (readOnly) return;
+    const next = { ...value, m, k, ...patch };
+    const [a2, b2, c2] = circle
+      ? [1 + next.m * next.m, 2 * next.m * next.k, next.k * next.k - r * r]
+      : [qa, qb - next.m, qc - next.k];
+    const d2 = b2 * b2 - 4 * a2 * c2;
+    onChange({ ...next, n: Math.abs(d2) < 1e-9 ? 1 : d2 > 0 ? 2 : 0 });
+  };
+
+  // The line, clipped properly to the plotting box.
+  let x1 = p.xMin, x2 = p.xMax;
+  if (Math.abs(m) > 1e-9) {
+    const xa = (p.yMin - k) / m, xb = (p.yMax - k) / m;
+    x1 = Math.max(x1, Math.min(xa, xb)); x2 = Math.min(x2, Math.max(xa, xb));
+  }
+
+  const curvePath = () => {
+    if (circle) return '';
+    const out: string[] = [];
+    let pen = false;
+    for (let x = p.xMin; x <= p.xMax + 1e-9; x += 0.05) {
+      const y = qa * x * x + qb * x + qc;
+      if (y < p.yMin || y > p.yMax) { pen = false; continue; }
+      out.push(`${pen ? 'L' : 'M'}${p.X(x).toFixed(1)} ${p.Y(y).toFixed(1)}`);
+      pen = true;
+    }
+    return out.join(' ');
+  };
+
+  const curveName = circle
+    ? `x² + y² = ${formatNumber(r * r)}`
+    : `y = ${quadText(qa, qb, qc).replace(' = 0', '')}`;
+  const lineName = `y = ${quadText(0, m, k).replace(' = 0', '')}`;
+  const verdict = n === 2 ? 'b² − 4ac > 0: two points of intersection'
+    : n === 1 ? 'b² − 4ac = 0: one point — the line is a tangent'
+    : 'b² − 4ac < 0: no points of intersection';
+
+  return (
+    <div class="visual">
+      <Stage viewBox={`0 0 ${W} ${H}`} label={`The line ${lineName} and the curve ${curveName}: ${n} point${n === 1 ? '' : 's'} of intersection`}>
+        <Grid p={p} />
+        {circle
+          ? <ellipse cx={p.X(0)} cy={p.Y(0)} rx={p.X(r) - p.X(0)} ry={p.Y(0) - p.Y(r)} class="fig-curve" fill="none" />
+          : <path d={curvePath()} class="fig-curve" fill="none" />}
+        {x2 > x1 && (
+          <line x1={p.X(x1)} y1={p.Y(m * x1 + k)} x2={p.X(x2)} y2={p.Y(m * x2 + k)} class="fig-line"
+            style={{ stroke: 'var(--ink)' }} />
+        )}
+        {pts.map((pt, i) => (
+          pt.y >= p.yMin && pt.y <= p.yMax
+            ? <circle key={i} cx={p.X(pt.x)} cy={p.Y(pt.y)} r="5.5" class="fig-vertex" />
+            : null
+        ))}
+      </Stage>
+
+      <div class="controls">
+        <Slider id="lc-m" label="Gradient of the line, m" value={m} min={config.mMin ?? -4} max={config.mMax ?? 4} step={config.mStep ?? 0.5}
+          disabled={readOnly} onInput={(v) => set({ m: v })} />
+        <Slider id="lc-k" label="y-intercept of the line" value={k} min={config.kMin ?? -8} max={config.kMax ?? 8} step={config.kStep ?? 0.5}
+          disabled={readOnly} onInput={(v) => set({ k: v })} />
+      </div>
+
+      <Readout rows={[
+        { label: 'Curve', value: curveName },
+        { label: 'Line', value: lineName },
+        { label: 'Combined equation', value: quadText(A, B, C) },
+        { label: 'Discriminant', value: `${B < 0 ? `(${formatNumber(B, 3)})` : formatNumber(B, 3)}² − 4(${formatNumber(A, 3)})(${formatNumber(C, 3)}) = ${formatNumber(D, 3)}` },
+        { label: 'So', value: verdict, strong: true },
+        ...(pts.length ? [{ label: 'Points', value: pts.map((pt) => `(${formatNumber(pt.x)}, ${formatNumber(pt.y)})`).join(' and ') }] : []),
+        ...(target && target.n !== undefined ? [{ label: 'Aim for', value: `${target.n} point${Number(target.n) === 1 ? '' : 's'} of intersection` }] : []),
+      ]} />
     </div>
   );
 }

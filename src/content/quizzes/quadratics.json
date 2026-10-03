@@ -1,9 +1,9 @@
 {
   "title": "Quadratics quiz",
   "topic": "quadratics",
-  "description": "Ten questions drawn at random from a bank of twelve, covering graphs, expanding, factorising and solving quadratics. This is an extension topic.",
-  "pick": 10,
-  "timeLimitSec": 1200,
+  "description": "Twelve questions drawn at random from a bank of sixteen, covering graphs, expanding, factorising and solving quadratics, and non-linear simultaneous equations. This is an extension topic.",
+  "pick": 12,
+  "timeLimitSec": 1500,
   "passMark": 70,
   "questions": [
     { "id": "uq1", "type": "numeric", "prompt": "For $y = x^2 - 3x + 4$, find $y$ when $x = -2$.", "answer": 14,
@@ -34,6 +34,115 @@
       "explanation": "False. Dividing by $x$ loses $x = 0$. $x(x - 7) = 0$ gives $x = 0$ or $x = 7$." },
     { "id": "uq12", "type": "numeric", "prompt": "One solution of $2m^2 + 5m = 45$ lies between 1 and 5. Find it to 1 d.p. by trial and improvement.", "answer": 3.7, "tolerance": 0.001,
       "explanation": "$3.7$: $2(13.69) + 18.5 = 45.88$ (just too big); $3.65$: $26.645 + 18.25 = 44.895$ (too small). So between 3.65 and 3.7: 3.7 to 1 d.p. (It is 3.66…)",
-      "difficulty": "challenge" }
+      "difficulty": "challenge" },
+    {
+      "id": "uq13",
+      "type": "mcq",
+      "prompt": "The line $y = 3x - 2$ and the curve $y = x^2 + x - 1$ meet. Their combined equation is $x^2 - 2x + 1 = 0$. How many points of intersection are there?",
+      "shuffleOptions": false,
+      "options": [
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "2"
+        }
+      ],
+      "answer": "b",
+      "explanation": "$b^2 - 4ac = 4 - 4 = 0$, so exactly one point: the line is a tangent at $(1, 1)$."
+    },
+    {
+      "id": "uq14",
+      "type": "fill-blank",
+      "prompt": "Solve $y = x + 2$ and $y = x^2 - 4$ simultaneously. Give the point with the smaller $x$ first.",
+      "text": "( [[x1]] , [[y1]] ) and ( [[x2]] , [[y2]] )",
+      "blanks": [
+        {
+          "id": "x1",
+          "accept": [
+            "-2",
+            "−2"
+          ],
+          "size": 4
+        },
+        {
+          "id": "y1",
+          "accept": [
+            "0"
+          ],
+          "size": 4
+        },
+        {
+          "id": "x2",
+          "accept": [
+            "3"
+          ],
+          "size": 4
+        },
+        {
+          "id": "y2",
+          "accept": [
+            "5"
+          ],
+          "size": 4
+        }
+      ],
+      "marks": 3,
+      "explanation": "$x^2 - x - 6 = 0 \\Rightarrow (x - 3)(x + 2) = 0$. Using the line: $(-2, 0)$ and $(3, 5)$."
+    },
+    {
+      "id": "uq15",
+      "type": "fill-blank",
+      "prompt": "Solve $x^2 + y^2 = 20$ and $y = 2x$ simultaneously. Give the point with the smaller $x$ first.",
+      "text": "( [[x1]] , [[y1]] ) and ( [[x2]] , [[y2]] )",
+      "blanks": [
+        {
+          "id": "x1",
+          "accept": [
+            "-2",
+            "−2"
+          ],
+          "size": 4
+        },
+        {
+          "id": "y1",
+          "accept": [
+            "-4",
+            "−4"
+          ],
+          "size": 4
+        },
+        {
+          "id": "x2",
+          "accept": [
+            "2"
+          ],
+          "size": 4
+        },
+        {
+          "id": "y2",
+          "accept": [
+            "4"
+          ],
+          "size": 4
+        }
+      ],
+      "marks": 3,
+      "explanation": "$x^2 + 4x^2 = 20 \\Rightarrow x^2 = 4 \\Rightarrow x = \\pm 2$. Using $y = 2x$: $(-2, -4)$ and $(2, 4)$."
+    },
+    {
+      "id": "uq16",
+      "type": "numeric",
+      "prompt": "The line $y = 4x + k$ is a tangent to $y = x^2$. Find $k$.",
+      "answer": -4,
+      "marks": 2,
+      "explanation": "$x^2 - 4x - k = 0$ has discriminant $16 + 4k$. A tangent needs $16 + 4k = 0$, so $k = -4$."
+    }
   ]
 }

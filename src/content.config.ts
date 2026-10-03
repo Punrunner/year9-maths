@@ -234,6 +234,7 @@ const manipulable = z.object({
     'axis-trick',     // a bar chart whose axis can be cut or stretched
     'unit-grid',      // 1 big unit cut into small ones; or scale by k
     'percent-bar',    // amount against percentage; reverse mode for reverse %
+    'line-curve',     // a line meeting a parabola or circle; discriminant
   ]),
   config: z.record(z.string(), z.any()).default({}),
   /** What the student has to achieve, e.g. { m: 2, c: -3 }. */

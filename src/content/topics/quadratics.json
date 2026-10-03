@@ -1,6 +1,6 @@
 {
   "title": "Quadratics",
-  "description": "Expanding, factorising and solving quadratics, and the shape of their graphs.",
+  "description": "Expanding, factorising and solving quadratics, the shape of their graphs, and where a line meets a curve.",
   "strand": "number-algebra",
   "order": 16,
   "difficulty": "challenge",
@@ -9,7 +9,8 @@
     "Recognise the shape of a quadratic graph",
     "Expand the product of two brackets",
     "Factorise a quadratic expression",
-    "Solve a quadratic equation by factorising"
+    "Solve a quadratic equation by factorising",
+    "Solve a line and a curve simultaneously, using the discriminant to count the points of intersection"
   ],
   "keywords": [
     "quadratic",
@@ -17,6 +18,12 @@
     "expand",
     "factorise",
     "difference of two squares",
-    "roots"
+    "roots",
+    "simultaneous",
+    "non-linear",
+    "discriminant",
+    "tangent",
+    "circle",
+    "intersection"
   ]
 }

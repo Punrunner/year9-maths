@@ -7,7 +7,7 @@
 
 import type { FunctionComponent } from 'preact';
 import type { VisualProps } from './kit';
-import { LineMC, Parabola, NumberLine } from './GraphVisuals';
+import { LineMC, Parabola, NumberLine, LineCurve } from './GraphVisuals';
 import { Pythagoras, Prism, PolygonAngles, Enlargement } from './GeometryVisuals';
 import { Spinner } from './ProbabilityVisuals';
 import { AreaModel } from './AlgebraVisuals';
@@ -31,6 +31,7 @@ export const VISUALS: Record<string, FunctionComponent<VisualProps>> = {
   'axis-trick': AxisTrick,
   'unit-grid': UnitGrid,
   'percent-bar': PercentBar,
+  'line-curve': LineCurve,
 };
 
 /** The values each visual starts on, before the student touches anything. */
@@ -49,6 +50,7 @@ export const VISUAL_DEFAULTS: Record<string, Record<string, number>> = {
   'axis-trick': { lo: 0 },
   'unit-grid': { d: 2, p: 0, k: 2 },
   'percent-bar': { p: 25 },
+  'line-curve': { m: 1, k: 2, n: 2 },
 };
 
 /** Human-readable name, used in the lesson's visual heading fallback. */
@@ -67,4 +69,5 @@ export const VISUAL_TITLES: Record<string, string> = {
   'axis-trick': 'Misleading axis explorer',
   'unit-grid': 'Squares and cubes of units',
   'percent-bar': 'Percentage bar',
+  'line-curve': 'Where a line meets a curve',
 };
