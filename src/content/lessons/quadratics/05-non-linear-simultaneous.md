@@ -2,15 +2,18 @@
 title: Non-linear Simultaneous Equations
 topic: quadratics
 order: 5
-minutes: 40
+minutes: 60
 difficulty: challenge
-summary: 'Where a straight line meets a parabola or a circle: forming one quadratic equation, using the discriminant $b^2 - 4ac$ to count the points of intersection, and solving to find them.'
+summary: 'Where a straight line meets a parabola, a circle or another curve: forming one quadratic equation, using the discriminant $b^2 - 4ac$ to count — or control — the points of intersection, and solving to find them, with the formula when it will not factorise.'
 objectives:
   - 'Form a single quadratic equation by setting a line equal to a curve, or by substituting'
   - 'Use the discriminant $b^2 - 4ac$ to decide whether there are 2, 1 or 0 points of intersection'
   - 'Solve by factorising and substitute back to find both coordinates'
   - 'Solve a line and a circle $x^2 + y^2 = r^2$ simultaneously, expanding brackets carefully'
   - 'Recognise when a line is a tangent to a curve'
+  - 'Stretch: use the quadratic formula when the equation does not factorise, giving exact (surd) or 3 s.f. answers'
+  - 'Stretch: find the values of $k$ for which a line meets, touches or misses a curve'
+  - 'Stretch: solve with other curves, such as $xy = 12$ or $y = \frac{6}{x}$'
 activities:
   predict:
     label: 'Predict first'
@@ -140,6 +143,96 @@ activities:
           answer: a
           feedback: '$y = 5 - 2 = 3$ and $y = 5 - 3 = 2$. Check: $4 + 9 = 13$ ✓.'
       explanation: '$y = 5 - x$ gives $x^2 - 5x + 6 = 0$, so $x = 2$ or $3$, and the points are $(2, 3)$ and $(3, 2)$.'
+  stretch-formula:
+    label: 'Stretch'
+    question:
+      type: steps
+      prompt: 'Solve $y = x + 1$ and $y = x^2 - 3x - 1$ simultaneously. Give exact answers.'
+      steps:
+        - kind: mcq
+          prompt: 'Set equal and rearrange. Which equation do you get?'
+          options:
+            - { id: a, text: '$x^2 - 4x - 2 = 0$' }
+            - { id: b, text: '$x^2 - 2x - 2 = 0$' }
+            - { id: c, text: '$x^2 - 4x + 2 = 0$' }
+          answer: a
+          feedback: '$x^2 - 3x - 1 = x + 1 \Rightarrow x^2 - 4x - 2 = 0$.'
+        - kind: numeric
+          prompt: 'Find the discriminant.'
+          answer: 24
+          feedback: '$16 + 8 = 24$. Positive, so two points — but 24 is not a square number, so it will not factorise.'
+        - kind: mcq
+          prompt: 'Use the quadratic formula. $x =$ …'
+          options:
+            - { id: a, text: '$2 \pm \sqrt{6}$' }
+            - { id: b, text: '$4 \pm \sqrt{24}$' }
+            - { id: c, text: '$2 \pm \sqrt{24}$' }
+            - { id: d, text: '$-2 \pm \sqrt{6}$' }
+          answer: a
+          feedback: '$x = \frac{4 \pm \sqrt{24}}{2} = \frac{4 \pm 2\sqrt{6}}{2} = 2 \pm \sqrt{6}$, using $\sqrt{24} = 2\sqrt{6}$.'
+        - kind: mcq
+          prompt: 'Substitute into the line. The points are …'
+          options:
+            - { id: a, text: '$(2 + \sqrt{6},\ 3 + \sqrt{6})$ and $(2 - \sqrt{6},\ 3 - \sqrt{6})$' }
+            - { id: b, text: '$(2 + \sqrt{6},\ 1 + \sqrt{6})$ and $(2 - \sqrt{6},\ 1 - \sqrt{6})$' }
+            - { id: c, text: '$(2 + \sqrt{6},\ 3 - \sqrt{6})$ and $(2 - \sqrt{6},\ 3 + \sqrt{6})$' }
+          answer: a
+          feedback: '$y = x + 1$, so add 1 to each $x$, keeping the $\pm$ sign with it.'
+      explanation: '$x^2 - 4x - 2 = 0$ gives $x = 2 \pm \sqrt{6}$, so the points are $(2 + \sqrt{6},\ 3 + \sqrt{6})$ and $(2 - \sqrt{6},\ 3 - \sqrt{6})$. To 3 s.f.: $(4.45, 5.45)$ and $(-0.449, 0.551)$.'
+  stretch-k:
+    label: 'Stretch'
+    question:
+      type: steps
+      prompt: 'The line $y = 2x + k$ meets the curve $y = x^2 + 3$ at two points. Find the range of values of $k$.'
+      steps:
+        - kind: mcq
+          prompt: 'Form the combined equation.'
+          options:
+            - { id: a, text: '$x^2 - 2x + 3 - k = 0$' }
+            - { id: b, text: '$x^2 + 2x + 3 + k = 0$' }
+            - { id: c, text: '$x^2 - 2x - 3 - k = 0$' }
+          answer: a
+          feedback: '$x^2 + 3 = 2x + k \Rightarrow x^2 - 2x + (3 - k) = 0$. Here $c = 3 - k$.'
+        - kind: mcq
+          prompt: 'Two points means $b^2 - 4ac > 0$. Which inequality is that?'
+          options:
+            - { id: a, text: '$4 - 4(3 - k) > 0$' }
+            - { id: b, text: '$4 - 4(3 + k) > 0$' }
+            - { id: c, text: '$-4 - 4(3 - k) > 0$' }
+          answer: a
+          feedback: '$(-2)^2 - 4(1)(3 - k) > 0$.'
+        - kind: mcq
+          prompt: 'Solve it.'
+          options:
+            - { id: a, text: '$k > 2$' }
+            - { id: b, text: '$k < 2$' }
+            - { id: c, text: '$k > 3$' }
+          answer: a
+          feedback: '$4 - 12 + 4k > 0 \Rightarrow 4k > 8 \Rightarrow k > 2$.'
+      explanation: '$4 - 4(3 - k) > 0$ simplifies to $4k > 8$, so $k > 2$. At $k = 2$ the line is a tangent; below that it misses the curve.'
+  stretch-other:
+    label: 'Stretch'
+    question:
+      type: steps
+      prompt: 'Solve $xy = 12$ and $x + y = 7$ simultaneously.'
+      steps:
+        - kind: mcq
+          prompt: 'Make $y$ the subject of the linear equation and substitute. Which equation do you get?'
+          options:
+            - { id: a, text: '$x^2 - 7x + 12 = 0$' }
+            - { id: b, text: '$x^2 + 7x + 12 = 0$' }
+            - { id: c, text: '$x^2 - 7x - 12 = 0$' }
+          answer: a
+          feedback: '$x(7 - x) = 12 \Rightarrow 7x - x^2 = 12 \Rightarrow x^2 - 7x + 12 = 0$.'
+        - kind: mcq
+          prompt: 'So the points of intersection are …'
+          options:
+            - { id: a, text: '$(3, 4)$ and $(4, 3)$' }
+            - { id: b, text: '$(3, 3)$ and $(4, 4)$' }
+            - { id: c, text: '$(-3, -4)$ and $(-4, -3)$' }
+          answer: a
+          feedback: '$(x - 3)(x - 4) = 0$, and $y = 7 - x$.'
+      explanation: 'The method works for any curve: substitute the line, rearrange to a quadratic, solve. $xy = 12$ is a curve called a **hyperbola** — the same shape as $y = \frac{12}{x}$.'
 keyRules:
   - title: 'The method'
     body: '1. Make $y$ the subject of the linear equation (if it is not already). 2. Set the two equations equal, or substitute, to get **one** equation in $x$. 3. Rearrange to $ax^2 + bx + c = 0$. 4. Solve — usually by factorising. 5. Substitute each $x$ back into the **linear** equation to find $y$. 6. Write the answers as coordinates.'
@@ -150,6 +243,11 @@ keyRules:
     body: 'For $x^2 + y^2 = r^2$, substitute the line into the circle. Expand the squared bracket in full: $(2x - 5)^2 = (2x - 5)(2x - 5) = 4x^2 - 20x + 25$.'
   - title: 'Give pairs of values'
     body: 'Each $x$ has its own $y$. Write them as coordinates, $(3, 5)$ and $(-2, 0)$, not as four loose numbers.'
+  - title: 'Stretch: when it will not factorise'
+    formula: 'x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}'
+    body: 'If $b^2 - 4ac$ is positive but not a square number, use the formula. Simplify the surd for exact answers ($\sqrt{24} = 2\sqrt{6}$), or round to 3 s.f. only at the very end.'
+  - title: 'Stretch: questions about $k$'
+    body: 'Form the combined equation with $k$ in it, then write the discriminant as an inequality and solve for $k$: meets at two points → $> 0$; tangent → $= 0$; misses → $< 0$.'
 workedExamples:
   - title: 'A line and a parabola'
     problem: 'Solve $y = x + 1$ and $y = x^2 - 5$ simultaneously.'
@@ -199,6 +297,18 @@ workedExamples:
       - explain: 'Solve: a repeated root.'
         maths: '(x - 1)^2 = 0 \;\Rightarrow\; x = 1, \quad y = 2(1) - 1 = 1'
     answer: 'It touches at $(1, 1)$.'
+  - title: 'Stretch: when does a line miss a circle?'
+    problem: 'Find the values of $k$ for which the line $y = x + k$ does **not** meet the circle $x^2 + y^2 = 2$.'
+    steps:
+      - explain: 'Substitute the line into the circle.'
+        maths: 'x^2 + (x + k)^2 = 2 \;\Rightarrow\; 2x^2 + 2kx + k^2 - 2 = 0'
+      - explain: 'Find the discriminant, with $a = 2$, $b = 2k$, $c = k^2 - 2$.'
+        maths: '(2k)^2 - 4(2)(k^2 - 2) = 4k^2 - 8k^2 + 16 = 16 - 4k^2'
+      - explain: 'The line misses when the discriminant is negative.'
+        maths: '16 - 4k^2 < 0 \;\Rightarrow\; k^2 > 4'
+      - explain: '$k^2 > 4$ means $k$ is more than 2 away from 0 — on either side.'
+        maths: 'k < -2 \quad\text{or}\quad k > 2'
+    answer: '$k < -2$ or $k > 2$ (and at $k = \pm 2$ the line is a tangent)'
 practice: quadratics-05
 ---
 
@@ -244,3 +354,32 @@ squared bracket is where most marks are lost.
 [[activity: expand]]
 
 [[activity: circle]]
+
+## Stretch: beyond the class questions
+
+The class questions all factorise neatly. Exam questions often do not — and they combine
+this topic with the discriminant work you already know.
+
+### When it will not factorise
+
+If $b^2 - 4ac$ is positive but **not a square number**, there are still two points — they
+just are not whole numbers. Use the quadratic formula, and give the answer exactly (with
+surds) or to 3 significant figures, as the question asks.
+
+[[activity: stretch-formula]]
+
+### Questions about $k$
+
+Instead of a fixed line, you may be given a family of lines such as $y = 2x + k$ and asked
+**which** values of $k$ make it meet, touch or miss the curve. Keep $k$ in the combined
+equation and turn the discriminant into an inequality — exactly the "range of values of
+$k$" method from your discriminant work.
+
+[[activity: stretch-k]]
+
+### Other curves
+
+Nothing in the method depends on the curve being a parabola or a circle. With $xy = 12$ or
+$y = \frac{6}{x}$, substitute the line, multiply out, and you get a quadratic again.
+
+[[activity: stretch-other]]

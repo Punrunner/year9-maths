@@ -1,13 +1,16 @@
 {
   "title": "Practice: non-linear simultaneous equations",
-  "intro": "Combine, rearrange to = 0, check b² − 4ac, factorise, then substitute back into the line. Give the point with the smaller x first.",
+  "intro": "Questions 1–12 are at class level; 13–20 are **stretch** questions at exam level. Combine, rearrange to = 0, check b² − 4ac, then solve and substitute back into the line. Give the point with the smaller x first.",
   "questions": [
     {
       "id": "q5-q1",
       "type": "numeric",
       "prompt": "The line $y = 2x + 3$ meets the curve $y = x^2$. Form the combined equation and find its discriminant.",
       "answer": 16,
-      "hints": ["$x^2 = 2x + 3 \\Rightarrow x^2 - 2x - 3 = 0$.", "$b^2 - 4ac$ with $a = 1$, $b = -2$, $c = -3$."],
+      "hints": [
+        "$x^2 = 2x + 3 \\Rightarrow x^2 - 2x - 3 = 0$.",
+        "$b^2 - 4ac$ with $a = 1$, $b = -2$, $c = -3$."
+      ],
       "explanation": "$x^2 - 2x - 3 = 0$, so $b^2 - 4ac = 4 + 12 = 16 > 0$: two points of intersection.",
       "difficulty": "core"
     },
@@ -17,12 +20,23 @@
       "prompt": "How many points of intersection do $y = x^2 + 1$ and $y = 2x$ have?",
       "shuffleOptions": false,
       "options": [
-        { "id": "a", "text": "0" },
-        { "id": "b", "text": "1" },
-        { "id": "c", "text": "2" }
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "2"
+        }
       ],
       "answer": "b",
-      "hints": ["$x^2 - 2x + 1 = 0$"],
+      "hints": [
+        "$x^2 - 2x + 1 = 0$"
+      ],
       "explanation": "$x^2 - 2x + 1 = 0$ has $b^2 - 4ac = 4 - 4 = 0$, so one point: the line is a tangent at $(1, 2)$."
     },
     {
@@ -31,12 +45,23 @@
       "prompt": "How many points of intersection do $y = x - 3$ and $y = x^2 + x$ have?",
       "shuffleOptions": false,
       "options": [
-        { "id": "a", "text": "0" },
-        { "id": "b", "text": "1" },
-        { "id": "c", "text": "2" }
+        {
+          "id": "a",
+          "text": "0"
+        },
+        {
+          "id": "b",
+          "text": "1"
+        },
+        {
+          "id": "c",
+          "text": "2"
+        }
       ],
       "answer": "a",
-      "hints": ["$x^2 + x = x - 3 \\Rightarrow x^2 + 3 = 0$. Here $b = 0$."],
+      "hints": [
+        "$x^2 + x = x - 3 \\Rightarrow x^2 + 3 = 0$. Here $b = 0$."
+      ],
       "explanation": "$x^2 + 3 = 0$ has $b^2 - 4ac = 0 - 12 = -12 < 0$: the line misses the curve."
     },
     {
@@ -45,12 +70,40 @@
       "prompt": "Solve $y = x + 6$ and $y = x^2$ simultaneously.",
       "text": "Points: ( [[x1]] , [[y1]] ) and ( [[x2]] , [[y2]] )",
       "blanks": [
-        { "id": "x1", "accept": ["-2", "−2"], "size": 4 },
-        { "id": "y1", "accept": ["4"], "size": 4 },
-        { "id": "x2", "accept": ["3"], "size": 4 },
-        { "id": "y2", "accept": ["9"], "size": 4 }
+        {
+          "id": "x1",
+          "accept": [
+            "-2",
+            "−2"
+          ],
+          "size": 4
+        },
+        {
+          "id": "y1",
+          "accept": [
+            "4"
+          ],
+          "size": 4
+        },
+        {
+          "id": "x2",
+          "accept": [
+            "3"
+          ],
+          "size": 4
+        },
+        {
+          "id": "y2",
+          "accept": [
+            "9"
+          ],
+          "size": 4
+        }
       ],
-      "hints": ["$x^2 - x - 6 = 0$", "$(x - 3)(x + 2) = 0$"],
+      "hints": [
+        "$x^2 - x - 6 = 0$",
+        "$(x - 3)(x + 2) = 0$"
+      ],
       "explanation": "$x^2 - x - 6 = 0 \\Rightarrow x = 3$ or $x = -2$. Using $y = x + 6$: $(-2, 4)$ and $(3, 9)$."
     },
     {
@@ -59,12 +112,41 @@
       "prompt": "Solve $y = 2x + 3$ and $y = x^2 + 4x - 5$ simultaneously.",
       "text": "Points: ( [[x1]] , [[y1]] ) and ( [[x2]] , [[y2]] )",
       "blanks": [
-        { "id": "x1", "accept": ["-4", "−4"], "size": 4 },
-        { "id": "y1", "accept": ["-5", "−5"], "size": 4 },
-        { "id": "x2", "accept": ["2"], "size": 4 },
-        { "id": "y2", "accept": ["7"], "size": 4 }
+        {
+          "id": "x1",
+          "accept": [
+            "-4",
+            "−4"
+          ],
+          "size": 4
+        },
+        {
+          "id": "y1",
+          "accept": [
+            "-5",
+            "−5"
+          ],
+          "size": 4
+        },
+        {
+          "id": "x2",
+          "accept": [
+            "2"
+          ],
+          "size": 4
+        },
+        {
+          "id": "y2",
+          "accept": [
+            "7"
+          ],
+          "size": 4
+        }
       ],
-      "hints": ["$x^2 + 2x - 8 = 0$", "$(x + 4)(x - 2) = 0$"],
+      "hints": [
+        "$x^2 + 2x - 8 = 0$",
+        "$(x + 4)(x - 2) = 0$"
+      ],
       "explanation": "$x^2 + 4x - 5 = 2x + 3 \\Rightarrow x^2 + 2x - 8 = 0 \\Rightarrow (x + 4)(x - 2) = 0$. So $(-4, -5)$ and $(2, 7)$."
     },
     {
@@ -73,12 +155,46 @@
       "prompt": "Solve $y = 5x - 3$ and $y = 2x^2 + 2x - 5$ simultaneously.",
       "text": "Points: ( [[x1]] , [[y1]] ) and ( [[x2]] , [[y2]] )",
       "blanks": [
-        { "id": "x1", "accept": ["-0.5", "−0.5", "-1/2", "−1/2", "-.5"], "size": 5 },
-        { "id": "y1", "accept": ["-5.5", "−5.5", "-11/2", "−11/2"], "size": 5 },
-        { "id": "x2", "accept": ["2"], "size": 5 },
-        { "id": "y2", "accept": ["7"], "size": 5 }
+        {
+          "id": "x1",
+          "accept": [
+            "-0.5",
+            "−0.5",
+            "-1/2",
+            "−1/2",
+            "-.5"
+          ],
+          "size": 5
+        },
+        {
+          "id": "y1",
+          "accept": [
+            "-5.5",
+            "−5.5",
+            "-11/2",
+            "−11/2"
+          ],
+          "size": 5
+        },
+        {
+          "id": "x2",
+          "accept": [
+            "2"
+          ],
+          "size": 5
+        },
+        {
+          "id": "y2",
+          "accept": [
+            "7"
+          ],
+          "size": 5
+        }
       ],
-      "hints": ["$2x^2 - 3x - 2 = 0$", "$(2x + 1)(x - 2) = 0$"],
+      "hints": [
+        "$2x^2 - 3x - 2 = 0$",
+        "$(2x + 1)(x - 2) = 0$"
+      ],
       "explanation": "$2x^2 - 3x - 2 = 0$ has $b^2 - 4ac = 9 + 16 = 25$. $(2x + 1)(x - 2) = 0$ gives $x = -\\frac{1}{2}$ or $2$. So $(-\\frac{1}{2}, -5\\frac{1}{2})$ and $(2, 7)$.",
       "difficulty": "challenge"
     },
@@ -88,12 +204,41 @@
       "prompt": "Solve $x^2 + y^2 = 25$ and $y = x + 1$ simultaneously.",
       "text": "Points: ( [[x1]] , [[y1]] ) and ( [[x2]] , [[y2]] )",
       "blanks": [
-        { "id": "x1", "accept": ["-4", "−4"], "size": 4 },
-        { "id": "y1", "accept": ["-3", "−3"], "size": 4 },
-        { "id": "x2", "accept": ["3"], "size": 4 },
-        { "id": "y2", "accept": ["4"], "size": 4 }
+        {
+          "id": "x1",
+          "accept": [
+            "-4",
+            "−4"
+          ],
+          "size": 4
+        },
+        {
+          "id": "y1",
+          "accept": [
+            "-3",
+            "−3"
+          ],
+          "size": 4
+        },
+        {
+          "id": "x2",
+          "accept": [
+            "3"
+          ],
+          "size": 4
+        },
+        {
+          "id": "y2",
+          "accept": [
+            "4"
+          ],
+          "size": 4
+        }
       ],
-      "hints": ["$x^2 + (x + 1)^2 = 25 \\Rightarrow 2x^2 + 2x - 24 = 0$", "Divide by 2: $x^2 + x - 12 = 0$."],
+      "hints": [
+        "$x^2 + (x + 1)^2 = 25 \\Rightarrow 2x^2 + 2x - 24 = 0$",
+        "Divide by 2: $x^2 + x - 12 = 0$."
+      ],
       "explanation": "$2x^2 + 2x + 1 = 25 \\Rightarrow x^2 + x - 12 = 0 \\Rightarrow (x + 4)(x - 3) = 0$. So $(-4, -3)$ and $(3, 4)$."
     },
     {
@@ -102,10 +247,58 @@
       "prompt": "A line that touches a circle.",
       "scenario": "The line $2x + y = 5$ meets the circle $x^2 + y^2 = 5$.",
       "steps": [
-        { "kind": "mcq", "prompt": "Make $y$ the subject of the line and substitute. Which equation do you get after simplifying?", "options": [ { "id": "a", "text": "$x^2 - 4x + 4 = 0$" }, { "id": "b", "text": "$x^2 + 4x + 4 = 0$" }, { "id": "c", "text": "$5x^2 - 20x + 30 = 0$" } ], "answer": "a", "feedback": "$y = 5 - 2x$: $x^2 + 25 - 20x + 4x^2 = 5 \\Rightarrow 5x^2 - 20x + 20 = 0 \\Rightarrow x^2 - 4x + 4 = 0$." },
-        { "kind": "numeric", "prompt": "Find the discriminant of $x^2 - 4x + 4 = 0$.", "answer": 0, "feedback": "$16 - 16 = 0$." },
-        { "kind": "mcq", "prompt": "So the line …", "options": [ { "id": "a", "text": "is a tangent to the circle" }, { "id": "b", "text": "cuts the circle twice" }, { "id": "c", "text": "misses the circle" } ], "answer": "a", "feedback": "A discriminant of 0 means exactly one point." },
-        { "kind": "numeric", "prompt": "Find the $y$-coordinate of the point where it touches.", "answer": 1, "feedback": "$(x - 2)^2 = 0$ gives $x = 2$, and $y = 5 - 2(2) = 1$." }
+        {
+          "kind": "mcq",
+          "prompt": "Make $y$ the subject of the line and substitute. Which equation do you get after simplifying?",
+          "options": [
+            {
+              "id": "a",
+              "text": "$x^2 - 4x + 4 = 0$"
+            },
+            {
+              "id": "b",
+              "text": "$x^2 + 4x + 4 = 0$"
+            },
+            {
+              "id": "c",
+              "text": "$5x^2 - 20x + 30 = 0$"
+            }
+          ],
+          "answer": "a",
+          "feedback": "$y = 5 - 2x$: $x^2 + 25 - 20x + 4x^2 = 5 \\Rightarrow 5x^2 - 20x + 20 = 0 \\Rightarrow x^2 - 4x + 4 = 0$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Find the discriminant of $x^2 - 4x + 4 = 0$.",
+          "answer": 0,
+          "feedback": "$16 - 16 = 0$."
+        },
+        {
+          "kind": "mcq",
+          "prompt": "So the line …",
+          "options": [
+            {
+              "id": "a",
+              "text": "is a tangent to the circle"
+            },
+            {
+              "id": "b",
+              "text": "cuts the circle twice"
+            },
+            {
+              "id": "c",
+              "text": "misses the circle"
+            }
+          ],
+          "answer": "a",
+          "feedback": "A discriminant of 0 means exactly one point."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "Find the $y$-coordinate of the point where it touches.",
+          "answer": 1,
+          "feedback": "$(x - 2)^2 = 0$ gives $x = 2$, and $y = 5 - 2(2) = 1$."
+        }
       ],
       "explanation": "The combined equation $x^2 - 4x + 4 = 0$ has discriminant $0$, so the line is a tangent, touching at $(2, 1)$.",
       "difficulty": "challenge"
@@ -116,9 +309,66 @@
       "prompt": "A circle with an easy-to-miss bracket.",
       "scenario": "Solve $x^2 + y^2 = 9$ and $y = x - 3$ simultaneously.",
       "steps": [
-        { "kind": "mcq", "prompt": "Expand $(x - 3)^2$.", "options": [ { "id": "a", "text": "$x^2 - 6x + 9$" }, { "id": "b", "text": "$x^2 + 9$" }, { "id": "c", "text": "$x^2 - 9$" } ], "answer": "a", "feedback": "$(x - 3)(x - 3) = x^2 - 3x - 3x + 9$." },
-        { "kind": "mcq", "prompt": "So $x^2 + (x - 3)^2 = 9$ becomes …", "options": [ { "id": "a", "text": "$2x^2 - 6x = 0$" }, { "id": "b", "text": "$2x^2 - 6x + 18 = 0$" }, { "id": "c", "text": "$2x^2 = 0$" } ], "answer": "a", "feedback": "$2x^2 - 6x + 9 = 9 \\Rightarrow 2x^2 - 6x = 0$." },
-        { "kind": "mcq", "prompt": "The solutions are …", "options": [ { "id": "a", "text": "$(0, -3)$ and $(3, 0)$" }, { "id": "b", "text": "$(0, 3)$ and $(3, 0)$" }, { "id": "c", "text": "$(0, -3)$ only" } ], "answer": "a", "feedback": "$2x(x - 3) = 0$ gives $x = 0$ or $x = 3$; $y = x - 3$ gives $-3$ and $0$." }
+        {
+          "kind": "mcq",
+          "prompt": "Expand $(x - 3)^2$.",
+          "options": [
+            {
+              "id": "a",
+              "text": "$x^2 - 6x + 9$"
+            },
+            {
+              "id": "b",
+              "text": "$x^2 + 9$"
+            },
+            {
+              "id": "c",
+              "text": "$x^2 - 9$"
+            }
+          ],
+          "answer": "a",
+          "feedback": "$(x - 3)(x - 3) = x^2 - 3x - 3x + 9$."
+        },
+        {
+          "kind": "mcq",
+          "prompt": "So $x^2 + (x - 3)^2 = 9$ becomes …",
+          "options": [
+            {
+              "id": "a",
+              "text": "$2x^2 - 6x = 0$"
+            },
+            {
+              "id": "b",
+              "text": "$2x^2 - 6x + 18 = 0$"
+            },
+            {
+              "id": "c",
+              "text": "$2x^2 = 0$"
+            }
+          ],
+          "answer": "a",
+          "feedback": "$2x^2 - 6x + 9 = 9 \\Rightarrow 2x^2 - 6x = 0$."
+        },
+        {
+          "kind": "mcq",
+          "prompt": "The solutions are …",
+          "options": [
+            {
+              "id": "a",
+              "text": "$(0, -3)$ and $(3, 0)$"
+            },
+            {
+              "id": "b",
+              "text": "$(0, 3)$ and $(3, 0)$"
+            },
+            {
+              "id": "c",
+              "text": "$(0, -3)$ only"
+            }
+          ],
+          "answer": "a",
+          "feedback": "$2x(x - 3) = 0$ gives $x = 0$ or $x = 3$; $y = x - 3$ gives $-3$ and $0$."
+        }
       ],
       "explanation": "$2x^2 - 6x = 0 \\Rightarrow 2x(x - 3) = 0$, so $(0, -3)$ and $(3, 0)$. Do not divide by $x$ — you would lose the solution $x = 0$."
     },
@@ -128,7 +378,10 @@
       "prompt": "The line $y = 2x + k$ is a tangent to the curve $y = x^2$. Find $k$.",
       "answer": -1,
       "marks": 3,
-      "hints": ["$x^2 - 2x - k = 0$", "A tangent means $b^2 - 4ac = 0$: $4 + 4k = 0$."],
+      "hints": [
+        "$x^2 - 2x - k = 0$",
+        "A tangent means $b^2 - 4ac = 0$: $4 + 4k = 0$."
+      ],
       "explanation": "$x^2 - 2x - k = 0$ has discriminant $(-2)^2 - 4(1)(-k) = 4 + 4k$. Setting it to $0$ gives $k = -1$ (touching at $(1, 1)$).",
       "difficulty": "challenge"
     },
@@ -137,8 +390,20 @@
       "type": "manipulable",
       "prompt": "Move the line until it is a **tangent** to $y = x^2 - 4$ (exactly one point of intersection).",
       "widget": "line-curve",
-      "config": { "curve": "parabola", "a": 1, "b": 0, "c": -4, "start": { "m": 1, "k": 2, "n": 2 } },
-      "target": { "n": 1 },
+      "config": {
+        "curve": "parabola",
+        "a": 1,
+        "b": 0,
+        "c": -4,
+        "start": {
+          "m": 1,
+          "k": 2,
+          "n": 2
+        }
+      },
+      "target": {
+        "n": 1
+      },
       "explanation": "Any line with $m^2 + 16 + 4k = 0$ works, for example $y = -4$ (gradient 0), $y = 2x - 5$ or $y = 4x - 8$.",
       "difficulty": "core"
     },
@@ -148,12 +413,340 @@
       "prompt": "In context.",
       "scenario": "A ball follows the path $y = -x^2 + 6x$. A straight ramp follows $y = x + 4$. Find where the ball's path meets the ramp.",
       "steps": [
-        { "kind": "mcq", "prompt": "Which equation do you get?", "options": [ { "id": "a", "text": "$x^2 - 5x + 4 = 0$" }, { "id": "b", "text": "$x^2 + 5x + 4 = 0$" }, { "id": "c", "text": "$x^2 - 7x - 4 = 0$" } ], "answer": "a", "feedback": "$-x^2 + 6x = x + 4 \\Rightarrow 0 = x^2 - 5x + 4$." },
-        { "kind": "numeric", "prompt": "The smaller solution is $x = 1$. What is the larger?", "answer": 4, "feedback": "$(x - 1)(x - 4) = 0$." },
-        { "kind": "numeric", "prompt": "What is the $y$-coordinate when $x = 4$?", "answer": 8, "feedback": "$y = 4 + 4 = 8$." }
+        {
+          "kind": "mcq",
+          "prompt": "Which equation do you get?",
+          "options": [
+            {
+              "id": "a",
+              "text": "$x^2 - 5x + 4 = 0$"
+            },
+            {
+              "id": "b",
+              "text": "$x^2 + 5x + 4 = 0$"
+            },
+            {
+              "id": "c",
+              "text": "$x^2 - 7x - 4 = 0$"
+            }
+          ],
+          "answer": "a",
+          "feedback": "$-x^2 + 6x = x + 4 \\Rightarrow 0 = x^2 - 5x + 4$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "The smaller solution is $x = 1$. What is the larger?",
+          "answer": 4,
+          "feedback": "$(x - 1)(x - 4) = 0$."
+        },
+        {
+          "kind": "numeric",
+          "prompt": "What is the $y$-coordinate when $x = 4$?",
+          "answer": 8,
+          "feedback": "$y = 4 + 4 = 8$."
+        }
       ],
       "explanation": "$x^2 - 5x + 4 = 0$ gives $x = 1$ or $4$: the points $(1, 5)$ and $(4, 8)$. When $a$ is negative, move everything to the side that makes $x^2$ positive.",
       "difficulty": "challenge"
+    },
+    {
+      "id": "q5-q13",
+      "type": "mcq",
+      "prompt": "**Stretch.** Solve $y = 3x$ and $y = x^2 + x - 1$ simultaneously. What are the $x$-coordinates, exactly?",
+      "options": [
+        {
+          "id": "a",
+          "text": "$x = 1 \\pm \\sqrt{2}$"
+        },
+        {
+          "id": "b",
+          "text": "$x = 2 \\pm \\sqrt{8}$"
+        },
+        {
+          "id": "c",
+          "text": "$x = -1 \\pm \\sqrt{2}$"
+        },
+        {
+          "id": "d",
+          "text": "$x = 1 \\pm \\sqrt{8}$"
+        }
+      ],
+      "answer": "a",
+      "hints": [
+        "$x^2 - 2x - 1 = 0$, which does not factorise.",
+        "$x = \\frac{2 \\pm \\sqrt{8}}{2}$, and $\\sqrt{8} = 2\\sqrt{2}$."
+      ],
+      "explanation": "$x^2 + x - 1 = 3x \\Rightarrow x^2 - 2x - 1 = 0$. The discriminant is $4 + 4 = 8$, so $x = \\frac{2 \\pm 2\\sqrt{2}}{2} = 1 \\pm \\sqrt{2}$. Forgetting to divide **both** terms by 2 gives $2 \\pm \\sqrt{8}$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q5-q14",
+      "type": "fill-blank",
+      "prompt": "**Stretch.** Solve $y = 2x - 1$ and $y = x^2 + x - 4$ simultaneously. Give your answers correct to 3 significant figures, the point with the smaller $x$ first.",
+      "text": "( [[x1]] , [[y1]] ) and ( [[x2]] , [[y2]] )",
+      "blanks": [
+        {
+          "id": "x1",
+          "accept": [
+            "-1.30"
+          ],
+          "tolerance": 0.006,
+          "size": 6
+        },
+        {
+          "id": "y1",
+          "accept": [
+            "-3.61"
+          ],
+          "tolerance": 0.006,
+          "size": 6
+        },
+        {
+          "id": "x2",
+          "accept": [
+            "2.30"
+          ],
+          "tolerance": 0.006,
+          "size": 6
+        },
+        {
+          "id": "y2",
+          "accept": [
+            "3.61"
+          ],
+          "tolerance": 0.006,
+          "size": 6
+        }
+      ],
+      "hints": [
+        "$x^2 - x - 3 = 0$, with discriminant 13.",
+        "$x = \\frac{1 \\pm \\sqrt{13}}{2}$. Find $y$ from the line using the unrounded $x$."
+      ],
+      "explanation": "$x^2 - x - 3 = 0$ gives $x = \\frac{1 \\pm \\sqrt{13}}{2} = 2.3028\\ldots$ or $-1.3028\\ldots$ Then $y = 2x - 1 = 3.6056\\ldots$ or $-3.6056\\ldots$ So $(-1.30, -3.61)$ and $(2.30, 3.61)$. Use the unrounded $x$ to find $y$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q5-q15",
+      "type": "fill-blank",
+      "prompt": "**Stretch.** The line $y = x + k$ meets the curve $y = x^2 - 3x$ at two points. Find the range of values of $k$.",
+      "text": "$k >$ [[a]]",
+      "blanks": [
+        {
+          "id": "a",
+          "accept": [
+            "-4",
+            "−4"
+          ],
+          "size": 4
+        }
+      ],
+      "hints": [
+        "$x^2 - 4x - k = 0$",
+        "Two points: $16 - 4(1)(-k) > 0$."
+      ],
+      "explanation": "$x^2 - 3x = x + k \\Rightarrow x^2 - 4x - k = 0$. Two points needs $16 + 4k > 0$, so $k > -4$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q5-q16",
+      "type": "fill-blank",
+      "prompt": "**Stretch.** The line $y = kx - 1$ is a tangent to the curve $y = x^2$. Find the two possible values of $k$.",
+      "text": "$k =$ [[a]] or $k =$ [[b]]",
+      "blanks": [
+        {
+          "id": "a",
+          "accept": [
+            "-2",
+            "−2"
+          ],
+          "size": 4,
+          "group": "k"
+        },
+        {
+          "id": "b",
+          "accept": [
+            "2"
+          ],
+          "size": 4,
+          "group": "k"
+        }
+      ],
+      "hints": [
+        "$x^2 - kx + 1 = 0$",
+        "Tangent: $k^2 - 4 = 0$."
+      ],
+      "explanation": "$x^2 = kx - 1 \\Rightarrow x^2 - kx + 1 = 0$. A tangent needs $k^2 - 4 = 0$, so $k = \\pm 2$ — touching at $(1, 1)$ and $(-1, 1)$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q5-q17",
+      "type": "fill-blank",
+      "prompt": "**Stretch.** For which values of $k$ does the line $y = x + k$ **miss** the circle $x^2 + y^2 = 8$?",
+      "text": "$k <$ [[a]] or $k >$ [[b]]",
+      "blanks": [
+        {
+          "id": "a",
+          "accept": [
+            "-4",
+            "−4"
+          ],
+          "size": 4
+        },
+        {
+          "id": "b",
+          "accept": [
+            "4"
+          ],
+          "size": 4
+        }
+      ],
+      "hints": [
+        "$2x^2 + 2kx + k^2 - 8 = 0$",
+        "Discriminant: $4k^2 - 8(k^2 - 8) = 64 - 4k^2$. Misses means $< 0$."
+      ],
+      "explanation": "Substituting gives $2x^2 + 2kx + k^2 - 8 = 0$, with discriminant $64 - 4k^2$. It misses when $64 - 4k^2 < 0$, i.e. $k^2 > 16$: $k < -4$ or $k > 4$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q5-q18",
+      "type": "fill-blank",
+      "prompt": "**Stretch.** Solve $y = \\frac{6}{x}$ and $y = x + 1$ simultaneously. Give the point with the smaller $x$ first.",
+      "text": "( [[x1]] , [[y1]] ) and ( [[x2]] , [[y2]] )",
+      "blanks": [
+        {
+          "id": "x1",
+          "accept": [
+            "-3",
+            "−3"
+          ],
+          "size": 4
+        },
+        {
+          "id": "y1",
+          "accept": [
+            "-2",
+            "−2"
+          ],
+          "size": 4
+        },
+        {
+          "id": "x2",
+          "accept": [
+            "2"
+          ],
+          "size": 4
+        },
+        {
+          "id": "y2",
+          "accept": [
+            "3"
+          ],
+          "size": 4
+        }
+      ],
+      "hints": [
+        "$\\frac{6}{x} = x + 1$. Multiply both sides by $x$.",
+        "$x^2 + x - 6 = 0$"
+      ],
+      "explanation": "$6 = x^2 + x \\Rightarrow x^2 + x - 6 = 0 \\Rightarrow (x + 3)(x - 2) = 0$. So $(-3, -2)$ and $(2, 3)$.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q5-q19",
+      "type": "steps",
+      "prompt": "**Stretch.** Substituting for $x$ instead of $y$.",
+      "scenario": "Solve $x^2 + y^2 = 25$ and $x - 2y = 5$ simultaneously.",
+      "steps": [
+        {
+          "kind": "mcq",
+          "prompt": "Which is easier to make the subject of $x - 2y = 5$?",
+          "options": [
+            {
+              "id": "a",
+              "text": "$x = 5 + 2y$ — no fractions"
+            },
+            {
+              "id": "b",
+              "text": "$y = \\frac{x - 5}{2}$"
+            }
+          ],
+          "answer": "a",
+          "feedback": "Making $x$ the subject avoids fractions."
+        },
+        {
+          "kind": "mcq",
+          "prompt": "Substitute into the circle and simplify.",
+          "options": [
+            {
+              "id": "a",
+              "text": "$5y^2 + 20y = 0$"
+            },
+            {
+              "id": "b",
+              "text": "$5y^2 + 20y + 50 = 0$"
+            },
+            {
+              "id": "c",
+              "text": "$3y^2 + 20y = 0$"
+            }
+          ],
+          "answer": "a",
+          "feedback": "$(5 + 2y)^2 + y^2 = 25 \\Rightarrow 25 + 20y + 4y^2 + y^2 = 25 \\Rightarrow 5y^2 + 20y = 0$."
+        },
+        {
+          "kind": "mcq",
+          "prompt": "So the points are …",
+          "options": [
+            {
+              "id": "a",
+              "text": "$(5, 0)$ and $(-3, -4)$"
+            },
+            {
+              "id": "b",
+              "text": "$(0, 5)$ and $(-4, -3)$"
+            },
+            {
+              "id": "c",
+              "text": "$(5, 0)$ only"
+            }
+          ],
+          "answer": "a",
+          "feedback": "$5y(y + 4) = 0$ gives $y = 0$ or $y = -4$, and $x = 5 + 2y$ gives $5$ and $-3$."
+        }
+      ],
+      "explanation": "$x = 5 + 2y$ gives $5y^2 + 20y = 0$, so $y = 0$ or $-4$: the points $(5, 0)$ and $(-3, -4)$. Check: $9 + 16 = 25$ ✓.",
+      "difficulty": "challenge"
+    },
+    {
+      "id": "q5-q20",
+      "type": "order",
+      "prompt": "**Stretch.** Put the lines of this proof in order: *Show that the line $y = 2x - 3$ does not meet the curve $y = x^2 + 1$.*",
+      "items": [
+        {
+          "id": "a",
+          "text": "$x^2 + 1 = 2x - 3$"
+        },
+        {
+          "id": "b",
+          "text": "$x^2 - 2x + 4 = 0$"
+        },
+        {
+          "id": "c",
+          "text": "$b^2 - 4ac = (-2)^2 - 4(1)(4) = -12$"
+        },
+        {
+          "id": "d",
+          "text": "$-12 < 0$, so there are no real solutions: the line does not meet the curve."
+        }
+      ],
+      "solution": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "explanation": "Set the equations equal, rearrange to $= 0$, find the discriminant, then **state the conclusion** — in an exam the final sentence earns the last mark.",
+      "difficulty": "core"
     }
   ]
 }
