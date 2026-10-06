@@ -35,7 +35,7 @@ activities:
     label: 'Check your guess'
     reveal:
       prompt: 'Where did you put $\sqrt{28}$?'
-      answer: '$\sqrt{28} = 5.29\dots$, so a little under a third of the way from 5 to 6. If you went further right, that is the most common instinct — the gaps between square numbers grow, so roots creep up more slowly than you expect.'
+      answer: '$\sqrt{28} = 5.29\dots$, so a little under a third of the way from 5 to 6. Judging by the distances alone (3 out of a gap of 11) gives about $5.27$ — slightly too small. Within each gap the root is always a little further along than the distances suggest, which is why you finish by squaring your guess to check.'
   your-turn:
     label: 'Your turn'
     question:

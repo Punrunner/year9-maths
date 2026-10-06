@@ -66,7 +66,7 @@ practice: sequences-03
 ## Why straight lines matter
 
 Any relationship where something changes by the **same amount every time** draws a
-straight line. A taxi that charges $3 to start and $2 per kilometre; a phone plan with
+straight line. A taxi that charges \$3 to start and \$2 per kilometre; a phone plan with
 a monthly fee plus a rate per gigabyte; a tank draining at a steady rate. All of them
 are $y = mx + c$ in disguise.
 

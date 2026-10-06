@@ -131,7 +131,7 @@
         { "id": "b", "accept": ["3"], "size": 3 },
         { "id": "c", "accept": ["2"], "size": 3 }
       ],
-      "hints": ["What is the HCF of 30 and 15 that goes into $6x$?"],
+      "hints": ["What number times $6x$ gives $30x$? Take that factor out of both terms."],
       "explanation": "$30x + 15 = 5(6x + 3)$. Then $\\frac{5}{10} = \\frac{1}{2}$, so the answer is $\\frac{6x + 3}{2}$."
     },
     {

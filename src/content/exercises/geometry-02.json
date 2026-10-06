@@ -91,8 +91,8 @@
       "prompt": "Complete the definition.",
       "text": "A tessellation is a pattern of shapes that fit together with no [[a]] and no [[b]].",
       "blanks": [
-        { "id": "a", "accept": ["gaps", "spaces", "gap"], "size": 8 },
-        { "id": "b", "accept": ["overlaps", "overlapping", "overlap"], "size": 10 }
+        { "id": "a", "accept": ["gaps", "spaces", "gap"], "size": 8, "group": "gap-overlap" },
+        { "id": "b", "accept": ["overlaps", "overlapping", "overlap"], "size": 10, "group": "gap-overlap" }
       ],
       "hints": ["Think of tiles on a floor."],
       "explanation": "No gaps and no overlaps."

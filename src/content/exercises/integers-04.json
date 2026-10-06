@@ -117,7 +117,7 @@
       "prompt": "Simplify $(27y^6)^{\\frac{2}{3}}$.",
       "answer": "9y^4",
       "variables": ["y"],
-      "placeholder": "e.g. 9y^4",
+      "placeholder": "e.g. 4y^3",
       "hints": ["$27^{\\frac{2}{3}} = 9$ and $6 \\times \\frac{2}{3} = 4$."],
       "explanation": "$27^{\\frac{2}{3}} \\times y^{6 \\times \\frac{2}{3}} = 9y^4$.",
       "difficulty": "challenge"

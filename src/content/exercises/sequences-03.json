@@ -118,7 +118,7 @@
         { "id": "b", "text": "$y = 4x$" },
         { "id": "c", "text": "$y = -4x + 1$" },
         { "id": "d", "text": "$y = x + 4$" },
-        { "id": "e", "text": "$y = 1 + 4x$" }
+        { "id": "e", "text": "$y = 9 + 4x$" }
       ],
       "answers": ["a", "b", "e"],
       "hints": [
@@ -126,7 +126,7 @@
         "The gradient is the number multiplying $x$ — the intercept is irrelevant.",
         "Watch out for one written back to front."
       ],
-      "explanation": "Parallel means the same gradient, $m = 4$. That gives **a**, **b** and **e** — note that $y = 1 + 4x$ is just $y = 4x + 1$ rearranged, so it is the *same line*, which counts as parallel. **c** has gradient $-4$ (it falls), and **d** has gradient 1.",
+      "explanation": "Parallel means the same gradient, $m = 4$. That gives **a**, **b** and **e** — note that $y = 9 + 4x$ is just $y = 4x + 9$ written back to front, so its gradient is still 4. **c** has gradient $-4$ (it falls), and **d** has gradient 1.",
       "difficulty": "challenge"
     },
     {

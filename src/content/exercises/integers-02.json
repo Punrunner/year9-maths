@@ -33,14 +33,14 @@
       "type": "mcq",
       "prompt": "Which of these estimates is **obviously wrong**?",
       "options": [
-        { "id": "a", "text": "$\\sqrt{50} \\approx 6.9$" },
+        { "id": "a", "text": "$\\sqrt{50} \\approx 7.1$" },
         { "id": "b", "text": "$\\sqrt{20} \\approx 5.1$" },
         { "id": "c", "text": "$\\sqrt{3} \\approx 1.7$" },
         { "id": "d", "text": "$\\sqrt{95} \\approx 9.7$" }
       ],
       "answer": "b",
       "hints": ["What is $5^2$? Is it more or less than 20?"],
-      "explanation": "$5^2 = 25$, which is already bigger than 20, so $\\sqrt{20}$ must be **less** than 5. (It is about 4.5.) The others are all sensible: $\\sqrt{50}$ is just above 7, so 6.9 is a slight underestimate but close."
+      "explanation": "$5^2 = 25$, which is already bigger than 20, so $\\sqrt{20}$ must be **less** than 5. (It is about 4.5.) The others are all sensible: $\\sqrt{50}$ is just above 7 (it is $7.07\\dots$), $\\sqrt{3} = 1.73\\dots$ and $\\sqrt{95} = 9.75\\dots$"
     },
     {
       "id": "i2-q3",

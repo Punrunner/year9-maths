@@ -102,7 +102,7 @@ step, apply it once per step:
 
 - kilo → giga is **two** steps up: $\div 1000$ twice, so $\div 1\,000\,000$.
 - milli → nano is **two** steps down: $\times 1000$ twice, so $\times 1\,000\,000$.
-- milli → kilo is **two** steps up from milli to the base and one more to kilo —
+- milli → kilo is **one** step up from milli to the base and one more to kilo —
   count through the table carefully, it is $\div 1\,000\,000$.
 
 Writing out the chain and ticking off the steps takes five seconds and is far safer

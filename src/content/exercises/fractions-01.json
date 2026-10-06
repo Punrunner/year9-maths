@@ -59,17 +59,17 @@
         { "id": "a", "text": "$\\frac{24}{36}$" },
         { "id": "b", "text": "$\\frac{28}{60}$" },
         { "id": "c", "text": "$\\frac{48}{112}$" },
-        { "id": "d", "text": "$\\frac{45}{105}$" }
+        { "id": "d", "text": "$\\frac{45}{120}$" }
       ],
       "right": [
         { "id": "r1", "text": "$\\frac{2}{3}$" },
         { "id": "r2", "text": "$\\frac{7}{15}$" },
         { "id": "r3", "text": "$\\frac{3}{7}$" },
-        { "id": "r4", "text": "$\\frac{3}{7}$" }
+        { "id": "r4", "text": "$\\frac{3}{8}$" }
       ],
       "solution": { "a": "r1", "b": "r2", "c": "r3", "d": "r4" },
       "hints": ["Divide top and bottom by the HCF."],
-      "explanation": "HCFs are 12, 4, 16 and 15, giving $\\frac{2}{3}$, $\\frac{7}{15}$, $\\frac{3}{7}$ and $\\frac{3}{7}$."
+      "explanation": "HCFs are 12, 4, 16 and 15, giving $\\frac{2}{3}$, $\\frac{7}{15}$, $\\frac{3}{7}$ and $\\frac{3}{8}$."
     },
     {
       "id": "f1-q6",

@@ -38,7 +38,7 @@
     {
       "id": "s3-q3",
       "type": "mcq",
-      "prompt": "Which of these is written correctly as a bearing?",
+      "prompt": "Which of these is written correctly as a three-figure bearing?",
       "options": [
         { "id": "a", "text": "$047^\\circ$" },
         { "id": "b", "text": "$47^\\circ$" },

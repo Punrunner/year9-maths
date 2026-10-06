@@ -127,7 +127,7 @@
         },
         {
           "label": "b",
-          "prompt": "Insert **one** pair of brackets to make this statement correct.$$6 + 4 \\times 3 - 1 = 20$$",
+          "prompt": "Insert **two** pairs of brackets to make this statement correct.$$6 + 4 \\times 3 - 1 = 20$$",
           "marks": 1,
           "answer": "$(6 + 4) \\times (3 - 1) = 20$",
           "partial": [

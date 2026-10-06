@@ -33,7 +33,7 @@ activities:
     visual:
       widget: line-curve
       title: 'Move the line across the parabola'
-      caption: 'This is $y = x^2 - 4$ and $y = x + 2$ — question 1 from class. Change the line and watch the **discriminant**. Can you make the line just touch the curve? (Try a gradient of 2.) Can you make it miss completely?'
+      caption: 'This is $y = x^2 - 4$ and $y = x + 2$ — question 1 from class. Change the line and watch the **discriminant**. Can you make the line just touch the curve? (Try a gradient of 2 with $k = -5$, or a gradient of 0 with $k = -4$.) Can you make it miss completely?'
       config: { curve: parabola, a: 1, b: 0, c: -4, start: { m: 1, k: 2 } }
   count:
     label: 'Quick check'

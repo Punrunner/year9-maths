@@ -93,7 +93,7 @@
       "options": [
         { "id": "a", "text": "$0.1\\ \\text{mm}$" },
         { "id": "b", "text": "$0.0001\\ \\text{m}$" },
-        { "id": "c", "text": "$100\\ \\mu\\text{m}$" },
+        { "id": "c", "text": "$100\\,000\\ \\text{nm}$" },
         { "id": "d", "text": "$0.0000001\\ \\text{km}$" }
       ],
       "answer": "a",
@@ -101,7 +101,7 @@
         "All four are the same measurement — the question is which is easiest to read.",
         "A good unit gives a number that is easy to say."
       ],
-      "explanation": "All four are equal. $0.1\\ \\text{mm}$ is the clearest for everyday use, though $100\\ \\mu\\text{m}$ is a perfectly good scientific alternative. $0.0000001\\ \\text{km}$ is correct but nobody would write it."
+      "explanation": "All four are equal. $0.1\\ \\text{mm}$ is the clearest for everyday use. $100\\,000\\ \\text{nm}$ and $0.0000001\\ \\text{km}$ are correct, but nobody would write them."
     },
     {
       "id": "a5-q8",
