@@ -10,7 +10,7 @@ import { useState, useMemo } from 'preact/hooks';
 import Exercise from './Exercise';
 import { M } from './kit';
 import type { PreparedQuestion, Verdict } from '../../lib/types';
-import { shuffle, pick, newSeed } from '../../lib/shuffle';
+import { shuffle, pick, newSeed, stableSeed } from '../../lib/shuffle';
 
 export interface ExerciseSetProps {
   questions: PreparedQuestion[];
@@ -24,7 +24,7 @@ export interface ExerciseSetProps {
 export default function ExerciseSet({
   questions, title = 'Practice', introHtml, pickCount, shuffleBank = false,
 }: ExerciseSetProps) {
-  const [seed, setSeed] = useState(() => newSeed());
+  const [seed, setSeed] = useState(() => stableSeed(questions.map((q) => q.id).join('|')));
   const [results, setResults] = useState<Record<string, Verdict>>({});
 
   const selected = useMemo(() => {

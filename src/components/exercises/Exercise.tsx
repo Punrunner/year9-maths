@@ -12,7 +12,7 @@ import { useState, useCallback } from 'preact/hooks';
 import { M, Feedback, Hints, type WidgetProps } from './kit';
 import { WIDGETS } from './registry';
 import { TYPE_LABEL, type PreparedQuestion, type Verdict } from '../../lib/types';
-import { newSeed } from '../../lib/shuffle';
+import { newSeed, stableSeed } from '../../lib/shuffle';
 import { recordAnswer } from '../../lib/progress';
 
 const DIFF_LABEL: Record<string, string> = {
@@ -39,7 +39,7 @@ export default function Exercise({ q, index, total, onGraded, record = true, bar
   const mod = WIDGETS[q.type];
 
   const [attempt, setAttempt] = useState(0);
-  const [seed, setSeed] = useState(() => newSeed());
+  const [seed, setSeed] = useState(() => stableSeed(q.id));
   const [value, setValue] = useState(() => mod.init(q, seed));
   const [verdict, setVerdict] = useState<Verdict | null>(null);
   const [hints, setHints] = useState(0);

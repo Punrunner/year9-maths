@@ -52,3 +52,17 @@ export function shuffleDifferently<T>(items: readonly T[], seed: number): T[] {
   [out[0], out[1]] = [out[1]!, out[0]!];
   return out;
 }
+
+/**
+ * A seed fixed by a string (a question id). Used for the FIRST render: the
+ * page is built on the server and then hydrated in the browser, and both
+ * must shuffle identically — Preact does not re-diff `dangerouslySetInnerHTML`
+ * while hydrating, so a different order would leave the option text where the
+ * server put it while the ticks and click handlers follow the browser's order.
+ * Retries use `newSeed()`, which is safe once the page is live.
+ */
+export function stableSeed(key: string): number {
+  let h = 2166136261;
+  for (let i = 0; i < key.length; i++) h = Math.imul(h ^ key.charCodeAt(i), 16777619);
+  return h >>> 0;
+}
