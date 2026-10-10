@@ -4,6 +4,8 @@
      parabola     sliders for a, b and c in y = ax^2 + bx + c
      number-line  drag a marker along a number line
      line-curve   a line meeting a parabola or circle, with the discriminant
+     vertex-form  y = (x + a)^2 + b, the completed-square form
+     sketch-builder  drag the roots, y-intercept and turning point
    ========================================================================== */
 
 import { useRef } from 'preact/hooks';
@@ -364,6 +366,198 @@ export function LineCurve({ config, value, onChange, target, readOnly }: VisualP
         { label: 'So', value: verdict, strong: true },
         ...(pts.length ? [{ label: 'Points', value: pts.map((pt) => `(${formatNumber(pt.x)}, ${formatNumber(pt.y)})`).join(' and ') }] : []),
         ...(target && target.n !== undefined ? [{ label: 'Aim for', value: `${target.n} point${Number(target.n) === 1 ? '' : 's'} of intersection` }] : []),
+      ]} />
+    </div>
+  );
+}
+
+/* ==========================================================================
+   Completed square: y = s(x + p)^2 + q
+   --------------------------------------------------------------------------
+   The class writes y = (x + a)² + b with turning point (−a, b). Here the
+   sliders are that a (stored as p) and b (stored as q), plus the shape s:
+   +1 for ∪, −1 for ∩.
+   ========================================================================== */
+
+/** " + 3", " − 3" or nothing, for building equations as text. */
+const signed = (n: number) => (Math.abs(n) < 1e-9 ? '' : n < 0 ? ` − ${formatNumber(-n)}` : ` + ${formatNumber(n)}`);
+
+/** √24 → "2√6"; a perfect square gives null (the roots are whole numbers). */
+function surdText(n: number): string | null {
+  const r = Math.sqrt(n);
+  if (Math.abs(r - Math.round(r)) < 1e-9 || !Number.isInteger(n)) return null;
+  let a = 1, b = n;
+  for (let f = Math.floor(r); f > 1; f--) if (n % (f * f) === 0) { a = f; b = n / (f * f); break; }
+  return `${a === 1 ? '' : a}√${b}`;
+}
+
+export function VertexForm({ config, value, onChange, target, readOnly, revealTarget }: VisualProps) {
+  const p = plotter(config.xMin ?? -7, config.xMax ?? 7, config.yMin ?? -10, config.yMax ?? 10);
+  const sh = value.p ?? 0, q = value.q ?? 0, s = (value.s ?? 1) < 0 ? -1 : 1;
+
+  const path = (pp: number, qq: number, ss: number) => {
+    const out: string[] = [];
+    let pen = false;
+    for (let x = p.xMin; x <= p.xMax + 1e-9; x += 0.05) {
+      const y = ss * (x + pp) ** 2 + qq;
+      if (y < p.yMin || y > p.yMax) { pen = false; continue; }
+      out.push(`${pen ? 'L' : 'M'}${p.X(x).toFixed(1)} ${p.Y(y).toFixed(1)}`);
+      pen = true;
+    }
+    return out.join(' ');
+  };
+
+  const tx = -sh, ty = q, yInt = s * sh * sh + q;
+  // Roots: s(x + p)² = −q has solutions when −q/s ≥ 0.
+  const k = -q / s;
+  const roots = k < -1e-9 ? [] : k < 1e-9 ? [tx] : [tx - Math.sqrt(k), tx + Math.sqrt(k)];
+  const exact = roots.length === 2 ? surdText(k) : null;
+  const rootText = roots.length === 0 ? 'none — the curve never reaches the x-axis'
+    : roots.length === 1 ? `one, at x = ${formatNumber(tx)} (the curve touches the x-axis)`
+    : exact ? `x = ${tx === 0 ? '' : formatNumber(tx) + ' '}± ${exact}  (≈ ${formatNumber(roots[0])} and ${formatNumber(roots[1])})`
+    : `x = ${formatNumber(roots[0])} and x = ${formatNumber(roots[1])}`;
+
+  const bracket = Math.abs(sh) < 1e-9 ? 'x²' : `(x${signed(sh)})²`;
+  const completed = `y = ${s < 0 ? '−' : ''}${bracket}${signed(q)}`;
+  const expanded = `y = ${quadText(s, 2 * s * sh, yInt).replace(' = 0', '')}`;
+
+  return (
+    <div class="visual">
+      <Stage viewBox={`0 0 ${W} ${H}`} label={`The curve ${completed}, with turning point (${formatNumber(tx)}, ${formatNumber(ty)})`}>
+        <Grid p={p} yStep={config.yStep ?? 2} />
+        {target && (!config.hideGhost || revealTarget) ? (
+          <path d={path(target.p ?? 0, target.q ?? 0, (target.s ?? 1) < 0 ? -1 : 1)}
+            class={`fig-curve fig-ghost ${revealTarget ? 'is-revealed' : ''}`} fill="none" />
+        ) : null}
+        {tx >= p.xMin && tx <= p.xMax ? (
+          <line x1={p.X(tx)} y1={p.Y(p.yMin)} x2={p.X(tx)} y2={p.Y(p.yMax)}
+            style={{ stroke: 'var(--muted)', strokeDasharray: '5 5', strokeWidth: 1.5 }} />
+        ) : null}
+        <path d={path(sh, q, s)} class="fig-curve" fill="none" />
+        {roots.map((r, i) => (r >= p.xMin && r <= p.xMax
+          ? <circle key={`r${i}`} cx={p.X(r)} cy={p.Y(0)} r="4.5" class="fig-vertex fig-vertex-muted" /> : null))}
+        {yInt >= p.yMin && yInt <= p.yMax
+          ? <circle cx={p.X(0)} cy={p.Y(yInt)} r="4.5" class="fig-vertex fig-vertex-muted" /> : null}
+        {ty >= p.yMin && ty <= p.yMax && tx >= p.xMin && tx <= p.xMax
+          ? <circle cx={p.X(tx)} cy={p.Y(ty)} r="6" class="fig-vertex" /> : null}
+      </Stage>
+
+      <div class="controls">
+        <Slider id="vf-p" label="a, inside the bracket (x + a)²" value={sh} min={config.pMin ?? -5} max={config.pMax ?? 5} step={config.pStep ?? 1}
+          disabled={readOnly} onInput={(n) => onChange({ ...value, p: n, q, s })} />
+        <Slider id="vf-q" label="b, added on the end" value={q} min={config.qMin ?? -9} max={config.qMax ?? 9} step={config.qStep ?? 1}
+          disabled={readOnly} onInput={(n) => onChange({ ...value, p: sh, q: n, s })} />
+        {config.fixedShape ? null : (
+          <Slider id="vf-s" label="Shape: +1 is ∪, −1 is ∩" value={s} min={-1} max={1} step={2}
+            disabled={readOnly} onInput={(n) => onChange({ ...value, p: sh, q, s: n })} />
+        )}
+      </div>
+
+      <Readout rows={[
+        { label: 'Completed square', value: completed, strong: true },
+        { label: 'Expanded', value: expanded },
+        { label: 'Turning point', value: `(${formatNumber(tx)}, ${formatNumber(ty)}), a ${s > 0 ? 'minimum' : 'maximum'}` },
+        { label: 'Line of symmetry', value: `x = ${formatNumber(tx)}` },
+        { label: 'y-intercept', value: `(0, ${formatNumber(yInt)})` },
+        { label: 'Roots', value: rootText },
+      ]} />
+    </div>
+  );
+}
+
+/* ==========================================================================
+   Sketch builder: drag the roots, the y-intercept and the turning point
+   --------------------------------------------------------------------------
+   Each side of the turning point is drawn as half of a parabola through the
+   point on that side. If the turning point is not halfway between the
+   roots, the two halves have different widths and the sketch comes out
+   lop-sided, which is the mistake this widget is meant to show up.
+   Values: r1, r2 (roots, on the x-axis), yi (on the y-axis), vx, vy.
+   lo and hi hold the roots in order, so a target does not depend on which
+   root handle went where. config.hideGhost keeps the answer hidden until
+   the question is checked (both widgets accept it).
+   ========================================================================== */
+
+type Sketch = { r1: number; r2: number; yi: number; vx: number; vy: number };
+
+export function SketchBuilder({ config, value, onChange, target, readOnly, revealTarget }: VisualProps) {
+  const p = plotter(config.xMin ?? -7, config.xMax ?? 7, config.yMin ?? -10, config.yMax ?? 10);
+  const xs = config.xSnap ?? 0.5, ys = config.ySnap ?? 1;
+  const hasRoots = config.roots !== false;
+  const svgRef = useRef<SVGSVGElement>(null);
+
+  const v: Sketch = { r1: value.r1 ?? -2, r2: value.r2 ?? 2, yi: value.yi ?? 2, vx: value.vx ?? 1, vy: value.vy ?? 3 };
+  const fromX = (px: number) => snap(p.xMin + ((px - p.X(p.xMin)) / (p.X(p.xMax) - p.X(p.xMin))) * (p.xMax - p.xMin), p.xMin, p.xMax, xs);
+  const fromY = (py: number) => snap(p.yMin + ((p.Y(p.yMin) - py) / (p.Y(p.yMin) - p.Y(p.yMax))) * (p.yMax - p.yMin), p.yMin, p.yMax, ys);
+  const set = (patch: Partial<Sketch>) => {
+    if (readOnly) return;
+    const n = { ...v, ...patch };
+    onChange({ ...value, ...n, lo: Math.min(n.r1, n.r2), hi: Math.max(n.r1, n.r2) });
+  };
+  const dragR1 = useSvgDrag(svgRef, (px) => set({ r1: fromX(px) }));
+  const dragR2 = useSvgDrag(svgRef, (px) => set({ r2: fromX(px) }));
+  const dragYi = useSvgDrag(svgRef, (_px, py) => set({ yi: fromY(py) }));
+  const dragV = useSvgDrag(svgRef, (px, py) => set({ vx: fromX(px), vy: fromY(py) }));
+
+  const curve = (s: Sketch) => {
+    const lo = Math.min(s.r1, s.r2), hi = Math.max(s.r1, s.r2);
+    const kFor = (x: number, y: number) => (Math.abs(x - s.vx) < 1e-6 ? null : (y - s.vy) / (x - s.vx) ** 2);
+    const kl = hasRoots ? kFor(lo, 0) : kFor(0, s.yi);
+    const kr = hasRoots ? kFor(hi, 0) : kl;
+    const out: string[] = [];
+    const half = (k: number | null, to: number) => {
+      if (k === null || !Number.isFinite(k)) return;
+      const step = to < s.vx ? -0.05 : 0.05;
+      let pen = false;
+      for (let x = s.vx; step < 0 ? x >= to - 1e-9 : x <= to + 1e-9; x += step) {
+        const y = s.vy + k * (x - s.vx) ** 2;
+        if (y < p.yMin || y > p.yMax) { pen = false; continue; }
+        out.push(`${pen ? 'L' : 'M'}${p.X(x).toFixed(1)} ${p.Y(y).toFixed(1)}`);
+        pen = true;
+      }
+    };
+    half(kl, p.xMin);
+    half(kr, p.xMax);
+    return out.join(' ');
+  };
+
+  const t: Sketch | null = target
+    ? { r1: target.lo ?? 0, r2: target.hi ?? 0, yi: target.yi ?? 0, vx: target.vx ?? 0, vy: target.vy ?? 0 }
+    : null;
+  const lo = Math.min(v.r1, v.r2), hi = Math.max(v.r1, v.r2);
+  const handle = (cx: number, cy: number, drag: Record<string, any>, label: string, name: string) => (
+    <g class="fig-handle" style={{ cursor: readOnly ? 'default' : 'grab', touchAction: 'none' }} {...(readOnly ? {} : drag)}
+      aria-label={name}>
+      <circle cx={cx} cy={cy} r="15" fill="transparent" />
+      <circle cx={cx} cy={cy} r="7" class="fig-vertex" />
+      <text x={cx + 9} y={cy - 9} class="fig-tick" style={{ fontWeight: 700 }}>{label}</text>
+    </g>
+  );
+
+  return (
+    <div class="visual">
+      <Stage svgRef={svgRef} viewBox={`0 0 ${W} ${H}`} label="Drag the points to build a sketch of the curve">
+        <Grid p={p} xStep={config.xStep ?? 1} yStep={config.yStep ?? 2} />
+        {t && (!config.hideGhost || revealTarget)
+          ? <path d={curve(t)} class={`fig-curve fig-ghost ${revealTarget ? 'is-revealed' : ''}`} fill="none" /> : null}
+        {config.showSymmetry && hasRoots ? (
+          <line x1={p.X((lo + hi) / 2)} y1={p.Y(p.yMin)} x2={p.X((lo + hi) / 2)} y2={p.Y(p.yMax)}
+            style={{ stroke: 'var(--muted)', strokeDasharray: '5 5', strokeWidth: 1.5 }} />
+        ) : null}
+        <path d={curve(v)} class="fig-curve" fill="none" />
+        {hasRoots ? handle(p.X(v.r1), p.Y(0), dragR1, 'R', 'Root') : null}
+        {hasRoots ? handle(p.X(v.r2), p.Y(0), dragR2, 'R', 'Root') : null}
+        {handle(p.X(0), p.Y(v.yi), dragYi, 'Y', 'y-intercept')}
+        {handle(p.X(v.vx), p.Y(v.vy), dragV, 'T', 'Turning point')}
+      </Stage>
+      <p class="choices-note">
+        Drag {hasRoots ? <><b>R</b> along the x-axis to each root, </> : null}<b>Y</b> up or down the y-axis, and <b>T</b> to the turning point.
+      </p>
+      <Readout rows={[
+        ...(hasRoots ? [{ label: 'Roots (R)', value: `x = ${formatNumber(lo)} and x = ${formatNumber(hi)}` }] : []),
+        { label: 'y-intercept (Y)', value: `(0, ${formatNumber(v.yi)})` },
+        { label: 'Turning point (T)', value: `(${formatNumber(v.vx)}, ${formatNumber(v.vy)})`, strong: true },
+        ...(config.showSymmetry && hasRoots ? [{ label: 'Halfway between the roots', value: `x = ${formatNumber((lo + hi) / 2)}` }] : []),
       ]} />
     </div>
   );

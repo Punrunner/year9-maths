@@ -7,7 +7,7 @@
 
 import type { FunctionComponent } from 'preact';
 import type { VisualProps } from './kit';
-import { LineMC, Parabola, NumberLine, LineCurve } from './GraphVisuals';
+import { LineMC, Parabola, NumberLine, LineCurve, VertexForm, SketchBuilder } from './GraphVisuals';
 import { Pythagoras, Prism, PolygonAngles, Enlargement } from './GeometryVisuals';
 import { Spinner } from './ProbabilityVisuals';
 import { AreaModel } from './AlgebraVisuals';
@@ -32,6 +32,8 @@ export const VISUALS: Record<string, FunctionComponent<VisualProps>> = {
   'unit-grid': UnitGrid,
   'percent-bar': PercentBar,
   'line-curve': LineCurve,
+  'vertex-form': VertexForm,
+  'sketch-builder': SketchBuilder,
 };
 
 /** The values each visual starts on, before the student touches anything. */
@@ -51,6 +53,8 @@ export const VISUAL_DEFAULTS: Record<string, Record<string, number>> = {
   'unit-grid': { d: 2, p: 0, k: 2 },
   'percent-bar': { p: 25 },
   'line-curve': { m: 1, k: 2, n: 2 },
+  'vertex-form': { p: 0, q: 0, s: 1 },
+  'sketch-builder': { r1: -2, r2: 2, yi: 2, vx: 1, vy: 3, lo: -2, hi: 2 },
 };
 
 /** Human-readable name, used in the lesson's visual heading fallback. */
@@ -70,4 +74,6 @@ export const VISUAL_TITLES: Record<string, string> = {
   'unit-grid': 'Squares and cubes of units',
   'percent-bar': 'Percentage bar',
   'line-curve': 'Where a line meets a curve',
+  'vertex-form': 'Completing the square explorer',
+  'sketch-builder': 'Build a sketch',
 };

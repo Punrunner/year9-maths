@@ -235,6 +235,8 @@ const manipulable = z.object({
     'unit-grid',      // 1 big unit cut into small ones; or scale by k
     'percent-bar',    // amount against percentage; reverse mode for reverse %
     'line-curve',     // a line meeting a parabola or circle; discriminant
+    'vertex-form',    // y = (x + a)^2 + b: sliders for a, b and the shape
+    'sketch-builder', // drag the roots, y-intercept and turning point
   ]),
   config: z.record(z.string(), z.any()).default({}),
   /** What the student has to achieve, e.g. { m: 2, c: -3 }. */

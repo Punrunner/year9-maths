@@ -1,6 +1,6 @@
 {
   "title": "Quadratics",
-  "description": "Expanding, factorising and solving quadratics, the shape of their graphs, and where a line meets a curve.",
+  "description": "Expanding, factorising and solving quadratics, sketching their graphs, and where a line meets a curve.",
   "strand": "number-algebra",
   "order": 16,
   "difficulty": "challenge",
@@ -10,7 +10,8 @@
     "Expand the product of two brackets",
     "Factorise a quadratic expression",
     "Solve a quadratic equation by factorising",
-    "Solve a line and a curve simultaneously, using the discriminant to count the points of intersection"
+    "Solve a line and a curve simultaneously, using the discriminant to count the points of intersection",
+    "Sketch a quadratic graph from its roots, y-intercept and turning point, completing the square"
   ],
   "keywords": [
     "quadratic",
@@ -24,6 +25,10 @@
     "discriminant",
     "tangent",
     "circle",
-    "intersection"
+    "intersection",
+    "sketch",
+    "completing the square",
+    "turning point",
+    "vertex"
   ]
 }
